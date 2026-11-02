@@ -26,3 +26,13 @@ Agreement on the selected row is not enough for equivalence. Compare all four ro
 ## Divisibility gives a concrete example
 
 Write a | n when n = ak for some integer k. This is a statement of divisibility, not division. If 4 divides n, then 2 divides n. Contraposition says: if 2 does not divide n, then 4 does not divide n. The converse fails at n = 6: 2 divides 6 but 4 does not.
+
+## A proof and its converse
+
+Suppose 4 divides n. By definition n = 4k for an integer k. Rewrite this as n = 2(2k); because 2k is an integer, 2 divides n. That proves the forward direction for every integer n, rather than checking a few examples. The contrapositive describes the same exclusion: an odd n cannot be a multiple of 4. The converse asks a different question: does evenness guarantee divisibility by 4? At n = 6 the answer is no. A is false and B true, so the original implication is true while its converse is false.
+
+<Exercise question="Does 3 | n imply 6 | n? Give a counterexample and state the contrapositive.">
+
+No: n = 3. The contrapositive is “if 6 does not divide n, then 3 does not divide n”; it is false at the same n. Contraposition preserves truth value, including for a false claim.
+
+</Exercise>

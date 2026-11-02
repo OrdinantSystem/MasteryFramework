@@ -5,9 +5,9 @@ sourceId: "learning-bloom"
 sourcePages: []
 sourceLocations: ["§2 The six levels", "§3 Why sequencing matters", "§6 Math example: monotone convergence"]
 locale: "en"
-title: "Bloom: choose what the question asks you to do"
-navTitle: "Bloom and purpose"
-description: "Use six kinds of thinking to design tasks, starting from a meaningful purpose."
+title: "Bloom’s Taxonomy"
+navTitle: "Bloom’s Taxonomy"
+description: "Six categories of cognitive tasks, illustrated with sequence convergence."
 order: 2
 kind: "concept"
 status: "published"
@@ -17,13 +17,13 @@ thumbnail: "bloom"
 additionalSources: [{"sourceId": "transcript-bloom", "locations": ["14:30–16:16"]}]
 ---
 
-## One topic can support very different questions
+## The six categories
 
 <QuestionLens />
 
 Remember, understand, apply, analyze, evaluate, and create describe cognitive processes. They are not fixed stages to complete in order, nor a score for how valuable your thinking is. A proof can require several at once. Creating can mean constructing your own valid example; it need not mean original scientific research.
 
-## Let a problem give the details a purpose
+## Problem-oriented study
 
 <LearningFigure kind="problem-first" />
 
@@ -34,3 +34,7 @@ For example: how could you prove a real sequence converges without knowing its l
 An upper bound is missing. The real sequence aₙ = n increases but does not converge to a real number. Boundedness alone also does not suffice: (−1)ⁿ is bounded and does not converge. The theorem needs both monotonicity and boundedness.
 
 </Exercise>
+
+## A worked comparison
+
+For aₙ = 1 − 1/n, applying a theorem requires two checks: the terms increase because aₙ₊₁ − aₙ = 1/[n(n + 1)] > 0, and 0 ≤ aₙ < 1 for n ≥ 1. Monotonicity and boundedness establish convergence in ℝ. Analyzing asks why n and (−1)ⁿ fail one of these conditions. Evaluating asks whether this theorem or a direct limit proof better answers the particular question. The labels describe different work on the same example; merely adding “why” to a recall question does not make it analysis.

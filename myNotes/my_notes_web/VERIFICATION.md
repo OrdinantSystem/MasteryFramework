@@ -1,3 +1,13 @@
+# Explanation revision
+
+Analysis: expanded all 15 lesson bodies in EN/DE/ES with worked reasoning, strategy, boundary cases, and eight independent exercises per language. Added a localized parity-to-contradiction Flow to the √2 lesson. Learning: plain titles/descriptions for all 17 lessons per language, descriptive headings, worked cases for the main methodology lessons, and a rewritten Mind Maps lesson grounded in the supplied 6:01–8:58 transcript passage and method module. The four transcript guides retain their source discussions with shorter titles and descriptions.
+
+RelationMap is centrally registered and included in the authoring gallery; it distinguishes a definition, consequence, and failed converse. Updated authoring and representation guidance. All published review flags remain unreviewed.
+
+Production build: 173 pages; existing mathematical/library checks, translated formula parity, metadata, anchors, assets and contrast checks pass. Browser: all 32 English Analysis/Learning pages at 1440×1000 and all 96 localized variants at 390×844 have no page-wide overflow. Inspected the Mind Maps page in dark desktop and light compact layouts. These are layout and selected arithmetic checks, not independent human mathematical/translation review. Routes and localization mechanics were not changed. No commit or push performed.
+
+---
+
 # Learning & Teaching update · 2 November 2026
 
 - Added a distinct knowledge area with a book-outline icon and one methodology course: 17 lessons in each of English, German, and Spanish. Four separate reading guides cover the four supplied transcripts; source identities distinguish the similarly named Spanish files.

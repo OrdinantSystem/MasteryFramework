@@ -5,9 +5,9 @@ sourceId: "learning-method"
 sourcePages: []
 sourceLocations: ["§2.2 AI-assisted Feynman"]
 locale: "de"
-title: "Einfach erklären, dann die Begründung prüfen"
-navTitle: "Feynman und Feedback"
-description: "Mit einer eigenen Erklärung die noch unklare Stelle finden."
+title: "Die Feynman-Technik"
+navTitle: "Die Feynman-Technik"
+description: "Erklärung aus dem Gedächtnis, Rückmeldung, Korrektur und neue Anwendung."
 order: 4
 kind: "concept"
 status: "published"
@@ -17,13 +17,13 @@ thumbnail: "explanation"
 additionalSources: [{"sourceId": "transcript-techniques", "locations": ["9:04–10:57"]}]
 ---
 
-## Mit eigenen Worten beginnen
+## Erklären aus dem Gedächtnis
 
 Schließe die Notizen und erkläre eine eingegrenzte Idee einer Person ohne Vorwissen. Nenne Bedeutung, Voraussetzungen, Begründung und Beispiel. Wenn ein Wort die ganze Arbeit übernimmt – „offensichtlich“, „linear“, „konvergent“ –, halte an und erkläre es. Sprechen und Schreiben sind beide möglich; entscheidend ist die eigene Rekonstruktion.
 
 <ProcessDiagram preset="feynman" id="feynman-loop" />
 
-## Die Rückmeldung konkret machen
+## Rückmeldung und Überarbeitung
 
 Bitte Lehrperson, Mitlernende oder KI, die erste fehlende Voraussetzung oder unbegründete Folgerung zu benennen. Prüfe wichtige Korrekturen an der Kursquelle. Eine flüssige Erklärung kann falsch sein, ebenso eine flüssige KI-Kritik. Schließe die Lücke, erkläre erneut ohne Hilfe und versuche eine andere Anwendung.
 
@@ -32,3 +32,13 @@ Bitte Lehrperson, Mitlernende oder KI, die erste fehlende Voraussetzung oder unb
 Die Definition, nicht den optischen Eindruck. Eine lineare Abbildung erhält Addition und Skalierung und schickt deshalb null auf null. g(x) = 2x + 3 tut das nicht: g(0) = 3. Lass den Unterschied zwischen affin und linear erklären und prüfe ein neues Beispiel.
 
 </Exercise>
+
+## Beispiel: eine Erklärung überarbeiten
+
+**Erster Versuch:** „Eine lineare Abbildung hat einen geraden Graphen, also ist 2x + 3 linear.“ Die Erklärung ist einfach, verwendet aber das falsche Kriterium.
+
+**Rückmeldung:** „Linear“ bedeutet hier Erhalten von Addition und Skalierung. Prüfe null: g(0) = 3. Eine lineare Abbildung muss null liefern. Der konkrete Fehler ist die Verwechslung von affin und linear.
+
+**Überarbeitung:** „x ↦ 2x ist linear. Der Zusatz 3 verschiebt die Ausgabe und verhindert das Erhalten der Addition.“ Eine prüfbare Begründung ersetzt die bloße Beschreibung des Graphen.
+
+**Weitere Prüfung:** Auch x² liefert bei null null; dieser Test allein beweist also keine Linearität. h(1 + 1) = 4, aber h(1) + h(1) = 2 zeigt die fehlende Bedingung. Eine gute Erklärung hält solchen Nachfragen stand; ein schöner Satz allein zeigt das noch nicht.

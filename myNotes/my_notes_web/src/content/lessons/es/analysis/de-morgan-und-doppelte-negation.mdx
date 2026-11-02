@@ -38,3 +38,17 @@ Por las leyes 2 y 5, A y ¬¬A son complementos de ¬A. La unicidad da ¬¬A = A
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
 En el paso central aplica 9a al revés con las entradas ¬A y ¬B. El orden de demostración es unicidad → 9a y 10 → 9b.
+
+## La estrategia del complemento
+
+Para identificar ¬(A ∨ B) no suponemos que la negación se distribuya. Proponemos un candidato Y y comprobamos las dos propiedades que determinan un complemento único. La primera cadena prueba que X e Y nunca se cumplen juntos; la segunda, que cubren todos los casos. Hacen falta ambas. Para la doble negación basta comparar los dos complementos de ¬A. La segunda identidad de De Morgan se deduce entonces de resultados ya probados, sin circularidad.
+
+## Negar una afirmación compuesta
+
+Las identidades demostradas permiten transformar una negación sin tabla de verdad.
+
+<Exercise question="Niega «se cumple A y al menos una de B o C».">
+
+El enunciado es A ∧ (B ∨ C). Su negación es ¬A ∨ ¬(B ∨ C), es decir, ¬A ∨ (¬B ∧ ¬C). El O interior se convierte en Y; negar solo las letras ignoraría la agrupación.
+
+</Exercise>

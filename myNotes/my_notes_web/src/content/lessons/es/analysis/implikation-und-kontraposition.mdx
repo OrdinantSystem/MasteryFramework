@@ -26,3 +26,13 @@ Coincidir en la fila seleccionada no basta para la equivalencia. Compara las cua
 ## Un ejemplo concreto con divisibilidad
 
 Escribe a | n si n = ak para algún entero k. Es divisibilidad, no división. Si 4 divide a n, entonces 2 divide a n. La contraposición dice: si 2 no divide a n, entonces 4 tampoco. La recíproca falla con n = 6: 2 divide a 6, pero 4 no.
+
+## Una prueba y su recíproca
+
+Supón que 4 divide a n. Entonces n = 4k para un entero k. Reescribe n = 2(2k); como 2k es entero, 2 divide a n. Esto prueba la ida para todo entero n, sin limitarse a ejemplos. La contraposición excluye el mismo caso: un n impar no puede ser múltiplo de 4. La recíproca pregunta otra cosa: ¿ser par garantiza divisibilidad por 4? n = 6 lo refuta. A es falso y B verdadero: la implicación original es verdadera y la recíproca falsa.
+
+<Exercise question="¿3 | n implica 6 | n? Da un contraejemplo y la contraposición.">
+
+No: n = 3. La contraposición es «si 6 no divide a n, entonces 3 no divide a n»; también falla con n = 3. La contraposición conserva el valor de verdad incluso de una afirmación falsa.
+
+</Exercise>

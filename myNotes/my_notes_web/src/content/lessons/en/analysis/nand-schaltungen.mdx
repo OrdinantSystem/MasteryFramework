@@ -32,3 +32,7 @@ NAND outputs 0 only when both inputs are 1. Its symbol may be written | or ↑. 
 <Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
 
 NOT connects A to both inputs of one NAND. AND reuses the first NAND output at both inputs of a second gate: two physical gates, even though the expression repeats a term. OR first negates each input, then NANDs the results: three gates. Since NOT, AND, and OR can all be constructed, NAND is functionally complete.
+
+## Following one signal
+
+Take A = 1 and B = 0 in the OR circuit. The first two gates produce ¬A = 0 and ¬B = 1. The final NAND negates 0 ∧ 1, so its output is 1. With A = B = 0, the first gates both output 1 and the final output is 0. These traces explain the construction; the identity follows because ¬(¬A ∧ ¬B) = A ∨ B by De Morgan and double negation. One signal may feed several gate inputs without requiring the original gate to be rebuilt.

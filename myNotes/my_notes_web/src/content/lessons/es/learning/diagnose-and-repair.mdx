@@ -5,9 +5,9 @@ sourceId: "learning-protocol"
 sourcePages: []
 sourceLocations: ["02-protocols/04-Error-Diagnosis.md"]
 locale: "es"
-title: "Localiza la primera laguna y corrígela"
-navTitle: "Diagnóstico de errores"
-description: "Haz que los comentarios sean lo bastante precisos para cambiar el próximo intento."
+title: "Análisis de errores"
+navTitle: "Análisis de errores"
+description: "Tipos de error y razones para una corrección específica."
 order: 9
 kind: "concept"
 status: "published"
@@ -16,13 +16,13 @@ prerequisites: ["topic-session"]
 thumbnail: "feedback"
 ---
 
-## Conserva el intento a la vista
+## El intento original
 
 <ProcessDiagram preset="repair" id="repair-process" />
 
 No sustituyas de inmediato un intento equivocado por una solución impecable. Conserva el trabajo exacto y localiza el primer paso incorrecto o sin justificar. El diagnóstico es una hipótesis que comprobar, no una afirmación de conocer lo que pasaba por la mente de alguien.
 
-## Ajusta la corrección a la dificultad
+## Tipos de error
 
 | Dificultad | Pregunta | Próxima acción |
 |---|---|---|
@@ -35,3 +35,7 @@ No sustituyas de inmediato un intento equivocado por una solución impecable. Co
 | Prerrequisito | ¿Qué idea previa falta? | Enseñarla y volver |
 
 Una respuesta útil dice qué sigue siendo válido, identifica el primer problema, propone una corrección mínima y ofrece una tarea nueva de comprobación. «Practica más» todavía no es un diagnóstico. Da una laguna por corregida tras un intento distinto y autónomo logrado; compruébala más adelante antes de afirmar que la mejora es duradera.
+
+## Ejemplo de diagnóstico
+
+Una persona afirma que una matriz es invertible porque ninguna entrada es cero. El problema no es aritmético: el criterio es falso. La matriz 2×2 con todas las entradas iguales a 1 tiene columnas dependientes y determinante cero. Los comentarios deben corregir el criterio y pedir revisar otra matriz. Repetir el algoritmo del determinante sin abordar la afirmación deja el error conceptual sin explicar.

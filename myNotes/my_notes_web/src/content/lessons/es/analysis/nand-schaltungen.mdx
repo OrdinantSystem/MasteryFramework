@@ -32,3 +32,7 @@ NAND devuelve 0 solo cuando ambas entradas son 1. Se escribe | o ↑. Aquí | si
 <Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
 
 NO conecta A a ambas entradas de una NAND. Y reutiliza la salida de la primera NAND en ambas entradas de una segunda: dos puertas físicas, aunque la fórmula repita un término. O niega primero cada entrada y luego aplica NAND: tres puertas. Como pueden construirse NO, Y y O, NAND es funcionalmente completa.
+
+## Seguir una señal
+
+Toma A = 1 y B = 0 en el circuito O. Las primeras puertas producen ¬A = 0 y ¬B = 1. La NAND final niega 0 ∧ 1 y devuelve 1. Si A = B = 0, ambas primeras puertas dan 1 y la salida final es 0. Las trazas explican la construcción; la identidad general sigue de ¬(¬A ∧ ¬B) = A ∨ B por De Morgan y doble negación. Una señal puede alimentar varias entradas sin reconstruir la puerta original.

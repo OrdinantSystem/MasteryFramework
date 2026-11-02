@@ -5,9 +5,9 @@ sourceId: "learning-method"
 sourcePages: []
 sourceLocations: ["§2.1 Relational concept mapping"]
 locale: "de"
-title: "Begriffsnetze: Beziehungen sichtbar machen"
+title: "Begriffsnetze"
 navTitle: "Begriffsnetze"
-description: "Eine hilfreiche Verbindung sagt etwas Erklärbares und Prüfbares aus."
+description: "Begriffe, Hierarchie, gerichtete Beziehungen und Quellenprüfung."
 order: 3
 kind: "concept"
 status: "published"
@@ -17,20 +17,44 @@ thumbnail: "concept-map"
 additionalSources: [{"sourceId": "transcript-techniques", "locations": ["6:01–8:58"]}]
 ---
 
-## Jeder wichtigen Verbindung eine Bedeutung geben
+## Was ein Begriffsnetz darstellt
 
-Stell dir eine Karte mit „Ableitung, Steigung, Grenzwert, Regeln“ vor. Die Wörter sind bekannt, doch die Linien erklären den Zusammenhang noch nicht. Ersetze eine vage Linie durch eine kurze Aussage: Eine Ableitung ist der Grenzwert eines Differenzenquotienten, falls er existiert. Diese Aussage lässt sich erklären, prüfen und hinterfragen.
+Ein Begriffsnetz ordnet zusammenhängende Ideen so, dass du ihre Struktur prüfen kannst. Im Transkript besteht die wichtige Arbeit darin, relevante Ideen auszuwählen, Abhängigkeiten zu erkennen und die Ordnung zu hinterfragen. Die gezeichneten Äste machen diese Arbeit sichtbar. Das Transkript enthält keinen vollständigen Zeichenalgorithmus; das folgende Vorgehen ist unsere praktische Ausarbeitung.
+
+Ein brauchbares Netz beantwortet eine Frage. „Lineare Abbildungen“ ist ein Thema; „Wie entscheide ich, ob eine Abbildung linear ist?“ gibt dem Netz einen Zweck. Zum Berechnen von Ausgaben würdest du dasselbe Thema anders ordnen. Wichtigkeit hängt von der Aufgabe ab, nicht von der Schriftgröße.
+
+## Von Wörtern zu Beziehungen
 
 <LearningFigure kind="mapping" />
 
-## Ein kleines Netz selbst aufbauen
+Das Ableitungsbeispiel zeigt den Unterschied zwischen benachbarten Wörtern und erklärten Beziehungen. Lies jeden Pfeil als Satz: Eine Ableitung entsteht als Grenzwert von Differenzenquotienten, falls dieser existiert. Tangentensteigung und momentane Änderungsrate sind Deutungen dieses Ergebnisses. Der Grenzübergang erklärt die Verbindung. „Grenzwert“ neben „Ableitung“ allein lässt diese Begründung offen.
 
-1. Wähle eine zentrale Frage und grenze sie ein.
-2. Sammle die Hauptideen aus dem Gedächtnis, prüfe dann die Quelle.
-3. Beschrifte Verbindungen: benötigt, impliziert, ist ein Beispiel für oder scheitert ohne.
-4. Erkläre die wichtigsten Verbindungen und suche fehlende Voraussetzungen.
-5. Lege das Netz weg und rekonstruiere seinen Kern später.
+## Beispiel: lineare Abbildungen
 
-Einige begründete Beziehungen helfen hier mehr als eine große, schöne Zeichnung, die du nicht rekonstruieren kannst.
+Notiere zunächst erinnerte Ideen: Addition, Skalierung, null, Matrizen, Geraden. Verbinde nicht einfach jedes Paar. Frage, was eine Verbindung behauptet und ob du sie begründen könntest.
 
-Begriffsnetze ersetzen keinen Abruf. In der [Studie von Karpicke und Blunt](https://pubmed.ncbi.nlm.nih.gov/21252317/) war Abruftraining der untersuchten Mapping-Aufgabe überlegen, auch bei Schlussfolgerungsfragen. Nutze Netze zum Ordnen und Prüfen von Beziehungen und übe weiterhin Abruf und Anwendung.
+<RelationMap />
+
+Die erste Beziehung folgt aus der Definition. Die zweite lässt sich beweisen: Additivität liefert f(0) = f(0) + f(0), also nach Subtraktion f(0) = 0. Der umgekehrte Pfeil wäre falsch: x² bildet null auf null ab, erhält aber nicht die Addition. Ein brauchbares Netz hält diese Grenze fest, statt jede Verbindung als beidseitig erscheinen zu lassen.
+
+Ordne nun nach der benötigten Entscheidung: Definition zuerst, Konsequenzen darunter, Beispiele neben der illustrierten Eigenschaft. „Matrix“ braucht eine genaue Beziehung: Nach Basiswahl besitzt eine lineare Abbildung zwischen endlichdimensionalen Räumen eine Matrixdarstellung. „Gerade“ allein ist als Kriterium zu ungenau.
+
+## Ein Netz erstellen und prüfen
+
+1. Formuliere eine Frage und begrenze den Stoff darauf.
+2. Erinnere wenige zentrale Ideen vor dem Öffnen der Quelle. Markiere Unsicherheit, statt Verbindungen zu erfinden.
+3. Gruppiere Definitionen, Folgen, Beispiele und Methoden. Verschiebe Elemente, wenn eine andere Ordnung mehr erklärt.
+4. Gib wichtigen Pfeilen Richtung und Bedeutung: „impliziert“, „benötigt“ oder „ist ein Beispiel für“. Lies die gesamte Verbindung als Satz.
+5. Begründe jede Verbindung. Ergänze Voraussetzungen oder Gegenbeispiele, wenn sie die Behauptung verändern.
+6. Vergleiche mit der Kursquelle und korrigiere die Struktur, nicht nur die Beschriftung.
+7. Lege das Netz weg und rekonstruiere seine Hauptbeziehungen. Erkläre eine davon und löse eine passende Aufgabe ohne Vorlage.
+
+Eine gestrichene Verbindung oder ein Fragezeichen kann hilfreich sein: Es benennt etwas Ungeklärtes. Entscheidend ist, ob du Hauptverbindungen, Richtung und Grenzen erklären kannst.
+
+<Exercise question="Ein Netz enthält ‘f(0) = 0 → f ist linear’. Wie korrigierst du es?">
+
+Kehre den Pfeil um und kennzeichne die notwendige Bedingung: Linearität impliziert f(0) = 0. x² bleibt als Gegenbeispiel zum ursprünglichen Pfeil. Für Linearität müssen Addition und Skalierung im gesamten Bereich geprüft werden; der Nulltest allein reicht nicht.
+
+</Exercise>
+
+Mapping und Abruf erfüllen verschiedene Aufgaben. Die angegebene Studie von [Karpicke und Blunt (2011)](https://pubmed.ncbi.nlm.nih.gov/21252317/) fand einen Vorteil für Abruf gegenüber der untersuchten Mapping-Aufgabe. Eine sorgfältige Zeichnung allein belegt deshalb noch keinen Lernerfolg. Prüfe, was du danach rekonstruieren und anwenden kannst.

@@ -30,3 +30,16 @@ Todo racional admite una fracción irreducible. Elegir esa representación es es
 <Math tex="p^2=2q^2\Longrightarrow p=2k\Longrightarrow4k^2=2q^2\Longrightarrow q^2=2k^2\Longrightarrow q=2\ell" display />
 
 El lema de paridad justifica cada paso del cuadrado par al entero par. Así, 2 divide tanto a p como a q, contradiciendo su coprimalidad. Por tanto, √2 es irracional. Otra demostración usa descenso infinito: dividir repetidamente entre dos produciría denominadores enteros positivos cada vez menores, lo que no puede continuar indefinidamente.
+
+## Los dos usos de la paridad
+
+Primero p² = 2q² hace par a p². El resultado de paridad hace par a p, así que existe un entero k con p = 2k. Sustituir da 4k² = 2q²; dividir por 2 hace par a q² y el mismo resultado hace par a q. No contradijimos la ecuación por sí sola: fracciones como 2/4 tienen ambos términos pares. Contradijimos la elección inicial sin factor común. Por eso hay que expresar esa hipótesis antes de calcular.
+
+<Exercise question="¿Por qué «p² par, luego p par» no es un paso algebraico sin justificar?">
+
+Usa la equivalencia de paridad ya demostrada. Sin ella habría que probar que un entero impar tiene cuadrado impar.
+
+</Exercise>
+
+
+<Flow nodes={[{"label": "p² es par", "tex": "p^2=2q^2", "detail": "Elevar al cuadrado la fracción supuesta."}, {"label": "p es par", "tex": "p=2k", "detail": "Usar la equivalencia de paridad."}, {"label": "q es par", "tex": "q^2=2k^2", "detail": "Sustituir p = 2k y usar otra vez paridad."}, {"label": "Contradicción", "tex": "2\\mid p,\\ 2\\mid q", "detail": "La fracción irreducible tiene factor común 2."}]} caption="Cada flecha necesita una razón; la contradicción afecta a la representación irreducible inicial." />

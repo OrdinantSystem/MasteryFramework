@@ -28,3 +28,7 @@ Supón que B y C son complementos de A. La condición O cubre todas las posibili
 <Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
 
 Por tanto, B = C. Las sustituciones sin número usan las condiciones de complemento supuestas. Como ¬A es un complemento por la ley 5, cualquier expresión que cumpla ambas condiciones debe ser igual a ¬A. Esta herramienta permite las siguientes demostraciones.
+
+## ¿Por qué comparar B con C?
+
+Sabemos cómo se relacionan B y C con A, pero no entre sí. Insertar 1 = A ∨ C en B ∧ 1 conecta ambas informaciones. Distribuir separa B ∧ A, que desaparece, de B ∧ C. Repetirlo para C muestra que ambos candidatos coinciden con su parte común. Solo puede haber un complemento que cumpla las dos condiciones. A ∨ B = 1 sola no basta: B = 1 siempre la cumple.

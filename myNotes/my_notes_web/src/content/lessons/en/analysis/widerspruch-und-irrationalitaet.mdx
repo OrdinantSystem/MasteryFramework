@@ -30,3 +30,16 @@ Every rational number admits a reduced fraction. Choosing that representation is
 <Math tex="p^2=2q^2\Longrightarrow p=2k\Longrightarrow4k^2=2q^2\Longrightarrow q^2=2k^2\Longrightarrow q=2\ell" display />
 
 The parity lemma proves each implication from an even square to an even integer. Thus 2 divides both p and q, contradicting their coprimality. Therefore √2 is irrational. An alternative proof uses infinite descent: repeated halving would produce smaller and smaller positive integer denominators, which cannot continue indefinitely.
+
+## The two uses of parity
+
+First p² = 2q² makes p² even. The parity result then makes p even, so we may introduce an integer k with p = 2k. Substitution gives 4k² = 2q²; dividing by 2 makes q² even, and the same result makes q even. We have not contradicted the equation alone: fractions such as 2/4 can have two even entries. We contradict the initial choice of a fraction with no common factor. That is why the reduced-fraction assumption must be stated before the calculation.
+
+<Exercise question="Why is “p² even, therefore p even” not an unexplained algebraic step?">
+
+It invokes the previously proved parity equivalence. Without that result, the proof would need to establish that an odd integer has an odd square.
+
+</Exercise>
+
+
+<Flow nodes={[{"label": "p² is even", "tex": "p^2=2q^2", "detail": "Square the assumed fraction."}, {"label": "p is even", "tex": "p=2k", "detail": "Use the parity equivalence."}, {"label": "q is even", "tex": "q^2=2k^2", "detail": "Substitute p = 2k, then use parity again."}, {"label": "Contradiction", "tex": "2\\mid p,\\ 2\\mid q", "detail": "The reduced fraction has a common factor 2."}]} caption="Each arrow needs a reason; the contradiction concerns the original reduced representation." />

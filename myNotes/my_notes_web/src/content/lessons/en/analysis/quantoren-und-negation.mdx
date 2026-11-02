@@ -34,3 +34,13 @@ Negation changes the quantifier and the predicate, while keeping the domain. Wit
 ## The boundary case matters
 
 The claim n² > n for every natural number fails at n = 1. With ℕ starting at 1, the correct universal statement is n² ≥ n; strict inequality holds for n > 1.
+
+## Order of quantifiers
+
+Over ℕ, “for every x there is a y greater than x” is true: after seeing x, choose y = x + 1. “There is a y greater than every x” is false: once y is fixed, x = y defeats the claim. In the first statement y may depend on x; in the second the same y must work throughout. To negate the first, say that some x has no greater natural y. This changes both quantifiers, not just the final inequality.
+
+<Exercise question="Negate: every natural number is even.">
+
+Some natural number is not even; 1 is a witness. Saying every natural number is odd would be a stronger and false claim.
+
+</Exercise>

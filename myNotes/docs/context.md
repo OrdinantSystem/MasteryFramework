@@ -25,3 +25,5 @@ Updated 2 November 2026. This file records current state; AGENTS.md and DESIGN-S
 ## Resume procedure
 
 Read ../AGENTS.md and ../DESIGN-SYSTEM.md, then the task-specific guide. Inspect the relevant source and current verification record. Use Node 24, build from my_notes_web/, and verify the outcome. Update this file when an accepted decision or a genuine boundary changes; keep transient commands/logs out of it. Do not infer a pending task from historical plans or implement the open-work list without a relevant request.
+
+Editorial revision: Analysis lessons now explain proof strategy and intermediate reasoning and include independent exercises. Learning Methodology uses subject titles and descriptive headings, concrete study cases, and a substantially expanded source-grounded Mind Maps lesson with RelationMap. Preserve this explanatory approach; do not replace worked reasoning with brief summaries or promotional headings.

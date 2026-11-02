@@ -5,9 +5,9 @@ sourceId: "learning-method"
 sourcePages: []
 sourceLocations: ["§2.1 Relational concept mapping"]
 locale: "es"
-title: "Mapas conceptuales: haz visibles las relaciones"
-navTitle: "Mapas de relaciones"
-description: "Una conexión útil afirma algo que puedes explicar y comprobar."
+title: "Mapas mentales"
+navTitle: "Mapas mentales"
+description: "Conceptos, jerarquía, relaciones dirigidas y comprobación con las fuentes."
 order: 3
 kind: "concept"
 status: "published"
@@ -17,20 +17,44 @@ thumbnail: "concept-map"
 additionalSources: [{"sourceId": "transcript-techniques", "locations": ["6:01–8:58"]}]
 ---
 
-## Da significado a cada enlace importante
+## Qué representa un mapa mental
 
-Imagina un mapa con «derivada, pendiente, límite, reglas». Reconoces las palabras, pero las líneas aún no explican la relación. Sustituye una línea vaga por una proposición: una derivada es el límite de un cociente incremental, cuando existe. Ahora hay algo que explicar, comprobar y cuestionar.
+Un mapa mental organiza ideas relacionadas para que puedas examinar su estructura. En la transcripción, el trabajo importante consiste en decidir qué ideas importan, cómo dependen unas de otras y si la organización tiene sentido. Dibujar ramas es la parte visible. La transcripción no ofrece un algoritmo completo para dibujarlo; el procedimiento siguiente es nuestra interpretación práctica.
+
+Un mapa útil responde a una pregunta. «Aplicaciones lineales» es un tema; «¿Cómo decido si una aplicación es lineal?» da al mapa un propósito. Para calcular salidas organizarías el mismo tema de otra manera. La importancia depende de la tarea, no del tamaño de una palabra.
+
+## De palabras a relaciones
 
 <LearningFigure kind="mapping" />
 
-## Construye un mapa pequeño
+El ejemplo de la derivada distingue reconocer palabras cercanas de explicar su relación. Lee cada flecha como una frase: la derivada se obtiene como límite de cocientes incrementales, cuando existe; pendiente tangente y tasa instantánea son interpretaciones del resultado. El paso al límite explica la conexión. Colocar «límite» junto a «derivada» deja ese razonamiento sin expresar.
 
-1. Elige una pregunta central y sus límites.
-2. Enumera las ideas principales de memoria y contrástalas con la fuente.
-3. Nombra los enlaces: requiere, implica, es un ejemplo de o falla sin.
-4. Explica las conexiones principales y busca hipótesis que falten.
-5. Oculta el mapa y reconstruye su núcleo más adelante.
+## Ejemplo: aplicaciones lineales
 
-Unas pocas relaciones justificadas sirven más que un dibujo enorme y bonito que no puedes reconstruir.
+Anota las ideas que recuerdas: suma, escalado, cero, matrices, rectas. No conectes todas las parejas. Pregunta qué afirma cada enlace y si podrías justificarlo.
 
-Los mapas no sustituyen la recuperación. En el [estudio de Karpicke y Blunt](https://pubmed.ncbi.nlm.nih.gov/21252317/), recuperar lo aprendido superó a la actividad de mapas evaluada, también en preguntas de inferencia. Usa los mapas para organizar y comprobar relaciones, sin dejar de recordar y aplicar.
+<RelationMap />
+
+La primera relación procede de la definición. La segunda se demuestra: la aditividad da f(0) = f(0) + f(0); al restar f(0), queda f(0) = 0. La flecha inversa sería falsa: x² envía cero a cero pero no conserva la suma. Un mapa útil registra ese límite en vez de sugerir que todas las conexiones funcionan en ambos sentidos.
+
+Organiza después el mapa alrededor de la decisión: definición primero, consecuencias debajo y ejemplos junto a la propiedad que ilustran. «Matriz» necesita una relación precisa: elegidas bases en espacios de dimensión finita, una aplicación lineal tiene representación matricial. «Recta» sola es demasiado ambiguo como criterio.
+
+## Construcción y revisión
+
+1. Escribe una pregunta y limita el tema a lo que ayuda a responderla.
+2. Recuerda unas pocas ideas antes de abrir la fuente. Señala la incertidumbre sin inventar enlaces.
+3. Agrupa definiciones, consecuencias, ejemplos y métodos. Mueve elementos si otra agrupación explica mejor.
+4. Da dirección y significado a las flechas importantes: «implica», «requiere» o «es un ejemplo de». Lee cada conexión completa como una frase.
+5. Justifica cada enlace. Añade condiciones o contraejemplos cuando cambien la afirmación.
+6. Contrasta el mapa con la fuente del curso. Corrige la estructura además de las etiquetas.
+7. Aparta el mapa y reconstruye sus relaciones principales. Explica una y resuelve un problema relacionado sin mirar.
+
+Tachar un enlace o dejar una interrogación puede ser útil: identifica algo por resolver. Debes poder explicar las conexiones principales, su dirección y sus límites.
+
+<Exercise question="Un mapa contiene ‘f(0) = 0 → f es lineal’. ¿Cómo lo corregirías?">
+
+Invierte la implicación y señala la condición necesaria: ser lineal implica f(0) = 0. Conserva x² como contraejemplo a la flecha original. Para demostrar linealidad hay que comprobar suma y escalado en todo el dominio; pasar el test del cero no basta.
+
+</Exercise>
+
+Mapas y recuperación cumplen funciones distintas. El estudio citado de [Karpicke y Blunt (2011)](https://pubmed.ncbi.nlm.nih.gov/21252317/) encontró una ventaja para recuperar lo aprendido frente a la actividad de mapas evaluada. Un dibujo cuidado por sí solo no demuestra aprendizaje. Comprueba lo que puedes reconstruir y usar después.

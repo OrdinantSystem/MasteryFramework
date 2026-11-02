@@ -38,3 +38,17 @@ Nach Gesetzen 2 und 5 sind A und ¬¬A beide Komplemente von ¬A. Eindeutigkeit 
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
 Im mittleren Schritt wird 9a rückwärts mit ¬A und ¬B angewendet. Die Beweisreihenfolge lautet Eindeutigkeit → 9a und 10 → 9b.
+
+## Die Komplementstrategie
+
+Um ¬(A ∨ B) zu bestimmen, wird nicht vorausgesetzt, dass Negation sich verteilt. Stattdessen prüfen wir für einen Kandidaten Y die beiden Eigenschaften, die ein Komplement eindeutig bestimmen. Die erste Kette schließt gemeinsames Gelten aus, die zweite zeigt vollständige Abdeckung. Beide sind nötig. Für doppelte Negation vergleicht man direkt die beiden Komplemente von ¬A. Das zweite De-Morgan-Gesetz folgt dann aus bereits bewiesenen Ergebnissen ohne Zirkelschluss.
+
+## Eine zusammengesetzte Aussage negieren
+
+Die bewiesenen Identitäten erlauben nun das Umformen einer negierten Aussage ohne Wahrheitstafel.
+
+<Exercise question="Negiere „A gilt und mindestens eines von B oder C gilt“.">
+
+Die Aussage ist A ∧ (B ∨ C). Ihre Negation ist ¬A ∨ ¬(B ∨ C), also ¬A ∨ (¬B ∧ ¬C). Das innere ODER wird beim Negieren zu UND. Nur alle Buchstaben zu negieren würde die Klammerung verfehlen.
+
+</Exercise>

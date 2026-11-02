@@ -1,5 +1,6 @@
 /** Developer catalog. Keep examples executable in pages/library.astro. */
 export const assets = [
+ {id:'relation-map',name:'Labeled concept relationships',purpose:'Distinguish definition, consequence, and a failed converse in a source-checked map.',example:'<RelationMap />'},
  {id:'learning-cycle',name:'Learning process graph',purpose:'Localized branching process with explicit repair and delayed-review loops; compact screens use the same node/edge data as a readable list.',example:'<ProcessDiagram preset="cycle" id="example-cycle" />'},
  {id:'learning-mapping',name:'Relational map comparison',purpose:'Compare related words with justified, named relationships.',example:'<LearningFigure kind="mapping" />'},
  {id:'learning-methods',name:'Four method roles',purpose:'Give each method a job without presenting opinion tiers as scientific scores.',example:'<LearningFigure kind="methods" />'},

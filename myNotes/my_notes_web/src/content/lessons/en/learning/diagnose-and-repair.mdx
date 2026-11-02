@@ -5,9 +5,9 @@ sourceId: "learning-protocol"
 sourcePages: []
 sourceLocations: ["02-protocols/04-Error-Diagnosis.md"]
 locale: "en"
-title: "Find the first gap, then repair it"
-navTitle: "Error diagnosis"
-description: "Make feedback specific enough to change the next attempt."
+title: "Error Analysis"
+navTitle: "Error Analysis"
+description: "Types of error and the reasoning behind a targeted correction."
 order: 9
 kind: "concept"
 status: "published"
@@ -16,13 +16,13 @@ prerequisites: ["topic-session"]
 thumbnail: "feedback"
 ---
 
-## Keep the attempt visible
+## The original attempt
 
 <ProcessDiagram preset="repair" id="repair-process" />
 
 Do not replace a mistaken attempt immediately with a polished solution. Keep the exact work and locate the first step that fails or lacks justification. The diagnosis is a hypothesis to test, not a claim to know what was happening in someone’s mind.
 
-## Match the repair to the difficulty
+## Types of error
 
 | Difficulty | Ask | Next action |
 |---|---|---|
@@ -35,3 +35,7 @@ Do not replace a mistaken attempt immediately with a polished solution. Keep the
 | Prerequisite | Which earlier idea is missing? | Teach it, then return |
 
 A useful reply says what remains valid, identifies the first issue, suggests a minimal repair, and gives a new verification task. “Practise more” is not yet a diagnosis. Mark a gap repaired after a different independent attempt succeeds; test again later before claiming durability.
+
+## Example diagnosis
+
+A student concludes that a matrix is invertible because none of its entries is zero. The problem is not arithmetic: the proposed criterion is false. The matrix with all four entries equal to 1 has dependent columns and determinant zero. Feedback should correct the criterion and ask the student to inspect a different matrix. Repeating a determinant algorithm without addressing the original claim would leave the misconception unexplained.

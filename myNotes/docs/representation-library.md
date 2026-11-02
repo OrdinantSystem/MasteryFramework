@@ -106,3 +106,5 @@ Pure truth functions and exhaustive comparisons live in src/lib/interactive/logi
 ## Learning & Teaching assets
 
 ProcessDiagram, LearningFigure, QuestionLens, and StudyTemplate are public MDX components. See [learning-teaching.md](learning-teaching.md) for preset names, localized data, desktop/compact behavior, template parity, attribution rules, and verification. The executable gallery covers process graphs, method roles, relational maps, practice mixing, review spacing, six cognitive question types, and blank template downloads. These share site tokens and do not introduce a framework dependency.
+
+RelationMap is a static localized example of named relations in a linearity concept map. Its three rows distinguish a definition, a consequence, and a failed converse, with textual labels as well as colors. It is centrally registered and demonstrated in /library/. Use the existing Flow component for a justified linear reasoning sequence; do not make every graph a one-way chain when relationships branch or fail in reverse.

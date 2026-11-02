@@ -1926,3 +1926,5 @@ h1 {
 .map-fork{display:block;width:100%;height:30px}.learning-mapping .map-branches{border:0;margin:0;padding:0}
 
 .process-mobile ul{list-style:none!important;padding-left:0!important}.process-mobile ul:empty{display:none}
+
+.relation-map{padding:1.2rem;border:1px solid var(--line);border-radius:8px;background:var(--panel);margin:2rem 0}.relation-row{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;gap:12px;margin:12px 0;text-align:center}.relation-row strong{padding:12px;border:1px solid var(--accent);border-radius:5px;background:var(--tint);font-size:.95rem}.relation-row>span{font-size:.8rem;color:var(--secondary)}.relation-row.boundary strong{border-color:var(--purple);background:var(--purple-tint)}.relation-map figcaption{font-size:.82rem;color:var(--muted);margin-top:1rem}@media(max-width:600px){.relation-row{grid-template-columns:1fr;gap:5px;margin:20px 0}.relation-row>span{padding:2px}}

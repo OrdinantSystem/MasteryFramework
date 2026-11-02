@@ -5,9 +5,9 @@ sourceId: "learning-protocol"
 sourcePages: []
 sourceLocations: ["02-protocols/04-Error-Diagnosis.md"]
 locale: "de"
-title: "Die erste Lücke finden und schließen"
-navTitle: "Fehlerdiagnose"
-description: "Rückmeldungen so konkret machen, dass der nächste Versuch anders wird."
+title: "Fehleranalyse"
+navTitle: "Fehleranalyse"
+description: "Fehlertypen und die Begründung gezielter Korrekturen."
 order: 9
 kind: "concept"
 status: "published"
@@ -16,13 +16,13 @@ prerequisites: ["topic-session"]
 thumbnail: "feedback"
 ---
 
-## Den Versuch sichtbar lassen
+## Der ursprüngliche Versuch
 
 <ProcessDiagram preset="repair" id="repair-process" />
 
 Ersetze einen fehlerhaften Versuch nicht sofort durch eine perfekte Lösung. Bewahre die genaue Arbeit auf und finde den ersten falschen oder unbegründeten Schritt. Die Diagnose ist eine zu prüfende Vermutung, kein sicheres Wissen über fremdes Denken.
 
-## Die Korrektur an die Schwierigkeit anpassen
+## Fehlertypen
 
 | Schwierigkeit | Frage | Nächster Schritt |
 |---|---|---|
@@ -35,3 +35,7 @@ Ersetze einen fehlerhaften Versuch nicht sofort durch eine perfekte Lösung. Bew
 | Grundlage | Welche frühere Idee fehlt? | Erarbeiten, dann zurückkehren |
 
 Eine hilfreiche Antwort benennt Gültiges, die erste problematische Stelle, eine minimale Korrektur und eine neue Prüfaufgabe. „Mehr üben“ ist noch keine Diagnose. Markiere eine Lücke erst nach einem erfolgreichen anderen Versuch ohne Hilfe als geschlossen; prüfe später erneut, bevor du dauerhaften Erfolg annimmst.
+
+## Beispieldiagnose
+
+Eine Person erklärt eine Matrix für invertierbar, weil kein Eintrag null ist. Das Problem ist keine Rechenpanne, sondern ein falsches Kriterium. Die 2×2-Matrix mit lauter Einsen hat abhängige Spalten und Determinante null. Feedback korrigiert das Kriterium und lässt eine andere Matrix prüfen. Nur den Determinantenalgorithmus zu wiederholen würde den ursprünglichen Irrtum nicht erklären.

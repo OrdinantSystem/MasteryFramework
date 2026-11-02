@@ -74,3 +74,9 @@ Preserve its stable key. Update all affected languages and linked examples. A so
 Analysis and later subjects must set course explicitly. Add new courses through the registries described in source-ingestion.md; keep existing routes stable. A lesson combining several PDFs uses one primary sourceId/sourcePages plus additionalSources: [{sourceId: registered-id, pages: [1]}]. Do not invent unrelated calculus content simply because the course is named Analysis: these six sources currently teach foundational logic and proof.
 
 Learning methodology lives in {locale}/learning/ with course: learning. Text sources need sourceLocations with real sections/timestamps and sourcePages: []; never invent PDF page numbers. additionalSources text entries use {sourceId, locations}. The source kind and course are validated; counterparts must match. Learning & Teaching content follows docs/learning-teaching.md, including attribution and distinctions between source claims, our protocol, and evidence.
+
+## Explanatory depth and titles
+
+Use plain subject titles such as Bloom’s Taxonomy, Mind Maps, and Error Analysis. Headings identify the content rather than make promises to the reader. Develop a representative example: identify the question, show the intermediate reasoning, explain why the selected step helps, and test a boundary or changed case where useful. For learning methods show an actual attempt, diagnosis, correction, and independent follow-up. Formal proof chains need strategy and justification in prose, even when every equality is correct. A diagram should be introduced and interpreted. Do not add length, section counts, or exercises merely to meet a quota.
+
+Mind-map lessons must distinguish the speaker’s relational-thinking argument from our proposed procedure. Teach a bounded question, hierarchy, named directed links, conditions, source checking, reconstruction, and application. A map’s appearance is not evidence that its relationships are understood.

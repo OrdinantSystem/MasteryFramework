@@ -38,3 +38,17 @@ By laws 2 and 5, A and ¬¬A are both complements of ¬A. Uniqueness gives ¬¬A
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
 In the middle step apply 9a backward with the inputs ¬A and ¬B. The proof order is uniqueness → 9a and 10 → 9b.
+
+## The complement strategy
+
+To identify ¬(A ∨ B), we do not assume that negation distributes. Instead propose a candidate Y and check the two properties that uniquely identify a complement. The first chain proves that X and Y never hold together; the second proves they cover every case. This is why both chains are needed. For double negation the same method is shorter: compare the two complements of ¬A directly. The second De Morgan identity then follows from already established results, avoiding a circular argument.
+
+## Negating a compound claim
+
+The proved identities now let us transform a negated statement without building a truth table.
+
+<Exercise question="Negate “A holds and at least one of B or C holds”.">
+
+The statement is A ∧ (B ∨ C). Its negation is ¬A ∨ ¬(B ∨ C), hence ¬A ∨ (¬B ∧ ¬C). The inner OR becomes AND when negated; merely negating all three letters would miss the grouping.
+
+</Exercise>

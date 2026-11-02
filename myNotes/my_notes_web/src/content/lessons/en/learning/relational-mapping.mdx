@@ -5,9 +5,9 @@ sourceId: "learning-method"
 sourcePages: []
 sourceLocations: ["§2.1 Relational concept mapping"]
 locale: "en"
-title: "Mind mapping: make the relationships visible"
-navTitle: "Relational mapping"
-description: "A useful connection says something you can explain and check."
+title: "Mind Maps"
+navTitle: "Mind Maps"
+description: "Concepts, hierarchy, directed relationships, and checks against the source."
 order: 3
 kind: "concept"
 status: "published"
@@ -17,20 +17,44 @@ thumbnail: "concept-map"
 additionalSources: [{"sourceId": "transcript-techniques", "locations": ["6:01–8:58"]}]
 ---
 
-## Give each important link a meaning
+## What a mind map represents
 
-Imagine looking at a map labeled “derivative, slope, limit, rules”. You recognize the words, but the lines do not yet tell you how they fit. Replace a vague line with a short proposition: a derivative is the limit of a difference quotient, when that limit exists. Now there is something to explain, verify, and challenge.
+A mind map puts related ideas on a page so that you can inspect their organization. In the transcript, the important work is deciding which ideas matter, how they depend on each other, and whether the structure makes sense. Drawing branches is only the visible part of that work. The transcript does not provide a complete drawing algorithm; the procedure below is our practical interpretation.
+
+A useful map answers a question. “Linear maps” is a topic; “How can I decide whether a map is linear?” gives the map a purpose. A map for calculating outputs would organize the same topic differently. Importance depends on the task, not on how large a word looks on the page.
+
+## From a list of words to relationships
 
 <LearningFigure kind="mapping" />
 
-## Build a small map yourself
+The derivative example above shows the difference between recognizing nearby words and explaining their relationship. Read each arrow as a sentence. A derivative is obtained as a limit of difference quotients, when that limit exists; tangent slope and instantaneous rate are interpretations of that result. The limiting operation explains the connection. Merely putting “limit” beside “derivative” leaves that reasoning unwritten.
 
-1. Choose one central question and its boundaries.
-2. List the main ideas from memory, then check the source.
-3. Label links: requires, implies, is an example of, or fails without.
-4. Explain the most important links and look for missing assumptions.
-5. Hide the map and rebuild its core later.
+## Worked example: linear maps
 
-A few justified relationships are more useful here than a large, polished drawing you cannot reconstruct.
+Write down the ideas you remember: addition, scaling, zero, matrices, straight lines. Do not connect every pair. Ask what each proposed link asserts, and whether you could justify it.
 
-Mapping does not replace retrieval. In [Karpicke and Blunt’s study](https://pubmed.ncbi.nlm.nih.gov/21252317/), retrieval practice outperformed the tested concept-mapping activity, including on inference questions. Use maps to organize and test relationships, and still practise recalling and applying them.
+<RelationMap />
+
+The first relation comes from the definition of linearity. The second can be proved: additivity gives f(0) = f(0) + f(0), so subtracting f(0) gives f(0) = 0. The reverse arrow would be wrong: x² sends zero to zero but does not preserve addition. A useful map records that boundary instead of implying that every connection works in both directions.
+
+Now organize the map around the decision you need to make. Put the definition first, its consequences below it, and examples beside the property they illustrate. “Matrix” belongs only with a stated relationship: after bases are chosen in finite-dimensional spaces, a linear map has a matrix representation. “Straight line” alone is too ambiguous to use as a criterion.
+
+## Constructing and checking a map
+
+1. Write one question and limit the topic to what helps answer it.
+2. Recall a small set of ideas before opening the source. Mark uncertain items rather than inventing links.
+3. Group definitions, consequences, examples, and methods. Move items when a different grouping explains them better.
+4. Give each important arrow a direction and a phrase such as “implies”, “requires”, or “is an example of”. Read the entire connection as a sentence.
+5. Justify each connection. Add a condition or a counterexample where it changes the claim.
+6. Compare the map with the course source. Correct the structure, not only the spelling of the labels.
+7. Put it away and reconstruct the main relationships. Explain one of them and solve a related problem without looking.
+
+A crossed-out link or a question mark can be useful: it identifies something to resolve. A finished-looking map is not the objective. You should be able to explain its main links, their direction, and their limits.
+
+<Exercise question="A map contains the arrow ‘f(0) = 0 → f is linear’. How would you repair it?">
+
+Reverse the implication and label it as a necessary condition: linearity implies f(0) = 0. Keep x² as a counterexample to the original arrow. To establish linearity, check addition and scaling on the whole domain; passing the zero test alone is insufficient.
+
+</Exercise>
+
+Mapping and retrieval serve different tasks. The supplied research reference, [Karpicke and Blunt (2011)](https://pubmed.ncbi.nlm.nih.gov/21252317/), found an advantage for retrieval over the particular concept-mapping activity studied. It does not make a carefully drawn map evidence of learning by itself. Check what you can reconstruct and use afterwards.

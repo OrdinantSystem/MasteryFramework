@@ -14,8 +14,10 @@ import ProcessDiagram from './ProcessDiagram.astro';
 import LearningFigure from './LearningFigure.astro';
 import QuestionLens from './QuestionLens.astro';
 import StudyTemplate from './StudyTemplate.astro';
+import RelationMap from './RelationMap.astro';
 export const learningComponents = {
   Math,
+  RelationMap,
   StudyTemplate,
   ProcessDiagram,
   LearningFigure,

@@ -32,3 +32,17 @@ Use absorption (4), then complement (5). These establish 7a and 7b before they a
 <Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
 
 Distributivity is used backward in each chain. Duality exchanges ∧ with ∨ and 0 with 1; the second calculation is shown explicitly so every permitted step can be checked.
+
+## How the proof is found
+
+The target A ∨ A looks too small for the allowed laws to help. Multiplying by 1 preserves its value but creates a place to substitute A ∨ ¬A. Now the two factors share A, so reverse distributivity combines them into A ∨ (A ∧ ¬A). The complement removes the second part. This is a deliberate expansion followed by simplification, not a guess that each line should get shorter. H₁ and H₂ justify that expansion without assuming idempotence.
+
+## Practice with the starting laws
+
+Keep the permitted rules explicit in this short derivation.
+
+<Exercise question="Reduce (B ∧ A) ∨ A using only laws 2 and 4.">
+
+Commutativity gives A ∨ (A ∧ B). Absorption gives A. Commutativity is used for both the outer disjunction and the inner conjunction; no idempotence is needed.
+
+</Exercise>

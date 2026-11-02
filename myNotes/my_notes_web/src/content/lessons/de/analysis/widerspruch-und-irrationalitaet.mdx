@@ -30,3 +30,16 @@ Jede rationale Zahl besitzt eine vollständig gekürzte Darstellung. Diese Wahl 
 <Math tex="p^2=2q^2\Longrightarrow p=2k\Longrightarrow4k^2=2q^2\Longrightarrow q^2=2k^2\Longrightarrow q=2\ell" display />
 
 Das Paritätslemma rechtfertigt jeweils den Schluss vom geraden Quadrat auf die gerade Zahl. Also teilt 2 sowohl p als auch q, im Widerspruch zur Teilerfremdheit. Daher ist √2 irrational. Alternativ nutzt man unendlichen Abstieg: Wiederholtes Halbieren ergäbe immer kleinere positive ganzzahlige Nenner, was nicht unbegrenzt möglich ist.
+
+## Die zwei Anwendungen der Parität
+
+Zuerst macht p² = 2q² das Quadrat p² gerade. Der Paritätssatz macht dann p gerade; deshalb gibt es ein ganzzahliges k mit p = 2k. Einsetzen ergibt 4k² = 2q². Nach Division durch 2 ist q² gerade und damit q gerade. Die Gleichung allein steht nicht im Widerspruch: Brüche wie 2/4 haben zwei gerade Einträge. Der Widerspruch betrifft die anfängliche Wahl ohne gemeinsamen Faktor. Darum muss diese Voraussetzung vor der Rechnung stehen.
+
+<Exercise question="Warum ist „p² gerade, also p gerade“ kein unbegründeter Rechenschritt?">
+
+Es verwendet die zuvor bewiesene Paritätsäquivalenz. Ohne sie müsste man zeigen, dass eine ungerade Zahl ein ungerades Quadrat hat.
+
+</Exercise>
+
+
+<Flow nodes={[{"label": "p² ist gerade", "tex": "p^2=2q^2", "detail": "Den angenommenen Bruch quadrieren."}, {"label": "p ist gerade", "tex": "p=2k", "detail": "Die Paritätsäquivalenz verwenden."}, {"label": "q ist gerade", "tex": "q^2=2k^2", "detail": "p = 2k einsetzen und erneut Parität nutzen."}, {"label": "Widerspruch", "tex": "2\\mid p,\\ 2\\mid q", "detail": "Der gekürzte Bruch hat den gemeinsamen Faktor 2."}]} caption="Jeder Pfeil braucht einen Grund; der Widerspruch betrifft die anfängliche gekürzte Darstellung." />
