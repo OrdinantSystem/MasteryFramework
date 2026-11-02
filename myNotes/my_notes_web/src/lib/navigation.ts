@@ -1,6 +1,6 @@
 import type { Locale } from "./i18n";
 type Label = Record<Locale, string>;
-export type CourseId="linear-algebra"|"analysis";
+export type CourseId="linear-algebra"|"analysis"|"learning";
 interface Chapter {
   course:CourseId;
   id: string;
@@ -94,10 +94,23 @@ export const chapters: Chapter[] = [
     ],
   },
 ];
-export const courses:{id:CourseId;title:Label;description:Label}[]=[
- {id:'linear-algebra',title:{en:'Linear Algebra I',de:'Lineare Algebra I',es:'Álgebra lineal I'},description:{en:'Linear maps, matrices, and the geometry and structure of their products.',de:'Lineare Abbildungen, Matrizen sowie Geometrie und Struktur ihrer Produkte.',es:'Transformaciones lineales, matrices y la geometría y estructura de sus productos.'}},
- {id:'analysis',title:{en:'Analysis I',de:'Analysis I',es:'Análisis I'},description:{en:'Mathematical language, logic, and the foundations of rigorous proof.',de:'Mathematische Sprache, Logik und die Grundlagen präziser Beweise.',es:'Lenguaje matemático, lógica y fundamentos de la demostración rigurosa.'}},
+export type AreaId='mathematics'|'learning-teaching';
+export const areas:{id:AreaId;title:Label;icon:'math'|'learning'}[]=[
+ {id:'mathematics',title:{en:'Mathematics',de:'Mathematik',es:'Matemáticas'},icon:'math'},
+ {id:'learning-teaching',title:{en:'Learning & Teaching',de:'Lernen & Lehren',es:'Aprendizaje y enseñanza'},icon:'learning'},
 ];
+export const areaFor=(id:AreaId)=>areas.find(a=>a.id===id)!;
+export const courses:{id:CourseId;area:AreaId;title:Label;description:Label}[]=[
+ {id:'linear-algebra',area:'mathematics',title:{en:'Linear Algebra I',de:'Lineare Algebra I',es:'Álgebra lineal I'},description:{en:'Linear maps, matrices, and the geometry and structure of their products.',de:'Lineare Abbildungen, Matrizen sowie Geometrie und Struktur ihrer Produkte.',es:'Transformaciones lineales, matrices y la geometría y estructura de sus productos.'}},
+ {id:'analysis',area:'mathematics',title:{en:'Analysis I',de:'Analysis I',es:'Análisis I'},description:{en:'Mathematical language, logic, and the foundations of rigorous proof.',de:'Mathematische Sprache, Logik und die Grundlagen präziser Beweise.',es:'Lenguaje matemático, lógica y fundamentos de la demostración rigurosa.'}},
+];
+courses.push({id:'learning',area:'learning-teaching',title:{en:'Learning methodology',de:'Lernmethodik',es:'Metodología del aprendizaje'},description:{en:'Build understanding, practise independently, and remember what you can use.',de:'Verständnis aufbauen, selbstständig üben und nutzbares Wissen behalten.',es:'Construye comprensión, practica con autonomía y recuerda lo que sabes usar.'}});
+const learningChapters:Chapter[]=[
+ {id:'learning-methods',course:'learning',title:{en:'Principles and methods',de:'Prinzipien und Methoden',es:'Principios y métodos'},description:{en:'Give each method a clear job: organize, explain, choose, and recall.',de:'Jeder Methode eine klare Aufgabe geben: ordnen, erklären, auswählen und abrufen.',es:'Da a cada método una función: organizar, explicar, elegir y recordar.'},groups:[{key:'orientation',title:{en:'Start with a purpose',de:'Mit einem Ziel beginnen',es:'Empieza con un propósito'},orders:[1,2]},{key:'methods',title:{en:'The four methods',de:'Die vier Methoden',es:'Los cuatro métodos'},orders:[3,4,5,6]}]},
+ {id:'learning-practice',course:'learning',title:{en:'The study workflow',de:'Der Lernablauf',es:'El proceso de estudio'},description:{en:'Turn the methods into attempts, feedback, and evidence you can revisit.',de:'Aus Methoden werden Versuche, Rückmeldungen und überprüfbare Ergebnisse.',es:'Convierte los métodos en intentos, comentarios y pruebas que puedas revisar.'},groups:[{key:'practice',title:{en:'Practise and repair',de:'Üben und verbessern',es:'Practicar y corregir'},orders:[7,8,9]},{key:'continuity',title:{en:'Evidence and continuity',de:'Nachweise und Kontinuität',es:'Evidencias y continuidad'},orders:[10,11,12,13]}]},
+ {id:'learning-transcripts',course:'learning',title:{en:'Transcript reading guides',de:'Lesehilfen zu den Transkripten',es:'Guías de lectura de las transcripciones'},description:{en:'Understand the four sources, their useful ideas, and what their claims leave open.',de:'Die vier Quellen, ihre brauchbaren Ideen und offenen Behauptungen verstehen.',es:'Entiende las cuatro fuentes, sus ideas útiles y las limitaciones de sus afirmaciones.'},groups:[{key:'readings',title:{en:'Read critically',de:'Kritisch lesen',es:'Leer con criterio'},orders:[14,15,16,17]}]},
+];
+chapters.push(...learningChapters);
 const analysisChapters:Chapter[]=[
  {id:'analysis-language',course:'analysis',title:{en:'Language and logic',de:'Sprache und Logik',es:'Lenguaje y lógica'},description:{en:'Read statements precisely, bind variables, and distinguish valid implications from their converses.',de:'Aussagen präzise lesen, Variablen binden und Implikationen von ihren Umkehrungen unterscheiden.',es:'Leer enunciados con precisión, ligar variables y distinguir implicaciones de sus recíprocas.'},groups:[
   {key:'language',title:{en:'Mathematical language',de:'Mathematische Sprache',es:'Lenguaje matemático'},orders:[1,2,3]},

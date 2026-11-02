@@ -1,0 +1,5 @@
+---
+interface Props {kind:'math'|'learning'}
+const {kind}=Astro.props;
+---
+<span class="subject-icon" aria-hidden="true">{kind==='math'?<svg viewBox="0 0 24 24"><path d="M18 4H6l7 8-7 8h12"/></svg>:<svg viewBox="0 0 24 24"><path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5Z"/></svg>}</span>

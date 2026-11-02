@@ -43,10 +43,16 @@ matrix.ts creates equations for arbitrary compatible matrices. MatrixProduct.ast
 
 ## Current boundaries
 
-The archive has two courses and 32 published lessons per language: 17 in Linear Algebra I and 15 in Analysis I. Chapters have localized labels, exact group membership, and source identities. The original Linear Algebra concept map stays scoped to its first chapter. New subjects extend the shared course registry and shell. Source identities and PDF page bounds are registered in src/lib/sources.ts and validated by the content schema. See source-ingestion.md for the multi-document workflow.
+The archive has three courses and 49 published lessons per language: 17 in Linear Algebra I, 15 in Analysis I, and 17 in learning methodology. Chapters have localized labels, exact group membership, and source identities. The original Linear Algebra concept map stays scoped to its first chapter. New subjects extend the shared course registry and shell. Source identities and PDF page bounds are registered in src/lib/sources.ts and validated by the content schema. See source-ingestion.md for the multi-document workflow.
 
 The original source is not public content. references/source/, generated files, dependency folders, and local runtime metadata are ignored. deployment/ contains a template only. Existing sibling websites remain separate and preserved.
 
 ## Multiple courses
 
 src/lib/navigation.ts owns course labels/descriptions and course-scoped chapter groups. sources.ts owns document identity, course, and page count. content.config.ts derives registered chapter/source enums, validates primary/additional provenance, and checks course membership. content.ts validates counterpart metadata, ordering, prerequisites, and cycles before route generation. pages/[...path].astro renders the archive directory, course overviews, published lessons, and search for every locale. SiteLayout receives courseId so breadcrumbs, language equivalents, active navigation, and footer stay course-specific. A course’s previous/next links never cross into another course.
+
+## Areas and text-source provenance
+
+navigation.ts now registers areas as well as courses. A course references a valid area; the archive and sidebar group only populated areas. No separate pages or shell are cloned for a new area. The generic lesson route prefix is the course id except for legacy Linear Algebra URLs, which remain /lessons/<key>/.
+
+The source catalog distinguishes pdf, markdown, and transcript kinds. Text sources use sourcePages: [] and nonempty sourceLocations (headings, exact file/section names, or actual timestamps). additionalSources supports pages and/or locations. The schema rejects fictitious text-source page numbers and missing text locations; counterpart checks include these locations. See learning-teaching.md for actual coverage and source identity mapping.

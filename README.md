@@ -6,7 +6,7 @@ University learning resources, study methods, and static learning websites.
 
 The current myNotes application is in [myNotes/my_notes_web](myNotes/my_notes_web/).
 It uses Astro, MDX, KaTeX, and Pagefind, with English, German, and Spanish lessons
-for Linear Algebra I and Analysis I. Start with [myNotes/README.md](myNotes/README.md)
+for Linear Algebra I, Analysis I, and learning methodology. Start with [myNotes/README.md](myNotes/README.md)
 for the design system, authoring guides, and agent instructions.
 
 Using Node 24:
@@ -25,11 +25,11 @@ the inactive workflow template and hosting instructions live with the applicatio
 
 ## Other material
 
-- `deep-learning-method/`: learning protocols, prompts, and note templates.
+- `Learning&Teaching/`: learning-method documents, four transcripts, and the `deep-learning-method/` protocols, prompts, and note templates.
 - `mastery-site/`: the earlier React website and its preserved legacy source.
 - `algebra-sheet/`: the earlier static algebra website. Its authored files live
   directly in `dist/`, so this particular directory is intentionally tracked.
-- Root Markdown documents: the learning framework and Bloom taxonomy notes.
+- The learning framework and Bloom taxonomy notes are preserved inside `Learning&Teaching/`.
 
 ## Repository conventions
 

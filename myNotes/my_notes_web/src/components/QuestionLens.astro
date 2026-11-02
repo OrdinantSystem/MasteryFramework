@@ -1,0 +1,12 @@
+---
+import {questionLenses} from '../lib/learning/questions';
+const l=Astro.locals.locale||'en';
+---
+<section class="question-lens" aria-label={{en:'Six ways to ask about one concept',de:'Sechs Fragen zu einem Begriff',es:'Seis formas de preguntar sobre un concepto'}[l]}>
+<p class="figure-label">{{en:'One topic · six kinds of thinking',de:'Ein Thema · sechs Denkaufgaben',es:'Un tema · seis formas de pensar'}[l]}</p><div class="lens-controls" hidden>{questionLenses.map((q,i)=><button type="button" data-lens={q.id} aria-pressed={i===0?'true':'false'}>{q.name[l]}</button>)}</div>
+{questionLenses.map(q=><section data-lens-panel={q.id}><h3>{q.name[l]}</h3><p>{q.prompt[l]}</p><small>{{en:'Look for',de:'Darauf achten',es:'Qué observar'}[l]}: {q.evidence[l]}</small></section>)}
+<p class="lens-note">{{en:'These are task types, not a proven ranking of learning effectiveness. Real tasks often combine them.',de:'Das sind Aufgabentypen, keine bewiesene Rangfolge der Lernwirksamkeit. Reale Aufgaben verbinden oft mehrere davon.',es:'Son tipos de tareas, no una clasificación demostrada de eficacia. Las tareas reales suelen combinarlos.'}[l]}</p>
+</section>
+<script>
+for(const root of document.querySelectorAll<HTMLElement>('.question-lens')){const controls=root.querySelector<HTMLElement>('.lens-controls')!;controls.hidden=false;const select=(id:string)=>{root.querySelectorAll<HTMLElement>('[data-lens-panel]').forEach(p=>p.hidden=p.dataset.lensPanel!==id);root.querySelectorAll<HTMLButtonElement>('[data-lens]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lens===id)))};controls.addEventListener('click',e=>{const b=(e.target as Element).closest<HTMLElement>('[data-lens]');if(b)select(b.dataset.lens!)});select('remember');}
+</script>

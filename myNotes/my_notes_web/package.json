@@ -12,7 +12,7 @@
     "build": "npm run check && npm run verify:library && npm run verify:content && ASTRO_TELEMETRY_DISABLED=1 astro build && pagefind --site dist && node scripts/verify.mjs",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1 --port 4321",
     "verify:library": "node scripts/verify-library.mjs",
-    "verify:content": "node scripts/verify-sheet-2-1.mjs && node scripts/verify-analysis.mjs"
+    "verify:content": "node scripts/verify-sheet-2-1.mjs && node scripts/verify-analysis.mjs && node scripts/verify-learning.mjs"
   },
   "dependencies": {
     "astro": "7.4.5",

@@ -102,3 +102,7 @@ When deriving TeX in JavaScript/TypeScript, use String.raw or escape backslashes
 - `<Interactive kind="logic" preset="nand" id="unique-id" />`: NOT/AND/OR selectors and binary inputs. Circuit diagrams show the negation bubble and reused wire outputs. AND needs two physical NAND gates; OR three. NOT ignores B.
 
 Pure truth functions and exhaustive comparisons live in src/lib/interactive/logic-model.ts; localized controls and circuit rendering live in LogicLab.astro. These bounded families add no dependency, React runtime, remote submission, or general expression evaluator. Both presets have server-rendered initial content and native keyboard-accessible buttons; JavaScript updates the circuit, formula, result, and selected row. The executable /library/ catalog includes all four new assets. Run verify:content for Boolean equivalence, NAND, complement uniqueness, parity, and Analysis-content checks.
+
+## Learning & Teaching assets
+
+ProcessDiagram, LearningFigure, QuestionLens, and StudyTemplate are public MDX components. See [learning-teaching.md](learning-teaching.md) for preset names, localized data, desktop/compact behavior, template parity, attribution rules, and verification. The executable gallery covers process graphs, method roles, relational maps, practice mixing, review spacing, six cognitive question types, and blank template downloads. These share site tokens and do not introduce a framework dependency.

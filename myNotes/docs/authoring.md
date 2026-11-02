@@ -11,6 +11,7 @@ Use matching stable filenames under src/content/lessons/en/, de/, and es/. Engli
 ```yaml
 ---
 locale: en
+course: linear-algebra
 chapter: sheet-1-1
 sourceId: sheet-1-1
 title: A clear concept title
@@ -71,3 +72,5 @@ Publishing status in content controls local/static output; it does not authorize
 Preserve its stable key. Update all affected languages and linked examples. A source correction may require correcting a preset, explanation, feedback, or recap as well. Review equivalent equations, then build and inspect the affected flow. Do not mark reviewed solely because generated equations or arithmetic tests pass.
 
 Analysis and later subjects must set course explicitly. Add new courses through the registries described in source-ingestion.md; keep existing routes stable. A lesson combining several PDFs uses one primary sourceId/sourcePages plus additionalSources: [{sourceId: registered-id, pages: [1]}]. Do not invent unrelated calculus content simply because the course is named Analysis: these six sources currently teach foundational logic and proof.
+
+Learning methodology lives in {locale}/learning/ with course: learning. Text sources need sourceLocations with real sections/timestamps and sourcePages: []; never invent PDF page numbers. additionalSources text entries use {sourceId, locations}. The source kind and course are validated; counterparts must match. Learning & Teaching content follows docs/learning-teaching.md, including attribution and distinctions between source claims, our protocol, and evidence.

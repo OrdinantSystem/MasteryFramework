@@ -1,9 +1,10 @@
 ---
 import {render} from 'astro:content';
+import AreaIcon from '../components/AreaIcon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import ConceptMap from '../components/ConceptMap.astro';
 import Thumbnail from '../components/Thumbnail.astro';
-import {courses,chaptersFor,courseFor,type CourseId} from '../lib/navigation';
+import {areas,areaFor,courses,chaptersFor,courseFor,type CourseId} from '../lib/navigation';
 import {learningComponents} from '../components/mdx';
 import {getLessons,courseUrl,lessonUrl,url} from '../lib/content';
 import {locales,strings,type Locale} from '../lib/i18n';
@@ -16,7 +17,7 @@ export async function getStaticPaths(){
   for(const course of courses){
    const lessons=all.filter(l=>l.data.course===course.id);
    paths.push({params:{path:`${prefix}${course.id}`},props:{locale,kind:'course',courseId:course.id,lessons}});
-   for(const lesson of lessons)paths.push({params:{path:`${prefix}${course.id==='analysis'?'analysis/':''}lessons/${lesson.key}`},props:{locale,kind:'lesson',courseId:course.id,lesson,lessons}});
+   for(const lesson of lessons)paths.push({params:{path:`${prefix}${course.id==='linear-algebra'?'':course.id+'/'}lessons/${lesson.key}`},props:{locale,kind:'lesson',courseId:course.id,lesson,lessons}});
   }
  }
  return paths;
@@ -32,11 +33,11 @@ const kinds={concept:t.concept,'worked-problem':t.worked,recap:t.recap,note:t.no
 ---
 <SiteLayout title={title} description={description} locale={locale} courseId={courseId} current={lesson?.key||(kind==='archive'?'index':kind)} headings={rendered?.headings||[]}>
  {kind==='archive'&&<>
-  <header class="index-heading"><span class="section-label">{t.mathematics.toUpperCase()}</span><h1>myNotes</h1><p class="lead">{t.archiveLead}</p></header>
-  <section class="chapter-index" aria-labelledby="courses"><h2 id="courses">{t.courses}</h2><ol class="lesson-list course-list">{courses.map(course=><li><div class="course-entry"><a class="course-main" href={courseUrl(course.id,locale)}><Thumbnail order={course.id==='analysis'?0:2} visual={course.id==='analysis'?'logic':undefined} locale={locale}/><div><h3>{course.title[locale]}</h3><p>{course.description[locale]}</p><small>{lessons.filter(l=>l.data.course===course.id).length} {t.count}</small></div><span class="index-arrow" aria-hidden="true">↗</span></a><nav class="course-chapter-links" aria-label={course.title[locale]}>{chaptersFor(course.id).map(c=><a id={c.id} href={`${courseUrl(course.id,locale)}#${c.id}`}>{c.title[locale]}</a>)}</nav></div></li>)}</ol></section>
+  <header class="index-heading"><span class="section-label">{(course?areaFor(course.area).title[locale]:t.archive).toUpperCase()}</span><h1>myNotes</h1><p class="lead">{t.archiveLead}</p></header>
+  {areas.filter(area=>courses.some(c=>c.area===area.id)).map(area=><section class="chapter-index" aria-labelledby={area.id}><h2 id={area.id}><AreaIcon kind={area.icon}/>{area.title[locale]}</h2><ol class="lesson-list course-list">{courses.filter(c=>c.area===area.id).map(course=><li><div class="course-entry"><a class="course-main" href={courseUrl(course.id,locale)}><Thumbnail order={course.id==='linear-algebra'?2:0} visual={course.id==='analysis'?'logic':course.id==='learning'?'learning-cycle':undefined} locale={locale}/><div><h3>{course.title[locale]}</h3><p>{course.description[locale]}</p><small>{lessons.filter(l=>l.data.course===course.id).length} {t.count}</small></div><span class="index-arrow" aria-hidden="true">↗</span></a><nav class="course-chapter-links" aria-label={course.title[locale]}>{chaptersFor(course.id).map(c=><a id={c.id} href={`${courseUrl(course.id,locale)}#${c.id}`}>{c.title[locale]}</a>)}</nav></div></li>)}</ol></section>)}
  </>}
  {kind==='course'&&course&&<>
-  <header class="index-heading"><span class="section-label">{t.mathematics.toUpperCase()}</span><h1>{course.title[locale]}</h1><p class="lead">{course.description[locale]}</p></header>
+  <header class="index-heading"><span class="section-label">{(course?areaFor(course.area).title[locale]:t.archive).toUpperCase()}</span><h1>{course.title[locale]}</h1><p class="lead">{course.description[locale]}</p></header>
   <p class="index-intro">{t.indexIntro}</p>
   <nav class="chapter-jumps" aria-label={t.contents}>{chaptersFor(course.id).map(c=><a href={`#${c.id}`}>{c.title[locale]}</a>)}</nav>
   {chaptersFor(course.id).map(chapter=><section class="chapter-index" aria-labelledby={chapter.id}><h2 id={chapter.id}>{chapter.title[locale]}<span class="index-total">{lessons.filter(l=>l.data.chapter===chapter.id).length} {t.count}</span></h2><p class="chapter-description">{chapter.description[locale]}</p>{chapter.id==='sheet-1-1'&&<ConceptMap locale={locale}/>}<ol class="lesson-list">{lessons.filter(l=>l.data.chapter===chapter.id).map(l=><li><a href={lessonUrl(l.key,locale,course.id)}><span class="index-number">{String(l.data.order).padStart(2,'0')}</span><Thumbnail order={l.data.order} visual={l.data.thumbnail} locale={locale}/><div><h3>{l.data.title}</h3><p>{l.data.description}</p></div><span class="index-arrow" aria-hidden="true">↗</span></a></li>)}</ol></section>)}

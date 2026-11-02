@@ -1,5 +1,12 @@
 /** Developer catalog. Keep examples executable in pages/library.astro. */
 export const assets = [
+ {id:'learning-cycle',name:'Learning process graph',purpose:'Localized branching process with explicit repair and delayed-review loops; compact screens use the same node/edge data as a readable list.',example:'<ProcessDiagram preset="cycle" id="example-cycle" />'},
+ {id:'learning-mapping',name:'Relational map comparison',purpose:'Compare related words with justified, named relationships.',example:'<LearningFigure kind="mapping" />'},
+ {id:'learning-methods',name:'Four method roles',purpose:'Give each method a job without presenting opinion tiers as scientific scores.',example:'<LearningFigure kind="methods" />'},
+ {id:'learning-practice',name:'Blocked and mixed practice',purpose:'Show problem-type selection and distinguish interleaving from changing question angles.',example:'<LearningFigure kind="interleaving" />'},
+ {id:'learning-spacing',name:'Review timeline',purpose:'Illustrative day labels with explicit adaptive-timing caveat.',example:'<LearningFigure kind="spacing" />'},
+ {id:'learning-bloom',name:'Question lens',purpose:'Change the cognitive demand for one topic; readable complete initial content without JavaScript.',example:'<QuestionLens />'},
+ {id:'learning-template',name:'Study template',purpose:'Show and download a blank localized Markdown template; no learner data is saved.',example:'<StudyTemplate kind="session" />'},
  {id:'logic',name:'Implication comparison',purpose:'Compare all four assignments and distinguish global equivalence from one matching row.',example:'<Interactive kind="logic" preset="implication" id="logic-example" />'},
  {id:'nand',name:'NAND circuits',purpose:'Inspect shared outputs and build NOT, AND, OR with live Boolean inputs.',example:'<Interactive kind="logic" preset="nand" id="nand-example" />'},
  {id:'number-domains',name:'Number domains',purpose:'Nested number sets with irrational and non-real regions.',example:'<NumberDomains />'},

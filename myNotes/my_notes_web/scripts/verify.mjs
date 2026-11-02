@@ -216,6 +216,8 @@ for (const state of [
       .includes("katex-error"),
   );
 }
+const {courses}=await import('../src/lib/navigation.ts');
+const courseIds=courses.map(c=>c.id);
 const lessonSets = Object.fromEntries(
   await Promise.all(
     ["en", "de", "es"].map(async (locale) => {
@@ -234,7 +236,7 @@ const lessonSets = Object.fromEntries(
 );
 assert.equal(
   pages.length,
-  3 * (4 + lessonSets.en.length) + 11,
+  3 * (2 + courseIds.length + lessonSets.en.length) + 11,
   "Expected localized archive/course indexes/search/lessons, 404, library, and nine legacy redirects",
 );
 for (const locale of ["en", "de", "es"]) {
@@ -266,15 +268,15 @@ for (const locale of ["en", "de", "es"]) {
   );
   assert.equal(
     (landing.match(/class="lesson-thumbnail/g) || []).length,
-    2,
+    courseIds.length,
     `One visual preview per published lesson in ${locale}`,
   );
-  for(const course of ["analysis","linear-algebra"]){const overview=await readFile(path.join(root,prefix,course,"index.html"),"utf8");assert.equal((overview.match(/class="lesson-thumbnail/g)||[]).length,entries.filter(f=>f.startsWith("analysis/")===(course==="analysis")).length);}
+  for(const course of courseIds){const overview=await readFile(path.join(root,prefix,course,"index.html"),"utf8");assert.equal((overview.match(/class="lesson-thumbnail/g)||[]).length,entries.filter(f=>course==='linear-algebra'?!f.includes('/'):f.startsWith(course+'/')).length);}
   for (const filename of entries) {
-    const analysis=filename.startsWith("analysis/");
+    const course=filename.includes('/')?filename.split('/')[0]:'linear-algebra';
     const key = path.basename(filename).replace(/\.mdx?$/, "");
     const html = await readFile(
-      path.join(root, prefix, analysis?"analysis":"", "lessons", key, "index.html"),
+      path.join(root, prefix, course==='linear-algebra'?'':course, "lessons", key, "index.html"),
       "utf8",
     );
     assert.ok(html.includes(`lang="${locale}"`));

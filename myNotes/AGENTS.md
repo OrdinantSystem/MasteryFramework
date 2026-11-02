@@ -8,6 +8,7 @@ Applies to this entire folder. Read this file and DESIGN-SYSTEM.md first. The so
 - docs/architecture.md: source map and build flow.
 - docs/authoring.md: content metadata, prose, translation, and review.
 - docs/representation-library.md: existing assets, preset contracts, and extensions.
+- docs/learning-teaching.md: learning-methodology coverage, transcript identities, process diagrams, and evidence boundaries.
 - docs/development.md: commands, verification, navigation, and hosting.
 - docs/decisions.md: accepted architectural choices.
 

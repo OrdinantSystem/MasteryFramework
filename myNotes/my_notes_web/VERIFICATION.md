@@ -1,3 +1,18 @@
+# Learning & Teaching update · 2 November 2026
+
+- Added a distinct knowledge area with a book-outline icon and one methodology course: 17 lessons in each of English, German, and Spanish. Four separate reading guides cover the four supplied transcripts; source identities distinguish the similarly named Spanish files.
+- Read the source modules, 17-file protocol collection, and transcripts under Learning&Teaching/. Used all seven supplied visual references to guide code-native method comparisons, a branching learning cycle, relational map, Feynman feedback loop, practice mixing, review timeline, and problem-first comparison. No reference screenshot is copied into public learning content.
+- Production and /myNotes repository-prefix builds pass with 173 static pages and 147 indexed lesson pages across three languages. Astro reports 0 errors, 0 warnings, 0 hints. Generated verification checks 12,273 local links/assets/anchors, localized counterpart formulas and metadata, and 58 existing text-contrast pairs. Existing Linear Algebra/Analysis checks still pass.
+- New checks validate three process graphs (node bounds, reachability and labeled binary decisions), six localized Bloom question lenses, nine downloadable blank Markdown templates against visible template text, area/course membership, and all 51 lessons’ text-source provenance. Text sources use headings/timestamps, not fabricated page numbers.
+- Browser: all 17 English lessons checked at 1440×1000, all 51 localized lesson variants checked at 390×844; no page-wide horizontal overflow. All three process graphs checked for clipped translated nodes in EN/DE/ES; none found. Inspected dark desktop cycle/map diagrams and light compact layout; the same graph data produces a semantic small-screen list, also accessible to screen readers on desktop.
+- Exercised all six English question selectors, German Analyze and Spanish Create (keyboard activation), mobile menu, and language equivalence. Checked browser log contained no warnings/errors. JavaScript-free markup includes all six question panels; template disclosures use native details, and the site stores no personal learning records.
+- Prefix preview: German Bloom lesson switched to Spanish while retaining /myNotes; the Spanish session Markdown template downloaded successfully, and Spanish espaciado search returned relevant Learning and Mathematics results with course filters and prefixed links. Root build and preview restored after testing.
+- Updated contributor documentation, reusable gallery/catalog, source coverage and editorial boundaries. Preserved Jean’s source move to Learning&Teaching/; did not restore or stage the previous source paths.
+
+Human review of language and educational explanations remains pending; published lessons remain unreviewed. No full accessibility, physical-touch, or browser-print audit was performed. No commit, push, or deployment was performed for this update.
+
+---
+
 # Analysis I update · 2 November 2026
 
 - Visually inspected all six one-page PDF posters, using complete renders and enlarged columns for handwritten formulas and proof chains. Private originals and SHA-256 records remain in ignored references/source/.

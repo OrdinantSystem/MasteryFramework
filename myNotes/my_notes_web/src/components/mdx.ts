@@ -10,8 +10,16 @@ import Interactive from "./interactive/Interactive.astro";
 import VectorFigure from "./VectorFigure.astro";
 import NumberDomains from './NumberDomains.astro';
 import ExpressionTrees from './ExpressionTrees.astro';
+import ProcessDiagram from './ProcessDiagram.astro';
+import LearningFigure from './LearningFigure.astro';
+import QuestionLens from './QuestionLens.astro';
+import StudyTemplate from './StudyTemplate.astro';
 export const learningComponents = {
   Math,
+  StudyTemplate,
+  ProcessDiagram,
+  LearningFigure,
+  QuestionLens,
   NumberDomains,
   ExpressionTrees,
   MatrixComparison,
