@@ -1,0 +1,28 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "en"
+title: "Implication and contraposition"
+navTitle: "Implication and contraposition"
+description: "Keep the direction of a claim separate from its converse."
+order: 5
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen"]
+thumbnail: "implication"
+---
+
+## Change the statement, then test all cases
+
+<Interactive kind="logic" preset="implication" id="implication-lab" display />
+
+Agreement on the selected row is not enough for equivalence. Compare all four rows. The contrapositive always agrees with the original; the converse and inverse agree with each other but need not agree with the original.
+
+<Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
+
+## Divisibility gives a concrete example
+
+Write a | n when n = ak for some integer k. This is a statement of divisibility, not division. If 4 divides n, then 2 divides n. Contraposition says: if 2 does not divide n, then 4 does not divide n. The converse fails at n = 6: 2 divides 6 but 4 does not.

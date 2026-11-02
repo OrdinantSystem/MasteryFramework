@@ -1,0 +1,32 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-sheet-1-1"
+sourcePages: [1]
+locale: "en"
+title: "Sheet 1.1 · absorbing elements and constants"
+navTitle: "Sheet 1.1 · absorbing elements and constants"
+description: "Finish laws 7 and 8 using the identities already proved."
+order: 11
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["neutralitaet-und-idempotenz"]
+thumbnail: "identity-laws"
+---
+
+## 7c and 7d · The absorbing values
+
+<Math tex="\colA{A}\lor1\overset5=\colA{A}\lor(\colA{A}\lor\neg \colA{A})\overset1=(\colA{A}\lor \colA{A})\lor\neg \colA{A}\overset6=\colA{A}\lor\neg \colA{A}\overset5=1" display />
+
+<Math tex="\colA{A}\land0\overset5=\colA{A}\land(\colA{A}\land\neg \colA{A})\overset1=(\colA{A}\land \colA{A})\land\neg \colA{A}\overset6=\colA{A}\land\neg \colA{A}\overset5=0" display />
+
+Do not confuse neutral and absorbing values. OR with 0 preserves A; OR with 1 forces 1. AND with 1 preserves A; AND with 0 forces 0. Idempotence (6) is now available from the previous proof.
+
+## 8 · Negating constants
+
+<Math tex="1\overset5=0\lor\neg0\overset2=\neg0\lor0\overset{7a}=\neg0" display />
+
+<Math tex="0\overset5=1\land\neg1\overset2=\neg1\land1\overset{7b}=\neg1" display />
+
+The conclusions are ¬0 = 1 and ¬1 = 0. Each equality follows from a numbered law; no truth table or De Morgan rule has been assumed.

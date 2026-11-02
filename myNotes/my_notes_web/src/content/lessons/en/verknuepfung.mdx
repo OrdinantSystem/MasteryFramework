@@ -1,0 +1,71 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Composing linear maps
+navTitle: Composing maps
+description: Several successive maps can be combined into one matrix. Their order stays the same.
+order: 4
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrixmultiplikation]
+sourcePages: [1, 2, 4]
+---
+
+## Read the chain from the right
+
+The second exercise combines three linear substitutions. First, $B$ turns $(a,b,c)$ into $(x,y)$. Then $A$ produces $(u,v,w)$. Finally, $C$ gives $(p,q)$.
+
+<Flow variant="composition" />
+
+The product is $CAB$: the rightmost matrix acts first. The matrices are:
+
+<Math tex="\colB{B}=\begin{pmatrix}1&1&1\\3&-2&4\end{pmatrix},\quad \colA{A}=\begin{pmatrix}3&2\\7&-5\\-1&11\end{pmatrix},\quad \colC{C}=\begin{pmatrix}1&1&1\\3&-2&4\end{pmatrix}." display />
+
+$B$ and $C$ happen to have the same entries, but occupy different positions in the chain.
+
+## Combine two steps
+
+Substitute $x=a+b+c$ and $y=3a-2b+4c$ into $u=3x+2y$:
+
+<Math tex="u=3(a+b+c)+2(3a-2b+4c)=9a-b+11c." display />
+
+Calculate the other two outputs in the same way. Together:
+
+<Math tex="\colA{A}\colB{B}=\begin{pmatrix}9&-1&11\\-8&17&-13\\32&-23&43\end{pmatrix}." display />
+
+If we combine $A$ followed by $C$ instead, we obtain:
+
+<Math tex="\colC{C}\colA{A}=\begin{pmatrix}9&8\\-9&60\end{pmatrix}." display />
+
+## Parentheses change the grouping
+
+For compatible sizes, associativity gives $(CA)B=C(AB)$. Both sides describe the same chain. Only the intermediate matrix calculated first changes.
+
+<Math tex="\colC{C}\colA{A}\colB{B}=\begin{pmatrix}33&-7&41\\171&-129&231\end{pmatrix}\in\mathbb R^{2\times3}" display />
+
+Thus the full substitution is $p=33a-7b+41c$ and $q=171a-129b+231c$.
+
+<Note title="Regrouping is not reordering">Associativity lets you move parentheses, not matrices. $C(AB)$ equals $(CA)B$, but this does not imply equality with $ACB$.</Note>
+
+## Dimensions before calculation
+
+In the third exercise, products are checked by size alone. For $A:2\times1$, $B:1\times1$, $C:1\times3$, $D:2\times2$, and $E:3\times1$:
+
+| left × right | A | B | C | D | E |
+| --- | --- | --- | --- | --- | --- |
+| A | — | yes | yes | — | — |
+| B | — | yes | yes | — | — |
+| C | — | — | — | — | yes |
+| D | yes | — | — | yes | — |
+| E | — | yes | yes | — | — |
+
+The next part reuses the letters with new sizes: $A:3\times2$, $B:1\times3$, $C:2\times2$. Of the six orders using each matrix once, only $BAC$ is defined. Its chain is $\mathbb R^2\xrightarrow{C}\mathbb R^2\xrightarrow{A}\mathbb R^3\xrightarrow{B}\mathbb R$.
+
+<Math tex="\colA{A}\colC{C}=\begin{pmatrix}3&1\\0&2\\9&7\end{pmatrix},\qquad \colB{B}\colA{A}\colC{C}=\begin{pmatrix}-1&2&1\end{pmatrix}\begin{pmatrix}3&1\\0&2\\9&7\end{pmatrix}=\begin{pmatrix}6&10\end{pmatrix}." display />
+
+<Exercise question="Does matching every dimension make a composition automatically invertible?">
+No. Compatible dimensions only guarantee that the composition is defined. A real matrix has an inverse precisely when it is square and has full rank. A projection, for example, may lose information.
+</Exercise>

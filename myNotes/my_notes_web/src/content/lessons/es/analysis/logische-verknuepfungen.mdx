@@ -1,0 +1,37 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+locale: "es"
+title: "Conectivas lógicas"
+navTitle: "Conectivas lógicas"
+description: "Construye enunciados compuestos y distingue el «o» inclusivo."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "logic"
+---
+
+## Lee una fila cada vez
+
+| A | B | ¬A | A ∧ B | A ∨ B | A ⇒ B | A ⇔ B |
+|---|---|---|---|---|---|---|
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+
+Y exige ambas entradas. O inclusivo exige al menos una y admite ambas. NO invierte el valor de verdad. Una implicación solo falla con premisa verdadera y conclusión falsa. La equivalencia exige valores de verdad iguales, incluso si ambos son falsos.
+
+## Siempre, nunca o a veces
+
+Una tautología es verdadera en toda asignación, como A ∨ ¬A. Una contradicción es falsa en todas, como A ∧ ¬A. Una contingencia varía según la asignación. A ⇒ B es contingente, aunque sus casos con premisa falsa sean verdaderos.
+
+## Negar una implicación
+
+<Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
+
+Para refutar «si apruebo, invito a cenar», debo aprobar y no invitar. Negar ambas partes es una operación distinta.

@@ -1,0 +1,26 @@
+---
+import {graph} from '../../lib/geometry';
+import {strings} from '../../lib/i18n';
+import Math from '../Math.astro';
+interface Props {kind:'rotation'|'shear';id?:string}
+const {kind,id}=Astro.props,locale=Astro.locals.locale,t=strings(locale);
+const title=kind==='rotation'?t.rotationTitle:t.shearTitle;
+const formula=kind==='rotation'?'J=\\begin{pmatrix}0&-1\\\\1&0\\end{pmatrix},\\quad J\\binom21=\\binom{-1}2':'A_t=\\begin{pmatrix}1&t\\\\0&1\\end{pmatrix},\\quad (x,y)\\mapsto(x+ty,y)';
+const label=kind==='rotation'?t.power:t.shear;
+---
+<figure class="explorer" id={id}><div class="figure-heading"><span class="section-label">{t.try}</span><span class="live-dot">{t.interactive}</span></div><h3>{title}</h3>
+<parameter-explorer data-kind={kind} data-locale={locale}><div class="graph" data-graph set:html={graph(kind,1,1,title)}/><div class="explorer-controls"><div class="sliders"><label>{label}<output data-a-output>1</output><input aria-label={label} data-a type="range" min={kind==='rotation'?0:-2} max={kind==='rotation'?4:2} step={kind==='rotation'?1:.5} value="1"/></label></div><p class="explorer-result" data-result aria-live="polite">{kind==='rotation'?`J¹x = (−1, 2) · 90° ${t.rotationResult}`:`t = 1 · ${t.shearResult}`}</p><button class="reset" data-reset type="button">{t.reset} ↺</button></div><div class="explorer-equation"><Math tex={formula} display/></div></parameter-explorer>
+<figcaption>{kind==='rotation'?t.rotationCaption:t.shearCaption}</figcaption><noscript><p class="noscript-note">{t.noScript}</p></noscript></figure>
+<script>
+import {graph,rotate} from '../../lib/geometry';
+import {strings,type Locale} from '../../lib/i18n';
+class ParameterExplorer extends HTMLElement {
+ connectedCallback(){
+  if(this.dataset.ready)return;this.dataset.ready="true";
+  const kind=this.dataset.kind!,t=strings(this.dataset.locale as Locale),input=this.querySelector<HTMLInputElement>('[data-a]')!;
+  const update=()=>{const n=Number(input.value);this.querySelector('[data-graph]')!.innerHTML=graph(kind,n,1,kind==='rotation'?t.rotationTitle:t.shearTitle);this.querySelector('[data-a-output]')!.textContent=String(n);this.querySelector('[data-result]')!.textContent=kind==='rotation'?`J^${n}x = (${rotate(n).join(', ')}) · ${n*90}° ${t.rotationResult}`:`t = ${n} · ${t.shearResult}`};
+  input.addEventListener('input',update);this.querySelector('[data-reset]')!.addEventListener('click',()=>{input.value='1';update()});
+ }
+}
+if(!customElements.get('parameter-explorer'))customElements.define('parameter-explorer',ParameterExplorer);
+</script>

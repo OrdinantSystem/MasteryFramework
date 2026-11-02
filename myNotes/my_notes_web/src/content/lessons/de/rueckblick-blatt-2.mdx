@@ -1,0 +1,50 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Übungsblatt 2.1 auf einen Blick"
+navTitle: "Blatt 2.1: Überblick"
+description: "Formeln zusammen mit Voraussetzungen und Beweisideen wiederholen."
+order: 17
+kind: recap
+status: published
+reviewStatus: unreviewed
+prerequisites: ["produktinverse-und-isolieren"]
+sourcePages: [1, 2, 3, 4, 5, 6]
+thumbnail: sheet-recap
+---
+
+## Die wichtigsten Zusammenhänge
+
+<Flow nodes={[{"label": "Elementare Kippung", "tex": "T=I_n+\\lambda E_{ij}", "detail": "Eine Koordinate zu einer anderen addieren"}, {"label": "Endliches Produkt", "tex": "U=T_1\\cdots T_r", "detail": "Das leere Produkt ist erlaubt"}, {"label": "Folgerungen", "tex": "\\det U=1", "detail": "Invertierbar und orientierungserhaltend"}]} caption={"Jeder Faktor und seine Umkehrung ist eine zugelassene Kippung, sofern der entgegengesetzte Koeffizient erlaubt ist."} />
+
+| Zusammenhang | Formel |
+| --- | --- |
+| Umkehrung einer Kippung | <Math tex="(I_n+\lambda E_{ij})^{-1}=I_n-\lambda E_{ij}" /> |
+| Nebendiagonalpositionen | <Math tex="n(n-1)" /> |
+| Determinante in 2D | <Math tex="\det\begin{pmatrix}a&b\\c&d\end{pmatrix}=ad-bc" /> |
+| Produktdeterminante | <Math tex="\det(AB)=\det A\det B" /> |
+| Inverse Diagonalmatrix | <Math tex="\operatorname{diag}(d_i)^{-1}=\operatorname{diag}(d_i^{-1})" /> |
+| Involution | <Math tex="A^2=I_n\iff A^{-1}=A" /> |
+| Vorzeichenparität | <Math tex="\det D=(-1)^k" /> |
+| Inverses Produkt | <Math tex="(AB)^{-1}=B^{-1}A^{-1}" /> |
+| Umkehrung isolieren | <Math tex="MAN=I_n\Longrightarrow A^{-1}=NM" /> |
+
+
+## Die Voraussetzungen mitlernen
+
+- Bei einer Kippung gilt $i\ne j$.
+- Für die inverse Diagonalmatrix müssen alle $d_i\ne0$ sein.
+- Bei Vorzeichenmatrizen besitzt gerade Parität eine Konstruktion; ungerade Parität scheitert an Determinante −1.
+- Eindeutigkeit hängt von den erlaubten Faktoren ab. Bei R/L-Wörtern zuerst die Identität prüfen und $a=b$ dem R-Fall zuordnen.
+- Kippungsäquivalenz erlaubt die festgelegten Zeilen-/Spaltenadditionen, keine beliebigen Skalierungen.
+- Beim Kürzen steht die Inverse auf der Seite des gemeinsamen Faktors.
+
+## Zur vollständigen Erklärung zurückkehren
+
+[Kippungen](../elementare-kippungen/) · [Fläche und Orientierung](../determinante-und-orientierung/) · [Vorzeichenwechsel](../vorzeichen-und-kippungsprodukte/) · [Eindeutige Produkte](../eindeutige-matrixprodukte/) · [Äquivalenzbeispiele](../kippungsaequivalenz/) · [−I konstruieren](../minus-identitaet-aus-kippungen/) · [Produktinverse](../produktinverse-und-isolieren/)
+
+<Exercise question={"Kann eine Matrix eine invertierbare Involution sein, ohne durch Kippungen erzeugbar zu sein?"}>
+Ja: $\operatorname{diag}(1,-1)$ hat als Quadrat die Einheitsmatrix, aber Determinante −1. Jedes Kippungsprodukt hat hingegen Determinante 1.
+</Exercise>

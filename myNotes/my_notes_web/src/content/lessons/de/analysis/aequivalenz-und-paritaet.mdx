@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "de"
+title: "Äquivalenz und Parität"
+navTitle: "Äquivalenz und Parität"
+description: "Beide Richtungen beweisen und die passende Strategie wählen."
+order: 6
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["implikation-und-kontraposition"]
+thumbnail: "parity"
+---
+
+## Die Behauptung
+
+<Math tex="\forall n\in\mathbb Z:\quad 2\mid n\iff2\mid n^2" display />
+
+„Gerade“ bedeutet n = 2k mit ganzzahligem k. „Ungerade“ bedeutet n = 2k + 1. Eine Äquivalenz verlangt beide Richtungen; eine einzelne Implikation erledigt nur die Hälfte.
+
+## Hinrichtung: die Definition nutzen
+
+<Math tex="n=2k\quad\Longrightarrow\quad n^2=4k^2=2(2k^2)" display />
+
+Der Klammerausdruck ist ganzzahlig, also ist das Quadrat gerade.
+
+## Rückrichtung: Kontraposition nutzen
+
+<Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
+
+Eine ungerade Zahl hat ein ungerades Quadrat. Das beweist die Kontraposition von „Wenn das Quadrat gerade ist, ist die Zahl gerade“. Der Beweis gilt auch für negative ganze Zahlen und null; der Bereich darf nicht stillschweigend auf positive Zahlen eingeschränkt werden.

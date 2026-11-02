@@ -1,0 +1,66 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Kippungen und Scherungen
+navTitle: Kippungen & Scherungen
+description: Ein zusätzlicher Matrixeintrag kann gezielt eine Zeile oder Spalte verändern. Welche, hängt von der Seite der Multiplikation ab.
+order: 7
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrixmultiplikation]
+sourcePages: [3]
+---
+
+## Was verändert eine Kippmatrix?
+
+Die Matrix aus Aufgabe 5 ist fast die Einheitsmatrix. Nur an der Position $(2,3)$ steht zusätzlich eine $1$:
+
+<Math tex="\colA{A}=\begin{pmatrix}1&0&0\\0&1&1\\0&0&1\end{pmatrix}." display />
+
+Auf einen Vektor wirkt sie als $(x,y,z)\mapsto(x,y+z,z)$. Die zweite Koordinate erhält die dritte dazu. Die anderen bleiben unverändert.
+
+Das folgende ergänzende 2D-Modell zeigt denselben geometrischen Grundgedanken: Eine Koordinate wird um ein Vielfaches einer anderen verschoben.
+
+<Explorer kind="shear" />
+
+## Links multiplizieren verändert Zeilen
+
+Für die Beispielmatrix $B$ aus dem Blatt gilt:
+
+<Math tex="\colB{B}=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix},\qquad \colA{A}\colB{B}=\begin{pmatrix}1&2&3\\11&13&15\\7&8&9\end{pmatrix}." display />
+
+Die dritte Zeile wird zur zweiten addiert: $Z_2\leftarrow Z_2+Z_3$. Jede Spalte von $B$ wird dabei von $A$ transformiert; in jeder dieser Spalten ändert sich dieselbe Koordinate.
+
+## Rechts multiplizieren verändert Spalten
+
+Bei $BA$ ergibt sich dagegen:
+
+<Math tex="\colB{B}\colA{A}=\begin{pmatrix}1&2&5\\4&5&11\\7&8&17\end{pmatrix}." display />
+
+Jetzt wird die zweite Spalte zur dritten addiert: $S_3\leftarrow S_3+S_2$. Die Positionen $2$ und $3$ übernehmen bei der Spaltenoperation also andere Rollen als bei der Zeilenoperation.
+
+| Produkt | Verändertes Objekt | Operation |
+| --- | --- | --- |
+| $AB$ | zweite Zeile | $Z_2\leftarrow Z_2+Z_3$ |
+| $BA$ | dritte Spalte | $S_3\leftarrow S_3+S_2$ |
+
+## Die allgemeine Regel
+
+Sei $A_t=I_n+tE_{ij}$ mit $i\ne j$. Die Matrix $E_{ij}$ hat genau an Position $(i,j)$ eine $1$ und sonst nur Nullen. Für passende Größen gilt:
+
+<Math tex="\colA{A}_tB:\quad Z_i\leftarrow Z_i+tZ_j\qquad \colB{B}\colA{A}_t:\quad S_j\leftarrow S_j+tS_i." display />
+
+Die linke Multiplikation ist auch für rechteckige Matrizen mit $n$ Zeilen möglich. Die rechte benötigt dagegen $n$ Spalten. So ist im Blatt $AB'$ für eine $3\times2$-Matrix $B'$ definiert; $B'A$ ist es nicht.
+
+## Die Veränderung rückgängig machen
+
+Weil $i\ne j$ gilt $E_{ij}^2=0$. Deshalb ist die inverse Kippmatrix $A_t^{-1}=I_n-tE_{ij}$. Sie subtrahiert genau den zuvor addierten Anteil.
+
+<Math tex="(I_n+tE_{ij})(I_n-tE_{ij})=I_n-t^2E_{ij}^2=I_n." display />
+
+<Exercise question="Was macht die Linksmultiplikation mit I₃ − 2E₂₃? Wie machst du diese Änderung rückgängig?">
+Sie ersetzt $Z_2$ durch $Z_2-2Z_3$. Die inverse Operation addiert $2Z_3$ wieder zur zweiten Zeile. Die inverse Matrix ist $I_3+2E_{23}$.
+</Exercise>

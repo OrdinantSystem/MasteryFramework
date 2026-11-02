@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-sheet-1-1"
+sourcePages: [1]
+locale: "de"
+title: "Blatt 1.1 · Neutralität und Idempotenz"
+navTitle: "Blatt 1.1 · Neutralität und Idempotenz"
+description: "Zuerst die neutralen Elemente herleiten, um einen Zirkelschluss zu vermeiden."
+order: 10
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["boolesche-grundgesetze"]
+thumbnail: "identity-laws"
+---
+
+## Zwei Hilfsidentitäten aus Absorption
+
+Nutze Absorption (4), dann Komplement (5). Damit stehen 7a und 7b fest, bevor sie für Idempotenz (6) benutzt werden. Eine andere Beweisreihenfolge als die Aufgabennummerierung ist erlaubt; das zu beweisende Ergebnis vorauszusetzen nicht.
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\overset{5}=\colA{A}\lor0\quad\Longrightarrow\quad \colA{A}\lor0=\colA{A}\quad(H_1)" display />
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\overset{5}=\colA{A}\land1\quad\Longrightarrow\quad \colA{A}\land1=\colA{A}\quad(H_2)" display />
+
+## 6a · Wiederholtes ODER ändert nichts
+
+<Math tex="\begin{aligned}\colA{A}\lor \colA{A}&\overset{H_2}=(\colA{A}\lor \colA{A})\land1\\&\overset{5}=(\colA{A}\lor \colA{A})\land(\colA{A}\lor\neg \colA{A})\\&\overset{3}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\\&\overset{5}=\colA{A}\lor0\\&\overset{H_1}=\colA{A}\end{aligned}" display />
+
+## 6b · Die duale Rechnung
+
+<Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
+
+Distributivität wird in beiden Ketten rückwärts angewendet. Dualität vertauscht ∧ mit ∨ und 0 mit 1; die zweite Rechnung steht ausdrücklich da, damit jeder erlaubte Schritt geprüft werden kann.

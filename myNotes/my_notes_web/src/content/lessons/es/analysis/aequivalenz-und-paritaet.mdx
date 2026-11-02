@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "es"
+title: "Equivalencia y paridad"
+navTitle: "Equivalencia y paridad"
+description: "Demuestra ambas direcciones con la estrategia adecuada."
+order: 6
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["implikation-und-kontraposition"]
+thumbnail: "parity"
+---
+
+## La afirmación
+
+<Math tex="\forall n\in\mathbb Z:\quad 2\mid n\iff2\mid n^2" display />
+
+«Par» significa n = 2k para un entero k. «Impar» significa n = 2k + 1. Una equivalencia exige ambas direcciones; una sola implicación deja la mitad sin demostrar.
+
+## Ida: usa la definición
+
+<Math tex="n=2k\quad\Longrightarrow\quad n^2=4k^2=2(2k^2)" display />
+
+El término entre paréntesis es entero, por lo que el cuadrado es par.
+
+## Vuelta: usa contraposición
+
+<Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
+
+Un entero impar tiene cuadrado impar. Esto demuestra la contraposición de «si el cuadrado es par, el entero es par». También vale para enteros negativos y cero; no restrinjas tácitamente el dominio a los positivos.

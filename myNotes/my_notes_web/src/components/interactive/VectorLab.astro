@@ -1,0 +1,150 @@
+---
+import Math from '../Math.astro';
+import {initialLab,gridMarkup,sceneMarkup,toScreen,points,equation,det,sum,number,type LabKind} from '../../lib/interactive/vector-model';
+import {labCopy} from '../../lib/interactive/vector-copy';
+import {strings} from '../../lib/i18n';
+import '../../styles/vector-lab.css';
+import {vectorPresets,type VectorPreset,type VectorScenario} from '../../lib/interactive/vector-scenarios';
+import {labPlane} from '../../lib/interactive/vector-model';
+interface Props {kind?:LabKind;preset?:VectorPreset;scenario?:VectorScenario;id?:string}
+const {kind:legacyKind='combination',preset,scenario,id:explicitId}=Astro.props;
+const state=initialLab(scenario??vectorPresets[preset??(legacyKind==='rank'?'rank-collapse':'linear-combination')]);
+const kind=state.kind,id=explicitId??`vector-lab-${kind}`,locale=Astro.locals.locale;
+const c=labCopy(locale,state),t=strings(locale),text=state.scenario.text?.[locale];
+const title=text?.title??(kind==='combination'?c.combinationTitle:c.rankTitle);
+const prompt=text?.prompt??(kind==='combination'?c.combinationPrompt:c.rankPrompt);
+const cb=state.scenario.coefficients,vb=state.scenario.column;
+const names:Record<string,string>={a:c.first,b:c.second,result:c.output,column:c.column};
+const colors:Record<string,string>={a:'accent',b:'blue',result:'purple',column:'blue'};
+---
+<figure class="vector-lab explorer" id={id}>
+  <div class="figure-heading"><span class="section-label">{t.try}</span><span class="live-dot">{t.interactive}</span></div>
+  <h3>{title}</h3>
+  <p class="lab-prompt" id={`${id}-prompt`}>{prompt}</p>
+  <vector-lab data-kind={kind} data-locale={locale} data-scenario={JSON.stringify(state.scenario)}>
+    <div class="lab-toolbar">
+      <fieldset class="segmented"><legend>{c.context}</legend><button type="button" data-context="independent" aria-pressed="true">{c.independent}</button><button type="button" data-context="dependent" aria-pressed="false">{c.dependent}</button></fieldset>
+      {kind==='combination'&&<fieldset class="segmented"><legend>{c.view}</legend><button type="button" data-view="parallelogram" aria-pressed="true">{c.parallelogram}</button><button type="button" data-view="chain" aria-pressed="false">{c.chain}</button></fieldset>}
+    </div>
+    <div class="lab-plot">
+      <svg viewBox="0 0 640 410" role="group" aria-label={title} aria-describedby={`${id}-instructions`}>
+        <g set:html={gridMarkup(labPlane(state))}/><g data-scene set:html={sceneMarkup(state)}/>
+        <g data-handles>{Object.entries(points(state)).map(([key,p])=><g data-handle={key} tabindex="0" role="button" aria-label={`${names[key]} (${p.map(number).join(', ')})`} transform={`translate(${toScreen(p,labPlane(state)).join(',')})`} style={`--handle-color:var(--${colors[key]})`}><circle class="lab-hit" r="24"/><circle class="lab-tip" r="5"/></g>)}</g>
+      </svg>
+    </div>
+    <p class="lab-instructions" id={`${id}-instructions`}>{c.drag}</p>
+    <div class="lab-controls">
+      {kind==='combination'?<><label>{c.coefficientA}<input type="number" data-input="a" min={cb.min} max={cb.max} step={cb.step} value={state.a}/></label><label>{c.coefficientB}<input type="number" data-input="b" min={cb.min} max={cb.max} step={cb.step} value={state.b}/></label></>:<><label>{c.columnX}<input type="number" data-input="x" min={vb.min} max={vb.max} step={vb.step} value={state.v[0]}/></label><label>{c.columnY}<input type="number" data-input="y" min={vb.min} max={vb.max} step={vb.step} value={state.v[1]}/></label></>}
+      <output class="lab-readout" data-readout aria-live="polite">{kind==='combination'?`${c.sum} = (${sum(state).map(number).join(', ')})`:`${c.rank} 2 · ${c.determinant} ${det(state.u,state.v)}`}</output>
+    </div>
+    <div class="lab-equation" data-lab-equation><Math tex={equation(state)} display/></div>
+    <div class="lab-actions"><button class="lab-check" data-check type="button">{c.check}</button><button data-lab-reset type="button">{c.reset} ↺</button></div>
+    <p class="lab-feedback" data-feedback role="status" hidden></p>
+    <details class="lab-explanation"><summary>{c.explain}</summary><p>{text?.explanation??(kind==='combination'?c.combinationExplanation:c.rankExplanation)}</p></details>
+  </vector-lab>
+  <figcaption>{text?.caption??c.caption}</figcaption>
+  <noscript><p class="noscript-note">{c.noScript}</p></noscript>
+</figure>
+<script>
+  import katex from 'katex';
+  import {mathOptions} from '../../lib/math-options.mjs';
+  import {initialLab,points,toScreen,fromScreen,sceneMarkup,equation,sum,det,moveHandle,setContext,clampCoefficient,clampColumn,targetInSpan,labPlane,equal,number,type Vec2} from '../../lib/interactive/vector-model';
+  import {labCopy} from '../../lib/interactive/vector-copy';
+  import type {Locale} from '../../lib/i18n';
+  class VectorLab extends HTMLElement {
+    private resize?:ResizeObserver;
+    private cancelWork?:()=>void;
+    disconnectedCallback(){this.resize?.disconnect();this.cancelWork?.()}
+    connectedCallback() {
+      if(this.dataset.ready){this.resize?.observe(this.querySelector('svg')!);return;}
+      this.dataset.ready='true';
+      const scenario=JSON.parse(this.dataset.scenario!);
+      const kind=scenario.kind,locale=this.dataset.locale as Locale;
+      let state=initialLab(scenario);
+      const c=labCopy(locale,state);
+      let drag:string|null=null,pointer:number|null=null,frame=0;
+      this.cancelWork=()=>{if(frame)cancelAnimationFrame(frame);frame=0;drag=null;pointer=null};
+      const svg=this.querySelector<SVGSVGElement>('svg')!;
+      const feedback=this.querySelector<HTMLElement>('[data-feedback]')!;
+      const names:Record<string,string>={a:c.first,b:c.second,result:c.output,column:c.column};
+      const clearFeedback=()=>{feedback.hidden=true;feedback.textContent=''};
+      const render=()=>{
+        frame=0;
+        const plotWidth=svg.getBoundingClientRect().width||640;
+        const compact=plotWidth<420;
+        svg.setAttribute('viewBox',compact?'100 0 440 410':'0 0 640 410');
+        this.querySelector('[data-scene]')!.innerHTML=sceneMarkup(state);
+        const ps=points(state);
+        this.querySelectorAll<SVGGElement>('[data-handle]').forEach(handle=>{
+          const key=handle.dataset.handle!,p=ps[key],pixel=toScreen(p,labPlane(state));
+          handle.setAttribute('transform',`translate(${pixel.join(',')})`);
+          handle.querySelector('.lab-hit')!.setAttribute('r',String(Math.max(22,22*(compact?440:640)/plotWidth)));
+          handle.setAttribute('aria-label',`${names[key]} (${p.map(number).join(', ')})`);
+          // In head-to-tail mode the second contribution is drawn at a·u + b·v.
+          // Keep its input handle at b·v, shown by the dashed guide.
+        });
+        this.querySelectorAll<HTMLInputElement>('[data-input]').forEach(input=>{
+          const key=input.dataset.input!;
+          const value=key==='a'?state.a:key==='b'?state.b:key==='x'?state.v[0]:state.v[1];
+          if(document.activeElement!==input)input.value=number(value);
+        });
+        this.querySelectorAll<HTMLButtonElement>('[data-context]').forEach(button=>{
+          const independent=kind==='rank'?Math.abs(det(state.u,state.v))>1e-10:state.context==='independent';
+          button.setAttribute('aria-pressed',String(button.dataset.context===(independent?'independent':'dependent')));
+        });
+        this.querySelectorAll<HTMLButtonElement>('[data-view]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.view===state.view)));
+        this.querySelector('[data-readout]')!.textContent=kind==='combination'?`${c.sum} = (${sum(state).map(number).join(', ')})`:`${c.rank} ${Math.abs(det(state.u,state.v))<1e-10?1:2} · ${c.determinant} ${number(det(state.u,state.v))}`;
+        this.querySelector('[data-lab-equation]')!.innerHTML=katex.renderToString(equation(state),{...mathOptions,displayMode:true});
+      };
+      const schedule=()=>{clearFeedback();if(!frame)frame=requestAnimationFrame(render)};
+      const updatePointer=(event:PointerEvent)=>{
+        const matrix=svg.getScreenCTM();if(!matrix||!drag)return;
+        const local=new DOMPoint(event.clientX,event.clientY).matrixTransform(matrix.inverse());
+        moveHandle(state,drag,fromScreen([local.x,local.y],labPlane(state)));schedule();
+      };
+      svg.addEventListener('pointerdown',event=>{
+        if(!event.isPrimary||event.button!==0)return;
+        const handle=(event.target as Element).closest<SVGGElement>('[data-handle]');if(!handle)return;
+        event.preventDefault();handle.focus();drag=handle.dataset.handle!;pointer=event.pointerId;
+        svg.setPointerCapture(pointer);svg.classList.add('is-dragging');
+      });
+      svg.addEventListener('pointermove',event=>{if(event.pointerId===pointer)updatePointer(event)});
+      const finish=(event:PointerEvent)=>{if(event.pointerId!==pointer)return;drag=null;pointer=null;svg.classList.remove('is-dragging');if(frame){cancelAnimationFrame(frame);render()}};
+      svg.addEventListener('pointerup',finish);svg.addEventListener('pointercancel',finish);svg.addEventListener('lostpointercapture',finish);
+      svg.addEventListener('keydown',event=>{
+        const handle=(event.target as Element).closest<SVGGElement>('[data-handle]');
+        if(!handle||!['ArrowLeft','ArrowRight','ArrowUp','ArrowDown'].includes(event.key))return;
+        event.preventDefault();const key=handle.dataset.handle!;
+        const resolution=key==='column'?state.scenario.column.step:key==='result'?state.scenario.coefficients.step*Math.max(Math.abs(state.u[0])+Math.abs(state.v[0]),Math.abs(state.u[1])+Math.abs(state.v[1])):state.scenario.coefficients.step;
+        const step=Math.max(.25,resolution)*(event.shiftKey?4:1);
+        if(key==='a'||key==='b')state[key]=clampCoefficient(state,state[key]+(['ArrowRight','ArrowUp'].includes(event.key)?step:-step));
+        else {const p=[...points(state)[key]] as Vec2;p[event.key==='ArrowLeft'||event.key==='ArrowRight'?0:1]+=['ArrowRight','ArrowUp'].includes(event.key)?step:-step;moveHandle(state,key,p)}
+        clearFeedback();render();
+      });
+      this.querySelectorAll<HTMLInputElement>('[data-input]').forEach(input=>{
+        const update=()=>{
+          const value=input.valueAsNumber;if(!Number.isFinite(value))return;
+          const key=input.dataset.input!;
+          if(key==='a'||key==='b')state[key]=clampCoefficient(state,value);else state.v[key==='x'?0:1]=clampColumn(state,value);
+          clearFeedback();render();
+        };
+        input.addEventListener('input',update);
+        input.addEventListener('change',()=>{update();const key=input.dataset.input!;input.value=number(key==='a'?state.a:key==='b'?state.b:state.v[key==='x'?0:1])});
+      });
+      this.querySelectorAll<HTMLButtonElement>('[data-context]').forEach(button=>button.addEventListener('click',()=>{
+        const context=button.dataset.context as 'independent'|'dependent';
+        setContext(state,context);
+        clearFeedback();render();
+      }));
+      this.querySelectorAll<HTMLButtonElement>('[data-view]').forEach(button=>button.addEventListener('click',()=>{state.view=button.dataset.view as 'parallelogram'|'chain';clearFeedback();render()}));
+      this.querySelector('[data-check]')!.addEventListener('click',()=>{
+        feedback.hidden=false;
+        const c=labCopy(locale,state);
+        feedback.textContent=kind==='combination'?(equal(sum(state),state.scenario.target)?c.reached:!targetInSpan(state)?c.unreachable:c.tryTarget):(Math.abs(det(state.u,state.v))>1e-10?c.rankTry:equal(state.v,[0,0])?c.rankZero:c.rankSuccess);
+      });
+      this.querySelector('[data-lab-reset]')!.addEventListener('click',()=>{state=initialLab(scenario);clearFeedback();render()});
+      this.resize=new ResizeObserver(()=>render());this.resize.observe(svg);render();
+    }
+  }
+  if(!customElements.get('vector-lab'))customElements.define('vector-lab',VectorLab);
+</script>

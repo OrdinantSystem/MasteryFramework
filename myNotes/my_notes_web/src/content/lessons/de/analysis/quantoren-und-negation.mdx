@@ -1,0 +1,36 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "de"
+title: "Quantoren und Negation"
+navTitle: "Quantoren und Negation"
+description: "„Für alle“ und „es gibt“ genau lesen und die ganze Behauptung negieren."
+order: 2
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "quantifiers"
+---
+
+## Ein Zeuge oder alle Fälle
+
+Eine Existenzaussage braucht einen Zeugen. Eine Allaussage umfasst jedes Element ihres angegebenen Bereichs; ein Gegenbeispiel widerlegt sie. ∃! bedeutet genau eines: Existenz und Eindeutigkeit zusammen.
+
+<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+## Die Negation nach innen ziehen
+
+<Math tex="\neg(\forall x\in D:P(x))\iff\exists x\in D:\neg P(x)" display />
+
+<Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
+
+Die Negation ändert Quantor und Aussageform, nicht den Bereich. Bei verschachtelten Quantoren wird jeder der Reihe nach geändert. Ihre Reihenfolge zählt: Ein gemeinsames y für alle x ist stärker als ein möglicherweise anderes y zu jedem x.
+
+<Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
+
+## Der Randfall zählt
+
+Die Behauptung n² > n für jede natürliche Zahl scheitert an n = 1. Wenn ℕ bei 1 beginnt, gilt allgemein n² ≥ n; die strenge Ungleichung gilt für n > 1.

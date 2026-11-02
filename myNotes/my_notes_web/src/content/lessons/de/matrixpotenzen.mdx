@@ -1,0 +1,53 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Matrixpotenzen als Drehung
+navTitle: Matrixpotenzen
+description: Eine Matrix mehrfach anzuwenden bedeutet, dieselbe Abbildung zu wiederholen. Bei einer Vierteldrehung entsteht ein Zyklus.
+order: 6
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrixmultiplikation]
+sourcePages: [2]
+---
+
+## Was bewirkt die Matrix J?
+
+Die Matrix $J$ aus Aufgabe 4 vertauscht die Koordinaten und ändert ein Vorzeichen:
+
+<Math tex="J=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad J\binom xy=\binom{-y}x." display />
+
+Geometrisch ist das eine Drehung um $90^\circ$ gegen den Uhrzeigersinn. Der Ursprung bleibt fest, Längen und Winkel bleiben erhalten.
+
+<Explorer kind="rotation" />
+
+## Die ersten Potenzen
+
+Die Potenz $J^n$ steht für $n$ aufeinanderfolgende Anwendungen. $J^0=I_2$ ist die Identität: keine Drehung.
+
+| Potenz | Matrix | Geometrische Wirkung |
+| --- | --- | --- |
+| $J^0$ | $I_2$ | Ausgangslage |
+| $J^1$ | $J$ | $90^\circ$ |
+| $J^2$ | $-I_2$ | $180^\circ$ |
+| $J^3$ | $-J$ | $270^\circ$ |
+| $J^4$ | $I_2$ | $360^\circ$, wieder Ausgangslage |
+
+Zum Beispiel folgt durch Ausmultiplizieren:
+
+<Math tex="J^2=\begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}0&-1\\1&0\end{pmatrix}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I_2." display />
+
+## Warum sich alles nach vier Schritten wiederholt
+
+Aus $J^4=I_2$ und dem Potenzgesetz folgt für jede ganze Zahl $n\ge0$:
+
+<Math tex="J^{n+4}=J^nJ^4=J^nI_2=J^n." display />
+
+Damit ist die beobachtete Wiederholung bewiesen. Um eine große Potenz zu bestimmen, genügt der Rest des Exponenten bei Division durch $4$.
+
+<Exercise question="Welche Matrix ist J²⁰²⁶? Versuche zuerst den Exponenten zu reduzieren.">
+Es gilt $2026=4\cdot506+2$. Deshalb ist $J^{2026}=J^2=-I_2$. Jeder Vektor wird auf sein negatives Gegenstück abgebildet.
+</Exercise>

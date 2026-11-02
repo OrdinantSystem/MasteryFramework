@@ -1,0 +1,32 @@
+---
+course: "analysis"
+chapter: "analysis-proof"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+locale: "en"
+title: "The language and structure of proof"
+navTitle: "The language and structure of proof"
+description: "Give every step a reason and every claim the right scope."
+order: 7
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["quantoren-und-negation", "implikation-und-kontraposition"]
+thumbnail: "proof"
+---
+
+## Know the role of each sentence
+
+A definition fixes a meaning. An axiom is accepted as a starting point. A hypothesis is assumed for the current argument. A conjecture awaits proof. A theorem or proposition is a proved claim; a lemma supports another proof, and a corollary follows from an established result. These names describe roles, not different grades of truth.
+
+## Choose a method
+
+- Direct proof: start from the hypotheses and derive the conclusion.
+- Contraposition: prove that a false conclusion forces a false premise.
+- Contradiction: assume the negation of the goal and derive an impossibility.
+- Counterexample: refute a universal claim with one permitted case.
+- Induction: prove a starting case and a step from n to n + 1; this is a method for a later lesson, not a substitute for either step.
+
+## A small workflow
+
+Write the exact claim and domain. Unpack definitions. Choose a method. Justify each transition. State what has now been proved. For ∃n ∈ ℕ: n² = 9, the witness n = 3 is enough. For ∀n ∈ ℕ: n² > n, the counterexample n = 1 is enough. Neither task needs a long derivation. Avoid using the claim itself to justify an intermediate step: that would be circular.

@@ -1,0 +1,37 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+locale: "en"
+title: "Logical connectives"
+navTitle: "Logical connectives"
+description: "Build larger statements from small ones without changing the meaning of “or”."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "logic"
+---
+
+## Read one row at a time
+
+| A | B | ¬A | A ∧ B | A ∨ B | A ⇒ B | A ⇔ B |
+|---|---|---|---|---|---|---|
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+
+AND requires both inputs. Inclusive OR requires at least one, so it also accepts both. NOT reverses a truth value. An implication fails only when its premise is true and its conclusion is false. Equivalence requires matching truth values, including when both are false.
+
+## Always, never, or sometimes
+
+A tautology is true for every assignment, as in A ∨ ¬A. A contradiction is false for every assignment, as in A ∧ ¬A. A contingency varies with the assignment. A ⇒ B is a contingency, even though particular false-premise instances are true.
+
+## Negating an implication
+
+<Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
+
+To refute “if I pass, I buy dinner”, I must pass and not buy dinner. Negating both parts is a different operation.

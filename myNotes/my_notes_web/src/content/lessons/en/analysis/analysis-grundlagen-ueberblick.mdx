@@ -1,0 +1,42 @@
+---
+course: "analysis"
+chapter: "analysis-circuits"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+locale: "en"
+title: "Analysis foundations · recall map"
+navTitle: "Analysis foundations · recall map"
+description: "Reconnect the language, proofs, and algebra without mixing their roles."
+order: 15
+kind: "recap"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["widerspruch-und-irrationalitaet", "de-morgan-und-doppelte-negation", "nand-schaltungen"]
+thumbnail: "proof"
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1]}, {"sourceId": "analysis-concepts-2", "pages": [1]}, {"sourceId": "analysis-concepts-4", "pages": [1]}, {"sourceId": "analysis-sheet-1-1", "pages": [1]}, {"sourceId": "analysis-sheet-1-2", "pages": [1]}]
+---
+
+## A compact route through the material
+
+1. Decide whether the sentence is a statement or still contains free variables.
+2. Specify the domain and quantifiers.
+3. Identify the logical structure and direction of the claim.
+4. Choose a proof method and justify each step.
+5. For Boolean derivations, keep track of which rules have already been proved.
+6. For circuits, distinguish a written subexpression from a physical gate whose output can be reused.
+
+## The dependency chain
+
+<Math tex="(1\text{–}5)\longrightarrow H_1,H_2\longrightarrow(6\text{–}8)\longrightarrow U\longrightarrow\{9a,10\}\longrightarrow9b" display />
+
+Here U denotes the uniqueness of the complement.
+
+## Questions to answer without looking
+
+- Why does the converse of a true implication need a separate proof?
+- What is the negation of “for every x there exists y”?
+- Where does the proof of √2 use the reduced-fraction assumption?
+- Why must identity laws be derived before using them to prove idempotence?
+- Why does the NAND implementation of AND need two gates rather than three?
+
+Return to the corresponding lesson when an answer feels uncertain. These foundations support later Analysis topics; limits and differentiation are not covered by these six documents.

@@ -1,0 +1,60 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Matrix multiplication
+navTitle: Matrix multiplication
+description: Check the dimensions first. Then calculate each entry from one row and one column.
+order: 3
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrizen-und-vektoren]
+sourcePages: [1, 2, 4]
+---
+
+## When is the product defined?
+
+In $ABx=A(Bx)$, $B$ acts first. Its output must fit the input expected by $A$. If $A$ has $n$ columns, $B$ must have $n$ rows.
+
+<Flow variant="dimensions" />
+
+For $A\in\mathbb R^{m\times n}$ and $B\in\mathbb R^{n\times q}$, the result is $AB\in\mathbb R^{m\times q}$. The shared inner dimension expresses the compatibility condition.
+
+## Where does an entry come from?
+
+For the entry in row $i$, column $j$, take row $i$ of $A$ and column $j$ of $B$. Multiply corresponding components and add.
+
+<MatrixProduct />
+
+For example, row $2$, column $3$ combines $(7,-5)$ and $(1,4)$:
+
+<Math tex="(\colA{A}\colB{B})_{23}=7\cdot1+(-5)\cdot4=-13." display />
+
+In general:
+
+<Math tex="(\colA{A}\colB{B})_{ij}=\sum_{k=1}^{n}\colA{a_{ik}}\colB{b_{kj}}" display />
+
+The index $k$ runs through the shared inner dimension. The indices $i,j$ locate the result.
+
+## Each result column is an image
+
+Write $B=(b_1\;b_2\;\cdots\;b_q)$. Then:
+
+<Math tex="\colA{A}\colB{B}=(Ab_1\;Ab_2\;\cdots\;Ab_q)." display />
+
+Transform each column of $B$ with the same matrix $A$ and place the results next to one another. This connects the calculation rule with linear maps.
+
+## Order matters
+
+Even when both products exist, $AB$ need not equal $BA$. For rectangular matrices, even their sizes may differ: $(1\times2)(2\times1)$ gives $1\times1$, while reversing the order gives $2\times2$.
+
+Square matrices of the same size need not commute either. A counterexample is:
+
+<Math tex="\colA{A}=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad \colB{B}=\begin{pmatrix}1&0\\0&2\end{pmatrix}" display />
+<Math tex="\colA{A}\colB{B}=\begin{pmatrix}1&2\\0&2\end{pmatrix}\ne\begin{pmatrix}1&1\\0&2\end{pmatrix}=\colB{B}\colA{A}." display />
+
+<Exercise question="A is 3 × 2 and B is 2 × 4. What size is AB? Is BA defined?">
+$AB$ is $3\times4$. $BA$ is undefined because the inner dimensions $4$ and $3$ do not match.
+</Exercise>

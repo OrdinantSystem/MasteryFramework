@@ -1,0 +1,58 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Lineare Abbildungen
+navTitle: Lineare Abbildungen
+description: Eine lineare Abbildung verändert Vektoren, ohne die Regeln des Addierens und Skalierens zu verändern.
+order: 1
+kind: concept
+status: published
+reviewStatus: unreviewed
+sourcePages: [1, 4]
+---
+
+## Was bedeutet hier linear?
+
+Stell dir vor, du addierst zwei Eingaben. Bei einer linearen Abbildung ist es gleichgültig, ob du zuerst addierst und dann abbildest oder zuerst beide Eingaben abbildest und ihre Ergebnisse addierst. Dasselbe gilt für das Strecken mit einem Skalar.
+
+<Math tex="f(x+y)=f(x)+f(y)\qquad f(\lambda x)=\lambda f(x)" display />
+
+Die erste Eigenschaft heißt **Additivität**, die zweite **Homogenität**. Beide müssen für alle Vektoren des Definitionsraums und alle Skalare des zugrunde liegenden Körpers gelten. Hier arbeiten wir über den reellen Zahlen.
+
+## Warum ist ein konstanter Summand ein Problem?
+
+Die Abbildung $f(x,y)=2x+3y$ ist linear. Beide Eingaben werden mit festen Koeffizienten multipliziert und anschließend addiert. Es gibt keine zusätzliche Verschiebung.
+
+Vergleiche das mit $g(x)=2x+3$. Die zusätzliche $3$ wird bei jeder Anwendung neu addiert:
+
+<Math tex="g(1+2)=9\qquad\text{aber}\qquad g(1)+g(2)=5+7=12." display />
+
+Also ist $g$ nicht additiv. Die Abbildung ist **affin**: eine lineare Abbildung plus eine Verschiebung. Der Schulbegriff „lineare Funktion“ für $mx+b$ ist weiter gefasst als „lineare Abbildung“ in der linearen Algebra.
+
+| Ausdruck | Einordnung | Entscheidender Grund |
+| --- | --- | --- |
+| $2x+3y$ | linear in $x,y$ | Nur feste Koeffizienten und Addition |
+| $ax+2y$ | linear in $x,y$ bei festem $a$ | Der Parameter ist ein Koeffizient |
+| $2x+3$ | affin, nicht linear | Verschiebung um $3$ |
+| $2xy+3y$ | nicht linear in $(x,y)$ | Produkt zweier Eingabevariablen |
+| $2x^2+3y$ | nicht linear | Quadrat einer Eingabevariablen |
+
+## Der Nullvektor bleibt am Ursprung
+
+Aus der Additivität folgt $f(0)=f(0)+f(0)$ und damit $f(0)=0$. Eine lineare Abbildung kann den Ursprung also nicht verschieben.
+
+<Note title="Ein schneller Ausschlusstest">Wenn $f(0)\ne0$, ist die Abbildung nicht linear. Die Umkehrung gilt nicht: $h(x)=x^2$ erfüllt $h(0)=0$, ist aber nicht linear.</Note>
+
+<Exercise question="Ist f(x,y) = 2x − y linear? Und was ändert sich, wenn du am Ende 1 addierst?">
+Die erste Abbildung ist linear: Einsetzen zeigt Additivität und Homogenität. Mit der zusätzlichen $1$ ist der Wert am Nullvektor gleich $1$. Damit ist die zweite Abbildung affin, aber nicht linear.
+</Exercise>
+
+## Von Gleichungen zu einer Matrix
+
+Mehrere lineare Ausdrücke lassen sich gemeinsam darstellen. Für
+
+<Math tex="u=3x+2y,\qquad v=7x-5y,\qquad w=-x+11y" display />
+
+fasst eine einzige Matrix alle Koeffizienten zusammen. Jede Zeile beschreibt eine Ausgabe; jede Spalte gehört zu einer Eingabevariablen. Genau diese beiden Blickrichtungen betrachten wir auf der nächsten Seite.

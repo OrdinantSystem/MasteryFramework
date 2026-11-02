@@ -1,0 +1,58 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: The chapter at a glance
+navTitle: Quick recap
+description: The essential relationships from the exercises, ready to revisit, compare, and recall.
+order: 8
+kind: recap
+status: published
+reviewStatus: unreviewed
+sourcePages: [1, 2, 3, 4]
+---
+
+## Maps and representations
+
+| Idea | Core statement |
+| --- | --- |
+| Linearity | Addition and scaling are preserved. |
+| Affine map | A linear map plus a constant translation. |
+| Matrix rows | Calculate individual output coordinates. |
+| Matrix columns | Images of the standard basis vectors. |
+| $Ax$ | A combination of columns, weighted by the input coordinates. |
+
+## Products and order
+
+<Flow variant="dimensions" />
+
+<Math tex="(\colA{A}\colB{B})_{ij}=\sum_{k=1}^n \colA{a_{ik}}\colB{b_{kj}}\qquad \colA{A}\colB{B}=(Ab_1\;\cdots\;Ab_q)" display />
+
+In $ABx$, $B$ acts first. Associativity changes parentheses, not order. Commutativity does not hold in general.
+
+## Image and inverse
+
+The span contains all linear combinations. Rank measures the dimension of the image. A square matrix is invertible exactly when its rank equals its number of columns.
+
+| Example | What to remember |
+| --- | --- |
+| Two dependent columns | Produce at most one independent direction. |
+| Two independent columns in $\mathbb R^3$ | Span a plane. |
+| Quarter-turn $J$ | $J^4=I_2$; powers repeat modulo $4$. |
+| Left shear matrix | Changes rows by adding rows. |
+| Right shear matrix | Changes columns by adding columns. |
+
+## Explain without looking
+
+<Exercise question="Why must the inner dimensions agree in a matrix product?">
+The output of the first map must fit the input of the next. In $AB$, $B$ produces as many components as $A$ requires.
+</Exercise>
+
+<Exercise question="What is the difference between the codomain and the image?">
+The codomain is the output space specified in the definition. The image contains only outputs actually reached and may be a proper subspace of the codomain.
+</Exercise>
+
+<Exercise question="Why is f(0) = 0 necessary but insufficient for linearity?">
+Every linear map satisfies it, but the nonlinear function $f(x)=x^2$ does too. To prove linearity, verify additivity and homogeneity.
+</Exercise>

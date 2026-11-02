@@ -1,0 +1,32 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-sheet-1-1"
+sourcePages: [1]
+locale: "de"
+title: "Blatt 1.1 · absorbierende Elemente und Konstanten"
+navTitle: "Blatt 1.1 · absorbierende Elemente und Konstanten"
+description: "Mit den bewiesenen Identitäten die Gesetze 7 und 8 abschließen."
+order: 11
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["neutralitaet-und-idempotenz"]
+thumbnail: "identity-laws"
+---
+
+## 7c und 7d · Die absorbierenden Werte
+
+<Math tex="\colA{A}\lor1\overset5=\colA{A}\lor(\colA{A}\lor\neg \colA{A})\overset1=(\colA{A}\lor \colA{A})\lor\neg \colA{A}\overset6=\colA{A}\lor\neg \colA{A}\overset5=1" display />
+
+<Math tex="\colA{A}\land0\overset5=\colA{A}\land(\colA{A}\land\neg \colA{A})\overset1=(\colA{A}\land \colA{A})\land\neg \colA{A}\overset6=\colA{A}\land\neg \colA{A}\overset5=0" display />
+
+Neutrale und absorbierende Werte unterscheiden: ODER mit 0 erhält A; ODER mit 1 erzwingt 1. UND mit 1 erhält A; UND mit 0 erzwingt 0. Idempotenz (6) steht durch den vorigen Beweis zur Verfügung.
+
+## 8 · Konstanten negieren
+
+<Math tex="1\overset5=0\lor\neg0\overset2=\neg0\lor0\overset{7a}=\neg0" display />
+
+<Math tex="0\overset5=1\land\neg1\overset2=\neg1\land1\overset{7b}=\neg1" display />
+
+Es folgen ¬0 = 1 und ¬1 = 0. Jede Gleichheit folgt aus einem nummerierten Gesetz; weder Wahrheitstafel noch De-Morgan-Regel werden vorausgesetzt.

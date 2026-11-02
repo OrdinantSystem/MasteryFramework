@@ -1,0 +1,62 @@
+---
+locale: es
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Productos de matrices únicos y cancelación"
+navTitle: "Productos únicos"
+description: "Un alfabeto permitido, una regla para el último factor y la cancelación identifican una palabra única."
+order: 13
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["matrixmultiplikation", "elementare-kippungen"]
+sourcePages: [3, 5]
+thumbnail: words
+---
+
+## La unicidad depende de los factores permitidos
+
+Una representación como producto es única respecto de un conjunto concreto de matrices permitidas. Dos nombres no son factores diferentes si designan la misma matriz. La identidad corresponde a la palabra vacía.
+
+<Math tex="S=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad T=\begin{pmatrix}1&2\\0&1\end{pmatrix},\quad S^2=T." display />
+
+Con factores permitidos $\{S,T\}$, las palabras SS y T dan la misma matriz. Si solo se permite S, la entrada superior derecha de $S^k$ es $k$, de modo que la longitud queda determinada. Permitir inversas introduciría otras relaciones, como $SS^{-1}=I_2$.
+
+## Leer la última letra en la matriz
+
+<Math tex="R=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad L=\begin{pmatrix}1&0\\1&1\end{pmatrix},\quad M=\begin{pmatrix}a&b\\c&d\end{pmatrix}." display />
+
+Ahora solo se permiten las letras R y L, con longitud no negativa y sin letras inversas. Partiendo de la identidad, multiplicar por la derecha suma columnas. Todas las entradas siguen siendo enteros no negativos y la entrada superior izquierda es al menos 1.
+
+<Math tex="MR=\begin{pmatrix}a&a+b\\c&c+d\end{pmatrix},\qquad ML=\begin{pmatrix}a+b&b\\c+d&d\end{pmatrix}." display />
+
+<Math tex="\cdots R:\ m_{11}\le m_{12},\qquad\cdots L:\ m_{11}>m_{12}." display />
+
+<Note title={"Incluir el caso de igualdad"}>
+La primera fila de R es (1,1). Una desigualdad estricta omitiría este caso. Si el producto termina en R, la nueva segunda entrada es $a+b\ge a$. Si termina en L, se cumple $a+b>b$ porque $a\ge1$. Comprueba primero si la matriz completa es la identidad.
+</Note>
+
+## Cancelar por el lado del factor común
+
+<Math tex="AP=BP\ \Longrightarrow\ APP^{-1}=BPP^{-1}\ \Longrightarrow\ A=B." display />
+
+<Math tex="PA=PB\ \Longrightarrow\ P^{-1}PA=P^{-1}PB\ \Longrightarrow\ A=B." display />
+
+Para P y Q invertibles, la igualdad propuesta a continuación obliga a que P = Q. Si esos factores son distintos, la igualdad original es imposible.
+
+<Math tex="PQP=PQQ\quad\Longrightarrow\quad QP=QQ\quad\Longrightarrow\quad P=Q." display />
+
+Si dos palabras representan la misma matriz distinta de la identidad, la regla identifica el mismo factor final. Cancélalo por la derecha y repite. Las inversas sirven para cancelar en la demostración, pero no pasan a ser letras permitidas.
+
+Una palabra no vacía no puede dar la identidad: su primera letra crea una entrada positiva fuera de la diagonal. Las sumas posteriores de columnas no negativas no pueden eliminar todas esas entradas positivas. Por tanto, ambas palabras se vacían a la vez, lo que prueba que tienen la misma longitud y los mismos factores.
+
+## Deshacer una palabra concreta desde el final
+
+<Math tex="RLR=\begin{pmatrix}2&3\\1&2\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }\begin{pmatrix}2&1\\1&1\end{pmatrix}\xrightarrow{\ \cdot L^{-1}\ }\begin{pmatrix}1&1\\0&1\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }I_2." display />
+
+Las comparaciones son $2\le3$, después $2>1$ y finalmente $1\le1$. Leyendo al revés las letras eliminadas recuperamos RLR. Es una demostración para el alfabeto concreto $\{R,L\}$, no para matrices invertibles arbitrarias.
+
+<Exercise question={"¿Por qué la primera fila (1,0) no basta para reconocer la palabra vacía?"}>
+Tanto $I_2$ como L tienen esa primera fila. Comprueba la matriz completa antes de determinar la última letra.
+</Exercise>

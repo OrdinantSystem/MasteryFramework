@@ -1,0 +1,11 @@
+---
+import {createPlane,gridMarkup,arrowMarkup,assertPoint,type Vec2,type ColorRole} from '../lib/interactive/plane';
+interface Props {vectors:{to:Vec2;from?:Vec2;label:string;role?:ColorRole}[];description:string;caption:string;extent?:number}
+const {vectors,description,caption,extent=6}=Astro.props;
+const plane=createPlane(extent);
+for(const v of vectors)for(const p of [v.from??[0,0],v.to]) {
+  assertPoint(p as Vec2);if(p.some(n=>Math.abs(n)>extent))throw new Error('Vector figure exceeds its extent');
+}
+---
+<figure class="explorer vector-figure"><svg viewBox="100 0 440 410" role="img" aria-label={description}><g set:html={gridMarkup(plane)}/><g set:html={vectors.map(v=>arrowMarkup(v.from??[0,0],v.to,v.role??'accent',v.label,[10,-10],plane)).join('')}/></svg><figcaption>{caption}</figcaption></figure>
+<style>.vector-figure>svg{display:block;width:100%;max-width:440px;height:auto;margin:auto}</style>

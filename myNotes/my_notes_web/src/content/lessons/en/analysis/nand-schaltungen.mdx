@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-circuits"
+sourceId: "analysis-concepts-4"
+sourcePages: [1]
+locale: "en"
+title: "NAND: formulas become circuits"
+navTitle: "NAND: formulas become circuits"
+description: "Build NOT, AND, and OR from one type of gate."
+order: 14
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen", "de-morgan-und-doppelte-negation"]
+thumbnail: "nand"
+---
+
+## One operation
+
+<Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
+
+NAND outputs 0 only when both inputs are 1. Its symbol may be written | or ↑. Here | denotes NAND, while a | n in the earlier number-theory example denoted divisibility: context matters. In a circuit, the small circle on the output means negation.
+
+## Change inputs and follow the wires
+
+<Interactive kind="logic" preset="nand" id="nand-lab" display />
+
+## Three constructions
+
+<Math tex="\neg \colA{A}=\colA{A}\mid \colA{A}\qquad \colA{A}\land \colB{B}=(\colA{A}\mid \colB{B})\mid(\colA{A}\mid \colB{B})" display />
+
+<Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
+
+NOT connects A to both inputs of one NAND. AND reuses the first NAND output at both inputs of a second gate: two physical gates, even though the expression repeats a term. OR first negates each input, then NANDs the results: three gates. Since NOT, AND, and OR can all be constructed, NAND is functionally complete.

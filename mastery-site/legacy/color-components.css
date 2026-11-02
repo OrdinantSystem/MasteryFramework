@@ -1,0 +1,55 @@
+/* Shared semantic components. Select meaning with data-concept or data-status. */
+[data-concept="connect"],.method-card.mapping{--concept-text:var(--connect-text);--concept-soft:var(--connect-soft);--concept-border:var(--connect-border)}
+[data-concept="explain"],.method-card.feynman{--concept-text:var(--explain-text);--concept-soft:var(--explain-soft);--concept-border:var(--explain-border)}
+[data-concept="compare"],.method-card.interleaving{--concept-text:var(--compare-text);--concept-soft:var(--compare-soft);--concept-border:var(--compare-border)}
+[data-concept="recall"],.method-card.retrieval{--concept-text:var(--recall-text);--concept-soft:var(--recall-soft);--concept-border:var(--recall-border)}
+.concept-text{color:var(--concept-text);font-weight:600}
+.concept-highlight{color:var(--concept-text);background:var(--concept-soft);padding:.12em .3em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.concept-badge{display:inline-flex;align-items:center;color:var(--concept-text);background:var(--concept-soft);border:1px solid var(--concept-border);border-radius:20px;padding:5px 11px;font-size:11px;font-weight:650}
+.concept-key{display:flex;flex-wrap:wrap;gap:9px;margin:0 0 28px}
+.concept-callout,.status-callout{padding:24px;border:1px solid var(--concept-border);border-left:4px solid var(--concept-border);border-radius:9px;background:var(--concept-soft)}
+.concept-callout .eyebrow,.concept-callout h2,.status-callout>strong{color:var(--concept-text)}
+.concept-callout p,.status-callout p{color:var(--text-secondary);font-size:13px;margin:12px 0 0}
+.color-guide-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:24px 0}
+[data-status="success"]{--concept-text:var(--success-text);--concept-soft:var(--success-soft);--concept-border:var(--success-border)}
+[data-status="warning"]{--concept-text:var(--warning-text);--concept-soft:var(--warning-soft);--concept-border:var(--warning-border)}
+[data-status="error"]{--concept-text:var(--error-text);--concept-soft:var(--error-soft);--concept-border:var(--error-border)}
+.neutral-samples{display:flex;flex-wrap:wrap;gap:12px}.neutral-samples>div{flex:1;min-width:140px;padding:30px 15px;border:1px solid var(--border-strong);border-radius:8px;background:var(--canvas)}.neutral-samples>div:nth-child(2){background:var(--surface)}.neutral-samples>div:nth-child(3){background:var(--surface-raised)}
+.method-card{background:var(--concept-soft);border-color:var(--concept-border)}
+.method-card .icon,.method-card .eyebrow,.method-card .card-link,.method-card h2{color:var(--concept-text)}
+.method-card .pill{background:var(--surface);color:var(--concept-text)}
+.site-header{background:var(--canvas)}
+.button{background:var(--action);color:var(--on-action)}.button:hover{background:var(--action-hover)}
+.skip,.map-toggle button[aria-pressed=true],.hint-stairs button[aria-pressed=true],.source-list button[aria-pressed=true],.answer-buttons button:hover,.answer-buttons button[aria-pressed=true],.angle-center,.mini-stairs span:last-child{background:var(--action);color:var(--on-action)}
+.pyramid-level{background:var(--color);color:var(--on-action)}
+.learning-exercise{border-color:var(--explain-border);border-left-color:var(--explain-text);background:var(--explain-soft)}
+.learning-exercise details{border-color:var(--explain-border)}
+.branch.repair{background:var(--warning-soft);border-color:var(--warning-border)}.branch.success{background:var(--success-soft);border-color:var(--success-border)}.branch-label{color:var(--warning-text)}.success .branch-label{color:var(--success-text)}
+.flashcard,.timeline .time-dot{border-color:var(--recall-border)}.flashcard{background:var(--recall-soft)}.time-dot,.timeline-line{background:var(--recall-text)}
+.svg-node.green{fill:var(--action);stroke:var(--action)}.green~.svg-title,.green~.svg-sub{fill:var(--on-action)}
+.svg-node.teal{fill:var(--connect-soft);stroke:var(--connect-border)}.svg-node.blue{fill:var(--explain-soft);stroke:var(--explain-border)}.svg-node.purple{fill:var(--compare-soft);stroke:var(--compare-border)}
+.teal~.svg-title{fill:var(--connect-text)}.blue~.svg-title{fill:var(--explain-text)}.purple~.svg-title{fill:var(--compare-text)}
+.prompt{background:var(--surface-raised);color:var(--text)}.prompt button{color:var(--text);border-color:var(--border-strong)}
+.hint-stairs button:last-child[aria-pressed=true]{background:var(--warning-text);color:var(--on-action)}
+::selection{background:var(--explain-soft);color:var(--explain-text)}
+@media(max-width:600px){.color-guide-grid{grid-template-columns:1fr}.concept-callout,.status-callout{padding:20px}}
+/* Neutral scaffolding leaves concept colors available for meaning. */
+.hero-map,.bloom-detail,.decision,.revision-check,.source-list,.flow-node,.interaction-answer,.score-strip div,.origin-flow>div,.error-grid>div,.map-toggle,.hint-stairs button,.comparison>div{background:var(--surface);border-color:var(--border)}
+.svg-node{fill:var(--surface);stroke:var(--border-strong)}.svg-sub,.edge-label{fill:var(--text-secondary)}.edge{stroke:var(--border-strong)}
+.svg-node.green{fill:var(--action);stroke:var(--action)}.green~.svg-title,.green~.svg-sub{fill:var(--on-action)}
+.svg-node.teal{fill:var(--connect-soft);stroke:var(--connect-border)}.svg-node.blue{fill:var(--explain-soft);stroke:var(--explain-border)}.svg-node.purple{fill:var(--compare-soft);stroke:var(--compare-border)}.svg-node.recall{fill:var(--recall-soft);stroke:var(--recall-border)}.recall~.svg-title{fill:var(--recall-text)}
+.a{background:var(--connect-soft);color:var(--connect-text)}.b{background:var(--explain-soft);color:var(--explain-text)}.c{background:var(--compare-soft);color:var(--compare-text)}
+.comparison>div.highlight{background:var(--success-soft)}
+.hint-stairs button:last-child{background:var(--warning-soft);border-color:var(--warning-border)}
+.hint-stairs button[aria-pressed=true]{background:var(--action);color:var(--on-action)}
+.hint-stairs button:last-child[aria-pressed=true]{background:var(--warning-text);color:var(--on-action)}
+/* Focus remains visible on all four concept surfaces. */
+a:focus-visible,button:focus-visible,summary:focus-visible{outline-color:var(--focus)}
+/* Retained first edition shares the same semantic contracts. */
+.sidebar,.hero-diagram,.method,.bloom-panel,.hint-ladder div,.revision-card{background:var(--surface)}
+.bloom-tabs button[aria-selected=true],.hint-ladder div:first-child,.source-list button[aria-pressed=true],.source-list button:hover,.revision-banner{background:var(--action);color:var(--on-action)}
+.bloom-tabs button[aria-selected=true] span,.source-list button[aria-pressed=true] span,.revision-banner strong{color:var(--on-action)}
+.prompt-box{background:var(--surface-raised);color:var(--text)}.copy-button{color:var(--text);border-color:var(--border-strong)}
+.sidebar nav a:hover,.sidebar nav a.active{background:var(--explain-soft);color:var(--explain-text)}
+.mastery-petal[data-concept]{background:var(--concept-soft);border-color:var(--concept-border)}.mastery-petal[data-concept] strong{color:var(--concept-text)}
+.source-list button:hover span{color:var(--on-action)}

@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-sheet-1-1"
+sourcePages: [1]
+locale: "en"
+title: "Sheet 1.1 · identity and idempotence"
+navTitle: "Sheet 1.1 · identity and idempotence"
+description: "Derive the neutral elements first so the proof does not become circular."
+order: 10
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["boolesche-grundgesetze"]
+thumbnail: "identity-laws"
+---
+
+## Two helper identities from absorption
+
+Use absorption (4), then complement (5). These establish 7a and 7b before they are used to prove idempotence (6). Reading the exercise numbers in a different proof order is allowed; assuming the result you are proving is not.
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\overset{5}=\colA{A}\lor0\quad\Longrightarrow\quad \colA{A}\lor0=\colA{A}\quad(H_1)" display />
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\overset{5}=\colA{A}\land1\quad\Longrightarrow\quad \colA{A}\land1=\colA{A}\quad(H_2)" display />
+
+## 6a · Repeating OR changes nothing
+
+<Math tex="\begin{aligned}\colA{A}\lor \colA{A}&\overset{H_2}=(\colA{A}\lor \colA{A})\land1\\&\overset{5}=(\colA{A}\lor \colA{A})\land(\colA{A}\lor\neg \colA{A})\\&\overset{3}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\\&\overset{5}=\colA{A}\lor0\\&\overset{H_1}=\colA{A}\end{aligned}" display />
+
+## 6b · The dual calculation
+
+<Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
+
+Distributivity is used backward in each chain. Duality exchanges ∧ with ∨ and 0 with 1; the second calculation is shown explicitly so every permitted step can be checked.

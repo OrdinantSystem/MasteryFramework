@@ -1,0 +1,40 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+locale: "en"
+title: "Five starting laws of Boolean algebra"
+navTitle: "Five starting laws of Boolean algebra"
+description: "Keep the allowed laws visible before deriving new ones."
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen"]
+thumbnail: "boolean-laws"
+---
+
+## Laws 1–5
+
+<Math tex="\tag{1}(\colA{A}\lor \colB{B})\lor \colC{C}=\colA{A}\lor(\colB{B}\lor \colC{C}),\quad(\colA{A}\land \colB{B})\land \colC{C}=\colA{A}\land(\colB{B}\land \colC{C})" display />
+
+<Math tex="\tag{2}\colA{A}\lor \colB{B}=\colB{B}\lor \colA{A},\quad \colA{A}\land \colB{B}=\colB{B}\land \colA{A}" display />
+
+<Math tex="\tag{3}\colA{A}\land(\colB{B}\lor \colC{C})=(\colA{A}\land \colB{B})\lor(\colA{A}\land \colC{C})" display />
+
+<Math tex="\colA{A}\lor(\colB{B}\land \colC{C})=(\colA{A}\lor \colB{B})\land(\colA{A}\lor \colC{C})" display />
+
+<Math tex="\tag{4}\colA{A}\lor(\colA{A}\land \colB{B})=\colA{A},\quad \colA{A}\land(\colA{A}\lor \colB{B})=\colA{A}" display />
+
+<Math tex="\tag{5}\colA{A}\lor\neg \colA{A}=1,\quad \colA{A}\land\neg \colA{A}=0" display />
+
+The numbers denote associativity, commutativity, distributivity, absorption, and complement. Both dual forms are allowed. Here = means the expressions are logically equivalent, not that their written shapes match. Substitute whole expressions for A, B, or C when applying a law.
+
+## See the grouping
+
+<ExpressionTrees />
+
+<ExpressionTrees variant="distributivity" display />
+
+Associativity changes the grouping of the same operation. Distributivity changes the tree and repeats A. In the exercise sheets, truth tables are not the proof method: use these five laws to derive the later rules.

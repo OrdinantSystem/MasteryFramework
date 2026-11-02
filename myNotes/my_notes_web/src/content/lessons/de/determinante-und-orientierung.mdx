@@ -1,0 +1,46 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Determinante, Fläche und Orientierung"
+navTitle: "Determinante & Orientierung"
+description: "Der Betrag misst die Flächenskalierung. Das Vorzeichen beschreibt die Orientierung."
+order: 10
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["spann-und-rang"]
+sourcePages: [1, 2]
+thumbnail: area
+---
+
+## Fläche und Vorzeichen beantworten verschiedene Fragen
+
+Die Spalten einer 2×2-Matrix sind die Bilder der Standardbasisvektoren. Ihr Parallelogramm ist das Bild des Einheitsquadrats. Seine Fläche ist der Betrag der Determinante; das Vorzeichen beschreibt die Orientierung.
+
+In drei Dimensionen beschreibt derselbe Determinantenbetrag die Skalierung des Volumens.
+
+<Math tex="A=\begin{pmatrix}\colA{a}&\colB{b}\\\colA{c}&\colB{d}\end{pmatrix},\qquad\det A=ad-bc,\qquad F_{\rm new}=|\det A|\,F_{\rm old}." display />
+
+<MatrixComparison cases={[{"matrix": [[1, 0], [0, 1]], "label": "Gleiche Fläche", "detail": "Fläche 1; zwei unabhängige Richtungen."}, {"matrix": [[1, 0], [0, 2]], "label": "Doppelte Fläche", "detail": "Fläche 2; vertikale Längen verdoppeln sich."}, {"matrix": [[1, 0], [0, 0]], "label": "Fläche null", "detail": "Fläche 0; das Quadrat wird zur Strecke."}]} caption={"Die gestrichelte Kontur ist das ursprüngliche Einheitsquadrat. Die drei Flächenfälle entsprechen den Notizen."} />
+
+## Orientierung ist eine Beziehung
+
+<MatrixComparison cases={[{"matrix": [[1, 0], [0, 1]], "label": "Positive Orientierung", "detail": "Von u nach v: gegen den Uhrzeigersinn."}, {"matrix": [[1, 0], [0, -1]], "label": "Negative Orientierung", "detail": "Von u nach v: im Uhrzeigersinn."}]} caption={"Entscheidend ist das geordnete Paar der Bildvektoren. Der Quadrant eines einzelnen Vektors bestimmt die Orientierung nicht."} />
+
+<Interactive kind="vectors" preset="area-and-orientation" id="determinant-area" />
+
+## Nacheinander angewendete Abbildungen multiplizieren Determinanten
+
+<Math tex="\det(AB)=\det A\,\det B." display />
+
+Zwei Spiegelungen kehren jeweils die Orientierung um; ihre Verknüpfung erhält sie deshalb. Im Beispiel der Notizen ergeben zwei Koordinatenspiegelungen eine halbe Drehung.
+
+<Math tex="S_x=\begin{pmatrix}1&0\\0&-1\end{pmatrix},\quad S_y=\begin{pmatrix}-1&0\\0&1\end{pmatrix},\quad S_xS_y=-I_2,\quad\det(S_xS_y)=(-1)(-1)=1." display />
+
+<Math tex="\exists A^{-1}\iff\det A\ne0." display />
+
+<Exercise question={"A = diag(2,−3). Was passiert mit Fläche und Orientierung?"}>
+Die Determinante ist $-6$. Die Fläche wird mit 6 multipliziert und die Orientierung umgekehrt. Die Matrix ist invertierbar.
+</Exercise>

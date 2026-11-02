@@ -1,0 +1,53 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Span and rank
+navTitle: Span & rank
+description: Which outputs can you reach? The independent directions of the matrix columns give the answer.
+order: 5
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrizen-und-vektoren]
+sourcePages: [4]
+---
+
+## Dependence means one direction is enough
+
+For $v=(1,2)$ and $w=(2,4)$, we have $w=2v$. Both lie on the same line through the origin. Combining them creates no second direction.
+
+Two nonzero vectors are linearly dependent when one is a scalar multiple of the other. A pair containing the zero vector is also dependent.
+
+For any number of vectors, the general definition is that they are independent if
+
+<Math tex="\lambda_1v_1+\cdots+\lambda_nv_n=0" display />
+
+can only hold with $\lambda_1=\cdots=\lambda_n=0$. Any other solution makes them dependent.
+
+## Span collects every combination
+
+The **span** is the set of vectors you can produce by taking linear combinations:
+
+<Math tex="\operatorname{span}(v_1,\ldots,v_n)=\left\{\sum_{k=1}^{n}\lambda_kv_k\;\middle|\;\lambda_k\in\mathbb R\right\}." display />
+
+One nonzero direction spans a line. Two independent directions span a plane. Two independent vectors in $\mathbb R^3$ therefore do not span the entire three-dimensional space.
+
+## Rank counts reachable directions
+
+The possible outputs of $A$ are exactly the combinations of its columns. Its image is the column space. The dimension of that space is the **rank**.
+
+<Math tex="\operatorname{im}(\colA{A})=\operatorname{span}(a_1,\ldots,a_n),\qquad\operatorname{rank}(\colA{A})=\dim\operatorname{im}(\colA{A})." display />
+
+<Interactive kind="vectors" preset="rank-collapse" id="vector-lab-rank" />
+
+In the source example, the columns are $(1,3)$ and $(2,6)$: the second is twice the first. Although the matrix has two rows and two columns, every output lies on one line. The codomain is $\mathbb R^2$; the image has dimension $1$.
+
+The interactive uses the additional examples $u=(2,1)$ and $v=(-1,2)$ or $v=(4,2)$. Dragging the second column lets you move between a plane and a line. The parallelogram makes the change in determinant visible.
+
+<Note title="Columns are not automatically a basis">Matrix columns are images of the standard basis vectors. Those images can become dependent: a map can collapse independent input directions.</Note>
+
+<Exercise question="A 3 × 2 matrix has two independent columns. What is its rank? Can its image be all of ℝ³?">
+Its rank is $2$. Its image is a plane through the origin in $\mathbb R^3$, not the entire space. Rank $3$ would require at least three independent columns.
+</Exercise>

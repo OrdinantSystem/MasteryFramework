@@ -1,0 +1,50 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Inverse products and isolating A⁻¹"
+navTitle: "Inverse products"
+description: "Reverse the factor order, and cancel only on the correct side."
+order: 16
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: ["eindeutige-matrixprodukte", "minus-identitaet-aus-kippungen"]
+sourcePages: [1, 3, 4, 6]
+thumbnail: inverse-product
+---
+
+## Undo the last action first
+
+In ABx, B acts before A. To restore x, apply the inverse of A first, then the inverse of B. This gives the order of the inverse product. All matrices in these identities are square and invertible of the same size.
+
+<Math tex="(AB)^{-1}=B^{-1}A^{-1}." display />
+
+<Math tex="(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=I_n,\qquad(B^{-1}A^{-1})(AB)=B^{-1}(A^{-1}A)B=I_n." display />
+
+<Math tex="(ABC)^{-1}=C^{-1}B^{-1}A^{-1}." display />
+
+## Exercise 11: isolate the inverse without commuting
+
+<Math tex="MAN=I_n,\qquad \exists A^{-1},M^{-1},N^{-1}." display />
+
+Multiply the equation on the left by $M^{-1}$ and on the right by $N^{-1}$. Associativity allows regrouping, not reordering.
+
+<Math tex="A=M^{-1}N^{-1}\qquad\Longrightarrow\qquad\colResult{A^{-1}=NM}." display />
+
+You can check both sides directly. From MAN = I, first obtain $MA=N^{-1}$ and $AN=M^{-1}$.
+
+<Math tex="(NM)A=N(MA)=NN^{-1}=I_n,\qquad A(NM)=(AN)M=M^{-1}M=I_n." display />
+
+## An additional numerical check
+
+This example uses the shears from the previous lesson. It also shows why replacing NM by MN is unsafe.
+
+<Math tex="M=\begin{pmatrix}1&0\\1&1\end{pmatrix},\quad N=\begin{pmatrix}1&-2\\0&1\end{pmatrix},\quad A=\begin{pmatrix}1&2\\-1&-1\end{pmatrix}." display />
+
+<Math tex="MAN=I_2,\qquad NM=\begin{pmatrix}-1&-2\\1&1\end{pmatrix},\qquad MN=\begin{pmatrix}1&-2\\1&-1\end{pmatrix}." display />
+
+<Exercise question={"If MAN = I, which side is used to cancel N?"}>
+Multiply on the right by $N^{-1}$. The rightmost pair becomes $NN^{-1}$, leaving $MA=N^{-1}$.
+</Exercise>

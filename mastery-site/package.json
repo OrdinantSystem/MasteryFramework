@@ -1,0 +1,26 @@
+{
+  "name": "mastery-framework",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc --noEmit && node scripts/build.mjs && node scripts/check.mjs",
+    "check": "npm run build",
+    "preview": "node scripts/serve.mjs",
+    "package": "npm run build && python3 scripts/package.py",
+    "format": "prettier --write src scripts/*.mjs package.json tsconfig.json design-tokens.json"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "esbuild": "^0.25.0",
+    "prettier": "3.9.10",
+    "typescript": "^5.9.0"
+  }
+}

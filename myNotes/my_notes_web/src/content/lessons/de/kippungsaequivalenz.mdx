@@ -1,0 +1,68 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Kippungsäquivalenz: Umformungen mit Zwischenschritten"
+navTitle: "Kippungsäquivalenz"
+description: "Jede Zeilen- und Spaltenoperation samt erhaltener Größe nachvollziehen."
+order: 14
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: ["elementare-kippungen", "determinante-und-orientierung"]
+sourcePages: [1, 3, 4, 5]
+thumbnail: equivalence
+---
+
+## Festlegen, welche Operationen die Äquivalenz definieren
+
+Hier heißen zwei Matrizen gleicher Größe äquivalent, wenn endlich viele zugelassene Zeilen- oder Spaltenkippungen die eine in die andere überführen. Zeilenskalierungen oder Zeilenvertauschungen sind nicht stillschweigend eingeschlossen. Zu den zugelassenen Kippungen gehören auch ihre Umkehrungen.
+
+<Math tex="A\sim B\iff B=PAQ." display />
+
+P und Q sind Produkte passend großer Kippungen. Leere Produkte liefern Reflexivität. Umkehren der Operationen liefert Symmetrie; Aneinanderhängen der Folgen liefert Transitivität.
+
+<Math tex="B=P_1AQ_1,\quad C=P_2BQ_2\quad\Longrightarrow\quad C=(P_2P_1)A(Q_1Q_2)." display />
+
+<Note title={"Was erhalten bleibt"}>
+Bei quadratischen Matrizen erhalten Kippungen die Determinante exakt. Bei 1×1-Matrizen gibt es keine nichttriviale Kippung; daher gilt $(a)\sim(b)$ genau für $a=b$.
+</Note>
+
+## Aufgabe 8: Mit Kippungen eine Diagonalform herstellen
+
+Jede Tabellenzeile zeigt die Matrix nach der angegebenen Operation. Z bezeichnet eine Zeile, S eine Spalte. Die Zwischenwerte liefern einen vollständigen konstruktiven Beweis; gleiche Determinanten allein ersetzen ihn nicht.
+
+| Operation | Matrix |
+| --- | --- |
+| — | <Math tex="\begin{pmatrix}2&0\\0&3\end{pmatrix}" /> |
+| $S_1\leftarrow S_1+S_2$ | <Math tex="\begin{pmatrix}2&0\\3&3\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}2&0\\1&3\end{pmatrix}" /> |
+| $Z_1\leftarrow Z_1-Z_2$ | <Math tex="\begin{pmatrix}1&-3\\1&3\end{pmatrix}" /> |
+| $S_2\leftarrow S_2+3S_1$ | <Math tex="\begin{pmatrix}1&0\\1&6\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}1&0\\0&6\end{pmatrix}" /> |
+
+
+Die Determinante bleibt 6. Das zweite Beispiel verwendet dieselbe Strategie mit größeren Koeffizienten.
+
+| Operation | Matrix |
+| --- | --- |
+| — | <Math tex="\begin{pmatrix}6&0\\0&7\end{pmatrix}" /> |
+| $S_1\leftarrow S_1+S_2$ | <Math tex="\begin{pmatrix}6&0\\7&7\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}6&0\\1&7\end{pmatrix}" /> |
+| $Z_1\leftarrow Z_1-5Z_2$ | <Math tex="\begin{pmatrix}1&-35\\1&7\end{pmatrix}" /> |
+| $S_2\leftarrow S_2+35S_1$ | <Math tex="\begin{pmatrix}1&0\\1&42\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}1&0\\0&42\end{pmatrix}" /> |
+
+
+Falls im Kurs nur Koeffizienten ±1 erlaubt sind, wiederhole die jeweilige Einheitskippung 3-, 5- beziehungsweise 35-mal. Der dargestellte Schritt mit größerem Koeffizienten kürzt diese Folge ab.
+
+## Ein kurzes Produkt ist ebenfalls ein konstruktiver Beweis
+
+<Math tex="I_2\xrightarrow{\ \cdot P\ }P\xrightarrow{\ \cdot Q\ }PQ,\quad P=\begin{pmatrix}1&0\\3&1\end{pmatrix},\quad Q=\begin{pmatrix}1&2\\0&1\end{pmatrix}." display />
+
+<Interactive kind="matrix-product" left={[[1,0],[3,1]]} right={[[1,2],[0,1]]} />
+
+<Exercise question={"Kann diag(2,3) kippungsäquivalent zur Einheitsmatrix sein?"}>
+Nein. Ihre Determinante ist 6, die der Einheitsmatrix ist 1. Kippungen können diesen Wert nicht ändern.
+</Exercise>

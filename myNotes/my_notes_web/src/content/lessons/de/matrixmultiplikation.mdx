@@ -1,0 +1,60 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Matrixmultiplikation
+navTitle: Matrixmultiplikation
+description: Erst die Dimensionen prüfen. Dann jeden Eintrag als Zusammenspiel einer Zeile und einer Spalte berechnen.
+order: 3
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrizen-und-vektoren]
+sourcePages: [1, 2, 4]
+---
+
+## Wann passt das Produkt?
+
+In $ABx=A(Bx)$ wird zuerst $B$ angewendet. Die Ausgabe von $B$ muss deshalb als Eingabe in $A$ passen. Hat $A$ genau $n$ Spalten, muss $B$ genau $n$ Zeilen haben.
+
+<Flow variant="dimensions" />
+
+Die Bedingung lautet $A\in\mathbb R^{m\times n}$ und $B\in\mathbb R^{n\times q}$. Dann ist $AB\in\mathbb R^{m\times q}$. Ein gemeinsamer Buchstabe für die innere Dimension drückt die notwendige Übereinstimmung aus.
+
+## Woher kommt ein Eintrag?
+
+Für den Eintrag in Zeile $i$, Spalte $j$ nimmst du die $i$-te Zeile von $A$ und die $j$-te Spalte von $B$. Du multiplizierst die passenden Komponenten und addierst.
+
+<MatrixProduct />
+
+Zum Beispiel entsteht der Eintrag in Zeile $2$, Spalte $3$ aus $(7,-5)$ und $(1,4)$:
+
+<Math tex="(\colA{A}\colB{B})_{23}=7\cdot1+(-5)\cdot4=-13." display />
+
+Allgemein gilt:
+
+<Math tex="(\colA{A}\colB{B})_{ij}=\sum_{k=1}^{n}\colA{a_{ik}}\colB{b_{kj}}" display />
+
+Der Index $k$ durchläuft die gemeinsame innere Dimension. Die Indizes $i,j$ bestimmen, an welcher Stelle das Ergebnis steht.
+
+## Jede Ergebnisspalte ist ein Bild
+
+Schreibe $B=(b_1\;b_2\;\cdots\;b_q)$. Dann gilt:
+
+<Math tex="\colA{A}\colB{B}=(Ab_1\;Ab_2\;\cdots\;Ab_q)." display />
+
+Du transformierst also jede Spalte von $B$ mit derselben Matrix $A$ und stellst die Ergebnisse nebeneinander. Das verbindet die Rechenregel mit der Sicht auf lineare Abbildungen.
+
+## Die Reihenfolge ist entscheidend
+
+Selbst wenn beide Produkte definiert sind, muss $AB$ nicht gleich $BA$ sein. Bei rechteckigen Matrizen können schon die Ergebnisgrößen verschieden sein: $(1\times2)(2\times1)$ ergibt $1\times1$, umgekehrt ergibt sich $2\times2$.
+
+Auch für quadratische Matrizen gleicher Größe gilt Gleichheit nicht allgemein. Das Gegenbeispiel aus deinen Notizen ist:
+
+<Math tex="\colA{A}=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad \colB{B}=\begin{pmatrix}1&0\\0&2\end{pmatrix}" display />
+<Math tex="\colA{A}\colB{B}=\begin{pmatrix}1&2\\0&2\end{pmatrix}\ne\begin{pmatrix}1&1\\0&2\end{pmatrix}=\colB{B}\colA{A}." display />
+
+<Exercise question="A hat die Größe 3 × 2 und B die Größe 2 × 4. Welche Größe hat AB? Ist BA definiert?">
+$AB$ ist eine $3\times4$-Matrix. $BA$ ist nicht definiert, denn die inneren Dimensionen $4$ und $3$ stimmen nicht überein.
+</Exercise>

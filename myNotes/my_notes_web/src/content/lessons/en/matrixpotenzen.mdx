@@ -1,0 +1,53 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Matrix powers as rotations
+navTitle: Matrix powers
+description: Applying a matrix repeatedly means repeating the same map. A quarter-turn creates a cycle.
+order: 6
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrixmultiplikation]
+sourcePages: [2]
+---
+
+## What does J do?
+
+The matrix $J$ swaps the coordinates and changes one sign:
+
+<Math tex="J=\begin{pmatrix}0&-1\\1&0\end{pmatrix},\qquad J\binom xy=\binom{-y}x." display />
+
+Geometrically, it rotates by $90^\circ$ counterclockwise. The origin stays fixed, and lengths and angles are preserved.
+
+<Explorer kind="rotation" />
+
+## The first powers
+
+$J^n$ means $n$ successive applications. $J^0=I_2$ is the identity: no rotation.
+
+| Power | Matrix | Geometric effect |
+| --- | --- | --- |
+| $J^0$ | $I_2$ | Starting position |
+| $J^1$ | $J$ | $90^\circ$ |
+| $J^2$ | $-I_2$ | $180^\circ$ |
+| $J^3$ | $-J$ | $270^\circ$ |
+| $J^4$ | $I_2$ | $360^\circ$, back to the start |
+
+For example, multiplication gives:
+
+<Math tex="J^2=\begin{pmatrix}0&-1\\1&0\end{pmatrix}\begin{pmatrix}0&-1\\1&0\end{pmatrix}=\begin{pmatrix}-1&0\\0&-1\end{pmatrix}=-I_2." display />
+
+## Why the cycle repeats after four steps
+
+Since $J^4=I_2$, the exponent law gives, for every integer $n\ge0$:
+
+<Math tex="J^{n+4}=J^nJ^4=J^nI_2=J^n." display />
+
+This proves the observed repetition. To evaluate a large power, only the remainder of the exponent after division by $4$ matters.
+
+<Exercise question="Which matrix is J²⁰²⁶? Try reducing the exponent first.">
+Since $2026=4\cdot506+2$, we have $J^{2026}=J^2=-I_2$. Every vector is mapped to its negative.
+</Exercise>

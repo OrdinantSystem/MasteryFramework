@@ -1,0 +1,68 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Shear equivalence: worked transformations"
+navTitle: "Shear equivalence"
+description: "Track every row or column operation and the invariant it preserves."
+order: 14
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: ["elementare-kippungen", "determinante-und-orientierung"]
+sourcePages: [1, 3, 4, 5]
+thumbnail: equivalence
+---
+
+## Specify which operations define equivalence
+
+Here two matrices of the same size are equivalent if a finite sequence of permitted row or column shears changes one into the other. Scaling a row or swapping rows is not silently included. The permitted shears include their inverses.
+
+<Math tex="A\sim B\iff B=PAQ." display />
+
+P and Q are products of appropriately sized shears. Empty products give reflexivity. Reversing the operations gives symmetry. Concatenating sequences gives transitivity.
+
+<Math tex="B=P_1AQ_1,\quad C=P_2BQ_2\quad\Longrightarrow\quad C=(P_2P_1)A(Q_1Q_2)." display />
+
+<Note title={"What stays invariant"}>
+For square matrices, shears preserve the determinant exactly. For 1×1 matrices there is no nontrivial shear, so $(a)\sim(b)$ holds exactly when $a=b$.
+</Note>
+
+## Exercise 8: make a diagonal form through shears
+
+Each row of the table shows the matrix after the stated operation. Z denotes a row and S a column. The intermediate values matter: they show a complete constructive proof rather than only matching determinants.
+
+| Operation | Matrix |
+| --- | --- |
+| — | <Math tex="\begin{pmatrix}2&0\\0&3\end{pmatrix}" /> |
+| $S_1\leftarrow S_1+S_2$ | <Math tex="\begin{pmatrix}2&0\\3&3\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}2&0\\1&3\end{pmatrix}" /> |
+| $Z_1\leftarrow Z_1-Z_2$ | <Math tex="\begin{pmatrix}1&-3\\1&3\end{pmatrix}" /> |
+| $S_2\leftarrow S_2+3S_1$ | <Math tex="\begin{pmatrix}1&0\\1&6\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}1&0\\0&6\end{pmatrix}" /> |
+
+
+The determinant stays 6. The second example uses the same strategy, with larger coefficients.
+
+| Operation | Matrix |
+| --- | --- |
+| — | <Math tex="\begin{pmatrix}6&0\\0&7\end{pmatrix}" /> |
+| $S_1\leftarrow S_1+S_2$ | <Math tex="\begin{pmatrix}6&0\\7&7\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}6&0\\1&7\end{pmatrix}" /> |
+| $Z_1\leftarrow Z_1-5Z_2$ | <Math tex="\begin{pmatrix}1&-35\\1&7\end{pmatrix}" /> |
+| $S_2\leftarrow S_2+35S_1$ | <Math tex="\begin{pmatrix}1&0\\1&42\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2-Z_1$ | <Math tex="\begin{pmatrix}1&0\\0&42\end{pmatrix}" /> |
+
+
+If the course permits only coefficients ±1, repeat the corresponding unit shear 3, 5, or 35 times. The displayed larger-coefficient step abbreviates that sequence.
+
+## A short product is also a constructive proof
+
+<Math tex="I_2\xrightarrow{\ \cdot P\ }P\xrightarrow{\ \cdot Q\ }PQ,\quad P=\begin{pmatrix}1&0\\3&1\end{pmatrix},\quad Q=\begin{pmatrix}1&2\\0&1\end{pmatrix}." display />
+
+<Interactive kind="matrix-product" left={[[1,0],[3,1]]} right={[[1,2],[0,1]]} />
+
+<Exercise question={"Can diag(2,3) be shear-equivalent to the identity?"}>
+No. Its determinant is 6, while the identity has determinant 1. Shears cannot change that value.
+</Exercise>

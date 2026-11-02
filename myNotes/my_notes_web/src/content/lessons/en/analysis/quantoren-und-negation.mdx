@@ -1,0 +1,36 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "en"
+title: "Quantifiers and negation"
+navTitle: "Quantifiers and negation"
+description: "Read “every” and “there exists” carefully—and negate the whole claim."
+order: 2
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "quantifiers"
+---
+
+## A witness versus every case
+
+Existence needs one witness. A universal claim covers every element of its stated domain; one counterexample refutes it. ∃! means exactly one, combining existence and uniqueness.
+
+<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+## Push the negation inward
+
+<Math tex="\neg(\forall x\in D:P(x))\iff\exists x\in D:\neg P(x)" display />
+
+<Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
+
+Negation changes the quantifier and the predicate, while keeping the domain. With nested quantifiers, change each one in order. Their order matters: one common y for every x is stronger than a possibly different y for each x.
+
+<Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
+
+## The boundary case matters
+
+The claim n² > n for every natural number fails at n = 1. With ℕ starting at 1, the correct universal statement is n² ≥ n; strict inequality holds for n > 1.

@@ -1,0 +1,58 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Linear maps
+navTitle: Linear maps
+description: A linear map changes vectors while preserving the rules of addition and scaling.
+order: 1
+kind: concept
+status: published
+reviewStatus: unreviewed
+sourcePages: [1, 4]
+---
+
+## What does linear mean?
+
+Imagine adding two inputs. For a linear map, adding first and then applying the map gives the same result as mapping each input first and adding the outputs. The same principle holds for multiplication by a scalar.
+
+<Math tex="f(x+y)=f(x)+f(y)\qquad f(\lambda x)=\lambda f(x)" display />
+
+The first property is **additivity**; the second is **homogeneity**. Both must hold for every vector in the domain and every scalar in the underlying field. Here we work over the real numbers.
+
+## Why does a constant term matter?
+
+The map $f(x,y)=2x+3y$ is linear. Each input is multiplied by a fixed coefficient and the results are added. There is no extra translation.
+
+Compare this with $g(x)=2x+3$. The extra $3$ is added every time the map is applied:
+
+<Math tex="g(1+2)=9\qquad\text{but}\qquad g(1)+g(2)=5+7=12." display />
+
+So $g$ is not additive. It is **affine**: a linear map followed by a translation. The school use of “linear function” for $mx+b$ is broader than “linear map” in linear algebra.
+
+| Expression | Classification | Reason |
+| --- | --- | --- |
+| $2x+3y$ | Linear in $x,y$ | Fixed coefficients and addition |
+| $ax+2y$ | Linear in $x,y$ for fixed $a$ | The parameter is a coefficient |
+| $2x+3$ | Affine, not linear | Translation by $3$ |
+| $2xy+3y$ | Not linear in $(x,y)$ | Product of two input variables |
+| $2x^2+3y$ | Not linear | Square of an input variable |
+
+## The zero vector stays at the origin
+
+Additivity gives $f(0)=f(0)+f(0)$, hence $f(0)=0$. A linear map cannot move the origin.
+
+<Note title="A quick exclusion test">If $f(0)\ne0$, the map is not linear. The converse is false: $h(x)=x^2$ satisfies $h(0)=0$ but is not linear.</Note>
+
+<Exercise question="Is f(x,y) = 2x − y linear? What changes if you add 1 at the end?">
+The first map is linear: substitution verifies additivity and homogeneity. With the extra $1$, the zero vector maps to $1$. The second map is affine but not linear.
+</Exercise>
+
+## From equations to a matrix
+
+Several linear expressions can share one representation. In
+
+<Math tex="u=3x+2y,\qquad v=7x-5y,\qquad w=-x+11y" display />
+
+a single matrix collects the coefficients. Each row describes an output; each column belongs to an input variable. The next lesson connects these two perspectives.

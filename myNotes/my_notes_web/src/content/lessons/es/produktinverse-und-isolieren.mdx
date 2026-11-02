@@ -1,0 +1,50 @@
+---
+locale: es
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Inversas de productos y cómo aislar A⁻¹"
+navTitle: "Inversas de productos"
+description: "Invierte el orden de los factores y cancela por el lado correcto."
+order: 16
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: ["eindeutige-matrixprodukte", "minus-identitaet-aus-kippungen"]
+sourcePages: [1, 3, 4, 6]
+thumbnail: inverse-product
+---
+
+## Deshacer primero la última acción
+
+En ABx, B actúa antes que A. Para recuperar x se aplica primero la inversa de A y después la de B. Así se obtiene el orden del producto inverso. Todas las matrices de estas identidades son cuadradas, invertibles y del mismo tamaño.
+
+<Math tex="(AB)^{-1}=B^{-1}A^{-1}." display />
+
+<Math tex="(AB)(B^{-1}A^{-1})=A(BB^{-1})A^{-1}=I_n,\qquad(B^{-1}A^{-1})(AB)=B^{-1}(A^{-1}A)B=I_n." display />
+
+<Math tex="(ABC)^{-1}=C^{-1}B^{-1}A^{-1}." display />
+
+## Ejercicio 11: aislar la inversa sin conmutar
+
+<Math tex="MAN=I_n,\qquad \exists A^{-1},M^{-1},N^{-1}." display />
+
+Multiplica la igualdad por $M^{-1}$ a la izquierda y por $N^{-1}$ a la derecha. La asociatividad permite reagrupar, pero no cambiar el orden.
+
+<Math tex="A=M^{-1}N^{-1}\qquad\Longrightarrow\qquad\colResult{A^{-1}=NM}." display />
+
+Se pueden comprobar ambos lados directamente. De MAN = I se obtiene primero $MA=N^{-1}$ y $AN=M^{-1}$.
+
+<Math tex="(NM)A=N(MA)=NN^{-1}=I_n,\qquad A(NM)=(AN)M=M^{-1}M=I_n." display />
+
+## Una comprobación numérica adicional
+
+Este ejemplo usa los cizallamientos de la lección anterior. También muestra por qué no se puede sustituir NM por MN.
+
+<Math tex="M=\begin{pmatrix}1&0\\1&1\end{pmatrix},\quad N=\begin{pmatrix}1&-2\\0&1\end{pmatrix},\quad A=\begin{pmatrix}1&2\\-1&-1\end{pmatrix}." display />
+
+<Math tex="MAN=I_2,\qquad NM=\begin{pmatrix}-1&-2\\1&1\end{pmatrix},\qquad MN=\begin{pmatrix}1&-2\\1&-1\end{pmatrix}." display />
+
+<Exercise question={"Si MAN = I, ¿por qué lado se cancela N?"}>
+Multiplica por $N^{-1}$ a la derecha. El par de la derecha se convierte en $NN^{-1}$ y queda $MA=N^{-1}$.
+</Exercise>

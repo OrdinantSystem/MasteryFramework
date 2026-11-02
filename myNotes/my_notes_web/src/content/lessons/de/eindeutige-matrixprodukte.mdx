@@ -1,0 +1,62 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Eindeutige Matrixprodukte und Kürzen"
+navTitle: "Eindeutige Produkte"
+description: "Erlaubte Faktoren, ein letzter Faktor und Kürzen machen aus der Matrix ein eindeutiges Wort."
+order: 13
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["matrixmultiplikation", "elementare-kippungen"]
+sourcePages: [3, 5]
+thumbnail: words
+---
+
+## Eindeutigkeit hängt von den erlaubten Faktoren ab
+
+Eine Produktdarstellung ist bezüglich einer festgelegten Menge erlaubter Matrizen eindeutig. Verschiedene Namen sind keine verschiedenen Faktoren, wenn sie dieselbe Matrix bezeichnen. Die Einheitsmatrix entspricht dem leeren Wort.
+
+<Math tex="S=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad T=\begin{pmatrix}1&2\\0&1\end{pmatrix},\quad S^2=T." display />
+
+Bei erlaubten Faktoren $\{S,T\}$ ergeben SS und T dieselbe Matrix. Ist nur S erlaubt, hat $S^k$ rechts oben den Eintrag $k$; damit ist die Länge eindeutig bestimmt. Mit erlaubten Inversen entstehen zusätzliche Relationen wie $SS^{-1}=I_2$.
+
+## Den letzten Buchstaben aus der Matrix ablesen
+
+<Math tex="R=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad L=\begin{pmatrix}1&0\\1&1\end{pmatrix},\quad M=\begin{pmatrix}a&b\\c&d\end{pmatrix}." display />
+
+Nun sind nur die Buchstaben R und L erlaubt, mit nichtnegativer Wortlänge und ohne inverse Buchstaben. Ausgehend von der Einheitsmatrix addiert Rechtsmultiplikation Spalten. Alle Einträge bleiben nichtnegative ganze Zahlen; der Eintrag links oben bleibt mindestens 1.
+
+<Math tex="MR=\begin{pmatrix}a&a+b\\c&c+d\end{pmatrix},\qquad ML=\begin{pmatrix}a+b&b\\c+d&d\end{pmatrix}." display />
+
+<Math tex="\cdots R:\ m_{11}\le m_{12},\qquad\cdots L:\ m_{11}>m_{12}." display />
+
+<Note title={"Den Gleichheitsfall einschließen"}>
+R hat die erste Zeile (1,1). Eine strenge Ungleichung würde diesen Fall übersehen. Endet das Produkt auf R, ist der neue zweite Eintrag $a+b\ge a$. Endet es auf L, gilt $a+b>b$, weil $a\ge1$. Prüfe vor dieser Regel zuerst, ob die gesamte Matrix die Einheitsmatrix ist.
+</Note>
+
+## Auf der Seite des gemeinsamen Faktors kürzen
+
+<Math tex="AP=BP\ \Longrightarrow\ APP^{-1}=BPP^{-1}\ \Longrightarrow\ A=B." display />
+
+<Math tex="PA=PB\ \Longrightarrow\ P^{-1}PA=P^{-1}PB\ \Longrightarrow\ A=B." display />
+
+Für invertierbare P und Q erzwingt die folgende angenommene Gleichheit P = Q. Sind die Faktoren verschieden, ist die ursprüngliche Gleichheit unmöglich.
+
+<Math tex="PQP=PQQ\quad\Longrightarrow\quad QP=QQ\quad\Longrightarrow\quad P=Q." display />
+
+Stellen zwei Wörter dieselbe Matrix ungleich der Einheitsmatrix dar, bestimmt die Regel denselben letzten Faktor. Kürze ihn rechts und wiederhole das Verfahren. Inverse werden im Beweis zum Kürzen benutzt; dadurch werden sie nicht zu erlaubten Buchstaben.
+
+Ein nichtleeres Wort kann nicht die Einheitsmatrix ergeben: Der erste Buchstabe erzeugt einen positiven Nebendiagonaleintrag. Weitere Additionen nichtnegativer Spalten können nicht alle positiven Nebendiagonaleinträge beseitigen. Deshalb werden beide Wörter gleichzeitig leer; Länge und sämtliche Faktoren stimmen überein.
+
+## Ein konkretes Wort rückwärts zerlegen
+
+<Math tex="RLR=\begin{pmatrix}2&3\\1&2\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }\begin{pmatrix}2&1\\1&1\end{pmatrix}\xrightarrow{\ \cdot L^{-1}\ }\begin{pmatrix}1&1\\0&1\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }I_2." display />
+
+Die Vergleiche lauten $2\le3$, dann $2>1$ und schließlich $1\le1$. Die entfernten Buchstaben in umgekehrter Reihenfolge ergeben RLR. Das beweist Eindeutigkeit für das konkrete Alphabet $\{R,L\}$, nicht für beliebige invertierbare Matrizen.
+
+<Exercise question={"Warum reicht die erste Zeile (1,0) nicht aus, um das leere Wort zu erkennen?"}>
+Sowohl $I_2$ als auch L haben diese erste Zeile. Prüfe die gesamte Matrix auf $I_2$, bevor du den letzten Buchstaben bestimmst.
+</Exercise>

@@ -1,0 +1,66 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Shears and elementary operations
+navTitle: Shears
+description: One extra matrix entry can change a specific row or column. Which one depends on the side of multiplication.
+order: 7
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrixmultiplikation]
+sourcePages: [3]
+---
+
+## What does a shear matrix change?
+
+The matrix in exercise 5 is almost the identity. Only position $(2,3)$ has an additional $1$:
+
+<Math tex="\colA{A}=\begin{pmatrix}1&0&0\\0&1&1\\0&0&1\end{pmatrix}." display />
+
+It maps $(x,y,z)$ to $(x,y+z,z)$. The second coordinate receives the third; the others stay unchanged.
+
+The following additional 2D model illustrates the same idea: one coordinate is shifted by a multiple of another.
+
+<Explorer kind="shear" />
+
+## Left multiplication changes rows
+
+For the example matrix $B$:
+
+<Math tex="\colB{B}=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix},\qquad \colA{A}\colB{B}=\begin{pmatrix}1&2&3\\11&13&15\\7&8&9\end{pmatrix}." display />
+
+The third row is added to the second: $Z_2\leftarrow Z_2+Z_3$. Here $Z_i$ denotes row $i$, following the notation of the notes. Each column of $B$ is transformed by $A$, changing the same coordinate in every column.
+
+## Right multiplication changes columns
+
+By contrast, $BA$ gives:
+
+<Math tex="\colB{B}\colA{A}=\begin{pmatrix}1&2&5\\4&5&11\\7&8&17\end{pmatrix}." display />
+
+The second column is added to the third: $S_3\leftarrow S_3+S_2$, where $S_j$ denotes column $j$. Positions $2$ and $3$ therefore play different roles in row and column operations.
+
+| Product | What changes | Operation |
+| --- | --- | --- |
+| $AB$ | Second row | $Z_2\leftarrow Z_2+Z_3$ |
+| $BA$ | Third column | $S_3\leftarrow S_3+S_2$ |
+
+## The general rule
+
+Let $A_t=I_n+tE_{ij}$ with $i\ne j$. The matrix $E_{ij}$ has a $1$ at $(i,j)$ and zeros elsewhere. For compatible dimensions:
+
+<Math tex="\colA{A}_tB:\quad Z_i\leftarrow Z_i+tZ_j\qquad \colB{B}\colA{A}_t:\quad S_j\leftarrow S_j+tS_i." display />
+
+Left multiplication also works for rectangular matrices with $n$ rows. Right multiplication requires $n$ columns instead. Thus $AB'$ is defined for the $3\times2$ matrix $B'$ in the exercise, but $B'A$ is not.
+
+## Undo the change
+
+Since $i\ne j$, we have $E_{ij}^2=0$. The inverse is therefore $A_t^{-1}=I_n-tE_{ij}$: subtract exactly what was added.
+
+<Math tex="(I_n+tE_{ij})(I_n-tE_{ij})=I_n-t^2E_{ij}^2=I_n." display />
+
+<Exercise question="What does left multiplication by I₃ − 2E₂₃ do? How do you undo it?">
+It replaces $Z_2$ with $Z_2-2Z_3$. The inverse adds $2Z_3$ back to the second row. Its matrix is $I_3+2E_{23}$.
+</Exercise>

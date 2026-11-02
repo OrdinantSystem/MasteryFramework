@@ -1,0 +1,32 @@
+---
+course: "analysis"
+chapter: "analysis-proof"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+locale: "en"
+title: "Contradiction and the irrationality of √2"
+navTitle: "Contradiction and the irrationality of √2"
+description: "Make the contradictory assumptions explicit before doing the algebra."
+order: 8
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["beweissprache-und-methoden", "aequivalenz-und-paritaet", "zahlenmengen"]
+thumbnail: "irrational"
+---
+
+## There is no greatest natural number
+
+Assume there is a greatest natural number m. Then m + 1 is also natural and greater than m, contradicting its defining property. The contradiction targets the existence of m, not the definition of natural numbers.
+
+## Assume √2 is rational—in lowest terms
+
+<Math tex="\sqrt2=\frac pq,\qquad p,q\in\mathbb Z,\quad q>0,\quad\gcd(|p|,q)=1" display />
+
+Every rational number admits a reduced fraction. Choosing that representation is essential: merely discovering that some fraction can be reduced would not refute rationality.
+
+## Both integers must be even
+
+<Math tex="p^2=2q^2\Longrightarrow p=2k\Longrightarrow4k^2=2q^2\Longrightarrow q^2=2k^2\Longrightarrow q=2\ell" display />
+
+The parity lemma proves each implication from an even square to an even integer. Thus 2 divides both p and q, contradicting their coprimality. Therefore √2 is irrational. An alternative proof uses infinite descent: repeated halving would produce smaller and smaller positive integer denominators, which cannot continue indefinitely.

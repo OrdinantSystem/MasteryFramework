@@ -1,0 +1,66 @@
+---
+locale: es
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Cizallamientos y operaciones elementales
+navTitle: Cizallamientos
+description: Una entrada adicional puede cambiar una fila o columna concreta. Cuál cambia depende del lado de la multiplicación.
+order: 7
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrixmultiplikation]
+sourcePages: [3]
+---
+
+## ¿Qué cambia una matriz de cizallamiento?
+
+La matriz del ejercicio 5 es casi la identidad. Solo la posición $(2,3)$ tiene un $1$ adicional:
+
+<Math tex="\colA{A}=\begin{pmatrix}1&0&0\\0&1&1\\0&0&1\end{pmatrix}." display />
+
+Transforma $(x,y,z)$ en $(x,y+z,z)$. La segunda coordenada recibe la tercera; las demás permanecen iguales.
+
+El siguiente modelo adicional en 2D ilustra la misma idea: una coordenada se desplaza un múltiplo de otra.
+
+<Explorer kind="shear" />
+
+## Multiplicar por la izquierda cambia filas
+
+Para la matriz de ejemplo $B$:
+
+<Math tex="\colB{B}=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix},\qquad \colA{A}\colB{B}=\begin{pmatrix}1&2&3\\11&13&15\\7&8&9\end{pmatrix}." display />
+
+La tercera fila se suma a la segunda: $Z_2\leftarrow Z_2+Z_3$. Aquí $Z_i$ designa la fila $i$, conservando la notación de los apuntes. Cada columna de $B$ se transforma mediante $A$ y cambia la misma coordenada en todas ellas.
+
+## Multiplicar por la derecha cambia columnas
+
+En cambio, $BA$ da:
+
+<Math tex="\colB{B}\colA{A}=\begin{pmatrix}1&2&5\\4&5&11\\7&8&17\end{pmatrix}." display />
+
+La segunda columna se suma a la tercera: $S_3\leftarrow S_3+S_2$, donde $S_j$ designa la columna $j$. Las posiciones $2$ y $3$ desempeñan papeles distintos en las operaciones por filas y por columnas.
+
+| Producto | Qué cambia | Operación |
+| --- | --- | --- |
+| $AB$ | Segunda fila | $Z_2\leftarrow Z_2+Z_3$ |
+| $BA$ | Tercera columna | $S_3\leftarrow S_3+S_2$ |
+
+## La regla general
+
+Sea $A_t=I_n+tE_{ij}$ con $i\ne j$. La matriz $E_{ij}$ tiene un $1$ en $(i,j)$ y ceros en el resto. Para dimensiones compatibles:
+
+<Math tex="\colA{A}_tB:\quad Z_i\leftarrow Z_i+tZ_j\qquad \colB{B}\colA{A}_t:\quad S_j\leftarrow S_j+tS_i." display />
+
+La multiplicación por la izquierda también sirve para matrices rectangulares con $n$ filas. Por la derecha exige $n$ columnas. Así, $AB'$ está definido para la matriz $B'$ de tamaño $3\times2$ del ejercicio, pero $B'A$ no lo está.
+
+## Deshacer el cambio
+
+Como $i\ne j$, tenemos $E_{ij}^2=0$. La inversa es $A_t^{-1}=I_n-tE_{ij}$: resta exactamente lo que se había sumado.
+
+<Math tex="(I_n+tE_{ij})(I_n-tE_{ij})=I_n-t^2E_{ij}^2=I_n." display />
+
+<Exercise question="¿Qué hace la multiplicación por la izquierda mediante I₃ − 2E₂₃? ¿Cómo la deshaces?">
+Sustituye $Z_2$ por $Z_2-2Z_3$. La inversa vuelve a sumar $2Z_3$ a la segunda fila. Su matriz es $I_3+2E_{23}$.
+</Exercise>

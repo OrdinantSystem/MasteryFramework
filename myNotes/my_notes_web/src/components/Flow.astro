@@ -1,0 +1,21 @@
+---
+import Math from './Math.astro';
+import {strings} from '../lib/i18n';
+interface Props {variant?:'vector'|'composition'|'dimensions';nodes?:{label:string;tex:string;detail:string}[];caption?:string}
+const {variant='vector',nodes:customNodes,caption}=Astro.props;
+const t=strings(Astro.locals.locale);
+const nodes=customNodes??(variant==='vector'?[
+ {label:t.input,tex:'\\binom{x}{y}',detail:`2 ${t.components}`},
+ {label:t.mapA,tex:'\\colA{\\begin{pmatrix}3&2\\\\7&-5\\\\-1&11\\end{pmatrix}}',detail:t.rowsColumns},
+ {label:t.output,tex:'\\colResult{\\begin{pmatrix}u\\\\v\\\\w\\end{pmatrix}}',detail:`3 ${t.components}`},
+]:variant==='composition'?[
+ {label:t.firstB,tex:'\\mathbb R^3\\xrightarrow{\\colB{B}}\\mathbb R^2',detail:`3 ${t.inputs} → 2 ${t.outputs}`},
+ {label:t.thenA,tex:'\\mathbb R^2\\xrightarrow{\\colA{A}}\\mathbb R^3',detail:`2 ${t.inputs} → 3 ${t.outputs}`},
+ {label:t.thenC,tex:'\\mathbb R^3\\xrightarrow{\\colC{C}}\\mathbb R^2',detail:`3 ${t.inputs} → 2 ${t.outputs}`},
+]:[
+ {label:'A',tex:`\\colA{m}\\times\\underbrace{\\colB{n}}_{\\text{${t.inner}}}`,detail:`m ${t.outputs}`},
+ {label:'B',tex:`\\underbrace{\\colB{n}}_{\\text{${t.inner}}}\\times\\colResult{q}`,detail:`q ${t.inputs}`},
+ {label:t.product,tex:'\\colA{m}\\times\\colResult{q}',detail:t.outer},
+]);
+---
+<figure class="flow-figure"><div class="flow-nodes">{nodes.map((node,i)=><><div class="flow-node"><span class="section-label">{node.label}</span><Math tex={node.tex} display/><small>{node.detail}</small></div>{i<nodes.length-1&&<span class="flow-arrow" aria-hidden="true">→</span>}</>)}</div><figcaption>{caption??(variant==='vector'?t.flowVector:variant==='composition'?t.flowComposition:t.flowDimensions)}</figcaption></figure>

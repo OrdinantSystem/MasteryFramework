@@ -1,0 +1,67 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Elementare Kippungen und ihre Umkehrungen"
+navTitle: "Elementare Kippungen"
+description: "Eine Koordinate ändert sich. Daraus folgen Umkehrung und Zeilen- oder Spaltenoperationen."
+order: 9
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["kippungen"]
+sourcePages: [1, 3, 5]
+thumbnail: shear-inverse
+---
+
+## Eine Koordinate ändern, die Ausgangskoordinate behalten
+
+Eine Kippung addiert ein Vielfaches einer Koordinate zu einer anderen. Die Ausgangskoordinate bleibt unverändert; deshalb lässt sich die Operation rückgängig machen.
+
+<Math tex="T=I_n+\lambda E_{ij},\qquad i\ne j." display />
+
+Die Matrix $E_{ij}$ hat genau eine 1 in Zeile $i$, Spalte $j$. Alle anderen Einträge sind null. Das erste Indexpaar benennt die Matrix; das zweite bezeichnet den betrachteten Eintrag.
+
+<Math tex="(E_{ij})_{kl}=\delta_{ki}\delta_{lj},\qquad\delta_{ab}=\begin{cases}1&a=b,\\0&a\ne b.\end{cases}" display />
+
+<Math tex="E_{23}=\begin{pmatrix}0&0&0\\0&0&1\\0&0&0\end{pmatrix},\qquad (I_3-3E_{23})\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x\\y-3z\\z\end{pmatrix}." display />
+
+## Die Umkehrung ändert ein Vorzeichen
+
+Für verschiedene Indizes gilt $E_{ij}^2=0$: Nach der ersten Anwendung kann nur Koordinate $i$ ungleich null sein. Die bei der zweiten Anwendung gelesene Koordinate $j$ ist deshalb null.
+
+<Math tex="(I_n+\lambda E_{ij})(I_n-\lambda E_{ij})=I_n-\lambda^2E_{ij}^2=I_n,\qquad T^{-1}=I_n-\lambda E_{ij}." display />
+
+<Explorer kind="shear" />
+
+Der bekannte Scherungs-Explorer zeigt $(x,y)\mapsto(x+ty,y)$. Eine anschließende Anwendung mit Parameter $-t$ stellt die Eingabe wieder her. Kippungen erhalten die Fläche, im Allgemeinen aber nicht Längen und Winkel.
+
+## Links: Zeilen. Rechts: Spalten
+
+<Math tex="TA:\quad Z_i\leftarrow Z_i+\lambda Z_j,\qquad AT:\quad S_j\leftarrow S_j+\lambda S_i." display />
+
+Für $T=I_2+E_{12}$ und die folgende Matrix ergeben sich auf den beiden Seiten unterschiedliche Resultate. Bei der Spaltenoperation sind die Rollen von $i$ und $j$ vertauscht.
+
+<Math tex="A=\begin{pmatrix}1&3\\2&4\end{pmatrix},\qquad TA=\begin{pmatrix}3&7\\2&4\end{pmatrix},\qquad AT=\begin{pmatrix}1&4\\2&6\end{pmatrix}." display />
+
+## Positionen zählen, nicht Koeffizienten
+
+<Math tex="n^2-n=n(n-1)." display />
+
+Es gibt $n(n-1)$ Positionen außerhalb der Diagonalen. Sind beliebige reelle Koeffizienten ungleich null erlaubt und ist $n\ge2$, gibt es unendlich viele verschiedene Kippungen. Bei $q$ verschiedenen zugelassenen Koeffizienten ungleich null sind es $q\,n(n-1)$ elementare Kippungen. Der Koeffizient 0 ergibt an jeder Position dieselbe Einheitsmatrix.
+
+<Note title={"Der eindimensionale Fall"}>
+Für $n=1$ gibt es keine Position außerhalb der Diagonalen und keine nichttriviale elementare Kippung.
+</Note>
+
+| Dimension | Nebendiagonalpositionen |
+| --- | --- |
+| 1 | 0 |
+| 2 | 2 |
+| 3 | 6 |
+| 4 | 12 |
+
+<Exercise question={"Was macht (x,y) ↦ (x+4y,y) rückgängig?"}>
+Verwende $(u,v)\mapsto(u-4v,v)$. Einsetzen ergibt $(x+4y-4y,y)=(x,y)$.
+</Exercise>

@@ -1,0 +1,32 @@
+---
+course: "analysis"
+chapter: "analysis-proof"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+locale: "es"
+title: "Contradicción e irracionalidad de √2"
+navTitle: "Contradicción e irracionalidad de √2"
+description: "Explicita las hipótesis contradictorias antes de calcular."
+order: 8
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["beweissprache-und-methoden", "aequivalenz-und-paritaet", "zahlenmengen"]
+thumbnail: "irrational"
+---
+
+## No existe el mayor número natural
+
+Supón que m es el mayor natural. Entonces m + 1 también es natural y es mayor que m, contradiciendo la propiedad supuesta. La contradicción refuta la existencia de m, no la definición de los naturales.
+
+## Supón que √2 es racional, en forma irreducible
+
+<Math tex="\sqrt2=\frac pq,\qquad p,q\in\mathbb Z,\quad q>0,\quad\gcd(|p|,q)=1" display />
+
+Todo racional admite una fracción irreducible. Elegir esa representación es esencial: descubrir que una fracción cualquiera se puede simplificar no refuta la racionalidad.
+
+## Ambos enteros tendrían que ser pares
+
+<Math tex="p^2=2q^2\Longrightarrow p=2k\Longrightarrow4k^2=2q^2\Longrightarrow q^2=2k^2\Longrightarrow q=2\ell" display />
+
+El lema de paridad justifica cada paso del cuadrado par al entero par. Así, 2 divide tanto a p como a q, contradiciendo su coprimalidad. Por tanto, √2 es irracional. Otra demostración usa descenso infinito: dividir repetidamente entre dos produciría denominadores enteros positivos cada vez menores, lo que no puede continuar indefinidamente.

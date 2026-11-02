@@ -1,0 +1,5 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import {url} from '../lib/content';
+---
+<SiteLayout title="Page not found" description="Return to the learning archive." current="404"><div class="not-found"><span class="section-label">404</span><h1>This note is missing.</h1><p>This address does not match a page in the archive.</p><a href={url()}>Back to the overview →</a></div></SiteLayout>

@@ -1,0 +1,60 @@
+---
+locale: es
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Producto de matrices
+navTitle: Producto de matrices
+description: Comprueba primero las dimensiones. Después calcula cada entrada a partir de una fila y una columna.
+order: 3
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrizen-und-vektoren]
+sourcePages: [1, 2, 4]
+---
+
+## ¿Cuándo está definido el producto?
+
+En $ABx=A(Bx)$, primero actúa $B$. Su salida debe encajar con la entrada que espera $A$. Si $A$ tiene $n$ columnas, $B$ debe tener $n$ filas.
+
+<Flow variant="dimensions" />
+
+Para $A\in\mathbb R^{m\times n}$ y $B\in\mathbb R^{n\times q}$, el resultado es $AB\in\mathbb R^{m\times q}$. La dimensión interior compartida expresa la condición de compatibilidad.
+
+## ¿De dónde sale una entrada?
+
+Para la entrada de la fila $i$ y la columna $j$, toma la fila $i$ de $A$ y la columna $j$ de $B$. Multiplica las componentes correspondientes y suma.
+
+<MatrixProduct />
+
+Por ejemplo, la fila $2$ y la columna $3$ combinan $(7,-5)$ con $(1,4)$:
+
+<Math tex="(\colA{A}\colB{B})_{23}=7\cdot1+(-5)\cdot4=-13." display />
+
+En general:
+
+<Math tex="(\colA{A}\colB{B})_{ij}=\sum_{k=1}^{n}\colA{a_{ik}}\colB{b_{kj}}" display />
+
+El índice $k$ recorre la dimensión interior compartida. Los índices $i,j$ indican la posición del resultado.
+
+## Cada columna del resultado es una imagen
+
+Escribe $B=(b_1\;b_2\;\cdots\;b_q)$. Entonces:
+
+<Math tex="\colA{A}\colB{B}=(Ab_1\;Ab_2\;\cdots\;Ab_q)." display />
+
+Transforma cada columna de $B$ mediante la misma matriz $A$ y coloca los resultados uno junto al otro. Esto conecta la regla de cálculo con las transformaciones lineales.
+
+## El orden importa
+
+Aunque existan ambos productos, $AB$ no tiene por qué ser igual a $BA$. Para matrices rectangulares, incluso sus tamaños pueden ser distintos: $(1\times2)(2\times1)$ da $1\times1$, mientras que el orden inverso da $2\times2$.
+
+Tampoco las matrices cuadradas del mismo tamaño conmutan necesariamente. Un contraejemplo es:
+
+<Math tex="\colA{A}=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad \colB{B}=\begin{pmatrix}1&0\\0&2\end{pmatrix}" display />
+<Math tex="\colA{A}\colB{B}=\begin{pmatrix}1&2\\0&2\end{pmatrix}\ne\begin{pmatrix}1&1\\0&2\end{pmatrix}=\colB{B}\colA{A}." display />
+
+<Exercise question="A es de tamaño 3 × 2 y B de tamaño 2 × 4. ¿Qué tamaño tiene AB? ¿Está definido BA?">
+$AB$ tiene tamaño $3\times4$. $BA$ no está definido porque las dimensiones interiores $4$ y $3$ no coinciden.
+</Exercise>

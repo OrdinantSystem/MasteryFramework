@@ -1,0 +1,9 @@
+---
+import Math from './Math.astro';
+import {matrixGeometry,determinant2,determinantEquation,type Matrix2} from '../lib/interactive/matrix-geometry';
+import {number,type ColorRole} from '../lib/interactive/plane';
+interface Props {cases:{matrix:Matrix2;label:string;detail:string;role?:ColorRole}[];caption:string}
+const {cases,caption}=Astro.props;
+---
+<figure class="matrix-comparison"><div class="comparison-cases">{cases.map(item=><div class="comparison-case"><h3>{item.label}</h3><svg viewBox="150 15 395 375" role="img" aria-label={`${item.label}: det = ${number(determinant2(item.matrix))}`}><g set:html={matrixGeometry(item.matrix,item.role)}/></svg><Math tex={determinantEquation(item.matrix)} display/><p>{item.detail}</p></div>)}</div><figcaption>{caption}</figcaption></figure>
+<style>.matrix-comparison{border:1px solid var(--line);border-radius:var(--radius-panel);background:var(--panel);overflow:hidden;margin:32px 0}.comparison-cases{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr))}.comparison-case{padding:20px 14px;text-align:center;min-width:0}.comparison-case>h3{font-size:14px;margin:0 0 12px}.comparison-case>svg{display:block;width:100%;height:auto}.comparison-case>p{font-size:12px;line-height:1.7;color:var(--secondary);margin:12px auto 0;max-width:30ch}.matrix-comparison>figcaption{border-top:1px solid var(--line);padding:15px 20px;font-size:11px;line-height:1.8;color:var(--muted)}@media(max-width:540px){.comparison-case>svg{max-width:280px;margin:auto}}</style>

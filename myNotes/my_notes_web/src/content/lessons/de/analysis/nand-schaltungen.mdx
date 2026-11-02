@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-circuits"
+sourceId: "analysis-concepts-4"
+sourcePages: [1]
+locale: "de"
+title: "NAND: aus Formeln werden Schaltungen"
+navTitle: "NAND: aus Formeln werden Schaltungen"
+description: "NICHT, UND und ODER aus einem einzigen Gattertyp bauen."
+order: 14
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen", "de-morgan-und-doppelte-negation"]
+thumbnail: "nand"
+---
+
+## Eine Operation
+
+<Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
+
+NAND liefert nur dann 0, wenn beide Eingaben 1 sind. Die Schreibweisen | und ↑ sind üblich. Hier bezeichnet | NAND, während a | n im früheren zahlentheoretischen Beispiel Teilbarkeit bezeichnete: Der Kontext zählt. Der kleine Kreis am Gatterausgang bedeutet Negation.
+
+## Eingaben ändern und den Leitungen folgen
+
+<Interactive kind="logic" preset="nand" id="nand-lab" display />
+
+## Drei Konstruktionen
+
+<Math tex="\neg \colA{A}=\colA{A}\mid \colA{A}\qquad \colA{A}\land \colB{B}=(\colA{A}\mid \colB{B})\mid(\colA{A}\mid \colB{B})" display />
+
+<Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
+
+Für NICHT wird A mit beiden Eingängen eines NAND verbunden. UND nutzt den Ausgang des ersten NAND für beide Eingänge eines zweiten: zwei physische Gatter, obwohl der Term mehrfach geschrieben wird. ODER negiert zuerst beide Eingaben und verbindet sie dann mit NAND: drei Gatter. Weil NICHT, UND und ODER konstruierbar sind, ist NAND funktional vollständig.

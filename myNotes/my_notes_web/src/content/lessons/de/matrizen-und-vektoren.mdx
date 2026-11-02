@@ -1,0 +1,55 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Matrizen und Vektoren
+navTitle: Matrizen & Vektoren
+description: Zeilen berechnen die Ausgabe. Spalten erklären, wie sie entsteht. Zwei Blickrichtungen auf dieselbe Abbildung.
+order: 2
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [lineare-abbildungen]
+sourcePages: [1, 4]
+---
+
+## Eine Matrix verbindet Eingabe und Ausgabe
+
+Die drei Ausdrücke $u=3x+2y$, $v=7x-5y$ und $w=-x+11y$ verwenden dieselben zwei Eingaben. Ihre Koeffizienten bilden eine Matrix mit drei Zeilen und zwei Spalten.
+
+<Flow />
+
+Kurz schreiben wir $b=Ax$. Die Matrix $A$ beschreibt eine Abbildung von $\mathbb R^2$ nach $\mathbb R^3$: Aus zwei Koordinaten werden drei. Die Anzahl der Komponenten darf sich also ändern.
+
+## Zeilen lesen heißt ausrechnen
+
+Jede Zeile wird komponentenweise mit dem Eingabevektor multipliziert; die Produkte werden addiert. Für die Eingabe $(x,y)=(1,2)$ ergibt das im Beispiel aus dem Blatt:
+
+<Math tex="\begin{pmatrix}3&2\\7&-5\\-1&11\end{pmatrix}\binom12=\begin{pmatrix}3\cdot1+2\cdot2\\7\cdot1-5\cdot2\\-1\cdot1+11\cdot2\end{pmatrix}=\begin{pmatrix}7\\-3\\21\end{pmatrix}" display />
+
+Das ist die praktische Rechenregel. Die Sicht über Spalten erklärt zusätzlich ihre geometrische Bedeutung.
+
+## Spalten lesen heißt verstehen
+
+Die erste Spalte ist das Bild des ersten Standardbasisvektors, die zweite das Bild des zweiten. Weil jeder Eingabevektor eine Linearkombination dieser Basisvektoren ist, wird seine Ausgabe dieselbe Kombination der Matrixspalten:
+
+<Math tex="\colA{A}\binom{x}{y}=x\underbrace{\begin{pmatrix}3\\7\\-1\end{pmatrix}}_{a_1}+y\underbrace{\begin{pmatrix}2\\-5\\11\end{pmatrix}}_{a_2}" display />
+
+Im folgenden **ergänzenden 2D-Beispiel** sind beide Ausgaben ebenfalls zweidimensional, damit du ihre Addition direkt sehen kannst. Verändere die Koeffizienten und beobachte, wie sich die Summe bewegt.
+
+<Interactive kind="vectors" preset="linear-combination" id="vector-lab-combination" />
+
+Die Richtung einer Spalte ist fest. Die Eingabe bestimmt, wie stark sie gestreckt, verkürzt oder umgedreht wird. Erst danach werden die beiden Beiträge addiert.
+
+<Note title="Die Verbindung">Zeilen und Spalten beschreiben keine verschiedenen Verfahren. Sie organisieren dieselbe Summe unterschiedlich: nach Ausgabekoordinaten oder nach Beiträgen der Eingabe.</Note>
+
+## Die allgemeine Form
+
+Für eine Matrix $A\in\mathbb R^{m\times n}$ mit Spalten $a_1,\ldots,a_n$ und einen Vektor $x\in\mathbb R^n$ gilt:
+
+<Math tex="Ax=x_1a_1+\cdots+x_na_n=\sum_{k=1}^{n}x_ka_k\in\mathbb R^m" display />
+
+<Exercise question="Welche Eingabe liefert genau die zweite Spalte von A?">
+Der zweite Standardbasisvektor $e_2$: Seine zweite Komponente ist $1$, alle anderen sind $0$. Also gilt $Ae_2=a_2$. Im 2D-Explorer stellst du dafür $a=0$ und $b=1$ ein.
+</Exercise>

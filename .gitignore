@@ -1,0 +1,41 @@
+# Operating-system and editor files
+.DS_Store
+._*
+Thumbs.db
+*.swp
+*.swo
+
+# Dependencies, caches, and local preview state
+node_modules/
+.astro/
+.sites-runtime/
+.build/
+__pycache__/
+*.py[cod]
+*.tsbuildinfo
+*.log
+tmp/
+.cache/
+coverage/
+
+# Build output and generated delivery bundles
+dist/
+build/
+*.zip
+*.tar.gz
+
+# This older site is authored directly in dist; it has no separate source tree.
+!/algebra-sheet/dist/
+!/algebra-sheet/dist/**
+
+# Private source PDFs/renders and local hosting integration state
+references/source/
+.openai/
+
+# Local credentials; retain only non-secret configuration examples
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key

@@ -1,0 +1,11 @@
+---
+import {strings} from '../lib/i18n';
+interface Props { question: string; }
+const { question } = Astro.props;
+const t=strings(Astro.locals.locale);
+---
+<section class="exercise" aria-label={t.check}>
+  <div class="section-label">{t.check}</div>
+  <p>{question}</p>
+  <details><summary>{t.solution} <span aria-hidden="true">+</span></summary><div class="solution"><slot /></div></details>
+</section>

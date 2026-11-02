@@ -1,0 +1,53 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "−I aus Kippungen konstruieren"
+navTitle: "−I konstruieren"
+description: "Eine Folge von Zeilen- und Spaltenoperationen als geordnetes Produkt schreiben."
+order: 15
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: ["kippungsaequivalenz", "vorzeichen-und-kippungsprodukte"]
+sourcePages: [5, 6]
+thumbnail: negative-identity
+---
+
+## Aufgabe 9 verlangt ein ausdrückliches Produkt
+
+Die Äquivalenz von $-I_2$ und $I_2$ zeigt die Existenz einer Konstruktion. Die Faktoren in der richtigen Reihenfolge machen sie ausdrücklich sichtbar. Setze:
+
+<Math tex="L=I_2+E_{21}=\begin{pmatrix}1&0\\1&1\end{pmatrix},\qquad H=I_2-2E_{12}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}." display />
+
+| Operation | Matrix |
+| --- | --- |
+| $I_2$ | <Math tex="\begin{pmatrix}1&0\\0&1\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2+Z_1$ | <Math tex="\begin{pmatrix}1&0\\1&1\end{pmatrix}" /> |
+| $S_2\leftarrow S_2-2S_1$ | <Math tex="\begin{pmatrix}1&-2\\1&-1\end{pmatrix}" /> |
+| $S_1\leftarrow S_1+S_2$ | <Math tex="\begin{pmatrix}-1&-2\\0&-1\end{pmatrix}" /> |
+| $Z_1\leftarrow Z_1-2Z_2$ | <Math tex="\begin{pmatrix}-1&0\\0&-1\end{pmatrix}" /> |
+
+
+## Links- und Rechtsmultiplikation an ihrem Platz lassen
+
+<Math tex="I_2\longmapsto L\longmapsto LH\longmapsto LHL\longmapsto HLHL=-I_2." display />
+
+Die erste und letzte Operation wirken auf Zeilen; ihre Faktoren stehen deshalb links. Die beiden mittleren wirken auf Spalten; ihre Faktoren stehen rechts. Belasse jeden Faktor beim Übersetzen der Operationen in ein Produkt auf seiner tatsächlichen Seite.
+
+<Math tex="-I_2=(I_2-2E_{12})(I_2+E_{21})(I_2-2E_{12})(I_2+E_{21})." display />
+
+<Interactive kind="matrix-product" left={[[-1,-2],[1,1]]} right={[[-1,-2],[1,1]]} />
+
+Die interaktive Rechnung multipliziert HL mit sich selbst. HL hat Determinante 1; sein Quadrat ist die halbe Drehung $-I_2$, ebenfalls mit Determinante 1.
+
+## Wenn nur Einheitskoeffizienten erlaubt sind
+
+<Math tex="S=I_2-E_{12},\qquad S^2=I_2-2E_{12}=H,\qquad -I_2=SS LSS L." display />
+
+Damit erhält man sechs zugelassene Einheitskippungen. Die Darstellung mit vier Faktoren verwendet den Koeffizienten −2; die Koeffizientenkonvention muss daher erkennbar bleiben. Keine der Darstellungen behauptet Minimalität.
+
+<Exercise question={"Warum schließt eine positive Determinante eine halbe Drehung nicht aus?"}>
+Eine halbe Drehung kehrt beide Koordinatenvektoren um. In zwei Dimensionen erhalten zwei Vorzeichenwechsel die Orientierung: $\det(-I_2)=(-1)^2=1$.
+</Exercise>

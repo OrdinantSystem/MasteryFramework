@@ -1,0 +1,53 @@
+---
+locale: es
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Construir −I con cizallamientos"
+navTitle: "Construir −I"
+description: "Convierte una sucesión de operaciones por filas y columnas en un producto ordenado."
+order: 15
+kind: worked-problem
+status: published
+reviewStatus: unreviewed
+prerequisites: ["kippungsaequivalenz", "vorzeichen-und-kippungsprodukte"]
+sourcePages: [5, 6]
+thumbnail: negative-identity
+---
+
+## El ejercicio 9 pide un producto explícito
+
+Mostrar que $-I_2$ es equivalente a $I_2$ prueba que hay una construcción. Escribir los factores en el orden correcto la hace explícita. Define:
+
+<Math tex="L=I_2+E_{21}=\begin{pmatrix}1&0\\1&1\end{pmatrix},\qquad H=I_2-2E_{12}=\begin{pmatrix}1&-2\\0&1\end{pmatrix}." display />
+
+| Operación | Matriz |
+| --- | --- |
+| $I_2$ | <Math tex="\begin{pmatrix}1&0\\0&1\end{pmatrix}" /> |
+| $Z_2\leftarrow Z_2+Z_1$ | <Math tex="\begin{pmatrix}1&0\\1&1\end{pmatrix}" /> |
+| $S_2\leftarrow S_2-2S_1$ | <Math tex="\begin{pmatrix}1&-2\\1&-1\end{pmatrix}" /> |
+| $S_1\leftarrow S_1+S_2$ | <Math tex="\begin{pmatrix}-1&-2\\0&-1\end{pmatrix}" /> |
+| $Z_1\leftarrow Z_1-2Z_2$ | <Math tex="\begin{pmatrix}-1&0\\0&-1\end{pmatrix}" /> |
+
+
+## Respetar el lado de cada multiplicación
+
+<Math tex="I_2\longmapsto L\longmapsto LH\longmapsto LHL\longmapsto HLHL=-I_2." display />
+
+La primera y la última operación actúan sobre filas y sus factores van por la izquierda. Las dos centrales actúan sobre columnas y sus factores van por la derecha. Mantén cada factor en el lado por el que actúa al traducir las operaciones a un producto.
+
+<Math tex="-I_2=(I_2-2E_{12})(I_2+E_{21})(I_2-2E_{12})(I_2+E_{21})." display />
+
+<Interactive kind="matrix-product" left={[[-1,-2],[1,1]]} right={[[-1,-2],[1,1]]} />
+
+El cálculo interactivo multiplica HL por sí mismo. HL tiene determinante 1 y su cuadrado es la media vuelta $-I_2$, también con determinante 1.
+
+## Si solo se permiten coeficientes unitarios
+
+<Math tex="S=I_2-E_{12},\qquad S^2=I_2-2E_{12}=H,\qquad -I_2=SS LSS L." display />
+
+Así se obtienen seis cizallamientos unitarios permitidos. La construcción de cuatro factores usa el coeficiente −2, por lo que debe quedar clara la convención de coeficientes. Ninguna expresión afirma usar el número mínimo de factores.
+
+<Exercise question={"¿Por qué un determinante positivo no impide una media vuelta?"}>
+Una media vuelta invierte ambos vectores coordenados. En dos dimensiones, esos dos cambios de signo conservan la orientación: $\det(-I_2)=(-1)^2=1$.
+</Exercise>

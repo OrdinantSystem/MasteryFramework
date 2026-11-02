@@ -1,0 +1,48 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Diagonal matrices and involutions"
+navTitle: "Diagonal matrices"
+description: "Separate scaling explains diagonal inverses. Squared signs explain involutions."
+order: 11
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["determinante-und-orientierung"]
+sourcePages: [2]
+thumbnail: diagonal
+---
+
+## A diagonal matrix scales coordinates separately
+
+<Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\qquad(x_1,\ldots,x_n)\mapsto(d_1x_1,\ldots,d_nx_n)." display />
+
+No coordinate is mixed with another. Each diagonal entry gives one scale factor. A negative factor also reverses that coordinate direction.
+
+## Undo multiplication by dividing
+
+<Math tex="D^{-1}=\operatorname{diag}(d_1^{-1},\ldots,d_n^{-1})\quad d_i\ne0\ \forall i." display />
+
+<Math tex="D=\operatorname{diag}\left(2,-3,\frac12\right),\qquad D^{-1}=\operatorname{diag}\left(\frac12,-\frac13,2\right)." display />
+
+A zero diagonal entry loses that input coordinate, so no inverse can recover it. This differs from a shear inverse: a shear undoes an addition; a diagonal inverse undoes a multiplication.
+
+## An involution is its own inverse
+
+<Math tex="A^{-1}=A\iff A^2=I_n." display />
+
+For a sign matrix, every diagonal entry is +1 or −1. Applying it twice restores every coordinate because each sign is squared.
+
+<Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\quad d_i\in\{-1,1\}\quad\Longrightarrow\quad D^2=\operatorname{diag}(1,\ldots,1)=I_n." display />
+
+<Flow nodes={[{"label": "Input", "tex": "\\binom{x}{y}", "detail": "Original vector"}, {"label": "One application", "tex": "\\binom{x}{-y}", "detail": "Reflect one coordinate"}, {"label": "Second application", "tex": "\\binom{x}{y}", "detail": "Restore the input"}]} caption={"D = diag(1, −1): two reflections restore the vector."} />
+
+<Note title={"Invertible does not mean shear-generated"}>
+Every sign matrix is invertible. Whether it is a product of the permitted shears is a separate question, answered by the parity argument in the next lesson.
+</Note>
+
+<Exercise question={"Is diag(1,0) an involution?"}>
+No. Its square is itself, but not the identity. The zero coordinate also makes it noninvertible.
+</Exercise>

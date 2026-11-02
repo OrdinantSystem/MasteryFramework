@@ -1,0 +1,67 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Elementary shears and their inverses"
+navTitle: "Elementary shears"
+description: "One coordinate changes. That simple rule explains inverses and row or column operations."
+order: 9
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["kippungen"]
+sourcePages: [1, 3, 5]
+thumbnail: shear-inverse
+---
+
+## Change one coordinate, keep the source coordinate
+
+A shear adds a multiple of one coordinate to a different coordinate. The source coordinate stays unchanged, which is why the operation can be undone.
+
+<Math tex="T=I_n+\lambda E_{ij},\qquad i\ne j." display />
+
+The matrix $E_{ij}$ has a single 1 in row $i$, column $j$. Every other entry is zero. The first pair of indices names the matrix; the second pair below names the entry being inspected.
+
+<Math tex="(E_{ij})_{kl}=\delta_{ki}\delta_{lj},\qquad\delta_{ab}=\begin{cases}1&a=b,\\0&a\ne b.\end{cases}" display />
+
+<Math tex="E_{23}=\begin{pmatrix}0&0&0\\0&0&1\\0&0&0\end{pmatrix},\qquad (I_3-3E_{23})\begin{pmatrix}x\\y\\z\end{pmatrix}=\begin{pmatrix}x\\y-3z\\z\end{pmatrix}." display />
+
+## The inverse changes one sign
+
+For distinct indices, $E_{ij}^2=0$: after the first application, only coordinate $i$ can be nonzero, so the coordinate $j$ read by the next application is zero.
+
+<Math tex="(I_n+\lambda E_{ij})(I_n-\lambda E_{ij})=I_n-\lambda^2E_{ij}^2=I_n,\qquad T^{-1}=I_n-\lambda E_{ij}." display />
+
+<Explorer kind="shear" />
+
+The existing shear explorer is a 2D example: $(x,y)\mapsto(x+ty,y)$. Applying the parameter $-t$ afterwards restores the input. Shears preserve area, but generally change lengths and angles.
+
+## Left means rows; right means columns
+
+<Math tex="TA:\quad Z_i\leftarrow Z_i+\lambda Z_j,\qquad AT:\quad S_j\leftarrow S_j+\lambda S_i." display />
+
+For $T=I_2+E_{12}$ and the matrix below, the same shear produces different results on the two sides. In the column operation, the roles of $i$ and $j$ are reversed.
+
+<Math tex="A=\begin{pmatrix}1&3\\2&4\end{pmatrix},\qquad TA=\begin{pmatrix}3&7\\2&4\end{pmatrix},\qquad AT=\begin{pmatrix}1&4\\2&6\end{pmatrix}." display />
+
+## Count positions, not coefficients
+
+<Math tex="n^2-n=n(n-1)." display />
+
+There are $n(n-1)$ off-diagonal positions. If any nonzero real coefficient is allowed and $n\ge2$, there are infinitely many distinct shears. With a finite set of $q$ distinct nonzero allowed coefficients, there are $q\,n(n-1)$ elementary shears. The coefficient 0 gives the same identity matrix at every position.
+
+<Note title={"The one-dimensional case"}>
+For $n=1$ there is no off-diagonal position and no nontrivial elementary shear.
+</Note>
+
+| Dimension | Off-diagonal positions |
+| --- | --- |
+| 1 | 0 |
+| 2 | 2 |
+| 3 | 6 |
+| 4 | 12 |
+
+<Exercise question={"What undoes the map (x,y) ↦ (x+4y,y)?"}>
+Use $(u,v)\mapsto(u-4v,v)$. Substitution gives $(x+4y-4y,y)=(x,y)$.
+</Exercise>

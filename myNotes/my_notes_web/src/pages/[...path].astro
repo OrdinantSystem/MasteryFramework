@@ -1,0 +1,60 @@
+---
+import {render} from 'astro:content';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import ConceptMap from '../components/ConceptMap.astro';
+import Thumbnail from '../components/Thumbnail.astro';
+import {courses,chaptersFor,courseFor,type CourseId} from '../lib/navigation';
+import {learningComponents} from '../components/mdx';
+import {getLessons,courseUrl,lessonUrl,url} from '../lib/content';
+import {locales,strings,type Locale} from '../lib/i18n';
+export async function getStaticPaths(){
+ const paths=[];
+ for(const locale of locales){
+  const prefix=locale==='en'?'':`${locale}/`,all=await getLessons(locale);
+  paths.push({params:{path:prefix||undefined},props:{locale,kind:'archive',lessons:all}});
+  paths.push({params:{path:`${prefix}search`},props:{locale,kind:'search',lessons:all}});
+  for(const course of courses){
+   const lessons=all.filter(l=>l.data.course===course.id);
+   paths.push({params:{path:`${prefix}${course.id}`},props:{locale,kind:'course',courseId:course.id,lessons}});
+   for(const lesson of lessons)paths.push({params:{path:`${prefix}${course.id==='analysis'?'analysis/':''}lessons/${lesson.key}`},props:{locale,kind:'lesson',courseId:course.id,lesson,lessons}});
+  }
+ }
+ return paths;
+}
+const {locale,kind,lesson,lessons,courseId}=Astro.props;
+Astro.locals.locale=locale as Locale;
+const t=strings(locale),course=courseId?courseFor(courseId as CourseId):undefined;
+const rendered=lesson?await render(lesson):undefined,Content=rendered?.Content;
+const title=lesson?.data.title||(kind==='search'?t.search:course?.title[locale]||'myNotes');
+const description=lesson?.data.description||(kind==='search'?t.searchLead:course?.description[locale]||t.archiveLead);
+const i=lessons.findIndex(l=>l.key===lesson?.key),previous=lessons[i-1],next=lessons[i+1];
+const kinds={concept:t.concept,'worked-problem':t.worked,recap:t.recap,note:t.note};
+---
+<SiteLayout title={title} description={description} locale={locale} courseId={courseId} current={lesson?.key||(kind==='archive'?'index':kind)} headings={rendered?.headings||[]}>
+ {kind==='archive'&&<>
+  <header class="index-heading"><span class="section-label">{t.mathematics.toUpperCase()}</span><h1>myNotes</h1><p class="lead">{t.archiveLead}</p></header>
+  <section class="chapter-index" aria-labelledby="courses"><h2 id="courses">{t.courses}</h2><ol class="lesson-list course-list">{courses.map(course=><li><div class="course-entry"><a class="course-main" href={courseUrl(course.id,locale)}><Thumbnail order={course.id==='analysis'?0:2} visual={course.id==='analysis'?'logic':undefined} locale={locale}/><div><h3>{course.title[locale]}</h3><p>{course.description[locale]}</p><small>{lessons.filter(l=>l.data.course===course.id).length} {t.count}</small></div><span class="index-arrow" aria-hidden="true">↗</span></a><nav class="course-chapter-links" aria-label={course.title[locale]}>{chaptersFor(course.id).map(c=><a id={c.id} href={`${courseUrl(course.id,locale)}#${c.id}`}>{c.title[locale]}</a>)}</nav></div></li>)}</ol></section>
+ </>}
+ {kind==='course'&&course&&<>
+  <header class="index-heading"><span class="section-label">{t.mathematics.toUpperCase()}</span><h1>{course.title[locale]}</h1><p class="lead">{course.description[locale]}</p></header>
+  <p class="index-intro">{t.indexIntro}</p>
+  <nav class="chapter-jumps" aria-label={t.contents}>{chaptersFor(course.id).map(c=><a href={`#${c.id}`}>{c.title[locale]}</a>)}</nav>
+  {chaptersFor(course.id).map(chapter=><section class="chapter-index" aria-labelledby={chapter.id}><h2 id={chapter.id}>{chapter.title[locale]}<span class="index-total">{lessons.filter(l=>l.data.chapter===chapter.id).length} {t.count}</span></h2><p class="chapter-description">{chapter.description[locale]}</p>{chapter.id==='sheet-1-1'&&<ConceptMap locale={locale}/>}<ol class="lesson-list">{lessons.filter(l=>l.data.chapter===chapter.id).map(l=><li><a href={lessonUrl(l.key,locale,course.id)}><span class="index-number">{String(l.data.order).padStart(2,'0')}</span><Thumbnail order={l.data.order} visual={l.data.thumbnail} locale={locale}/><div><h3>{l.data.title}</h3><p>{l.data.description}</p></div><span class="index-arrow" aria-hidden="true">↗</span></a></li>)}</ol></section>)}
+ </>}
+ {kind==='lesson'&&lesson&&Content&&course&&<>
+  <article data-pagefind-body data-pagefind-filter={`${t.courses}:${course.title[locale]}`}>
+   <header class="article-header"><div class="article-meta" data-pagefind-ignore><span class="section-label">{course.title[locale].toUpperCase()}</span><span class="meta-dot">·</span><span>{kinds[lesson.data.kind]}</span><span class="lesson-count">{String(lesson.data.order).padStart(2,'0')} / {String(lessons.length).padStart(2,'0')}</span></div><h1 data-pagefind-meta="title">{lesson.data.title}</h1><p class="lead">{lesson.data.description}</p></header>
+   {lesson.data.prerequisites.length>0&&<div class="prerequisites" data-pagefind-ignore><span>{t.prerequisites}</span>{lesson.data.prerequisites.map(id=><a href={lessonUrl(id,locale,course.id)}>{lessons.find(l=>l.key===id)?.data.navTitle}</a>)}</div>}
+   <div class="prose"><Content components={learningComponents}/></div>
+  </article>
+  <nav class="page-turn" aria-label={t.lessons} data-pagefind-ignore><a href={previous?lessonUrl(previous.key,locale,course.id):courseUrl(course.id,locale)}><small>← {previous?t.previous:t.backOverview}</small><span>{previous?.data.navTitle||course.title[locale]}</span></a>{next&&<a class="next" href={lessonUrl(next.key,locale,course.id)}><small>{t.next} →</small><span>{next.data.navTitle}</span></a>}</nav>
+ </>}
+ {kind==='search'&&<>
+  <header class="article-header"><div class="article-meta"><span class="section-label">{t.archive.toUpperCase()}</span></div><h1>{t.search}</h1><p class="lead">{t.searchLead}</p></header>
+  <link rel="stylesheet" href={url('pagefind/pagefind-ui.css')}/><div id="search"></div><noscript><p>{t.noSearchScript}</p></noscript>
+  <script is:inline src={url('pagefind/pagefind-ui.js')}></script>
+  <script is:inline define:vars={{baseUrl:url(),t}}>
+   if(window.PagefindUI){const ui=new PagefindUI({element:'#search',baseUrl,bundlePath:baseUrl+'pagefind/',showSubResults:true,showImages:false,translations:{placeholder:t.searchPlaceholder,zero_results:t.searchEmpty,searching:t.searching,clear_search:t.clear,many_results:t.many,one_result:t.one}});const q=new URL(location.href).searchParams.get('q');if(q)ui.triggerSearch(q);document.querySelector('#search').addEventListener('input',e=>{if(e.target.tagName==='INPUT'){const u=new URL(location.href);const q=e.target.value;if(q)u.searchParams.set('q',q);else u.searchParams.delete('q');history.replaceState(null,'',u)}})}else document.getElementById('search').textContent=t.noSearch;
+  </script>
+ </>}
+</SiteLayout>

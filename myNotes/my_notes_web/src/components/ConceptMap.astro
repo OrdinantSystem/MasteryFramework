@@ -1,0 +1,12 @@
+---
+import {lessonUrl} from '../lib/content';
+import {strings,type Locale} from '../lib/i18n';
+const {locale='en'}=Astro.props as {locale?:Locale};
+const t=strings(locale);
+const branches=[{id:'matrizen-und-vektoren',label:t.mapMatrices,relation:t.mapVector},{id:'matrixmultiplikation',label:t.mapMultiplication,relation:t.mapProduct},{id:'spann-und-rang',label:t.mapSpan,relation:t.mapRank}];
+---
+<figure class="concept-map" aria-label={t.mapTitle}>
+  <div class="map-root"><a href={lessonUrl('lineare-abbildungen',locale)}>{t.mapLinear}</a><span>↓ {t.mapRelation}</span></div>
+  <div class="map-branches">{branches.map(b=><div><span>{b.relation}</span><a href={lessonUrl(b.id,locale)}>{b.label}<span aria-hidden="true">↗</span></a></div>)}</div>
+  <figcaption>{t.mapCaption}</figcaption>
+</figure>

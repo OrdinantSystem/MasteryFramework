@@ -1,0 +1,62 @@
+---
+locale: en
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Unique matrix products and cancellation"
+navTitle: "Unique products"
+description: "An allowed alphabet, a last-factor rule, and cancellation turn a matrix into a unique word."
+order: 13
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["matrixmultiplikation", "elementare-kippungen"]
+sourcePages: [3, 5]
+thumbnail: words
+---
+
+## Uniqueness depends on the allowed factors
+
+A product representation is unique relative to a specified set of allowed matrices. Different names are not different factors if they denote the same matrix. The identity is represented by the empty word.
+
+<Math tex="S=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad T=\begin{pmatrix}1&2\\0&1\end{pmatrix},\quad S^2=T." display />
+
+With allowed factors $\{S,T\}$, the words SS and T give the same matrix. With only S allowed, $S^k$ has upper-right entry $k$, so the length is uniquely determined. Allowing inverses would introduce further relations such as $SS^{-1}=I_2$.
+
+## Read the last letter from the matrix
+
+<Math tex="R=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad L=\begin{pmatrix}1&0\\1&1\end{pmatrix},\quad M=\begin{pmatrix}a&b\\c&d\end{pmatrix}." display />
+
+Now allow only the letters R and L, with nonnegative word length and no inverse letters. Starting from the identity, right multiplication adds columns. All entries stay nonnegative integers, and the top-left entry stays at least 1.
+
+<Math tex="MR=\begin{pmatrix}a&a+b\\c&c+d\end{pmatrix},\qquad ML=\begin{pmatrix}a+b&b\\c+d&d\end{pmatrix}." display />
+
+<Math tex="\cdots R:\ m_{11}\le m_{12},\qquad\cdots L:\ m_{11}>m_{12}." display />
+
+<Note title={"Include the equality case"}>
+The matrix R has first row (1,1). A strict inequality would miss it. For a product ending in R, the new second entry is $a+b\ge a$. For a product ending in L, the new first entry is $a+b>b$ because $a\ge1$. Check the full matrix for the identity before applying this rule.
+</Note>
+
+## Cancel on the side where the factor sits
+
+<Math tex="AP=BP\ \Longrightarrow\ APP^{-1}=BPP^{-1}\ \Longrightarrow\ A=B." display />
+
+<Math tex="PA=PB\ \Longrightarrow\ P^{-1}PA=P^{-1}PB\ \Longrightarrow\ A=B." display />
+
+For invertible P and Q, the proposed equality below forces P = Q. If those factors are distinct, the original equality is impossible.
+
+<Math tex="PQP=PQQ\quad\Longrightarrow\quad QP=QQ\quad\Longrightarrow\quad P=Q." display />
+
+For two words representing the same nonidentity matrix, the last-letter rule identifies the same final factor. Cancel it on the right, and repeat. Inverses are used in the proof to cancel; they do not become allowed letters.
+
+A nonempty word cannot equal the identity: its first letter creates a positive off-diagonal entry. Later additions of nonnegative columns cannot remove all positive off-diagonal entries. Thus both words become empty together, proving equality of their lengths and every factor.
+
+## Peel a concrete word backwards
+
+<Math tex="RLR=\begin{pmatrix}2&3\\1&2\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }\begin{pmatrix}2&1\\1&1\end{pmatrix}\xrightarrow{\ \cdot L^{-1}\ }\begin{pmatrix}1&1\\0&1\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }I_2." display />
+
+The inequalities are $2\le3$, then $2>1$, then $1\le1$. Read the removed letters in reverse to recover RLR. This is a proof for the specific alphabet $\{R,L\}$, not for arbitrary invertible matrices.
+
+<Exercise question={"Why is the first row (1,0) insufficient to identify the empty word?"}>
+Both $I_2$ and L have that first row. Test the full matrix for $I_2$ before decoding the last letter.
+</Exercise>

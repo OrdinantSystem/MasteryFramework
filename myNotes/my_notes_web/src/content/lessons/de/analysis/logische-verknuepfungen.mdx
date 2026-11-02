@@ -1,0 +1,37 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+locale: "de"
+title: "Logische Verknüpfungen"
+navTitle: "Logische Verknüpfungen"
+description: "Aus kleinen Aussagen größere bilden und „oder“ richtig lesen."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "logic"
+---
+
+## Eine Zeile nach der anderen lesen
+
+| A | B | ¬A | A ∧ B | A ∨ B | A ⇒ B | A ⇔ B |
+|---|---|---|---|---|---|---|
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+
+UND verlangt beide Eingaben. Das inklusive ODER verlangt mindestens eine und erlaubt auch beide. NICHT kehrt den Wahrheitswert um. Eine Implikation ist nur bei wahrer Voraussetzung und falscher Folgerung falsch. Äquivalenz verlangt gleiche Wahrheitswerte, auch wenn beide falsch sind.
+
+## Immer, nie oder manchmal
+
+Eine Tautologie gilt bei jeder Belegung, etwa A ∨ ¬A. Eine Kontradiktion ist bei jeder Belegung falsch, etwa A ∧ ¬A. Eine Kontingenz hängt von der Belegung ab. A ⇒ B ist kontingent, auch wenn einzelne Fälle mit falscher Voraussetzung wahr sind.
+
+## Eine Implikation negieren
+
+<Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
+
+Um „Wenn ich bestehe, lade ich zum Essen ein“ zu widerlegen, muss ich bestehen und nicht einladen. Beide Teile zu negieren ist etwas anderes.

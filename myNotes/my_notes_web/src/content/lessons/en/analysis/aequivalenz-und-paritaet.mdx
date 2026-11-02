@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "en"
+title: "Equivalence and parity"
+navTitle: "Equivalence and parity"
+description: "Prove both directions, choosing a different strategy for each."
+order: 6
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["implikation-und-kontraposition"]
+thumbnail: "parity"
+---
+
+## The claim
+
+<Math tex="\forall n\in\mathbb Z:\quad 2\mid n\iff2\mid n^2" display />
+
+“Even” means n = 2k for an integer k. “Odd” means n = 2k + 1. An equivalence requires both directions; proving only one implication leaves half the work undone.
+
+## Forward: use the definition
+
+<Math tex="n=2k\quad\Longrightarrow\quad n^2=4k^2=2(2k^2)" display />
+
+The term in parentheses is an integer, so the square is even.
+
+## Backward: use contraposition
+
+<Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
+
+An odd input has an odd square. This proves the contrapositive of “if the square is even, then the input is even”. It also works for negative integers and zero; do not silently restrict the domain to positive numbers.

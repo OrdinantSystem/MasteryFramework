@@ -1,0 +1,28 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "es"
+title: "Implicación y contraposición"
+navTitle: "Implicación y contraposición"
+description: "Distingue la dirección de una afirmación de su recíproca."
+order: 5
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen"]
+thumbnail: "implication"
+---
+
+## Cambia el enunciado y comprueba todos los casos
+
+<Interactive kind="logic" preset="implication" id="implication-lab" display />
+
+Coincidir en la fila seleccionada no basta para la equivalencia. Compara las cuatro. La contraposición siempre coincide con el original; la recíproca y la inversa coinciden entre sí, pero no necesariamente con el original.
+
+<Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
+
+## Un ejemplo concreto con divisibilidad
+
+Escribe a | n si n = ak para algún entero k. Es divisibilidad, no división. Si 4 divide a n, entonces 2 divide a n. La contraposición dice: si 2 no divide a n, entonces 4 tampoco. La recíproca falla con n = 6: 2 divide a 6, pero 4 no.

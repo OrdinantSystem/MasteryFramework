@@ -1,0 +1,48 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-2-1
+sourceId: sheet-2-1
+title: "Diagonalmatrizen und Involutionen"
+navTitle: "Diagonalmatrizen"
+description: "Einzelne Skalierung erklärt die Umkehrung. Quadrierte Vorzeichen erklären Involutionen."
+order: 11
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: ["determinante-und-orientierung"]
+sourcePages: [2]
+thumbnail: diagonal
+---
+
+## Eine Diagonalmatrix skaliert Koordinaten einzeln
+
+<Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\qquad(x_1,\ldots,x_n)\mapsto(d_1x_1,\ldots,d_nx_n)." display />
+
+Keine Koordinate wird mit einer anderen vermischt. Jeder Diagonaleintrag liefert einen Skalierungsfaktor. Ein negativer Faktor kehrt zusätzlich die betreffende Koordinatenrichtung um.
+
+## Multiplikation durch Division rückgängig machen
+
+<Math tex="D^{-1}=\operatorname{diag}(d_1^{-1},\ldots,d_n^{-1})\quad d_i\ne0\ \forall i." display />
+
+<Math tex="D=\operatorname{diag}\left(2,-3,\frac12\right),\qquad D^{-1}=\operatorname{diag}\left(\frac12,-\frac13,2\right)." display />
+
+Ein Diagonaleintrag null verliert die betreffende Eingabekoordinate; eine Umkehrung kann sie nicht rekonstruieren. Das unterscheidet sich von einer Kippung: Dort wird eine Addition rückgängig gemacht, bei einer Diagonalmatrix eine Multiplikation.
+
+## Eine Involution ist ihre eigene Umkehrung
+
+<Math tex="A^{-1}=A\iff A^2=I_n." display />
+
+Bei einer Vorzeichenmatrix ist jeder Diagonaleintrag +1 oder −1. Zweimaliges Anwenden stellt jede Koordinate wieder her, weil jedes Vorzeichen quadriert wird.
+
+<Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\quad d_i\in\{-1,1\}\quad\Longrightarrow\quad D^2=\operatorname{diag}(1,\ldots,1)=I_n." display />
+
+<Flow nodes={[{"label": "Eingabe", "tex": "\\binom{x}{y}", "detail": "Ursprünglicher Vektor"}, {"label": "Eine Anwendung", "tex": "\\binom{x}{-y}", "detail": "Eine Koordinate spiegeln"}, {"label": "Zweite Anwendung", "tex": "\\binom{x}{y}", "detail": "Eingabe wiederherstellen"}]} caption={"D = diag(1, −1): Zwei Spiegelungen stellen den Vektor wieder her."} />
+
+<Note title={"Invertierbar heißt nicht durch Kippungen erzeugbar"}>
+Jede Vorzeichenmatrix ist invertierbar. Ob sie ein Produkt der zugelassenen Kippungen ist, ist eine andere Frage; sie wird im nächsten Abschnitt durch die Parität beantwortet.
+</Note>
+
+<Exercise question={"Ist diag(1,0) eine Involution?"}>
+Nein. Ihr Quadrat ist zwar dieselbe Matrix, aber nicht die Einheitsmatrix. Die Nullkoordinate verhindert außerdem die Invertierbarkeit.
+</Exercise>

@@ -1,0 +1,38 @@
+---
+interface Props {preset?:'implication'|'nand';id:string}
+const {preset='implication',id}=Astro.props,l=Astro.locals.locale||'en';
+const copy={en:{title:preset==='nand'?'Build with NAND':'An implication and its relatives',inputs:'Inputs',mode:'Compare',reset:'Reset',original:'Original A ⇒ B',output:'Output',same:'Equivalent to A ⇒ B for every assignment.',different:'Not equivalent to A ⇒ B. The table shows all four cases.',gate:'NAND uses only AND followed by negation. Shared intermediate outputs are reused.'},de:{title:preset==='nand'?'Mit NAND bauen':'Eine Implikation und ihre Verwandten',inputs:'Eingaben',mode:'Vergleichen',reset:'Zurücksetzen',original:'Original A ⇒ B',output:'Ausgabe',same:'Für jede Belegung äquivalent zu A ⇒ B.',different:'Nicht äquivalent zu A ⇒ B. Die Tabelle zeigt alle vier Fälle.',gate:'NAND ist ein negiertes UND. Gemeinsame Zwischenergebnisse werden wiederverwendet.'},es:{title:preset==='nand'?'Construir con NAND':'Una implicación y sus variantes',inputs:'Entradas',mode:'Comparar',reset:'Reiniciar',original:'Original A ⇒ B',output:'Salida',same:'Equivalente a A ⇒ B para todas las asignaciones.',different:'No es equivalente a A ⇒ B. La tabla muestra los cuatro casos.',gate:'NAND es una conjunción negada. Se reutilizan las salidas intermedias compartidas.'}}[l];
+const options=preset==='nand'?['not','and','or']:['implication','contrapositive','converse','inverse'];
+const names={en:['Implication','Contrapositive','Converse','Inverse','NOT','AND','OR'],de:['Implikation','Kontraposition','Umkehrung','Inverse','NICHT','UND','ODER'],es:['Implicación','Contraposición','Recíproca','Inversa','NO','Y','O']};
+const keys=['implication','contrapositive','converse','inverse','not','and','or'];
+---
+<section class="logic-lab" data-logic={preset} id={id} data-copy={JSON.stringify(copy)} aria-label={copy.title}>
+ <h3>{copy.title}</h3><fieldset><legend>{copy.mode}</legend>{options.map(op=><button type="button" data-op={op} aria-pressed={op===options[0]?'true':'false'}>{names[l][keys.indexOf(op)]}</button>)}</fieldset>
+ <fieldset><legend>{copy.inputs} · 0 / 1</legend><button type="button" data-input="a" aria-pressed="false">A = 0</button><button type="button" data-input="b" aria-pressed="false">B = 0</button><button type="button" data-reset>{copy.reset}</button></fieldset>
+ <p class="logic-formula" data-formula>{preset==='nand'?'A | A':'A ⇒ B'}</p>
+ {preset==='nand'&&<svg data-circuit viewBox="0 0 620 190" role="img" aria-label="A | A = 1"><path d="M60 90H210V80H260M210 90V100H260M317 90H550" stroke="var(--axis)" fill="none"/><path d="M260 65h22a25 25 0 0 1 0 50h-22Z" fill="var(--panel)" stroke="var(--accent)"/><circle cx="312" cy="90" r="5" fill="var(--bg)" stroke="var(--accent)"/><text x="60" y="70" fill="var(--text)">A = 0</text><text x="560" y="95" fill="var(--text)">1</text></svg>}
+ <p role="status" aria-live="polite" data-output>{copy.output}: 1</p>
+ <div class="table-scroll"><table><thead><tr><th>A</th><th>B</th>{preset==='implication'&&<th>{copy.original}</th>}<th>{copy.output}</th></tr></thead><tbody data-rows>{(preset==='nand'?[[0,0],[1,0]]:[[0,0],[0,1],[1,0],[1,1]]).map(([a,b])=><tr><td>{a}</td><td>{preset==='nand'?'—':b}</td>{preset==='implication'&&<td>{Number(!a||b)}</td>}<td>{preset==='nand'?Number(!a):Number(!a||b)}</td></tr>)}</tbody></table></div>
+ <p data-feedback>{preset==='nand'?copy.gate:copy.same}</p>
+</section>
+<script>
+import {evaluate,equivalent,formula,assignments,type Operation} from '../../lib/interactive/logic-model';
+for(const root of document.querySelectorAll<HTMLElement>('[data-logic]')){
+ const preset=root.dataset.logic,copy=JSON.parse(root.dataset.copy!);let op:Operation=preset==='nand'?'not':'implication',a=false,b=false;
+ const gate=(x:number,y:number)=>`<path d="M${x} ${y}h22a25 25 0 0 1 0 50h-22Z" fill="var(--panel)" stroke="var(--accent)" stroke-width="2"/><circle cx="${x+52}" cy="${y+25}" r="5" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>`;
+ function draw(){
+ root.querySelectorAll<HTMLButtonElement>('[data-op]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.op===op)));
+ root.querySelectorAll<HTMLButtonElement>('[data-input]').forEach(el=>{const v=el.dataset.input==='a'?a:b;el.textContent=`${el.dataset.input!.toUpperCase()} = ${Number(v)}`;el.setAttribute('aria-pressed',String(v));el.hidden=op==='not'&&el.dataset.input==='b'});
+ root.querySelector('[data-formula]')!.textContent=formula[op];root.querySelector('[data-output]')!.textContent=`${copy.output}: ${Number(evaluate(op,a,b))}`;
+ root.querySelector('[data-feedback]')!.textContent=preset==='nand'?copy.gate:equivalent('implication',op)?copy.same:copy.different;
+ root.querySelector('[data-rows]')!.innerHTML=assignments.filter((_,i)=>op!=='not'||i%2===0).map(([x,y])=>`<tr ${x===a&&y===b?'class="selected-row"':''}><td>${Number(x)}</td><td>${op==='not'?'—':Number(y)}</td>${preset==='implication'?`<td>${Number(evaluate('implication',x,y))}</td>`:''}<td>${Number(evaluate(op,x,y))}</td></tr>`).join('');
+ const svg=root.querySelector('[data-circuit]');if(svg){let wires='',gates='',labels='';
+ if(op==='not'){gates=gate(260,65);wires='M60 90H210V80H260M210 90V100H260M317 90H550';labels=`<text x="60" y="70">A = ${Number(a)}</text>`}
+ if(op==='and'){gates=gate(170,65)+gate(400,65);wires='M60 80H170M60 100H170M227 90H350V80H400M350 90V100H400M457 90H550';labels=`<text x="60" y="65">A = ${Number(a)}</text><text x="60" y="130">B = ${Number(b)}</text><text x="245" y="70">${Number(!(a&&b))}</text>`}
+ if(op==='or'){gates=gate(170,15)+gate(170,115)+gate(400,65);wires='M60 40H120V30H170M120 40V50H170M60 140H120V130H170M120 140V150H170M227 40H330V80H400M227 140H330V100H400M457 90H550';labels=`<text x="60" y="20">A = ${Number(a)}</text><text x="60" y="175">B = ${Number(b)}</text><text x="245" y="30">${Number(!a)}</text><text x="245" y="165">${Number(!b)}</text>`}
+ svg.innerHTML=`<g stroke="var(--axis)" stroke-width="2" fill="none"><path d="${wires}"/></g>${gates}<g fill="var(--text)" font-size="16">${labels}<text x="560" y="95">${Number(evaluate(op,a,b))}</text></g>`;svg.setAttribute('aria-label',`${formula[op]} = ${Number(evaluate(op,a,b))}`);
+ }
+ }
+ root.addEventListener('click',e=>{const el=(e.target as Element).closest<HTMLButtonElement>('button');if(!el)return;if(el.dataset.op)op=el.dataset.op as Operation;else if(el.dataset.input==='a')a=!a;else if(el.dataset.input==='b')b=!b;else if(el.hasAttribute('data-reset')){a=false;b=false;op=preset==='nand'?'not':'implication'}draw()});draw();
+}
+</script>

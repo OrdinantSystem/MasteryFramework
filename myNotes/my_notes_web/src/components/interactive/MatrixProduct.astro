@@ -1,0 +1,46 @@
+---
+import Math from '../Math.astro';
+import {strings} from '../../lib/i18n';
+import {multiply} from '../../lib/geometry';
+import {DEFAULT_LEFT,DEFAULT_RIGHT,matrixCellEquation} from '../../lib/interactive/matrix';
+interface Props {left?:number[][];right?:number[][];title?:string;description?:string;caption?:string;id?:string}
+const t=strings(Astro.locals.locale),{left:a=DEFAULT_LEFT,right:b=DEFAULT_RIGHT,title=t.matrixTitle,description=t.matrixIntro,caption:customCaption,id}=Astro.props;
+const c=multiply(a,b);
+const caption=customCaption??t.matrixCaption.replace("{inner}",String(b.length)).replace("{rows}",String(a.length)).replace("{columns}",String(b[0].length));
+if([a.length,a[0].length,b.length,b[0].length].some(n=>n>6))throw new Error('Use at most 6 rows/columns for a readable matrix activity');
+---
+<figure class="matrix-explorer" id={id}>
+  <div class="figure-heading"><span class="section-label">{t.rowTimesColumn}</span><span class="live-dot">{t.interactive}</span></div>
+  <h3>{title}</h3>
+  <p class="figure-intro">{description}</p>
+  <matrix-product data-left={JSON.stringify(a)} data-right={JSON.stringify(b)}>
+    <div class="matrix-stage">
+      <div><span class="matrix-name">A <small>{a.length} × {a[0].length}</small></span><div class="matrix-grid" style={`--cols:${a[0].length}`}>{a.flatMap((row,i) => row.map(n => <span data-row={i} class:list={{ selected: i === 0 }}>{n}</span>))}</div></div>
+      <span class="operator">×</span>
+      <div><span class="matrix-name blue">B <small>{b.length} × {b[0].length}</small></span><div class="matrix-grid" style={`--cols:${b[0].length}`}>{b.flatMap(row => row.map((n,j) => <span data-col={j} class:list={{ selected: j === 0 }}>{n}</span>))}</div></div>
+      <span class="operator">=</span>
+      <div><span class="matrix-name purple">AB <small>{c.length} × {c[0].length}</small></span><div class="matrix-grid result-matrix" style={`--cols:${b[0].length}`}>{c.flatMap((row,i) => row.map((n,j) => <button type="button" data-cell={`${i},${j}`} aria-label={`${t.row} ${i+1}, ${t.column} ${j+1}: ${n}`} aria-pressed={i===0&&j===0}>{n}</button>))}</div></div>
+    </div>
+    <div class="product-reason" data-calculation aria-live="polite"><Math tex={matrixCellEquation(a,b,0,0)} display /></div>
+  </matrix-product>
+  <figcaption>{caption}</figcaption>
+</figure>
+<script>
+  import katex from 'katex';
+  import {mathOptions} from '../../lib/math-options.mjs';
+  import {matrixCellEquation} from '../../lib/interactive/matrix';
+  class MatrixProduct extends HTMLElement {
+    connectedCallback() {
+      if(this.dataset.ready)return;this.dataset.ready='true';
+      const a=JSON.parse(this.dataset.left!),b=JSON.parse(this.dataset.right!);
+      this.querySelectorAll<HTMLButtonElement>('[data-cell]').forEach(button => button.addEventListener('click', () => {
+        const [i,j] = button.dataset.cell!.split(',').map(Number);
+        this.querySelectorAll<HTMLElement>('[data-row]').forEach(el => el.classList.toggle('selected', Number(el.dataset.row)===i));
+        this.querySelectorAll<HTMLElement>('[data-col]').forEach(el => el.classList.toggle('selected', Number(el.dataset.col)===j));
+        this.querySelectorAll('[data-cell]').forEach(el => el.setAttribute('aria-pressed',String(el===button)));
+        this.querySelector('[data-calculation]')!.innerHTML=katex.renderToString(matrixCellEquation(a,b,i,j),{...mathOptions,displayMode:true});
+      }));
+    }
+  }
+  if (!customElements.get('matrix-product')) customElements.define('matrix-product',MatrixProduct);
+</script>

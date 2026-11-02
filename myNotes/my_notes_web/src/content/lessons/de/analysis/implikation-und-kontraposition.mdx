@@ -1,0 +1,28 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "de"
+title: "Implikation und Kontraposition"
+navTitle: "Implikation und Kontraposition"
+description: "Die Richtung einer Behauptung von ihrer Umkehrung unterscheiden."
+order: 5
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen"]
+thumbnail: "implication"
+---
+
+## Die Aussage ändern und alle Fälle prüfen
+
+<Interactive kind="logic" preset="implication" id="implication-lab" display />
+
+Übereinstimmung in der ausgewählten Zeile reicht für Äquivalenz nicht aus. Vergleiche alle vier Zeilen. Die Kontraposition stimmt immer mit dem Original überein; Umkehrung und Inverse stimmen miteinander überein, müssen aber nicht dem Original entsprechen.
+
+<Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
+
+## Teilbarkeit liefert ein konkretes Beispiel
+
+Schreibe a | n, wenn n = ak für eine ganze Zahl k gilt. Das ist eine Teilbarkeitsaussage, keine Division. Aus 4 | n folgt 2 | n. Die Kontraposition lautet: Aus 2 ∤ n folgt 4 ∤ n. Die Umkehrung scheitert an n = 6: 2 teilt 6, aber 4 nicht.

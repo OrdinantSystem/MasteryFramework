@@ -1,0 +1,53 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Spann und Rang
+navTitle: Spann & Rang
+description: Welche Ausgaben sind überhaupt erreichbar? Die Antwort steckt in den unabhängigen Richtungen der Matrixspalten.
+order: 5
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [matrizen-und-vektoren]
+sourcePages: [4]
+---
+
+## Abhängig heißt eine Richtung genügt
+
+Für die beiden Vektoren $v=(1,2)$ und $w=(2,4)$ gilt $w=2v$. Jeder davon liegt auf derselben Geraden durch den Ursprung. Durch Kombinieren entsteht keine zweite Richtung.
+
+Zwei von null verschiedene Vektoren sind linear abhängig, wenn einer ein skalares Vielfaches des anderen ist. Enthält ein Paar den Nullvektor, ist es ebenfalls abhängig.
+
+Für beliebig viele Vektoren gilt die allgemeinere Definition: Sie sind unabhängig, wenn
+
+<Math tex="\lambda_1v_1+\cdots+\lambda_nv_n=0" display />
+
+nur durch $\lambda_1=\cdots=\lambda_n=0$ erfüllt werden kann. Gibt es eine andere Lösung, sind sie abhängig.
+
+## Der Spann sammelt alle Kombinationen
+
+Der **Spann** ist die Menge aller Vektoren, die du durch Linearkombinationen erzeugen kannst:
+
+<Math tex="\operatorname{span}(v_1,\ldots,v_n)=\left\{\sum_{k=1}^{n}\lambda_kv_k\;\middle|\;\lambda_k\in\mathbb R\right\}." display />
+
+Eine nicht verschwindende Richtung spannt eine Gerade auf. Zwei unabhängige Richtungen spannen eine Ebene auf. Zwei unabhängige Vektoren in $\mathbb R^3$ spannen deshalb nicht den gesamten dreidimensionalen Raum auf.
+
+## Rang zählt erreichbare Richtungen
+
+Die möglichen Ausgaben von $A$ sind genau die Linearkombinationen seiner Spalten. Der Bildraum ist also der Spaltenraum. Seine Dimension heißt **Rang**.
+
+<Math tex="\operatorname{Bild}(\colA{A})=\operatorname{span}(a_1,\ldots,a_n),\qquad\operatorname{rang}(\colA{A})=\dim\operatorname{Bild}(\colA{A})." display />
+
+<Interactive kind="vectors" preset="rank-collapse" id="vector-lab-rank" />
+
+Im Beispiel aus deinen Notizen lauten die Spalten $(1,3)$ und $(2,6)$: Die zweite ist zweimal die erste. Obwohl die Matrix zwei Zeilen und zwei Spalten hat, liegen alle Ausgaben auf einer einzigen Geraden. Der Zielraum ist $\mathbb R^2$; der Bildraum hat nur Dimension $1$.
+
+Die Interaktion verwendet die ergänzenden Beispiele $u=(2,1)$ und $v=(-1,2)$ oder $v=(4,2)$. Durch Ziehen der zweiten Spalte kannst du zwischen Ebene und Gerade wechseln. Das Parallelogramm macht die Änderung der Determinante sichtbar.
+
+<Note title="Spalten sind nicht automatisch eine Basis">Die Spalten einer Matrix sind die Bilder der Standardbasisvektoren. Diese Bilder können abhängig werden. Eine Abbildung kann also unabhängige Eingaberichtungen zusammenfallen lassen.</Note>
+
+<Exercise question="Eine 3 × 2-Matrix hat zwei unabhängige Spalten. Welchen Rang hat sie, und kann ihr Bild ganz ℝ³ sein?">
+Ihr Rang ist $2$. Ihr Bild ist eine Ebene durch den Ursprung in $\mathbb R^3$, nicht der ganze Raum. Für Rang $3$ wären mindestens drei unabhängige Spalten nötig.
+</Exercise>

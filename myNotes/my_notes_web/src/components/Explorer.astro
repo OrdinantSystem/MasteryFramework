@@ -1,0 +1,7 @@
+---
+import VectorLab from './interactive/VectorLab.astro';
+import ParameterExplorer from './interactive/ParameterExplorer.astro';
+interface Props {kind:'vectors'|'rank'|'rotation'|'shear'}
+const {kind}=Astro.props;
+---
+{kind==='vectors'||kind==='rank'?<VectorLab kind={kind==='vectors'?'combination':'rank'}/>:<ParameterExplorer kind={kind}/>}

@@ -1,0 +1,58 @@
+---
+locale: de
+course: linear-algebra
+chapter: sheet-1-1
+sourceId: sheet-1-1
+title: Das Blatt auf einen Blick
+navTitle: Kurzüberblick
+description: Die wichtigsten Beziehungen aus dem Übungsblatt. Zum Wiederfinden, Vergleichen und Prüfen aus dem Gedächtnis.
+order: 8
+kind: recap
+status: published
+reviewStatus: unreviewed
+sourcePages: [1, 2, 3, 4]
+---
+
+## Abbildung und Darstellung
+
+| Idee | Kernaussage |
+| --- | --- |
+| Linearität | Addition und Skalierung bleiben erhalten. |
+| Affine Abbildung | Lineare Abbildung plus konstante Verschiebung. |
+| Matrixzeilen | Berechnen die einzelnen Ausgabekoordinaten. |
+| Matrixspalten | Sind die Bilder der Standardbasisvektoren. |
+| $Ax$ | Linearkombination der Spalten mit den Eingabekoordinaten als Koeffizienten. |
+
+## Produkte und Reihenfolge
+
+<Flow variant="dimensions" />
+
+<Math tex="(\colA{A}\colB{B})_{ij}=\sum_{k=1}^n \colA{a_{ik}}\colB{b_{kj}}\qquad \colA{A}\colB{B}=(Ab_1\;\cdots\;Ab_q)" display />
+
+Bei $ABx$ wirkt $B$ zuerst. Assoziativität verändert die Klammern, nicht die Reihenfolge. Kommutativität gilt im Allgemeinen nicht.
+
+## Bildraum und Umkehrung
+
+Der Spann enthält alle Linearkombinationen. Der Rang zählt die Dimension des Bildraums. Eine quadratische Matrix ist genau dann invertierbar, wenn ihr Rang der Anzahl ihrer Spalten entspricht.
+
+| Beispiel | Was du dir merken solltest |
+| --- | --- |
+| Zwei abhängige Spalten | Erzeugen höchstens eine unabhängige Richtung. |
+| Zwei unabhängige Spalten in $\mathbb R^3$ | Spannen eine Ebene auf. |
+| Vierteldrehung $J$ | $J^4=I_2$; Potenzen wiederholen sich modulo $4$. |
+| Linke Kippmatrix | Verändert Zeilen durch Zeilenaddition. |
+| Rechte Kippmatrix | Verändert Spalten durch Spaltenaddition. |
+
+## Ohne Nachschauen erklären
+
+<Exercise question="Warum müssen die inneren Dimensionen beim Matrixprodukt übereinstimmen?">
+Weil die Ausgabe der zuerst angewendeten Abbildung zur Eingabe der nächsten passen muss. Bei $AB$ erzeugt $B$ so viele Komponenten, wie $A$ benötigt.
+</Exercise>
+
+<Exercise question="Was ist der Unterschied zwischen Zielraum und Bildraum?">
+Der Zielraum ist der in der Definition angegebene Ausgaberaum. Der Bildraum besteht nur aus den tatsächlich erreichten Ausgaben. Er kann ein echter Unterraum des Zielraums sein.
+</Exercise>
+
+<Exercise question="Warum ist f(0) = 0 ein notwendiger, aber kein ausreichender Test auf Linearität?">
+Jede lineare Abbildung erfüllt die Bedingung. Die nichtlineare Funktion $f(x)=x^2$ erfüllt sie ebenfalls. Für einen positiven Nachweis müssen Additivität und Homogenität gelten.
+</Exercise>

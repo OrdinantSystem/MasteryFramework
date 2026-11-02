@@ -1,0 +1,66 @@
+:root {
+  color-scheme: light;
+  --bg: #fcfcfa;
+  --panel: #ffffff;
+  --surface: #f4f5f5;
+  --text: #252a30;
+  --secondary: #515b65;
+  --muted: #657069;
+  --line: #e1e5e7;
+  --accent: #116c64;
+  --tint: #e6f2ee;
+  --blue: #315ca4;
+  --blue-tint: #eaf0fb;
+  --purple: #7650a3;
+  --purple-tint: #f1ebf8;
+  --coral: #a84330;
+  --coral-tint: #faeae5;
+  --cyan: #076b82;
+  --cyan-tint: #e5f3f7;
+  --grid: #e7ebee;
+  --axis: #9ba6af;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #101214;
+  --panel: #15181b;
+  --surface: #191c20;
+  --text: #e8e9ec;
+  --secondary: #bcc0c8;
+  --muted: #a0a4ad;
+  --line: #2b3036;
+  --accent: #68c9bd;
+  --tint: #17342f;
+  --blue: #89aeff;
+  --blue-tint: #1c2a45;
+  --purple: #c39af4;
+  --purple-tint: #30233f;
+  --coral: #f2a28c;
+  --coral-tint: #3d2824;
+  --cyan: #70c8df;
+  --cyan-tint: #17313c;
+  --grid: #262b31;
+  --axis: #697480;
+}
+:root {
+  --font-body: 16px;
+  --line-body: 1.85;
+  --font-small: 12px;
+  --font-caption: 11px;
+  --font-label: 10px;
+  --font-title: clamp(32px, 3.2vw, 44px);
+  --font-section: 25px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --radius-control: 4px;
+  --radius-panel: 8px;
+  --header-height: 76px;
+  --header-height-compact: 64px;
+}

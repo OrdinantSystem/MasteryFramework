@@ -1,0 +1,6 @@
+---
+import {getLessons,lessonUrl} from '../../../lib/content';
+export async function getStaticPaths(){return(await getLessons('de')).filter(l=>['lineare-abbildungen','matrizen-und-vektoren','matrixmultiplikation','verknuepfung','spann-und-rang','matrixpotenzen','kippungen','kurzueberblick'].includes(l.key)).map(l=>({params:{id:l.key}}))}
+const target=lessonUrl(Astro.params.id!,'de');
+---
+<!doctype html><html lang="de"><head><meta charset="utf-8"/><meta http-equiv="refresh" content={`0;url=${target}`}/><title>myNotes</title></head><body><h1>Diese Notiz hat eine neue Adresse.</h1><a href={target}>Zur Notiz</a></body></html>
