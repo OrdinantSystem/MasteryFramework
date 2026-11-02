@@ -19,26 +19,26 @@ additionalSources: [{"sourceId": "transcript-techniques", "locations": ["9:04–
 
 ## Erklären aus dem Gedächtnis
 
-Schließe die Notizen und erkläre eine eingegrenzte Idee einer Person ohne Vorwissen. Nenne Bedeutung, Voraussetzungen, Begründung und Beispiel. Wenn ein Wort die ganze Arbeit übernimmt – „offensichtlich“, „linear“, „konvergent“ –, halte an und erkläre es. Sprechen und Schreiben sind beide möglich; entscheidend ist die eigene Rekonstruktion.
+Wähle eine Idee, mit der du dich schon etwas beschäftigt hast, schließe die Notizen und erkläre sie einer Person ohne Vorwissen. Du kannst sprechen oder schreiben. Erkläre die Bedeutung, nötige Voraussetzungen und eine Begründung oder ein verständliches Beispiel. Wo ein Wort wie „linear“ oder „offensichtlich“ einen ungeklärten Schritt überdeckt, halte an.
+
+Kannst du wegen einer unbekannten Definition nicht beginnen, gehe zunächst zur Erklärung oder zu einem ausgearbeiteten Beispiel zurück. Sobald du etwas rekonstruieren kannst, versuche es ohne Vorlage erneut. Einfachere Sprache soll die Begründung zugänglich machen, ohne eine Voraussetzung wegzulassen, die die Aussage wahr macht.
 
 <ProcessDiagram preset="feynman" id="feynman-loop" />
 
 ## Rückmeldung und Überarbeitung
 
-Bitte Lehrperson, Mitlernende oder KI, die erste fehlende Voraussetzung oder unbegründete Folgerung zu benennen. Prüfe wichtige Korrekturen an der Kursquelle. Eine flüssige Erklärung kann falsch sein, ebenso eine flüssige KI-Kritik. Schließe die Lücke, erkläre erneut ohne Hilfe und versuche eine andere Anwendung.
+Gib einer Lehrperson, Mitlernenden oder KI deine tatsächliche Erklärung. Frage, wo die Begründung zuerst unvollständig oder falsch wird. Prüfe wichtige Korrekturen an der Kursquelle: Auch eine KI-Kritik kann selbstsicher falsch sein.
 
-<Exercise question="„Jede Gerade ist eine lineare Abbildung, weil ihr Graph gerade ist.“ Was muss geprüft werden?">
-
-Die Definition, nicht den optischen Eindruck. Eine lineare Abbildung erhält Addition und Skalierung und schickt deshalb null auf null. g(x) = 2x + 3 tut das nicht: g(0) = 3. Lass den Unterschied zwischen affin und linear erklären und prüfe ein neues Beispiel.
-
-</Exercise>
+Erarbeite die fehlende Stelle und erkläre erneut mit verdecktem Feedback. Versuche danach ein verändertes Beispiel, das die Korrektur verlangt. Die Formulierung des Tutors unmittelbar zu wiederholen lässt offen, ob du das Argument selbst liefern könntest.
 
 ## Beispiel: eine Erklärung überarbeiten
 
-**Erster Versuch:** „Eine lineare Abbildung hat einen geraden Graphen, also ist 2x + 3 linear.“ Die Erklärung ist einfach, verwendet aber das falsche Kriterium.
+Der erste Versuch lautet vielleicht: „Eine lineare Abbildung hat einen geraden Graphen, also ist g(x) = 2x + 3 linear.“ Eine hilfreiche Antwort verweist auf die Definition: Eine lineare Abbildung erhält Addition und Skalierung. Insbesondere bildet sie null auf null ab. Hier ist g(0) = 3; eine notwendige Bedingung ist verletzt.
 
-**Rückmeldung:** „Linear“ bedeutet hier Erhalten von Addition und Skalierung. Prüfe null: g(0) = 3. Eine lineare Abbildung muss null liefern. Der konkrete Fehler ist die Verwechslung von affin und linear.
+Du kannst die Erklärung überarbeiten: „x ↦ 2x ist linear. Der Zusatz 3 verschiebt die Ausgabe und verletzt die Additivität.“ Prüfe den letzten Satz durch den Vergleich von g(1 + 1) und g(1) + g(1). So erhält die Erklärung eine nachprüfbare Rechnung.
 
-**Überarbeitung:** „x ↦ 2x ist linear. Der Zusatz 3 verschiebt die Ausgabe und verhindert das Erhalten der Addition.“ Eine prüfbare Begründung ersetzt die bloße Beschreibung des Graphen.
+<Exercise question="Nun heißt es: ‘Zum Beweis der Linearität reicht es zu prüfen, dass null auf null abgebildet wird.’ Wie antwortest du?">
 
-**Weitere Prüfung:** Auch x² liefert bei null null; dieser Test allein beweist also keine Linearität. h(1 + 1) = 4, aber h(1) + h(1) = 2 zeigt die fehlende Bedingung. Eine gute Erklärung hält solchen Nachfragen stand; ein schöner Satz allein zeigt das noch nicht.
+Nutze h(x) = x² als Gegenbeispiel. Die Abbildung schickt null auf null, aber h(1 + 1) = 4 und h(1) + h(1) = 2. Sie erhält also nicht die Addition. Erkläre, dass die Nullbedingung notwendig, aber nicht hinreichend ist. Eine weitere selbstständige Prüfung sollte die definierenden Bedingungen an einer anderen Abbildung verlangen.
+
+</Exercise>

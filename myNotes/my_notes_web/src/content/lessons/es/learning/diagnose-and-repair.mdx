@@ -18,24 +18,28 @@ thumbnail: "feedback"
 
 ## El intento original
 
+Conserva lo que realmente escribiste, incluido el paso que falló. Sustituirlo de inmediato por una solución modelo puede ocultar la decisión que necesitas examinar. Localiza el primer paso inválido o sin justificar y sepáralo de las partes que siguen siendo correctas.
+
 <ProcessDiagram preset="repair" id="repair-process" />
 
-No sustituyas de inmediato un intento equivocado por una solución impecable. Conserva el trabajo exacto y localiza el primer paso incorrecto o sin justificar. El diagnóstico es una hipótesis que comprobar, no una afirmación de conocer lo que pasaba por la mente de alguien.
+Un diagnóstico es una explicación provisional que comprobar con otra pregunta. Un error no dice al tutor exactamente qué estaba pasando por tu mente. Nombrar la dificultad sirve para elegir una corrección útil.
 
 ## Tipos de error
 
-| Dificultad | Pregunta | Próxima acción |
+| Dificultad | Qué investigar | Una posible acción siguiente |
 |---|---|---|
-| Conceptual | ¿Qué significa este objeto? | Definición y ejemplos contrastados |
-| Lógica | ¿Son válidos la dirección y el cuantificador? | Contraejemplo o revisión de la prueba |
-| Procedimental | ¿Qué paso válido se ejecutó mal? | Aislarlo e intentar otro caso |
-| Estratégica | ¿Podría resolverlo si nombraran el teorema? | Tareas mixtas sin pistas |
-| Representación | ¿Puedo traducir palabras, símbolos y diagramas? | Traducir una relación |
-| Comunicación | ¿La idea es válida pero no está justificada por escrito? | Añadir la justificación |
-| Prerrequisito | ¿Qué idea previa falta? | Enseñarla y volver |
+| Conceptual | ¿Está claro el significado del objeto o propiedad? | Comparar definición, ejemplo y no ejemplo |
+| Lógica | ¿Se usó mal un cuantificador, implicación o hipótesis? | Revisar la inferencia o construir un contraejemplo |
+| Procedimental | ¿Se ejecutó mal un algoritmo válido? | Aislar el cálculo erróneo e intentar otro |
+| Estratégica | ¿Nombrar un teorema haría resoluble la tarea? | Practicar la elección de métodos sin etiquetas |
+| Representación | ¿Puede expresarse la misma relación con palabras, símbolos y un diagrama? | Traducirla y comparar las versiones |
+| Comunicación | ¿Falta por escrito un razonamiento válido? | Añadir la justificación que necesita otro lector |
+| Prerrequisito | ¿No está disponible una idea anterior? | Estudiarla brevemente y volver |
 
-Una respuesta útil dice qué sigue siendo válido, identifica el primer problema, propone una corrección mínima y ofrece una tarea nueva de comprobación. «Practica más» todavía no es un diagnóstico. Da una laguna por corregida tras un intento distinto y autónomo logrado; compruébala más adelante antes de afirmar que la mejora es duradera.
+Puede corresponder más de una categoría. Usa la corrección mínima que atienda al problema observado y deja que otro intento muestre si ayudó. «Practica más» orienta poco hasta saber qué necesita práctica.
 
 ## Ejemplo de diagnóstico
 
-Una persona afirma que una matriz es invertible porque ninguna entrada es cero. El problema no es aritmético: el criterio es falso. La matriz 2×2 con todas las entradas iguales a 1 tiene columnas dependientes y determinante cero. Los comentarios deben corregir el criterio y pedir revisar otra matriz. Repetir el algoritmo del determinante sin abordar la afirmación deja el error conceptual sin explicar.
+Alguien escribe: «Ninguna entrada de esta matriz es cero, así que es invertible». La inferencia usa un criterio falso. Una matriz 2×2 de unos no tiene entradas nulas, pero sus columnas son iguales y su determinante es cero. El contraejemplo aborda la razón dada antes de introducir otro cálculo.
+
+Pide explicar qué criterio de invertibilidad permite el curso y examinar después otra matriz cuadrada. Si la decisión ya puede justificarse sin ayuda, registra ese resultado. Si persiste el criterio original, la laguna sigue abierta. Hace falta otra tarea autónoma más adelante antes de describir la corrección como duradera.

@@ -19,26 +19,26 @@ additionalSources: [{"sourceId": "transcript-techniques", "locations": ["9:04–
 
 ## Explanation from memory
 
-Close the notes and explain one bounded idea to someone new to it. Include what it means, the conditions it needs, why it works, and an example. If a word is doing all the work—“obvious”, “linear”, “convergent”—pause and unpack it. You can speak or write; the important part is reconstructing the reasoning yourself.
+Choose one idea you have already begun to study, close the notes, and explain it to someone new to the subject. You can speak or write. Include what the idea means, the conditions it needs, and a reason or example that makes it intelligible. When a word such as “linear” or “obvious” is carrying an unexplained step, pause there.
+
+If you cannot begin because the definition is still unfamiliar, return to an explanation or worked example first. Once you have something to reconstruct, try again without looking. Simplifying the language should make the reasoning easier to follow without discarding a condition that makes the claim true.
 
 <ProcessDiagram preset="feynman" id="feynman-loop" />
 
 ## Feedback and revision
 
-Ask a teacher, peer, or AI to identify the first missing assumption or unsupported inference. Compare important corrections with the course source. A fluent explanation can be wrong, and a fluent AI critique can be wrong too. Repair that gap, explain again without help, then try a different application.
+Give your actual explanation to a teacher, peer, or AI and ask where the reasoning first becomes incomplete or incorrect. Check important corrections against the course source: an AI critique can be as confidently wrong as the explanation it critiques.
 
-<Exercise question="“Every line is a linear map because its graph is straight.” What should feedback check?">
-
-The definition, not the visual impression. A linear map preserves addition and scaling and therefore sends zero to zero. The map g(x) = 2x + 3 does not: g(0) = 3. Ask the learner to explain the distinction between affine and linear, then test a new example.
-
-</Exercise>
+Study the missing piece, then explain again with the feedback hidden. Follow with a changed example so you have to use the correction. Repeating the tutor’s wording immediately afterwards leaves open whether you could supply the argument yourself.
 
 ## Example: revising an explanation
 
-**First attempt:** “A linear map has a straight-line graph, so 2x + 3 is linear.” The explanation is simple, but it uses the wrong criterion.
+Suppose your first attempt is: “A linear map has a straight-line graph, so g(x) = 2x + 3 is linear.” A useful response points you to the definition: a linear map preserves addition and scaling. In particular, it sends zero to zero. Here g(0) = 3, so the proposed map fails a necessary condition.
 
-**Feedback:** The term “linear” here means preserving addition and scaling. Test the proposed map at zero: g(0) = 3. A linear map must give zero. This identifies a specific confusion between an affine function and a linear map.
+You can revise the explanation: “The map x ↦ 2x is linear. Adding 3 translates the output and breaks additivity.” Check the last sentence by comparing g(1 + 1) with g(1) + g(1). This gives the explanation a calculation a reader can inspect.
 
-**Revision:** “The map x ↦ 2x is linear. Adding 3 translates its output and prevents it from preserving addition.” This replaces a visual description with a checkable reason.
+<Exercise question="A learner now says: ‘To prove a map is linear, I only need to check that it sends zero to zero.’ How would you respond?">
 
-**Further check:** x² also gives zero at zero, so that single test cannot prove linearity. Its failure at h(1 + 1) = 4 while h(1) + h(1) = 2 exposes the missing condition. A good explanation survives such follow-up questions; a polished sentence alone does not show that it does.
+Use h(x) = x² as a counterexample. It sends zero to zero, but h(1 + 1) = 4 while h(1) + h(1) = 2, so it does not preserve addition. Explain that the zero condition is necessary, not sufficient. A further independent check should ask the learner to use the defining conditions on a different map.
+
+</Exercise>

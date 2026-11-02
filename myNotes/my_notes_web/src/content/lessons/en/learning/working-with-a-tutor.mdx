@@ -18,9 +18,13 @@ thumbnail: "tutor"
 
 ## Responsibilities
 
-You choose the goal, attempt the work, and declare uncertainty. The tutor helps sequence tasks, adjust challenge, and give feedback. Your course sources determine its conventions. An AI should not invent citations, remember sessions it was not given, or call hinted work independent. This website explains the workflow; it does not connect to an AI tutor or collect your answers.
+Bring the tutor a goal, your available sources, and an honest account of what you do not yet know. The tutor can help order the tasks, adjust the difficulty, and inspect your reasoning. You still need room to make decisions and attempt the work yourself.
+
+Course notes determine course-specific definitions and conventions. Ask an AI to separate source statements from its own explanations, and to say when a reference or earlier session is unavailable. It should not invent citations, recall progress it was never given, or describe hinted work as independent. This website explains how to conduct that conversation elsewhere; it neither connects to a tutor nor collects your answers.
 
 ## Tutor prompt
+
+Copy this into your chosen tutor conversation and fill in the context:
 
 ```text
 Topic: [topic]
@@ -28,13 +32,19 @@ Goal: [what I want to do independently]
 Level and time: [level; time available]
 Sources and known gaps: [sources; gaps or unknown]
 
-Begin with a short unassisted diagnosis. Ask one meaningful question at a time. Let me attempt before showing a solution, unless a prerequisite needs teaching. Use the smallest useful hint and record the highest H0–H5 level. Check claims against my sources, name uncertainty, and finish with independent evidence, an open gap, and a delayed-review task.
+Begin with a short unassisted diagnosis. Ask one meaningful question at a time and wait for my answer. Let me attempt a problem before showing a solution, unless I need a prerequisite taught or ask for an explanation.
+
+Use H0 for no hint, H1 for a strategic question, H2 for a relevant concept/theorem, H3 for a local step, H4 for an analogous worked example, and H5 for a full solution. Give the smallest useful hint, ask before escalating, and record the highest level used.
+
+When checking my work, identify what is valid and the first invalid or unjustified step. Check important claims against my sources and name uncertainty. After a correction, give a different task without the earlier hint.
+
+Finish with what I demonstrated independently, assisted work, remaining gaps, and a delayed-review recommendation. Do not claim to have saved or scheduled anything unless an actual tool did so.
 ```
 
 ## Task-specific requests
 
-Use MAP for a partial relationship map, PROOF for checking your argument, HINT 1 for a strategic question, TRANSFER for a new unlabeled problem, RECALL for a closed-notes test, and WRAP for a session handoff. These are conventions for your external tutor conversation, not buttons or services on this page. Before reusing an AI judgment, check the disputed definition or step against the source.
+You can use MAP to request a partial relationship map, PROOF to check an argument, HINT 1 for a strategic question, TRANSFER for a new unlabeled problem, RECALL for a closed-notes test, and WRAP for a session handoff. These are shorthand conventions for the external conversation, not controls on this page. Plain requests work too: “Please identify my first unsupported inference without giving the rest of the proof.”
 
 ## A source disagreement
 
-If a tutor includes zero in ℕ while your course excludes it, state the course convention before continuing. A claim such as “every natural number has a positive square” changes truth value with that convention. Ask the tutor to distinguish the mathematical claim from its choice of domain. Agreement between several AI answers does not replace checking the supplied definition.
+If the tutor includes zero in ℕ while your course excludes it, state the course convention before continuing. “Every natural number has a positive square” changes truth value with that domain choice. Ask the tutor to name the convention and reassess the claim under it. Several AI answers agreeing with each other do not replace checking the supplied definition.

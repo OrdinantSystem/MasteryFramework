@@ -19,22 +19,28 @@ additionalSources: [{"sourceId": "transcript-bloom", "locations": ["14:30–16:1
 
 ## Las seis categorías
 
+La taxonomía revisada de Bloom permite describir lo que te pide una pregunta: recordar, comprender, aplicar, analizar, evaluar o crear. Enunciar un teorema de memoria y decidir si sirve en un problema nuevo exigen trabajos distintos, aunque traten del mismo teorema.
+
 <QuestionLens />
 
-Recordar, comprender, aplicar, analizar, evaluar y crear describen procesos cognitivos. No son etapas obligatorias en orden ni una puntuación del valor de tu pensamiento. Una demostración puede combinar varios. Crear puede consistir en construir un ejemplo válido propio, sin producir investigación científica nueva.
+Cambia entre las preguntas de arriba. Fíjate en lo que tendrías que producir: un enunciado preciso, una explicación, una demostración, una comparación, una elección justificada o una construcción comprobada. Las categorías pueden coincidir en una tarea. No son una secuencia obligatoria ni una clasificación científica de cuánto aprendes. Construir un ejemplo válido propio cuenta aquí como creación; no hace falta investigación nueva.
 
 ## Estudio orientado a problemas
 
+«¿Cómo demostraría que una sucesión real converge si no conozco su límite?» da un propósito a la acotación y la monotonía antes de estudiar sus definiciones en detalle.
+
 <LearningFigure kind="problem-first" />
 
-Por ejemplo: ¿cómo demostrar que una sucesión real converge sin conocer su límite? La pregunta da sentido a la acotación, la monotonía y el teorema de convergencia monótona. Si no encuentras un primer paso, pide una base previa o un ejemplo resuelto. La pregunta orienta el estudio; no exige descubrir el teorema a solas.
+Puedes empezar con una predicción o un primer paso aproximado. Si los términos son nuevos, pide una explicación y un ejemplo resuelto. El problema inicial ayuda a ver para qué sirve el conocimiento. No exige descubrir un teorema de convergencia sin enseñanza ni elimina la necesidad de recordar después sus hipótesis exactas.
 
-<Exercise question="Una sucesión creciente debe converger. ¿Qué falta?">
+<Exercise question="Una sucesión real creciente debe converger a un número real. ¿Qué condición falta y cómo mostrarías que importa?">
 
-Falta una cota superior. La sucesión real aₙ = n es creciente y no converge a un número real. La acotación sola tampoco basta: (−1)ⁿ está acotada y no converge. El teorema necesita monotonía y acotación.
+El teorema necesita también una cota superior. aₙ = n crece sin cota y no puede converger a un número real. La acotación sola tampoco garantiza convergencia: (−1)ⁿ sigue alternando entre dos valores. Los contraejemplos muestran qué puede fallar al retirar una hipótesis; no afirman que toda sucesión sin ella deba divergir.
 
 </Exercise>
 
 ## Una comparación resuelta
 
-Para aₙ = 1 − 1/n, aplicar el teorema exige dos comprobaciones: crece porque aₙ₊₁ − aₙ = 1/[n(n + 1)] > 0, y 0 ≤ aₙ < 1 para n ≥ 1. Monotonía y acotación aseguran convergencia en ℝ. Analizar pregunta qué condición falla en n o (−1)ⁿ. Evaluar pregunta si el teorema o una prueba directa del límite responde mejor a la cuestión concreta. Son trabajos diferentes sobre el mismo ejemplo; añadir «por qué» no convierte por sí solo una pregunta de recuerdo en análisis.
+Toma aₙ = 1 − 1/n para enteros positivos n. Para usar el teorema de convergencia monótona, comprueba primero el crecimiento: aₙ₊₁ − aₙ = 1/[n(n + 1)] > 0. Después comprueba una cota: 0 ≤ aₙ < 1. El teorema asegura ya la convergencia en ℝ. Determinar que el límite es 1 es otro paso, que puede aportar una prueba directa.
+
+Comprobar las hipótesis es aplicar. Comparar con n y (−1)ⁿ para ver dónde importan es analizar. Elegir entre prueba directa y teorema es evaluar: una fórmula explícita puede facilitar calcular el límite; para una sucesión recursiva de límite desconocido, puede ayudar demostrar primero su existencia. Elige la pregunta por la habilidad que necesitas practicar, no porque su categoría parezca más avanzada.

@@ -19,22 +19,28 @@ additionalSources: [{"sourceId": "transcript-bloom", "locations": ["14:30–16:1
 
 ## Die sechs Kategorien
 
+Blooms revidierte Taxonomie beschreibt, was eine Frage von dir verlangt: Erinnern, Verstehen, Anwenden, Analysieren, Beurteilen oder Entwerfen. Einen Satz aus dem Gedächtnis zu nennen verlangt andere Arbeit, als seine Anwendbarkeit in einer neuen Aufgabe zu prüfen.
+
 <QuestionLens />
 
-Erinnern, Verstehen, Anwenden, Analysieren, Beurteilen und Entwerfen bezeichnen Denkprozesse. Sie sind weder feste Stufen in vorgeschriebener Reihenfolge noch ein Wertmaß für das Denken. Ein Beweis kann mehrere gleichzeitig verlangen. Entwerfen kann ein eigenes gültiges Beispiel bedeuten, nicht nur neue Forschung.
+Wechsle zwischen den Fragen oben. Achte darauf, was du jeweils liefern müsstest: eine genaue Aussage, eine Erklärung, einen Beweis, einen Vergleich, eine begründete Wahl oder eine geprüfte Konstruktion. In einer Aufgabe können sich diese Kategorien überschneiden. Sie sind weder eine vorgeschriebene Reihenfolge noch eine wissenschaftliche Rangliste des Lernertrags. Ein eigenes gültiges Beispiel reicht hier als Konstruktion; neue Forschung ist nicht nötig.
 
 ## Aufgabenorientiertes Lernen
 
+„Wie könnte ich die Konvergenz einer reellen Folge beweisen, wenn ich ihren Grenzwert nicht kenne?“ Diese Frage gibt Beschränktheit und Monotonie einen Zweck, bevor du ihre Definitionen im Detail lernst.
+
 <LearningFigure kind="problem-first" />
 
-Wie lässt sich etwa die Konvergenz einer reellen Folge zeigen, ohne ihren Grenzwert zu kennen? Diese Frage motiviert Beschränktheit, Monotonie und den Satz von der monotonen Konvergenz. Fehlt ein erster Ansatz, helfen Grundlagen oder ein ausgearbeitetes Beispiel. Die Frage orientiert das Lernen; du musst den Satz nicht allein entdecken.
+Beginne vielleicht mit einer Vermutung oder einem ersten Ansatz. Sind die Begriffe unbekannt, bitte um Erklärung und ein ausgearbeitetes Beispiel. Die frühe Aufgabe zeigt, wofür du das Wissen brauchst. Sie verlangt nicht, einen Konvergenzsatz ohne Anleitung zu entdecken. Seine genauen Voraussetzungen musst du später trotzdem abrufen können.
 
-<Exercise question="Eine wachsende Folge muss konvergieren. Was fehlt?">
+<Exercise question="Eine wachsende reelle Folge muss gegen eine reelle Zahl konvergieren. Welche Bedingung fehlt, und wie zeigst du ihre Bedeutung?">
 
-Es fehlt eine obere Schranke. Die reelle Folge aₙ = n wächst, konvergiert aber nicht gegen eine reelle Zahl. Beschränktheit allein reicht ebenfalls nicht: (−1)ⁿ ist beschränkt und nicht konvergent. Der Satz benötigt Monotonie und Beschränktheit.
+Der Satz braucht zusätzlich eine obere Schranke. aₙ = n wächst unbeschränkt und kann daher nicht gegen eine reelle Zahl konvergieren. Umgekehrt garantiert Beschränktheit allein keine Konvergenz: (−1)ⁿ wechselt ständig zwischen zwei Werten. Die Gegenbeispiele zeigen, was beim Weglassen einer Voraussetzung scheitern kann. Sie behaupten nicht, jede Folge ohne diese Voraussetzung müsse divergieren.
 
 </Exercise>
 
 ## Ein ausgearbeiteter Vergleich
 
-Für aₙ = 1 − 1/n braucht die Satzanwendung zwei Prüfungen: aₙ₊₁ − aₙ = 1/[n(n + 1)] > 0 zeigt Wachstum, und für n ≥ 1 gilt 0 ≤ aₙ < 1. Monotonie und Beschränktheit sichern Konvergenz in ℝ. Analysieren fragt, welche Bedingung bei n oder (−1)ⁿ fehlt. Beurteilen fragt, ob dieser Satz oder ein direkter Grenzwertbeweis zur konkreten Frage passt. Die Kategorien beschreiben unterschiedliche Arbeit am selben Beispiel; ein zusätzliches „Warum“ macht eine Abruffrage noch nicht zur Analyse.
+Betrachte aₙ = 1 − 1/n für positive ganze Zahlen n. Prüfe zunächst das Wachstum: aₙ₊₁ − aₙ = 1/[n(n + 1)] > 0. Prüfe dann die Schranke: 0 ≤ aₙ < 1. Der Satz von der monotonen Konvergenz sichert nun Konvergenz in ℝ. Den Grenzwert als 1 zu bestimmen ist ein weiterer Schritt, den ein direkter Grenzwertbeweis liefern kann.
+
+Die Voraussetzungen zu prüfen ist Anwendung. Der Vergleich mit n und (−1)ⁿ untersucht ihre Bedeutung und ist Analyse. Die Wahl zwischen direktem Beweis und Satzanwendung ist Beurteilung: Bei einer expliziten Formel ist der Grenzwert vielleicht leicht zu berechnen; bei einer rekursiven Folge mit unbekanntem Grenzwert kann ein Existenzbeweis zuerst helfen. Wähle die Frage nach der Fähigkeit, die du üben musst, nicht nach dem anspruchsvolleren Etikett.
