@@ -1,3 +1,23 @@
+# Combined archive-home logo · 3 November 2026
+
+- Removed the Study notes label, its three unused translations, and label-only CSS. The shared SiteLayout keeps one native anchor around the book icon and full myNotes wordmark, with explicit wordmark grouping, a 44 px click area, and constrained SVG sizing. Its href continues to use localeUrl(locale), returning to the archive overview rather than a course or external site. Updated the canonical header contract in DESIGN-SYSTEM.md.
+- The inspected source already used one localized home anchor; the reported inconsistent external navigation was not reproduced. No external destination or separate Study notes anchor was found in the canonical header.
+- Node 24 production builds passed at the root, with BASE_PATH=/myNotes, and again at the root to restore normal local use: 173 pages, 147 indexed lessons, 12,308 links/assets and existing library/content/contrast checks. Parsed every generated page with the shared header: all 164 contained exactly one home anchor wrapping both icon and name, with text exactly myNotes and the correct localized/root-prefixed href.
+- Browser: nine actual logo navigations from Bloom, Analysis overview, and matrix-product lessons across EN/DE/ES landed at /, /de/, or /es/ respectively; each destination showed all three course cards. Clicked both book-icon and wordmark descendants. Checked 390 and 1440 px in both themes across three locales (12 layouts): one logo, no Study notes text, no page-wide overflow. Screenshot: previews/header-home-link.jpg.
+- Physical-touch and screen-reader checks were not performed. Repository-prefix navigation was checked in generated output; browser clicks used the normal root preview. No commit, push or publication.
+
+---
+
+# Navigation cleanup · 3 November 2026
+
+- Removed the top-level archive Overview link duplicated by the localized myNotes wordmark. Retained distinct course overview links. Removed unused archive-link CSS. Sidebar and page-contents scrollbars now have thin translucent thumbs, transparent tracks, and stronger hover/focus visibility using shared theme colors; native scrolling is retained. Updated DESIGN-SYSTEM.md.
+- Fixed build-blocking extra dollar delimiters inside existing Math.tex attributes in the three recap counterparts and inside display-math blocks in the three composition counterparts. These were present in unrelated workspace edits; surrounding content was preserved.
+- Node 24.22.1 production build passed: Astro diagnostics, library/content checks, 173 static pages, 147 indexed lessons, 12,301 local links/assets and theme contrast checks. git diff --check passed.
+- Browser checked EN/DE/ES matrix lessons at 1440 × 1000 and 390 × 1000 in both themes: duplicate link absent, all three course overview links retained, wordmark targets the correct locale, no horizontal page overflow. Opened the compact menu in each locale. Computed scrollbar tracks are transparent; thumb opacity is 35% at rest and 65% with keyboard focus. Expanded the second chapter to confirm a scrollable desktop sidebar and visually inspected its dark scrollbar. Screenshot: previews/navigation-scrollbar-desktop.png.
+- No commit, push or deployment. Browser checks used the available macOS browser; other operating systems may render native scrollbar dimensions differently.
+
+---
+
 # Learning & Teaching prose revision · 2 November 2026
 
 - Compared all 17 English methodology lessons and their German/Spanish counterparts with the two root learning-method modules, the deep-learning-method collection, and the four distinct supplied transcripts. Revised all 51 MDX article bodies using the human-prose approach, including tables, tutor prompts, exercises, and reference answers. Root source documents and sibling website files were not edited.

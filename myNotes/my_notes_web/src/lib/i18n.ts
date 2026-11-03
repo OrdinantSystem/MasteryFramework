@@ -3,7 +3,6 @@ export type Locale = (typeof locales)[number];
 export const languageNames = { en: "English", de: "Deutsch", es: "Español" };
 const en = {
   skip: "Skip to content",
-  studyNotes: "STUDY NOTES",
   search: "Search notes",
   language: "Language",
   theme: "Change color theme",
@@ -129,7 +128,6 @@ const en = {
 type Dictionary = typeof en;
 const de: Dictionary = {
   skip: "Zum Inhalt",
-  studyNotes: "STUDIENNOTIZEN",
   search: "Notizen durchsuchen",
   language: "Sprache",
   theme: "Farbschema wechseln",
@@ -255,7 +253,6 @@ const de: Dictionary = {
 };
 const es: Dictionary = {
   skip: "Ir al contenido",
-  studyNotes: "APUNTES DE ESTUDIO",
   search: "Buscar apuntes",
   language: "Idioma",
   theme: "Cambiar tema",

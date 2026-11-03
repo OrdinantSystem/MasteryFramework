@@ -45,9 +45,11 @@ Central explanations remain visible in a continuous article. Hide reference solu
 
 ## Page shell
 
-The header contains the myNotes wordmark, a real search link, the language disclosure, theme control, and a compact navigation control when needed. The language menu uses themed native details and ordinary links. Its panel follows the current surface, border, typography, and focus rules. Escape closes it and restores focus; clicking outside or moving focus away closes it as well.
+The header contains one archive-home anchor wrapping the book icon and the complete myNotes wordmark. It uses localeUrl(locale) so every page returns to the localized archive overview, including under a repository prefix. Do not add a separate “Study notes” label or link. The remaining controls are a real search link, the language disclosure, theme control, and a compact navigation control when needed. The language menu uses themed native details and ordinary links. Its panel follows the current surface, border, typography, and focus rules. Escape closes it and restores focus; clicking outside or moving focus away closes it as well.
 
 Do not add nonfunctional symbols or pretend buttons. The visible slash badge and decorative language circle have been removed. A working slash keyboard shortcut may remain without an ornamental badge. The sidebar footer says only Learning archive, translated in each language.
+
+The myNotes wordmark links to the localized archive overview; do not duplicate that destination with a top-level Overview link in the sidebar. Course overview links remain part of the course hierarchy. Navigation scrollbars use a thin, faint thumb and a transparent track, with stronger visibility on hover or keyboard focus.
 
 The desktop sidebar begins at x=0. Its position is not constrained by a centered outer container. Use native details for a subject → course → chapter-group → lesson hierarchy. Store expansion locally where available, and reveal the active lesson's ancestors on navigation. Do not display empty subject placeholders.
 

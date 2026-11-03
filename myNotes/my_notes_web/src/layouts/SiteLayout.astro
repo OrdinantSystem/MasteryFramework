@@ -27,7 +27,7 @@ const equivalent=(lang:Locale)=>current==='index'?localeUrl(lang):current==='sea
 <body>
   <a class="skip-link" href="#main">{t.skip}</a>
   <header class="topbar" data-pagefind-ignore>
-    <a class="brand" href={localeUrl(locale)} aria-label="myNotes"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7c2 0 3 1 3 3v12c0-2-1-3-3-3H4V5Zm16 0h-3v12h3V5Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>my<span>Notes</span><small>{t.studyNotes}</small></a>
+    <a class="brand" href={localeUrl(locale)} aria-label="myNotes"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7c2 0 3 1 3 3v12c0-2-1-3-3-3H4V5Zm16 0h-3v12h3V5Z" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span><span class="brand-name">my<strong>Notes</strong></span></a>
     <div class="header-actions">
       <a class="search-link" aria-label={t.search} href={localeUrl(locale,'search/')}><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4 4"/></svg><span>{t.search}</span></a>
       <details class="language-menu"><summary aria-label={`${t.language}: ${languageNames[locale]}`}><span>{languageNames[locale]}</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4"/></svg></summary><nav aria-label={t.language}>{locales.map(lang=><a href={equivalent(lang)} lang={lang} hreflang={lang} aria-current={locale===lang?'page':undefined}>{languageNames[lang]}</a>)}</nav></details>
@@ -37,7 +37,6 @@ const equivalent=(lang:Locale)=>current==='index'?localeUrl(lang):current==='sea
   </header>
   <div class="app-layout">
     <aside id="sidebar" class="sidebar" data-pagefind-ignore>
-      <a class:list={['archive-link',{active:current==='index'}]} href={localeUrl(locale)}><span aria-hidden="true">▦</span>{t.overview}</a>
       <nav class="content-tree" aria-label={t.lessons}>
         {areas.filter(area=>courses.some(c=>c.area===area.id)).map(area=><details open={area.id===(activeCourse?.area??'mathematics')} class="tree-subject" data-tree={area.id}><summary><span class="tree-chevron" aria-hidden="true">›</span><AreaIcon kind={area.icon}/>{area.title[locale]}</summary>
           {courses.filter(c=>c.area===area.id).map(course=><details open={course.id===courseId} class="tree-course" data-tree={course.id}><summary><span class="tree-chevron" aria-hidden="true">›</span>{course.title[locale]}</summary><a class="course-overview-link" href={courseUrl(course.id,locale)} aria-label={`${t.overview} — ${course.title[locale]}`}>{t.overview} ↗</a>
