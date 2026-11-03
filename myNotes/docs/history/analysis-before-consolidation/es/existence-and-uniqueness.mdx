@@ -1,0 +1,126 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Existencia y unicidad"
+navTitle: "Existencia y unicidad"
+description: "Existencia y unicidad."
+order: 25
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Dos llaves distintas abren una cerradura. Comprobar la primera demuestra que existe una llave adecuada; comprobar la segunda no invalida esa prueba. Refuta otra afirmación: que exactamente una llave abre la cerradura. Fija el cajón de llaves permitidas antes de contar.
+
+## Tres requisitos distintos
+
+Existencia significa al menos un éxito permitido. A lo sumo uno significa que no hay dos objetos permitidos distintos que sirvan; admite cero. Existencia única significa exactamente uno: existencia junto con a lo sumo uno. En un cajón vacío, existencia es falsa, a lo sumo uno es verdadera y existencia única es falsa. Excluir un segundo éxito no proporciona el primero.
+
+$$
+\exists! x\in D\;P(x).
+$$
+
+El signo de exclamación añade el requisito de a lo sumo uno; no es énfasis. Primero proporciona un testigo de $D$ que cumpla $P$. Después muestra que cualquier objeto de $D$ que cumpla $P$ es igual a él. Los objetos que no cumplen $P$ no tienen que ser iguales al testigo. La igualdad se refiere a objetos o valores, no a su escritura: $1/2$ y $2/4$ nombran el mismo real.
+
+## Una prueba con ambas obligaciones
+
+$$
+\exists! n\in\mathbb Z\;(n+5=12).
+$$
+
+Existencia: $7\in\mathbb Z$ y $7+5=12$. Unicidad: sea $n$ cualquier entero que cumpla $n+5=12$. Restar cinco a ambos lados da $n=7$. Toda solución posible coincide con el testigo verificado. Consideramos una solución arbitraria, no un entero cualquiera que supongamos igual a siete ni una muestra finita de alternativas fallidas.
+
+Restringe ahora el dominio a enteros mayores que diez. La misma resta fuerza cualquier solución hipotética a ser siete, fuera del dominio. Sigue habiendo a lo sumo una, pero falla existencia. En cambio, para $4<n<8$, cinco y seis son testigos enteros distintos, de modo que falla unicidad sin necesidad de enumerarlos todos.
+
+### Práctica
+
+Demuestra que exactamente un entero cumple $n+3=9$.
+
+<details>
+<summary>Pista</summary>
+
+Separa ambas obligaciones.
+
+</details>
+
+<Exercise>
+
+Seis es entero y $6+3=9$. Toda solución entera cumple $n=9-3=6$. La primera parte proporciona una solución; la segunda excluye otra distinta.
+
+</Exercise>
+
+¿Comprobar $5^2=25$ demuestra que exactamente un entero tiene cuadrado $25$?
+
+<details>
+<summary>Pista</summary>
+
+Considera un valor negativo.
+
+</details>
+
+<Exercise>
+
+Solo demuestra existencia. $-5$ es un entero distinto y $(-5)^2=25$, por lo que unicidad es falsa aunque existencia siga siendo verdadera.
+
+</Exercise>
+
+En una caja vacía, evalúa: alguna ficha azul, a lo sumo una ficha azul, exactamente una ficha azul.
+
+<details>
+<summary>Pista</summary>
+
+Solo una de estas admite cero.
+
+</details>
+
+<Exercise>
+
+Falsa, verdadera, falsa. Ninguna ficha proporciona existencia; no puede haber dos azules distintas, por lo que se cumple a lo sumo una.
+
+</Exercise>
+
+Corrige «Para demostrar que siete es único, hay que mostrar que todo entero es siete».
+
+<details>
+<summary>Pista</summary>
+
+Restringe la afirmación a soluciones.
+
+</details>
+
+<Exercise>
+
+Muestra que todo entero que satisface la ecuación original es siete. Los que no son soluciones no tienen que ser siete.
+
+</Exercise>
+
+Para el dominio $n>10$, revisa «$n+5=12$ fuerza siete, así que hay exactamente una solución».
+
+<details>
+<summary>Pista</summary>
+
+Un candidato necesario puede estar excluido.
+
+</details>
+
+<Exercise>
+
+Siete está excluido. El argumento da a lo sumo una solución y, con la restricción del dominio, en realidad ninguna.
+
+</Exercise>
+
+Más tarde, compara colecciones con cero, uno y dos éxitos y reconstruye ambas obligaciones.
+
+## Lectura en voz alta
+
+**EN:** There exists exactly one x in D satisfying P.
+
+**DE:** Es gibt genau ein x in D, das P erfüllt.
+
+**ES:** Existe exactamente un equis en D que cumple P.

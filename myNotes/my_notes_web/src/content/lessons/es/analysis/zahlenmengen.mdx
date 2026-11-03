@@ -1,29 +1,41 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-foundations"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
 locale: "es"
-title: "Los conjuntos numéricos"
-navTitle: "Los conjuntos numéricos"
-description: "Visualiza cómo encajan los sistemas numéricos."
-order: 37
+title: "Sistemas numéricos, igualdad y orden"
+navTitle: "Sistemas numéricos, igualdad y orden"
+description: "Sistemas numéricos, igualdad y orden"
+order: 1
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
 prerequisites: []
 thumbnail: "number-sets"
+sourceLocations: []
+additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]}]
 ---
+
+<span id="from-zahlenmengen"></span>
+
+## Los conjuntos numéricos
 
 {/* Las definiciones, clasificaciones y demostraciones siguientes son ampliaciones didácticas propias. */}
 
-## Un mapa de inclusiones
+
+<span id="from-zahlenmengen-un-mapa-de-inclusiones"></span>
+
+### Un mapa de inclusiones
 
 <NumberDomains />
 
 Las cajas muestran **pertenencia**, no el tamaño de un número. Todo número de una caja interior pertenece también a cada caja que la rodea. Por ejemplo, $3$ es natural, entero, racional, real y complejo al mismo tiempo. Al clasificar un número, solemos indicar el menor de estos conjuntos que lo contiene.
 
-## Qué contiene cada conjunto
+
+<span id="from-zahlenmengen-qué-contiene-cada-conjunto"></span>
+
+### Qué contiene cada conjunto
 
 - Los **naturales** $\mathbb{N}=\{1,2,3,\ldots\}$ sirven para contar objetos completos. Algunos cursos incluyen el $0$; aquí empezamos en $1$.
 - Los **enteros** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ incluyen el cero y los enteros negativos. Así, $-3\in\mathbb{Z}$, pero $-3\notin\mathbb{N}$.
@@ -34,7 +46,10 @@ Las cajas muestran **pertenencia**, no el tamaño de un número. Todo número de
 - Los **reales** $\mathbb{R}$ son los números de la recta numérica. Incluyen los racionales y los **irracionales**: reales que no admiten esa representación como cociente. Por ejemplo, $\sqrt{2}$ es real e irracional. Los irracionales forman $\mathbb{R}\setminus\mathbb{Q}$, una parte de los reales y no otra caja exterior.
 - Los **complejos** $\mathbb{C}$ tienen la forma $a+bi$, con $a,b\in\mathbb{R}$ e $i^2=-1$. Un real tiene parte imaginaria $0$: por ejemplo, $3=3+0i$. El número $2+3i$ tiene parte imaginaria distinta de cero, por lo que no es real.
 
-## Por qué las inclusiones son estrictas
+
+<span id="from-zahlenmengen-por-qué-las-inclusiones-son-estrictas"></span>
+
+### Por qué las inclusiones son estrictas
 
 El símbolo $\subsetneq$ significa «contenido, pero no igual». Para justificarlo, necesitamos tanto la inclusión como un ejemplo que descarte la igualdad.
 
@@ -44,7 +59,10 @@ Todo natural es entero. Todo entero $n$ es racional porque $n=n/1$. Todo raciona
 
 Los siguientes ejemplos muestran que los conjuntos son diferentes: $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$ e $i\in\mathbb{C}\setminus\mathbb{R}$. Abajo justificamos los ejemplos menos inmediatos. En particular, ser racional no implica ser entero.
 
-## Demostración: un decimal finito o periódico es racional
+
+<span id="from-zahlenmengen-demostración-un-decimal-finito-o-periódico-es-racional"></span>
+
+### Demostración: un decimal finito o periódico es racional
 
 Un decimal finito se puede escribir con una potencia de diez en el denominador. Por ejemplo,
 
@@ -58,33 +76,19 @@ Para un decimal periódico, desplazamos un bloque completo del período y restam
 
 Las colas infinitas coinciden y se cancelan exactamente; no estamos restando aproximaciones redondeadas. El mismo método funciona con decimales que se vuelven periódicos después de un comienzo no periódico, desplazando primero ese comienzo. A la inversa, la división de un racional termina o repite: solo hay un número finito de restos posibles. Tener infinitas cifras decimales **no** basta para ser irracional.
 
-## Demostración: un real no tiene por qué ser racional
 
-El número $\sqrt{2}$ es el real positivo cuyo cuadrado es $2$. Supongamos que fuera racional. Elijamos una fracción irreducible $\sqrt{2}=p/q$, con enteros $p,q$ y $q>0$. Al elevar al cuadrado obtenemos
+<span id="from-zahlenmengen-demostración-por-qué-la-unidad-imaginaria-no-es-real"></span>
 
-<Math tex="p^2=2q^2." display />
-
-Así, $p^2$ es par, lo que obliga a que $p$ sea par. Para justificarlo, un entero impar tiene la forma $2k+1$, y
-
-<Math tex="(2k+1)^2=2(2k^2+2k)+1," display />
-
-es impar. Por tanto, un cuadrado par no puede proceder de un entero impar.
-
-Escribimos $p=2k$ y sustituimos en la ecuación supuesta:
-
-<Math tex="4k^2=2q^2\quad\Longrightarrow\quad q^2=2k^2." display />
-
-El mismo argumento obliga a que $q$ sea par. Ahora $p$ y $q$ comparten el factor $2$, en contradicción con la elección de una fracción irreducible. Por tanto, $\sqrt{2}\notin\mathbb{Q}$, aunque $\sqrt{2}\in\mathbb{R}$. La [demostración por contradicción ampliada](../widerspruch-und-irrationalitaet/) explica esta estrategia con más detalle.
-
-Un signo radical no es una prueba de irracionalidad: $\sqrt{9}=3$ es natural. Importa el número representado, no su escritura.
-
-## Demostración: por qué la unidad imaginaria no es real
+### Demostración: por qué la unidad imaginaria no es real
 
 Para todo real $t$, el cuadrado $t^2$ es no negativo: el cuadrado de un número positivo o negativo es positivo, y $0^2=0$. Ningún real puede satisfacer $t^2=-1$. Como $i^2=-1$, el número $i$ no puede ser real.
 
 Esto también explica por qué $2+3i$ no es real. Si lo fuera, restar $2$ y dividir entre $3$ haría que $i=((2+3i)-2)/3$ fuera real: una contradicción. Los complejos amplían los reales para que ecuaciones como $z^2+1=0$ tengan soluciones: $z=i$ y $z=-i$.
 
-## Práctica
+
+<span id="from-zahlenmengen-práctica"></span>
+
+### Práctica
 
 En cada respuesta, da una representación o un argumento. Usa después las inclusiones para identificar también los conjuntos mayores.
 
@@ -99,3 +103,163 @@ $-5/2$ es un cociente de enteros, pero está estrictamente entre $-3$ y $-2$, as
 No. Ambos números son irracionales: si $-\sqrt{2}$ fuera racional, multiplicar por $-1$ haría que $\sqrt{2}$ también lo fuera. Sin embargo, su suma es $0$, que es racional. Pertenecer a un conjunto no significa automáticamente que toda operación aritmética permanezca en él.
 
 </Exercise>
+
+La demostración completa de irracionalidad se desarrolla en [Contradicción e irracionalidad](../widerspruch-und-irrationalitaet/#from-widerspruch-und-irrationalitaet). Aquí usamos su resultado para distinguir los números reales de los racionales.
+
+Un signo radical no es una prueba de irracionalidad: $\sqrt{9}=3$ es natural. Importa el número representado, no su escritura.
+
+<span id="from-equality-and-equations"></span>
+
+## Igualdad y ecuaciones
+
+$2+1$ y $3$ tienen distinto aspecto, pero nombran el mismo número. La igualdad $2+1=3$ expresa esa coincidencia. El signo igual no significa «haz esto a continuación». Cada aparición afirma que ambos lados designan el mismo objeto o valor en el contexto indicado.
+
+
+<span id="from-equality-and-equations-reglas-fundamentales-de-la-igualdad"></span>
+
+### Reglas fundamentales de la igualdad
+
+Aceptamos estas reglas como fundamentos, sin deducirlas aquí de la aritmética:
+
+- **Reflexividad:** $a=a$.
+- **Simetría:** si $a=b$, entonces $b=a$.
+- **Transitividad:** si $a=b$ y $b=c$, entonces $a=c$.
+- **Sustitución:** podemos intercambiar objetos iguales en expresiones o propiedades matemáticas bien definidas sin cambiar el valor ni la verdad.
+
+La última regla sigue exigiendo expresiones con sentido. Si $a=b=0$, la sustitución no hace que $1/a$ ni $1/b$ estén definidos en la aritmética real habitual. Tampoco es una regla para sustituir palabras citadas en cualquier frase.
+
+
+<span id="from-equality-and-equations-cada-eslabón-afirma-una-igualdad"></span>
+
+### Cada eslabón afirma una igualdad
+
+$$a=b=c$$
+
+Abrevia $a=b$ y $b=c$; por transitividad también obtenemos $a=c$. Afirma esas igualdades conjuntamente, no una secuencia de acciones.
+
+La línea $2+1=3+4=7$ es incorrecta: su primera igualdad compara tres con siete. Si se pretende sumar dos y uno y después añadir cuatro, escribe $2+1=3$ y luego $3+4=7$. También puedes mantener el cuatro añadido en toda la cadena:
+
+$$(2+1)+4=3+4=7.$$
+
+El primer paso sustituye $2+1$ por tres dentro de una expresión mayor. El segundo calcula la suma. Todas las expresiones de la cadena corregida valen siete.
+
+<Note title="Lecturas">
+
+$a=b=c$: **EN** “a equals b and b equals c”; **DE** „a ist gleich b und b ist gleich c“; **ES** «a es igual a be y be es igual a ce». $=$: **EN** “equals”; **DE** „ist gleich“; **ES** «es igual a». $\approx$: **EN** “is approximately equal to”; **DE** „ist ungefähr gleich“; **ES** «es aproximadamente igual a».
+
+</Note>
+
+La igualdad aproximada necesita una precisión o tolerancia indicada. No permite reemplazar una igualdad exacta en una cadena sin explicar el cambio.
+
+
+<span id="from-equality-and-equations-el-contexto-determina-la-función"></span>
+
+### El contexto determina la función
+
+«Define $a:=0$» introduce un nombre. «Supongamos $a=0$» introduce una hipótesis local. «Resuelve $x+1=3$ en los reales» pide las entradas permitidas que hacen verdadera la igualdad; aquí la solución es $x=2$. El signo igual por sí solo no determina ninguna de esas funciones.
+
+La identidad $x+0=x$ vale para toda entrada real, pero está abierta tal como se escribe: ningún cuantificador liga $x$. Su forma universal explícita es
+
+$$\forall x\in\mathbb R\;(x+0=x).$$
+
+Una asignación aporta contexto para evaluar una ecuación abierta, pero no liga sintácticamente su variable. Una sustitución reemplaza las apariciones y produce otra fórmula. Un cuantificador, en cambio, liga apariciones dentro de su alcance.
+
+
+<span id="from-equality-and-equations-práctica"></span>
+
+### Práctica
+
+Corrige $1+1=2+1=3$ sin cambiar el cálculo pretendido. Explica el eslabón falso antes de corregirlo.
+
+<details>
+<summary>Pista</summary>
+
+Calcula ambos lados del primer signo igual. Para usar una sola cadena, conserva la última suma en todas sus expresiones.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+El primer eslabón afirma que dos es igual a tres. Escribe $1+1=2$, después $2+1=3$, o bien $(1+1)+1=2+1=3$. Ahora todas las expresiones de la cadena valen tres; la primera transformación usa sustitución.
+
+</details>
+
+<Exercise question="Sean a, b, c reales arbitrarios. Supón que a es igual a b y b es igual a c. Identifica hipótesis, conclusión y regla. Escribe la afirmación universal completa.">
+
+Las hipótesis son $a=b$ y $b=c$; la conclusión es $a=c$, justificada por transitividad:
+
+$$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
+
+Todas las apariciones de variables están ligadas. Esto no afirma que todos los reales sean iguales: afirma que, cuando se cumplen las dos hipótesis, se cumple la conclusión. La regla se aplica a objetos arbitrarios que satisfagan esas hipótesis; comprobar una terna numérica no es la justificación general.
+
+Lectura completa: **EN** “For every real a, b, and c, if a equals b and b equals c, then a equals c.” **DE** „Für alle reellen a, b und c gilt: Wenn a gleich b und b gleich c ist, dann ist a gleich c.“ **ES** «Para todos los reales a, be y ce, si a es igual a be y be es igual a ce, entonces a es igual a ce».
+
+</Exercise>
+
+<span id="from-order-comparisons"></span>
+
+## Comparaciones de orden y extremos
+
+«Como máximo tres libros» permite exactamente tres. «Menos de tres libros» no. Un extremo puede cambiar el valor de verdad de una comparación aunque todos los ejemplos menores coincidan. Usamos el orden habitual de los reales; no estamos definiendo un orden sobre objetos arbitrarios ni sobre los complejos.
+
+
+<span id="from-order-comparisons-comparaciones-y-lecturas"></span>
+
+### Comparaciones y lecturas
+
+| | EN | DE | ES |
+|---|---|---|---|
+| $a<b$ | a is strictly less than b | a ist kleiner als b | a es estrictamente menor que be |
+| $a>b$ | a is strictly greater than b | a ist größer als b | a es estrictamente mayor que be |
+| $a\le b$ | a is less than or equal to b | a ist kleiner oder gleich b | a es menor o igual que be |
+| $a\ge b$ | a is greater than or equal to b | a ist größer oder gleich b | a es mayor o igual que be |
+| $a\ne b$ | a is not equal to b | a ist ungleich b | a es distinto de be |
+
+Las comparaciones estrictas $<$ y $>$ excluyen la igualdad. Las no estrictas $\le$ y $\ge$ la incluyen. Así, $0\le0$ es verdadera y $0<0$ es falsa. Escribir $a>b$ dice lo mismo que $b<a$: hay que invertir tanto el orden de las expresiones como el signo.
+
+El significado preciso de $a\le b$ es $(a<b)\lor(a=b)$, con «o» inclusiva. Para $a\ge b$, se cumple $a>b$ o $a=b$. Ser distintos no determina una dirección: $0\ne1$ es verdadera, pero $0>1$ es falsa. La igualdad también puede tener sentido donde no se ha especificado un orden.
+
+
+<span id="from-order-comparisons-dos-cotas-para-una-misma-entrada"></span>
+
+### Dos cotas para una misma entrada
+
+$$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
+
+La cadena exige **ambas** comparaciones para el mismo $x$. Si $a<b$, excluye el extremo inferior e incluye el superior. Superar una sola comprobación no basta.
+
+**EN:** “a is strictly less than x and x is less than or equal to b.” **DE:** „a ist kleiner als x und x ist kleiner oder gleich b“. **ES:** «a es estrictamente menor que equis y equis es menor o igual que be».
+
+«Al menos a» significa $x\ge a$; «como máximo b» significa $x\le b$. Ambas expresiones permiten igualdad. «Estrictamente entre a y b» significa $a<x<b$, excluyendo ambos extremos. «Entre» sin una convención sobre los extremos puede ser ambiguo; aclara cuáles se incluyen.
+
+Por ejemplo, $0\le x<1$ admite cero y excluye uno. En notación de intervalos es $x\in[0,1)$: un corchete incluye el extremo y un paréntesis lo excluye. Del mismo modo, $0<x\le2$ describe $x\in(0,2]$. Algunos textos usan corchetes orientados hacia fuera para extremos excluidos; comprueba su convención. Tal como se escriben, estas condiciones siguen abiertas. Un valor aportado por el contexto permite evaluarlas, pero deja libres sus apariciones de variables; un cuantificador liga $x$ dentro de su alcance en la fórmula.
+
+
+<span id="from-order-comparisons-comprobar-los-extremos"></span>
+
+### Comprobar los extremos
+
+Traduce «un real es al menos cero y como máximo uno» y compáralo con «estrictamente entre cero y uno». Comprueba $0$, $1/2$ y $1$.
+
+<details>
+<summary>Pista</summary>
+
+Escribe cada comparación por separado. Antes de unirlas, decide si cada una permite igualdad.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+La primera condición es $0\le x\le1$, o $x\in[0,1]$. Las tres entradas la cumplen. La segunda es $0<x<1$, o $x\in(0,1)$; solo $1/2$ la cumple. Cada extremo incumple una comparación estricta. El dominio sigue siendo los reales en ambos casos.
+
+</details>
+
+<Exercise question="Expande $0\le x<1$ con una conectiva. ¿Puedes comprobar las comparaciones con valores distintos de x? ¿La cadena liga x?">
+
+La condición es $(0\le x)\land(x<1)$. Ambas partes se refieren a la misma entrada. Elegir $x=2$ para la primera y $x=0$ para la segunda no demuestra que una entrada satisfaga la cadena. La conjunción no liga $x$: sus apariciones siguen libres salvo que un cuantificador las gobierne.
+
+</Exercise>
+
+Estas convenciones explican qué dicen las comparaciones, no cómo resolver inecuaciones. Las propiedades habituales del orden se aceptan como base. Para invertir exactamente la verdad en un extremo, consulta [negar comparaciones de orden](../logical-negation/#from-negating-order-comparisons).

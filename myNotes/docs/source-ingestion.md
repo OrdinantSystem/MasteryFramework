@@ -30,6 +30,8 @@ The area/orientation activity is a data variant of the existing rank family. Mat
 
 ## Analysis I · six posters
 
+The lesson numbers in the following poster table identify the historical fifteen-page edition, not the current twenty-page reading order. Current destinations are recorded in [analysis-organization.md](analysis-organization.md).
+
 All six PDFs contain one large poster page. Render the full page, then inspect enlarged columns: the text layer omits almost all handwritten mathematics. Originals, checksum records, complete renders, and enlarged columns are private under references/source/<source-id>/.
 
 | Source id | Lessons | Coverage |
@@ -60,4 +62,4 @@ Keep `sourcePages: []` and use actual relative lesson/heading locations. Expande
 - Store Analysis MDX at src/content/lessons/{en,de,es}/analysis/<key>.mdx. Existing flat Linear Algebra files stay valid. Source loader keys use the final path segment, scoped by course.
 - course, chapter, source identity/page references, and order must match across translations. Orders and prerequisite keys are course-local. Navigation groups must account for every published lesson exactly once. Cross-course prerequisites are not currently supported.
 - Use courseUrl and lessonUrl(key, locale, course) rather than constructing links. The default course argument exists for legacy Linear Algebra components; new shared components should pass it explicitly.
-- One global Pagefind bundle indexes published articles in all courses, partitioned by document language; each article also exposes a localized course filter. Course directories and the library are outside the lesson index.
+- One global Pagefind bundle indexes published articles in all courses, partitioned by document language; each article also exposes a localized course filter. Course directories and the library are outside the lesson index, except for the authored Analysis review inside its overview. Analysis compatibility documents are noindex and have no Pagefind body.

@@ -1,0 +1,85 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Folgenkonvergenz lesen"
+navTitle: "Folgenkonvergenz lesen"
+description: "Folgenkonvergenz lesen."
+order: 48
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["witness-dependence", "real-sequences", "absolute-value-and-distance", "material-implication-and-vacuity"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+Ein Gerät meldet zweimal neun, danach bei jeder Beobachtung drei. Die vollständige Regel, nicht eine Vermutung aus drei Beobachtungen, sagt, dass ab der dritten Stelle alle Glieder drei sind. Konvergenz erlaubt frühe Ausnahmen. Sie fragt, ob alle hinreichend späten Glieder so nahe an einem festen Ziel bleiben wie verlangt.
+
+## Objekte vor den Quantoren festhalten
+
+Fixiere eine reelle Folge $a:\mathbb N\to\mathbb R$ und ein reelles Ziel $L$. Hier gilt $\mathbb N=\{1,2,3,\ldots\}$. Das Glied $a_n$ ist ein Wert, $n$ dessen Index. Der Abstand zum Ziel ist $|a_n-L|$. Folge und Ziel bleiben durchgehend fest; die folgende Formel wählt sie nicht neu. Eine Festlegung im Kontext ist kein geschriebener bindender Quantor.
+
+Epsilon, $\varepsilon$, ist eine positive reelle Toleranz, kein Index und keine feste winzige Zahl. Großes $N$ ist ein positiver natürlicher Startindex eines Endstücks. Kleines $n$ ist ein beliebiger positiver natürlicher Prüfindex. Beide Vergleiche sind wichtig: $n\ge N$ schließt den Startindex ein; $|a_n-L|<\varepsilon$ schließt Gleichheit mit der Toleranz aus.
+
+## Die positive Definition
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+<Flow nodes={[{"label": "Toleranz", "tex": "\\varepsilon>0", "detail": "Akzeptiere jede positive reelle Toleranz."}, {"label": "Startindex", "tex": "N\\in\\mathbb N", "detail": "Wähle einen Startindex mithilfe der Toleranz."}, {"label": "Endstückprüfung", "tex": "n\\ge N", "detail": "Halte den Startindex bei jeder Prüfung fest."}]} caption="Erst die Toleranz, dann der Startindex, dann jeder Index im Endstück." />
+
+Dies definiert Konvergenz zum angegebenen Ziel. Die Definition selbst ist kein zu beweisender Satz. Bei konkreten Folgen beweisen wir, dass sie erfüllt ist. Akzeptiere zuerst jede positive Toleranz. Gib dann einen natürlichen Startindex mithilfe der Toleranz und des festen Kontexts an. Halte ihn schließlich fest und prüfe jeden Index. Der Startindex darf von der Toleranz abhängen, muss sich aber nicht ändern, wenn derselbe passt.
+
+Die Implikation stellt an frühere Indizes keine Näheforderung, denn dort ist ihre Voraussetzung falsch. Am Startindex und danach muss jedes Glied passen. Nur das erste Glied des Endstücks zu prüfen genügt nicht. Passt ein Startindex, passt jeder größere natürliche ebenfalls, da sein Endstück im bereits geprüften liegt. Ein kleinster Startindex wird nicht verlangt.
+
+Beim Gerät und Ziel drei wähle für jede positive Toleranz Startindex drei. Alle Glieder dieses Endstücks sind drei; ihr Abstand null ist strikt kleiner als die Toleranz. Die vollständige Regel prüft beliebige Toleranzen und alle späteren Indizes, keine endlichen Beobachtungen. Konvergenz verlangt kleinen Abstand, nicht das genaue Erreichen des Ziels.
+
+### Übung
+
+Rekonstruiere die vollständige Definition mit Bereichen und den drei Rollen.
+
+<details>
+<summary>Hinweis</summary>
+
+Toleranz, Startindex, Prüfindex.
+
+</details>
+
+<Exercise>
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Dabei durchläuft $\varepsilon$ die positiven reellen Toleranzen; $N$ und $n$ durchlaufen $\mathbb N=\{1,2,3,\ldots\}$ als Startindex und Prüfindex. Die Folge $a$ und das reelle Ziel $L$ bleiben fest. Falls $n\ge N$, muss das Folgenglied $a_n$ einen Abstand von $L$ strikt unter $\varepsilon$ haben; für frühere Indizes besteht keine Näheforderung. Wähle $N$ vor der Prüfung aller Indizes und halte es dabei fest.
+
+</Exercise>
+
+Eine Folge ist zuerst null und danach immer eins. Beweist der erste Treffer Konvergenz gegen null?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze $\varepsilon=1/2$ und $n=\max(N,2)$.
+
+</details>
+
+<Exercise>
+
+Nein. Für jeden Startindex $N$ liegt das Maximum aus $N$ und zwei im Endstück und hat Wert eins. Der Abstand zu null ist eins, nicht kleiner als $1/2$. Ein Treffer ersetzt nie das ganze geforderte Endstück.
+
+</Exercise>
+
+Erkläre später Folge, Index, Glied, Ziel und Abstand getrennt und rekonstruiere dann die Formel.
+
+## Laut lesen
+
+**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
+
+**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
+
+**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.

@@ -1,0 +1,60 @@
+---
+course: "analysis"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+locale: "en"
+title: "Course review"
+description: "Reconnect the language, proofs, and algebra without mixing their roles."
+reviewStatus: "unreviewed"
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1]}, {"sourceId": "analysis-concepts-2", "pages": [1]}, {"sourceId": "analysis-concepts-4", "pages": [1]}, {"sourceId": "analysis-sheet-1-1", "pages": [1]}, {"sourceId": "analysis-sheet-1-2", "pages": [1]}, {"sourceId": "analysis-zero", "pages": [], "locations": ["00 Analysis 0 Lessons.md"]}]
+---
+
+import {lessonUrl} from "../../../lib/content";
+
+<span id="from-analysis-grundlagen-ueberblick"></span>
+
+<span id="from-analysis-grundlagen-ueberblick-a-compact-route-through-the-material"></span>
+
+### A compact route through the material
+
+Use the sections above as the main reading route through these foundations. Start with <a href={lessonUrl("aussagen-und-aussageformen","en","analysis")+"#from-aussagen-und-aussageformen"}>statements and predicates</a>, then <a href={lessonUrl("aussagen-und-aussageformen","en","analysis")+"#from-definitions-assumptions-results"}>definitions</a>, <a href={lessonUrl("zahlenmengen","en","analysis")+"#from-equality-and-equations"}>equality</a> and <a href={lessonUrl("zahlenmengen","en","analysis")+"#from-order-comparisons"}>order comparisons</a>. <a href={lessonUrl("logische-verknuepfungen","en","analysis")+"#from-logische-verknuepfungen"}>Logical connectives</a>, <a href={lessonUrl("logical-negation","en","analysis")+"#from-logical-negation"}>negation</a> and <a href={lessonUrl("logische-verknuepfungen","en","analysis")+"#from-building-truth-tables"}>building truth tables</a> prepare the <a href={lessonUrl("implikation-und-kontraposition","en","analysis")+"#from-material-implication-and-vacuity"}>conditional</a> and <a href={lessonUrl("biconditionals-and-equivalent-conditions","en","analysis")+"#from-biconditionals-and-equivalent-conditions"}>equivalence</a> lessons.
+
+For quantifiers, read <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-universal-statements-and-domains"}>universal claims</a>, <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-bound-variables-and-scope"}>scope</a>, <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-existence-and-witnesses"}>existence</a>, <a href={lessonUrl("quantifier-order","en","analysis")+"#from-quantifier-order"}>order and dependence</a> and the <a href={lessonUrl("negating-nested-statements","en","analysis")+"#from-negating-quantified-statements-step-by-step"}>negation procedure</a>. The <a href={lessonUrl("reading-sequence-convergence","en","analysis")+"#from-reading-sequence-convergence"}>sequence-convergence application</a> uses those ideas after introducing <a href={lessonUrl("real-sequences","en","analysis")+"#from-real-sequences"}>sequences</a> and <a href={lessonUrl("real-sequences","en","analysis")+"#from-absolute-value-and-distance"}>absolute distance</a>. Its <a href={lessonUrl("negating-sequence-convergence","en","analysis")+"#from-negating-sequence-convergence"}>negation derivation</a> distinguishes failure at a specified target from <a href={lessonUrl("negating-sequence-convergence","en","analysis")+"#from-no-real-limit"}>having no real limit</a>.
+
+The original poster and worksheet lessons remain useful applications. In particular, the numbered-law Boolean exercises below require their stated algebraic proof route; an earlier truth-table explanation does not replace that task.
+
+1. Decide whether the sentence is a statement or still contains free variables.
+2. Specify the domain and quantifiers.
+3. Identify the logical structure and direction of the claim.
+4. Choose a proof method and justify each step.
+5. For Boolean derivations, keep track of which rules have already been proved.
+6. For circuits, distinguish a written subexpression from a physical gate whose output can be reused.
+
+
+<span id="from-analysis-grundlagen-ueberblick-the-dependency-chain"></span>
+
+### The dependency chain
+
+<Math tex="(1\text{–}5)\longrightarrow H_1,H_2\longrightarrow(6\text{–}8)\longrightarrow U\longrightarrow\{9a,10\}\longrightarrow9b" display />
+
+Here $U$ denotes the uniqueness of the complement.
+
+
+<span id="from-analysis-grundlagen-ueberblick-questions-to-answer-without-looking"></span>
+
+### Questions to answer without looking
+
+- Why does the converse of a true implication need a separate proof?
+- What is the negation of “for every $x$ there exists $y$”?
+- Where does the proof of $\sqrt{2}$ use the reduced-fraction assumption?
+- Why must identity laws be derived before using them to prove idempotence?
+- Why does the NAND implementation of AND need two gates rather than three?
+
+Return to the corresponding lesson when an answer feels uncertain. These foundations support later Analysis topics; limits and differentiation are not covered by these six documents.
+
+
+<span id="from-analysis-grundlagen-ueberblick-a-combined-problem"></span>
+
+### A combined problem
+
+Consider “for every integer $n$, if $n^2$ is even then $n$ is divisible by 4”. First identify the domain and implication. The parity lemma gives only that $n$ is even, which is weaker than the claimed conclusion. At $n = 2$, $n^2 = 4$ is even but 4 does not divide $n$. This one case refutes the universal statement. A familiar theorem can be relevant without proving everything the problem asks.

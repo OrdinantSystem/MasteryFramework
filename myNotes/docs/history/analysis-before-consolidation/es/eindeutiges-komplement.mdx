@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-sheet-1-2"
+sourcePages: [1]
+locale: "es"
+title: "Hoja 1.2 · el complemento es único"
+navTitle: "Hoja 1.2 · el complemento es único"
+description: "Demuestra por qué dos candidatos a complemento deben coincidir."
+order: 43
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["nullgesetze-und-konstanten"]
+thumbnail: "complement"
+---
+
+## Se necesitan ambas condiciones
+
+<Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
+
+Supón que $B$ y $C$ son complementos de A. La condición O cubre todas las posibilidades; la condición $Y$ excluye el solapamiento. Usa las condiciones de un candidato para simplificar el otro.
+
+## Reduce ambos a la misma expresión
+
+<Math tex="\begin{aligned}\colB{B}&\overset{7b}=\colB{B}\land1=\colB{B}\land(\colA{A}\lor \colC{C})\\&\overset3=(\colB{B}\land \colA{A})\lor(\colB{B}\land \colC{C})\\&\overset2=0\lor(\colB{B}\land \colC{C})\overset{2,7a}=\colB{B}\land \colC{C}\end{aligned}" display />
+
+<Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
+
+Por tanto, $B = C$. Las sustituciones sin número usan las condiciones de complemento supuestas. Como $\neg A$ es un complemento por la ley 5, cualquier expresión que cumpla ambas condiciones debe ser igual a $\neg A$. Esta herramienta permite las siguientes demostraciones.
+
+## ¿Por qué comparar $B$ con $C$?
+
+Sabemos cómo se relacionan $B$ y $C$ con $A$, pero no entre sí. Insertar $1 = A \lor  C$ en $B \land  1$ conecta ambas informaciones. Distribuir separa $B \land  A$, que desaparece, de $B \land  C$. Repetirlo para $C$ muestra que ambos candidatos coinciden con su parte común. Solo puede haber un complemento que cumpla las dos condiciones. $A \lor  B = 1$ sola no basta: $B = 1$ siempre la cumple.

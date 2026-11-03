@@ -1,27 +1,38 @@
 ---
 course: "analysis"
-chapter: "analysis-boolean"
+chapter: "analysis-boolean-applications"
 sourceId: "analysis-sheet-1-2"
 sourcePages: [1]
 locale: "es"
-title: "Hoja 1.2 · el complemento es único"
-navTitle: "Hoja 1.2 · el complemento es único"
-description: "Demuestra por qué dos candidatos a complemento deben coincidir."
-order: 43
+title: "Complementos únicos y leyes algebraicas de negación"
+navTitle: "Complementos únicos y leyes algebraicas de negación"
+description: "Complementos únicos y leyes algebraicas de negación"
+order: 19
 kind: "worked-problem"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["nullgesetze-und-konstanten"]
+prerequisites: ["boolesche-grundgesetze", "existence-and-uniqueness"]
 thumbnail: "complement"
+sourceLocations: []
+additionalSources: []
 ---
 
-## Se necesitan ambas condiciones
+<span id="from-eindeutiges-komplement"></span>
+
+## Hoja 1.2 · el complemento es único
+
+<span id="from-eindeutiges-komplement-se-necesitan-ambas-condiciones"></span>
+
+### Se necesitan ambas condiciones
 
 <Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
 
 Supón que $B$ y $C$ son complementos de A. La condición O cubre todas las posibilidades; la condición $Y$ excluye el solapamiento. Usa las condiciones de un candidato para simplificar el otro.
 
-## Reduce ambos a la misma expresión
+
+<span id="from-eindeutiges-komplement-reduce-ambos-a-la-misma-expresión"></span>
+
+### Reduce ambos a la misma expresión
 
 <Math tex="\begin{aligned}\colB{B}&\overset{7b}=\colB{B}\land1=\colB{B}\land(\colA{A}\lor \colC{C})\\&\overset3=(\colB{B}\land \colA{A})\lor(\colB{B}\land \colC{C})\\&\overset2=0\lor(\colB{B}\land \colC{C})\overset{2,7a}=\colB{B}\land \colC{C}\end{aligned}" display />
 
@@ -29,6 +40,65 @@ Supón que $B$ y $C$ son complementos de A. La condición O cubre todas las posi
 
 Por tanto, $B = C$. Las sustituciones sin número usan las condiciones de complemento supuestas. Como $\neg A$ es un complemento por la ley 5, cualquier expresión que cumpla ambas condiciones debe ser igual a $\neg A$. Esta herramienta permite las siguientes demostraciones.
 
-## ¿Por qué comparar $B$ con $C$?
+
+<span id="from-eindeutiges-komplement-por-qué-comparar-bbb-con-ccc"></span>
+
+### ¿Por qué comparar $B$ con $C$?
 
 Sabemos cómo se relacionan $B$ y $C$ con $A$, pero no entre sí. Insertar $1 = A \lor  C$ en $B \land  1$ conecta ambas informaciones. Distribuir separa $B \land  A$, que desaparece, de $B \land  C$. Repetirlo para $C$ muestra que ambos candidatos coinciden con su parte común. Solo puede haber un complemento que cumpla las dos condiciones. $A \lor  B = 1$ sola no basta: $B = 1$ siempre la cumple.
+
+<span id="from-de-morgan-und-doppelte-negation"></span>
+
+## Hoja 1.2 · De Morgan y doble negación
+
+<span id="from-de-morgan-und-doppelte-negation-9a--un-complemento-de-aba-lor--bab"></span>
+
+### 9a · Un complemento de $A \lor  B$
+
+Define $X = A \lor  B$ e $Y = \neg A \land  \neg B$. Demuestra $X \land  Y = 0$ y $X \lor  Y = 1$ solo con las leyes ya disponibles.
+
+<Math tex="\begin{aligned}X\land Y&\overset{2,3}=(\colA{A}\land\neg \colA{A}\land\neg \colB{B})\lor(\colB{B}\land\neg \colA{A}\land\neg \colB{B})\\&\overset{1,2,5}=(0\land\neg \colB{B})\lor(0\land\neg \colA{A})\\&\overset{2,7d}=0\lor0\overset6=0\end{aligned}" display />
+
+<Math tex="\begin{aligned}X\lor Y&\overset3=[(\colA{A}\lor \colB{B})\lor\neg \colA{A}]\land[(\colA{A}\lor \colB{B})\lor\neg \colB{B}]\\&\overset{1,2}=[(\colA{A}\lor\neg \colA{A})\lor \colB{B}]\land[\colA{A}\lor(\colB{B}\lor\neg \colB{B})]\\&\overset5=(1\lor \colB{B})\land(\colA{A}\lor1)\\&\overset{2,7c}=1\land1\overset6=1\end{aligned}" display />
+
+<Math tex="\neg(\colA{A}\lor \colB{B})=\neg \colA{A}\land\neg \colB{B}" display />
+
+La unicidad identifica $Y$ con $\neg X$. Así se demuestra la primera ley de De Morgan sin usarla dentro de su propia demostración.
+
+
+<span id="from-de-morgan-und-doppelte-negation-10--doble-negación-de-forma-independiente"></span>
+
+### 10 · Doble negación de forma independiente
+
+<Math tex="\neg \colA{A}\lor \colA{A}=1,\quad\neg \colA{A}\land \colA{A}=0,\qquad\neg \colA{A}\lor\neg\neg \colA{A}=1,\quad\neg \colA{A}\land\neg\neg \colA{A}=0" display />
+
+Por las leyes 2 y 5, $A$ y $\neg\neg A$ son complementos de $\neg A$. La unicidad da $\neg \neg A = A$. Este argumento no necesita De Morgan.
+
+
+<span id="from-de-morgan-und-doppelte-negation-9b--deduce-la-segunda-ley"></span>
+
+### 9b · Deduce la segunda ley
+
+<Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
+
+En el paso central aplica 9a al revés con las entradas $\neg A$ y $\neg B$. El orden de demostración es unicidad → 9a y 10 → 9b.
+
+
+<span id="from-de-morgan-und-doppelte-negation-la-estrategia-del-complemento"></span>
+
+### La estrategia del complemento
+
+Para identificar $\neg (A \lor  B)$ no suponemos que la negación se distribuya. Proponemos un candidato $Y$ y comprobamos las dos propiedades que determinan un complemento único. La primera cadena prueba que $X$ e $Y$ nunca se cumplen juntos; la segunda, que cubren todos los casos. Hacen falta ambas. Para la doble negación basta comparar los dos complementos de $\neg A$. La segunda identidad de De Morgan se deduce entonces de resultados ya probados, sin circularidad.
+
+
+<span id="from-de-morgan-und-doppelte-negation-negar-una-afirmación-compuesta"></span>
+
+### Negar una afirmación compuesta
+
+Las identidades demostradas permiten transformar una negación sin tabla de verdad.
+
+<Exercise question="Niega «se cumple A y al menos una de B o C».">
+
+El enunciado es $A \land  (B \lor  C)$. Su negación es $\neg A \lor  \neg (B \lor  C)$, es decir, $\neg A \lor  (\neg B \land  \neg C)$. El O interior se convierte en $Y$; negar solo las letras ignoraría la agrupación.
+
+</Exercise>

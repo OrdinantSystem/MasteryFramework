@@ -1,0 +1,28 @@
+---
+import {courseUrl,lessonUrl} from '../lib/content';
+import type {Locale} from '../lib/i18n';
+import type {AnalysisAlias,AnalysisDestination} from '../lib/analysis-compatibility';
+interface Props {alias:AnalysisAlias;locale:Locale;redirect?:boolean}
+const {alias,locale,redirect=false}=Astro.props;
+const target=(destination:AnalysisDestination)=>(destination.key?lessonUrl(destination.key,locale,'analysis'):courseUrl('analysis',locale))+'#'+destination.anchor;
+const destinations=Object.fromEntries(Object.entries(alias.fragments).map(([key,value])=>[key,target(value)]));
+const fallback=target(alias);
+---
+<script is:inline define:vars={{destinations,fallback,redirect}}>
+  (()=>{
+    const resolve=()=>{
+      let hash;
+      try{hash=decodeURIComponent(location.hash.slice(1))}catch{return}
+      const target=destinations[hash]||(redirect?fallback:undefined);
+      if(!target){
+        if(hash.startsWith('from-'))requestAnimationFrame(()=>document.getElementById(hash)?.scrollIntoView({behavior:'instant'}));
+        return;
+      }
+      const next=new URL(target,location.href);next.search=location.search;
+      if(next.pathname!==location.pathname){location.replace(next.href);return}
+      if(next.hash!==location.hash){history.replaceState(null,'',next.href)}
+      requestAnimationFrame(()=>document.getElementById(decodeURIComponent(next.hash.slice(1)))?.scrollIntoView({behavior:'instant'}));
+    };
+    resolve();addEventListener('hashchange',resolve);addEventListener('load',resolve,{once:true});
+  })();
+</script>

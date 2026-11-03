@@ -33,7 +33,9 @@ The canonical package is ../my_notes_web/. Source is shared through Git; the dep
 6. Pagefind indexes published lesson bodies by actual html language. It excludes shell, rendered equation duplication, and the developer gallery.
 7. The verifier checks generated links, anchors, assets, localized counterparts, source exclusion, math samples, and token contrast.
 
-The build currently emits 287 pages: 261 localized lesson pages, 15 localized archive/course/search pages, a 404, nine legacy redirects, and the library. Checks derive lesson counts from published content; add a new route family deliberately and update its route-count contract.
+The build currently emits 287 pages: 162 canonical localized lesson pages, 99 Analysis compatibility documents, 15 localized archive/course/search pages, a 404, nine earlier legacy redirects, and the library. The three Analysis overview reviews are also indexed, yielding 165 Pagefind entries; compatibility documents are noindex and excluded. Checks derive lesson counts from published content; add a new route family deliberately and update its route-count contract.
+
+Analysis uses six section → lesson lists without a subgroup disclosure. Its organization manifest also records historical routes/fragments; `AnalysisCompatibility.astro` resolves those through base-aware helpers. Course review MDX in the provenance-validated `courseGuides` collection renders inside the existing overview. The exact pre-consolidation public lesson sources live outside the loader in docs/history, not in the Pages output. See [the organization guide](analysis-organization.md).
 
 ## Representation layers
 
@@ -43,7 +45,7 @@ matrix.ts creates equations for arbitrary compatible matrices. MatrixProduct.ast
 
 ## Current boundaries
 
-The archive has three courses and 87 published lessons per language: 17 in Linear Algebra I, 53 in Analysis I (including Analysis 0 foundations), and 17 in learning methodology. Chapters have localized labels, exact group membership, and source identities. The original Linear Algebra concept map stays scoped to its first chapter. New subjects extend the shared course registry and shell. Source identities and PDF page bounds are registered in src/lib/sources.ts and validated by the content schema. See source-ingestion.md for the multi-document workflow.
+The archive has three courses and 54 published lessons per language: 17 in Linear Algebra I, 20 in Analysis I, and 17 in learning methodology. Chapters have localized labels, exact group membership, and source identities. The original Linear Algebra concept map stays scoped to its first chapter. New subjects extend the shared course registry and shell. Source identities and PDF page bounds are registered in src/lib/sources.ts and validated by the content schema. See source-ingestion.md for the multi-document workflow.
 
 The original source is not public content. references/source/, generated files, dependency folders, and local runtime metadata are ignored. deployment/ contains a template only. Existing sibling websites remain separate and preserved.
 

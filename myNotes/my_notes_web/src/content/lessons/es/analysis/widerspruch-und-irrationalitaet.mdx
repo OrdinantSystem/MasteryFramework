@@ -1,21 +1,28 @@
 ---
 course: "analysis"
-chapter: "analysis-proof"
+chapter: "analysis-proofs"
 sourceId: "analysis-concepts-3"
 sourcePages: [1]
 locale: "es"
-title: "Contradicción e irracionalidad de √2"
-navTitle: "Contradicción e irracionalidad de √2"
-description: "Comprende los métodos de demostración con una prueba paso a paso de que √2 es irracional."
-order: 39
+title: "Contradicción e irracionalidad"
+navTitle: "Contradicción e irracionalidad"
+description: "Contradicción e irracionalidad"
+order: 14
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["beweissprache-und-methoden", "aequivalenz-und-paritaet", "zahlenmengen"]
+prerequisites: ["beweissprache-und-methoden", "zahlenmengen"]
 thumbnail: "irrational"
+sourceLocations: []
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations": []}]
 ---
 
+<span id="from-widerspruch-und-irrationalitaet"></span>
+
 {/* Expanded explanations and practice are authored teaching additions to the source example. */}
+
+
+<span id="from-widerspruch-und-irrationalitaet-qué-establece-una-demostración"></span>
 
 ## Qué establece una demostración
 
@@ -24,6 +31,9 @@ Una demostración matemática explica por qué una afirmación precisa debe segu
 Nuestra afirmación principal es que $\sqrt2$ es **irracional**: es un número real que no puede escribirse como cociente de dos enteros. Aquí $\sqrt2$ designa el número real positivo cuyo cuadrado es $2$. Una aproximación decimal como $1{,}4142$ no resuelve la cuestión: un cálculo finito no puede descartar todas las fracciones posibles.
 
 Usaremos una **demostración por contradicción**. Suponemos provisionalmente lo contrario, que existe tal fracción, y mostramos que esa hipótesis obliga a la misma fracción a tener dos propiedades incompatibles.
+
+
+<span id="from-widerspruch-und-irrationalitaet-una-primera-demostración-por-contradicción"></span>
 
 ## Una primera demostración por contradicción
 
@@ -36,19 +46,18 @@ Considera la afirmación: **no existe un número natural mayor que todos los dem
 
 La contradicción es concreta: el mismo número $m+1$ tendría que ser a la vez menor o igual que $m$ y mayor que $m$. Una demostración por contradicción debe identificar una incompatibilidad de este tipo; obtener un resultado inesperado no basta.
 
+
+<span id="from-widerspruch-und-irrationalitaet-el-resultado-de-paridad-que-necesitamos"></span>
+
 ## El resultado de paridad que necesitamos
 
-Un entero es **par** si es igual a $2r$ para algún entero $r$. Es **impar** si se escribe como $2r+1$. Todo entero tiene exactamente una de estas dos formas.
+[Métodos de demostración y paridad](../beweissprache-und-methoden/#from-beweissprache-und-methoden) demuestra ambas direcciones: un entero es par si y solo si su cuadrado es par. La vuelta usa contraposición y expresa un entero impar arbitrario como el doble de un entero más uno. Aplicaremos esa implicación ya demostrada dos veces. No suponemos que extraer una raíz conserve la divisibilidad.
 
-Necesitamos la implicación: **si el cuadrado de un entero es par, entonces el propio entero es par**. Para justificarla, examinemos primero un entero impar $n=2r+1$:
-
-<Math tex="n^2=(2r+1)^2=4r^2+4r+1=2(2r^2+2r)+1" display />
-
-Como $2r^2+2r$ es un entero, la última expresión tiene la forma «el doble de un entero más uno». Por tanto, un entero impar tiene cuadrado impar. En consecuencia, si $n^2$ es par, $n$ no puede ser impar; debe ser par.
-
-Esto es **contraposición**: para probar «$n^2$ par implica $n$ par», hemos probado «$n$ impar implica $n^2$ impar». Aplicaremos este resultado dos veces. No estamos suponiendo que extraer una raíz cuadrada conserve la divisibilidad.
+<span id="from-widerspruch-und-irrationalitaet-por-qué-2sqrt22-no-puede-ser-una-fracción"></span>
 
 ## Por qué $\sqrt{2}$ no puede ser una fracción
+
+<span id="from-widerspruch-und-irrationalitaet-1-suponer-que-existe-una-fracción-y-simplificarla"></span>
 
 ### 1. Suponer que existe una fracción y simplificarla
 
@@ -58,6 +67,8 @@ Supongamos, para llegar a una contradicción, que $\sqrt2$ es racional. Por defi
 
 Aquí $p$ es el numerador y $q$ el denominador. La notación $\gcd(|p|,q)=1$ dice que su máximo común divisor es $1$: ningún entero mayor que $1$ divide a ambos. Esto significa que la fracción es **irreducible**. Cancelar factores comunes cambia la representación, pero no el número, así que esta elección es posible para todo racional. Como $\sqrt2>0$ y $q>0$, también tenemos $p>0$.
 
+<span id="from-widerspruch-und-irrationalitaet-2-convertir-la-igualdad-supuesta-en-una-ecuación-entre-enteros"></span>
+
 ### 2. Convertir la igualdad supuesta en una ecuación entre enteros
 
 Elevamos ambos lados al cuadrado. El cuadrado de $\sqrt2$ es $2$ y el de $p/q$ es $p^2/q^2$. Después multiplicamos ambos lados por $q^2$, que no es cero:
@@ -66,11 +77,15 @@ Elevamos ambos lados al cuadrado. El cuadrado de $\sqrt2$ es $2$ y el de $p/q$ e
 
 Ahora tenemos una ecuación entre enteros. Esto nos permite estudiar su divisibilidad entre $2$.
 
+<span id="from-widerspruch-und-irrationalitaet-3-mostrar-que-el-numerador-es-par"></span>
+
 ### 3. Mostrar que el numerador es par
 
 La ecuación $p^2=2q^2$ expresa $p^2$ como el doble del entero $q^2$. Por definición, $p^2$ es par. El resultado de paridad demostrado antes nos dice entonces que el propio $p$ es par.
 
 Por tanto, existe un entero $k$ tal que $p=2k$. Introducir $k$ solo expresa la definición de paridad; no añade una nueva hipótesis.
+
+<span id="from-widerspruch-und-irrationalitaet-4-sustituir-para-obtener-información-sobre-el-denominador"></span>
 
 ### 4. Sustituir para obtener información sobre el denominador
 
@@ -80,15 +95,22 @@ Sustituimos $p$ por $2k$ en $p^2=2q^2$. Al elevar $2k$ al cuadrado obtenemos $4k
 
 La última igualdad se obtiene dividiendo ambos lados entre $2$ e intercambiando los lados. Expresa $q^2$ como el doble del entero $k^2$, así que $q^2$ es par. Al aplicar otra vez el mismo resultado de paridad, concluimos que $q$ también es par.
 
+<span id="from-widerspruch-und-irrationalitaet-5-identificar-la-contradicción"></span>
+
 ### 5. Identificar la contradicción
 
 Hemos demostrado que $p$ y $q$ son pares. Por tanto, $2$ divide a ambos y su máximo común divisor es al menos $2$. Sin embargo, elegimos la fracción de modo que ese divisor fuera $1$.
 
 Estas propiedades no pueden cumplirse a la vez. **La contradicción está entre la condición de fracción irreducible y el factor común $2$ que impone la ecuación.** Tener dos términos pares no es imposible por sí solo: $2/4$ es una fracción válida, pero no es irreducible.
 
+<span id="from-widerspruch-und-irrationalitaet-6-expresar-la-conclusión"></span>
+
 ### 6. Expresar la conclusión
 
 La hipótesis de que $\sqrt2$ tiene una representación racional ha llevado a una contradicción. Todo racional admite una representación irreducible, así que no queda otra representación racional que pueda evitar el argumento. Por tanto, $\sqrt2$ es irracional.
+
+
+<span id="from-widerspruch-und-irrationalitaet-cómo-se-combinan-los-métodos-de-demostración"></span>
 
 ## Cómo se combinan los métodos de demostración
 
@@ -104,6 +126,9 @@ Una demostración puede tener una estrategia general y usar otro método para un
 Para la versión por descenso, partimos de cualquier supuesta fracción para $\sqrt2$, sin exigir que sea irreducible. El argumento anterior hace pares ambos términos. Dividirlos entre dos produce enteros que representan el mismo número, con un denominador positivo menor. El argumento se aplica de nuevo a esta fracción. Así obtendríamos una sucesión infinita estrictamente decreciente de denominadores enteros positivos. Esto es imposible: todo conjunto no vacío de enteros positivos tiene un elemento mínimo. La demostración con una fracción irreducible alcanza la contradicción al encontrar el primer factor común.
 
 Un **contraejemplo** cumple otra función: refuta una afirmación universal. Por ejemplo, $\sqrt4=2$ refuta «la raíz cuadrada de todo entero positivo es irracional». No refuta la afirmación concreta sobre $\sqrt2$. La **inducción** demuestra una familia de afirmaciones indexadas por naturales mediante un caso inicial y un paso al sucesor; no hace falta para esta afirmación individual.
+
+
+<span id="from-widerspruch-und-irrationalitaet-comprobar-el-razonamiento"></span>
 
 ## Comprobar el razonamiento
 

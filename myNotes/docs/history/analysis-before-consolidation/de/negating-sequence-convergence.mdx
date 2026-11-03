@@ -1,0 +1,136 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Folgenkonvergenz negieren"
+navTitle: "Folgenkonvergenz negieren"
+description: "Folgenkonvergenz negieren."
+order: 51
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proving-sequence-convergence", "negating-quantified-statements-step-by-step", "negating-quantified-inequalities", "reading-conditionals"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Deriving Negation of Sequence Convergence.md#Deriving Negation of Sequence Convergence", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "quantifiers"
+---
+
+Die konstante Nullfolge hat Abstand null zu Ziel null, aber Abstand eins zu Ziel eins. Zunächst leiten wir das Scheitern an einem angegebenen Ziel her, nicht das Fehlen jedes möglichen reellen Grenzwerts. Halte die ganze Folge und das Ziel während der Ableitung fest.
+
+Eine reelle Folge ordnet jedem $n\in\mathbb N=\{1,2,3,\ldots\}$ ein reelles Glied $a_n$ zu. Sein Abstand zum festen reellen $L$ ist $|a_n-L|$. Positives reelles $\varepsilon$ ist die Toleranz, natürliches $N$ der Beginn des Endstücks und natürliches $n$ eine geprüfte Position. Die positive Definition lautet:
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Jede Toleranz verlangt einen Startindex, dessen ganzes Endstück passt. Er darf die Toleranz nutzen, aber nicht mit jedem späteren Index wechseln. Vor dem Startindex stellt die Definition keine Näheforderung. Die folgenden sechs Stufen sind äquivalente Formen ihrer Negation, noch kein Beweis für das Scheitern einer konkreten Folge.
+
+## 1. Die ganze Definition verneinen
+
+$$
+\neg\Bigl(\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Setze zunächst die Negation vor die vollständige Aussage und lasse alle inneren Zeichen unverändert. Der feste Kontext bleibt derselbe.
+
+## 2. Den Toleranzquantor überschreiten
+
+$$
+\exists\varepsilon>0\;\neg\Bigl(\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Nicht jede positive Toleranz gelingt, also lässt eine positive Toleranz die restliche Anforderung scheitern. Positivität bleibt erhalten; wir wechseln nicht zu nichtpositiven Toleranzen.
+
+## 3. Den Startindexquantor überschreiten
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\neg\Bigl(\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Für diese eine Toleranz passt kein natürlicher Startindex. Also scheitert jeder Vorschlag an der ganzen inneren Indexaussage. Die Toleranz bleibt fest, während Startindizes variieren.
+
+## 4. Den Prüfindexquantor überschreiten
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\neg\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Scheitern an jedem Index ist unnötig. Für jeden Startindex muss ein Index die Implikation falsch machen. Er darf vom Startindex und dem bereits festen Kontext abhängen.
+
+## 5. Die Implikation verneinen
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land\neg(|a_n-L|<\varepsilon)\bigr).
+$$
+
+Eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung. Derselbe Index muss im Endstück liegen und am Abstandstest scheitern. Bewahre den Voraussetzungvergleich und ersetze die Implikation durch eine Konjunktion. Ein früheres Glied verletzt kein Versprechen über das Endstück.
+
+## 6. Gleichheit im Abstandsfehler einschließen
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+Ein reeller Abstand, der nicht unter $\varepsilon$ liegt, ist mindestens $\varepsilon$. Das ist die direkte Vergleichsnegation bei derselben Toleranz, also muss Gleichheit vorkommen. Lies das Ergebnis: Wähle eine positive Toleranz und finde gegen jeden Startindex ein Glied in seinem Endstück mit mindestens diesem Abstand zu $L$. „Beliebig weit hinten“ bedeutet ab jedem vorgeschlagenen Startindex, nicht Scheitern jedes späten Glieds.
+
+## Einen tatsächlichen Fehler beweisen
+
+Für $a_n=0$ an allen Stellen und $L=1$ wähle $\varepsilon=1$. Wähle für jedes natürliche $N$ den Index $n=N$. Zugehörigkeit und $n\ge N$ gelten, und $|a_n-1|=1\ge\varepsilon$. Das erfasst jeden Startindex und beweist Scheitern bei eins. Für Ziel null passt dagegen jedes $\varepsilon>0$ mit $N=1$: Alle Abstände sind null. Diese Folge hat also einen reellen Grenzwert trotz Scheitern bei Ziel eins.
+
+### Übung
+
+Warum ist eine beibehaltene Implikation in der letzten Fehlerbedingung falsch?
+
+<details>
+<summary>Hinweis</summary>
+
+Betrachte einen früheren Index, sofern vorhanden.
+
+</details>
+
+<Exercise>
+
+Sie könnte durch eine falsche Endstückvoraussetzung erfüllt sein, ohne fehlerhaftes Glied darin. Scheitern verlangt wahre Zugehörigkeit und Abstandsfehler, also Konjunktion.
+
+</Exercise>
+
+Rekonstruiere für die Nullfolge Scheitern bei Ziel eins und Erfolg bei null ohne Toleranzstichprobe.
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze beliebige Startindizes fürs Scheitern, beliebige Toleranzen für Erfolg.
+
+</details>
+
+<Exercise>
+
+Bei eins passen festes $\varepsilon=1$ und $n=N$ für jedes $N$. Bei null wähle für jedes $\varepsilon>0$ den Start $N=1$; überall gilt $0<\varepsilon$. Keines der Argumente braucht das optionale Kehrwertbeispiel.
+
+</Exercise>
+
+Leite später alle sechs Stufen her, bevor du bei [kein reeller Grenzwert](../no-real-limit/) den äußeren Zielquantor ergänzt.
+
+Welche Wahlen dürfen vom Startindex abhängen? Muss jeder spätere Index die Toleranz verletzen?
+
+<details>
+<summary>Hinweis</summary>
+
+Lies die drei Quantoren in Reihenfolge.
+
+</details>
+
+<Exercise>
+
+Der Fehlerindex darf den Startindex nutzen; die Toleranz steht vor allen Startindizes fest. Nur ein Fehler je vorgeschlagenem Endstück wird verlangt. Andere Glieder desselben Endstücks dürfen nahe am Ziel sein.
+
+</Exercise>
+
+## Laut lesen
+
+**EN:** There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
+
+**DE:** Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
+
+**ES:** Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.

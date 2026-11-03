@@ -219,6 +219,9 @@ for (const state of [
 }
 const {courses}=await import('../src/lib/navigation.ts');
 const courseIds=courses.map(c=>c.id);
+const {default:organization}=await import('../src/lib/analysis-organization.json',{with:{type:'json'}});
+const canonicalAnalysis=new Set(organization.lessons.map(l=>l.key));
+const compatibilityCount=Object.keys(organization.aliases.en).filter(k=>!canonicalAnalysis.has(k)).length;
 const lessonSets = Object.fromEntries(
   await Promise.all(
     ["en", "de", "es"].map(async (locale) => {
@@ -237,7 +240,7 @@ const lessonSets = Object.fromEntries(
 );
 assert.equal(
   pages.length,
-  3 * (2 + courseIds.length + lessonSets.en.length) + 11,
+  3 * (2 + courseIds.length + lessonSets.en.length + compatibilityCount) + 11,
   "Expected localized archive/course indexes/search/lessons, 404, library, and nine legacy redirects",
 );
 for (const locale of ["en", "de", "es"]) {
@@ -315,6 +318,12 @@ assert.ok(
   !files.some((f) => f.includes("/source/")),
   "Source PDF must not ship with the public build",
 );
+for(const locale of ['en','de','es'])for(const alias of Object.values(organization.aliases[locale])){
+ for(const destination of [alias,...Object.values(alias.fragments)]){
+  const target=path.join(root,locale==='en'?'':locale,'analysis',...(destination.key?['lessons',destination.key]:[]),'index.html');
+  const html=await readFile(target,'utf8');assert.ok(html.includes(`id="${destination.anchor}"`),`Missing compatibility anchor ${locale}/${destination.key}#${destination.anchor}`);
+ }
+}
 if (errors.length) throw new Error(errors.join("\n"));
 console.log(
   `Verified ${pages.length} static pages, ${links} local links/assets, source matrix products, rotation cycle, inverse shear, and text contrast in both themes.`,

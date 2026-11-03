@@ -1,0 +1,142 @@
+---
+course: "analysis"
+chapter: "analysis-zero-connectives"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+additionalSources: [{"sourceId": "analysis-zero", "locations": ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.3 Conjunction and disjunction/01 Conjunction - And.md", "A0.1.3 Conjunction and disjunction/02 Inclusive Or.md"], "pages": []}]
+locale: "es"
+title: "Conectivas lógicas"
+navTitle: "Conectivas lógicas"
+description: "Construye enunciados compuestos y distingue el «o» inclusivo."
+order: 3
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "logic"
+---
+
+## Lee una fila cada vez
+
+| $A$ | $B$ | $\neg A$ | $A \land  B$ | $A \lor  B$ | $A \Rightarrow  B$ | $A \Leftrightarrow  B$ |
+|---|---|---|---|---|---|---|
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 1 | 0 | 0 |
+| 1 | 1 | 0 | 1 | 1 | 1 | 1 |
+
+La conjunción «y» exige ambas entradas. O inclusivo exige al menos una y admite ambas. NO invierte el valor de verdad. Una implicación solo falla con premisa verdadera y conclusión falsa. La equivalencia exige valores de verdad iguales, incluso si ambos son falsos.
+
+## Una tabla de verdad con tres variables
+
+Añadir un enunciado $C$ no introduce un tercer valor de verdad: $A$, $B$ y $C$ siguen siendo, cada uno, falsos ($0$) o verdaderos ($1$). Con dos variables hay $2^2=4$ asignaciones; con tres hay $2^3=8$. Cada fila anterior se divide en dos casos: uno con $C=0$ y otro con $C=1$.
+
+En este ejemplo adicional, las columnas $A \land B$ y $B \lor C$ muestran resultados intermedios. Úsalos para leer las expresiones más largas paso a paso; los paréntesis indican qué enunciados se agrupan.
+
+| $A$ | $B$ | $C$ | $A \land B$ | $(A \land B) \land C$ | $B \lor C$ | $A \lor (B \lor C)$ | $(A \land B) \Rightarrow C$ | $(A \land B) \Leftrightarrow C$ |
+|---|---|---|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+Por ejemplo, en la fila $A=1$, $B=1$, $C=0$, el enunciado intermedio $A \land B$ es verdadero. Su conjunción con $C$ es falsa, y $(A \land B) \Rightarrow C$ es falsa porque su premisa es verdadera y su conclusión es falsa. La equivalencia final también es falsa porque $A \land B$ y $C$ tienen valores de verdad distintos.
+
+La variable adicional duplica el número de filas. Permite formar más enunciados compuestos, pero no exige un número fijo de columnas: añade una por cada expresión que quieras comparar.
+
+## Siempre, nunca o a veces
+
+Una tautología es verdadera en toda asignación, como $A \lor  \neg A$. Una contradicción es falsa en todas, como $A \land  \neg A$. Una contingencia varía según la asignación. $A \Rightarrow  B$ es contingente, aunque sus casos con premisa falsa sean verdaderos.
+
+## Negar una implicación
+
+<Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
+
+Para refutar «si apruebo, invito a cenar», debo aprobar y no invitar. Negar ambas partes es una operación distinta.
+
+## Leer una implicación
+
+$A \Rightarrow  B$ excluye una sola situación: ocurre $A$ y no $B$. Considera «si un número es divisible por 4, es par». Un impar no cumple la premisa y no contradice la afirmación. Por eso una premisa falsa da una implicación verdadera en la tabla. No demuestra causalidad ni que $B$ sea verdadero por sí solo. $A \Leftrightarrow  B$ exige ambas direcciones.
+
+## Una tarjeta, dos propiedades
+
+Fija una tarjeta con un entero. Sea $P$ «su entero es positivo» y $Q$ «su entero es par». Positivo significa mayor que cero; par significa divisible entre dos con resultado entero. Las letras nombran afirmaciones completas, no el entero. Usando la aritmética y el orden habituales como base obtenemos:
+
+| Entero | $P$ | $Q$ | $P\land Q$ | $P\lor Q$ |
+|---|---|---|---|---|
+| 6 | 1 | 1 | 1 | 1 |
+| 9 | 1 | 0 | 0 | 1 |
+| -2 | 0 | 1 | 0 | 1 |
+| -3 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 |
+
+Seis cumple ambas propiedades. Nueve es positivo e impar; menos dos es par y no positivo; menos tres no cumple ninguna. Cero es par porque $0/2=0$, pero no positivo. Una parte falsa hace falsa la conjunción, no carente de sentido.
+
+Establecer una conjunción exige justificar **ambas** partes. Para seis, $6>0$ y $6/2=3$ es entero. Para refutarla basta una parte falsa: doce no es menor que diez, así que «positivo y menor que diez» es falso aunque doce sea positivo. De una conjunción verdadera recuperamos cada componente. Una conjunción falsa por sí sola no identifica cuál falló.
+
+Para establecer una disyunción inclusiva basta justificar **una** alternativa; la otra no tiene que ser falsa. Para refutarla hay que justificar que **ambas** son falsas. Menos tres falla positivo-o-par por las dos razones. Decir solo «no positivo» deja posible la paridad, como muestra menos dos.
+
+## O inclusiva y exactamente una
+
+La «o» inclusiva permite solapamiento. Para $P=Q=1$, $P\lor Q$ es verdadera, pero **exactamente una** es falsa. En $10,01,00$ coinciden: dan respectivamente $1,1,0$. La fila con ambas verdaderas marca la diferencia.
+
+«Sopa o ensalada» en un menú puede exigir elegir solo una, pero esa restricción viene del contexto. «O bien» por sí solo no establece exclusividad en matemáticas. A veces los propios componentes no pueden coincidir: un real no puede ser estrictamente negativo y estrictamente positivo. Eso procede del orden habitual, no de otra regla de disyunción. Una tabla abstracta completa mantiene la asignación con ambas verdaderas.
+
+La satisfacción «simultánea» se refiere al contexto indicado, no necesariamente a un instante. «La puerta estaba abierta al mediodía y cerrada a la una» puede ser verdadero. La «y» lógica no afirma orden temporal ni causalidad. «Positivo, **pero** impar» tiene las condiciones de verdad de una conjunción: «pero» añade énfasis, no otra regla lógica.
+
+## Agrupación y entradas atómicas
+
+En este nivel proposicional, una proposición tratada como una sola unidad, sin descomponerla mediante conectivas lógicas, se llama **atómica**. Una proposición **compuesta** se construye a partir de una o más proposiciones mediante conectivas lógicas.
+
+$x+1=3$ contiene suma, pero es una sola condición en este nivel proposicional. La suma combina números, no afirmaciones. Una proposición cuantificada entera puede tratarse temporalmente como una entrada sin convertirse por ello en una fórmula atómica de primer orden. Unir condiciones abiertas como $(x>0)\land(x<10)$ no liga $x$; usa el mismo valor asignado en ambas partes.
+
+Sea $P$ tener entrada, $Q$ tener reserva y $R$ tener pase de invitado. Compara
+
+$$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
+
+La primera exige entrada además de reserva o pase. La segunda admite el pase solo. Con $P=0,Q=0,R=1$, la primera es falsa y la segunda verdadera. Esta asignación separadora demuestra que cambiar la agrupación cambia el significado general.
+
+Las conjunciones puras admiten ambas agrupaciones porque exigen las tres entradas. Las disyunciones inclusivas puras también: requieren al menos una de las tres. Este razonamiento no autoriza reagrupaciones arbitrarias con conectivas mezcladas.
+
+<details>
+<summary>Lecturas de notación: EN / DE / ES</summary>
+
+$P\land Q$: **EN** “P and Q”; **DE** „P und Q“; **ES** «pe y cu». $P\lor Q$: **EN** “P or Q, or both”; **DE** „P oder Q oder beides“; **ES** «pe o cu, o ambas». $P\land(Q\lor R)$: **EN** “P and, in addition, at least one of Q or R”; **DE** „P und zusätzlich mindestens eine der Aussagen Q oder R“; **ES** «pe y, además, al menos una de cu o erre». Algunos libros escriben $\to$ por $\Rightarrow$ y $\leftrightarrow$ por $\Leftrightarrow$.
+
+</details>
+
+## Práctica con razones
+
+Una tarjeta lleva nueve y otra menos dos. ¿Demuestra eso que una tarjeta oculta concreta es positiva y par? Identifica las dos lagunas.
+
+<details>
+<summary>Pista</summary>
+
+¿A qué objeto se refiere cada comprobación? ¿Un mismo entero superó ambas?
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+Ningún ejemplo aporta información sobre la tarjeta oculta. Además, positividad y paridad se comprobaron en enteros diferentes. Una conjunción sobre una tarjeta fija necesita ambas afirmaciones sobre esa misma tarjeta. Dos ejemplos separados no establecen ninguno de esos puntos.
+
+</details>
+
+<Exercise question="Una tarjeta cumple por tener estrella o por tener círculo y borde azul. Escribe el criterio con S, C, B. ¿Cumple una tarjeta con solo estrella? ¿Una con solo círculo?">
+
+$S\lor(C\land B)$. La tarjeta con solo estrella cumple por $S$, independientemente de la segunda vía. La de solo círculo no cumple ninguna: no tiene estrella y le falta el borde exigido junto al círculo. Una lista dentro de una alternativa se mantiene agrupada.
+
+</Exercise>
+
+<Exercise question="Sabes que $P\lor Q$ es verdadera. ¿P debe ser verdadera o falsa? ¿Qué deduces si además Q es falsa? Si solo sabes que $P\land Q$ es falsa, ¿Q debe ser falsa?">
+
+Inicialmente ambos valores de $P$ son posibles: $10$ y $01$ satisfacen el informe. Con $Q=0$, $P$ debe ser $1$ para mantener verdadera la disyunción. Una conjunción falsa no fuerza $Q=0$: $01$ la hace falsa mientras $Q$ es verdadera. En cambio, una conjunción verdadera sí obliga a que cada componente sea verdadera, incluida $Q$.
+
+</Exercise>
+
+[Construir tablas de verdad](../building-truth-tables/) desarrolla la construcción desde una tabla vacía, las entradas repetidas y la realizabilidad numérica. [Negación lógica](../logical-negation/) trata la negación precisa; [leer la estructura matemática](../reading-mathematical-structure/) aplica la lectura de fuera hacia dentro a afirmaciones completas.

@@ -1,0 +1,126 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negar enunciados universales"
+navTitle: "Negar enunciados universales"
+description: "Negar enunciados universales."
+order: 31
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "existence-and-witnesses", "logical-negation", "negating-combined-conditions", "counterexamples"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/01 Negating Universal Claims.md#01 Negating Universal Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+Una bandeja tiene una tarjeta roja y otra azul. «Todas son rojas» es falso: basta la azul para refutarlo. «Todas son no rojas» también es falso porque queda una roja. Dos frases falsas a la vez no pueden ser negaciones exactas.
+
+## No todos significa algún fallo
+
+$$
+\neg(\forall x\in D\;P(x))\ \Longleftrightarrow\ \exists x\in D\;\neg P(x).
+$$
+
+Fija dominio $D$, predicado $P$ y los demás parámetros. En lógica clásica bivalente, una negación exacta tiene el valor opuesto en toda situación donde tenga sentido. La equivalencia dice que no todos los objetos permitidos cumplen la condición exactamente cuando al menos uno falla. Permite varios fallos y también que queden éxitos.
+
+En una dirección, un elemento que falla hace falso el universal porque ese elemento está incluido. A la inversa, si no hubiera ninguno que fallase, todos cumplirían y el universal sería verdadero. Por tanto, un universal falso tiene un caso fallido. El argumento usa significados, cubre dominios infinitos y no promete un algoritmo para localizar el fallo. Un modelo finito ilustra la ley, pero no demuestra el teorema general.
+
+## Conserva el dominio y niega todo el predicado
+
+$$
+\neg(\forall x\in\mathbb Z\;(x>0))\ \Longleftrightarrow\ \exists x\in\mathbb Z\;(x\le0).
+$$
+
+Cero testimonia la negación: es entero y no es positivo. Un medio negativo incumple el predicado original, pero está fuera de los enteros. Un entero positivo está permitido, pero no falla. Si el dominio fueran los enteros positivos, el original sería verdadero y su negación correcta falsa. Escribir una negación correcta no la vuelve verdadera.
+
+Para «roja y numerada», fallar significa no roja o no numerada, con o inclusiva. Basta una tarjeta roja sin número. En un dominio vacío, los universales son verdaderos y sus negaciones existenciales falsas. Se admiten dominios restringidos vacíos aunque el universo más amplio no lo sea. Un universal no proporciona por sí mismo un objeto.
+
+### Práctica
+
+Niega «Todas las tarjetas de la bandeja son rojas». ¿Por qué no «Ninguna es roja»?
+
+<details>
+<summary>Pista</summary>
+
+Conserva la tarjeta roja.
+
+</details>
+
+<Exercise>
+
+Alguna tarjeta de la bandeja no es roja, como la azul. «Ninguna es roja» también es falsa en la bandeja mixta, así que exige demasiado.
+
+</Exercise>
+
+Niega $\forall x\in\mathbb Z\;(x=0)$ y da un testigo.
+
+<details>
+<summary>Pista</summary>
+
+Conserva el dominio entero.
+
+</details>
+
+<Exercise>
+
+$\exists x\in\mathbb Z\;(x\ne0)$. Uno es entero y distinto de cero; no se afirma unicidad.
+
+</Exercise>
+
+Si el dominio permitido es vacío, evalúa todos cumplen y su negación.
+
+<details>
+<summary>Pista</summary>
+
+No hay ni fallo ni testigo.
+
+</details>
+
+<Exercise>
+
+El universal es verdadero porque ningún elemento falla; algún elemento falla es falso porque no existe ningún elemento.
+
+</Exercise>
+
+Niega: Toda tarjeta es roja y numerada. ¿Qué muestra una roja sin número?
+
+<details>
+<summary>Pista</summary>
+
+Niega toda la conjunción.
+
+</details>
+
+<Exercise>
+
+Alguna tarjeta no es roja o no está numerada. La roja sin número incumple la conjunción y refuta el original; no tienen que fallar ambas propiedades.
+
+</Exercise>
+
+¿Refuta menos uno «Todo real positivo es no negativo»? Da la negación exacta.
+
+<details>
+<summary>Pista</summary>
+
+Comprueba primero pertenencia.
+
+</details>
+
+<Exercise>
+
+No: está fuera del dominio. La negación es «Algún real positivo es negativo», falsa en el orden real.
+
+</Exercise>
+
+Más tarde, explica ambas direcciones de la ley con una colección mixta y después una vacía.
+
+## Lectura en voz alta
+
+**EN:** Not every x in D satisfies P if and only if some x in D fails P.
+
+**DE:** Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
+
+**ES:** No todo equis en D cumple P si y solo si algún equis en D no cumple P.

@@ -1872,6 +1872,9 @@ h1 {
   line-height: 1.8;
 }
 
+/* Long translated course headings must wrap on compact screens. */
+@media(max-width:540px){[data-analysis] :is(h1,h2,h3,h4){overflow-wrap:anywhere;hyphens:auto}}
+
 .tree-chapter-branch > summary {
   font-size: 11px;
   color: var(--secondary);

@@ -1,20 +1,96 @@
 ---
 locale: "de"
 course: "analysis"
-chapter: "analysis-zero-nested"
+chapter: "analysis-quantifiers"
 sourceId: "analysis-zero"
-title: "Reihenfolge der Quantoren"
-navTitle: "Reihenfolge der Quantoren"
-description: "Reihenfolge der Quantoren."
-order: 27
+title: "Quantorenreihenfolge, Abhängigkeit und Übersetzung"
+navTitle: "Quantorenreihenfolge, Abhängigkeit und Übersetzung"
+description: "Quantorenreihenfolge, Abhängigkeit und Übersetzung"
+order: 10
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "existence-and-witnesses"]
+prerequisites: ["existence-and-uniqueness"]
 sourcePages: []
-sourceLocations: ["A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence", "A0.1.8 Nested quantifiers/02 Dependence between Variables.md#02 · What information may a witness use?", "A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md#03 · A key per person is not necessarily one key for all", "A0.1.8 Nested quantifiers/04 Translating into Formal Quantifiers.md#04 · Turn the sentence into a formula"]
 thumbnail: "quantifiers"
+additionalSources: []
 ---
+
+<span id="from-reading-mathematical-structure"></span>
+
+## Mathematische Struktur lesen
+
+„Finde eine reelle Zahl kleiner als zwei“ ist eine Aufforderung. „Jede reelle Zahl ist kleiner als zwei“ ist eine Behauptung, und zwar eine falsche. Beim Lesen ist zuerst zu klären, was der Satz tut. Eine lange Symbolfolge beantwortet diese Frage nicht.
+
+
+<span id="from-reading-mathematical-structure-ein-verfahren-zum-lesen"></span>
+
+### Ein Verfahren zum Lesen
+
+Diese Fragen helfen beim Zerlegen eines Satzes. Sie ordnen das Lesen, ersetzen aber keinen Beweis.
+
+1. Definiert der Text einen Begriff, behauptet er etwas, setzt er etwas lokal voraus, fragt er oder fordert er zu etwas auf?
+2. Welche Objekte und welcher Bereich sind gemeint? Sind alle Ausdrücke sinnvoll? In der üblichen reellen Arithmetik ist Division durch null nicht erlaubt.
+3. Welche Variablenvorkommen sind frei oder gebunden? Legt der umgebende Text unabhängig davon einen Wert fest?
+4. Welche Quantoren stehen in Worten oder Symbolen da? Erhalte Bereich und Geltungsbereich. $\forall$ heißt „für alle“, $\exists$ heißt „es gibt mindestens eines“, nicht „genau eines“.
+5. Suche die Verknüpfung der größten Teile und untersuche dann deren Struktur. Klammern halten vollständige Eingaben zusammen.
+6. Bestimme bei einer Implikation die **ganze Voraussetzung** und die **ganze Folgerung**. Eine einfache Gleichheit braucht keine erfundene Voraussetzung.
+7. Trenne Zerlegung, Auswertung und Begründung. Zu verstehen, was ein Satz sagt, beweist ihn nicht.
+
+Addition in $x+y=3$ verbindet Zahlen innerhalb einer Bedingung, keine Aussagen. Auf aussagenlogischer Ebene dürfen wir eine ganze quantifizierte Aussage als einen Buchstaben behandeln. Dadurch wird sie aber nicht zu einer atomaren Formel der Prädikatenlogik.
+
+
+<span id="from-reading-mathematical-structure-eine-allaussage-mit-innerer-implikation"></span>
+
+### Eine Allaussage mit innerer Implikation
+
+„Jede reelle Zahl streng zwischen null und eins ist kleiner als zwei“ wird zu
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+**EN:** “For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.” **DE:** „Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“ **ES:** «Para todo real equis, si cero es estrictamente menor que equis y equis es estrictamente menor que uno, entonces equis es estrictamente menor que dos».
+
+Der Quantor umfasst die gesamte Implikation und bindet jedes Vorkommen von $x$. Die Formel ist geschlossen. Innerhalb seines Geltungsbereichs ist $\Rightarrow$, auch $\to$ geschrieben, die Hauptverknüpfung. Links steht die ganze Konjunktion, rechts $x<2$. $\land$ bedeutet „und“ und ist keine zweite äußere Verknüpfung.
+
+Behalte $0<x$ und $x<1$ in der Übersetzung. Ein späterer Beweis braucht vielleicht die untere Grenze nicht; sie beim Übersetzen wegzulassen verändert trotzdem die angegebene Voraussetzung. Die Implikation behauptet auch nicht, alle reellen Zahlen lägen zwischen null und eins.
+
+Für $x=1/2$ gelten Voraussetzung und Folgerung. Für $x=3$ scheitert die Voraussetzung. Drei ist daher kein Gegenbeispiel, obwohl auch die Folgerung scheitert. Ein Gegenbeispiel muss die **gesamte Voraussetzung** erfüllen und die Folgerung verletzen.
+
+Zum Beweis sei $x$ eine beliebige reelle Zahl, die die Voraussetzung erfüllt. Aus $x<1$ und $1<2$ folgt mit Transitivität $x<2$. Dieses Argument für eine beliebige Eingabe beweist den Satz. Die Übersetzung und die Zahlenbeispiele allein taten das nicht. Klassische Semantik und die übliche reelle Ordnung sind hier akzeptierte Grundlagen.
+
+
+<span id="from-reading-mathematical-structure-in-beide-richtungen-üben"></span>
+
+### In beide Richtungen üben
+
+<Exercise question="Zerlege $x=0\lor((x>0)\land(x<1))$. Nenne äußere Verknüpfung, vollständige Eingaben und freie Variablen. Übersetze danach: x ist null, und es ist nicht der Fall, dass y null ist.">
+
+Die äußere Verknüpfung ist $\lor$. Ihre Eingaben sind $x=0$ und die ganze Konjunktion $(x>0)\land(x<1)$. Ohne zusätzlichen Quantor bleiben alle Vorkommen von $x$ frei. Die zweite Übersetzung lautet $(x=0)\land\neg(y=0)$. Nur die zweite Gleichheit wird negiert; beide Variablen bleiben als geschrieben frei.
+
+</Exercise>
+
+Übersetze „Jede reelle Zahl größer als eins ist größer als null“. Bestimme die Voraussetzung und beweise die Aussage ohne eine Liste erfolgreicher Beispiele. Behauptet sie, alle reellen Zahlen seien positiv?
+
+<details>
+<summary>Hinweis</summary>
+
+„Jede Zahl mit einer Eigenschaft“ enthält eine Implikation. Der Bereich gehört außerhalb dieser Implikation.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$. Die Voraussetzung ist $x>1$, die Folgerung $x>0$. Für beliebiges reelles $x$ über eins liefern $1>0$ und Transitivität die Folgerung. Der Quantor bindet jedes Vorkommen von $x$. Nicht alle reellen Zahlen werden positiv genannt: Null erfüllt die Voraussetzung nicht und ist kein Gegenbeispiel.
+
+</details>
+
+Prüfe Übersetzungen auf Wechsel von „wenn“ zu „und“, von „einige“ zu „alle“ oder von strengen zu nichtstrengen Grenzen. Benenne echte Mehrdeutigkeit. Weiterführend: [Allaussagen und Bereiche](../universal-statements-and-domains/#from-universal-statements-and-domains).
+
+<span id="from-quantifier-order"></span>
+
+## Reihenfolge der Quantoren
 
 Ana darf nur den roten Schlüssel nutzen, Ben nur den blauen. Das sind alle Personen, Schlüssel und Berechtigungen. Jede Person hat einen Schlüssel, aber keiner passt für alle. Dieselben Objekte beantworten zwei verschiedene Fragen.
 
@@ -37,7 +113,10 @@ $$
 
 Hier muss ein Schlüssel die ganze Aussage über jede Person erfüllen. Rot scheitert bei Ben, blau bei Ana; alle Kandidaten sind ausgeschlossen. Ein verschachtelter Quantor liegt im Geltungsbereich eines anderen. Zwei getrennte quantifizierte Aussagen mit „und“ müssen nicht verschachtelt sein. Hier sind beide Variablen gebunden und der erste Geltungsbereich enthält den zweiten Quantor. Die Reihenfolge ist logisch, nicht zeitlich oder ein versprochener Algorithmus.
 
-## Dieselbe Unterscheidung über den reellen Zahlen
+
+<span id="from-quantifier-order-dieselbe-unterscheidung-über-den-reellen-zahlen"></span>
+
+### Dieselbe Unterscheidung über den reellen Zahlen
 
 $$
 \forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x).
@@ -51,11 +130,16 @@ $$
 
 Falsch: Prüfe für jeden vorgeschlagenen Wert $y$ den erlaubten Wert $x=y$. Gefordert wäre $y>y$. Dieser Test widerlegt jeden vorgeschlagenen Zeugen. Die Regel $y=x+1$ beweist diese Reihenfolge nicht, denn sie verändert den angeblich festen Zeugen mit der späteren Eingabe.
 
-## Zulässiges Vertauschen hat Bedingungen
+
+<span id="from-quantifier-order-zulässiges-vertauschen-hat-bedingungen"></span>
+
+### Zulässiges Vertauschen hat Bedingungen
 
 Bei festen unabhängigen Bereichen $D,E$ dürfen benachbarte Allquantoren vertauscht werden: Beide Reihenfolgen prüfen jedes geordnete Paar. Für jede Richtung nimmt man ein beliebiges Paar und wendet die ursprünglichen Anforderungen auf seine Einträge an. Ist ein Bereich leer, sind beide Reihenfolgen wahr. Auch benachbarte Existenzquantoren sind vertauschbar: Ein passendes Paar kann in beiden Reihenfolgen angegeben werden. Ist ein Bereich leer, sind beide falsch. Lass $R(x,y)$ unverändert; Quantoren zu tauschen vertauscht nicht die Argumente. Ein Bereich $E(x)$ darf nicht einfach vor Einführung von $x$ stehen.
 
-### Übung
+<span id="from-quantifier-order-übung"></span>
+
+#### Übung
 
 Erkläre das vollständige Rot-Blau-Modell ohne Symbole.
 
@@ -134,7 +218,385 @@ Jede Person hat einen Schlüssel ist leer wahr. Ein gemeinsamer Schlüssel exist
 
 Rekonstruiere später den Beweis und die Widerlegung für beliebige reelle Zahlen statt große Zahlen zu testen.
 
-## Laut lesen
+
+<span id="from-quantifier-order-laut-lesen"></span>
+
+### Laut lesen
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+
+<span id="from-witness-dependence"></span>
+
+## Abhängigkeit von Zeugen
+
+Nennt eine Freundin eine reelle Zahl vor deiner Antwort, liefert „plus eins“ eine größere reelle Zahl. Muss die Antwort für jede erst danach genannte Zahl passen, nutzt dieselbe Regel Information, die die Anforderung nicht erlaubt.
+
+
+<span id="from-witness-dependence-verfügbare-information-festhalten"></span>
+
+### Verfügbare Information festhalten
+
+Halte bei einer Zeugenwahl feste Parameter, frühere beliebige Eingaben in ihrem Geltungsbereich und zuvor gewählte Zeugen fest. Diese stehen zur Verfügung. Spätere universell geprüfte Eingaben dürfen frühere Wahlen nicht verändern. Abhängigkeit ist erlaubt, nicht vorgeschrieben: Wird nur Positivität verlangt, darf die Wahl eins eine frühere Eingabe ignorieren. Eine Existenzbehauptung verspricht keine berechenbare Methode.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+$x$ und $y$ stehen beide zur Verfügung. Wähle $z=x+y$; Abgeschlossenheit der reellen Addition begründet die Zugehörigkeit, die Wahl die Gleichung. Das Argument gilt für jedes reelle Paar.
+
+$$
+\forall x\in\mathbb R\;\exists z\in\mathbb R\;\forall y\in\mathbb R\;(z=x+y).
+$$
+
+Nun darf $z$ von $x$ abhängen, muss aber für jedes spätere $y$ fest bleiben. Bei $y=0$ wird $z=x$ verlangt, bei $y=1$ wird $z=x+1$ verlangt. Derselbe Wert kann nicht beides erfüllen. Zwei unvereinbare Anforderungen widerlegen jeden Kandidaten; das ist kein Schluss aus einer Stichprobe.
+
+Eine spätere Umschlagwahl darf einen zuvor gewählten Schlüssel verwenden: Frühere Existenzwahlen können zusammenwirken. Bindung ist eine andere Frage. Bei festem reellem $c$ darf $y=x+c$ den Parameter $c$ nutzen, obwohl seine Vorkommen ohne geschriebenen Quantor für $c$ syntaktisch frei bleiben. Der Kontext hält seinen Wert fest. Ein gebundener Zeuge kann von einer früheren Eingabe abhängen, ohne frei zu werden.
+
+Erlaubte Information reicht nicht für Erfolg. Die Konstante $y=1$ nutzt keine verbotene Eingabe, verletzt aber $y>x$ bei $x=1$. Die Regel $y=x/2$ nutzt nur die frühere Eingabe, scheitert aber bei $x=1$ an Ganzzahligkeit. Prüfe Information, Zugehörigkeit und vollständiges Prädikat getrennt.
+
+<span id="from-witness-dependence-übung"></span>
+
+#### Übung
+
+Für jedes reelle $x$ wird ein positives reelles $y$ verlangt. Darfst du stets eins wählen?
+
+<details>
+<summary>Hinweis</summary>
+
+Eine Eingabe nutzen zu dürfen ist keine Pflicht.
+
+</details>
+
+<Exercise>
+
+Ja: Eins ist für jede Eingabe positiv und reell. Veränderung ist nicht verlangt.
+
+</Exercise>
+
+Welche Eingaben darf der Summenzeuge in den beiden Formeln nutzen?
+
+<details>
+<summary>Hinweis</summary>
+
+Halte bei Einführung des Zeugen an.
+
+</details>
+
+<Exercise>
+
+Im ersten Fall beide, im zweiten nur die frühere Eingabe. Die spätere All-Eingabe darf den Zeugen nicht verändern.
+
+</Exercise>
+
+Ist bei $y>x$ über den reellen Zahlen $y=1$ erlaubt und erfolgreich?
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne Erlaubnis und Wahrheit.
+
+</details>
+
+<Exercise>
+
+Erlaubt, aber bei $x=1$ oder größer erfolglos. $y=x+1$ ist erlaubt und passt für alle reellen Eingaben.
+
+</Exercise>
+
+Fixiere reelles $c$. Begründe $y=x+c$ und sage, ob $c$ gebunden ist.
+
+<details>
+<summary>Hinweis</summary>
+
+Kontext ist kein geschriebener Quantor.
+
+</details>
+
+<Exercise>
+
+Die reelle Summe nutzt verfügbares $x$ und festes $c$ und erfüllt die Gleichung. Das Festlegen von $c$ bindet seine Vorkommen nicht.
+
+</Exercise>
+
+Für jedes ganzzahlige $x$ wird ganzzahliges $y$ mit $2y=x$ verlangt. Prüfe $y=x/2$.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe eine ungerade Eingabe.
+
+</details>
+
+<Exercise>
+
+Bei Eingabe eins entsteht ein Halb, keine ganze Zahl. Tatsächlich verdoppelt sich keine ganze Zahl zu eins, also ist die Behauptung selbst falsch.
+
+</Exercise>
+
+Rekonstruiere später ohne Vorlage die verfügbare Information für beide Summenformeln.
+
+
+<span id="from-witness-dependence-laut-lesen"></span>
+
+### Laut lesen
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+
+<span id="from-separate-and-shared-witnesses"></span>
+
+## Getrennte und gemeinsame Zeugen
+
+Füge einen grünen Schlüssel für beide hinzu: Nun gelten beide Anforderungen. Mit zwei Generalschlüsseln kann jeder die gemeinsame Aussage bezeugen. Ein gemeinsamer Zeuge wird festgehalten, muss aber nicht eindeutig sein.
+
+$$
+\underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
+$$
+
+$P,K$ sind feste Personen- und Schlüsselbereiche; $H(p,k)$ bedeutet, dass $p$ den Schlüssel $k$ nutzen darf. Zum Beweis nehme S an und halte einen dadurch gelieferten Schlüssel fest. Nimm eine beliebige erlaubte Person. Der Schlüssel passt für sie, weil er für alle passt. Nutze ihn als ihren Zeugen. Verschiedene Wahlen werden nicht verlangt. Also impliziert S die Aussage T. Das vollständige Rot-Blau-Modell widerlegt die Umkehrung.
+
+Stärker bedeutet, dass gemeinsamer Erfolg getrennten Erfolg impliziert. Es bedeutet nicht überall entgegengesetzte Wahrheitswerte. Mit grün sind beide wahr; hat eine Person keinen nutzbaren Schlüssel, sind beide falsch. Eine vollständige endliche Berechtigungstabelle kann diese endlichen Aussagen klären; eine Stichprobe aus einem unendlichen Bereich nicht jeden Fall.
+
+<span id="from-separate-and-shared-witnesses-alle-fälle-mit-leeren-bereichen"></span>
+
+### Alle Fälle mit leeren Bereichen
+
+| Personen | Schlüssel | Getrennt T | Gemeinsam S |
+| --- | --- | --- | --- |
+| leer | nicht leer | wahr | wahr |
+| nicht leer | leer | falsch | falsch |
+| leer | leer | wahr | falsch |
+
+Ohne Personen hat die All-zuerst-Aussage keine scheiternde Person. Die gemeinsame Aussage braucht weiterhin einen Schlüssel: Jeder vorhandene passt leer, ohne Schlüssel ist sie falsch. Mit Personen, aber ohne Schlüssel, fehlt jeder Person ein Zeuge. Die Implikation von S nach T bleibt stets gültig. Eine wahre Voraussetzung liefert einen wiederverwendbaren Schlüssel; bei falscher Voraussetzung ist die Implikation wahr.
+
+Für reelle Vergleiche zeigt die [Quantorenreihenfolge](../quantifier-order/#from-quantifier-order), dass getrenntes $y>x$ wahr und gemeinsames $y>x$ falsch ist. Bei $y\ge x$ genügt getrennt sogar $y=x$. Gemeinsamer Erfolg scheitert weiterhin, aber $x=y$ widerlegt ihn nicht mehr: Prüfe stattdessen $x=y+1$.
+
+<span id="from-separate-and-shared-witnesses-übung"></span>
+
+#### Übung
+
+Alle dürfen rot und blau nutzen. Bewerte beide Formen und Eindeutigkeit.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte einen fest und betrachte den anderen.
+
+</details>
+
+<Exercise>
+
+Beide sind wahr. Jeder Schlüssel ist ein gemeinsamer Zeuge; die gemeinsame Form behauptet keine Eindeutigkeit.
+
+</Exercise>
+
+Konstruiere ein vollständiges Gegenmodell zur Umkehrung.
+
+<details>
+<summary>Hinweis</summary>
+
+Lege jede Berechtigung fest.
+
+</details>
+
+<Exercise>
+
+Genau Ana und Ben, genau rot und blau: Ana nur rot, Ben nur blau. Jede Zeile hat Erfolg, keine Spalte passt für alle. Alle gemeinsamen Kandidaten sind ausgeschlossen.
+
+</Exercise>
+
+Beweise die gültige Richtung ohne Symbole.
+
+<details>
+<summary>Hinweis</summary>
+
+Verwende den gelieferten Schlüssel erneut.
+
+</details>
+
+<Exercise>
+
+Halte einen für alle passenden Schlüssel fest. Nutze ihn für jede beliebige Person. Er passt für diese beliebige Person, also folgt getrennter Erfolg. Das Argument verwendet bewusst denselben Zeugen.
+
+</Exercise>
+
+Keine Personen, ein Schlüssel: Bewerte und entferne dann den Schlüssel.
+
+<details>
+<summary>Hinweis</summary>
+
+Die führende Existenz verlangt weiterhin ein Objekt.
+
+</details>
+
+<Exercise>
+
+Zunächst sind beide wahr. Danach bleibt getrennt leer wahr, gemeinsam wird falsch.
+
+</Exercise>
+
+Bewerte getrenntes und gemeinsames $y\ge x$ über allen reellen Zahlen.
+
+<details>
+<summary>Hinweis</summary>
+
+Gleichheit verändert den geeigneten Test.
+
+</details>
+
+<Exercise>
+
+Getrennt gilt mit $y=x$. Gemeinsam ist falsch: Jedes $y$ scheitert bei reellem $x=y+1$.
+
+</Exercise>
+
+Rekonstruiere später alle drei Zeilen mit leeren Bereichen und erkläre, warum keine die gültige Implikation verletzt.
+
+
+<span id="from-separate-and-shared-witnesses-laut-lesen"></span>
+
+### Laut lesen
+
+**EN:** One fixed witness for all inputs implies a witness for each input, but not conversely.
+
+**DE:** Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
+
+**ES:** Un testigo fijo para todas las entradas implica un testigo para cada entrada, pero no al revés.
+
+<span id="from-translating-quantified-statements"></span>
+
+## Quantifizierte Aussagen übersetzen
+
+„Alle Studierenden haben ein Buch gelesen“ lässt die Buchwahl je Person offen. „Es gibt ein Buch, das alle gelesen haben“ verlangt ein gemeinsames Buch. Lege für eine formale Beschreibung zuerst Objekte und Beziehung fest.
+
+Seien $S$ die Studierenden und $B$ die Bücher; $R(s,b)$ bedeute, dass $s$ das Buch $b$ gelesen hat. Halte diese Beziehung unverändert; wechsle nicht unbemerkt von Lesen zu Besitzen.
+
+$$
+\forall s\in S\;\exists b\in B\;R(s,b).
+$$
+
+$$
+\exists b\in B\;\forall s\in S\;R(s,b).
+$$
+
+Lies die erste Formel zurück als „je Person ein gelesenes Buch“, die zweite als „ein Buch, das alle gelesen haben“. Keine verlangt genau ein Buch. Die erste behauptet nicht, dass Studierende existieren. Ohne Studierende ist sie wahr; die zweite braucht dennoch ein tatsächliches Buch.
+
+
+<span id="from-translating-quantified-statements-schreiben-und-zurücklesen"></span>
+
+### Schreiben und zurücklesen
+
+Lege jeden Bereich und die abschließende Beziehung fest. Entscheide, welche Anforderung den Rest umfasst, und schreibe Quantoren mit ihren Geltungsbereichen. Prüfe jede Variable: hier gebunden oder im Kontext festgelegt? Lies die Formel zurück und prüfe eine kleine Situation, in der eine verlockende Alternative abweicht. Übersetzung und Beweis sind getrennte Aufgaben. Übersetze auch eine falsche Aussage treu, statt ihre Reihenfolge wahr zu machen.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Dies übersetzt „Jedes Paar reeller Zahlen hat eine reelle Summe“. Beide Eingaben stehen vor dem Zeugen. Die Wahrheit nutzt zusätzlich die Abgeschlossenheit reeller Addition; die Quantoren allein beweisen diese arithmetische Tatsache nicht.
+
+
+<span id="from-translating-quantified-statements-eine-bedingung-schränkt-die-anforderung-ein"></span>
+
+### Eine Bedingung schränkt die Anforderung ein
+
+$$
+\forall s\in S\;\bigl(A(s)\Rightarrow\exists b\in B\;R(s,b)\bigr).
+$$
+
+$A(s)$ bedeutet Teilnahme am Seminar. Nur Teilnehmende müssen ein gelesenes Buch vorweisen. Verschiebt man $\exists b$ vor die Implikation, kann auch von Nichtteilnehmenden ein Buch verlangt werden. Nimm eine nichtteilnehmende Person und keine Bücher: Die angezeigte Implikation ist wahr, aber $\forall s\in S\;\exists b\in B\;(A(s)\Rightarrow R(s,b))$ ist falsch. Klammern und leere Bereiche zeigen den Unterschied. $S$ ausdrücklich auf Teilnehmende zu beschränken ist ebenfalls eine treue Übersetzung.
+
+<span id="from-translating-quantified-statements-übung"></span>
+
+#### Übung
+
+Mit Personen $P$, Schlüsseln $K$ und Nutzbarkeit $H$: Übersetze „Jede Person kann einen Schlüssel nutzen“.
+
+<details>
+<summary>Hinweis</summary>
+
+Person zuerst.
+
+</details>
+
+<Exercise>
+
+$\forall p\in P\;\exists k\in K\;H(p,k)$. Die Wahl darf von der Person abhängen; verschiedene Wahlen sind nicht verlangt.
+
+</Exercise>
+
+Übersetze in derselben Sprache „Ein Schlüssel kann von jeder Person genutzt werden“.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte einen Schlüssel fest.
+
+</details>
+
+<Exercise>
+
+$\exists k\in K\;\forall p\in P\;H(p,k)$. Ein fester Schlüssel muss für jede Person passen; er muss nicht eindeutig sein.
+
+</Exercise>
+
+Übersetze und beweise „Jede reelle Zahl hat eine echt größere reelle Zahl“.
+
+<details>
+<summary>Hinweis</summary>
+
+Führe die Eingabe vor dem Zeugen ein.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x)$. Wähle für beliebiges $x$ die reelle Summe $y=x+1$; Positivität der Eins macht sie größer.
+
+</Exercise>
+
+Übersetze „Eine reelle Zahl gleicht jeder reellen Zahl“ und bewerte.
+
+<details>
+<summary>Hinweis</summary>
+
+Verändere keine falsche Aussage.
+
+</details>
+
+<Exercise>
+
+$\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y=x)$. Falsch: Jedes vorgeschlagene $y$ scheitert bei reellem $x=y+1$.
+
+</Exercise>
+
+Übersetze „Für jedes reelle $x$ gibt es ein reelles $y$, sodass für jedes reelle $z$ gilt: $x+y=z$“.
+
+<details>
+<summary>Hinweis</summary>
+
+Bewahre alle drei Ebenen.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;\forall z\in\mathbb R\;(x+y=z)$. Der Zeuge darf $x$, nicht das spätere $z$ nutzen. Falsch: Eine feste Summe kann nicht null und eins sein.
+
+</Exercise>
+
+Schreibe später beide Buchübersetzungen aus dem Gedächtnis und lies sie zurück.
+
+
+<span id="from-translating-quantified-statements-laut-lesen"></span>
+
+### Laut lesen
 
 **EN:** For every x in D, there exists y in E such that R of x and y holds.
 

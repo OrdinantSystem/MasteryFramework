@@ -1,0 +1,136 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Negating sequence convergence"
+navTitle: "Negating sequence convergence"
+description: "Negating sequence convergence."
+order: 51
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proving-sequence-convergence", "negating-quantified-statements-step-by-step", "negating-quantified-inequalities", "reading-conditionals"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Deriving Negation of Sequence Convergence.md#Deriving Negation of Sequence Convergence", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "quantifiers"
+---
+
+The constant-zero sequence stays at distance zero from target zero, but distance one from target one. We first derive failure at one specified target, not the absence of every possible real limit. Keep the entire sequence and target fixed throughout the derivation.
+
+A real sequence assigns one real term $a_n$ to each $n\in\mathbb N=\{1,2,3,\ldots\}$. Its distance from fixed real $L$ is $|a_n-L|$. Positive real $\varepsilon$ is tolerance; natural $N$ starts the tail, and natural $n$ tests a position. Recall the positive definition:
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Every tolerance needs a threshold whose entire tail passes. The threshold may use the tolerance but cannot change with each later index. The definition imposes no closeness demand before that threshold. The following six stages are equivalent forms of its negation, not yet a proof that a particular sequence fails.
+
+## 1. Deny the whole definition
+
+$$
+\neg\Bigl(\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+At this stage put negation outside the complete statement and leave every internal symbol unchanged. The fixed context remains the same.
+
+## 2. Cross the tolerance quantifier
+
+$$
+\exists\varepsilon>0\;\neg\Bigl(\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Not every positive tolerance works, so some positive tolerance defeats the remaining requirement. Positivity is retained; we do not switch to nonpositive tolerances.
+
+## 3. Cross the threshold quantifier
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\neg\Bigl(\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+For that one tolerance no natural threshold works. Therefore every proposed threshold fails the complete inner index claim. Keep the tolerance fixed while thresholds vary.
+
+## 4. Cross the test-index quantifier
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\neg\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Failure at every index is unnecessary. For each threshold, one index must make the conditional false. The index may depend on that threshold and the already fixed context.
+
+## 5. Deny the implication
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land\neg(|a_n-L|<\varepsilon)\bigr).
+$$
+
+A false implication has true hypothesis and false conclusion. The same index must lie in the tail and fail the distance test. Keep the hypothesis comparison unchanged and replace the implication by conjunction. A pre-tail term cannot break a tail promise.
+
+## 6. Include equality in distance failure
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+A real distance not below $\varepsilon$ is at least $\varepsilon$. This is the literal comparison complement at the same tolerance, so equality must appear. Read the result: choose one positive tolerance; against every threshold, find a term in its tail at least that far from $L$. “Arbitrarily far out” means at or beyond every proposed threshold, not that every late term fails.
+
+## Prove one actual failure
+
+For $a_n=0$ at all indices and $L=1$, choose $\varepsilon=1$. For any natural $N$, choose $n=N$. Membership and $n\ge N$ hold, and $|a_n-1|=1\ge\varepsilon$. This covers every threshold and proves failure at one. For target zero, by contrast, any $\varepsilon>0$ works with $N=1$: every distance is zero. Thus this sequence has a real limit despite failing at target one.
+
+### Practice
+
+Why is retaining an implication in the final failure condition wrong?
+
+<details>
+<summary>Hint</summary>
+
+Consider a pre-tail index when one exists.
+
+</details>
+
+<Exercise>
+
+It could be satisfied by a false tail hypothesis without any bad term in the tail. Failure needs both true tail membership and distance failure, hence conjunction.
+
+</Exercise>
+
+For constant zero, reconstruct failure at target one and success at target zero without sampling tolerances.
+
+<details>
+<summary>Hint</summary>
+
+Use arbitrary thresholds for failure and arbitrary tolerances for success.
+
+</details>
+
+<Exercise>
+
+At one, fixed $\varepsilon=1$ and $n=N$ work for every $N$. At zero, for any $\varepsilon>0$ choose $N=1$ and obtain $0<\varepsilon$ at every index. Neither argument needs the optional reciprocal example.
+
+</Exercise>
+
+Later, derive all six stages before adding the outer target quantifier in [no real limit](../no-real-limit/).
+
+Which choices may depend on the threshold? Must every later index violate tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Read the three quantifiers in order.
+
+</details>
+
+<Exercise>
+
+The violating index may use the threshold; the tolerance is fixed before all thresholds. Only one failure per proposed tail is required. Other terms in the same tail may be close to the target.
+
+</Exercise>
+
+## Read aloud
+
+**EN:** There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
+
+**DE:** Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
+
+**ES:** Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.

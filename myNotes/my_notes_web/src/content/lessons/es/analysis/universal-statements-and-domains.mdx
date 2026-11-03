@@ -1,24 +1,32 @@
 ---
 locale: "es"
 course: "analysis"
-chapter: "analysis-zero-universal"
+chapter: "analysis-quantifiers"
 sourceId: "analysis-zero"
 sourcePages: []
-sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/01 Meaning of For Every.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/02 Domain of Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
-title: "Enunciados universales y dominios"
-navTitle: "Enunciados universales y dominios"
-description: "Leer todo como toda entrada permitida, con predicados definidos y sin promesa de existencia."
-order: 20
+sourceLocations: ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/01 Meaning of For Every.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/02 Domain of Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/03 Bound Variables.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/04 Quantifier Scope.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Quantifiers and Scope - First Reading.md", "A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+title: "Para todo y existe: dominios y alcance"
+navTitle: "Para todo y existe: dominios y alcance"
+description: "Para todo y existe: dominios y alcance"
+order: 8
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["aussagen-und-aussageformen", "material-implication-and-vacuity"]
+prerequisites: ["biconditionals-and-equivalent-conditions", "aussagen-und-aussageformen"]
 thumbnail: "quantifiers"
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations": []}]
 ---
+
+<span id="from-universal-statements-and-domains"></span>
+
+## Enunciados universales y dominios
 
 Una caja contiene exactamente las tarjetas dos, cuatro y seis. «Toda tarjeta es positiva» es verdadero: sus tres miembros pasan. Al añadir cero, el enunciado se vuelve falso. La mayoría sigue pasando, pero «toda» no permite excepciones. Una tarjeta con cero fuera de la caja no importaría.
 
-## Dominio, predicado y cuantificador
+
+<span id="from-universal-statements-and-domains-dominio-predicado-y-cuantificador"></span>
+
+### Dominio, predicado y cuantificador
 
 El **dominio** $D$ es la colección especificada de objetos permitidos. Un **predicado** $P$ es una condición con significado para cada miembro. Fijando los demás parámetros, escribimos
 
@@ -28,7 +36,10 @@ Se lee: «Para todo equis en de, se cumple pe de equis». $\forall$ significa pa
 
 Por ejemplo, $\forall x\in\mathbb R\;(x>0)$ dice «todo real es positivo» y es falso en cero. $\mathbb R$ denota los reales, incluidos cero, negativos y fracciones. La misma condición es verdadera en los enteros positivos, pero falsa en todos los enteros $\mathbb Z$. Menos un medio no puede refutar un enunciado sobre enteros porque no es entero.
 
-## ¿Definido, falso o fuera del enunciado?
+
+<span id="from-universal-statements-and-domains-definido-falso-o-fuera-del-enunciado"></span>
+
+### ¿Definido, falso o fuera del enunciado?
 
 Son diagnósticos distintos. Una entrada no entera queda fuera de un dominio entero. En cero, $x>0$ tiene significado y es falso. En una supuesta afirmación sobre recíprocos de todos los reales, $1/x$ no está definido en cero: no es una igualdad ordinaria falsa ni un tercer valor de verdad.
 
@@ -44,21 +55,23 @@ $$\forall x\in\mathbb R\;((x>5)\Rightarrow(x>2)).$$
 
 Se lee: «Para todo real equis, si equis supera cinco, entonces supera dos». El cuantificador abarca todos los reales; la hipótesis selecciona los superiores a cinco. Un real fuera del subconjunto seleccionado da una implicación verdadera por hipótesis falsa. Uno del subconjunto supera dos por transitividad del orden. Ambos casos cubren todo el dominio ambiente.
 
-## Colecciones vacías y cambios de dominio
+
+<span id="from-universal-statements-and-domains-colecciones-vacías-y-cambios-de-dominio"></span>
+
+### Colecciones vacías y cambios de dominio
 
 «Toda tarjeta de esta caja es roja» es verdadero para una caja vacía: no hay una tarjeta no roja dentro. No proporciona una tarjeta roja. Una habitación no vacía puede contener la caja y la mesa mientras la colección restringida de tarjetas está vacía. Esto no requiere cambiar el convenio de la lógica formal de que el universo total sea no vacío.
 
 Quitar objetos de un dominio donde todos pasan no puede introducir un fallo, aunque se quiten todos. Ampliarlo sí puede: añadir cero arruinó la afirmación de tarjetas positivas. Restringir una afirmación falsa sobre todos los reales puede dar un nuevo enunciado verdadero, pero no demuestra el original.
 
-## ¿Qué demuestra una afirmación sobre un dominio infinito?
 
-En un dominio finito, una comprobación exhaustiva es una prueba si la lista incluye realmente cada miembro. En todos los reales, una muestra finita deja entradas sin revisar. Toma en cambio un real **arbitrario** $x$, sin valor particular ni hipótesis extra de positividad. Como $2>0$, sumar $x$ a ambos lados da
+<span id="from-universal-statements-and-domains-qué-demuestra-una-afirmación-sobre-un-dominio-infinito"></span>
 
-$$x+2>x+0=x.$$
+### ¿Qué demuestra una afirmación sobre un dominio infinito?
 
-Se lee: «Equis más dos supera equis más cero, que es igual a equis». Sumar la misma cantidad real conserva el orden; cero es la identidad aditiva. Estos hechos aritméticos habituales prueban $\forall x\in\mathbb R\;(x+2>x)$. Llamar arbitrario a $x$ y después elegir $x=7$ destruiría la generalidad.
+En un dominio finito, comprobar cada miembro demuestra una afirmación universal. Una muestra finita no basta para todos los reales: el argumento debe cubrir una entrada permitida arbitraria sin hipótesis adicionales. La prueba completa de que sumar dos a cualquier real da un número mayor se desarrolla en [Métodos de demostración](../beweissprache-und-methoden/#from-beweissprache-und-methoden). Llamar arbitraria a una entrada y después elegir siete perdería esa generalidad.
 
-La fórmula $\forall x\in\mathbb R\;(x+a>x)$ conserva un parámetro libre $a$: el cuantificador liga $x$, no $a$. Es verdadera con $a=2$ y falsa con $a=0$. Asignar un valor permite evaluar, pero no añade un ligador escrito. Véase [variables ligadas y alcance](../bound-variables-and-scope/).
+La fórmula $\forall x\in\mathbb R\;(x+a>x)$ conserva un parámetro libre $a$: el cuantificador liga $x$, no $a$. Es verdadera con $a=2$ y falsa con $a=0$. Asignar un valor permite evaluar, pero no añade un ligador escrito. Véase [variables ligadas y alcance](../universal-statements-and-domains/#from-bound-variables-and-scope).
 
 Para una colección restringida posiblemente vacía, no afirmes que existe un miembro. Se puede tratar el caso vacío directamente y probar el no vacío con un miembro arbitrario. Una prueba condicional habitual también puede razonar con un símbolo arbitrario bajo la hipótesis temporal de pertenencia y descargarla después. Esto no afirma que tal miembro exista.
 
@@ -73,3 +86,146 @@ Las tres tarjetas agotan la caja, pero no los reales. Las tres pasan; añadir ce
 Menos un medio queda fuera del dominio entero. Cero es un fallo permitido y definido de la positividad. Su recíproco no está definido, así que esa fórmula necesita reparación antes de evaluarse. Para el último teorema, toma cualquier real $x$. Si $x>8$, entonces $x>3$ porque $8>3$ y el orden es transitivo. Si no, la hipótesis es falsa y la implicación verdadera. Se cubren todos los reales; no hace falta afirmar que exista una entrada que cumpla la hipótesis.
 
 </Exercise>
+
+<span id="from-existence-and-witnesses"></span>
+
+## Existencia y testigos
+
+Una bandeja contiene tarjetas con dos, cuatro y siete. El siete hace verdadera «Hay una tarjeta con número impar». El dos y el cuatro no la invalidan: no se exige que todas sean impares. Otro éxito, nueve, tampoco la invalidaría.
+
+$$
+\exists x\in D\;P(x).
+$$
+
+$D$ es el dominio de objetos permitidos; $P$ es la condición exigida, o predicado. El cuantificador existencial $\exists$ significa al menos uno. Permite varios éxitos, e incluso todos los elementos si el dominio no es vacío. No afirma exactamente uno ni que otros fallen. Liga $x$ dentro de su alcance, pero no otras variables de $P$. Se obtiene una proposición al especificar dominio, predicado y demás parámetros. Fijar un parámetro no lo liga sintácticamente.
+
+«Hay una ficha roja» afirma algo; «Busca una ficha roja» pide una acción. Existencia tampoco es conocimiento. Una bolsa cerrada puede contener una ficha roja sin que lo sepamos. Desconocido no significa falso. Una bolsa que se sabe vacía, en cambio, no proporciona ningún testigo. Los dominios restringidos pueden ser vacíos aunque existan otros objetos.
+
+
+<span id="from-existence-and-witnesses-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+**EN:** There exists at least one x in D such that P of x holds.
+
+**DE:** Es gibt mindestens ein x in D, für das P von x gilt.
+
+**ES:** Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.
+
+<span id="from-bound-variables-and-scope"></span>
+
+## Variables ligadas y alcance
+
+Sea $D=\{1,2\}$ y sea $y$ un valor real de comparación. En
+
+$$\forall x\in D\;(x<y),$$
+
+lee «para todo equis en de, equis es menor que ye». El número de tarjeta recorre $D$; el valor de comparación permanece fijo. La fórmula es verdadera en $y=3$ y falsa en $y=2$, porque la comparación estricta falla para el miembro dos.
+
+
+<span id="from-bound-variables-and-scope-clasificar-apariciones-no-letras-para-siempre"></span>
+
+### Clasificar apariciones, no letras para siempre
+
+Una **aparición** es una presencia concreta de una variable. Un cuantificador **liga** las apariciones de la variable que nombra dentro de su **alcance**, la subfórmula que gobierna. Una aparición sin ligador que la gobierne es **libre**. Si un cuantificador interior usa el mismo nombre, gobierna ese nombre dentro de su propio alcance.
+
+En la comparación inicial, $x$ está ligada y $y$ es libre. La $x$ inmediatamente después de $\forall$ declara el nombre ligado; no es otra entrada externa. La fórmula escrita es abierta porque $y$ es libre. Dar $y=3$ permite evaluarla sin insertar un cuantificador, por lo que $y$ sigue libre en su sintaxis.
+
+
+<span id="from-bound-variables-and-scope-un-nombre-nuevo-seguro-conserva-las-funciones"></span>
+
+### Un nombre nuevo seguro conserva las funciones
+
+Una etiqueta nueva da
+
+$$\forall t\in D\;(t<y).$$
+
+Se lee «para todo te en de, te es menor que ye». Renombra la declaración y exactamente las apariciones que liga; deja intactos el dominio y el valor libre de comparación. Se comparan los mismos números con el mismo $y$.
+
+Cambiar en cambio el ligador a $y$ produciría $\forall y\in D\;(y<y)$. Se lee «todo ye en de es menor que sí mismo». Es falso en este dominio no vacío, a diferencia del original con valor de comparación tres. La aparición antes libre queda ligada: la **captura de variables** cambió el enunciado.
+
+Cambiar solo la declaración también sería incorrecto: sus apariciones antiguas ya no quedarían ligadas como se pretendía. La sustitución global de texto es insegura si otros ligadores o apariciones libres usan la misma letra.
+
+
+<span id="from-bound-variables-and-scope-los-paréntesis-determinan-el-alcance"></span>
+
+### Los paréntesis determinan el alcance
+
+Compara
+
+$$(\forall x\in D\;(x<3))\land(x>0)$$
+
+con
+
+$$\forall x\in D\;((x<3)\land(x>0)).$$
+
+La primera se lee «todo equis en de es menor que tres, y el equis libre es positivo». Su conectivo principal es la conjunción. El cuantificador termina antes de la comparación derecha. Con el real libre $x=-1$, la fórmula completa es falsa, aunque su parte universal sea verdadera. Ese real libre no tiene por qué pertenecer a $D$.
+
+La segunda se lee «todo equis en de es menor que tres y positivo». La operación exterior es el cuantificador y ambas comparaciones quedan dentro de su alcance. Es verdadera porque uno y dos cumplen ambos requisitos. No queda ninguna $x$ libre, así que una asignación externa a $x$ no altera la prueba.
+
+Estar dentro del alcance no basta para quedar ligada: en $\forall x\in D\;((x<y)\land(y<3))$, ambas apariciones de $y$ siguen libres. Con $y=5/2$ la fórmula es verdadera; con $y=3$ falla la segunda comparación. El cuantificador solo nombra $x$.
+
+
+<span id="from-bound-variables-and-scope-mover-una-condición-fija-exige-revisar-el-dominio"></span>
+
+### Mover una condición fija exige revisar el dominio
+
+Sea $C$ una proposición independiente de $x$. Compara
+
+$$\forall x\in D\;(P(x)\land C)$$
+
+y
+
+$$(\forall x\in D\;P(x))\land C.$$
+
+La primera dice «para cada miembro, se cumplen $P$ y $C$»; la segunda afirma «cada miembro satisface $P$, y $C$ se cumple por separado». Si $D$ está vacío y $C$ es falsa, la primera es verdadera por vacuidad y la segunda falsa. La transformación no vale universalmente.
+
+Para $D$ no vacío son equivalentes: la primera da $P$ para cada miembro y proporciona $C$ usando cualquiera de ellos. A la inversa, la afirmación universal separada y $C$ proporcionan ambos requisitos en cada miembro. La no vaciedad permite el paso que falla en el caso vacío.
+
+<details>
+<summary>Cuando un cuantificador interior reutiliza un nombre</summary>
+
+Para $D=\{1,2\}$ y $E=\{-1\}$, $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ es verdadero. La $x$ exterior comprueba positividad en $D$; la interior comprueba negatividad en $E$. No se exige que la misma entrada sea positiva y negativa. Renombra solo el ligador interior y su comparación a $t$ para mostrarlo. Al renombrar el exterior hay que dejar intactas esas apariciones interiores.
+
+</details>
+
+<Exercise question="Con $D=\{1,2\}$, renombra de forma segura la variable ligada de $(\forall x\in D\;(x<3))\land(x>0)$ a $t$. Después evalúa en $x=-1$ libre. ¿Cambia la última aparición?">
+
+El resultado es $(\forall t\in D\;(t<3))\land(x>0)$. Solo cambian la declaración y la comparación que gobierna. La última $x$ está fuera del alcance y sigue libre. En $x=-1$, la parte universal es verdadera pero la comparación final falsa, así que la conjunción es falsa.
+
+</Exercise>
+
+<Exercise question="Alguien cambia $\forall x\in D\;(x\le y)$ por $\forall y\in D\;(y\le y)$. Ambas son verdaderas cuando la $y$ libre original vale $3$. ¿Por qué sigue siendo inseguro? Da una asignación que las separe y explica si conocer un valor libre lo convierte en ligado.">
+
+La segunda captura el valor libre de comparación y aquí siempre es verdadera, pues todo número es a lo sumo él mismo. Con $y=0$ en la original, la primera es falsa porque uno y dos superan cero. Coincidir en $y=3$ no conservó la dependencia respecto de $y$. Conocer el valor permite evaluar; solo cambiar la estructura escrita de ligadura cambia qué apariciones están ligadas.
+
+</Exercise>
+
+<span id="from-aussagen-und-aussageformen"></span>
+
+## Asignaciones y fórmulas cerradas
+
+<span id="from-aussagen-und-aussageformen-apariciones-libres-alcance-y-asignaciones"></span>
+
+### Apariciones libres, alcance y asignaciones
+
+$\mathbb Z$ designa enteros y $\mathbb R$ reales. $x\in\mathbb R$ expresa pertenencia, no igualdad. «Sea $x$ real» fija un dominio y a menudo introduce una entrada **arbitraria pero fija** en una demostración. «Sea $x=2$» aporta un valor concreto. Ninguna frase inserta un cuantificador en la fórmula escrita.
+
+Una **aparición** es un lugar donde figura una variable. Un cuantificador liga las apariciones de la variable que nombra dentro de su **alcance**, salvo donde un cuantificador interior liga esa misma variable. Una aparición sin cuantificador que la ligue es libre. «Abierta» significa al menos una aparición libre; «cerrada» significa ninguna, no «sin letras».
+
+$$\forall x\in\mathbb R\;(x+y=y+x)$$
+
+Ambas apariciones de $x$ están ligadas, pero $y$ sigue libre, aunque la conmutatividad haga verdadera la condición para toda asignación real de $y$. Ser verdadera bajo toda asignación no crea un cuantificador ausente. Añadir $\forall y\in\mathbb R$ la cierra:
+
+$$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
+
+Una asignación $y=0$ aporta contexto de evaluación, no ligadura sintáctica. Sustituir realmente cero por $y$ produce una **fórmula escrita diferente**, reemplazando esas apariciones. Son operaciones distintas.
+
+Asimismo, $\exists x\in\mathbb R\;(x=y)$ sigue abierta en $y$, aunque toda asignación real de $y$ aporte un testigo coincidente. Existencia significa al menos uno, no unicidad. En $\forall x\in\mathbb R\;(x=y)$, asignar $y=0$ deja libre la $y$ escrita, pero produce una afirmación contextual falsa, refutada por $x=1$.
+
+<details>
+<summary>Lecturas de notación: EN / DE / ES</summary>
+
+$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
+
+</details>

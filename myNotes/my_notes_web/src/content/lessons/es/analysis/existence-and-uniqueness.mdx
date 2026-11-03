@@ -1,24 +1,324 @@
 ---
 locale: "es"
 course: "analysis"
-chapter: "analysis-zero-existence"
+chapter: "analysis-quantifiers"
 sourceId: "analysis-zero"
-title: "Existencia y unicidad"
-navTitle: "Existencia y unicidad"
-description: "Existencia y unicidad."
-order: 25
+title: "Testigos, existencia y unicidad"
+navTitle: "Testigos, existencia y unicidad"
+description: "Testigos, existencia y unicidad"
+order: 9
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+prerequisites: ["universal-statements-and-domains"]
 sourcePages: []
-sourceLocations: ["A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+sourceLocations: ["A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses", "A0.1.7 Existential quantifier/03 Constructive Existence.md#03 · Constructive existence: exhibit, then verify", "A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md#05 · More than one possible witness"]
 thumbnail: "quantifiers"
+additionalSources: []
 ---
+
+<span id="from-existence-and-witnesses"></span>
+
+## Existencia y testigos
+
+<span id="from-existence-and-witnesses-candidato-pertenencia-y-condición-completa"></span>
+
+### Candidato, pertenencia y condición completa
+
+Para $\exists n\in\mathbb Z\;(n+5=12)$, siete es un testigo: es entero y $7+5=12$. El testigo es el objeto; la verificación es el argumento sobre él. Un candidato es un testigo cuando se justifican ambas comprobaciones. Para $4<n<8$, cinco cumple ambas cotas estrictas. Nueve solo supera la inferior y tres solo cumple la superior: no pueden combinarse. La variable repetida representa el mismo objeto en toda la condición.
+
+Un club necesita un miembro disponible el martes y formado en primeros auxilios. No bastan la disponibilidad de Ada y la formación de Ben. Cora sirve si pertenece al club y reúne ambas cualidades. Alguien ajeno al club falla en la pertenencia aunque reúna las dos.
+
+Un medio resuelve $2x=1$ en los reales, no en los enteros. Todo entero es como máximo cero o como mínimo uno; su doble es como máximo cero o como mínimo dos. Igualmente, $0<x<1$ tiene el testigo real $1/2$, pero ningún testigo entero. Estos argumentos excluyen todos los enteros. Los intentos fallidos solo excluyen los candidatos probados; una búsqueda finita refuta existencia únicamente si agota el dominio.
+
+<span id="from-existence-and-witnesses-práctica"></span>
+
+#### Práctica
+
+Un estante contiene un libro rojo y dos azules. ¿Es verdadera «Algún libro es azul»? ¿Afirma unicidad?
+
+<details>
+<summary>Pista</summary>
+
+Piensa en el mínimo exigido.
+
+</details>
+
+<Exercise>
+
+Es verdadera: cualquiera de los azules sirve. Dos éxitos son compatibles con al menos uno, no con exactamente uno.
+
+</Exercise>
+
+Lee $\exists n\in\mathbb Z\;(n+5=12)$ sin resolver: identifica sus tres partes.
+
+<details>
+<summary>Pista</summary>
+
+Cantidad, dominio, condición.
+
+</details>
+
+<Exercise>
+
+Al menos uno; enteros; sumar cinco da doce. Interpretar la condición no requiere encontrar la solución.
+
+</Exercise>
+
+Compara testigos reales y enteros para $0<x<1$.
+
+<details>
+<summary>Pista</summary>
+
+Usa una fracción y la separación entre enteros.
+
+</details>
+
+<Exercise>
+
+$1/2$ es real y cumple ambas cotas. Un entero positivo es al menos uno, lo que excluye todos los enteros.
+
+</Exercise>
+
+Clasifica: «Hay una ficha roja»; «Busca una ficha roja»; «Exactamente una ficha es roja».
+
+<details>
+<summary>Pista</summary>
+
+¿Cuáles tienen valor de verdad?
+
+</details>
+
+<Exercise>
+
+Afirmación existencial; petición; existencia que excluye un segundo éxito distinto. La última dice más que la existencia ordinaria.
+
+</Exercise>
+
+Compara una bolsa que se sabe vacía y una cerrada de contenido desconocido.
+
+<details>
+<summary>Pista</summary>
+
+Objetos e información son distintos.
+
+</details>
+
+<Exercise>
+
+La existencia de una ficha roja es falsa en la vacía. La información no decide la cerrada; su contenido real sigue determinando la verdad.
+
+</Exercise>
+
+<span id="from-existence-and-witnesses-comprobar-testigos"></span>
+
+#### Comprobar testigos
+
+¿Cuáles de $1,2,3,4$ cumplen $1<n<4$ en los enteros?
+
+<details>
+<summary>Pista</summary>
+
+Comprueba los extremos estrictos.
+
+</details>
+
+<Exercise>
+
+Dos y tres sirven. Uno falla en la cota inferior y cuatro en la superior.
+
+</Exercise>
+
+Corrige el testigo dividido $9>4$ y $3<8$.
+
+<details>
+<summary>Pista</summary>
+
+Usa un solo objeto.
+
+</details>
+
+<Exercise>
+
+Ninguno cumple ambas condiciones. Cinco es entero y $4<5<8$.
+
+</Exercise>
+
+Revisa $1/2$ como testigo entero de $2x=1$.
+
+<details>
+<summary>Pista</summary>
+
+Separa las comprobaciones.
+
+</details>
+
+<Exercise>
+
+La ecuación se cumple, pero falla la pertenencia. Es un testigo de la versión real, no de la entera.
+
+</Exercise>
+
+Tras probar $0,1,2$, alguien niega que un cuadrado entero sea $25$. Diagnostica.
+
+<details>
+<summary>Pista</summary>
+
+¿Se probaron todos los candidatos?
+
+</details>
+
+<Exercise>
+
+No se agotó el dominio. Cinco es entero y $5^2=25$; menos cinco también sirve. Basta un éxito verificado.
+
+</Exercise>
+
+Una caja contiene exactamente dos fichas en total y ninguna es azul. En otra se inspeccionaron dos fichas no azules y quedan objetos sin revisar. ¿Cuál refuta que haya una azul?
+
+<details>
+<summary>Pista</summary>
+
+Importa que la inspección sea exhaustiva.
+
+</details>
+
+<Exercise>
+
+Solo la primera excluye todos los posibles testigos. La segunda deja candidatos sin comprobar.
+
+</Exercise>
+
+Más tarde, explica existencia con dos éxitos y cambia después la colección para que no haya ninguno.
+
+<span id="from-constructing-a-witness"></span>
+
+## Construir un testigo
+
+Restar cinco de doce sugiere siete. Para terminar, comprueba la petición original: siete es entero y siete más cinco es doce. Explorar encuentra un candidato; verificar establece que sirve.
+
+<Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
+
+
+<span id="from-constructing-a-witness-una-prueba-directa-completa"></span>
+
+### Una prueba directa completa
+
+Elige $n=7$. Pertenece a $\mathbb Z$. Cumple $7+5=12$. Por tanto, un objeto permitido satisface la condición y se demuestra existencia. Los cuatro pasos son candidato, dominio, predicado completo y conclusión. Una sola comprobación demuestra esta afirmación existencial porque se pide un éxito. No establece unicidad.
+
+«Constructivo» significa aquí producir y verificar un objeto explícito. Seguimos en matemática clásica, donde una prueba de existencia no siempre nombra un testigo. «Elige un entero que sirva; por tanto existe» es circular: supone disponible una elección exitosa. Elegir un entero conocido y demostrar después su propiedad evita esa suposición.
+
+
+<span id="from-constructing-a-witness-trabajo-hacia-atrás-y-comprobación-del-dominio"></span>
+
+### Trabajo hacia atrás y comprobación del dominio
+
+De $2x=1$ se deduce necesariamente $x=1/2$. Tras comprobar pertenencia y sustitución se demuestra existencia real, pero no se obtiene un testigo entero. Un candidato necesario por sí solo no demuestra existencia. El álgebra reversible puede dar una equivalencia suficiente si se comprueba el dominio; razonar hacia atrás no es inválido en sí. Una afirmación falsa no admite una prueba válida porque un ejercicio la pida.
+
+Para $4<n<8$, elige cinco y comprueba que es entero y cumple ambas desigualdades estrictas. Cuatro falla en el extremo. Seis o siete servirían igual. Para cualquier real $x$, la regla $x+1$ construye un real mayor: la suma sigue siendo real y sumar uno positivo aumenta la entrada. Probar solo en cero no demostraría esta regla general.
+
+<span id="from-constructing-a-witness-práctica"></span>
+
+#### Práctica
+
+Demuestra $\exists n\in\mathbb Z\;(n+8=3)$.
+
+<details>
+<summary>Pista</summary>
+
+Se permiten enteros negativos.
+
+</details>
+
+<Exercise>
+
+Elige $-5\in\mathbb Z$. Como $-5+8=3$, satisface la ecuación original y demuestra existencia.
+
+</Exercise>
+
+Completa «Toma un medio» para un real entre cero y uno.
+
+<details>
+<summary>Pista</summary>
+
+Comprueba los tres requisitos.
+
+</details>
+
+<Exercise>
+
+$1/2\in\mathbb R$ y $0<1/2<1$, así que es un testigo permitido. No se afirma unicidad.
+
+</Exercise>
+
+Corrige «Elige un entero de cuadrado $25$; por tanto existe».
+
+<details>
+<summary>Pista</summary>
+
+Nombra un candidato sin suponer que sirve.
+
+</details>
+
+<Exercise>
+
+Elige cinco, que es entero, y verifica $5\cdot5=25$. La versión original suponía la conclusión al dar por disponible una elección exitosa.
+
+</Exercise>
+
+Construye un entero que cumpla $n>4$ y $n<8$. ¿Es única la respuesta?
+
+<details>
+<summary>Pista</summary>
+
+Evita los extremos.
+
+</details>
+
+<Exercise>
+
+Seis es entero y $4<6<8$. Cinco y siete también sirven. Construir explícitamente no exige unicidad.
+
+</Exercise>
+
+¿Por qué sirve $x+1$ para todo real? ¿Por qué no basta probar en cero?
+
+<details>
+<summary>Pista</summary>
+
+Usa clausura y positividad.
+
+</details>
+
+<Exercise>
+
+La suma real da un resultado real y sumar uno positivo aumenta cualquier entrada. Probar en cero cubre una sola entrada.
+
+</Exercise>
+
+Más tarde, escribe otra prueba de cuatro frases e identifica la función de cada una.
+
+
+<span id="from-constructing-a-witness-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+**EN:** Exhibit a candidate, check membership and the full property, then conclude existence.
+
+**DE:** Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
+
+**ES:** Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.
+
+<span id="from-existence-and-uniqueness"></span>
+
+## Existencia y unicidad
 
 Dos llaves distintas abren una cerradura. Comprobar la primera demuestra que existe una llave adecuada; comprobar la segunda no invalida esa prueba. Refuta otra afirmación: que exactamente una llave abre la cerradura. Fija el cajón de llaves permitidas antes de contar.
 
-## Tres requisitos distintos
+
+<span id="from-existence-and-uniqueness-tres-requisitos-distintos"></span>
+
+### Tres requisitos distintos
 
 Existencia significa al menos un éxito permitido. A lo sumo uno significa que no hay dos objetos permitidos distintos que sirvan; admite cero. Existencia única significa exactamente uno: existencia junto con a lo sumo uno. En un cajón vacío, existencia es falsa, a lo sumo uno es verdadera y existencia única es falsa. Excluir un segundo éxito no proporciona el primero.
 
@@ -28,7 +328,10 @@ $$
 
 El signo de exclamación añade el requisito de a lo sumo uno; no es énfasis. Primero proporciona un testigo de $D$ que cumpla $P$. Después muestra que cualquier objeto de $D$ que cumpla $P$ es igual a él. Los objetos que no cumplen $P$ no tienen que ser iguales al testigo. La igualdad se refiere a objetos o valores, no a su escritura: $1/2$ y $2/4$ nombran el mismo real.
 
-## Una prueba con ambas obligaciones
+
+<span id="from-existence-and-uniqueness-una-prueba-con-ambas-obligaciones"></span>
+
+### Una prueba con ambas obligaciones
 
 $$
 \exists! n\in\mathbb Z\;(n+5=12).
@@ -38,7 +341,9 @@ Existencia: $7\in\mathbb Z$ y $7+5=12$. Unicidad: sea $n$ cualquier entero que c
 
 Restringe ahora el dominio a enteros mayores que diez. La misma resta fuerza cualquier solución hipotética a ser siete, fuera del dominio. Sigue habiendo a lo sumo una, pero falla existencia. En cambio, para $4<n<8$, cinco y seis son testigos enteros distintos, de modo que falla unicidad sin necesidad de enumerarlos todos.
 
-### Práctica
+<span id="from-existence-and-uniqueness-práctica"></span>
+
+#### Práctica
 
 Demuestra que exactamente un entero cumple $n+3=9$.
 
@@ -117,10 +422,128 @@ Siete está excluido. El argumento da a lo sumo una solución y, con la restricc
 
 Más tarde, compara colecciones con cero, uno y dos éxitos y reconstruye ambas obligaciones.
 
-## Lectura en voz alta
+
+<span id="from-existence-and-uniqueness-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
 
 **EN:** There exists exactly one x in D satisfying P.
 
 **DE:** Es gibt genau ein x in D, das P erfüllt.
 
 **ES:** Existe exactamente un equis en D que cumple P.
+
+<span id="from-counting-witnesses"></span>
+
+## Contar testigos
+
+Las tarjetas con siete y nueve demuestran ambas que hay una tarjeta con número impar. Elegir siete para una prueba no elimina nueve. La evidencia necesaria depende de la pregunta: dar uno, dar dos distintos o encontrar todos.
+
+Un objeto verificado demuestra existencia. Dos objetos distintos verificados refutan a lo sumo uno, sin afirmar exactamente dos. Una lista completa exige verificar cada entrada y excluir todo objeto no incluido. El tamaño del dominio no es el número de testigos: un dominio infinito puede tener cero, uno, finitos o infinitos éxitos.
+
+$$
+\{n\in\mathbb Z:4<n<8\}=\{5,6,7\}.
+$$
+
+Cada número de la lista es entero y cumple ambas cotas. A la inversa, un entero mayor que cuatro es al menos cinco y uno menor que ocho es como máximo siete. Así, cualquier testigo es cinco, seis o siete. Este argumento de exclusión, basado en la separación entre enteros, hace completa la lista. Tres éxitos por sí solos no bastarían.
+
+
+<span id="from-counting-witnesses-cambiar-el-dominio-cambia-el-recuento"></span>
+
+### Cambiar el dominio cambia el recuento
+
+En los reales también sirven $5.5$ y $6.25$. Hay infinitos testigos. Empieza con cinco y seis e inserta su punto medio. Después inserta repetidamente el punto medio entre cinco y el último valor añadido. Cada resultado es real, mayor que cinco y menor que el anterior, así que sigue entre cuatro y ocho. Es distinto de cinco y de todos los valores insertados antes. Tras cualquier número de pasos se puede añadir otro testigo nuevo. Se usa aritmética de puntos medios y orden, no un teorema de convergencia.
+
+Expresiones distintas no tienen por qué ser objetos distintos: $1/2=2/4$. Dos tarjetas físicas con la misma etiqueta siete son tarjetas distintas, aunque solo haya un valor numérico distinto. Especifica qué cuentas. Una bandeja vacía no tiene candidatos; una con solo pares tiene candidatos, pero ningún éxito impar. En ambas es falsa la existencia de una tarjeta impar. Una afirmación universal sobre la bandeja vacía sigue siendo verdadera sin proporcionar un testigo.
+
+<span id="from-counting-witnesses-práctica"></span>
+
+#### Práctica
+
+Para $4<n<8$ en los enteros, justifica uno, dos distintos y todos los testigos.
+
+<details>
+<summary>Pista</summary>
+
+Solo la última requiere excluir otros.
+
+</details>
+
+<Exercise>
+
+Cinco demuestra existencia; cinco y seis refutan unicidad. Todos son cinco, seis y siete, pues cualquier entero permitido debe ser al menos cinco y como máximo siete.
+
+</Exercise>
+
+¿Dan $1/2$ y $2/4$ dos testigos de $2x=1$ en los reales?
+
+<details>
+<summary>Pista</summary>
+
+Cuenta valores, no escrituras.
+
+</details>
+
+<Exercise>
+
+Demuestran existencia al verificar la ecuación, pero nombran un solo valor y no refutan unicidad. Esto tampoco constituye por sí solo una prueba de unicidad.
+
+</Exercise>
+
+Dos tarjetas distintas llevan siete. ¿Hay dos tarjetas impares y dos etiquetas numéricas distintas?
+
+<details>
+<summary>Pista</summary>
+
+Especifica los objetos.
+
+</details>
+
+<Exercise>
+
+Hay dos tarjetas distintas con etiqueta impar, pero un solo valor entero distinto.
+
+</Exercise>
+
+Compara una bandeja vacía y otra con solo pares para la existencia de una tarjeta impar.
+
+<details>
+<summary>Pista</summary>
+
+Sin candidatos no es lo mismo que sin éxitos.
+
+</details>
+
+<Exercise>
+
+Ambas afirmaciones son falsas. En la primera faltan objetos; en la segunda todos los disponibles incumplen la condición.
+
+</Exercise>
+
+Una lista afirma que cinco, seis y siete son todos los testigos reales entre cuatro y ocho. Revísala.
+
+<details>
+<summary>Pista</summary>
+
+Inserta un punto medio.
+
+</details>
+
+<Exercise>
+
+Cinco y medio es un testigo real omitido, así que falla la exhaustividad. Cinco ya demuestra existencia.
+
+</Exercise>
+
+Más tarde, construye ejemplos con cero, uno y varios éxitos y aporta la evidencia adecuada para cada caso.
+
+
+<span id="from-counting-witnesses-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+**EN:** One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.
+
+**DE:** Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.
+
+**ES:** Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.

@@ -1,0 +1,13 @@
+---
+import {lessonUrl} from '../lib/content';
+import type {Locale} from '../lib/i18n';
+import type {CourseId} from '../lib/navigation';
+interface Props {
+ lessons:{key:string;data:{order:number;navTitle:string;course:CourseId}}[];
+ locale:Locale;
+ current:string;
+ courseId:CourseId;
+}
+const {lessons,locale,current,courseId}=Astro.props;
+---
+{lessons.map(l=><a class:list={['lesson-link',{active:current===l.key&&l.data.course===courseId}]} href={lessonUrl(l.key,locale,l.data.course)} aria-current={current===l.key&&l.data.course===courseId?'page':undefined}><span class="lesson-number">{String(l.data.order).padStart(2,'0')}</span><span>{l.data.navTitle}</span>{current===l.key&&l.data.course===courseId&&<span class="active-dot" aria-hidden="true"/>}</a>)}

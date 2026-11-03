@@ -1,0 +1,101 @@
+---
+course: "analysis"
+chapter: "analysis-language"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "de"
+title: "Die Zahlenmengen"
+navTitle: "Die Zahlenmengen"
+description: "Die üblichen Zahlbereiche als ineinanderliegende Mengen verstehen."
+order: 37
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: []
+thumbnail: "number-sets"
+---
+
+{/* Die Definitionen, Einordnungen und Beweise unten sind ergänzende didaktische Ausarbeitungen. */}
+
+## Ein Bild der Inklusionen
+
+<NumberDomains />
+
+Die Kästen zeigen **Zugehörigkeit**, nicht die Größe einer Zahl. Jede Zahl in einem inneren Kasten gehört auch zu allen umgebenden Kästen. Zum Beispiel ist $3$ zugleich natürlich, ganz, rational, reell und komplex. Bei einer Einordnung nennen wir meist die kleinste dieser Mengen, die die Zahl enthält.
+
+## Was die einzelnen Mengen enthalten
+
+- **Natürliche Zahlen** $\mathbb{N}=\{1,2,3,\ldots\}$ dienen zum Zählen ganzer Objekte. Manche Lehrveranstaltungen zählen $0$ dazu; hier beginnen wir bei $1$.
+- **Ganze Zahlen** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ schließen null und negative ganze Zahlen ein. Es gilt also $-3\in\mathbb{Z}$, aber $-3\notin\mathbb{N}$.
+- **Rationale Zahlen** $\mathbb{Q}$ lassen sich als Quotienten ganzer Zahlen mit einem Nenner ungleich null schreiben. Der Zähler darf negativ oder null sein; der Nenner darf nicht null sein.
+
+<Math tex="\mathbb{Q}=\left\{\frac{p}{q}:p,q\in\mathbb{Z},\ q\ne0\right\}" display />
+
+- **Reelle Zahlen** $\mathbb{R}$ sind die Zahlen auf der Zahlengeraden. Dazu gehören die rationalen und die **irrationalen** Zahlen: reelle Zahlen ohne eine solche Bruchdarstellung. Zum Beispiel ist $\sqrt{2}$ reell und irrational. Die irrationalen Zahlen bilden $\mathbb{R}\setminus\mathbb{Q}$, also einen Teil der reellen Zahlen und keinen weiteren umgebenden Kasten.
+- **Komplexe Zahlen** $\mathbb{C}$ haben die Form $a+bi$ mit $a,b\in\mathbb{R}$ und $i^2=-1$. Bei einer reellen Zahl ist der Imaginärteil $0$: etwa $3=3+0i$. Die Zahl $2+3i$ hat einen Imaginärteil ungleich null und ist deshalb nicht reell.
+
+## Warum die Inklusionen echt sind
+
+Das Zeichen $\subsetneq$ bedeutet „enthalten, aber nicht gleich“. Dafür brauchen wir sowohl die Inklusion als auch ein Beispiel, das Gleichheit ausschließt.
+
+Jede natürliche Zahl ist ganz. Jede ganze Zahl $n$ ist rational, denn $n=n/1$. Jede rationale Zahl ist reell, und jede reelle Zahl $a$ ist komplex, denn $a=a+0i$. Die erste und die dritte Inklusion gehören zur Konstruktion dieser Zahlbereiche; die Bruchdarstellung und die komplexe Darstellung machen die beiden anderen ausdrücklich sichtbar.
+
+<Math tex="\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}" display />
+
+Dass die Mengen verschieden sind, zeigen $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$ und $i\in\mathbb{C}\setminus\mathbb{R}$. Die weniger unmittelbaren Beispiele begründen wir unten. Insbesondere muss eine rationale Zahl nicht ganz sein.
+
+## Beweis: Abbrechende und periodische Dezimalzahlen sind rational
+
+Eine abbrechende Dezimalzahl lässt sich mit einer Zehnerpotenz im Nenner schreiben. Zum Beispiel gilt
+
+<Math tex="0{,}125=\frac{125}{1000}=\frac18" display />
+
+Zähler und Nenner des letzten Bruchs sind ganz, der Nenner ist ungleich null. Also ist $0{,}125\in\mathbb{Q}$. Wegen $0<0{,}125<1$ ist die Zahl nicht ganz. Ihre kleinste Menge im Bild ist daher $\mathbb{Q}$.
+
+Bei einer periodischen Dezimalzahl verschieben wir einen ganzen Periodenblock und subtrahieren. Setze $x=0{,}\overline{27}=0{,}272727\ldots$. Multiplikation mit $100$ verschiebt den zweistelligen Block:
+
+<Math tex="\begin{aligned}100x&=27{,}272727\ldots\\x&=0{,}272727\ldots\\99x&=27\\x&=\frac{27}{99}=\frac3{11}.\end{aligned}" display />
+
+Die unendlichen Nachkommateile stimmen überein und heben sich exakt auf; wir rechnen nicht mit gerundeten Näherungen. Das Verfahren funktioniert auch bei schließlich periodischen Dezimalzahlen, nachdem man den nichtperiodischen Anfang verschoben hat. Umgekehrt endet die schriftliche Division einer rationalen Zahl oder wird periodisch: Es gibt nur endlich viele mögliche Reste. Unendlich viele Nachkommastellen allein bedeuten also **nicht** Irrationalität.
+
+## Beweis: Eine reelle Zahl muss nicht rational sein
+
+Die Zahl $\sqrt{2}$ ist die positive reelle Zahl mit dem Quadrat $2$. Angenommen, sie wäre rational. Wähle einen vollständig gekürzten Bruch $\sqrt{2}=p/q$ mit ganzen Zahlen $p,q$ und $q>0$. Quadrieren ergibt
+
+<Math tex="p^2=2q^2." display />
+
+Also ist $p^2$ gerade, und damit muss $p$ gerade sein. Warum? Eine ungerade ganze Zahl hat die Form $2k+1$, und
+
+<Math tex="(2k+1)^2=2(2k^2+2k)+1," display />
+
+ist ungerade. Ein gerades Quadrat kann somit nicht von einer ungeraden ganzen Zahl stammen.
+
+Schreibe $p=2k$ und setze dies in die angenommene Gleichung ein:
+
+<Math tex="4k^2=2q^2\quad\Longrightarrow\quad q^2=2k^2." display />
+
+Dasselbe Argument macht $q$ gerade. Damit haben $p$ und $q$ den gemeinsamen Faktor $2$, im Widerspruch zur Wahl eines vollständig gekürzten Bruchs. Folglich ist $\sqrt{2}\notin\mathbb{Q}$, obwohl $\sqrt{2}\in\mathbb{R}$. Der [ausführliche Widerspruchsbeweis](../widerspruch-und-irrationalitaet/) erläutert diese Strategie genauer.
+
+Ein Wurzelzeichen allein ist kein Irrationalitätstest: $\sqrt{9}=3$ ist natürlich. Entscheidend ist die dargestellte Zahl, nicht ihre Schreibweise.
+
+## Beweis: Warum die imaginäre Einheit nicht reell ist
+
+Für jede reelle Zahl $t$ ist das Quadrat $t^2$ nichtnegativ: Das Quadrat einer positiven oder negativen Zahl ist positiv, und $0^2=0$. Daher kann keine reelle Zahl die Gleichung $t^2=-1$ erfüllen. Wegen $i^2=-1$ ist $i$ also nicht reell.
+
+Das erklärt auch, warum $2+3i$ nicht reell ist. Wäre diese Zahl reell, dann wäre nach Subtraktion von $2$ und Division durch $3$ auch $i=((2+3i)-2)/3$ reell: ein Widerspruch. Die komplexen Zahlen erweitern die reellen so, dass Gleichungen wie $z^2+1=0$ Lösungen besitzen: $z=i$ und $z=-i$.
+
+## Übung
+
+Gib jeweils eine Darstellung oder eine Begründung an. Nutze dann die Inklusionen, um auch die größeren Mengen zu bestimmen.
+
+<Exercise question="Was ist die kleinste Menge im Bild, die jeweils $-5/2$, $\sqrt{9}$, $0$ und $0{,}\overline{6}$ enthält?">
+
+$-5/2$ ist ein Quotient ganzer Zahlen, liegt aber strikt zwischen $-3$ und $-2$. Seine kleinste Menge ist daher $\mathbb{Q}$. Die Zahl $\sqrt{9}=3$ liegt in $\mathbb{N}$. Nach unserer Konvention gehört $0$ zu $\mathbb{Z}$, aber nicht zu $\mathbb{N}$. Schließlich gilt $0{,}\overline{6}=2/3\in\mathbb{Q}$, aber diese Zahl ist nicht ganz. Jede Zahl gehört außerdem zu allen umgebenden Mengen.
+
+</Exercise>
+
+<Exercise question="Ist die Summe zweier irrationaler Zahlen immer irrational? Prüfe die Behauptung mit $\sqrt{2}$ und $-\sqrt{2}$.">
+
+Nein. Beide Zahlen sind irrational: Wäre $-\sqrt{2}$ rational, würde Multiplikation mit $-1$ auch $\sqrt{2}$ rational machen. Ihre Summe ist aber $0$ und damit rational. Die Zugehörigkeit zu einer Menge bedeutet nicht automatisch, dass jede Rechenoperation in dieser Menge bleibt.
+
+</Exercise>

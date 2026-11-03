@@ -1,0 +1,34 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-sheet-1-2"
+sourcePages: [1]
+locale: "de"
+title: "Blatt 1.2 · das Komplement ist eindeutig"
+navTitle: "Blatt 1.2 · das Komplement ist eindeutig"
+description: "Zeigen, warum zwei Komplementkandidaten übereinstimmen müssen."
+order: 43
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["nullgesetze-und-konstanten"]
+thumbnail: "complement"
+---
+
+## Beide Bedingungen sind nötig
+
+<Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
+
+Angenommen, $B$ und $C$ seien beide Komplemente von $A$. Die ODER-Bedingung deckt alle Möglichkeiten ab; die UND-Bedingung schließt Überlappung aus. Nutze die Bedingungen des einen Kandidaten, um den anderen zu vereinfachen.
+
+## Beide auf denselben Ausdruck zurückführen
+
+<Math tex="\begin{aligned}\colB{B}&\overset{7b}=\colB{B}\land1=\colB{B}\land(\colA{A}\lor \colC{C})\\&\overset3=(\colB{B}\land \colA{A})\lor(\colB{B}\land \colC{C})\\&\overset2=0\lor(\colB{B}\land \colC{C})\overset{2,7a}=\colB{B}\land \colC{C}\end{aligned}" display />
+
+<Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
+
+Also gilt $B = C$. Die nicht nummerierten Einsetzungen verwenden die angenommenen Komplementbedingungen. Da $\neg A$ nach Gesetz 5 ein Komplement ist, muss jeder Ausdruck mit beiden Eigenschaften gleich $\neg A$ sein. Dieses Werkzeug trägt die nächsten Beweise.
+
+## Warum $B$ und $C$ vergleichen?
+
+Wir kennen die Beziehungen von $B$ und $C$ zu A, aber noch nicht zueinander. Setze $1 = A \lor  C$ in $B \land  1$ ein, um beide Informationen zu verbinden. Distributivität trennt den verschwindenden Anteil $B \land  A$ vom Anteil $B \land  C$. Für $C$ ergibt dieselbe Überlegung, dass beide Kandidaten ihrem gemeinsamen Anteil gleichen. Ein Komplement ist deshalb eindeutig. $A \lor  B = 1$ allein reicht nicht: $B = 1$ erfüllt das immer.

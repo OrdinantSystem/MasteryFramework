@@ -1,0 +1,116 @@
+---
+course: "analysis"
+chapter: "analysis-zero-propositions"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+additionalSources: [{"sourceId": "analysis-zero", "locations": ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md"], "pages": []}]
+locale: "de"
+title: "Aussagen und Aussageformen"
+navTitle: "Aussagen und Aussageformen"
+description: "Zuerst klären, ob ein Satz einen bestimmten Wahrheitswert hat."
+order: 1
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: []
+thumbnail: "logic"
+---
+
+## Eine Aussage darf falsch sein
+
+Eine Aussage hat einen bestimmten Wahrheitswert: wahr (1) oder falsch (0). Wir müssen ihn nicht kennen. Sowohl „$2 + 3 = 5$“ als auch „$2 + 3 = 6$“ sind Aussagen; nur die erste ist wahr.
+
+## Eine freie Variable lässt eine Frage offen
+
+$P(x): x + 3 = 10$ ist eine Aussageform. Ihr Wahrheitswert hängt von $x$ ab. Die Angabe $x \in  \mathbb{N}$ schränkt den Bereich ein, bindet $x$ aber nicht. Einsetzen von $x = 7$ ergibt eine wahre, $x = 2$ eine falsche Aussage. Stattdessen kann ein Quantor die Variable binden.
+
+<Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
+
+Das dargestellte $P(2)$ ist die falsche Gleichheit $2+3=10$, keine Umdefinition von $P$ zu seiner Negation.
+
+## Die Einordnung prüfen
+
+Eine Frage oder Aufforderung ist keine Aussage. Der Satz „Dieser Satz ist falsch“ erhält keinen konsistenten klassischen Wahrheitswert; er ist ein Paradox, kein gewöhnliches Beispiel einer falschen Aussage. Ordne eine Gleichung zuerst ein, bevor du sie beweist.
+
+## Einsetzen und Wahrheit
+
+Bei $P(x): x + 3 = 10$ liefert $x = 7$ eine wahre, $x = 4$ eine falsche Aussage. Die Regel bleibt gleich; wir ergänzen die fehlende Eingabe. Dagegen ist „Es gibt ein natürliches $x$ mit $x + 3 = 10$“ bereits eine vollständige Behauptung. Ein Zeuge, $x = 7$, entscheidet ihre Wahrheit. Eine noch freie Eingabe ist etwas anderes als ein noch unbekannter Wahrheitswert.
+
+<Exercise question="Ist $x^2 = 4$ eine Aussage? Und $\exists x \in  \mathbb{N} : x^2 = 4$?">
+
+Das Erste ist eine Aussageform mit freiem $x$. Das Zweite ist eine wahre Aussage mit Zeuge $x = 2$.
+
+</Exercise>
+
+## Behauptungen, Ausdrücke und Aufforderungen
+
+„Die Summe zweier Zahlen“ ist eine Wortgruppe, die ein Objekt bezeichnet. $x+1$ ist ein Zahlenausdruck, keine Behauptung. $x+1=3$ ist eine Bedingung, deren Auswertung eine Eingabe braucht. $7$ allein bezeichnet eine Zahl; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten etwas über sie. Mathematik braucht nicht zwingend Symbole; Symbole allein ergeben noch keine Aussage.
+
+Ordne die **ganze Äußerung** ein. „Beweise, dass null gleich eins ist“ ist eine Aufforderung, obwohl sie eine falsche Aussage erwähnt. „Finde alle reellen Zahlen kleiner als eins“ ist eine Anweisung. „Jede reelle Zahl ist kleiner als eins“ ist eine falsche Aussage, widerlegt durch zwei. Eine Frage über eine Behauptung bleibt eine Frage.
+
+Bedeutung und Bezug kommen zuerst. „Diese Zahl ist klein“ wird bestimmt, wenn die Zahl sieben ist und „klein“ als kleiner als zehn definiert wird. Beide Angaben sind nötig. Eine bestimmte verschlossene Karte mit einer bereits feststehenden ganzen Zahl unterscheidet sich von einer künftigen Wahl ohne Wert oder Auswahlregel. Verborgene Information bedeutet nicht, dass kein Objekt feststeht.
+
+In der üblichen reellen Arithmetik ist $1/0=2$ keine gewöhnliche falsche Gleichheit: Links steht kein reeller Wert. Ein Quotient müsste mit null multipliziert eins ergeben. Jedes solche Produkt ist aber null. Undefiniertheit ist unter diesen Konventionen ein Bedeutungsproblem, kein dritter Wahrheitswert.
+
+## Wahrheit, Wissen und Gründe
+
+Unser klassischer Rahmen setzt **Zweiwertigkeit** voraus: Eine sinnvolle Aussage hat genau einen von zwei Wahrheitswerten. Das ist hier eine Grundlage, kein auf dieser Seite bewiesener Satz. $T/F$ und die hier verwendeten $1/0$ sind alternative Bezeichnungen, keine Zahlen zum Addieren oder Multiplizieren.
+
+Die Zahl einer festen Karte ist vor dem Öffnen entweder null oder nicht null. Fünf vorzufinden verändert unser Wissen, nicht den ursprünglichen Wahrheitswert. Ein Zimmer mit morgens drei und nachmittags vier Stühlen liefert entsprechend verschiedene **zeitlich bestimmte Aussagen**, nicht eine feste Aussage mit zwei Wahrheitswerten. Verschiedene Eingaben einer offenen Aussageform ergeben ebenfalls verschiedene vervollständigte Behauptungen.
+
+Ein Grund muss so weit reichen wie der Schluss. Ein Zeuge beweist eine Existenzaussage; ein Gegenbeispiel widerlegt eine Allaussage. Für eine wahre Allaussage kann ein Argument für eine beliebige Eingabe nötig sein. In einem endlichen Bereich genügt auch die Prüfung jedes Elements. Einige ausgesuchte Erfolge in einem unendlichen Bereich genügen nicht. Für beliebiges reelles $x<1$ liefern $1<2$ und Transitivität die Folgerung $x<2$. Nur die logische Struktur zu benennen würde diese Ordnungsbegründung nicht liefern.
+
+## Freie Vorkommen, Geltungsbereiche und Zuweisungen
+
+$\mathbb Z$ bezeichnet ganze, $\mathbb R$ reelle Zahlen. $x\in\mathbb R$ drückt Zugehörigkeit aus, nicht Gleichheit. „Sei $x$ reell“ legt den Bereich fest und führt in Beweisen oft eine **beliebige, aber feste** Eingabe ein. „Sei $x=2$“ legt einen konkreten Wert fest. Keines setzt einen Quantor in die geschriebene Formel.
+
+Ein **Vorkommen** ist eine Stelle, an der eine Variable steht. Ein Quantor bindet Vorkommen der benannten Variable in seinem **Geltungsbereich**, außer wo ein innerer Quantor dieselbe Variable bindet. Ohne bindenden Quantor ist ein Vorkommen frei. „Offen“ heißt mindestens ein freies Vorkommen; „geschlossen“ heißt keines, nicht „ohne Buchstaben“.
+
+$$\forall x\in\mathbb R\;(x+y=y+x)$$
+
+Beide Vorkommen von $x$ sind gebunden, $y$ bleibt frei. Das gilt auch dann, wenn Kommutativität die Bedingung für jede reelle Belegung von $y$ wahr macht. Wahrheit unter jeder Belegung ersetzt keinen Quantor. Mit $\forall y\in\mathbb R$ wird die Formel geschlossen:
+
+$$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
+
+Die Zuweisung $y=0$ liefert einen Auswertungskontext, keine syntaktische Bindung. Null tatsächlich für $y$ einzusetzen erzeugt dagegen eine **andere geschriebene Formel** mit ersetzten Vorkommen. Diese Schritte sind zu unterscheiden.
+
+Auch $\exists x\in\mathbb R\;(x=y)$ bleibt offen in $y$, obwohl jede reelle Belegung von $y$ einen passenden Zeugen liefert. Existenz bedeutet mindestens ein Objekt, nicht Eindeutigkeit. Bei $\forall x\in\mathbb R\;(x=y)$ lässt die Zuweisung $y=0$ das geschriebene $y$ frei, liefert aber eine falsche kontextuelle Behauptung, widerlegt durch $x=1$.
+
+<details>
+<summary>Notation lesen: EN / DE / ES</summary>
+
+$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
+
+</details>
+
+## Selbst prüfen
+
+Ordne „Eins ist gleich null“, „Erkläre, warum eins gleich eins ist“ und $7$ ein. Mache aus dem letzten Ausdruck zwei Behauptungen. Ergänze dann $x=0$ auf zwei Arten: durch Kontext und durch Quantifizierung.
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne die verlangte Handlung von der darin erwähnten Behauptung. Unterscheide bei den Ergänzungen die Wahl einer Eingabe von einer Aussage über alle Eingaben.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+„Eins ist gleich null“ ist eine falsche Aussage. „Erkläre …“ fordert eine Handlung und erwähnt eine wahre Gleichheit. Sieben allein benennt eine Zahl; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ sind Behauptungen. Für $x=0$ kann der Kontext $x$ als bestimmte reelle Zahl festlegen, etwa null. So ist die Bedingung auswertbar, $x$ bleibt als geschrieben frei. Oder man schreibt „Jede reelle Zahl ist gleich null“, eine geschlossene falsche Aussage. Falschheit macht daraus keine Anweisung.
+
+</details>
+
+<Exercise question="In $\forall x\in\mathbb R\;(x<y)$ sei auch y reell. Was ist gebunden? Was ändert die Zuweisung y gleich null? Vergleiche mit $\exists x\in\mathbb R\;(x=0)$ und ‘Jede ganze Zahl ist positiv’.">
+
+Nur $x$ ist in der ersten Formel gebunden; $y$ bleibt frei. Die Zuweisung null ermöglicht eine falsche Auswertung mit Gegenbeispiel $x=1$, bindet $y$ aber nicht. Die Existenzformel ist geschlossen und mit Zeuge null wahr. „Jede ganze Zahl ist positiv“ ist auch ohne Buchstaben eine geschlossene quantifizierte Behauptung, widerlegt durch null.
+
+</Exercise>
+
+<Exercise question="Übersetze ‘Es gibt eine reelle Zahl, die mindestens null und kleiner als eins ist’. Gib einen Zeugen an. Ersetze ‘es gibt’ durch ‘jede’ und begründe den neuen Wahrheitswert. Was bleibt gleich?">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ ist mit Zeuge null wahr. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ ist falsch, weil eins die strenge obere Grenze verletzt. Beide Formeln sind geschlossen; der reelle Bereich und beide Vergleiche bleiben gleich. Der Quantor ändert, ob eine oder jede Eingabe genügen muss.
+
+</Exercise>
+
+Erkläre den Unterschied zwischen unbekannt, undefiniert und unbegründet: Eine verdeckte Karte verbirgt einen Wahrheitswert; Division durch null besitzt keinen reellen Wert; eine zufällig richtige Antwort ohne ausreichenden Grund kann trotzdem richtig sein. [Mathematische Struktur lesen](../reading-mathematical-structure/) verbindet diese Prüfungen.

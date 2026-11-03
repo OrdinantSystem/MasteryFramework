@@ -39,4 +39,20 @@ const lessons = defineCollection({
   }),
 });
 
-export const collections = { lessons };
+const courseGuides = defineCollection({
+  loader: glob({ pattern: '**/*.mdx', base: './src/content/course-guides' }),
+  schema: z.object({
+    course:z.enum(courseIds), locale:z.enum(['en','de','es']), title:z.string(),
+    reviewStatus:z.enum(['unreviewed','needs-correction','reviewed']).default('unreviewed'),
+    sourceId:z.enum(sourceIds), sourcePages:z.array(z.number().int().positive()).default([]),
+    sourceLocations:z.array(z.string()).default([]), additionalSources:z.array(reference).default([]),
+  }).superRefine((data,ctx)=>{
+    for(const ref of [{sourceId:data.sourceId,pages:data.sourcePages,locations:data.sourceLocations},...data.additionalSources]){
+      const source=sourceCatalog[ref.sourceId];
+      if(source.course!==data.course||ref.pages.some(p=>p>source.pages))ctx.addIssue({code:'custom',message:'Course-guide source mismatch'});
+      if(source.kind!=='pdf'&&(ref.pages.length>0||!ref.locations.length))ctx.addIssue({code:'custom',message:'Course-guide text source needs locations'});
+    }
+  }),
+});
+
+export const collections = { lessons, courseGuides };

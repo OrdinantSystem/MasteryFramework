@@ -10,6 +10,10 @@ Obsidian retains the original teaching drafts, provenance, curriculum and privat
 
 The machine-readable [coverage ledger](analysis-zero-coverage.json) records a destination for every authored lesson and companion concept. Several sources may inform one focused page, while a long source may need several pages. Duplicate explanations are consolidated; distinct examples, assumptions, boundary cases, proof obligations and practice must not disappear merely to reduce page count. A mapping establishes traceability, not proof certification or evidence of learning.
 
+## Current course structure
+
+The authored material is now organized as six Analysis I sections and twenty canonical lesson pages, not source-oriented Analysis 0 folders. See [analysis-organization.md](analysis-organization.md) for the reading route, preserved 53-page edition, exact section dispositions and compatibility rules. The original migration review describes its baseline; current consolidation checks are recorded separately. Source identity remains analysis-zero for provenance, not as a learner-facing section title.
+
 ## Learning route
 
 1. Propositions, definitions, free variables, equality and order notation.

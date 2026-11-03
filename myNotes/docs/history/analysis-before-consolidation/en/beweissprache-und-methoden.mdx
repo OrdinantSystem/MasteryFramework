@@ -1,0 +1,54 @@
+---
+course: "analysis"
+chapter: "analysis-proof"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"
+locale: "en"
+title: "The language and structure of proof"
+navTitle: "The language and structure of proof"
+description: "Give every step a reason and every claim the right scope."
+order: 38
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["quantoren-und-negation", "implikation-und-kontraposition"]
+thumbnail: "proof"
+---
+
+## Know the role of each sentence
+
+A definition fixes a meaning. An axiom is accepted as a starting point. A hypothesis is assumed for the current argument. A conjecture awaits proof. A theorem or proposition is a proved claim; a lemma supports another proof, and a corollary follows from an established result. These names describe roles, not different grades of truth.
+
+## Choose a method
+
+- Direct proof: start from the hypotheses and derive the conclusion.
+- Contraposition: prove that a false conclusion forces a false premise.
+- Contradiction: assume the negation of the goal and derive an impossibility.
+- Counterexample: refute a universal claim with one permitted case.
+- Induction: prove a starting case and a step from $n$ to $n + 1$; this is a method for a later lesson, not a substitute for either step.
+
+## A small workflow
+
+Write the exact claim and domain. Unpack definitions. Choose a method. Justify each transition. State what has now been proved. For $\exists n \in  \mathbb{N} : n^2 = 9$, the witness $n = 3$ is enough. For $\forall n \in  \mathbb{N} : n^2 > n$, the counterexample $n = 1$ is enough. Neither task needs a long derivation. Avoid using the claim itself to justify an intermediate step: that would be circular.
+
+## Arbitrary does not mean a representative sample
+
+To prove $\forall x\in\mathbb R\;(x+2>x)$, read “for every real $x$, $x$ plus two exceeds $x$.” Fix an arbitrary real $x$. From $2>0$, add $x$ to both sides to obtain $x+2>x+0=x$. Addition preserves order; adding zero changes nothing. No step required positivity, integrality, or a special value of $x$, so the argument covers every real input.
+
+For a universal conditional, temporarily assume the whole hypothesis and derive the conclusion. Inputs with a false hypothesis already make the conditional true. This does not assert that every input meets the hypothesis or that an eligible input exists. For an empty restricted collection, no member can fail. One may also reason under a temporary membership assumption and discharge it without claiming the collection has a member. See [domains](../universal-statements-and-domains/) and [counterexamples](../counterexamples/) for the full checks.
+
+<Exercise question="A proof about every real number starts with an arbitrary positive real, then checks seven. What has it established, and how should it handle a genuinely necessary positivity assumption?">
+
+The numerical check covers seven only. An otherwise general argument under positivity covers at most positive reals, not zero or negatives. For the original all-real claim, avoid that assumption or add justified zero and negative cases. Alternatively state and prove an explicitly restricted theorem, but do not present it as the original. Calling a symbol arbitrary cannot undo a later restriction.
+
+</Exercise>
+
+## From a definition to a proof
+
+To prove that the sum of two even integers is even, introduce separate witnesses: $a = 2r$ and $b = 2s$. Then $a + b = 2(r+s)$, with $r + s$ an integer. The final expression matches the definition of evenness. Writing $a = 2r$ and $b = 2r$ would accidentally assume the inputs equal; distinct variables prevent that extra assumption. A short proof still needs the domain and the reason its last line settles the claim.

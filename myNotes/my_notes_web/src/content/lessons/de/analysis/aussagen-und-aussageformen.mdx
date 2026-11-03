@@ -1,26 +1,36 @@
 ---
 course: "analysis"
-chapter: "analysis-zero-propositions"
+chapter: "analysis-foundations"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
-additionalSources: [{"sourceId": "analysis-zero", "locations": ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md"], "pages": []}]
+additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md", "A0.1.1 Mathematical propositions/02 Propositions versus Definitions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]}, {"sourceId": "analysis-concepts-3", "pages": [1], "locations": []}]
 locale: "de"
-title: "Aussagen und Aussageformen"
-navTitle: "Aussagen und Aussageformen"
-description: "Zuerst klären, ob ein Satz einen bestimmten Wahrheitswert hat."
-order: 1
+title: "Aussagen, Prädikate und Definitionen"
+navTitle: "Aussagen, Prädikate und Definitionen"
+description: "Aussagen, Prädikate und Definitionen"
+order: 2
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: []
+prerequisites: ["zahlenmengen"]
 thumbnail: "logic"
+sourceLocations: []
 ---
 
-## Eine Aussage darf falsch sein
+<span id="from-aussagen-und-aussageformen"></span>
+
+## Aussagen und Aussageformen
+
+<span id="from-aussagen-und-aussageformen-eine-aussage-darf-falsch-sein"></span>
+
+### Eine Aussage darf falsch sein
 
 Eine Aussage hat einen bestimmten Wahrheitswert: wahr (1) oder falsch (0). Wir müssen ihn nicht kennen. Sowohl „$2 + 3 = 5$“ als auch „$2 + 3 = 6$“ sind Aussagen; nur die erste ist wahr.
 
-## Eine freie Variable lässt eine Frage offen
+
+<span id="from-aussagen-und-aussageformen-eine-freie-variable-lässt-eine-frage-offen"></span>
+
+### Eine freie Variable lässt eine Frage offen
 
 $P(x): x + 3 = 10$ ist eine Aussageform. Ihr Wahrheitswert hängt von $x$ ab. Die Angabe $x \in  \mathbb{N}$ schränkt den Bereich ein, bindet $x$ aber nicht. Einsetzen von $x = 7$ ergibt eine wahre, $x = 2$ eine falsche Aussage. Stattdessen kann ein Quantor die Variable binden.
 
@@ -28,11 +38,17 @@ $P(x): x + 3 = 10$ ist eine Aussageform. Ihr Wahrheitswert hängt von $x$ ab. Di
 
 Das dargestellte $P(2)$ ist die falsche Gleichheit $2+3=10$, keine Umdefinition von $P$ zu seiner Negation.
 
-## Die Einordnung prüfen
+
+<span id="from-aussagen-und-aussageformen-die-einordnung-prüfen"></span>
+
+### Die Einordnung prüfen
 
 Eine Frage oder Aufforderung ist keine Aussage. Der Satz „Dieser Satz ist falsch“ erhält keinen konsistenten klassischen Wahrheitswert; er ist ein Paradox, kein gewöhnliches Beispiel einer falschen Aussage. Ordne eine Gleichung zuerst ein, bevor du sie beweist.
 
-## Einsetzen und Wahrheit
+
+<span id="from-aussagen-und-aussageformen-einsetzen-und-wahrheit"></span>
+
+### Einsetzen und Wahrheit
 
 Bei $P(x): x + 3 = 10$ liefert $x = 7$ eine wahre, $x = 4$ eine falsche Aussage. Die Regel bleibt gleich; wir ergänzen die fehlende Eingabe. Dagegen ist „Es gibt ein natürliches $x$ mit $x + 3 = 10$“ bereits eine vollständige Behauptung. Ein Zeuge, $x = 7$, entscheidet ihre Wahrheit. Eine noch freie Eingabe ist etwas anderes als ein noch unbekannter Wahrheitswert.
 
@@ -42,7 +58,10 @@ Das Erste ist eine Aussageform mit freiem $x$. Das Zweite ist eine wahre Aussage
 
 </Exercise>
 
-## Behauptungen, Ausdrücke und Aufforderungen
+
+<span id="from-aussagen-und-aussageformen-behauptungen-ausdrücke-und-aufforderungen"></span>
+
+### Behauptungen, Ausdrücke und Aufforderungen
 
 „Die Summe zweier Zahlen“ ist eine Wortgruppe, die ein Objekt bezeichnet. $x+1$ ist ein Zahlenausdruck, keine Behauptung. $x+1=3$ ist eine Bedingung, deren Auswertung eine Eingabe braucht. $7$ allein bezeichnet eine Zahl; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten etwas über sie. Mathematik braucht nicht zwingend Symbole; Symbole allein ergeben noch keine Aussage.
 
@@ -52,7 +71,10 @@ Bedeutung und Bezug kommen zuerst. „Diese Zahl ist klein“ wird bestimmt, wen
 
 In der üblichen reellen Arithmetik ist $1/0=2$ keine gewöhnliche falsche Gleichheit: Links steht kein reeller Wert. Ein Quotient müsste mit null multipliziert eins ergeben. Jedes solche Produkt ist aber null. Undefiniertheit ist unter diesen Konventionen ein Bedeutungsproblem, kein dritter Wahrheitswert.
 
-## Wahrheit, Wissen und Gründe
+
+<span id="from-aussagen-und-aussageformen-wahrheit-wissen-und-gründe"></span>
+
+### Wahrheit, Wissen und Gründe
 
 Unser klassischer Rahmen setzt **Zweiwertigkeit** voraus: Eine sinnvolle Aussage hat genau einen von zwei Wahrheitswerten. Das ist hier eine Grundlage, kein auf dieser Seite bewiesener Satz. $T/F$ und die hier verwendeten $1/0$ sind alternative Bezeichnungen, keine Zahlen zum Addieren oder Multiplizieren.
 
@@ -60,30 +82,10 @@ Die Zahl einer festen Karte ist vor dem Öffnen entweder null oder nicht null. F
 
 Ein Grund muss so weit reichen wie der Schluss. Ein Zeuge beweist eine Existenzaussage; ein Gegenbeispiel widerlegt eine Allaussage. Für eine wahre Allaussage kann ein Argument für eine beliebige Eingabe nötig sein. In einem endlichen Bereich genügt auch die Prüfung jedes Elements. Einige ausgesuchte Erfolge in einem unendlichen Bereich genügen nicht. Für beliebiges reelles $x<1$ liefern $1<2$ und Transitivität die Folgerung $x<2$. Nur die logische Struktur zu benennen würde diese Ordnungsbegründung nicht liefern.
 
-## Freie Vorkommen, Geltungsbereiche und Zuweisungen
 
-$\mathbb Z$ bezeichnet ganze, $\mathbb R$ reelle Zahlen. $x\in\mathbb R$ drückt Zugehörigkeit aus, nicht Gleichheit. „Sei $x$ reell“ legt den Bereich fest und führt in Beweisen oft eine **beliebige, aber feste** Eingabe ein. „Sei $x=2$“ legt einen konkreten Wert fest. Keines setzt einen Quantor in die geschriebene Formel.
+<span id="from-aussagen-und-aussageformen-selbst-prüfen"></span>
 
-Ein **Vorkommen** ist eine Stelle, an der eine Variable steht. Ein Quantor bindet Vorkommen der benannten Variable in seinem **Geltungsbereich**, außer wo ein innerer Quantor dieselbe Variable bindet. Ohne bindenden Quantor ist ein Vorkommen frei. „Offen“ heißt mindestens ein freies Vorkommen; „geschlossen“ heißt keines, nicht „ohne Buchstaben“.
-
-$$\forall x\in\mathbb R\;(x+y=y+x)$$
-
-Beide Vorkommen von $x$ sind gebunden, $y$ bleibt frei. Das gilt auch dann, wenn Kommutativität die Bedingung für jede reelle Belegung von $y$ wahr macht. Wahrheit unter jeder Belegung ersetzt keinen Quantor. Mit $\forall y\in\mathbb R$ wird die Formel geschlossen:
-
-$$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
-
-Die Zuweisung $y=0$ liefert einen Auswertungskontext, keine syntaktische Bindung. Null tatsächlich für $y$ einzusetzen erzeugt dagegen eine **andere geschriebene Formel** mit ersetzten Vorkommen. Diese Schritte sind zu unterscheiden.
-
-Auch $\exists x\in\mathbb R\;(x=y)$ bleibt offen in $y$, obwohl jede reelle Belegung von $y$ einen passenden Zeugen liefert. Existenz bedeutet mindestens ein Objekt, nicht Eindeutigkeit. Bei $\forall x\in\mathbb R\;(x=y)$ lässt die Zuweisung $y=0$ das geschriebene $y$ frei, liefert aber eine falsche kontextuelle Behauptung, widerlegt durch $x=1$.
-
-<details>
-<summary>Notation lesen: EN / DE / ES</summary>
-
-$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
-
-</details>
-
-## Selbst prüfen
+### Selbst prüfen
 
 Ordne „Eins ist gleich null“, „Erkläre, warum eins gleich eins ist“ und $7$ ein. Mache aus dem letzten Ausdruck zwei Behauptungen. Ergänze dann $x=0$ auf zwei Arten: durch Kontext und durch Quantifizierung.
 
@@ -113,4 +115,77 @@ $\exists x\in\mathbb R\;((0\le x)\land(x<1))$ ist mit Zeuge null wahr. $\forall 
 
 </Exercise>
 
-Erkläre den Unterschied zwischen unbekannt, undefiniert und unbegründet: Eine verdeckte Karte verbirgt einen Wahrheitswert; Division durch null besitzt keinen reellen Wert; eine zufällig richtige Antwort ohne ausreichenden Grund kann trotzdem richtig sein. [Mathematische Struktur lesen](../reading-mathematical-structure/) verbindet diese Prüfungen.
+Erkläre den Unterschied zwischen unbekannt, undefiniert und unbegründet: Eine verdeckte Karte verbirgt einen Wahrheitswert; Division durch null besitzt keinen reellen Wert; eine zufällig richtige Antwort ohne ausreichenden Grund kann trotzdem richtig sein. [Mathematische Struktur lesen](../quantifier-order/#from-reading-mathematical-structure) verbindet diese Prüfungen.
+
+<span id="from-definitions-assumptions-results"></span>
+
+## Definitionen, Annahmen und Ergebnisse
+
+Eine Bibliothek nennt eine Ausleihe **kurz**, wenn sie weniger als sieben Tage dauert. Das legt eine Bedeutung fest. Eine dreitägige Ausleihe ist kurz; eine zehntägige nicht. Diese beiden Behauptungen verwenden die Definition. Eine falsche Anwendung widerlegt nicht die gewählte Bedeutung.
+
+In der Mathematik gilt dieselbe Unterscheidung. Eine ganze Zahl heißt positiv, wenn sie größer als null ist. Die ganzen Zahlen, geschrieben $\mathbb Z$, umfassen auch negative ganze Zahlen und null. Für eine ganze Zahl $n$ lautet die Bedingung $n>0$. Drei erfüllt sie; null nicht, denn der Vergleich ist streng. „Null ist positiv“ ist eine falsche Aussage, keine widerlegte Definition.
+
+
+<span id="from-definitions-assumptions-results-welche-rolle-hat-der-satz"></span>
+
+### Welche Rolle hat der Satz?
+
+Eine **Definition** legt eine Bedeutung fest. Eine **Annahme** oder **Hypothese** wird für ein bestimmtes Argument vorausgesetzt. Ein **Axiom** ist eine akzeptierte Ausgangsaussage einer Theorie. **Satz**, **Lemma** und **Proposition** bezeichnen bewiesene Ergebnisse; ein Lemma dient häufig dem Beweis eines weiteren Ergebnisses. Die Bezeichnungen ändern den Anspruch an den Beweis nicht.
+
+In der Logik bedeutet *Proposition* auch eine bestimmte wahrheitsfähige Behauptung, die durchaus falsch sein kann. Als Lehrbuchüberschrift wird das Wort enger verwendet.
+
+Angenommen, eine ganze Zahl ist größer als fünf. Das ist eine lokale Annahme, keine Behauptung über alle ganzen Zahlen. Weil fünf größer als null ist, folgt mit der Transitivität der üblichen Ordnung, dass unsere Zahl größer als null ist. Nach Definition ist sie positiv. Die Ordnungsregel begründet den Schluss; die Definition liefert die Bezeichnung.
+
+Eine Gleichung oder „genau dann, wenn“ kann sowohl in einer Definition als auch in einer Behauptung stehen. Erst der Zusammenhang zeigt ihre Rolle.
+
+Eine **Vermutung** ist eine Aussage, deren Beweis noch aussteht. Ein **Korollar** folgt aus einem bereits bewiesenen Ergebnis. Die Bezeichnungen beschreiben die Rolle eines Ergebnisses, nicht verschiedene Grade der Wahrheit.
+
+<span id="from-definitions-assumptions-results-einen-namen-einführen"></span>
+
+### Einen Namen einführen
+
+$$a:=0 \qquad a=0$$
+
+Der erste Ausdruck führt $a$ als Namen für null ein. Danach ist die zweite Gleichung wahr. „Definiere“, „angenommen“ und „also“ kennzeichnen verschiedene Verwendungen, auch wenn ähnliche Zeichen folgen.
+
+<Note title="Notation lesen">
+
+**EN:** $a:=0$: “a is defined to be zero”; $a=0$: “a equals zero.” **DE:** „a wird als null definiert“; „a ist gleich null“. **ES:** «a se define como cero»; «a es igual a cero». $n>0$: **EN** “n is greater than zero”; **DE** „n ist größer als null“; **ES** «ene es mayor que cero».
+
+</Note>
+
+
+<span id="from-definitions-assumptions-results-eine-eigenschaft-muss-kein-beispiel-haben"></span>
+
+### Eine Eigenschaft muss kein Beispiel haben
+
+Wir dürfen der Eigenschaft „größer als null und kleiner als null“ einen Namen geben, obwohl keine ganze Zahl sie besitzt. Dadurch entsteht aber keine Zahl mit dieser Eigenschaft. Ebenso kann die Beschreibung „das eindeutig bestimmte Objekt mit …“ Nachweise der **Existenz** (mindestens ein Objekt) und **Eindeutigkeit** (kein zweites Objekt) verlangen. Eine sprachliche Festlegung erledigt diese Aufgaben nicht. Übliche Arithmetik und Ordnung sind hier vorausgesetzte Grundlagen, keine aus dem Wortschatz abgeleiteten Ergebnisse.
+
+
+<span id="from-definitions-assumptions-results-rollen-und-definitionen-anwenden"></span>
+
+### Rollen und Definitionen anwenden
+
+Ordne zu und begründe: „Eine ganze Zahl heißt nichtnegativ, wenn sie mindestens null ist“; „Null ist nichtnegativ“; „Angenommen, $x>0$“; „Definiere $b:=1$“; „Also gilt $b=1$“.
+
+<details>
+<summary>Hinweis</summary>
+
+Welcher Satz führt eine Bedeutung ein, welcher setzt etwas lokal voraus und welcher behauptet eine Folgerung?
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Der erste Satz ist eine Definition. Der zweite ist eine wahre Anwendung, denn Gleichheit ist erlaubt. Der dritte ist eine Hypothese, keine Allaussage. Der vierte führt einen Namen ein. Der fünfte behauptet die daraus folgende Gleichheit. Eine Definition wird nicht wie ein Satz bewiesen; eine Objektbeschreibung kann trotzdem Existenz- und Eindeutigkeitsnachweise erfordern.
+
+</details>
+
+<Exercise question="Eine reelle Zahl heiße hier zulässig, wenn sie mindestens null und höchstens eins ist. Schreibe das Kriterium. Ist null zulässig? Was folgt aus der Zulässigkeit einer nicht näher bestimmten Zahl?">
+
+Für $x\in\mathbb R$ lautet das Kriterium $(0\le x)\land(x\le1)$. Null erfüllt beide Vergleiche und ist zulässig. Aus der Bezeichnung folgen beide Grenzen, aber kein eindeutiger Wert: $0$, $1/2$ und $1$ erfüllen das Kriterium. Die Bezeichnung gilt nur in diesem Beispiel. Beide Grenzen erlauben Gleichheit; ein strenger Vergleich würde die Definition ändern.
+
+</Exercise>
+
+Erfinde eine weitere Eigenschaftsbezeichnung und formuliere eine wahre sowie eine falsche Anwendung. Trenne die Definition von ihren Anwendungen. [Mehrere gleichzeitige Bedingungen](../simultaneous-conditions/#from-simultaneous-conditions) behandelt ein längeres Kriterium.

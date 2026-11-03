@@ -1,0 +1,81 @@
+---
+course: "analysis"
+chapter: "analysis-zero-connectives"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.3 Conjunction and disjunction/03 Multiple Simultaneous Conditions.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "en"
+title: "Several simultaneous conditions"
+navTitle: "Several simultaneous conditions"
+description: "Use a complete defining criterion without confusing it with a one-way guarantee."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["definitions-assumptions-results", "logische-verknuepfungen"]
+thumbnail: "logic"
+---
+
+For this lesson, call an integer **admissible** if and only if it is positive, less than ten, and even. This is a local teaching label, not a standard class of integers. Six passes every check. Nine fails evenness; ten fails the strict upper bound. Passing two checks does not compensate for failing the third.
+
+We use ordinary integer arithmetic and order as background. An even integer is one divisible by two with an integer result; zero is even but not positive.
+
+## Read one structured criterion
+
+Start by fixing the domain and the object. Each condition concerns the **same integer**. A positive noninteger below ten is not an admissible integer. Checking positivity on nine and evenness on negative two does not establish a conjunction about one integer, much less about a particular hidden card.
+
+Let $A$ mean positive, $B$ less than ten, and $C$ even. Both
+
+$$(A\land B)\land C\qquad\text{and}\qquad A\land(B\land C)$$
+
+require all three claims. In the first grouping, $A$ and $B$ must hold, and $C$ must hold too. In the second, $B$ and $C$ must hold, as must $A$. This proves associativity semantically for any three propositions. It does not depend on checking four integers. Pure inclusive “or” also permits either grouping: each requires at least one of three inputs to be true. Mixed connectives need separate grouping checks.
+
+**EN:** $A\land(B\land C)$: “A holds, and both B and C hold.” **DE:** „A gilt, und B und C gelten beide“. **ES:** «se cumple a, y se cumplen be y ce». “Simultaneous” here means satisfaction in the specified context, not necessarily events occurring at one moment. Conjunction does not bind a free variable.
+
+A useful reading method is: fix domain and object; separate the conditions; check whether the list means all or at least one; preserve inner alternatives; decide whether the sentence is a definition or only a claim. Commas alone do not determine its connective.
+
+## Establish a label, then unpack it
+
+“If and only if” gives a full criterion. To prove that six is admissible, check $6>0$, $6<10$, and that $6/2=3$ is an integer. Conversely, knowing an integer is admissible gives **each** of those three properties. It does not give a unique value.
+
+The complete list is $2,4,6,8$. The bounds leave only the integers $1$ through $9$; their even members are exactly the four listed. That exhausts the candidates. Exhibiting four successes without excluding others would not prove completeness. Zero fails positivity; ten fails the strict bound. The definition fixes the meaning; the candidate argument justifies the list.
+
+## A sufficient rule is different
+
+Suppose an ordinary rule says: “An integer receives a blue mark if it is positive, below ten, and even.” Assume this is **not** a full definition of the marking scheme. Passing the checklist guarantees a mark, but the rule does not forbid extra marks.
+
+Marking every integer blue obeys that rule, yet nine is marked and odd. Thus a mark alone does not imply evenness. Replacing the rule by “marked **if and only if** positive, below ten, and even” would authorize unpacking the checklist.
+
+A definition sometimes uses the shorter word “if” while intending a full criterion; that intention comes from the defining context, not from a general equivalence of “if” and “iff.” Write “means” or “if and only if” when both directions are intended. Flag ambiguous text rather than silently adding the converse.
+
+## Practice with alternatives and failures
+
+An integer must be positive and must be even **or equal to three**, with that entire alternative grouped. Write the criterion and test $3,6,-2,9$.
+
+<details>
+<summary>Hint</summary>
+
+There are two outer requirements. The second can succeed in either of two ways.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+$P\land(E\lor T)$, where $P$ is positive, $E$ even, and $T$ equal to three. Three passes through positivity and $T$; six through positivity and $E$. Negative two fails positivity; nine fails both inner alternatives. The alternative is one grouped checklist item, not a requirement to satisfy all three letters.
+
+</details>
+
+<Exercise question="An integer qualifies when it is zero, or when it is positive and below ten. With A, B, C naming those claims in order, write the criterion. Do zero and ten qualify?">
+
+$A\lor(B\land C)$. Zero qualifies through $A$ without needing positivity. Ten fails $A$ and $C$, so it qualifies through neither route. Requiring positivity of zero would change the outer connective.
+
+</Exercise>
+
+<Exercise question="For the original admissible integers, unpack every fact from the label. Must the integer equal six? Describe nonadmissibility, and use zero, nine, and ten to check its boundaries.">
+
+The integer is positive, below ten, and even; it need not be six, since two also qualifies. Nonadmissibility means $n\le0$ **or** $n\ge10$ **or** $n$ is not even, with $n\in\mathbb Z$ still required. Zero fails only positivity, nine only evenness, ten only the strict upper bound. None forces all checks to fail. [Negating combined conditions](../negating-combined-conditions/) proves the underlying laws.
+
+</Exercise>
+
+Invent a new three-condition definition and a near-miss failing only one check. Then replace its iff by an ordinary one-way if and identify which inference from the label is no longer justified.

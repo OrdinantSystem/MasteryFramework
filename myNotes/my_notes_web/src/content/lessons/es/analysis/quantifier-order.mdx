@@ -1,20 +1,96 @@
 ---
 locale: "es"
 course: "analysis"
-chapter: "analysis-zero-nested"
+chapter: "analysis-quantifiers"
 sourceId: "analysis-zero"
-title: "Orden de los cuantificadores"
-navTitle: "Orden de los cuantificadores"
-description: "Orden de los cuantificadores."
-order: 27
+title: "Orden de cuantificadores, dependencia y traducción"
+navTitle: "Orden de cuantificadores, dependencia y traducción"
+description: "Orden de cuantificadores, dependencia y traducción"
+order: 10
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "existence-and-witnesses"]
+prerequisites: ["existence-and-uniqueness"]
 sourcePages: []
-sourceLocations: ["A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence", "A0.1.8 Nested quantifiers/02 Dependence between Variables.md#02 · What information may a witness use?", "A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md#03 · A key per person is not necessarily one key for all", "A0.1.8 Nested quantifiers/04 Translating into Formal Quantifiers.md#04 · Turn the sentence into a formula"]
 thumbnail: "quantifiers"
+additionalSources: []
 ---
+
+<span id="from-reading-mathematical-structure"></span>
+
+## Leer la estructura matemática
+
+«Encuentra un real menor que dos» es una instrucción. «Todo real es menor que dos» hace una afirmación, y es falsa. La primera tarea al leer matemáticas es reconocer qué hace la frase. Una larga cadena de símbolos no resuelve esa cuestión.
+
+
+<span id="from-reading-mathematical-structure-un-procedimiento-de-lectura"></span>
+
+### Un procedimiento de lectura
+
+Estas preguntas ayudan a descomponer una afirmación. Organizan la lectura; no constituyen un método de demostración.
+
+1. ¿Se define un término, se afirma algo, se supone algo localmente, se pregunta o se da una instrucción?
+2. ¿Qué objetos y dominio intervienen? ¿Tienen sentido todas las expresiones? En la aritmética real habitual no se permite dividir entre cero.
+3. ¿Qué apariciones de variables están libres o ligadas? Por separado, ¿fija el contexto un valor para alguna variable libre?
+4. ¿Qué cuantificadores aparecen en palabras o símbolos? Conserva sus dominios y alcances. $\forall$ significa «para todo»; $\exists$, «existe al menos uno», no «exactamente uno».
+5. Busca la conectiva que une las partes mayores y examina después cada parte. Los paréntesis mantienen completa una entrada.
+6. En un condicional, identifica la **hipótesis completa** y la **conclusión completa**. Una igualdad simple no necesita una hipótesis inventada.
+7. Separa descomposición, evaluación y justificación. Entender qué dice una frase no la demuestra.
+
+La suma en $x+y=3$ combina números dentro de una condición, no proposiciones. En el nivel proposicional podemos tratar un enunciado cuantificado entero como una sola letra; eso no lo convierte en una fórmula atómica de la sintaxis de primer orden.
+
+
+<span id="from-reading-mathematical-structure-un-enunciado-universal-con-un-condicional-dentro"></span>
+
+### Un enunciado universal con un condicional dentro
+
+«Todo real estrictamente entre cero y uno es menor que dos» se traduce como
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+**EN:** “For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.” **DE:** „Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“ **ES:** «Para todo real equis, si cero es estrictamente menor que equis y equis es estrictamente menor que uno, entonces equis es estrictamente menor que dos».
+
+El cuantificador abarca el condicional entero y liga todas las apariciones de $x$. La fórmula está cerrada. Dentro de su alcance, la conectiva principal es $\Rightarrow$, también escrita $\to$. A la izquierda está la conjunción completa; a la derecha, $x<2$. $\land$ significa «y», no otra conectiva exterior.
+
+Conserva $0<x$ y $x<1$ en la traducción. Una demostración posterior quizá no necesite la cota inferior, pero quitarla al traducir cambia la hipótesis expresada. El condicional tampoco afirma que todo real esté entre cero y uno.
+
+Para $x=1/2$ se cumplen hipótesis y conclusión. Para $x=3$ falla la hipótesis, de modo que tres no es un contraejemplo aunque también falle la conclusión. Un contraejemplo debe satisfacer la **hipótesis entera** e incumplir la conclusión.
+
+Para demostrarlo, toma cualquier real $x$ que satisfaga la hipótesis. De $x<1$ y $1<2$, la transitividad del orden real da $x<2$. Este razonamiento para una entrada arbitraria demuestra la afirmación. La traducción y las comprobaciones numéricas no bastaban. La semántica clásica y el orden real habitual son los fundamentos aceptados aquí.
+
+
+<span id="from-reading-mathematical-structure-práctica-en-ambas-direcciones"></span>
+
+### Práctica en ambas direcciones
+
+<Exercise question="Descompón $x=0\lor((x>0)\land(x<1))$. Indica conectiva exterior, entradas completas y variables libres. Después traduce: x es cero y no es cierto que y sea cero.">
+
+La conectiva exterior es $\lor$. Sus entradas son $x=0$ y la conjunción completa $(x>0)\land(x<1)$. Todas las apariciones de $x$ siguen libres salvo que el contexto añada un cuantificador. La segunda traducción es $(x=0)\land\neg(y=0)$. Solo se niega la segunda igualdad; ambas variables siguen libres tal como se escribe.
+
+</Exercise>
+
+Traduce «Todo real mayor que uno es mayor que cero». Identifica la hipótesis y demuestra la afirmación sin enumerar ejemplos favorables. ¿Afirma que todo real es positivo?
+
+<details>
+<summary>Pista</summary>
+
+«Todo número con esta propiedad» contiene un condicional. Mantén el dominio fuera de ese condicional.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$. La hipótesis es $x>1$ y la conclusión, $x>0$. Para cualquier real $x$ mayor que uno, $1>0$ y la transitividad dan $x>0$. El cuantificador liga todas las apariciones de $x$. No afirma que todos los reales sean positivos: cero no cumple la hipótesis y no es un contraejemplo.
+
+</details>
+
+Al revisar una traducción, busca cambios de «si» a «y», de «alguno» a «todo», o de cotas estrictas a no estrictas. Señala las ambigüedades reales. Lectura posterior: [enunciados universales y dominios](../universal-statements-and-domains/#from-universal-statements-and-domains).
+
+<span id="from-quantifier-order"></span>
+
+## Orden de los cuantificadores
 
 Ana solo puede usar la llave roja y Ben solo la azul. Estas son todas las personas, llaves y autorizaciones. Cada persona tiene una llave, pero ninguna sirve para todos. Los mismos objetos responden a dos preguntas distintas.
 
@@ -37,7 +113,10 @@ $$
 
 Aquí se elige una llave que satisfaga toda la afirmación sobre cada persona. Roja falla para Ben y azul para Ana; se excluyen todos los candidatos. Un cuantificador anidado está dentro del alcance de otro. Dos afirmaciones cuantificadas separadas unidas por «y» no tienen por qué estar anidadas. Aquí ambas variables están ligadas y el primer alcance incluye el segundo cuantificador. Es un orden lógico, no temporal ni una promesa de algoritmo.
 
-## La misma distinción en los reales
+
+<span id="from-quantifier-order-la-misma-distinción-en-los-reales"></span>
+
+### La misma distinción en los reales
 
 $$
 \forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x).
@@ -51,11 +130,16 @@ $$
 
 Es falsa: para cualquier candidato $y$, toma el valor permitido $x=y$. Se exigiría $y>y$. La prueba descarta todos los candidatos. La regla $y=x+1$ no demuestra este orden porque cambia el testigo supuestamente fijo según la entrada posterior.
 
-## Los intercambios válidos tienen condiciones
+
+<span id="from-quantifier-order-los-intercambios-válidos-tienen-condiciones"></span>
+
+### Los intercambios válidos tienen condiciones
 
 Para dominios fijos e independientes $D,E$, dos universales adyacentes se pueden intercambiar: ambos órdenes comprueban cada par ordenado. Para cada dirección, toma un par arbitrario y aplica los dos requisitos originales a sus componentes. Si un dominio es vacío, ambos órdenes son verdaderos. Dos existenciales adyacentes también se intercambian: un par que sirve puede presentarse en cualquier orden. Si un dominio es vacío, ambos son falsos. Mantén $R(x,y)$ sin cambios; intercambiar cuantificadores no intercambia argumentos. Un dominio $E(x)$ no puede ponerse sin más antes de introducir $x$.
 
-### Práctica
+<span id="from-quantifier-order-práctica"></span>
+
+#### Práctica
 
 Explica el modelo completo rojo–azul sin símbolos.
 
@@ -134,7 +218,385 @@ Cada persona tiene una llave es verdadera por vacuidad. Existe una llave compart
 
 Más tarde, reconstruye la prueba y la refutación para reales arbitrarios en vez de probar números grandes.
 
-## Lectura en voz alta
+
+<span id="from-quantifier-order-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+
+<span id="from-witness-dependence"></span>
+
+## Dependencia de los testigos
+
+Si una amiga nombra un real antes de que respondas, «sumar uno» da otro mayor. Si tu respuesta debe servir para cualquier número que nombre después, la misma regla usa información que el requisito no permite.
+
+
+<span id="from-witness-dependence-lleva-un-registro-de-la-información"></span>
+
+### Lleva un registro de la información
+
+Al elegir un testigo, anota parámetros fijos, entradas arbitrarias anteriores dentro de cuyo alcance está la elección y testigos ya elegidos. Esa información está disponible. Las entradas universales posteriores no pueden cambiar una elección anterior. Depender está permitido, no exigido: elegir uno positivo puede ignorar una entrada anterior si solo se pide positividad. Una afirmación existencial no promete un método computable.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Están disponibles tanto $x$ como $y$. Elige $z=x+y$; la clausura de la suma real garantiza pertenencia y la elección verifica la igualdad. El argumento vale para cualquier par real.
+
+$$
+\forall x\in\mathbb R\;\exists z\in\mathbb R\;\forall y\in\mathbb R\;(z=x+y).
+$$
+
+Ahora $z$ puede usar $x$, pero debe permanecer fijo para todo $y$ posterior. Con $y=0$ se exige $z=x$; con $y=1$ se exige $z=x+1$. Un mismo valor no puede satisfacer ambas. Dos requisitos incompatibles descartan todos los candidatos; no se está generalizando desde una muestra.
+
+La elección posterior de un sobre puede usar una llave ya elegida: las elecciones existenciales anteriores pueden coordinarse. La ligadura es otra cuestión. Con un real fijo $c$, la regla $y=x+c$ puede usar $c$, aunque sus apariciones sigan sintácticamente libres si no hay cuantificador para $c$. El contexto fija su valor. Un testigo ligado puede depender de una entrada anterior sin volverse libre.
+
+La información permitida no basta para tener éxito. La constante $y=1$ no usa entradas prohibidas, pero falla en $y>x$ cuando $x=1$. La regla $y=x/2$ solo usa la entrada anterior, pero falla en la pertenencia a los enteros si $x=1$. Comprueba por separado información, pertenencia y predicado completo.
+
+<span id="from-witness-dependence-práctica"></span>
+
+#### Práctica
+
+Para todo real $x$ se pide un real positivo $y$. ¿Puedes elegir siempre uno?
+
+<details>
+<summary>Pista</summary>
+
+Poder usar una entrada no obliga a hacerlo.
+
+</details>
+
+<Exercise>
+
+Sí: uno es positivo y real para cualquier entrada. No se exige variación.
+
+</Exercise>
+
+¿Qué entradas puede usar el testigo suma en cada fórmula?
+
+<details>
+<summary>Pista</summary>
+
+Detente donde se introduce el testigo.
+
+</details>
+
+<Exercise>
+
+Ambas en la primera; solo la anterior en la segunda. La entrada universal posterior no puede modificar el testigo.
+
+</Exercise>
+
+Para $y>x$ en los reales, ¿está permitido $y=1$ y tiene éxito?
+
+<details>
+<summary>Pista</summary>
+
+Separa permiso y verdad.
+
+</details>
+
+<Exercise>
+
+Está permitido, pero falla con $x=1$ o mayor. $y=x+1$ está permitido y sirve para todas las entradas reales.
+
+</Exercise>
+
+Fija un real $c$. Justifica $y=x+c$ y explica si $c$ está ligado.
+
+<details>
+<summary>Pista</summary>
+
+Contexto no es cuantificador escrito.
+
+</details>
+
+<Exercise>
+
+La suma real usa $x$ disponible y $c$ fijo y cumple la igualdad. Fijar $c$ no liga sus apariciones en la fórmula.
+
+</Exercise>
+
+Se pide un entero $y$ con $2y=x$ para todo entero $x$. Revisa $y=x/2$.
+
+<details>
+<summary>Pista</summary>
+
+Prueba una entrada impar.
+
+</details>
+
+<Exercise>
+
+Con entrada uno sale un medio, que no es entero. Ningún entero se duplica hasta dar uno, por lo que la afirmación misma es falsa.
+
+</Exercise>
+
+Más tarde, reconstruye sin mirar el registro de información de ambas fórmulas de suma.
+
+
+<span id="from-witness-dependence-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+
+<span id="from-separate-and-shared-witnesses"></span>
+
+## Testigos separados y compartidos
+
+Añade una verde que ambos puedan usar: ahora se cumplen ambos requisitos. Con dos llaves maestras, cualquiera sirve como testigo compartido. Compartido significa que se mantiene fijo, no necesariamente que sea único.
+
+$$
+\underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
+$$
+
+$P,K$ son dominios fijos de personas y llaves; $H(p,k)$ significa que $p$ puede usar $k$. Para demostrar la implicación, supone S y fija una llave que proporciona. Toma cualquier persona permitida. La llave sirve para ella porque sirve para todas. Reutilízala como su testigo. No se exige que las elecciones sean distintas. Así, S implica T. El modelo completo rojo–azul refuta la recíproca.
+
+Más fuerte significa que el éxito compartido implica el separado. No significa valores de verdad opuestos en toda situación. Con verde ambas son verdaderas; si alguien no tiene ninguna llave utilizable, ambas son falsas. Una tabla finita completa puede establecer estas afirmaciones finitas; una muestra de un dominio infinito no resuelve todos los casos.
+
+<span id="from-separate-and-shared-witnesses-todos-los-casos-con-dominios-vacíos"></span>
+
+### Todos los casos con dominios vacíos
+
+| Personas | Llaves | Separado T | Compartido S |
+| --- | --- | --- | --- |
+| vacío | no vacío | verdadera | verdadera |
+| no vacío | vacío | falsa | falsa |
+| vacío | vacío | verdadera | falsa |
+
+Sin personas, la forma universal primero no tiene ninguna persona que falle. La compartida sigue necesitando una llave: cualquiera existente sirve por vacuidad, pero si no existe ninguna es falsa. Con personas y sin llaves, cada persona carece de testigo. La implicación de S a T sigue siendo válida en todos los casos. Una premisa verdadera proporciona una llave reutilizable; una premisa falsa hace verdadera la implicación.
+
+Para comparaciones reales, [el orden de los cuantificadores](../quantifier-order/#from-quantifier-order) demuestra que $y>x$ separado es verdadero y $y>x$ compartido es falso. Para $y\ge x$, por separado basta incluso $y=x$. El éxito compartido sigue fallando, pero $x=y$ ya no lo refuta: usa $x=y+1$.
+
+<span id="from-separate-and-shared-witnesses-práctica"></span>
+
+#### Práctica
+
+Todos pueden usar roja y azul. Evalúa ambas formas y la unicidad.
+
+<details>
+<summary>Pista</summary>
+
+Fija una y considera después la otra.
+
+</details>
+
+<Exercise>
+
+Ambas son verdaderas. Cualquiera es testigo compartido; la forma compartida no afirma unicidad.
+
+</Exercise>
+
+Construye un contramodelo completo a que separado implique compartido.
+
+<details>
+<summary>Pista</summary>
+
+Especifica todas las autorizaciones.
+
+</details>
+
+<Exercise>
+
+Exactamente Ana y Ben, exactamente roja y azul: Ana solo roja y Ben solo azul. Cada fila tiene un éxito, pero ninguna columna sirve para todos. Se descartan todos los candidatos compartidos.
+
+</Exercise>
+
+Demuestra la implicación válida sin símbolos.
+
+<details>
+<summary>Pista</summary>
+
+Reutiliza la llave proporcionada.
+
+</details>
+
+<Exercise>
+
+Fija una llave que se supone válida para todos. Úsala para cualquier persona. Sirve para esa persona arbitraria, lo que establece éxito separado. El argumento usa deliberadamente el mismo testigo.
+
+</Exercise>
+
+Sin personas y con una llave: evalúa y después retira la llave.
+
+<details>
+<summary>Pista</summary>
+
+El existencial inicial sigue exigiendo un objeto.
+
+</details>
+
+<Exercise>
+
+Al principio ambas son verdaderas. Tras retirarla, separado sigue siendo verdadero por vacuidad y compartido pasa a falso.
+
+</Exercise>
+
+Evalúa $y\ge x$ separado y compartido en todos los reales.
+
+<details>
+<summary>Pista</summary>
+
+La igualdad cambia la prueba útil.
+
+</details>
+
+<Exercise>
+
+Separado es verdadero con $y=x$. Compartido es falso: cualquier $y$ falla para el real $x=y+1$.
+
+</Exercise>
+
+Más tarde, reconstruye las tres filas de dominios vacíos y explica por qué ninguna invalida la implicación.
+
+
+<span id="from-separate-and-shared-witnesses-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+**EN:** One fixed witness for all inputs implies a witness for each input, but not conversely.
+
+**DE:** Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
+
+**ES:** Un testigo fijo para todas las entradas implica un testigo para cada entrada, pero no al revés.
+
+<span id="from-translating-quantified-statements"></span>
+
+## Traducir enunciados cuantificados
+
+«Cada estudiante ha leído un libro» permite elegir el libro para cada estudiante. «Hay un libro que todos han leído» exige un libro compartido. Para escribir una especificación, define los objetos y la relación antes de elegir símbolos.
+
+Sean $S$ los estudiantes y $B$ los libros; $R(s,b)$ significa que $s$ ha leído $b$. Mantén esa relación: no cambies sin advertirlo de lectura a propiedad.
+
+$$
+\forall s\in S\;\exists b\in B\;R(s,b).
+$$
+
+$$
+\exists b\in B\;\forall s\in S\;R(s,b).
+$$
+
+Lee la primera como «para cada estudiante, un libro que haya leído» y la segunda como «un libro leído por todos». Ninguna exige exactamente un libro. La primera no afirma que existan estudiantes. Sin estudiantes es verdadera; la segunda sigue exigiendo un libro real.
+
+
+<span id="from-translating-quantified-statements-escribir-y-volver-a-leer"></span>
+
+### Escribir y volver a leer
+
+Especifica cada dominio y la relación final. Decide qué requisito gobierna el resto y escribe cuantificadores con su alcance. Revisa cada variable: ¿ligada aquí o fija en el contexto? Lee la fórmula de nuevo y prueba una situación pequeña donde una alternativa tentadora difiera. Traducir y demostrar son tareas distintas. Conserva fielmente una afirmación falsa en vez de cambiar su orden para volverla verdadera.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Esto traduce «Todo par de reales tiene una suma real». Ambas entradas preceden al testigo. Su verdad usa además la clausura de la suma real; los cuantificadores solos no demuestran ese hecho aritmético.
+
+
+<span id="from-translating-quantified-statements-un-condicional-limita-el-requisito"></span>
+
+### Un condicional limita el requisito
+
+$$
+\forall s\in S\;\bigl(A(s)\Rightarrow\exists b\in B\;R(s,b)\bigr).
+$$
+
+$A(s)$ significa que asiste al seminario. Solo quienes asisten deben aportar un libro leído. Mover $\exists b$ fuera del condicional puede exigir un libro también a quienes no asisten. Toma un estudiante que no asiste y ningún libro: el condicional mostrado es verdadero, pero $\forall s\in S\;\exists b\in B\;(A(s)\Rightarrow R(s,b))$ es falso. Los paréntesis y los dominios vacíos revelan la diferencia. Restringir explícitamente $S$ a quienes asisten también da una traducción fiel.
+
+<span id="from-translating-quantified-statements-práctica"></span>
+
+#### Práctica
+
+Con personas $P$, llaves $K$ y uso $H$, traduce «Cada persona puede usar una llave».
+
+<details>
+<summary>Pista</summary>
+
+Primero la persona.
+
+</details>
+
+<Exercise>
+
+$\forall p\in P\;\exists k\in K\;H(p,k)$. La llave puede depender de la persona; no se exigen elecciones distintas.
+
+</Exercise>
+
+Traduce «Hay una llave que toda persona puede usar» con la misma relación.
+
+<details>
+<summary>Pista</summary>
+
+Mantén fija una llave.
+
+</details>
+
+<Exercise>
+
+$\exists k\in K\;\forall p\in P\;H(p,k)$. Una llave fija debe servir para todos; no tiene que ser única.
+
+</Exercise>
+
+Traduce y demuestra «Todo real tiene otro real estrictamente mayor».
+
+<details>
+<summary>Pista</summary>
+
+Introduce la entrada antes del testigo.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x)$. Para $x$ arbitrario elige la suma real $y=x+1$; la positividad de uno la hace mayor.
+
+</Exercise>
+
+Traduce «Hay un real igual a todos los reales» y evalúa.
+
+<details>
+<summary>Pista</summary>
+
+No cambies una afirmación falsa.
+
+</details>
+
+<Exercise>
+
+$\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y=x)$. Es falsa: cualquier $y$ propuesto falla con el real $x=y+1$.
+
+</Exercise>
+
+Traduce «Para todo real $x$ hay un real $y$ tal que para todo real $z$, $x+y=z$».
+
+<details>
+<summary>Pista</summary>
+
+Conserva las tres capas.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;\forall z\in\mathbb R\;(x+y=z)$. El testigo puede usar $x$, no el $z$ posterior. Es falsa: una suma fija no puede ser cero y uno.
+
+</Exercise>
+
+Más tarde, escribe de memoria ambas traducciones de los libros y vuelve a leerlas.
+
+
+<span id="from-translating-quantified-statements-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
 
 **EN:** For every x in D, there exists y in E such that R of x and y holds.
 

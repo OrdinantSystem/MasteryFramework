@@ -1,0 +1,116 @@
+---
+course: "analysis"
+chapter: "analysis-zero-propositions"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+additionalSources: [{"sourceId": "analysis-zero", "locations": ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md"], "pages": []}]
+locale: "en"
+title: "Statements and predicates"
+navTitle: "Statements and predicates"
+description: "First ask whether a sentence has a definite truth value."
+order: 1
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: []
+thumbnail: "logic"
+---
+
+## A statement can be false
+
+A statement has a definite truth value: true (1) or false (0). We do not have to know which one it is. Both “$2 + 3 = 5$” and “$2 + 3 = 6$” are statements; only the first is true.
+
+## An open variable leaves a question
+
+$P(x): x + 3 = 10$ is a predicate. Its truth depends on $x$. Specifying $x \in  \mathbb{N}$ restricts the domain but does not bind $x$. Substitute $x = 7$ to obtain a true statement, or $x = 2$ to obtain a false one. A quantifier can bind the variable instead.
+
+<Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
+
+The displayed $P(2)$ is the false equality $2+3=10$, not a redefinition of $P$ as its negation.
+
+## Check your classification
+
+A question or command is not a statement. The sentence “This sentence is false” cannot receive a consistent classical truth value; it is a paradox, not an ordinary example of a false statement. Try classifying an equation before attempting to prove it.
+
+## Substitution and truth
+
+For $P(x): x + 3 = 10$, choosing $x = 7$ gives a true statement; choosing $x = 4$ gives a false one. The expression did not change its rule: we supplied the missing input. By contrast, “there exists a natural $x$ with $x + 3 = 10$” already makes a complete claim. Its truth is settled by one witness, $x = 7$. Distinguish an input you have not chosen from a truth value you do not yet know.
+
+<Exercise question="Is $x^2 = 4$ a statement? What about $\exists x \in  \mathbb{N} : x^2 = 4$?">
+
+The first is a predicate with free $x$. The second is a true statement, witnessed by $x = 2$.
+
+</Exercise>
+
+## Claims, expressions, and requests
+
+“The sum of two numbers” is a phrase naming an object. $x+1$ is a numerical expression, not a claim. $x+1=3$ is a condition whose evaluation needs an input. The bare expression $7$ names a number; “Seven equals seven” and “Seven is greater than zero” make claims about it. A sentence need not contain symbols to be mathematical, and symbols alone need not form a proposition.
+
+Classify the **whole utterance**. “Prove that zero equals one” is a request, even though it mentions a false proposition. “Find all reals less than one” is an instruction; “Every real is less than one” is a false proposition, refuted by two. A question mentioning a claim remains a question.
+
+Meaning and referents come first. “This number is small” becomes definite if the number is seven and “small” is defined as less than ten. The repair must supply both the object and the threshold. A particular sealed card with a fixed integer already written on it differs from a future choice whose value and rule have not been specified. Hidden information does not mean an object has not been fixed.
+
+In ordinary real arithmetic, $1/0=2$ is not an ordinary false equality: its left side has no real value. A quotient would need a real number whose product with zero is one, but every such product is zero. Undefinedness is a failure of meaning under these arithmetic conventions, not a third truth value.
+
+## Truth, knowledge, and reasons
+
+Our classical setting accepts **bivalence**: a meaningful proposition has exactly one of two truth values. This is a foundation here, not a theorem proved on this page. $T/F$ and this site's $1/0$ are alternative labels, not numbers to add or multiply.
+
+A fixed card's number is either zero or not zero before the envelope opens. Finding five changes our knowledge, not the original truth value. Likewise, a room with three chairs in the morning and four in the afternoon gives different **time-indexed claims**, not one fixed proposition with two truth values. Assigning different inputs to an open predicate also evaluates different completed claims.
+
+A reason must reach as far as the conclusion. One witness proves an existential claim; one counterexample refutes a universal claim. To establish a universal claim, an arbitrary-input proof may be needed. For a finite domain, checking every member is also sufficient; a few selected successes in an infinite domain are not. For example, from any real $x<1$ and $1<2$, transitivity gives $x<2$ for that arbitrary input. Naming the logical structure alone would not give this order argument.
+
+## Free occurrences, scope, and assignments
+
+$\mathbb Z$ denotes integers and $\mathbb R$ real numbers. $x\in\mathbb R$ states membership, not equality. “Let $x$ be real” gives a domain and often introduces an **arbitrary but fixed** input in a proof. “Let $x=2$” supplies a specific value. Neither inserts a quantifier into the written formula.
+
+An **occurrence** is a place where a variable appears. A quantifier binds occurrences of its named variable in its **scope**, except where an inner quantifier binds that same variable. An occurrence with no binding quantifier is free. “Open” means at least one free occurrence; “closed” means none, not “no letters.”
+
+$$\forall x\in\mathbb R\;(x+y=y+x)$$
+
+Here both $x$ occurrences are bound, but $y$ remains free, even though ordinary commutativity makes the condition true for every real assignment to $y$. Truth for every assignment does not create a missing quantifier. Adding $\forall y\in\mathbb R$ closes it:
+
+$$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
+
+An assignment $y=0$ supplies an evaluation context, not syntactic binding. Actually substituting zero for $y$ produces a **different written formula**, with those occurrences replaced. Keep these operations separate.
+
+Similarly $\exists x\in\mathbb R\;(x=y)$ remains open in $y$, although every real assignment to $y$ supplies a matching witness. Existential quantification means at least one, not uniqueness. In $\forall x\in\mathbb R\;(x=y)$, assigning $y=0$ leaves the displayed $y$ free but gives a false contextual claim, refuted by $x=1$.
+
+<details>
+<summary>Notation readings: EN / DE / ES</summary>
+
+$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
+
+</details>
+
+## Independent checks
+
+Classify “One equals zero,” “Explain why one equals one,” and $7$. Repair the latter into two claims. Then repair $x=0$ in two different ways: by context and by quantification.
+
+<details>
+<summary>Hint</summary>
+
+Separate the action requested by a sentence from the claim mentioned inside it. For the repairs, distinguish choosing one input from talking about all inputs.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+“One equals zero” is a false proposition. “Explain …” is an instruction mentioning a true equality. Seven alone names a number; “Seven equals seven” and “Seven is greater than zero” are claims. For $x=0$, specify that $x$ names a particular real, for example zero, to evaluate it in context; $x$ remains free as written. Or write “Every real number equals zero,” a closed false proposition. Its falsity does not make it an instruction.
+
+</details>
+
+<Exercise question="In $\forall x\in\mathbb R\;(x<y)$, let y also be real. Which occurrences are bound? What changes if y is assigned zero? Compare with $\exists x\in\mathbb R\;(x=0)$ and with the words ‘Every integer is positive’.">
+
+Only $x$ is bound in the first formula; $y$ remains free. Assigning zero lets us evaluate it as false, with $x=1$ a counterexample, but does not bind $y$. The existential formula is closed and true with witness zero. “Every integer is positive” is a closed quantified claim even without a written letter; it is false with counterexample zero.
+
+</Exercise>
+
+<Exercise question="Translate ‘There is a real number at least zero and less than one’. Give a witness, then replace ‘there is’ by ‘every’ and give a verdict with a reason. What stays unchanged?">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ is true with witness zero. The universal version $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ is false because one fails the strict upper bound. Both are closed; the real domain and both comparisons stay unchanged. The quantifier changes whether one input or every input is required.
+
+</Exercise>
+
+Reconstruct the distinction between unknown, undefined, and unsupported: a sealed fixed card hides a truth value; division by zero has no real value; a lucky answer without an adequate reason may still be correct. [Reading mathematical structure](../reading-mathematical-structure/) brings these checks together.

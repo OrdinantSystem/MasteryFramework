@@ -27,6 +27,6 @@ for(const locale of ['en','de','es']){
   expected.push([a,b,c,a&&b,a&&b&&c,b||c,a||b||c,!(a&&b)||c,(a&&b)===c].map(value=>String(Number(value))));
  }
  assert.deepEqual(rows.slice(2),expected,`${locale}: all eight assignments and six derived columns are correct`);
- for(const file of ['neutralitaet-und-idempotenz','nullgesetze-und-konstanten','eindeutiges-komplement','de-morgan-und-doppelte-negation']){const source=await readFile(`${dir}/${file}.mdx`,'utf8');assert.ok(!source.includes('<Interactive'),'Formal worksheet proofs must not substitute an activity for derivation');assert.ok(source.includes('\\overset'),'Proofs retain rule annotations');}
+ for(const file of ['boolesche-grundgesetze','eindeutiges-komplement']){const source=await readFile(`${dir}/${file}.mdx`,'utf8');assert.ok(!source.includes('<Interactive'),'Formal worksheet proofs must not substitute an activity for derivation');assert.ok(source.includes('\\overset'),'Proofs retain rule annotations');}
 }
 console.log(`Verified Boolean models, NAND networks, complement uniqueness, parity boundaries, and ${analysisInventory.reduce((sum,names)=>sum+names.length,0)} localized Analysis lessons.`);

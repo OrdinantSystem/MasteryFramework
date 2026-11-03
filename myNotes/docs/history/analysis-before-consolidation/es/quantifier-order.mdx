@@ -1,0 +1,143 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Orden de los cuantificadores"
+navTitle: "Orden de los cuantificadores"
+description: "Orden de los cuantificadores."
+order: 27
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "existence-and-witnesses"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Ana solo puede usar la llave roja y Ben solo la azul. Estas son todas las personas, llaves y autorizaciones. Cada persona tiene una llave, pero ninguna sirve para todos. Los mismos objetos responden a dos preguntas distintas.
+
+| Persona | Roja | Azul |
+| --- | --- | --- |
+| Ana | sí | no |
+| Ben | no | sí |
+
+Sean $P$ las personas y $K$ las llaves; $H(p,k)$ significa que la persona $p$ puede usar la llave $k$. Lee todo lo que sigue a cada cuantificador como un bloque.
+
+$$
+\forall p\in P\;\exists k\in K\;H(p,k).
+$$
+
+Para cada persona existe una llave utilizable. Roja sirve para Ana y azul para Ben. Las elecciones pueden variar, pero no tienen que hacerlo.
+
+$$
+\exists k\in K\;\forall p\in P\;H(p,k).
+$$
+
+Aquí se elige una llave que satisfaga toda la afirmación sobre cada persona. Roja falla para Ben y azul para Ana; se excluyen todos los candidatos. Un cuantificador anidado está dentro del alcance de otro. Dos afirmaciones cuantificadas separadas unidas por «y» no tienen por qué estar anidadas. Aquí ambas variables están ligadas y el primer alcance incluye el segundo cuantificador. Es un orden lógico, no temporal ni una promesa de algoritmo.
+
+## La misma distinción en los reales
+
+$$
+\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x).
+$$
+
+Es verdadera: para un real arbitrario $x$, elige $y=x+1$. La clausura de la suma da un real y la positividad de uno da $y>x$. Estas razones cubren toda entrada, no solo ejemplos probados.
+
+$$
+\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y>x).
+$$
+
+Es falsa: para cualquier candidato $y$, toma el valor permitido $x=y$. Se exigiría $y>y$. La prueba descarta todos los candidatos. La regla $y=x+1$ no demuestra este orden porque cambia el testigo supuestamente fijo según la entrada posterior.
+
+## Los intercambios válidos tienen condiciones
+
+Para dominios fijos e independientes $D,E$, dos universales adyacentes se pueden intercambiar: ambos órdenes comprueban cada par ordenado. Para cada dirección, toma un par arbitrario y aplica los dos requisitos originales a sus componentes. Si un dominio es vacío, ambos órdenes son verdaderos. Dos existenciales adyacentes también se intercambian: un par que sirve puede presentarse en cualquier orden. Si un dominio es vacío, ambos son falsos. Mantén $R(x,y)$ sin cambios; intercambiar cuantificadores no intercambia argumentos. Un dominio $E(x)$ no puede ponerse sin más antes de introducir $x$.
+
+### Práctica
+
+Explica el modelo completo rojo–azul sin símbolos.
+
+<details>
+<summary>Pista</summary>
+
+Descarta cada candidato compartido.
+
+</details>
+
+<Exercise>
+
+Ana tiene roja y Ben azul. Roja falla para Ben y azul para Ana; cada persona tiene una, pero ninguna es compartida.
+
+</Exercise>
+
+Compara $\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y=x)$ y el orden compartido.
+
+<details>
+<summary>Pista</summary>
+
+Para igualdad compartida, prueba otro real.
+
+</details>
+
+<Exercise>
+
+La primera es verdadera con $y=x$. La compartida es falsa: para cualquier $y$, $x=y+1$ es real y distinto.
+
+</Exercise>
+
+¿Intercambiar dos universales demuestra que todos tienen todas las llaves?
+
+<details>
+<summary>Pista</summary>
+
+Equivalencia no es verdad.
+
+</details>
+
+<Exercise>
+
+No. Ambos órdenes comprueban todos los pares y son falsos en el taller, por ejemplo para Ana–azul.
+
+</Exercise>
+
+¿Por qué falla $y=x+1$ como prueba de un testigo compartido?
+
+<details>
+<summary>Pista</summary>
+
+¿Qué entrada viene después?
+
+</details>
+
+<Exercise>
+
+Selecciona un testigo para cada entrada; demuestra universal primero, no un testigo para todas.
+
+</Exercise>
+
+No hay personas ni llaves. Evalúa ambos órdenes.
+
+<details>
+<summary>Pista</summary>
+
+La verdad universal no proporciona objetos.
+
+</details>
+
+<Exercise>
+
+Cada persona tiene una llave es verdadera por vacuidad. Existe una llave compartida es falsa porque no hay llaves.
+
+</Exercise>
+
+Más tarde, reconstruye la prueba y la refutación para reales arbitrarios en vez de probar números grandes.
+
+## Lectura en voz alta
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

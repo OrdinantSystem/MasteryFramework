@@ -67,6 +67,10 @@ The [representation library](representation-library.md) documents available visu
 
 Publishing status in content controls local/static output; it does not authorize Git commit, push, or hosting deployment. A second subject needs the metadata/navigation work described in architecture/context, not a clone of the current course.
 
+## Consolidating Analysis lessons
+
+Read [analysis-organization.md](analysis-organization.md). Its twenty canonical pages and six sections are course units, not a mirror of original note folders. Keep distinct content and the historical archive; update section/paragraph dispositions and compatibility anchors when a topic moves. Use course-guides for overview review content rather than creating another recap lesson. Do not reintroduce retired source files into the content loader or index compatibility routes in search.
+
 ## Correcting an existing lesson
 
 Preserve its stable key. Update all affected languages and linked examples. A source correction may require correcting a preset, explanation, feedback, or recap as well. Review equivalent equations, then build and inspect the affected flow. Do not mark reviewed solely because generated equations or arithmetic tests pass.

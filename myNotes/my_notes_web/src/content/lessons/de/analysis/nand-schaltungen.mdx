@@ -1,19 +1,25 @@
 ---
 course: "analysis"
-chapter: "analysis-circuits"
+chapter: "analysis-boolean-applications"
 sourceId: "analysis-concepts-4"
 sourcePages: [1]
 locale: "de"
-title: "NAND: aus Formeln werden Schaltungen"
-navTitle: "NAND: aus Formeln werden Schaltungen"
-description: "NICHT, UND und ODER aus einem einzigen Gattertyp bauen."
-order: 45
+title: "NAND und logische Schaltungen"
+navTitle: "NAND und logische Schaltungen"
+description: "NAND und logische Schaltungen"
+order: 20
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["logische-verknuepfungen", "de-morgan-und-doppelte-negation"]
+prerequisites: ["eindeutiges-komplement"]
 thumbnail: "nand"
+sourceLocations: []
+additionalSources: []
 ---
+
+<span id="from-nand-schaltungen"></span>
+
+<span id="from-nand-schaltungen-eine-operation"></span>
 
 ## Eine Operation
 
@@ -21,9 +27,15 @@ thumbnail: "nand"
 
 NAND liefert nur dann 0, wenn beide Eingaben 1 sind. Die Schreibweisen | und ↑ sind üblich. Hier bezeichnet | NAND, während $a | n$ im früheren zahlentheoretischen Beispiel Teilbarkeit bezeichnete: Der Kontext zählt. Der kleine Kreis am Gatterausgang bedeutet Negation.
 
+
+<span id="from-nand-schaltungen-eingaben-ändern-und-den-leitungen-folgen"></span>
+
 ## Eingaben ändern und den Leitungen folgen
 
 <Interactive kind="logic" preset="nand" id="nand-lab" display />
+
+
+<span id="from-nand-schaltungen-drei-konstruktionen"></span>
 
 ## Drei Konstruktionen
 
@@ -32,6 +44,9 @@ NAND liefert nur dann 0, wenn beide Eingaben 1 sind. Die Schreibweisen | und ↑
 <Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
 
 Für NICHT wird $A$ mit beiden Eingängen eines NAND verbunden. UND nutzt den Ausgang des ersten NAND für beide Eingänge eines zweiten: zwei physische Gatter, obwohl der Term mehrfach geschrieben wird. ODER negiert zuerst beide Eingaben und verbindet sie dann mit NAND: drei Gatter. Weil NICHT, UND und ODER konstruierbar sind, ist NAND funktional vollständig.
+
+
+<span id="from-nand-schaltungen-einem-signal-folgen"></span>
 
 ## Einem Signal folgen
 

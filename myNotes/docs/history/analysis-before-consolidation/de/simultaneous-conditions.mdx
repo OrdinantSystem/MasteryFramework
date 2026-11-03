@@ -1,0 +1,81 @@
+---
+course: "analysis"
+chapter: "analysis-zero-connectives"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.3 Conjunction and disjunction/03 Multiple Simultaneous Conditions.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "de"
+title: "Mehrere gleichzeitige Bedingungen"
+navTitle: "Mehrere gleichzeitige Bedingungen"
+description: "Ein vollständiges Kriterium verwenden, ohne es mit einer einseitigen Garantie zu verwechseln."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["definitions-assumptions-results", "logische-verknuepfungen"]
+thumbnail: "logic"
+---
+
+Für diese Lektion heiße eine ganze Zahl **zulässig** genau dann, wenn sie positiv, kleiner als zehn und gerade ist. Das ist eine lokale Übungsbezeichnung, keine übliche Zahlenklasse. Sechs erfüllt alles. Neun scheitert an der Geradheit, zehn an der strengen oberen Grenze. Zwei erfüllte Bedingungen gleichen die dritte nicht aus.
+
+Übliche ganzzahlige Arithmetik und Ordnung werden vorausgesetzt. Eine ganze Zahl ist gerade, wenn Division durch zwei eine ganze Zahl ergibt. Null ist gerade, aber nicht positiv.
+
+## Ein strukturiertes Kriterium lesen
+
+Lege zunächst Bereich und Objekt fest. Jede Bedingung betrifft **dieselbe ganze Zahl**. Eine positive nichtganze Zahl unter zehn ist keine zulässige ganze Zahl. Positivität an neun und Geradheit an minus zwei zu prüfen zeigt keine Konjunktion über eine einzelne Zahl, erst recht nicht über eine bestimmte verdeckte Karte.
+
+$A$ bedeute positiv, $B$ kleiner als zehn, $C$ gerade. Sowohl
+
+$$(A\land B)\land C\qquad\text{und}\qquad A\land(B\land C)$$
+
+verlangen alle drei Aussagen. In der ersten Gruppierung müssen $A$ und $B$ gelten und zusätzlich $C$. In der zweiten müssen $B$ und $C$ gelten und zusätzlich $A$. Das beweist Assoziativität semantisch für beliebige Aussagen, unabhängig von vier Zahlenbeispielen. Auch reines einschließendes Oder erlaubt beide Gruppierungen: Jeweils muss mindestens eine von drei Eingaben wahr sein. Bei gemischten Verknüpfungen muss die Gruppierung gesondert geprüft werden.
+
+**EN:** $A\land(B\land C)$: “A holds, and both B and C hold.” **DE:** „A gilt, und B und C gelten beide“. **ES:** «se cumple a, y se cumplen be y ce». „Gleichzeitig“ bedeutet hier Erfüllung im angegebenen Zusammenhang, nicht zwingend Ereignisse im selben Augenblick. Konjunktion bindet keine freie Variable.
+
+Ein brauchbares Leseverfahren lautet: Bereich und Objekt festlegen; Bedingungen trennen; alle oder mindestens eine unterscheiden; innere Alternativen erhalten; Definition oder bloße Behauptung erkennen. Kommas allein bestimmen keine Verknüpfung.
+
+## Eine Bezeichnung nachweisen und auspacken
+
+„Genau dann, wenn“ gibt ein vollständiges Kriterium. Für sechs prüfen wir $6>0$, $6<10$ und dass $6/2=3$ ganzzahlig ist. Umgekehrt liefert die Zulässigkeit einer ganzen Zahl **jede** dieser drei Eigenschaften, aber keinen eindeutigen Wert.
+
+Die vollständige Liste lautet $2,4,6,8$. Die Grenzen lassen nur die ganzen Zahlen $1$ bis $9$ zu; davon sind genau diese vier gerade. Damit sind alle Kandidaten erfasst. Vier passende Beispiele allein würden Vollständigkeit nicht beweisen. Null scheitert an Positivität, zehn an der strengen Grenze. Die Definition legt die Bedeutung fest; das Kandidatenargument begründet die Liste.
+
+## Eine hinreichende Regel ist etwas anderes
+
+Eine gewöhnliche Regel laute: „Eine ganze Zahl erhält eine blaue Markierung, wenn sie positiv, unter zehn und gerade ist.“ Das sei ausdrücklich **keine** vollständige Definition der Markierung. Die Checkliste garantiert eine Markierung, verbietet aber keine zusätzlichen.
+
+Alle ganzen Zahlen blau zu markieren erfüllt die Regel. Trotzdem wäre neun markiert und ungerade. Aus einer Markierung allein folgt also keine Geradheit. „Markiert **genau dann, wenn** positiv, unter zehn und gerade“ würde das Auspacken erlauben.
+
+Definitionen verwenden manchmal verkürzt „wenn“ und meinen ein vollständiges Kriterium. Das ergibt sich aus dem definierenden Zusammenhang, nicht aus einer allgemeinen Gleichbedeutung von „wenn“ und „genau dann, wenn“. Schreibe „bedeutet“ oder „genau dann, wenn“, falls beide Richtungen gemeint sind. Benenne Mehrdeutigkeit, statt die Umkehrung zu ergänzen.
+
+## Alternativen und Fehler üben
+
+Eine ganze Zahl muss positiv und außerdem gerade **oder gleich drei** sein; die gesamte Alternative gehört zusammen. Schreibe das Kriterium und prüfe $3,6,-2,9$.
+
+<details>
+<summary>Hinweis</summary>
+
+Außen gibt es zwei Anforderungen. Die zweite kann auf zwei Arten erfüllt werden.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$P\land(E\lor T)$ mit $P$ positiv, $E$ gerade und $T$ gleich drei. Drei erfüllt Positivität und $T$, sechs Positivität und $E$. Minus zwei scheitert an Positivität, neun an beiden inneren Alternativen. Die Alternative ist ein gruppierter Punkt, keine Forderung nach allen drei Buchstaben.
+
+</details>
+
+<Exercise question="Eine ganze Zahl qualifiziert sich, wenn sie null oder positiv und kleiner als zehn ist. A, B, C benennen diese Aussagen in dieser Reihenfolge. Schreibe die Gruppierung. Qualifizieren sich null und zehn?">
+
+$A\lor(B\land C)$. Null qualifiziert sich durch $A$, ohne positiv sein zu müssen. Zehn verletzt $A$ und $C$ und erfüllt deshalb keine Route. Positivität von null zu verlangen würde die äußere Verknüpfung ändern.
+
+</Exercise>
+
+<Exercise question="Welche Fakten liefert die ursprüngliche Zulässigkeit? Muss die Zahl sechs sein? Beschreibe Nichtzulässigkeit und prüfe null, neun und zehn an den Grenzen.">
+
+Die Zahl ist positiv, unter zehn und gerade. Sie muss nicht sechs sein, denn zwei ist ebenfalls zulässig. Nichtzulässigkeit bedeutet $n\le0$ **oder** $n\ge10$ **oder** $n$ ist nicht gerade; weiterhin gilt $n\in\mathbb Z$. Null verletzt nur Positivität, neun nur Geradheit und zehn nur die strenge obere Grenze. Nicht alle Prüfungen müssen scheitern. [Zusammengesetzte Bedingungen negieren](../negating-combined-conditions/) beweist die zugrunde liegenden Gesetze.
+
+</Exercise>
+
+Erfinde eine Definition mit drei Bedingungen und ein Beispiel, das nur eine verfehlt. Ersetze dann „genau dann, wenn“ durch ein gewöhnliches einseitiges „wenn“. Welche Folgerung aus der Bezeichnung ist nicht mehr erlaubt?

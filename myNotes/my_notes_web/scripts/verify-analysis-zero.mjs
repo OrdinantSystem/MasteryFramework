@@ -5,7 +5,7 @@ import {readFile,readdir} from 'node:fs/promises';
 // They do not certify the mathematical proofs, translation quality or learner mastery.
 const coverage=JSON.parse(await readFile('../docs/analysis-zero-coverage.json','utf8'));
 assert.equal(coverage.status,'integrated');
-assert.equal(coverage.review.status,'agent-review-complete','Record the independent review gate separately from integration');
+assert.equal(coverage.review.status,'baseline-agent-review-complete','Record the independent review gate separately from integration');
 assert.equal(coverage.lessons.length,52,'Every authored Analysis 0 lesson has a disposition');
 assert.equal(coverage.concepts.length,28,'Every linked companion concept has a disposition');
 assert.equal(new Set(coverage.lessons.map(item=>item.source)).size,52);

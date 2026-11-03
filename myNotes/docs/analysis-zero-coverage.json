@@ -3,19 +3,13 @@
   "source": "analysis-zero",
   "source_scope": "Authored A0.1.1–A0.1.9 lessons and their linked concepts, not the entire prospective Analysis curriculum.",
   "preserved_existing_keys": [
-    "aequivalenz-und-paritaet",
-    "analysis-grundlagen-ueberblick",
     "aussagen-und-aussageformen",
     "beweissprache-und-methoden",
     "boolesche-grundgesetze",
-    "de-morgan-und-doppelte-negation",
     "eindeutiges-komplement",
     "implikation-und-kontraposition",
     "logische-verknuepfungen",
     "nand-schaltungen",
-    "neutralitaet-und-idempotenz",
-    "nullgesetze-und-konstanten",
-    "quantoren-und-negation",
     "widerspruch-und-irrationalitaet",
     "zahlenmengen"
   ],
@@ -23,7 +17,8 @@
     {
       "source": "A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md",
       "targets": [
-        "aussagen-und-aussageformen"
+        "aussagen-und-aussageformen",
+        "universal-statements-and-domains"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -39,7 +34,7 @@
     {
       "source": "A0.1.1 Mathematical propositions/02 Propositions versus Definitions.md",
       "targets": [
-        "definitions-assumptions-results"
+        "aussagen-und-aussageformen"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -56,7 +51,8 @@
     {
       "source": "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md",
       "targets": [
-        "aussagen-und-aussageformen"
+        "aussagen-und-aussageformen",
+        "universal-statements-and-domains"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -74,7 +70,8 @@
     {
       "source": "A0.1.1 Mathematical propositions/04 Truth Values.md",
       "targets": [
-        "aussagen-und-aussageformen"
+        "aussagen-und-aussageformen",
+        "universal-statements-and-domains"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -92,7 +89,9 @@
       "source": "A0.1.1 Mathematical propositions/05 Compound Propositions.md",
       "targets": [
         "logische-verknuepfungen",
-        "reading-mathematical-structure"
+        "implikation-und-kontraposition",
+        "simultaneous-conditions",
+        "quantifier-order"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -110,8 +109,7 @@
     {
       "source": "A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md",
       "targets": [
-        "equality-and-equations",
-        "order-comparisons"
+        "zahlenmengen"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -165,7 +163,7 @@
     {
       "source": "A0.1.2 Negation/03 Negating Inequalities.md",
       "targets": [
-        "negating-order-comparisons"
+        "logical-negation"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -182,7 +180,7 @@
     {
       "source": "A0.1.2 Negation/04 Negating Compound Statements.md",
       "targets": [
-        "negating-combined-conditions"
+        "logical-negation"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -199,7 +197,7 @@
     {
       "source": "A0.1.2 Negation/05 Double Negation.md",
       "targets": [
-        "double-negation"
+        "logical-negation"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -217,7 +215,7 @@
     {
       "source": "A0.1.2 Negation/06 De Morgan Laws.md",
       "targets": [
-        "negating-combined-conditions"
+        "logical-negation"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -236,7 +234,9 @@
     {
       "source": "A0.1.3 Conjunction and disjunction/01 Conjunction - And.md",
       "targets": [
-        "logische-verknuepfungen"
+        "logische-verknuepfungen",
+        "implikation-und-kontraposition",
+        "simultaneous-conditions"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -254,7 +254,9 @@
     {
       "source": "A0.1.3 Conjunction and disjunction/02 Inclusive Or.md",
       "targets": [
-        "logische-verknuepfungen"
+        "logische-verknuepfungen",
+        "implikation-und-kontraposition",
+        "simultaneous-conditions"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -292,7 +294,7 @@
     {
       "source": "A0.1.3 Conjunction and disjunction/04 Building Truth Tables.md",
       "targets": [
-        "building-truth-tables"
+        "logische-verknuepfungen"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
       "preserved_content": [
@@ -310,7 +312,7 @@
     {
       "source": "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md",
       "targets": [
-        "negating-combined-conditions",
+        "logical-negation",
         "simultaneous-conditions"
       ],
       "disposition": "Migrated substantive teaching content in all three locales; repeated exposition consolidated by purpose. Private learner/chat instructions, source-process boilerplate and personal assessment claims intentionally excluded. Existing unrelated worksheet proofs not edited.",
@@ -329,7 +331,7 @@
     {
       "source": "A0.1.4 Implication/01 The Hypothesis.md",
       "targets": [
-        "reading-conditionals"
+        "implikation-und-kontraposition"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Whole antecedent, conclusion-first wording, interval eligibility, domain separate from hypothesis, unused lower bound and stronger theorem after removal.",
@@ -339,7 +341,7 @@
     {
       "source": "A0.1.4 Implication/02 The Conclusion.md",
       "targets": [
-        "reading-conditionals"
+        "implikation-und-kontraposition"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Whole conclusion with conjunction versus inclusive disjunction, exact strict target, modus ponens justified from both premises, hidden card and inference limits.",
@@ -349,7 +351,7 @@
     {
       "source": "A0.1.4 Implication/03 Formal Implication.md",
       "targets": [
-        "material-implication-and-vacuity"
+        "implikation-und-kontraposition"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Classical material implication explicitly defined by all four cases; derived not-P-or-Q identity; seven/three/zero evaluations; arithmetic missing row; instance versus domain-wide theorem versus consequence; meaningfulness first.",
@@ -359,7 +361,7 @@
     {
       "source": "A0.1.4 Implication/04 When an Implication Is False.md",
       "targets": [
-        "counterexamples"
+        "beweissprache-und-methoden"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Negated implication identity proved exhaustively; same-object condition, full two-to-five failure region, strict boundary inclusion and compound assumptions.",
@@ -369,7 +371,7 @@
     {
       "source": "A0.1.4 Implication/05 Vacuous Truth.md",
       "targets": [
-        "material-implication-and-vacuity",
+        "implikation-und-kontraposition",
         "universal-statements-and-domains"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
@@ -410,7 +412,7 @@
     {
       "source": "A0.1.4 Implication/09 Implication versus Causation.md",
       "targets": [
-        "implication-and-model-assumptions"
+        "implikation-und-kontraposition"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Truth functionality distinct from causality/time; true false/false arithmetic conditional; fixed instance, mathematical theorem and empirical support; explicitly hypothetical switch/lamp rule; valid forward and contrapositive deductions, invalid reverse/inverse and observation limits.",
@@ -430,7 +432,7 @@
     {
       "source": "A0.1.5 Equivalence/02 Two Directions of Implication.md",
       "targets": [
-        "aequivalenz-und-paritaet",
+        "beweissprache-und-methoden",
         "biconditionals-and-equivalent-conditions"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
@@ -451,7 +453,7 @@
     {
       "source": "A0.1.5 Equivalence/04 Chains of Equivalences.md",
       "targets": [
-        "equivalence-chains"
+        "biconditionals-and-equivalent-conditions"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Adjacent-link convention distinct from arbitrary biconditional association; transitivity proof in truth-value and two-arrow terms; four justifications of linear chain; sign loss by squaring, candidate checking, nonzero division and lost zero; worksheet law restrictions preserved by link.",
@@ -481,7 +483,7 @@
     {
       "source": "A0.1.6 Universal quantifier/03 Bound Variables.md",
       "targets": [
-        "bound-variables-and-scope"
+        "universal-statements-and-domains"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Occurrence-level bound/free classification; fixed parameter y, assignment not binder; safe fresh t renaming versus y capture, declaration-and-governed-occurrences rule; optional inner shadowing example.",
@@ -491,7 +493,7 @@
     {
       "source": "A0.1.6 Universal quantifier/04 Quantifier Scope.md",
       "targets": [
-        "bound-variables-and-scope"
+        "universal-statements-and-domains"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "Outermost conjunction versus quantifier, exact scope boundaries, same-letter free occurrence outside, differently named free y inside, empty-domain counterexample for moving independent C out of universal conjunction; nonempty-domain proof supplied.",
@@ -501,6 +503,7 @@
     {
       "source": "A0.1.6 Universal quantifier/05 Universal Statements.md",
       "targets": [
+        "aussagen-und-aussageformen",
         "beweissprache-und-methoden",
         "universal-statements-and-domains"
       ],
@@ -512,7 +515,7 @@
     {
       "source": "A0.1.6 Universal quantifier/06 Counterexamples.md",
       "targets": [
-        "counterexamples"
+        "beweissprache-und-methoden"
       ],
       "disposition": "Consolidated into complete EN/DE/ES teaching pages; private tutor/assessment footer and repeated source scaffolding omitted, mathematical reasons retained.",
       "preserved_content": "One allowed defined failure refutes universal, exact domain/hypothesis/conclusion checks, compound interval and square examples, whole failure region, outside-domain candidate, fixed free parameters, heuristic versus proof, failed search and repair proof distinction.",
@@ -522,7 +525,8 @@
     {
       "source": "A0.1.7 Existential quantifier/01 Meaning of There Exists.md",
       "targets": [
-        "existence-and-witnesses"
+        "universal-statements-and-domains",
+        "existence-and-uniqueness"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -537,7 +541,8 @@
     {
       "source": "A0.1.7 Existential quantifier/02 Witnesses.md",
       "targets": [
-        "existence-and-witnesses"
+        "universal-statements-and-domains",
+        "existence-and-uniqueness"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -552,7 +557,7 @@
     {
       "source": "A0.1.7 Existential quantifier/03 Constructive Existence.md",
       "targets": [
-        "constructing-a-witness"
+        "existence-and-uniqueness"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -582,7 +587,7 @@
     {
       "source": "A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md",
       "targets": [
-        "counting-witnesses"
+        "existence-and-uniqueness"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -612,7 +617,7 @@
     {
       "source": "A0.1.8 Nested quantifiers/02 Dependence between Variables.md",
       "targets": [
-        "witness-dependence"
+        "quantifier-order"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -627,7 +632,7 @@
     {
       "source": "A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md",
       "targets": [
-        "separate-and-shared-witnesses"
+        "quantifier-order"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -642,7 +647,7 @@
     {
       "source": "A0.1.8 Nested quantifiers/04 Translating into Formal Quantifiers.md",
       "targets": [
-        "translating-quantified-statements"
+        "quantifier-order"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -657,9 +662,8 @@
     {
       "source": "A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md",
       "targets": [
-        "absolute-value-and-distance",
-        "reading-sequence-convergence",
-        "real-sequences"
+        "real-sequences",
+        "reading-sequence-convergence"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -674,8 +678,7 @@
     {
       "source": "A0.1.8 Nested quantifiers/06 Logical Dependency.md",
       "targets": [
-        "proving-sequence-convergence",
-        "reciprocal-sequence-convergence"
+        "reading-sequence-convergence"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -705,7 +708,7 @@
     {
       "source": "A0.1.9 Negation of quantified statements/02 Negating Existential Claims.md",
       "targets": [
-        "negating-existential-statements"
+        "negating-universal-statements"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -735,7 +738,7 @@
     {
       "source": "A0.1.9 Negation of quantified statements/04 Switching Quantifier Types.md",
       "targets": [
-        "negating-quantified-statements-step-by-step"
+        "negating-nested-statements"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -750,9 +753,8 @@
     {
       "source": "A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md",
       "targets": [
-        "negating-quantified-inequalities",
-        "negating-sequence-convergence",
-        "no-real-limit"
+        "negating-universal-statements",
+        "negating-sequence-convergence"
       ],
       "disposition": "Migrated into focused new EN/DE/ES counterparts; repeated examples integrated without removing distinct practice. Private tutoring/progress/source-preview boilerplate omitted; mathematical assumptions and source-draft review boundary retained in metadata and this receipt.",
       "preserved_content": [
@@ -770,7 +772,7 @@
       "id": "FND-LOG-TABLE-001",
       "source": "Truth Tables.md",
       "targets": [
-        "building-truth-tables"
+        "logische-verknuepfungen"
       ],
       "contribution": "Canonical systematic construction, worked intermediate table and unrestricted-versus-realizable distinction consolidated once.",
       "source_sha256": "44d15e245d919600f400ac6fe8e6025b8d8447384cde2b48e3d2f48dced83375"
@@ -779,8 +781,8 @@
       "id": "FND-REL-ORDER-001",
       "source": "Inequality and Order Conventions.md",
       "targets": [
-        "negating-order-comparisons",
-        "order-comparisons"
+        "logical-negation",
+        "zahlenmengen"
       ],
       "contribution": "Multilingual strict/non-strict comparison readings, endpoint chains and domain boundary carried into order pages.",
       "source_sha256": "2e3e6c158a0617f904ba571197546b7f492439341737f9769f47a9687ea54b27"
@@ -789,7 +791,6 @@
       "id": "FND-LOG-UNIQUE-001",
       "source": "Existence and Uniqueness.md",
       "targets": [
-        "counting-witnesses",
         "existence-and-uniqueness"
       ],
       "contribution": "Canonical two-obligation meaning; explicitly limits Levin attribution to existential background, not independent verification of uniqueness.",
@@ -799,10 +800,8 @@
       "id": "FND-LOG-EXISTS-001",
       "source": "Existential Quantification and Witnesses.md",
       "targets": [
-        "constructing-a-witness",
-        "counting-witnesses",
         "existence-and-uniqueness",
-        "existence-and-witnesses"
+        "universal-statements-and-domains"
       ],
       "contribution": "Compact four-check construction, candidate domain traps and elementary constructive/classical distinction; consolidates five lessons without replacing their practice.",
       "source_sha256": "81ea8a585391129dc4be079f6913585d3f7060c160d9efab384c04b7bc399c7e"
@@ -811,8 +810,7 @@
       "id": "FND-LOG-NEG-001",
       "source": "Logical Negation.md",
       "targets": [
-        "logical-negation",
-        "negating-order-comparisons"
+        "logical-negation"
       ],
       "contribution": "Truth reversal and pointwise domain safeguard; equality notation separated from derived comparison rules and trichotomy proof.",
       "source_sha256": "ec6388c81a9f3a726274e234432d804c288ccafd8b871cde610bbca943ae3ce0"
@@ -821,7 +819,7 @@
       "id": "FND-LOG-DEF-001",
       "source": "Definitions Assumptions and Results.md",
       "targets": [
-        "definitions-assumptions-results"
+        "aussagen-und-aussageformen"
       ],
       "contribution": "Role glossary, definition/application distinction and existence/uniqueness safeguard integrated with substantive examples.",
       "source_sha256": "2933a8b793ecb7d70d6aa3699c26ec2b299c78c08b295f834749785c49f3e78e"
@@ -839,7 +837,7 @@
       "id": "FND-REL-EQ-001",
       "source": "Equality and Equation Conventions.md",
       "targets": [
-        "equality-and-equations"
+        "zahlenmengen"
       ],
       "contribution": "Equality foundations, meaningful substitution, valid/faulty chains, := role distinction and approximate-equality precision caveat.",
       "source_sha256": "070700a22abaccf2e24f64075d684254607018667f1c1ad1507d8c0f176276e6"
@@ -848,7 +846,7 @@
       "id": "FND-LOG-DEMORGAN-001",
       "source": "De Morgan Laws for Propositions.md",
       "targets": [
-        "negating-combined-conditions"
+        "logical-negation"
       ],
       "contribution": "Canonical exhaustive four-case semantic proof, compound substitution and layer-by-layer scope treatment; no numbered-law ordering assumed.",
       "source_sha256": "bdb39343ccf62fe73df3f6c7bbac53372a3a3817d2e4f136aef9c25308f059e4"
@@ -876,9 +874,7 @@
       "source": "Convergence of a Real Sequence to a Specified Limit.md",
       "targets": [
         "negating-sequence-convergence",
-        "proving-sequence-convergence",
-        "reading-sequence-convergence",
-        "reciprocal-sequence-convergence"
+        "reading-sequence-convergence"
       ],
       "contribution": "Typed dependency route from nesting, sequence and distance; constant/early-exception proofs do not need Archimedean property; optional reciprocal does. Nonminimal thresholds and fixed versus bound parameters explicit.",
       "source_sha256": "010f52cc36f584a51a376c37a6339ac338f74d94f0bb2042fed7b468d50a24a8"
@@ -887,7 +883,6 @@
       "id": "FND-LOG-CONTRAEQ-001",
       "source": "Equivalence of a Conditional and Its Contrapositive.md",
       "targets": [
-        "implication-and-model-assumptions",
         "implikation-und-kontraposition"
       ],
       "contribution": "Unique-false-case equivalence proof, converse/inverse paired result, truth preservation for false originals and same-domain proof license.",
@@ -898,7 +893,7 @@
       "source": "Mathematical Propositions and Truth Values.md",
       "targets": [
         "aussagen-und-aussageformen",
-        "definitions-assumptions-results"
+        "universal-statements-and-domains"
       ],
       "contribution": "Classical bivalence, unknown/free/undefined boundaries, T/F and 1/0 encoding, logical proposition versus textbook result.",
       "source_sha256": "8ee97574a9a8ce645c796f780dc921f0e62a436dff7aa1ef0749907d06cf437b"
@@ -908,8 +903,9 @@
       "source": "Atomic and Compound Statements.md",
       "targets": [
         "logische-verknuepfungen",
-        "reading-mathematical-structure",
-        "simultaneous-conditions"
+        "implikation-und-kontraposition",
+        "simultaneous-conditions",
+        "quantifier-order"
       ],
       "contribution": "Relative propositional atomicity, connective readings and grouping; unique semantic OR associativity explanation retained alongside AND.",
       "source_sha256": "67fa036280c3a79e799c053fa89562487eb747383741730a2c5ff521d84a7d4e"
@@ -918,11 +914,8 @@
       "id": "FND-LOG-NEGQUANT-001",
       "source": "Negating Quantified Statements.md",
       "targets": [
-        "negating-existential-statements",
-        "negating-nested-statements",
-        "negating-quantified-inequalities",
-        "negating-quantified-statements-step-by-step",
-        "negating-universal-statements"
+        "negating-universal-statements",
+        "negating-nested-statements"
       ],
       "contribution": "Collects both semantic dual-law proofs, four real comparison complements, finite nested chain, full conditional truth table and domain-preserving procedure. A useful reference, not replacement for independent exercises.",
       "source_sha256": "29b0706b968c5521e456e6db3f15a86b76294212a289631267cc90b3930f4096"
@@ -931,7 +924,8 @@
       "id": "FND-LOG-OPEN-001",
       "source": "Open Sentences Variables and Domains.md",
       "targets": [
-        "aussagen-und-aussageformen"
+        "aussagen-und-aussageformen",
+        "universal-statements-and-domains"
       ],
       "contribution": "Scope and free occurrences, including inner-quantifier shadowing exception; assignment versus actual substitution versus quantifier binding.",
       "source_sha256": "b4bf609517f105743dee2cb204d49258cfbc20718f12af583e2bd5fa80159ec7"
@@ -940,7 +934,7 @@
       "id": "FND-LOG-QUANT-001",
       "source": "Quantifiers and Scope - First Reading.md",
       "targets": [
-        "bound-variables-and-scope"
+        "universal-statements-and-domains"
       ],
       "contribution": "Binding versus assignment, closure, scope boundaries, safe renaming/capture and inner-binder ownership; full existence/order teaching remains sibling scope.",
       "source_sha256": "3b4cce77417aedaf3996f0c1f319a91cf1c233def6f7256e915b32be5ed08d09"
@@ -949,7 +943,7 @@
       "id": "FND-LOG-COUNTER-001",
       "source": "Counterexamples to Universal Claims.md",
       "targets": [
-        "counterexamples"
+        "beweissprache-und-methoden"
       ],
       "contribution": "Three conditional-refutation checks for same object, parameter consistency, search versus proof and independent repair proof.",
       "source_sha256": "716d26f749df3dcc571d7026645550839bcfde516c1f109705871b6d5b58a1c9"
@@ -958,7 +952,7 @@
       "id": "FND-REAL-DIST-001",
       "source": "Absolute Value and Distance on the Real Line.md",
       "targets": [
-        "absolute-value-and-distance"
+        "real-sequences"
       ],
       "contribution": "Unique substantial addition: defines displacement versus distance, proves symmetry and zero-distance iff equal by signs, and derives strict open-interval equivalence L-epsilon<t<L+epsilon by two sign cases. Preserve this derivation on distance page; no triangle inequality or metric theory needed. Source has non-strict comparison; strict variant is authored proof, not verbatim attribution.",
       "source_sha256": "ab587673f35449b336c35063d7983096074b80cd49ed60308529f9e6dfaef04e"
@@ -967,8 +961,7 @@
       "id": "FND-LOG-COND-001",
       "source": "Conditionals Hypotheses and Conclusions.md",
       "targets": [
-        "material-implication-and-vacuity",
-        "reading-conditionals"
+        "implikation-und-kontraposition"
       ],
       "contribution": "Unified conditional roles, whole antecedent/consequent parsing, modus ponens reasoning, truth-table/vacuity/meaningfulness safeguards.",
       "source_sha256": "6c1872b22b127f15d3d3269ecff42b41faa748a9e40168f8612a081b4fc6b3b0"
@@ -977,7 +970,7 @@
       "id": "FND-LOG-DOUBLE-001",
       "source": "Double Negation.md",
       "targets": [
-        "double-negation"
+        "logical-negation"
       ],
       "contribution": "Classical two-case proof, false-original case, same-input/domain application; not universal across logics.",
       "source_sha256": "1c8510c00245d0561db0a31eb5951bfe5ddb87120938c8d528350798cd24b564"
@@ -986,7 +979,7 @@
       "id": "FND-LOG-PARSE-001",
       "source": "Logical Structure Reading Procedure.md",
       "targets": [
-        "reading-mathematical-structure"
+        "quantifier-order"
       ],
       "contribution": "Seven-step reading procedure, faithful universal conditional translation preserving redundant hypothesis, parse/evaluation/justification separation.",
       "source_sha256": "36f4e636285db6fca1a72f1fef883713bbd285c36d56d053e2f43a90a71ebe10"
@@ -995,8 +988,7 @@
       "id": "ANA-SEQ-NOTCONV-001",
       "source": "Deriving Negation of Sequence Convergence.md",
       "targets": [
-        "negating-sequence-convergence",
-        "no-real-limit"
+        "negating-sequence-convergence"
       ],
       "contribution": "Typed prerequisite edges distinguish theorem, conditional definition, real-order structure, positive convergence definition and dependency technique. Full six-stage derivation and target distinction match long lesson, with clearer explanation of finite illustration versus general proof.",
       "source_sha256": "74d3da96a87e250050a416b819c3d7b617510ee3dafccd2b9a35dc83594d95fc"
@@ -1006,11 +998,7 @@
       "source": "Nested Quantifiers and Dependence.md",
       "targets": [
         "negating-nested-statements",
-        "negating-quantified-statements-step-by-step",
-        "quantifier-order",
-        "separate-and-shared-witnesses",
-        "translating-quantified-statements",
-        "witness-dependence"
+        "quantifier-order"
       ],
       "contribution": "Justifies same-kind swaps for fixed independent domains in both directions, including empty-domain truth conditions; mixed-order implication valid with empty domains. Clarifies binding versus dependence and no algorithm guarantee.",
       "source_sha256": "b6afd780883a0d84ec01a38e921c7ad0f535e8be9082bccadea9812c861c6b20"
@@ -1019,8 +1007,8 @@
       "id": "FND-LOG-ALL-001",
       "source": "Universal Quantification.md",
       "targets": [
+        "aussagen-und-aussageformen",
         "beweissprache-und-methoden",
-        "bound-variables-and-scope",
         "universal-statements-and-domains"
       ],
       "contribution": "Universal truth condition with fixed other parameters, empty restriction distinct from universe, arbitrary-element proof without existential import.",
@@ -1030,7 +1018,7 @@
       "id": "FND-LOG-EQUIVCHAIN-001",
       "source": "Chains of Logical Equivalences.md",
       "targets": [
-        "equivalence-chains"
+        "biconditionals-and-equivalent-conditions"
       ],
       "contribution": "Chain abbreviation versus proved transitivity, equality versus equivalence, unchanged domain and reversible-operation audit.",
       "source_sha256": "75de6d21f50b795f330331512f6e3eb667ab70dc6deca26b9c776b4caeaf51c9"
@@ -1039,7 +1027,7 @@
       "id": "FND-LOG-EQUIV-001",
       "source": "Logical Equivalence and Two Directions.md",
       "targets": [
-        "aequivalenz-und-paritaet",
+        "beweissprache-und-methoden",
         "biconditionals-and-equivalent-conditions"
       ],
       "contribution": "Biconditional matching values versus all-assignments equivalence, complete two-direction characterization, arithmetic pointwise proof and necessary/sufficient language.",
@@ -1051,12 +1039,48 @@
     "Duplicate explanations are consolidated, retaining distinct mathematical examples, proof obligations and practice.",
     "Original source files and PDF materials remain private; original Obsidian lessons remain preserved."
   ],
-  "review_status": "Independent agent reviews completed and their corrections checked; human expert review is not claimed.",
+  "review_status": "Independent agent reviews describe the pre-consolidation teaching baseline. Reorganization preservation, editorial checks and build/browser evidence are recorded separately; no new independent expert review is claimed.",
   "review": {
-    "status": "agent-review-complete",
+    "status": "baseline-agent-review-complete",
     "mdx_files_fully_read": 129,
     "findings_resolved": 14,
     "human_expert_review": false,
     "limits": "The initial audit fully read all52source lessons and28concepts. The independent destination review fully read129authoredMDXfiles; its final slice directly reread5original lessons and assessed11source mappings against the detailed audit. Builds and finite checks are not proof certification."
-  }
+  },
+  "compatibility_existing_keys": [
+    "absolute-value-and-distance",
+    "aequivalenz-und-paritaet",
+    "analysis-grundlagen-ueberblick",
+    "bound-variables-and-scope",
+    "building-truth-tables",
+    "constructing-a-witness",
+    "counterexamples",
+    "counting-witnesses",
+    "de-morgan-und-doppelte-negation",
+    "definitions-assumptions-results",
+    "double-negation",
+    "equality-and-equations",
+    "equivalence-chains",
+    "existence-and-witnesses",
+    "implication-and-model-assumptions",
+    "material-implication-and-vacuity",
+    "negating-combined-conditions",
+    "negating-existential-statements",
+    "negating-order-comparisons",
+    "negating-quantified-inequalities",
+    "negating-quantified-statements-step-by-step",
+    "neutralitaet-und-idempotenz",
+    "no-real-limit",
+    "nullgesetze-und-konstanten",
+    "order-comparisons",
+    "proving-sequence-convergence",
+    "quantoren-und-negation",
+    "reading-conditionals",
+    "reading-mathematical-structure",
+    "reciprocal-sequence-convergence",
+    "separate-and-shared-witnesses",
+    "translating-quantified-statements",
+    "witness-dependence"
+  ],
+  "organization": "Six course sections and20canonical lessons; source labels are provenance, not learner navigation. See analysis-organization-coverage.json for the complete former-page/section dispositions."
 }

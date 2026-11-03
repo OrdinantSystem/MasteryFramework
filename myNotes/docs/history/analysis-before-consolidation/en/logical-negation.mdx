@@ -1,0 +1,84 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/01 Logical Negation.md", "A0.1.2 Negation/02 Negating Equality.md"]
+locale: "en"
+title: "Logical negation"
+navTitle: "Logical negation"
+description: "Deny the same whole claim without changing its objects or domain."
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "equality-and-equations"]
+thumbnail: "logic"
+---
+
+A card bears three. “Its number is greater than three” is false, but “its number is less than three” is false too. These are not negations of each other. The correct denial, “its number is not greater than three,” includes the equality case.
+
+## Definition of negation
+
+For a meaningful classical proposition $P$, $\neg P$ is true when $P$ is false and false when $P$ is true. Both directions matter. The following is the definition, not a rule inferred from observing cards.
+
+| $P$ | $\neg P$ |
+|---|---|
+| 1 | 0 |
+| 0 | 1 |
+
+The digits encode true and false; they are not arithmetic instructions. A safe first wording is “It is not the case that [the whole original claim].” Shorten it only after identifying its scope.
+
+**EN:** $\neg P$: “not P; it is not the case that P.” **DE:** „nicht P; es ist nicht der Fall, dass P gilt“. **ES:** «no pe; no es cierto que pe se cumpla».
+
+“The card is not three” does not change the card. If it bears two or four, the denial is true in either case. “The card is two” cannot replace that denial: at four both equalities would be false. One allowed case in which the original and a proposed negation agree disproves the proposal. Several successful samples do not prove it for every allowed input.
+
+## Equality and its denial
+
+For expressions that denote meaningful objects in the stated setting,
+
+$$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
+
+$\ne$ is notation for “not equal.” $\Leftrightarrow$ reads “if and only if” and here records agreement in every case. To justify the second equivalence directly: if the values are equal, “unequal” is false and its denial true; if unequal, “unequal” is true and its denial false. Those exhaust the classical cases.
+
+**EN:** $a\ne b$: “a is not equal to b.” **DE:** „a ist ungleich b“. **ES:** «a es distinto de be».
+
+For real $x$, denying $x+2=5$ gives $x+2\ne5$. That completes the negation; solving is separate. The input $2$ produces four and the input $4$ produces six, so both satisfy the denial. Replacing equality with “greater than” loses the first input. Unequal does not select an order, and equality can be used even for objects with no specified order.
+
+Logical negation acts on claims. Arithmetic negation takes a number to its negative. Denying an equation does not change the signs of its terms. Different written expressions such as $2+1$ and $3$ can still denote equal values.
+
+## Knowledge, meaningfulness, and domain
+
+A sealed fixed card can bear zero even if nobody has established that it does. “Not proved $P$” and “not known $P$” concern knowledge; neither establishes $\neg P$. There is no third truth value called unknown in this classical setting.
+
+A switch with low, medium, and high settings is **not high** in both low and medium mode. “Low” alone leaves a case out. Likewise, if a door can be partly open, “not fully open” need not mean “closed.” Fix the meaning before negating it.
+
+Negation does not turn an instruction into a proposition or repair undefined division. In ordinary real arithmetic, $1/0$ denotes no real value, so replacing $1/0=3$ by $1/0\ne3$ does not produce a well-defined true comparison.
+
+For an open condition, negation works **pointwise** at the same allowed assignment. It does not bind free variables or enlarge the domain.
+
+## Practice
+
+Only $0,1,2$ are allowed. Negate $x=1$, list the satisfying inputs, and say whether $x$ becomes bound. Then negate $x=2$ in the same domain.
+
+<details>
+<summary>Hint</summary>
+
+Keep the allowed list fixed. A quantified statement about all inputs is different from checking an open condition at each input.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+$x\ne1$ is satisfied by $0$ and $2$; $x\ne2$ by $0$ and $1$. No quantifier was added, so $x$ remains free. Three is not an allowed example. Exhausting this finite domain justifies these lists; it does not expand them to all reals.
+
+</details>
+
+<Exercise question="Negate ‘the fixed card bears zero’. Why is ‘it bears one’ insufficient? May you infer the denial merely because the envelope is closed?">
+
+The denial is “the fixed card does not bear zero.” A card bearing two makes both “zero” and “one” false, disproving the proposed replacement. A closed envelope supplies no evidence for either truth value: it hides a fixed integer rather than changing it.
+
+</Exercise>
+
+Compare the inputs “Write three,” “Three equals three,” and “One divided by zero equals three.” Only the middle one is a meaningful proposition to which this truth-reversing definition applies. [Comparison negations](../negating-order-comparisons/) treats the boundary rules separately.

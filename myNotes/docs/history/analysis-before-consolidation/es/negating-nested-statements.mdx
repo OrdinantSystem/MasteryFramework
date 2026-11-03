@@ -1,0 +1,126 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negar enunciados anidados"
+navTitle: "Negar enunciados anidados"
+description: "Negar enunciados anidados."
+order: 33
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-existential-statements", "quantifier-order", "negating-order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/03 Negating Nested Quantifiers.md#03 Negating Nested Quantifiers", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+«Cada estudiante puede leer algún libro del estante» falla si uno no puede leer ninguno. «Hay un libro del estante que todos pueden leer» falla si cada libro propuesto tiene un estudiante que no puede leerlo. Ese estudiante puede variar con el libro. Los éxitos separados no proporcionan necesariamente un libro compartido.
+
+## De fuera adentro en un dominio finito
+
+Sea $D=\{1,2\}$. La afirmación $\forall x\in D\;\exists y\in D\;(y>x)$ falla en $x=2$: ningún $y$ permitido es mayor. Deriva ese fallo conservando como bloque toda la existencia interior.
+
+$$
+\begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
+$$
+
+El primer paso niega todos los casos eligiendo una entrada fallida. El segundo dice que ningún testigo sirve para ella, así que falla cada candidato. El último incluye igualdad en no mayor. Elige dos una vez y mantenlo fijo al comprobar uno y dos. Cambiar tipos de cuantificador en su lugar no invierte el orden ni intercambia argumentos.
+
+## Empezar por existencia
+
+$$
+\neg(\exists x\in D\;\forall y\in D\;(y<x))\ \Longleftrightarrow\ \forall x\in D\;\exists y\in D\;(y\ge x).
+$$
+
+El original pide un $x$ estrictamente mayor que todo miembro, incluido él mismo; no es la condición habitual de máximo no estricto. Para cualquier candidato $x$, la prueba $y=x$ lo refuta. La negación es verdadera eligiendo ese mismo valor permitido como $y$. En dominio vacío, el original es falso y la negación verdadera por vacuidad; un universal exterior sin casos no requiere proporcionar testigos.
+
+Cambiar el primer dominio finito por todos los reales vuelve verdadero el original de un miembro mayor, sumando uno, y falsa su negación correcta. El patrón lógico no cambia, pero la verdad depende del dominio. Una negación simbólica correcta no demuestra que el fallo ocurra.
+
+### Práctica
+
+Niega: Cada estudiante de esta clase puede leer algún libro de este estante. Mantén ambas restricciones.
+
+<details>
+<summary>Pista</summary>
+
+Elige primero al estudiante que falla.
+
+</details>
+
+<Exercise>
+
+Algún estudiante de esta clase no puede leer ningún libro de este estante. Un estudiante queda fijo mientras todos los libros del estante fallan para él.
+
+</Exercise>
+
+Niega: Hay un libro del estante que todos los estudiantes de la clase pueden leer. ¿Debe fallar un mismo estudiante en todos los libros?
+
+<details>
+<summary>Pista</summary>
+
+Primero libro, después estudiante que falla.
+
+</details>
+
+<Exercise>
+
+Cada libro del estante tiene un estudiante de la clase que no puede leerlo. El estudiante puede depender del libro. Un modelo como rojo–azul puede dar a cada estudiante un libro legible sin ninguno compartido.
+
+</Exercise>
+
+Niega $\forall x\in D\;\exists y\in D\;(y=x)$ para $D=\{1,2\}$ y evalúa.
+
+<details>
+<summary>Pista</summary>
+
+La propia entrada es un testigo permitido.
+
+</details>
+
+<Exercise>
+
+$\exists x\in D\;\forall y\in D\;(y\ne x)$. Original verdadero con $y=x$; negación falsa porque cada candidato $x$ se prueba a sí mismo.
+
+</Exercise>
+
+Corrige la supuesta negación de todo real tiene otro mayor: «Para todo real ye, existe un real equis al menos ye».
+
+<details>
+<summary>Pista</summary>
+
+La propuesta es verdadera, igual que el original.
+
+</details>
+
+<Exercise>
+
+La negación real es $\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$, falsa porque $y=x+1$ derrota cualquier $x$ propuesto. La propuesta permite indebidamente que $x$ responda a $y$.
+
+</Exercise>
+
+Niega: Cada estudiante tiene un estante y puede leer todos los libros de ese estante.
+
+<details>
+<summary>Pista</summary>
+
+Mantén el dominio de libros ligado al estante.
+
+</details>
+
+<Exercise>
+
+Existe un estudiante tal que para todo estante hay un libro de ese estante que no puede leer. Fija al estudiante; se propone un estante; el libro fallido puede depender de él.
+
+</Exercise>
+
+Más tarde, reconstruye ambos ejemplos finitos y explica después qué cambia en todos los reales.
+
+## Lectura en voz alta
+
+**EN:** Some x in D has every y in D at most x.
+
+**DE:** Es gibt ein x in D, sodass jedes y in D höchstens x ist.
+
+**ES:** Existe un equis en D tal que todo ye en D es como máximo equis.

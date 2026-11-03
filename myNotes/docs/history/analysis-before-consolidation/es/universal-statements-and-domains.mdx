@@ -1,0 +1,75 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/01 Meaning of For Every.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/02 Domain of Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
+title: "Enunciados universales y dominios"
+navTitle: "Enunciados universales y dominios"
+description: "Leer todo como toda entrada permitida, con predicados definidos y sin promesa de existencia."
+order: 20
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "material-implication-and-vacuity"]
+thumbnail: "quantifiers"
+---
+
+Una caja contiene exactamente las tarjetas dos, cuatro y seis. «Toda tarjeta es positiva» es verdadero: sus tres miembros pasan. Al añadir cero, el enunciado se vuelve falso. La mayoría sigue pasando, pero «toda» no permite excepciones. Una tarjeta con cero fuera de la caja no importaría.
+
+## Dominio, predicado y cuantificador
+
+El **dominio** $D$ es la colección especificada de objetos permitidos. Un **predicado** $P$ es una condición con significado para cada miembro. Fijando los demás parámetros, escribimos
+
+$$\forall x\in D\;P(x).$$
+
+Se lee: «Para todo equis en de, se cumple pe de equis». $\forall$ significa para todo, $\in$ significa pertenece a, y los paréntesis de $P(x)$ indican su entrada, no multiplicación. La fórmula es verdadera exactamente cuando cada miembro de $D$ satisface el predicado; un solo fallo permitido la hace falsa. Esto define la verdad universal, no promete que todo enunciado universal sea verdadero.
+
+Por ejemplo, $\forall x\in\mathbb R\;(x>0)$ dice «todo real es positivo» y es falso en cero. $\mathbb R$ denota los reales, incluidos cero, negativos y fracciones. La misma condición es verdadera en los enteros positivos, pero falsa en todos los enteros $\mathbb Z$. Menos un medio no puede refutar un enunciado sobre enteros porque no es entero.
+
+## ¿Definido, falso o fuera del enunciado?
+
+Son diagnósticos distintos. Una entrada no entera queda fuera de un dominio entero. En cero, $x>0$ tiene significado y es falso. En una supuesta afirmación sobre recíprocos de todos los reales, $1/x$ no está definido en cero: no es una igualdad ordinaria falsa ni un tercer valor de verdad.
+
+Repara explícitamente el dominio:
+
+$$\forall x\in\mathbb R\setminus\{0\}\;(x\cdot(1/x)=1).$$
+
+Se lee: «Para todo real equis distinto de cero, equis por su recíproco es igual a uno». La diferencia de conjuntos elimina cero; la propiedad del recíproco se aplica ahora a toda entrada. Bajo nuestro convenio de dominios explícitos, una hipótesis falsa no es una guarda de programación que dé valor a una expresión indefinida. La notación informal condicionada necesita una interpretación acordada.
+
+Cuando todos los predicados están definidos en el dominio ambiente, una hipótesis puede seleccionar un subconjunto:
+
+$$\forall x\in\mathbb R\;((x>5)\Rightarrow(x>2)).$$
+
+Se lee: «Para todo real equis, si equis supera cinco, entonces supera dos». El cuantificador abarca todos los reales; la hipótesis selecciona los superiores a cinco. Un real fuera del subconjunto seleccionado da una implicación verdadera por hipótesis falsa. Uno del subconjunto supera dos por transitividad del orden. Ambos casos cubren todo el dominio ambiente.
+
+## Colecciones vacías y cambios de dominio
+
+«Toda tarjeta de esta caja es roja» es verdadero para una caja vacía: no hay una tarjeta no roja dentro. No proporciona una tarjeta roja. Una habitación no vacía puede contener la caja y la mesa mientras la colección restringida de tarjetas está vacía. Esto no requiere cambiar el convenio de la lógica formal de que el universo total sea no vacío.
+
+Quitar objetos de un dominio donde todos pasan no puede introducir un fallo, aunque se quiten todos. Ampliarlo sí puede: añadir cero arruinó la afirmación de tarjetas positivas. Restringir una afirmación falsa sobre todos los reales puede dar un nuevo enunciado verdadero, pero no demuestra el original.
+
+## ¿Qué demuestra una afirmación sobre un dominio infinito?
+
+En un dominio finito, una comprobación exhaustiva es una prueba si la lista incluye realmente cada miembro. En todos los reales, una muestra finita deja entradas sin revisar. Toma en cambio un real **arbitrario** $x$, sin valor particular ni hipótesis extra de positividad. Como $2>0$, sumar $x$ a ambos lados da
+
+$$x+2>x+0=x.$$
+
+Se lee: «Equis más dos supera equis más cero, que es igual a equis». Sumar la misma cantidad real conserva el orden; cero es la identidad aditiva. Estos hechos aritméticos habituales prueban $\forall x\in\mathbb R\;(x+2>x)$. Llamar arbitrario a $x$ y después elegir $x=7$ destruiría la generalidad.
+
+La fórmula $\forall x\in\mathbb R\;(x+a>x)$ conserva un parámetro libre $a$: el cuantificador liga $x$, no $a$. Es verdadera con $a=2$ y falsa con $a=0$. Asignar un valor permite evaluar, pero no añade un ligador escrito. Véase [variables ligadas y alcance](../bound-variables-and-scope/).
+
+Para una colección restringida posiblemente vacía, no afirmes que existe un miembro. Se puede tratar el caso vacío directamente y probar el no vacío con un miembro arbitrario. Una prueba condicional habitual también puede razonar con un símbolo arbitrario bajo la hipótesis temporal de pertenencia y descargarla después. Esto no afirma que tal miembro exista.
+
+<Exercise question="Se sabe que una caja contiene exactamente $2$, $4$ y $6$. ¿Por qué una comprobación completa prueba que toda tarjeta es positiva, pero tres comprobaciones no lo prueban sobre todos los reales? ¿Qué cambia al añadir cero y qué significa no-todas-positivas?">
+
+Las tres tarjetas agotan la caja, pero no los reales. Las tres pasan; añadir cero introduce un fallo permitido, así que el enunciado universal ampliado es falso. No todas positivas significa que al menos una no es positiva, no que ninguna lo sea: las tres originales siguen siéndolo.
+
+</Exercise>
+
+<Exercise question="Distingue estas objeciones: menos un medio frente a una afirmación sobre enteros; cero frente a todo-real-es-positivo; cero en una supuesta fórmula de recíprocos para todos los reales. Después prueba que todo real superior a ocho supera tres, incluidos los casos de hipótesis falsa.">
+
+Menos un medio queda fuera del dominio entero. Cero es un fallo permitido y definido de la positividad. Su recíproco no está definido, así que esa fórmula necesita reparación antes de evaluarse. Para el último teorema, toma cualquier real $x$. Si $x>8$, entonces $x>3$ porque $8>3$ y el orden es transitivo. Si no, la hipótesis es falsa y la implicación verdadera. Se cubren todos los reales; no hace falta afirmar que exista una entrada que cumpla la hipótesis.
+
+</Exercise>

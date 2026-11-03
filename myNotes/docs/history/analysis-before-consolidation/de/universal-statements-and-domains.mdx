@@ -1,0 +1,75 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/01 Meaning of For Every.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/02 Domain of Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
+title: "Allaussagen und Grundbereiche"
+navTitle: "Allaussagen und Grundbereiche"
+description: "Jedes als jede erlaubte Eingabe verstehen, mit sinnvollen Bedingungen und ohne Existenzversprechen."
+order: 20
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "material-implication-and-vacuity"]
+thumbnail: "quantifiers"
+---
+
+Eine Schachtel enthält genau die Karten zwei, vier und sechs. „Jede Karte ist positiv“ ist wahr: Alle drei bestehen die Prüfung. Kommt null hinzu, wird die Aussage falsch. Die meisten Karten bestehen weiterhin, aber „jede“ erlaubt keine Ausnahme. Eine Nullkarte außerhalb der Schachtel wäre unerheblich.
+
+## Grundbereich, Prädikat und Quantor
+
+Der **Grundbereich** $D$ ist die festgelegte Menge erlaubter Objekte. Ein **Prädikat** $P$ ist eine Bedingung, die für jedes Mitglied sinnvoll ist. Bei festgehaltenen weiteren Parametern schreiben wir
+
+$$\forall x\in D\;P(x).$$
+
+Gelesen: „Für jedes $x$ in $D$ gilt $P$ von $x$.“ $\forall$ bedeutet für jedes, $\in$ bedeutet gehört zu, und die Klammern in $P(x)$ benennen die Eingabe, keine Multiplikation. Die Formel ist genau dann wahr, wenn jedes Mitglied von $D$ das Prädikat erfüllt; ein erlaubter Fehler macht sie falsch. Das definiert universelle Wahrheit, verspricht aber nicht, dass jede Allaussage wahr sei.
+
+Zum Beispiel sagt $\forall x\in\mathbb R\;(x>0)$ „Jede reelle Zahl ist positiv“ und ist bei null falsch. $\mathbb R$ bezeichnet reelle Zahlen einschließlich null, negativer Zahlen und Brüche. Dieselbe Bedingung gilt auf den positiven ganzen Zahlen, aber nicht auf allen ganzen Zahlen $\mathbb Z$. Minus ein Halb widerlegt keine Aussage über ganze Zahlen, denn es ist nicht ganzzahlig.
+
+## Definiert, falsch oder außerhalb der Aussage?
+
+Das sind verschiedene Diagnosen. Eine nicht ganze Eingabe liegt außerhalb eines ganzzahligen Bereichs. Bei null ist $x>0$ sinnvoll und falsch. Bei einer behaupteten Kehrwertaussage über alle reellen Zahlen ist $1/x$ bei null undefiniert: Das ist weder eine gewöhnliche falsche Gleichung noch ein dritter Wahrheitswert.
+
+Repariere den Bereich ausdrücklich:
+
+$$\forall x\in\mathbb R\setminus\{0\}\;(x\cdot(1/x)=1).$$
+
+Gelesen: „Für jede reelle Zahl $x$ ungleich null ist $x$ mal ihr Kehrwert gleich eins.“ Die Mengendifferenz entfernt null; die Kehrwerteigenschaft gilt nun für jede Eingabe. Nach unserer Konvention mit expliziten Bereichen ist eine falsche Voraussetzung keine Programmierabfrage, die einem undefinierten Ausdruck einen Wert gibt. Informelle bedingte Schreibweisen brauchen eine vereinbarte Interpretation.
+
+Sind alle Prädikate im größeren Grundbereich definiert, kann eine Voraussetzung eine Teilmenge auswählen:
+
+$$\forall x\in\mathbb R\;((x>5)\Rightarrow(x>2)).$$
+
+Gelesen: „Für jede reelle Zahl $x$ gilt: Wenn $x$ größer als fünf ist, ist $x$ größer als zwei.“ Der Quantor umfasst alle reellen Zahlen; die Voraussetzung wählt die über fünf aus. Außerhalb dieser ausgewählten Teilmenge ist die Implikation wegen falscher Voraussetzung wahr. Innerhalb folgt die Folgerung durch Transitivität der Ordnung. Beide Fälle erfassen den ganzen Grundbereich.
+
+## Leere Mengen und veränderte Bereiche
+
+„Jede Karte in dieser Schachtel ist rot“ ist für eine leere Schachtel wahr: Es gibt darin keine nichtrote Karte. Das liefert keine rote Karte. Ein nichtleerer Raum kann Schachtel und Tisch enthalten, obwohl die eingeschränkte Kartenmenge leer ist. Dazu muss man die formallogische Konvention eines nichtleeren Gesamtuniversums nicht ändern.
+
+Entfernt man Objekte aus einem Bereich, in dem alle bestehen, kann kein Fehler hinzukommen, auch wenn man alle entfernt. Eine Erweiterung kann scheitern: Null zerstörte die Aussage über positive Karten. Eine Einschränkung einer falschen Allaussage kann einen neuen wahren Satz ergeben, beweist aber nicht den ursprünglichen.
+
+## Was beweist einen Satz über unendlich viele Eingaben?
+
+Bei einem endlichen Bereich ist eine vollständige Prüfung ein Beweis, wenn die Liste wirklich jedes Mitglied enthält. Bei allen reellen Zahlen lässt jede endliche Stichprobe Eingaben ungeprüft. Betrachte stattdessen ein **beliebiges** reelles $x$, ohne speziellen Wert oder zusätzliche Positivitätsannahme. Wegen $2>0$ ergibt Addition von $x$ auf beiden Seiten
+
+$$x+2>x+0=x.$$
+
+Gelesen: „$x$ plus zwei ist größer als $x$ plus null, und das ist gleich $x$.“ Addition derselben reellen Zahl erhält die Ordnung; null ist das neutrale Element der Addition. Diese gewöhnlichen arithmetischen Tatsachen beweisen $\forall x\in\mathbb R\;(x+2>x)$. $x$ beliebig zu nennen und dann $x=7$ zu wählen zerstört die Allgemeinheit.
+
+Die Formel $\forall x\in\mathbb R\;(x+a>x)$ hat weiterhin den freien Parameter $a$: Der Quantor bindet $x$, nicht $a$. Für $a=2$ ist sie wahr, für $a=0$ falsch. Eine Wertzuweisung erlaubt die Auswertung, fügt aber keinen geschriebenen Quantor hinzu. Mehr dazu bei [gebundenen Variablen und Geltungsbereichen](../bound-variables-and-scope/).
+
+Behaupte für eine möglicherweise leere Teilmenge nicht die Existenz eines Mitglieds. Man kann den leeren Fall direkt behandeln und den nichtleeren mit einem beliebigen Mitglied beweisen. Ein üblicher bedingter Beweis darf auch mit einem beliebigen Symbol unter der vorläufigen Annahme seiner Zugehörigkeit argumentieren und die Annahme anschließend aufheben. Das behauptet keine Existenz eines solchen Mitglieds.
+
+<Exercise question="Eine Schachtel enthält nachweislich genau $2$, $4$ und $6$. Warum beweist eine vollständige Prüfung die Positivität jeder Karte, während drei Prüfungen das nicht für alle reellen Zahlen beweisen? Was ändert null, und was bedeutet Nicht-alle-positiv?">
+
+Die drei Karten erschöpfen die Schachtel, aber nicht die reellen Zahlen. Alle drei sind positiv; null fügt einen erlaubten Fehler hinzu und macht die erweiterte Allaussage falsch. Nicht alle positiv heißt, dass mindestens eine Karte nicht positiv ist, nicht dass keine positiv wäre: Die ursprünglichen drei bleiben es.
+
+</Exercise>
+
+<Exercise question="Unterscheide diese Einwände: minus ein Halb gegen einen Satz über ganze Zahlen; null gegen Jede-reelle-Zahl-ist-positiv; null in einer Kehrwertformel über alle reellen Zahlen. Beweise dann, dass jede reelle Zahl über acht über drei liegt, einschließlich der Fälle mit falscher Voraussetzung.">
+
+Minus ein Halb liegt außerhalb des ganzzahligen Bereichs. Null ist ein erlaubter, definierter Fehler der Positivität. Sein Kehrwert ist undefiniert, daher muss die Formel vor der Auswertung repariert werden. Für den letzten Satz sei $x$ beliebig reell. Ist $x>8$, folgt wegen $8>3$ und Transitivität $x>3$. Andernfalls ist die Voraussetzung falsch und die Implikation wahr. Alle reellen Zahlen sind erfasst; die Existenz einer passenden Eingabe wird nicht benötigt.
+
+</Exercise>

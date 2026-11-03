@@ -1,21 +1,29 @@
 ---
 course: "analysis"
-chapter: "analysis-boolean"
+chapter: "analysis-boolean-applications"
 sourceId: "analysis-concepts-2"
 sourcePages: [1]
 locale: "en"
-title: "Five starting laws of Boolean algebra"
-navTitle: "Five starting laws of Boolean algebra"
-description: "Keep the allowed laws visible before deriving new ones."
-order: 40
+title: "Boolean laws and elementary derivations"
+navTitle: "Boolean laws and elementary derivations"
+description: "Boolean laws and elementary derivations"
+order: 18
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["logische-verknuepfungen"]
+prerequisites: ["logical-negation", "biconditionals-and-equivalent-conditions", "beweissprache-und-methoden"]
 thumbnail: "boolean-laws"
+sourceLocations: []
+additionalSources: [{"sourceId": "analysis-sheet-1-1", "pages": [1], "locations": []}]
 ---
 
-## Laws 1–5
+<span id="from-boolesche-grundgesetze"></span>
+
+## Five starting laws of Boolean algebra
+
+<span id="from-boolesche-grundgesetze-laws-15"></span>
+
+### Laws 1–5
 
 <Math tex="\tag{1}(\colA{A}\lor \colB{B})\lor \colC{C}=\colA{A}\lor(\colB{B}\lor \colC{C}),\quad(\colA{A}\land \colB{B})\land \colC{C}=\colA{A}\land(\colB{B}\land \colC{C})" display />
 
@@ -31,7 +39,10 @@ thumbnail: "boolean-laws"
 
 The numbers denote associativity, commutativity, distributivity, absorption, and complement. Both dual forms are allowed. Here $=$ means the expressions are logically equivalent, not that their written shapes match. Substitute whole expressions for $A$, $B$, or $C$ when applying a law.
 
-## See the grouping
+
+<span id="from-boolesche-grundgesetze-see-the-grouping"></span>
+
+### See the grouping
 
 <ExpressionTrees />
 
@@ -39,6 +50,91 @@ The numbers denote associativity, commutativity, distributivity, absorption, and
 
 Associativity changes the grouping of the same operation. Distributivity changes the tree and repeats $A$. In the exercise sheets, truth tables are not the proof method: use these five laws to derive the later rules.
 
-## Recognizing the shape of a law
+
+<span id="from-boolesche-grundgesetze-recognizing-the-shape-of-a-law"></span>
+
+### Recognizing the shape of a law
 
 In $A \land  (B \lor  C)$, $A$ is combined with a choice between $B$ and $C$. Distributing asks for the two possible ways the conjunction can hold: $A$ with $B$, or $A$ with $C$. The repeated $A$ is essential. For absorption, $A \lor  (A \land  B)$ already accepts every case where $A$ holds; the additional case requires $A$ anyway and adds nothing. These readings explain the identities; the worksheet derivations must still use the allowed laws.
+
+<span id="from-neutralitaet-und-idempotenz"></span>
+
+## Sheet 1.1 · identity and idempotence
+
+<span id="from-neutralitaet-und-idempotenz-two-helper-identities-from-absorption"></span>
+
+### Two helper identities from absorption
+
+Use absorption (4), then complement (5). These establish 7a and 7b before they are used to prove idempotence (6). Reading the exercise numbers in a different proof order is allowed; assuming the result you are proving is not.
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\overset{5}=\colA{A}\lor0\quad\Longrightarrow\quad \colA{A}\lor0=\colA{A}\quad(H_1)" display />
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\overset{5}=\colA{A}\land1\quad\Longrightarrow\quad \colA{A}\land1=\colA{A}\quad(H_2)" display />
+
+
+<span id="from-neutralitaet-und-idempotenz-6a--repeating-or-changes-nothing"></span>
+
+### 6a · Repeating OR changes nothing
+
+<Math tex="\begin{aligned}\colA{A}\lor \colA{A}&\overset{H_2}=(\colA{A}\lor \colA{A})\land1\\&\overset{5}=(\colA{A}\lor \colA{A})\land(\colA{A}\lor\neg \colA{A})\\&\overset{3}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\\&\overset{5}=\colA{A}\lor0\\&\overset{H_1}=\colA{A}\end{aligned}" display />
+
+
+<span id="from-neutralitaet-und-idempotenz-6b--the-dual-calculation"></span>
+
+### 6b · The dual calculation
+
+<Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
+
+Distributivity is used backward in each chain. Duality exchanges $\land$ with $\lor$ and 0 with 1; the second calculation is shown explicitly so every permitted step can be checked.
+
+
+<span id="from-neutralitaet-und-idempotenz-how-the-proof-is-found"></span>
+
+### How the proof is found
+
+The target $A \lor  A$ looks too small for the allowed laws to help. Multiplying by 1 preserves its value but creates a place to substitute $A \lor  \neg A$. Now the two factors share A, so reverse distributivity combines them into $A \lor  (A \land  \neg A)$. The complement removes the second part. This is a deliberate expansion followed by simplification, not a guess that each line should get shorter. $H_1$ and $H_2$ justify that expansion without assuming idempotence.
+
+
+<span id="from-neutralitaet-und-idempotenz-practice-with-the-starting-laws"></span>
+
+### Practice with the starting laws
+
+Keep the permitted rules explicit in this short derivation.
+
+<Exercise question="Reduce $(B \land  A) \lor  A$ using only laws 2 and 4.">
+
+Commutativity gives $A \lor  (A \land  B)$. Absorption gives A. Commutativity is used for both the outer disjunction and the inner conjunction; no idempotence is needed.
+
+</Exercise>
+
+<span id="from-nullgesetze-und-konstanten"></span>
+
+## Sheet 1.1 · absorbing elements and constants
+
+<span id="from-nullgesetze-und-konstanten-7c-and-7d--the-absorbing-values"></span>
+
+### 7c and 7d · The absorbing values
+
+<Math tex="\colA{A}\lor1\overset5=\colA{A}\lor(\colA{A}\lor\neg \colA{A})\overset1=(\colA{A}\lor \colA{A})\lor\neg \colA{A}\overset6=\colA{A}\lor\neg \colA{A}\overset5=1" display />
+
+<Math tex="\colA{A}\land0\overset5=\colA{A}\land(\colA{A}\land\neg \colA{A})\overset1=(\colA{A}\land \colA{A})\land\neg \colA{A}\overset6=\colA{A}\land\neg \colA{A}\overset5=0" display />
+
+Do not confuse neutral and absorbing values. OR with 0 preserves A; OR with 1 forces 1. AND with 1 preserves A; AND with 0 forces 0. Idempotence (6) is now available from the previous proof.
+
+
+<span id="from-nullgesetze-und-konstanten-8--negating-constants"></span>
+
+### 8 · Negating constants
+
+<Math tex="1\overset5=0\lor\neg0\overset2=\neg0\lor0\overset{7a}=\neg0" display />
+
+<Math tex="0\overset5=1\land\neg1\overset2=\neg1\land1\overset{7b}=\neg1" display />
+
+The conclusions are $\neg 0 = 1$ and $\neg 1 = 0$. Each equality follows from a numbered law; no truth table or De Morgan rule has been assumed.
+
+
+<span id="from-nullgesetze-und-konstanten-neutral-and-absorbing-elements"></span>
+
+### Neutral and absorbing elements
+
+Think of $A$ as an unknown truth value. $A \lor  0$ still depends on $A$, while $A \lor  1$ is settled whatever $A$ is. For $\land$ the roles reverse: 1 leaves $A$ unchanged and 0 settles the result. In the proof of $A \lor  1 = 1$, replacing 1 with $A \lor  \neg A$ brings a repeated $A$ into view. Associativity puts the copies together; idempotence removes one. This explains why law 6 must already be available.

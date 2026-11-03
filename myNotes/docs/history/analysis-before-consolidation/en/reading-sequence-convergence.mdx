@@ -1,0 +1,85 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Reading sequence convergence"
+navTitle: "Reading sequence convergence"
+description: "Reading sequence convergence."
+order: 48
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["witness-dependence", "real-sequences", "absolute-value-and-distance", "material-implication-and-vacuity"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+A device reports nine twice, then three at every later observation. The complete rule, not a guess from three observations, tells us that all terms from the third onward equal three. Convergence allows the early exceptions. It asks whether every sufficiently late term stays as close to a fixed target as requested.
+
+## Fix the objects before reading the quantifiers
+
+Fix a real sequence $a:\mathbb N\to\mathbb R$ and a real target $L$. Here $\mathbb N=\{1,2,3,\ldots\}$. The term $a_n$ is an output, while $n$ is its index. Its distance from the target is $|a_n-L|$. The sequence and target stay fixed throughout; the formula below does not choose them afresh. Their contextual fixation is not a written quantifier binding them.
+
+Epsilon, $\varepsilon$, is a positive real tolerance, not an index or a fixed tiny number. Capital $N$ is a positive natural threshold marking the beginning of a tail. Lowercase $n$ is any positive natural index to test. Both index comparisons and distance comparisons matter: $n\ge N$ includes the threshold; $|a_n-L|<\varepsilon$ excludes equality with the tolerance.
+
+## The positive definition
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+<Flow nodes={[{"label": "Tolerance", "tex": "\\varepsilon>0", "detail": "Accept any positive real tolerance."}, {"label": "Threshold", "tex": "N\\in\\mathbb N", "detail": "Choose one threshold using the tolerance."}, {"label": "Tail test", "tex": "n\\ge N", "detail": "Keep the threshold fixed for every test."}]} caption="A tolerance, then a threshold, then every tail index." />
+
+This defines convergence to the specified target. It is not a theorem to prove. For particular sequences, we prove that they satisfy it. First accept any positive tolerance. Then supply a natural threshold using that tolerance and the fixed context. Finally keep the threshold fixed while checking every test index. A witness threshold may depend on the tolerance, but need not vary if the same one works.
+
+The implication places no closeness requirement on earlier indices: its hypothesis is false there. At the threshold and afterward, every term must pass. Checking the threshold term alone is insufficient. Once a threshold works, every larger natural threshold works because its tail is contained in the already checked tail. No smallest threshold is required.
+
+For the device and target three, choose threshold three for every positive tolerance. Every term in that tail equals three, so its distance is zero, strictly below the tolerance. This checks arbitrary tolerances and all later indices by the full rule, not by finite observations. Convergence asks for small distance, not for exact attainment of the target.
+
+### Practice
+
+Rebuild the complete definition, including domains, and identify the three variable roles.
+
+<details>
+<summary>Hint</summary>
+
+Tolerance, threshold, test index.
+
+</details>
+
+<Exercise>
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Here $\varepsilon$ ranges over positive real tolerances; $N$ and $n$ range over $\mathbb N=\{1,2,3,\ldots\}$ as threshold and test index. The sequence $a$ and real target $L$ remain fixed. If $n\ge N$, the term $a_n$ must have distance from $L$ strictly below $\varepsilon$; earlier indices impose no closeness condition. Choose $N$ before testing all indices and keep it fixed.
+
+</Exercise>
+
+A sequence is zero at its first index and one at every later index. Does its first hit prove convergence to zero?
+
+<details>
+<summary>Hint</summary>
+
+Use $\varepsilon=1/2$ and $n=\max(N,2)$.
+
+</details>
+
+<Exercise>
+
+No. For any threshold $N$, the larger of $N$ and two is in its tail and has term one. Its distance from zero is one, not below $1/2$. One hit never substitutes for the required whole tail.
+
+</Exercise>
+
+Later, explain sequence, index, term, target and distance separately before reconstructing the formula.
+
+## Read aloud
+
+**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
+
+**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
+
+**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.

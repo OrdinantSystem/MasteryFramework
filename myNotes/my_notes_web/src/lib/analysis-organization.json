@@ -1,0 +1,4385 @@
+{
+  "version": 1,
+  "modules": [
+    {
+      "id": "analysis-foundations",
+      "title": {
+        "en": "Mathematical foundations",
+        "de": "Mathematische Grundlagen",
+        "es": "Fundamentos matemáticos"
+      },
+      "orders": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "analysis-logic",
+      "title": {
+        "en": "Logic fundamentals",
+        "de": "Logische Grundlagen",
+        "es": "Fundamentos de lógica"
+      },
+      "orders": [
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "analysis-quantifiers",
+      "title": {
+        "en": "Quantifiers",
+        "de": "Quantoren",
+        "es": "Cuantificadores"
+      },
+      "orders": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "analysis-proofs",
+      "title": {
+        "en": "Proof fundamentals",
+        "de": "Beweisgrundlagen",
+        "es": "Fundamentos de demostración"
+      },
+      "orders": [
+        13,
+        14
+      ]
+    },
+    {
+      "id": "analysis-sequences",
+      "title": {
+        "en": "Sequences and convergence",
+        "de": "Folgen und Konvergenz",
+        "es": "Sucesiones y convergencia"
+      },
+      "orders": [
+        15,
+        16,
+        17
+      ]
+    },
+    {
+      "id": "analysis-boolean-applications",
+      "title": {
+        "en": "Boolean algebra and circuits · Optional",
+        "de": "Boolesche Algebra und Schaltungen · Optional",
+        "es": "Álgebra booleana y circuitos · Opcional"
+      },
+      "orders": [
+        18,
+        19,
+        20
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "key": "zahlenmengen",
+      "order": 1,
+      "title": {
+        "en": "Number systems, equality and order",
+        "de": "Zahlbereiche, Gleichheit und Ordnung",
+        "es": "Sistemas numéricos, igualdad y orden"
+      }
+    },
+    {
+      "key": "aussagen-und-aussageformen",
+      "order": 2,
+      "title": {
+        "en": "Statements, predicates and definitions",
+        "de": "Aussagen, Prädikate und Definitionen",
+        "es": "Enunciados, predicados y definiciones"
+      }
+    },
+    {
+      "key": "simultaneous-conditions",
+      "order": 3,
+      "title": {
+        "en": "Logical connectives and combined conditions",
+        "de": "Logische Verknüpfungen und zusammengesetzte Bedingungen",
+        "es": "Conectivas lógicas y condiciones compuestas"
+      }
+    },
+    {
+      "key": "logische-verknuepfungen",
+      "order": 4,
+      "title": {
+        "en": "Constructing and comparing truth tables",
+        "de": "Wahrheitstafeln aufbauen und vergleichen",
+        "es": "Construir y comparar tablas de verdad"
+      }
+    },
+    {
+      "key": "logical-negation",
+      "order": 5,
+      "title": {
+        "en": "Negation, De Morgan’s laws and inequalities",
+        "de": "Negation, De-Morgan-Gesetze und Ungleichungen",
+        "es": "Negación, leyes de De Morgan y desigualdades"
+      }
+    },
+    {
+      "key": "implikation-und-kontraposition",
+      "order": 6,
+      "title": {
+        "en": "Implication, contraposition and assumptions",
+        "de": "Implikation, Kontraposition und Voraussetzungen",
+        "es": "Implicación, contraposición y supuestos"
+      }
+    },
+    {
+      "key": "biconditionals-and-equivalent-conditions",
+      "order": 7,
+      "title": {
+        "en": "Equivalence and reversible transformations",
+        "de": "Äquivalenz und umkehrbare Umformungen",
+        "es": "Equivalencia y transformaciones reversibles"
+      }
+    },
+    {
+      "key": "universal-statements-and-domains",
+      "order": 8,
+      "title": {
+        "en": "For every and there exists: domains and scope",
+        "de": "Für alle und es gibt: Bereiche und Geltungsbereiche",
+        "es": "Para todo y existe: dominios y alcance"
+      }
+    },
+    {
+      "key": "existence-and-uniqueness",
+      "order": 9,
+      "title": {
+        "en": "Witnesses, existence and uniqueness",
+        "de": "Zeugen, Existenz und Eindeutigkeit",
+        "es": "Testigos, existencia y unicidad"
+      }
+    },
+    {
+      "key": "quantifier-order",
+      "order": 10,
+      "title": {
+        "en": "Quantifier order, dependence and translation",
+        "de": "Quantorenreihenfolge, Abhängigkeit und Übersetzung",
+        "es": "Orden de cuantificadores, dependencia y traducción"
+      }
+    },
+    {
+      "key": "negating-universal-statements",
+      "order": 11,
+      "title": {
+        "en": "Negating quantified statements and inequalities",
+        "de": "Quantifizierte Aussagen und Ungleichungen negieren",
+        "es": "Negar enunciados cuantificados y desigualdades"
+      }
+    },
+    {
+      "key": "negating-nested-statements",
+      "order": 12,
+      "title": {
+        "en": "Nested negations: worked derivations",
+        "de": "Verschachtelte Negationen Schritt für Schritt",
+        "es": "Negaciones anidadas paso a paso"
+      }
+    },
+    {
+      "key": "beweissprache-und-methoden",
+      "order": 13,
+      "title": {
+        "en": "Proof methods, counterexamples and parity",
+        "de": "Beweismethoden, Gegenbeispiele und Parität",
+        "es": "Métodos de demostración, contraejemplos y paridad"
+      }
+    },
+    {
+      "key": "widerspruch-und-irrationalitaet",
+      "order": 14,
+      "title": {
+        "en": "Contradiction and irrationality",
+        "de": "Widerspruch und Irrationalität",
+        "es": "Contradicción e irracionalidad"
+      }
+    },
+    {
+      "key": "real-sequences",
+      "order": 15,
+      "title": {
+        "en": "Real sequences and absolute distance",
+        "de": "Reelle Folgen und absoluter Abstand",
+        "es": "Sucesiones reales y distancia absoluta"
+      }
+    },
+    {
+      "key": "reading-sequence-convergence",
+      "order": 16,
+      "title": {
+        "en": "Convergence: definition and proofs",
+        "de": "Konvergenz: Definition und Beweise",
+        "es": "Convergencia: definición y demostraciones"
+      }
+    },
+    {
+      "key": "negating-sequence-convergence",
+      "order": 17,
+      "title": {
+        "en": "Failure of convergence and no real limit",
+        "de": "Scheitern der Konvergenz und kein reeller Grenzwert",
+        "es": "Fallo de convergencia y ausencia de límite real"
+      }
+    },
+    {
+      "key": "boolesche-grundgesetze",
+      "order": 18,
+      "title": {
+        "en": "Boolean laws and elementary derivations",
+        "de": "Boolesche Gesetze und elementare Herleitungen",
+        "es": "Leyes booleanas y deducciones elementales"
+      }
+    },
+    {
+      "key": "eindeutiges-komplement",
+      "order": 19,
+      "title": {
+        "en": "Unique complements and algebraic negation laws",
+        "de": "Eindeutige Komplemente und algebraische Negationsgesetze",
+        "es": "Complementos únicos y leyes algebraicas de negación"
+      }
+    },
+    {
+      "key": "nand-schaltungen",
+      "order": 20,
+      "title": {
+        "en": "NAND and logic circuits",
+        "de": "NAND und logische Schaltungen",
+        "es": "NAND y circuitos lógicos"
+      }
+    }
+  ],
+  "aliases": {
+    "en": {
+      "aussagen-und-aussageformen": {
+        "order": 2,
+        "key": "aussagen-und-aussageformen",
+        "title": "Statements and predicates",
+        "anchor": "from-aussagen-und-aussageformen",
+        "fragments": {
+          "a-statement-can-be-false": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-a-statement-can-be-false"
+          },
+          "an-open-variable-leaves-a-question": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-an-open-variable-leaves-a-question"
+          },
+          "check-your-classification": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-check-your-classification"
+          },
+          "substitution-and-truth": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-substitution-and-truth"
+          },
+          "claims-expressions-and-requests": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-claims-expressions-and-requests"
+          },
+          "truth-knowledge-and-reasons": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-truth-knowledge-and-reasons"
+          },
+          "free-occurrences-scope-and-assignments": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-aussagen-und-aussageformen-free-occurrences-scope-and-assignments"
+          },
+          "independent-checks": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-independent-checks"
+          }
+        }
+      },
+      "definitions-assumptions-results": {
+        "order": 2,
+        "key": "aussagen-und-aussageformen",
+        "title": "Definitions, assumptions, and results",
+        "anchor": "from-definitions-assumptions-results",
+        "fragments": {
+          "what-the-writer-is-doing": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-what-the-writer-is-doing"
+          },
+          "introducing-a-name": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-introducing-a-name"
+          },
+          "a-property-need-not-have-an-instance": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-a-property-need-not-have-an-instance"
+          },
+          "practice-with-roles-and-definitions": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-practice-with-roles-and-definitions"
+          }
+        }
+      },
+      "logische-verknuepfungen": {
+        "order": 4,
+        "key": "logische-verknuepfungen",
+        "title": "Logical connectives",
+        "anchor": "from-logische-verknuepfungen",
+        "fragments": {
+          "read-one-row-at-a-time": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-read-one-row-at-a-time"
+          },
+          "a-truth-table-with-three-variables": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-a-truth-table-with-three-variables"
+          },
+          "always-never-or-sometimes": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-always-never-or-sometimes"
+          },
+          "negating-an-implication": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-logische-verknuepfungen-negating-an-implication"
+          },
+          "reading-an-implication": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-logische-verknuepfungen-reading-an-implication"
+          },
+          "one-card-two-properties": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-one-card-two-properties"
+          },
+          "inclusive-or-and-exactly-one": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-inclusive-or-and-exactly-one"
+          },
+          "grouping-and-atomic-inputs": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-grouping-and-atomic-inputs"
+          },
+          "practice-with-reasons": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-practice-with-reasons"
+          }
+        }
+      },
+      "simultaneous-conditions": {
+        "order": 3,
+        "key": "simultaneous-conditions",
+        "title": "Several simultaneous conditions",
+        "anchor": "from-simultaneous-conditions",
+        "fragments": {
+          "read-one-structured-criterion": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-read-one-structured-criterion"
+          },
+          "establish-a-label-then-unpack-it": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-establish-a-label-then-unpack-it"
+          },
+          "a-sufficient-rule-is-different": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-a-sufficient-rule-is-different"
+          },
+          "practice-with-alternatives-and-failures": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-practice-with-alternatives-and-failures"
+          }
+        }
+      },
+      "building-truth-tables": {
+        "order": 4,
+        "key": "logische-verknuepfungen",
+        "title": "Building truth tables",
+        "anchor": "from-building-truth-tables",
+        "fragments": {
+          "inputs-and-completeness": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-inputs-and-completeness"
+          },
+          "worked-construction": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-worked-construction"
+          },
+          "build-the-next-tables-independently": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-build-the-next-tables-independently"
+          },
+          "what-abstract-rows-do-and-do-not-say": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-what-abstract-rows-do-and-do-not-say"
+          }
+        }
+      },
+      "equality-and-equations": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Equality and equations",
+        "anchor": "from-equality-and-equations",
+        "fragments": {
+          "foundational-equality-rules": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-foundational-equality-rules"
+          },
+          "every-link-of-a-chain-makes-a-claim": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-every-link-of-a-chain-makes-a-claim"
+          },
+          "an-equations-role-depends-on-context": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-an-equations-role-depends-on-context"
+          },
+          "practice": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-practice"
+          }
+        }
+      },
+      "order-comparisons": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Order comparisons and endpoints",
+        "anchor": "from-order-comparisons",
+        "fragments": {
+          "comparisons-and-their-readings": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-comparisons-and-their-readings"
+          },
+          "two-bounds-concern-one-input": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-two-bounds-concern-one-input"
+          },
+          "endpoint-checks": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-endpoint-checks"
+          }
+        }
+      },
+      "reading-mathematical-structure": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Reading mathematical structure",
+        "anchor": "from-reading-mathematical-structure",
+        "fragments": {
+          "a-reading-procedure": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-a-reading-procedure"
+          },
+          "a-universal-claim-with-a-conditional-inside": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-a-universal-claim-with-a-conditional-inside"
+          },
+          "practice-in-both-directions": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-practice-in-both-directions"
+          }
+        }
+      },
+      "logical-negation": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Logical negation",
+        "anchor": "from-logical-negation",
+        "fragments": {
+          "definition-of-negation": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-definition-of-negation"
+          },
+          "equality-and-its-denial": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-equality-and-its-denial"
+          },
+          "knowledge-meaningfulness-and-domain": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-knowledge-meaningfulness-and-domain"
+          },
+          "practice": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-practice"
+          }
+        }
+      },
+      "negating-order-comparisons": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Negating order comparisons",
+        "anchor": "from-negating-order-comparisons",
+        "fragments": {
+          "proof-from-trichotomy": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-proof-from-trichotomy"
+          },
+          "read-the-full-comparison-and-keep-the-domain": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-read-the-full-comparison-and-keep-the-domain"
+          },
+          "boundary-practice": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-boundary-practice"
+          }
+        }
+      },
+      "double-negation": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Double negation",
+        "anchor": "from-double-negation",
+        "fragments": {
+          "the-classical-theorem": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-the-classical-theorem"
+          },
+          "proof-both-possible-starting-values": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-proof-both-possible-starting-values"
+          },
+          "scope-determines-whether-a-pair-can-be-removed": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-scope-determines-whether-a-pair-can-be-removed"
+          },
+          "practice-with-nested-and-separate-denials": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-practice-with-nested-and-separate-denials"
+          },
+          "negative-words-in-ordinary-speech": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-negative-words-in-ordinary-speech"
+          }
+        }
+      },
+      "negating-combined-conditions": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Negating combined conditions",
+        "anchor": "from-negating-combined-conditions",
+        "fragments": {
+          "negation-of-conjunction": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-negation-of-conjunction"
+          },
+          "negation-of-inclusive-disjunction": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-negation-of-inclusive-disjunction"
+          },
+          "a-nested-card-requirement": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-a-nested-card-requirement"
+          },
+          "independent-practice": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-independent-practice"
+          },
+          "numerical-boundaries": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-numerical-boundaries"
+          }
+        }
+      },
+      "material-implication-and-vacuity": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Material implication and vacuity",
+        "anchor": "from-material-implication-and-vacuity",
+        "fragments": {
+          "the-definition-includes-four-cases": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-the-definition-includes-four-cases"
+          },
+          "what-vacuous-truth-does-and-does-not-say": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-what-vacuous-truth-does-and-does-not-say"
+          },
+          "one-assignment-is-not-logical-consequence": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-one-assignment-is-not-logical-consequence"
+          },
+          "meaning-comes-before-the-table": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-meaning-comes-before-the-table"
+          }
+        }
+      },
+      "reading-conditionals": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Reading conditionals",
+        "anchor": "from-reading-conditionals",
+        "fragments": {
+          "hypothesis-and-conclusion": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-hypothesis-and-conclusion"
+          },
+          "keep-the-stated-assumptions": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-keep-the-stated-assumptions"
+          },
+          "prove-the-whole-target": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-prove-the-whole-target"
+          },
+          "applying-a-rule-needs-two-premises": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-applying-a-rule-needs-two-premises"
+          }
+        }
+      },
+      "implikation-und-kontraposition": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implication and contraposition",
+        "anchor": "from-implikation-und-kontraposition",
+        "fragments": {
+          "change-the-statement-then-test-all-cases": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-change-the-statement-then-test-all-cases"
+          },
+          "why-the-paired-forms-agree": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-why-the-paired-forms-agree"
+          },
+          "divisibility-gives-a-concrete-example": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-divisibility-gives-a-concrete-example"
+          },
+          "a-proof-and-its-converse": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-a-proof-and-its-converse"
+          }
+        }
+      },
+      "implication-and-model-assumptions": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implication and model assumptions",
+        "anchor": "from-implication-and-model-assumptions",
+        "fragments": {
+          "an-exact-rule-inside-a-hypothetical-model": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implication-and-model-assumptions-an-exact-rule-inside-a-hypothetical-model"
+          },
+          "deduction-and-observation-answer-different-questions": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implication-and-model-assumptions-deduction-and-observation-answer-different-questions"
+          }
+        }
+      },
+      "biconditionals-and-equivalent-conditions": {
+        "order": 7,
+        "key": "biconditionals-and-equivalent-conditions",
+        "title": "Biconditionals and equivalent conditions",
+        "anchor": "from-biconditionals-and-equivalent-conditions",
+        "fragments": {
+          "if-only-if-and-both": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-if-only-if-and-both"
+          },
+          "start-afresh-for-the-reverse-direction": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-start-afresh-for-the-reverse-direction"
+          },
+          "three-different-ranges-of-agreement": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-three-different-ranges-of-agreement"
+          }
+        }
+      },
+      "equivalence-chains": {
+        "order": 7,
+        "key": "biconditionals-and-equivalent-conditions",
+        "title": "Chains of equivalences",
+        "anchor": "from-equivalence-chains",
+        "fragments": {
+          "what-the-chain-says": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-what-the-chain-says"
+          },
+          "why-the-endpoints-agree": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-why-the-endpoints-agree"
+          },
+          "squaring-can-add-a-candidate": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-squaring-can-add-a-candidate"
+          },
+          "division-can-lose-an-original-solution": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-division-can-lose-an-original-solution"
+          }
+        }
+      },
+      "aequivalenz-und-paritaet": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Equivalence and parity",
+        "anchor": "from-aequivalenz-und-paritaet",
+        "fragments": {
+          "the-claim": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-the-claim"
+          },
+          "forward-use-the-definition": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-forward-use-the-definition"
+          },
+          "backward-use-contraposition": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-backward-use-contraposition"
+          },
+          "why-use-contraposition-here": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-why-use-contraposition-here"
+          },
+          "practice": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-practice"
+          }
+        }
+      },
+      "universal-statements-and-domains": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Universal statements and domains",
+        "anchor": "from-universal-statements-and-domains",
+        "fragments": {
+          "domain-predicate-quantifier": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-domain-predicate-quantifier"
+          },
+          "defined-false-or-outside-the-claim": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-defined-false-or-outside-the-claim"
+          },
+          "empty-collections-and-changed-domains": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-empty-collections-and-changed-domains"
+          },
+          "what-proves-an-infinite-domain-claim": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-what-proves-an-infinite-domain-claim"
+          }
+        }
+      },
+      "bound-variables-and-scope": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Bound variables and scope",
+        "anchor": "from-bound-variables-and-scope",
+        "fragments": {
+          "classify-occurrences-not-letters-forever": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-classify-occurrences-not-letters-forever"
+          },
+          "a-safe-new-name-keeps-the-roles": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-a-safe-new-name-keeps-the-roles"
+          },
+          "parentheses-determine-the-reach": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-parentheses-determine-the-reach"
+          },
+          "moving-a-fixed-condition-needs-a-domain-check": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-moving-a-fixed-condition-needs-a-domain-check"
+          }
+        }
+      },
+      "counterexamples": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Counterexamples",
+        "anchor": "from-counterexamples",
+        "fragments": {
+          "why-one-failure-is-enough": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-why-one-failure-is-enough"
+          },
+          "find-the-full-failure-region": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-find-the-full-failure-region"
+          },
+          "do-not-drop-a-compound-requirement": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-do-not-drop-a-compound-requirement"
+          },
+          "search-verification-and-repair": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-search-verification-and-repair"
+          }
+        }
+      },
+      "existence-and-witnesses": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Existence and witnesses",
+        "anchor": "from-existence-and-witnesses",
+        "fragments": {
+          "candidate-membership-whole-condition": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-candidate-membership-whole-condition"
+          },
+          "practice": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-practice"
+          },
+          "checking-witnesses": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-checking-witnesses"
+          },
+          "read-aloud": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-existence-and-witnesses-read-aloud"
+          }
+        }
+      },
+      "constructing-a-witness": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Constructing a witness",
+        "anchor": "from-constructing-a-witness",
+        "fragments": {
+          "a-complete-direct-proof": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-a-complete-direct-proof"
+          },
+          "backward-work-and-domain-checks": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-backward-work-and-domain-checks"
+          },
+          "practice": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-practice"
+          },
+          "read-aloud": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-read-aloud"
+          }
+        }
+      },
+      "existence-and-uniqueness": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Existence and uniqueness",
+        "anchor": "from-existence-and-uniqueness",
+        "fragments": {
+          "three-different-requirements": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-three-different-requirements"
+          },
+          "a-proof-with-both-obligations": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-a-proof-with-both-obligations"
+          },
+          "practice": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-practice"
+          },
+          "read-aloud": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-read-aloud"
+          }
+        }
+      },
+      "counting-witnesses": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Counting witnesses",
+        "anchor": "from-counting-witnesses",
+        "fragments": {
+          "changing-the-domain-changes-the-count": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-changing-the-domain-changes-the-count"
+          },
+          "practice": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-practice"
+          },
+          "read-aloud": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-read-aloud"
+          }
+        }
+      },
+      "quantifier-order": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Quantifier order",
+        "anchor": "from-quantifier-order",
+        "fragments": {
+          "the-same-distinction-over-the-reals": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-the-same-distinction-over-the-reals"
+          },
+          "safe-swaps-have-conditions": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-safe-swaps-have-conditions"
+          },
+          "practice": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-practice"
+          },
+          "read-aloud": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-read-aloud"
+          }
+        }
+      },
+      "witness-dependence": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Witness dependence",
+        "anchor": "from-witness-dependence",
+        "fragments": {
+          "keep-an-information-ledger": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-keep-an-information-ledger"
+          },
+          "practice": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-practice"
+          },
+          "read-aloud": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-read-aloud"
+          }
+        }
+      },
+      "separate-and-shared-witnesses": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Separate and shared witnesses",
+        "anchor": "from-separate-and-shared-witnesses",
+        "fragments": {
+          "all-empty-domain-cases": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-all-empty-domain-cases"
+          },
+          "practice": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-practice"
+          },
+          "read-aloud": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-read-aloud"
+          }
+        }
+      },
+      "translating-quantified-statements": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Translating quantified statements",
+        "anchor": "from-translating-quantified-statements",
+        "fragments": {
+          "write-then-read-back": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-write-then-read-back"
+          },
+          "a-conditional-limits-the-requirement": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-a-conditional-limits-the-requirement"
+          },
+          "practice": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-practice"
+          },
+          "read-aloud": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-read-aloud"
+          }
+        }
+      },
+      "negating-universal-statements": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Negating universal statements",
+        "anchor": "from-negating-universal-statements",
+        "fragments": {
+          "not-every-means-some-failure": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-not-every-means-some-failure"
+          },
+          "keep-the-domain-and-negate-the-whole-predicate": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-keep-the-domain-and-negate-the-whole-predicate"
+          },
+          "practice": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-practice"
+          },
+          "read-aloud": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-read-aloud"
+          }
+        }
+      },
+      "negating-existential-statements": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Negating existential statements",
+        "anchor": "from-negating-existential-statements",
+        "fragments": {
+          "the-restriction-stays-positive": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-the-restriction-stays-positive"
+          },
+          "practice": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-practice"
+          },
+          "read-aloud": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-read-aloud"
+          }
+        }
+      },
+      "negating-nested-statements": {
+        "order": 12,
+        "key": "negating-nested-statements",
+        "title": "Negating nested statements",
+        "anchor": "from-negating-nested-statements",
+        "fragments": {
+          "work-outside-in-on-a-finite-domain": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-work-outside-in-on-a-finite-domain"
+          },
+          "start-with-existence-instead": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-start-with-existence-instead"
+          },
+          "practice": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-practice"
+          },
+          "read-aloud": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-read-aloud"
+          }
+        }
+      },
+      "negating-quantified-statements-step-by-step": {
+        "order": 12,
+        "key": "negating-nested-statements",
+        "title": "Negating quantified statements step by step",
+        "anchor": "from-negating-quantified-statements-step-by-step",
+        "fragments": {
+          "why-each-replacement-is-legitimate": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-why-each-replacement-is-legitimate"
+          },
+          "a-method-that-respects-scope": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-a-method-that-respects-scope"
+          },
+          "practice": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-practice"
+          },
+          "read-aloud": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-read-aloud"
+          }
+        }
+      },
+      "negating-quantified-inequalities": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Negating quantified inequalities",
+        "anchor": "from-negating-quantified-inequalities",
+        "fragments": {
+          "real-order-partitions-every-case": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-real-order-partitions-every-case"
+          },
+          "a-quantified-boundary-example": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-a-quantified-boundary-example"
+          },
+          "when-the-predicate-is-conditional": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-when-the-predicate-is-conditional"
+          },
+          "practice": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-practice"
+          },
+          "read-aloud": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-read-aloud"
+          }
+        }
+      },
+      "quantoren-und-negation": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Quantifiers and negation",
+        "anchor": "from-quantoren-und-negation",
+        "fragments": {
+          "a-witness-versus-every-case": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-a-witness-versus-every-case"
+          },
+          "push-the-negation-inward": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-push-the-negation-inward"
+          },
+          "the-boundary-case-matters": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-the-boundary-case-matters"
+          },
+          "order-of-quantifiers": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-order-of-quantifiers"
+          }
+        }
+      },
+      "zahlenmengen": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "The number sets",
+        "anchor": "from-zahlenmengen",
+        "fragments": {
+          "an-inclusion-picture": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-an-inclusion-picture"
+          },
+          "what-each-set-contains": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-what-each-set-contains"
+          },
+          "why-the-inclusions-are-strict": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-why-the-inclusions-are-strict"
+          },
+          "proof-a-terminating-or-repeating-decimal-is-rational": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-proof-a-terminating-or-repeating-decimal-is-rational"
+          },
+          "proof-a-real-number-need-not-be-rational": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet"
+          },
+          "proof-why-the-imaginary-unit-is-not-real": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-proof-why-the-imaginary-unit-is-not-real"
+          },
+          "practice": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-practice"
+          }
+        }
+      },
+      "beweissprache-und-methoden": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "The language and structure of proof",
+        "anchor": "from-beweissprache-und-methoden",
+        "fragments": {
+          "know-the-role-of-each-sentence": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results"
+          },
+          "choose-a-method": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-choose-a-method"
+          },
+          "a-small-workflow": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-a-small-workflow"
+          },
+          "arbitrary-does-not-mean-a-representative-sample": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-arbitrary-does-not-mean-a-representative-sample"
+          },
+          "from-a-definition-to-a-proof": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-from-a-definition-to-a-proof"
+          }
+        }
+      },
+      "widerspruch-und-irrationalitaet": {
+        "order": 14,
+        "key": "widerspruch-und-irrationalitaet",
+        "title": "Contradiction and the irrationality of √2",
+        "anchor": "from-widerspruch-und-irrationalitaet",
+        "fragments": {
+          "what-a-proof-establishes": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-what-a-proof-establishes"
+          },
+          "a-first-proof-by-contradiction": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-a-first-proof-by-contradiction"
+          },
+          "the-parity-fact-we-will-need": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-the-parity-fact-we-will-need"
+          },
+          "why-2sqrt22-cannot-be-a-fraction": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-why-2sqrt22-cannot-be-a-fraction"
+          },
+          "1-assume-a-fraction-exists-and-reduce-it": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-1-assume-a-fraction-exists-and-reduce-it"
+          },
+          "2-turn-the-assumed-equality-into-an-integer-equation": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-2-turn-the-assumed-equality-into-an-integer-equation"
+          },
+          "3-show-that-the-numerator-is-even": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-3-show-that-the-numerator-is-even"
+          },
+          "4-substitute-to-learn-about-the-denominator": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-4-substitute-to-learn-about-the-denominator"
+          },
+          "5-identify-the-contradiction": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-5-identify-the-contradiction"
+          },
+          "6-state-what-follows": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-6-state-what-follows"
+          },
+          "how-the-proof-methods-fit-together": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-how-the-proof-methods-fit-together"
+          },
+          "check-the-reasoning": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-check-the-reasoning"
+          }
+        }
+      },
+      "boolesche-grundgesetze": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Five starting laws of Boolean algebra",
+        "anchor": "from-boolesche-grundgesetze",
+        "fragments": {
+          "laws-15": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-laws-15"
+          },
+          "see-the-grouping": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-see-the-grouping"
+          },
+          "recognizing-the-shape-of-a-law": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-recognizing-the-shape-of-a-law"
+          }
+        }
+      },
+      "neutralitaet-und-idempotenz": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Sheet 1.1 · identity and idempotence",
+        "anchor": "from-neutralitaet-und-idempotenz",
+        "fragments": {
+          "two-helper-identities-from-absorption": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-two-helper-identities-from-absorption"
+          },
+          "6a--repeating-or-changes-nothing": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-6a--repeating-or-changes-nothing"
+          },
+          "6b--the-dual-calculation": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-6b--the-dual-calculation"
+          },
+          "how-the-proof-is-found": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-how-the-proof-is-found"
+          },
+          "practice-with-the-starting-laws": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-practice-with-the-starting-laws"
+          }
+        }
+      },
+      "nullgesetze-und-konstanten": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Sheet 1.1 · absorbing elements and constants",
+        "anchor": "from-nullgesetze-und-konstanten",
+        "fragments": {
+          "7c-and-7d--the-absorbing-values": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-7c-and-7d--the-absorbing-values"
+          },
+          "8--negating-constants": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-8--negating-constants"
+          },
+          "neutral-and-absorbing-elements": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-neutral-and-absorbing-elements"
+          }
+        }
+      },
+      "eindeutiges-komplement": {
+        "order": 19,
+        "key": "eindeutiges-komplement",
+        "title": "Sheet 1.2 · a complement is unique",
+        "anchor": "from-eindeutiges-komplement",
+        "fragments": {
+          "both-conditions-are-needed": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-both-conditions-are-needed"
+          },
+          "reduce-both-to-the-same-expression": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-reduce-both-to-the-same-expression"
+          },
+          "why-compare-bbb-with-ccc": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-why-compare-bbb-with-ccc"
+          }
+        }
+      },
+      "de-morgan-und-doppelte-negation": {
+        "order": 19,
+        "key": "eindeutiges-komplement",
+        "title": "Sheet 1.2 · De Morgan and double negation",
+        "anchor": "from-de-morgan-und-doppelte-negation",
+        "fragments": {
+          "9a--a-complement-of-aba-lor--bab": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-9a--a-complement-of-aba-lor--bab"
+          },
+          "10--double-negation-independently": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-10--double-negation-independently"
+          },
+          "9b--derive-the-second-law": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-9b--derive-the-second-law"
+          },
+          "the-complement-strategy": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-the-complement-strategy"
+          },
+          "negating-a-compound-claim": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-negating-a-compound-claim"
+          }
+        }
+      },
+      "nand-schaltungen": {
+        "order": 20,
+        "key": "nand-schaltungen",
+        "title": "NAND: formulas become circuits",
+        "anchor": "from-nand-schaltungen",
+        "fragments": {
+          "one-operation": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-one-operation"
+          },
+          "change-inputs-and-follow-the-wires": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-change-inputs-and-follow-the-wires"
+          },
+          "three-constructions": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-three-constructions"
+          },
+          "following-one-signal": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-following-one-signal"
+          }
+        }
+      },
+      "real-sequences": {
+        "order": 15,
+        "key": "real-sequences",
+        "title": "Real sequences",
+        "anchor": "from-real-sequences",
+        "fragments": {
+          "one-output-at-every-positive-index": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-one-output-at-every-positive-index"
+          },
+          "a-rule-must-specify-every-position": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-a-rule-must-specify-every-position"
+          },
+          "practice": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-practice"
+          },
+          "read-aloud": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-read-aloud"
+          }
+        }
+      },
+      "absolute-value-and-distance": {
+        "order": 15,
+        "key": "real-sequences",
+        "title": "Absolute value and distance",
+        "anchor": "from-absolute-value-and-distance",
+        "fragments": {
+          "signed-displacement-and-distance": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-signed-displacement-and-distance"
+          },
+          "a-strict-tolerance-is-an-open-interval": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-a-strict-tolerance-is-an-open-interval"
+          },
+          "practice": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-practice"
+          },
+          "read-aloud": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-read-aloud"
+          }
+        }
+      },
+      "reading-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Reading sequence convergence",
+        "anchor": "from-reading-sequence-convergence",
+        "fragments": {
+          "fix-the-objects-before-reading-the-quantifiers": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-fix-the-objects-before-reading-the-quantifiers"
+          },
+          "the-positive-definition": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-the-positive-definition"
+          },
+          "practice": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-practice"
+          },
+          "read-aloud": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-read-aloud"
+          }
+        }
+      },
+      "proving-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Proving sequence convergence",
+        "anchor": "from-proving-sequence-convergence",
+        "fragments": {
+          "the-full-constant-sequence-proof": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-the-full-constant-sequence-proof"
+          },
+          "choice-dependence-and-proof-dependence": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-choice-dependence-and-proof-dependence"
+          },
+          "practice": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-practice"
+          },
+          "read-aloud": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-read-aloud"
+          }
+        }
+      },
+      "reciprocal-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Reciprocal sequence convergence",
+        "anchor": "from-reciprocal-sequence-convergence",
+        "fragments": {
+          "find-a-threshold-then-prove-its-tail-works": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-find-a-threshold-then-prove-its-tail-works"
+          },
+          "a-strict-boundary-check": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-a-strict-boundary-check"
+          },
+          "practice": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-practice"
+          },
+          "read-aloud": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-read-aloud"
+          }
+        }
+      },
+      "negating-sequence-convergence": {
+        "order": 17,
+        "key": "negating-sequence-convergence",
+        "title": "Negating sequence convergence",
+        "anchor": "from-negating-sequence-convergence",
+        "fragments": {
+          "1-deny-the-whole-definition": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-1-deny-the-whole-definition"
+          },
+          "2-cross-the-tolerance-quantifier": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-2-cross-the-tolerance-quantifier"
+          },
+          "3-cross-the-threshold-quantifier": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-3-cross-the-threshold-quantifier"
+          },
+          "4-cross-the-test-index-quantifier": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-4-cross-the-test-index-quantifier"
+          },
+          "5-deny-the-implication": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-5-deny-the-implication"
+          },
+          "6-include-equality-in-distance-failure": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-6-include-equality-in-distance-failure"
+          },
+          "prove-one-actual-failure": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-prove-one-actual-failure"
+          },
+          "practice": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-practice"
+          },
+          "read-aloud": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-read-aloud"
+          }
+        }
+      },
+      "no-real-limit": {
+        "order": 17,
+        "key": "negating-sequence-convergence",
+        "title": "No real limit",
+        "anchor": "from-no-real-limit",
+        "fragments": {
+          "a-quantifier-swap-can-destroy-the-test": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-a-quantifier-swap-can-destroy-the-test"
+          },
+          "optional-nuance-a-separately-equivalent-strict-form": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-optional-nuance-a-separately-equivalent-strict-form"
+          },
+          "practice": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-practice"
+          },
+          "read-aloud": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-read-aloud"
+          }
+        }
+      },
+      "analysis-grundlagen-ueberblick": {
+        "order": 0,
+        "key": null,
+        "title": "Analysis foundations · recall map",
+        "anchor": "from-analysis-grundlagen-ueberblick",
+        "fragments": {
+          "a-compact-route-through-the-material": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-a-compact-route-through-the-material"
+          },
+          "the-dependency-chain": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-the-dependency-chain"
+          },
+          "questions-to-answer-without-looking": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-questions-to-answer-without-looking"
+          },
+          "a-combined-problem": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-a-combined-problem"
+          }
+        }
+      }
+    },
+    "de": {
+      "aussagen-und-aussageformen": {
+        "order": 2,
+        "key": "aussagen-und-aussageformen",
+        "title": "Aussagen und Aussageformen",
+        "anchor": "from-aussagen-und-aussageformen",
+        "fragments": {
+          "eine-aussage-darf-falsch-sein": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-eine-aussage-darf-falsch-sein"
+          },
+          "eine-freie-variable-lässt-eine-frage-offen": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-eine-freie-variable-lässt-eine-frage-offen"
+          },
+          "die-einordnung-prüfen": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-die-einordnung-prüfen"
+          },
+          "einsetzen-und-wahrheit": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-einsetzen-und-wahrheit"
+          },
+          "behauptungen-ausdrücke-und-aufforderungen": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-behauptungen-ausdrücke-und-aufforderungen"
+          },
+          "wahrheit-wissen-und-gründe": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-wahrheit-wissen-und-gründe"
+          },
+          "freie-vorkommen-geltungsbereiche-und-zuweisungen": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-aussagen-und-aussageformen-freie-vorkommen-geltungsbereiche-und-zuweisungen"
+          },
+          "selbst-prüfen": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-selbst-prüfen"
+          }
+        }
+      },
+      "definitions-assumptions-results": {
+        "order": 2,
+        "key": "aussagen-und-aussageformen",
+        "title": "Definitionen, Annahmen und Ergebnisse",
+        "anchor": "from-definitions-assumptions-results",
+        "fragments": {
+          "welche-rolle-hat-der-satz": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-welche-rolle-hat-der-satz"
+          },
+          "einen-namen-einführen": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-einen-namen-einführen"
+          },
+          "eine-eigenschaft-muss-kein-beispiel-haben": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-eine-eigenschaft-muss-kein-beispiel-haben"
+          },
+          "rollen-und-definitionen-anwenden": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-rollen-und-definitionen-anwenden"
+          }
+        }
+      },
+      "logische-verknuepfungen": {
+        "order": 4,
+        "key": "logische-verknuepfungen",
+        "title": "Logische Verknüpfungen",
+        "anchor": "from-logische-verknuepfungen",
+        "fragments": {
+          "eine-zeile-nach-der-anderen-lesen": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-eine-zeile-nach-der-anderen-lesen"
+          },
+          "eine-wahrheitstabelle-mit-drei-variablen": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-eine-wahrheitstabelle-mit-drei-variablen"
+          },
+          "immer-nie-oder-manchmal": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-immer-nie-oder-manchmal"
+          },
+          "eine-implikation-negieren": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-logische-verknuepfungen-eine-implikation-negieren"
+          },
+          "eine-implikation-lesen": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-logische-verknuepfungen-eine-implikation-lesen"
+          },
+          "eine-karte-zwei-eigenschaften": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-eine-karte-zwei-eigenschaften"
+          },
+          "einschließendes-oder-und-genau-eines": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-einschließendes-oder-und-genau-eines"
+          },
+          "gruppierung-und-atomare-eingaben": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-gruppierung-und-atomare-eingaben"
+          },
+          "mit-begründung-üben": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-mit-begründung-üben"
+          }
+        }
+      },
+      "simultaneous-conditions": {
+        "order": 3,
+        "key": "simultaneous-conditions",
+        "title": "Mehrere gleichzeitige Bedingungen",
+        "anchor": "from-simultaneous-conditions",
+        "fragments": {
+          "ein-strukturiertes-kriterium-lesen": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-ein-strukturiertes-kriterium-lesen"
+          },
+          "eine-bezeichnung-nachweisen-und-auspacken": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-eine-bezeichnung-nachweisen-und-auspacken"
+          },
+          "eine-hinreichende-regel-ist-etwas-anderes": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-eine-hinreichende-regel-ist-etwas-anderes"
+          },
+          "alternativen-und-fehler-üben": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-alternativen-und-fehler-üben"
+          }
+        }
+      },
+      "building-truth-tables": {
+        "order": 4,
+        "key": "logische-verknuepfungen",
+        "title": "Wahrheitstabellen aufbauen",
+        "anchor": "from-building-truth-tables",
+        "fragments": {
+          "eingaben-und-vollständigkeit": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-eingaben-und-vollständigkeit"
+          },
+          "durchgerechneter-aufbau": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-durchgerechneter-aufbau"
+          },
+          "weitere-tabellen-selbst-aufbauen": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-weitere-tabellen-selbst-aufbauen"
+          },
+          "was-abstrakte-zeilen-aussagen": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-was-abstrakte-zeilen-aussagen"
+          }
+        }
+      },
+      "equality-and-equations": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Gleichheit und Gleichungen",
+        "anchor": "from-equality-and-equations",
+        "fragments": {
+          "grundregeln-der-gleichheit": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-grundregeln-der-gleichheit"
+          },
+          "jedes-kettenglied-behauptet-eine-gleichheit": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-jedes-kettenglied-behauptet-eine-gleichheit"
+          },
+          "der-zusammenhang-bestimmt-die-rolle": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-der-zusammenhang-bestimmt-die-rolle"
+          },
+          "aufgaben": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-aufgaben"
+          }
+        }
+      },
+      "order-comparisons": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Ordnungsvergleiche und Randpunkte",
+        "anchor": "from-order-comparisons",
+        "fragments": {
+          "vergleiche-und-ihre-lesarten": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-vergleiche-und-ihre-lesarten"
+          },
+          "zwei-grenzen-für-dieselbe-eingabe": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-zwei-grenzen-für-dieselbe-eingabe"
+          },
+          "randpunkte-prüfen": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-randpunkte-prüfen"
+          }
+        }
+      },
+      "reading-mathematical-structure": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Mathematische Struktur lesen",
+        "anchor": "from-reading-mathematical-structure",
+        "fragments": {
+          "ein-verfahren-zum-lesen": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-ein-verfahren-zum-lesen"
+          },
+          "eine-allaussage-mit-innerer-implikation": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-eine-allaussage-mit-innerer-implikation"
+          },
+          "in-beide-richtungen-üben": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-in-beide-richtungen-üben"
+          }
+        }
+      },
+      "logical-negation": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Logische Negation",
+        "anchor": "from-logical-negation",
+        "fragments": {
+          "definition-der-negation": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-definition-der-negation"
+          },
+          "gleichheit-verneinen": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-gleichheit-verneinen"
+          },
+          "wissen-sinn-und-bereich": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-wissen-sinn-und-bereich"
+          },
+          "aufgaben": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-aufgaben"
+          }
+        }
+      },
+      "negating-order-comparisons": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Ordnungsvergleiche negieren",
+        "anchor": "from-negating-order-comparisons",
+        "fragments": {
+          "beweis-mit-trichotomie": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-beweis-mit-trichotomie"
+          },
+          "den-ganzen-vergleich-und-den-bereich-erhalten": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-den-ganzen-vergleich-und-den-bereich-erhalten"
+          },
+          "am-rand-üben": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-am-rand-üben"
+          }
+        }
+      },
+      "double-negation": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Doppelte Negation",
+        "anchor": "from-double-negation",
+        "fragments": {
+          "der-klassische-satz": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-der-klassische-satz"
+          },
+          "beweis-beide-möglichen-ausgangswerte": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-beweis-beide-möglichen-ausgangswerte"
+          },
+          "der-geltungsbereich-entscheidet": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-der-geltungsbereich-entscheidet"
+          },
+          "verschachtelt-und-getrennt-üben": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-verschachtelt-und-getrennt-üben"
+          },
+          "negative-wörter-in-der-alltagssprache": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-negative-wörter-in-der-alltagssprache"
+          }
+        }
+      },
+      "negating-combined-conditions": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Zusammengesetzte Bedingungen negieren",
+        "anchor": "from-negating-combined-conditions",
+        "fragments": {
+          "negation-einer-konjunktion": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-negation-einer-konjunktion"
+          },
+          "negation-einer-einschließenden-disjunktion": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-negation-einer-einschließenden-disjunktion"
+          },
+          "ein-verschachteltes-kartenkriterium": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-ein-verschachteltes-kartenkriterium"
+          },
+          "selbstständige-aufgaben": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-selbstständige-aufgaben"
+          },
+          "zahlen-und-randpunkte": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-zahlen-und-randpunkte"
+          }
+        }
+      },
+      "material-implication-and-vacuity": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Materiale Implikation und leere Wahrheit",
+        "anchor": "from-material-implication-and-vacuity",
+        "fragments": {
+          "die-definition-umfasst-vier-fälle": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-die-definition-umfasst-vier-fälle"
+          },
+          "was-leere-wahrheit-besagt": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-was-leere-wahrheit-besagt"
+          },
+          "eine-belegung-ist-keine-logische-folgerungsbeziehung": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-eine-belegung-ist-keine-logische-folgerungsbeziehung"
+          },
+          "bedeutung-vor-wahrheitstabelle": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-bedeutung-vor-wahrheitstabelle"
+          }
+        }
+      },
+      "reading-conditionals": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Bedingte Aussagen lesen",
+        "anchor": "from-reading-conditionals",
+        "fragments": {
+          "voraussetzung-und-folgerung": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-voraussetzung-und-folgerung"
+          },
+          "die-angegebenen-annahmen-beibehalten": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-die-angegebenen-annahmen-beibehalten"
+          },
+          "das-ganze-ziel-beweisen": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-das-ganze-ziel-beweisen"
+          },
+          "eine-regel-anwenden-braucht-zwei-prämissen": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-eine-regel-anwenden-braucht-zwei-prämissen"
+          }
+        }
+      },
+      "implikation-und-kontraposition": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implikation und Kontraposition",
+        "anchor": "from-implikation-und-kontraposition",
+        "fragments": {
+          "die-aussage-ändern-und-alle-fälle-prüfen": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-die-aussage-ändern-und-alle-fälle-prüfen"
+          },
+          "warum-die-formen-paarweise-übereinstimmen": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-warum-die-formen-paarweise-übereinstimmen"
+          },
+          "teilbarkeit-liefert-ein-konkretes-beispiel": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-teilbarkeit-liefert-ein-konkretes-beispiel"
+          },
+          "ein-beweis-und-seine-umkehrung": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-ein-beweis-und-seine-umkehrung"
+          }
+        }
+      },
+      "implication-and-model-assumptions": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implikation und Modellannahmen",
+        "anchor": "from-implication-and-model-assumptions",
+        "fragments": {
+          "eine-genaue-regel-in-einem-hypothetischen-modell": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implication-and-model-assumptions-eine-genaue-regel-in-einem-hypothetischen-modell"
+          },
+          "schluss-und-beobachtung-beantworten-verschiedene-fragen": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implication-and-model-assumptions-schluss-und-beobachtung-beantworten-verschiedene-fragen"
+          }
+        }
+      },
+      "biconditionals-and-equivalent-conditions": {
+        "order": 7,
+        "key": "biconditionals-and-equivalent-conditions",
+        "title": "Äquivalenzen und gleichwertige Bedingungen",
+        "anchor": "from-biconditionals-and-equivalent-conditions",
+        "fragments": {
+          "wenn-nur-wenn-und-beides": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-wenn-nur-wenn-und-beides"
+          },
+          "die-rückrichtung-neu-beginnen": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-die-rückrichtung-neu-beginnen"
+          },
+          "drei-verschiedene-geltungsbereiche": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-drei-verschiedene-geltungsbereiche"
+          }
+        }
+      },
+      "equivalence-chains": {
+        "order": 7,
+        "key": "biconditionals-and-equivalent-conditions",
+        "title": "Äquivalenzketten",
+        "anchor": "from-equivalence-chains",
+        "fragments": {
+          "was-die-kette-behauptet": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-was-die-kette-behauptet"
+          },
+          "warum-die-enden-übereinstimmen": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-warum-die-enden-übereinstimmen"
+          },
+          "quadrieren-kann-kandidaten-hinzufügen": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-quadrieren-kann-kandidaten-hinzufügen"
+          },
+          "division-kann-eine-lösung-verlieren": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-division-kann-eine-lösung-verlieren"
+          }
+        }
+      },
+      "aequivalenz-und-paritaet": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Äquivalenz und Parität",
+        "anchor": "from-aequivalenz-und-paritaet",
+        "fragments": {
+          "die-behauptung": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-die-behauptung"
+          },
+          "hinrichtung-die-definition-nutzen": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-hinrichtung-die-definition-nutzen"
+          },
+          "rückrichtung-kontraposition-nutzen": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-rückrichtung-kontraposition-nutzen"
+          },
+          "warum-hier-kontraposition": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-warum-hier-kontraposition"
+          },
+          "übung": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-übung"
+          }
+        }
+      },
+      "universal-statements-and-domains": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Allaussagen und Grundbereiche",
+        "anchor": "from-universal-statements-and-domains",
+        "fragments": {
+          "grundbereich-prädikat-und-quantor": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-grundbereich-prädikat-und-quantor"
+          },
+          "definiert-falsch-oder-außerhalb-der-aussage": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-definiert-falsch-oder-außerhalb-der-aussage"
+          },
+          "leere-mengen-und-veränderte-bereiche": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-leere-mengen-und-veränderte-bereiche"
+          },
+          "was-beweist-einen-satz-über-unendlich-viele-eingaben": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-was-beweist-einen-satz-über-unendlich-viele-eingaben"
+          }
+        }
+      },
+      "bound-variables-and-scope": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Gebundene Variablen und Geltungsbereiche",
+        "anchor": "from-bound-variables-and-scope",
+        "fragments": {
+          "vorkommen-statt-buchstaben-ein-für-alle-mal-einordnen": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-vorkommen-statt-buchstaben-ein-für-alle-mal-einordnen"
+          },
+          "ein-sicherer-neuer-name-erhält-die-rollen": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-ein-sicherer-neuer-name-erhält-die-rollen"
+          },
+          "klammern-bestimmen-die-reichweite": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-klammern-bestimmen-die-reichweite"
+          },
+          "eine-feste-bedingung-verschieben-verlangt-eine-bereichsprüfung": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-eine-feste-bedingung-verschieben-verlangt-eine-bereichsprüfung"
+          }
+        }
+      },
+      "counterexamples": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Gegenbeispiele",
+        "anchor": "from-counterexamples",
+        "fragments": {
+          "warum-ein-fehler-genügt": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-warum-ein-fehler-genügt"
+          },
+          "den-ganzen-fehlerbereich-finden": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-den-ganzen-fehlerbereich-finden"
+          },
+          "keine-zusammengesetzte-anforderung-weglassen": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-keine-zusammengesetzte-anforderung-weglassen"
+          },
+          "suche-prüfung-und-reparatur": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-suche-prüfung-und-reparatur"
+          }
+        }
+      },
+      "existence-and-witnesses": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Existenz und Zeugen",
+        "anchor": "from-existence-and-witnesses",
+        "fragments": {
+          "kandidat-zugehörigkeit-ganze-bedingung": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-kandidat-zugehörigkeit-ganze-bedingung"
+          },
+          "übung": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-übung"
+          },
+          "zeugen-prüfen": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-zeugen-prüfen"
+          },
+          "laut-lesen": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-existence-and-witnesses-laut-lesen"
+          }
+        }
+      },
+      "constructing-a-witness": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Einen Zeugen konstruieren",
+        "anchor": "from-constructing-a-witness",
+        "fragments": {
+          "ein-vollständiger-direkter-beweis": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-ein-vollständiger-direkter-beweis"
+          },
+          "rückwärtsrechnen-und-bereichsprüfung": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-rückwärtsrechnen-und-bereichsprüfung"
+          },
+          "übung": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-übung"
+          },
+          "laut-lesen": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-laut-lesen"
+          }
+        }
+      },
+      "existence-and-uniqueness": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Existenz und Eindeutigkeit",
+        "anchor": "from-existence-and-uniqueness",
+        "fragments": {
+          "drei-verschiedene-anforderungen": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-drei-verschiedene-anforderungen"
+          },
+          "ein-beweis-mit-beiden-aufgaben": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-ein-beweis-mit-beiden-aufgaben"
+          },
+          "übung": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-übung"
+          },
+          "laut-lesen": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-laut-lesen"
+          }
+        }
+      },
+      "counting-witnesses": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Zeugen zählen",
+        "anchor": "from-counting-witnesses",
+        "fragments": {
+          "ein-anderer-bereich-verändert-die-anzahl": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-ein-anderer-bereich-verändert-die-anzahl"
+          },
+          "übung": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-übung"
+          },
+          "laut-lesen": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-laut-lesen"
+          }
+        }
+      },
+      "quantifier-order": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Reihenfolge der Quantoren",
+        "anchor": "from-quantifier-order",
+        "fragments": {
+          "dieselbe-unterscheidung-über-den-reellen-zahlen": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-dieselbe-unterscheidung-über-den-reellen-zahlen"
+          },
+          "zulässiges-vertauschen-hat-bedingungen": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-zulässiges-vertauschen-hat-bedingungen"
+          },
+          "übung": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-übung"
+          },
+          "laut-lesen": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-laut-lesen"
+          }
+        }
+      },
+      "witness-dependence": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Abhängigkeit von Zeugen",
+        "anchor": "from-witness-dependence",
+        "fragments": {
+          "verfügbare-information-festhalten": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-verfügbare-information-festhalten"
+          },
+          "übung": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-übung"
+          },
+          "laut-lesen": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-laut-lesen"
+          }
+        }
+      },
+      "separate-and-shared-witnesses": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Getrennte und gemeinsame Zeugen",
+        "anchor": "from-separate-and-shared-witnesses",
+        "fragments": {
+          "alle-fälle-mit-leeren-bereichen": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-alle-fälle-mit-leeren-bereichen"
+          },
+          "übung": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-übung"
+          },
+          "laut-lesen": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-laut-lesen"
+          }
+        }
+      },
+      "translating-quantified-statements": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Quantifizierte Aussagen übersetzen",
+        "anchor": "from-translating-quantified-statements",
+        "fragments": {
+          "schreiben-und-zurücklesen": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-schreiben-und-zurücklesen"
+          },
+          "eine-bedingung-schränkt-die-anforderung-ein": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-eine-bedingung-schränkt-die-anforderung-ein"
+          },
+          "übung": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-übung"
+          },
+          "laut-lesen": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-laut-lesen"
+          }
+        }
+      },
+      "negating-universal-statements": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "All-Aussagen negieren",
+        "anchor": "from-negating-universal-statements",
+        "fragments": {
+          "nicht-jede-bedeutet-einen-fehlerfall": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-nicht-jede-bedeutet-einen-fehlerfall"
+          },
+          "bereich-bewahren-und-ganzes-prädikat-negieren": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-bereich-bewahren-und-ganzes-prädikat-negieren"
+          },
+          "übung": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-laut-lesen"
+          }
+        }
+      },
+      "negating-existential-statements": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Existenz-Aussagen negieren",
+        "anchor": "from-negating-existential-statements",
+        "fragments": {
+          "die-einschränkung-bleibt-positiv": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-die-einschränkung-bleibt-positiv"
+          },
+          "übung": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-laut-lesen"
+          }
+        }
+      },
+      "negating-nested-statements": {
+        "order": 12,
+        "key": "negating-nested-statements",
+        "title": "Verschachtelte Aussagen negieren",
+        "anchor": "from-negating-nested-statements",
+        "fragments": {
+          "auf-einem-endlichen-bereich-von-außen-nach-innen": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-auf-einem-endlichen-bereich-von-außen-nach-innen"
+          },
+          "mit-existenz-beginnen": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-mit-existenz-beginnen"
+          },
+          "übung": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-laut-lesen"
+          }
+        }
+      },
+      "negating-quantified-statements-step-by-step": {
+        "order": 12,
+        "key": "negating-nested-statements",
+        "title": "Quantifizierte Aussagen schrittweise negieren",
+        "anchor": "from-negating-quantified-statements-step-by-step",
+        "fragments": {
+          "warum-jeder-ersatz-zulässig-ist": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-warum-jeder-ersatz-zulässig-ist"
+          },
+          "eine-methode-mit-geltungsbereich": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-eine-methode-mit-geltungsbereich"
+          },
+          "übung": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-laut-lesen"
+          }
+        }
+      },
+      "negating-quantified-inequalities": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Quantifizierte Ungleichungen negieren",
+        "anchor": "from-negating-quantified-inequalities",
+        "fragments": {
+          "reelle-ordnung-zerlegt-alle-fälle": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-reelle-ordnung-zerlegt-alle-fälle"
+          },
+          "ein-quantifiziertes-grenzbeispiel": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-ein-quantifiziertes-grenzbeispiel"
+          },
+          "wenn-das-prädikat-eine-implikation-ist": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-wenn-das-prädikat-eine-implikation-ist"
+          },
+          "übung": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-laut-lesen"
+          }
+        }
+      },
+      "quantoren-und-negation": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Quantoren und Negation",
+        "anchor": "from-quantoren-und-negation",
+        "fragments": {
+          "ein-zeuge-oder-alle-fälle": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-ein-zeuge-oder-alle-fälle"
+          },
+          "die-negation-nach-innen-ziehen": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-die-negation-nach-innen-ziehen"
+          },
+          "der-randfall-zählt": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-der-randfall-zählt"
+          },
+          "reihenfolge-der-quantoren": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-reihenfolge-der-quantoren"
+          }
+        }
+      },
+      "zahlenmengen": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Die Zahlenmengen",
+        "anchor": "from-zahlenmengen",
+        "fragments": {
+          "ein-bild-der-inklusionen": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-ein-bild-der-inklusionen"
+          },
+          "was-die-einzelnen-mengen-enthalten": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-was-die-einzelnen-mengen-enthalten"
+          },
+          "warum-die-inklusionen-echt-sind": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-warum-die-inklusionen-echt-sind"
+          },
+          "beweis-abbrechende-und-periodische-dezimalzahlen-sind-rational": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-beweis-abbrechende-und-periodische-dezimalzahlen-sind-rational"
+          },
+          "beweis-eine-reelle-zahl-muss-nicht-rational-sein": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet"
+          },
+          "beweis-warum-die-imaginäre-einheit-nicht-reell-ist": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-beweis-warum-die-imaginäre-einheit-nicht-reell-ist"
+          },
+          "übung": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-übung"
+          }
+        }
+      },
+      "beweissprache-und-methoden": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Sprache und Aufbau von Beweisen",
+        "anchor": "from-beweissprache-und-methoden",
+        "fragments": {
+          "die-rolle-jedes-satzes-kennen": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results"
+          },
+          "eine-methode-wählen": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-eine-methode-wählen"
+          },
+          "ein-kleiner-arbeitsablauf": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-ein-kleiner-arbeitsablauf"
+          },
+          "beliebig-bedeutet-keine-repräsentative-stichprobe": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-beliebig-bedeutet-keine-repräsentative-stichprobe"
+          },
+          "von-einer-definition-zum-beweis": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-von-einer-definition-zum-beweis"
+          }
+        }
+      },
+      "widerspruch-und-irrationalitaet": {
+        "order": 14,
+        "key": "widerspruch-und-irrationalitaet",
+        "title": "Widerspruch und die Irrationalität von √2",
+        "anchor": "from-widerspruch-und-irrationalitaet",
+        "fragments": {
+          "was-ein-beweis-leistet": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-was-ein-beweis-leistet"
+          },
+          "ein-erster-widerspruchsbeweis": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-ein-erster-widerspruchsbeweis"
+          },
+          "die-benötigte-aussage-über-gerade-zahlen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-die-benötigte-aussage-über-gerade-zahlen"
+          },
+          "warum-2sqrt22-kein-bruch-sein-kann": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-warum-2sqrt22-kein-bruch-sein-kann"
+          },
+          "1-einen-bruch-annehmen-und-vollständig-kürzen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-1-einen-bruch-annehmen-und-vollständig-kürzen"
+          },
+          "2-aus-der-angenommenen-gleichheit-eine-ganzzahlige-gleichung-gewinnen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-2-aus-der-angenommenen-gleichheit-eine-ganzzahlige-gleichung-gewinnen"
+          },
+          "3-zeigen-dass-der-zähler-gerade-ist": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-3-zeigen-dass-der-zähler-gerade-ist"
+          },
+          "4-einsetzen-und-den-nenner-untersuchen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-4-einsetzen-und-den-nenner-untersuchen"
+          },
+          "5-den-widerspruch-benennen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-5-den-widerspruch-benennen"
+          },
+          "6-die-schlussfolgerung-aussprechen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-6-die-schlussfolgerung-aussprechen"
+          },
+          "wie-die-beweismethoden-zusammenwirken": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-wie-die-beweismethoden-zusammenwirken"
+          },
+          "die-begründung-prüfen": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-die-begründung-prüfen"
+          }
+        }
+      },
+      "boolesche-grundgesetze": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Fünf Grundgesetze der booleschen Algebra",
+        "anchor": "from-boolesche-grundgesetze",
+        "fragments": {
+          "gesetze-15": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-gesetze-15"
+          },
+          "die-klammerung-sehen": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-die-klammerung-sehen"
+          },
+          "die-form-eines-gesetzes-erkennen": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-die-form-eines-gesetzes-erkennen"
+          }
+        }
+      },
+      "neutralitaet-und-idempotenz": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Blatt 1.1 · Neutralität und Idempotenz",
+        "anchor": "from-neutralitaet-und-idempotenz",
+        "fragments": {
+          "zwei-hilfsidentitäten-aus-absorption": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-zwei-hilfsidentitäten-aus-absorption"
+          },
+          "6a--wiederholtes-oder-ändert-nichts": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-6a--wiederholtes-oder-ändert-nichts"
+          },
+          "6b--die-duale-rechnung": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-6b--die-duale-rechnung"
+          },
+          "wie-man-den-beweis-findet": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-wie-man-den-beweis-findet"
+          },
+          "mit-den-grundgesetzen-üben": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-mit-den-grundgesetzen-üben"
+          }
+        }
+      },
+      "nullgesetze-und-konstanten": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Blatt 1.1 · absorbierende Elemente und Konstanten",
+        "anchor": "from-nullgesetze-und-konstanten",
+        "fragments": {
+          "7c-und-7d--die-absorbierenden-werte": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-7c-und-7d--die-absorbierenden-werte"
+          },
+          "8--konstanten-negieren": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-8--konstanten-negieren"
+          },
+          "neutrale-und-absorbierende-elemente": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-neutrale-und-absorbierende-elemente"
+          }
+        }
+      },
+      "eindeutiges-komplement": {
+        "order": 19,
+        "key": "eindeutiges-komplement",
+        "title": "Blatt 1.2 · das Komplement ist eindeutig",
+        "anchor": "from-eindeutiges-komplement",
+        "fragments": {
+          "beide-bedingungen-sind-nötig": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-beide-bedingungen-sind-nötig"
+          },
+          "beide-auf-denselben-ausdruck-zurückführen": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-beide-auf-denselben-ausdruck-zurückführen"
+          },
+          "warum-bbb-und-ccc-vergleichen": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-warum-bbb-und-ccc-vergleichen"
+          }
+        }
+      },
+      "de-morgan-und-doppelte-negation": {
+        "order": 19,
+        "key": "eindeutiges-komplement",
+        "title": "Blatt 1.2 · De Morgan und doppelte Negation",
+        "anchor": "from-de-morgan-und-doppelte-negation",
+        "fragments": {
+          "9a--ein-komplement-von-aba-lor--bab": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-9a--ein-komplement-von-aba-lor--bab"
+          },
+          "10--doppelte-negation-unabhängig-beweisen": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-10--doppelte-negation-unabhängig-beweisen"
+          },
+          "9b--das-zweite-gesetz-herleiten": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-9b--das-zweite-gesetz-herleiten"
+          },
+          "die-komplementstrategie": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-die-komplementstrategie"
+          },
+          "eine-zusammengesetzte-aussage-negieren": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-eine-zusammengesetzte-aussage-negieren"
+          }
+        }
+      },
+      "nand-schaltungen": {
+        "order": 20,
+        "key": "nand-schaltungen",
+        "title": "NAND: aus Formeln werden Schaltungen",
+        "anchor": "from-nand-schaltungen",
+        "fragments": {
+          "eine-operation": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-eine-operation"
+          },
+          "eingaben-ändern-und-den-leitungen-folgen": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-eingaben-ändern-und-den-leitungen-folgen"
+          },
+          "drei-konstruktionen": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-drei-konstruktionen"
+          },
+          "einem-signal-folgen": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-einem-signal-folgen"
+          }
+        }
+      },
+      "real-sequences": {
+        "order": 15,
+        "key": "real-sequences",
+        "title": "Reelle Folgen",
+        "anchor": "from-real-sequences",
+        "fragments": {
+          "ein-wert-an-jeder-positiven-indexstelle": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-ein-wert-an-jeder-positiven-indexstelle"
+          },
+          "eine-regel-muss-jede-stelle-bestimmen": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-eine-regel-muss-jede-stelle-bestimmen"
+          },
+          "übung": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-übung"
+          },
+          "laut-lesen": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-laut-lesen"
+          }
+        }
+      },
+      "absolute-value-and-distance": {
+        "order": 15,
+        "key": "real-sequences",
+        "title": "Betrag und Abstand",
+        "anchor": "from-absolute-value-and-distance",
+        "fragments": {
+          "gerichtete-differenz-und-abstand": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-gerichtete-differenz-und-abstand"
+          },
+          "eine-strenge-toleranz-ist-ein-offenes-intervall": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-eine-strenge-toleranz-ist-ein-offenes-intervall"
+          },
+          "übung": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-übung"
+          },
+          "laut-lesen": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-laut-lesen"
+          }
+        }
+      },
+      "reading-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Folgenkonvergenz lesen",
+        "anchor": "from-reading-sequence-convergence",
+        "fragments": {
+          "objekte-vor-den-quantoren-festhalten": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-objekte-vor-den-quantoren-festhalten"
+          },
+          "die-positive-definition": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-die-positive-definition"
+          },
+          "übung": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-übung"
+          },
+          "laut-lesen": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-laut-lesen"
+          }
+        }
+      },
+      "proving-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Folgenkonvergenz beweisen",
+        "anchor": "from-proving-sequence-convergence",
+        "fragments": {
+          "der-vollständige-beweis-für-eine-konstante-folge": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-der-vollständige-beweis-für-eine-konstante-folge"
+          },
+          "wahlabhängigkeit-und-beweisabhängigkeit": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-wahlabhängigkeit-und-beweisabhängigkeit"
+          },
+          "übung": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-übung"
+          },
+          "laut-lesen": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-laut-lesen"
+          }
+        }
+      },
+      "reciprocal-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Konvergenz der Kehrwertfolge",
+        "anchor": "from-reciprocal-sequence-convergence",
+        "fragments": {
+          "startindex-finden-und-sein-endstück-prüfen": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-startindex-finden-und-sein-endstück-prüfen"
+          },
+          "die-strenge-grenze-prüfen": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-die-strenge-grenze-prüfen"
+          },
+          "übung": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-übung"
+          },
+          "laut-lesen": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-laut-lesen"
+          }
+        }
+      },
+      "negating-sequence-convergence": {
+        "order": 17,
+        "key": "negating-sequence-convergence",
+        "title": "Folgenkonvergenz negieren",
+        "anchor": "from-negating-sequence-convergence",
+        "fragments": {
+          "1-die-ganze-definition-verneinen": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-1-die-ganze-definition-verneinen"
+          },
+          "2-den-toleranzquantor-überschreiten": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-2-den-toleranzquantor-überschreiten"
+          },
+          "3-den-startindexquantor-überschreiten": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-3-den-startindexquantor-überschreiten"
+          },
+          "4-den-prüfindexquantor-überschreiten": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-4-den-prüfindexquantor-überschreiten"
+          },
+          "5-die-implikation-verneinen": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-5-die-implikation-verneinen"
+          },
+          "6-gleichheit-im-abstandsfehler-einschließen": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-6-gleichheit-im-abstandsfehler-einschließen"
+          },
+          "einen-tatsächlichen-fehler-beweisen": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-einen-tatsächlichen-fehler-beweisen"
+          },
+          "übung": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-laut-lesen"
+          }
+        }
+      },
+      "no-real-limit": {
+        "order": 17,
+        "key": "negating-sequence-convergence",
+        "title": "Kein reeller Grenzwert",
+        "anchor": "from-no-real-limit",
+        "fragments": {
+          "ein-quantorentausch-kann-den-test-zerstören": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-ein-quantorentausch-kann-den-test-zerstören"
+          },
+          "optionale-feinheit-eine-gesondert-äquivalente-strenge-form": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-optionale-feinheit-eine-gesondert-äquivalente-strenge-form"
+          },
+          "übung": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-übung"
+          },
+          "laut-lesen": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-laut-lesen"
+          }
+        }
+      },
+      "analysis-grundlagen-ueberblick": {
+        "order": 0,
+        "key": null,
+        "title": "Analysis-Grundlagen · Überblick",
+        "anchor": "from-analysis-grundlagen-ueberblick",
+        "fragments": {
+          "ein-kompakter-weg-durch-den-stoff": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-ein-kompakter-weg-durch-den-stoff"
+          },
+          "die-abhängigkeitskette": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-die-abhängigkeitskette"
+          },
+          "fragen-zum-beantworten-ohne-nachsehen": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-fragen-zum-beantworten-ohne-nachsehen"
+          },
+          "eine-verknüpfte-aufgabe": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-eine-verknüpfte-aufgabe"
+          }
+        }
+      }
+    },
+    "es": {
+      "aussagen-und-aussageformen": {
+        "order": 2,
+        "key": "aussagen-und-aussageformen",
+        "title": "Enunciados y predicados",
+        "anchor": "from-aussagen-und-aussageformen",
+        "fragments": {
+          "un-enunciado-puede-ser-falso": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-un-enunciado-puede-ser-falso"
+          },
+          "una-variable-libre-deja-una-pregunta-abierta": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-una-variable-libre-deja-una-pregunta-abierta"
+          },
+          "comprueba-la-clasificación": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-comprueba-la-clasificación"
+          },
+          "sustitución-y-verdad": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-sustitución-y-verdad"
+          },
+          "afirmaciones-expresiones-e-instrucciones": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-afirmaciones-expresiones-e-instrucciones"
+          },
+          "verdad-conocimiento-y-razones": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-verdad-conocimiento-y-razones"
+          },
+          "apariciones-libres-alcance-y-asignaciones": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-aussagen-und-aussageformen-apariciones-libres-alcance-y-asignaciones"
+          },
+          "comprobaciones-independientes": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-aussagen-und-aussageformen-comprobaciones-independientes"
+          }
+        }
+      },
+      "definitions-assumptions-results": {
+        "order": 2,
+        "key": "aussagen-und-aussageformen",
+        "title": "Definiciones, hipótesis y resultados",
+        "anchor": "from-definitions-assumptions-results",
+        "fragments": {
+          "la-función-de-cada-frase": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-la-función-de-cada-frase"
+          },
+          "introducir-un-nombre": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-introducir-un-nombre"
+          },
+          "una-propiedad-puede-no-tener-ejemplos": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-una-propiedad-puede-no-tener-ejemplos"
+          },
+          "práctica-con-funciones-y-definiciones": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results-práctica-con-funciones-y-definiciones"
+          }
+        }
+      },
+      "logische-verknuepfungen": {
+        "order": 4,
+        "key": "logische-verknuepfungen",
+        "title": "Conectivas lógicas",
+        "anchor": "from-logische-verknuepfungen",
+        "fragments": {
+          "lee-una-fila-cada-vez": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-lee-una-fila-cada-vez"
+          },
+          "una-tabla-de-verdad-con-tres-variables": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-una-tabla-de-verdad-con-tres-variables"
+          },
+          "siempre-nunca-o-a-veces": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-logische-verknuepfungen-siempre-nunca-o-a-veces"
+          },
+          "negar-una-implicación": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-logische-verknuepfungen-negar-una-implicación"
+          },
+          "leer-una-implicación": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-logische-verknuepfungen-leer-una-implicación"
+          },
+          "una-tarjeta-dos-propiedades": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-una-tarjeta-dos-propiedades"
+          },
+          "o-inclusiva-y-exactamente-una": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-o-inclusiva-y-exactamente-una"
+          },
+          "agrupación-y-entradas-atómicas": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-agrupación-y-entradas-atómicas"
+          },
+          "práctica-con-razones": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-logische-verknuepfungen-práctica-con-razones"
+          }
+        }
+      },
+      "simultaneous-conditions": {
+        "order": 3,
+        "key": "simultaneous-conditions",
+        "title": "Varias condiciones simultáneas",
+        "anchor": "from-simultaneous-conditions",
+        "fragments": {
+          "leer-un-criterio-estructurado": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-leer-un-criterio-estructurado"
+          },
+          "establecer-una-etiqueta-y-descomponerla": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-establecer-una-etiqueta-y-descomponerla"
+          },
+          "una-regla-suficiente-es-distinta": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-una-regla-suficiente-es-distinta"
+          },
+          "practicar-alternativas-y-fallos": {
+            "key": "simultaneous-conditions",
+            "anchor": "from-simultaneous-conditions-practicar-alternativas-y-fallos"
+          }
+        }
+      },
+      "building-truth-tables": {
+        "order": 4,
+        "key": "logische-verknuepfungen",
+        "title": "Construir tablas de verdad",
+        "anchor": "from-building-truth-tables",
+        "fragments": {
+          "entradas-y-exhaustividad": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-entradas-y-exhaustividad"
+          },
+          "construcción-resuelta": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-construcción-resuelta"
+          },
+          "construir-otras-tablas-de-forma-independiente": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-construir-otras-tablas-de-forma-independiente"
+          },
+          "qué-dicen-las-filas-abstractas": {
+            "key": "logische-verknuepfungen",
+            "anchor": "from-building-truth-tables-qué-dicen-las-filas-abstractas"
+          }
+        }
+      },
+      "equality-and-equations": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Igualdad y ecuaciones",
+        "anchor": "from-equality-and-equations",
+        "fragments": {
+          "reglas-fundamentales-de-la-igualdad": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-reglas-fundamentales-de-la-igualdad"
+          },
+          "cada-eslabón-afirma-una-igualdad": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-cada-eslabón-afirma-una-igualdad"
+          },
+          "el-contexto-determina-la-función": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-el-contexto-determina-la-función"
+          },
+          "práctica": {
+            "key": "zahlenmengen",
+            "anchor": "from-equality-and-equations-práctica"
+          }
+        }
+      },
+      "order-comparisons": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Comparaciones de orden y extremos",
+        "anchor": "from-order-comparisons",
+        "fragments": {
+          "comparaciones-y-lecturas": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-comparaciones-y-lecturas"
+          },
+          "dos-cotas-para-una-misma-entrada": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-dos-cotas-para-una-misma-entrada"
+          },
+          "comprobar-los-extremos": {
+            "key": "zahlenmengen",
+            "anchor": "from-order-comparisons-comprobar-los-extremos"
+          }
+        }
+      },
+      "reading-mathematical-structure": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Leer la estructura matemática",
+        "anchor": "from-reading-mathematical-structure",
+        "fragments": {
+          "un-procedimiento-de-lectura": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-un-procedimiento-de-lectura"
+          },
+          "un-enunciado-universal-con-un-condicional-dentro": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-un-enunciado-universal-con-un-condicional-dentro"
+          },
+          "práctica-en-ambas-direcciones": {
+            "key": "quantifier-order",
+            "anchor": "from-reading-mathematical-structure-práctica-en-ambas-direcciones"
+          }
+        }
+      },
+      "logical-negation": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Negación lógica",
+        "anchor": "from-logical-negation",
+        "fragments": {
+          "definición-de-negación": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-definición-de-negación"
+          },
+          "la-igualdad-y-su-negación": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-la-igualdad-y-su-negación"
+          },
+          "conocimiento-sentido-y-dominio": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-conocimiento-sentido-y-dominio"
+          },
+          "práctica": {
+            "key": "logical-negation",
+            "anchor": "from-logical-negation-práctica"
+          }
+        }
+      },
+      "negating-order-comparisons": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Negar comparaciones de orden",
+        "anchor": "from-negating-order-comparisons",
+        "fragments": {
+          "demostración-por-tricotomía": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-demostración-por-tricotomía"
+          },
+          "leer-la-comparación-entera-y-conservar-el-dominio": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-leer-la-comparación-entera-y-conservar-el-dominio"
+          },
+          "práctica-en-la-frontera": {
+            "key": "logical-negation",
+            "anchor": "from-negating-order-comparisons-práctica-en-la-frontera"
+          }
+        }
+      },
+      "double-negation": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Doble negación",
+        "anchor": "from-double-negation",
+        "fragments": {
+          "el-teorema-clásico": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-el-teorema-clásico"
+          },
+          "demostración-los-dos-valores-iniciales": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-demostración-los-dos-valores-iniciales"
+          },
+          "el-alcance-determina-qué-pareja-se-elimina": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-el-alcance-determina-qué-pareja-se-elimina"
+          },
+          "práctica-con-alcances": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-práctica-con-alcances"
+          },
+          "palabras-negativas-en-el-habla-corriente": {
+            "key": "logical-negation",
+            "anchor": "from-double-negation-palabras-negativas-en-el-habla-corriente"
+          }
+        }
+      },
+      "negating-combined-conditions": {
+        "order": 5,
+        "key": "logical-negation",
+        "title": "Negar condiciones compuestas",
+        "anchor": "from-negating-combined-conditions",
+        "fragments": {
+          "negación-de-una-conjunción": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-negación-de-una-conjunción"
+          },
+          "negación-de-una-disyunción-inclusiva": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-negación-de-una-disyunción-inclusiva"
+          },
+          "un-requisito-anidado": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-un-requisito-anidado"
+          },
+          "práctica-independiente": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-práctica-independiente"
+          },
+          "extremos-numéricos": {
+            "key": "logical-negation",
+            "anchor": "from-negating-combined-conditions-extremos-numéricos"
+          }
+        }
+      },
+      "material-implication-and-vacuity": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implicación material y verdad vacía",
+        "anchor": "from-material-implication-and-vacuity",
+        "fragments": {
+          "la-definición-incluye-cuatro-casos": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-la-definición-incluye-cuatro-casos"
+          },
+          "qué-dice-la-verdad-vacía": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-qué-dice-la-verdad-vacía"
+          },
+          "una-asignación-no-es-consecuencia-lógica": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-una-asignación-no-es-consecuencia-lógica"
+          },
+          "el-significado-precede-a-la-tabla": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-material-implication-and-vacuity-el-significado-precede-a-la-tabla"
+          }
+        }
+      },
+      "reading-conditionals": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Leer enunciados condicionales",
+        "anchor": "from-reading-conditionals",
+        "fragments": {
+          "hipótesis-y-conclusión": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-hipótesis-y-conclusión"
+          },
+          "conservar-las-hipótesis-enunciadas": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-conservar-las-hipótesis-enunciadas"
+          },
+          "demostrar-todo-el-objetivo": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-demostrar-todo-el-objetivo"
+          },
+          "aplicar-una-regla-requiere-dos-premisas": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-reading-conditionals-aplicar-una-regla-requiere-dos-premisas"
+          }
+        }
+      },
+      "implikation-und-kontraposition": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implicación y contraposición",
+        "anchor": "from-implikation-und-kontraposition",
+        "fragments": {
+          "cambia-el-enunciado-y-comprueba-todos-los-casos": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-cambia-el-enunciado-y-comprueba-todos-los-casos"
+          },
+          "por-qué-coinciden-las-parejas": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-por-qué-coinciden-las-parejas"
+          },
+          "un-ejemplo-concreto-con-divisibilidad": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-un-ejemplo-concreto-con-divisibilidad"
+          },
+          "una-prueba-y-su-recíproca": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implikation-und-kontraposition-una-prueba-y-su-recíproca"
+          }
+        }
+      },
+      "implication-and-model-assumptions": {
+        "order": 6,
+        "key": "implikation-und-kontraposition",
+        "title": "Implicación e hipótesis del modelo",
+        "anchor": "from-implication-and-model-assumptions",
+        "fragments": {
+          "una-regla-exacta-dentro-de-un-modelo-hipotético": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implication-and-model-assumptions-una-regla-exacta-dentro-de-un-modelo-hipotético"
+          },
+          "deducción-y-observación-responden-preguntas-distintas": {
+            "key": "implikation-und-kontraposition",
+            "anchor": "from-implication-and-model-assumptions-deducción-y-observación-responden-preguntas-distintas"
+          }
+        }
+      },
+      "biconditionals-and-equivalent-conditions": {
+        "order": 7,
+        "key": "biconditionals-and-equivalent-conditions",
+        "title": "Bicondicionales y condiciones equivalentes",
+        "anchor": "from-biconditionals-and-equivalent-conditions",
+        "fragments": {
+          "si-solo-si-y-ambas-direcciones": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-si-solo-si-y-ambas-direcciones"
+          },
+          "empezar-de-nuevo-para-la-vuelta": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-empezar-de-nuevo-para-la-vuelta"
+          },
+          "tres-ámbitos-de-coincidencia": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-biconditionals-and-equivalent-conditions-tres-ámbitos-de-coincidencia"
+          }
+        }
+      },
+      "equivalence-chains": {
+        "order": 7,
+        "key": "biconditionals-and-equivalent-conditions",
+        "title": "Cadenas de equivalencias",
+        "anchor": "from-equivalence-chains",
+        "fragments": {
+          "qué-afirma-la-cadena": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-qué-afirma-la-cadena"
+          },
+          "por-qué-coinciden-los-extremos": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-por-qué-coinciden-los-extremos"
+          },
+          "elevar-al-cuadrado-puede-añadir-un-candidato": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-elevar-al-cuadrado-puede-añadir-un-candidato"
+          },
+          "dividir-puede-perder-una-solución-original": {
+            "key": "biconditionals-and-equivalent-conditions",
+            "anchor": "from-equivalence-chains-dividir-puede-perder-una-solución-original"
+          }
+        }
+      },
+      "aequivalenz-und-paritaet": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Equivalencia y paridad",
+        "anchor": "from-aequivalenz-und-paritaet",
+        "fragments": {
+          "la-afirmación": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-la-afirmación"
+          },
+          "ida-usa-la-definición": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-ida-usa-la-definición"
+          },
+          "vuelta-usa-contraposición": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-vuelta-usa-contraposición"
+          },
+          "por-qué-usar-contraposición-aquí": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-por-qué-usar-contraposición-aquí"
+          },
+          "práctica": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-aequivalenz-und-paritaet-práctica"
+          }
+        }
+      },
+      "universal-statements-and-domains": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Enunciados universales y dominios",
+        "anchor": "from-universal-statements-and-domains",
+        "fragments": {
+          "dominio-predicado-y-cuantificador": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-dominio-predicado-y-cuantificador"
+          },
+          "definido-falso-o-fuera-del-enunciado": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-definido-falso-o-fuera-del-enunciado"
+          },
+          "colecciones-vacías-y-cambios-de-dominio": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-colecciones-vacías-y-cambios-de-dominio"
+          },
+          "qué-demuestra-una-afirmación-sobre-un-dominio-infinito": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-universal-statements-and-domains-qué-demuestra-una-afirmación-sobre-un-dominio-infinito"
+          }
+        }
+      },
+      "bound-variables-and-scope": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Variables ligadas y alcance",
+        "anchor": "from-bound-variables-and-scope",
+        "fragments": {
+          "clasificar-apariciones-no-letras-para-siempre": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-clasificar-apariciones-no-letras-para-siempre"
+          },
+          "un-nombre-nuevo-seguro-conserva-las-funciones": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-un-nombre-nuevo-seguro-conserva-las-funciones"
+          },
+          "los-paréntesis-determinan-el-alcance": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-los-paréntesis-determinan-el-alcance"
+          },
+          "mover-una-condición-fija-exige-revisar-el-dominio": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-bound-variables-and-scope-mover-una-condición-fija-exige-revisar-el-dominio"
+          }
+        }
+      },
+      "counterexamples": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Contraejemplos",
+        "anchor": "from-counterexamples",
+        "fragments": {
+          "por-qué-basta-un-fallo": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-por-qué-basta-un-fallo"
+          },
+          "encontrar-toda-la-región-de-fallo": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-encontrar-toda-la-región-de-fallo"
+          },
+          "no-omitir-un-requisito-compuesto": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-no-omitir-un-requisito-compuesto"
+          },
+          "búsqueda-verificación-y-reparación": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-counterexamples-búsqueda-verificación-y-reparación"
+          }
+        }
+      },
+      "existence-and-witnesses": {
+        "order": 8,
+        "key": "universal-statements-and-domains",
+        "title": "Existencia y testigos",
+        "anchor": "from-existence-and-witnesses",
+        "fragments": {
+          "candidato-pertenencia-y-condición-completa": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-candidato-pertenencia-y-condición-completa"
+          },
+          "práctica": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-práctica"
+          },
+          "comprobar-testigos": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-witnesses-comprobar-testigos"
+          },
+          "lectura-en-voz-alta": {
+            "key": "universal-statements-and-domains",
+            "anchor": "from-existence-and-witnesses-lectura-en-voz-alta"
+          }
+        }
+      },
+      "constructing-a-witness": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Construir un testigo",
+        "anchor": "from-constructing-a-witness",
+        "fragments": {
+          "una-prueba-directa-completa": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-una-prueba-directa-completa"
+          },
+          "trabajo-hacia-atrás-y-comprobación-del-dominio": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-trabajo-hacia-atrás-y-comprobación-del-dominio"
+          },
+          "práctica": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-constructing-a-witness-lectura-en-voz-alta"
+          }
+        }
+      },
+      "existence-and-uniqueness": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Existencia y unicidad",
+        "anchor": "from-existence-and-uniqueness",
+        "fragments": {
+          "tres-requisitos-distintos": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-tres-requisitos-distintos"
+          },
+          "una-prueba-con-ambas-obligaciones": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-una-prueba-con-ambas-obligaciones"
+          },
+          "práctica": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-existence-and-uniqueness-lectura-en-voz-alta"
+          }
+        }
+      },
+      "counting-witnesses": {
+        "order": 9,
+        "key": "existence-and-uniqueness",
+        "title": "Contar testigos",
+        "anchor": "from-counting-witnesses",
+        "fragments": {
+          "cambiar-el-dominio-cambia-el-recuento": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-cambiar-el-dominio-cambia-el-recuento"
+          },
+          "práctica": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "existence-and-uniqueness",
+            "anchor": "from-counting-witnesses-lectura-en-voz-alta"
+          }
+        }
+      },
+      "quantifier-order": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Orden de los cuantificadores",
+        "anchor": "from-quantifier-order",
+        "fragments": {
+          "la-misma-distinción-en-los-reales": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-la-misma-distinción-en-los-reales"
+          },
+          "los-intercambios-válidos-tienen-condiciones": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-los-intercambios-válidos-tienen-condiciones"
+          },
+          "práctica": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "quantifier-order",
+            "anchor": "from-quantifier-order-lectura-en-voz-alta"
+          }
+        }
+      },
+      "witness-dependence": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Dependencia de los testigos",
+        "anchor": "from-witness-dependence",
+        "fragments": {
+          "lleva-un-registro-de-la-información": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-lleva-un-registro-de-la-información"
+          },
+          "práctica": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "quantifier-order",
+            "anchor": "from-witness-dependence-lectura-en-voz-alta"
+          }
+        }
+      },
+      "separate-and-shared-witnesses": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Testigos separados y compartidos",
+        "anchor": "from-separate-and-shared-witnesses",
+        "fragments": {
+          "todos-los-casos-con-dominios-vacíos": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-todos-los-casos-con-dominios-vacíos"
+          },
+          "práctica": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "quantifier-order",
+            "anchor": "from-separate-and-shared-witnesses-lectura-en-voz-alta"
+          }
+        }
+      },
+      "translating-quantified-statements": {
+        "order": 10,
+        "key": "quantifier-order",
+        "title": "Traducir enunciados cuantificados",
+        "anchor": "from-translating-quantified-statements",
+        "fragments": {
+          "escribir-y-volver-a-leer": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-escribir-y-volver-a-leer"
+          },
+          "un-condicional-limita-el-requisito": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-un-condicional-limita-el-requisito"
+          },
+          "práctica": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "quantifier-order",
+            "anchor": "from-translating-quantified-statements-lectura-en-voz-alta"
+          }
+        }
+      },
+      "negating-universal-statements": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Negar enunciados universales",
+        "anchor": "from-negating-universal-statements",
+        "fragments": {
+          "no-todos-significa-algún-fallo": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-no-todos-significa-algún-fallo"
+          },
+          "conserva-el-dominio-y-niega-todo-el-predicado": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-conserva-el-dominio-y-niega-todo-el-predicado"
+          },
+          "práctica": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-universal-statements-lectura-en-voz-alta"
+          }
+        }
+      },
+      "negating-existential-statements": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Negar enunciados existenciales",
+        "anchor": "from-negating-existential-statements",
+        "fragments": {
+          "la-restricción-sigue-siendo-positiva": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-la-restricción-sigue-siendo-positiva"
+          },
+          "práctica": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-existential-statements-lectura-en-voz-alta"
+          }
+        }
+      },
+      "negating-nested-statements": {
+        "order": 12,
+        "key": "negating-nested-statements",
+        "title": "Negar enunciados anidados",
+        "anchor": "from-negating-nested-statements",
+        "fragments": {
+          "de-fuera-adentro-en-un-dominio-finito": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-de-fuera-adentro-en-un-dominio-finito"
+          },
+          "empezar-por-existencia": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-empezar-por-existencia"
+          },
+          "práctica": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-nested-statements-lectura-en-voz-alta"
+          }
+        }
+      },
+      "negating-quantified-statements-step-by-step": {
+        "order": 12,
+        "key": "negating-nested-statements",
+        "title": "Negar enunciados cuantificados paso a paso",
+        "anchor": "from-negating-quantified-statements-step-by-step",
+        "fragments": {
+          "por-qué-cada-sustitución-es-válida": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-por-qué-cada-sustitución-es-válida"
+          },
+          "un-método-que-respeta-el-alcance": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-un-método-que-respeta-el-alcance"
+          },
+          "práctica": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-nested-statements",
+            "anchor": "from-negating-quantified-statements-step-by-step-lectura-en-voz-alta"
+          }
+        }
+      },
+      "negating-quantified-inequalities": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Negar desigualdades cuantificadas",
+        "anchor": "from-negating-quantified-inequalities",
+        "fragments": {
+          "el-orden-real-separa-todos-los-casos": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-el-orden-real-separa-todos-los-casos"
+          },
+          "un-ejemplo-cuantificado-de-frontera": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-un-ejemplo-cuantificado-de-frontera"
+          },
+          "cuando-el-predicado-es-condicional": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-cuando-el-predicado-es-condicional"
+          },
+          "práctica": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-universal-statements",
+            "anchor": "from-negating-quantified-inequalities-lectura-en-voz-alta"
+          }
+        }
+      },
+      "quantoren-und-negation": {
+        "order": 11,
+        "key": "negating-universal-statements",
+        "title": "Cuantificadores y negación",
+        "anchor": "from-quantoren-und-negation",
+        "fragments": {
+          "un-testigo-frente-a-todos-los-casos": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-un-testigo-frente-a-todos-los-casos"
+          },
+          "lleva-la-negación-hacia-dentro": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-lleva-la-negación-hacia-dentro"
+          },
+          "el-caso-límite-importa": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-el-caso-límite-importa"
+          },
+          "orden-de-los-cuantificadores": {
+            "key": "negating-universal-statements",
+            "anchor": "from-quantoren-und-negation-orden-de-los-cuantificadores"
+          }
+        }
+      },
+      "zahlenmengen": {
+        "order": 1,
+        "key": "zahlenmengen",
+        "title": "Los conjuntos numéricos",
+        "anchor": "from-zahlenmengen",
+        "fragments": {
+          "un-mapa-de-inclusiones": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-un-mapa-de-inclusiones"
+          },
+          "qué-contiene-cada-conjunto": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-qué-contiene-cada-conjunto"
+          },
+          "por-qué-las-inclusiones-son-estrictas": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-por-qué-las-inclusiones-son-estrictas"
+          },
+          "demostración-un-decimal-finito-o-periódico-es-racional": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-demostración-un-decimal-finito-o-periódico-es-racional"
+          },
+          "demostración-un-real-no-tiene-por-qué-ser-racional": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet"
+          },
+          "demostración-por-qué-la-unidad-imaginaria-no-es-real": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-demostración-por-qué-la-unidad-imaginaria-no-es-real"
+          },
+          "práctica": {
+            "key": "zahlenmengen",
+            "anchor": "from-zahlenmengen-práctica"
+          }
+        }
+      },
+      "beweissprache-und-methoden": {
+        "order": 13,
+        "key": "beweissprache-und-methoden",
+        "title": "Lenguaje y estructura de una demostración",
+        "anchor": "from-beweissprache-und-methoden",
+        "fragments": {
+          "reconoce-la-función-de-cada-frase": {
+            "key": "aussagen-und-aussageformen",
+            "anchor": "from-definitions-assumptions-results"
+          },
+          "elige-un-método": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-elige-un-método"
+          },
+          "un-pequeño-proceso": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-un-pequeño-proceso"
+          },
+          "arbitrario-no-significa-muestra-representativa": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-arbitrario-no-significa-muestra-representativa"
+          },
+          "de-una-definición-a-una-prueba": {
+            "key": "beweissprache-und-methoden",
+            "anchor": "from-beweissprache-und-methoden-de-una-definición-a-una-prueba"
+          }
+        }
+      },
+      "widerspruch-und-irrationalitaet": {
+        "order": 14,
+        "key": "widerspruch-und-irrationalitaet",
+        "title": "Contradicción e irracionalidad de √2",
+        "anchor": "from-widerspruch-und-irrationalitaet",
+        "fragments": {
+          "qué-establece-una-demostración": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-qué-establece-una-demostración"
+          },
+          "una-primera-demostración-por-contradicción": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-una-primera-demostración-por-contradicción"
+          },
+          "el-resultado-de-paridad-que-necesitamos": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-el-resultado-de-paridad-que-necesitamos"
+          },
+          "por-qué-2sqrt22-no-puede-ser-una-fracción": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-por-qué-2sqrt22-no-puede-ser-una-fracción"
+          },
+          "1-suponer-que-existe-una-fracción-y-simplificarla": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-1-suponer-que-existe-una-fracción-y-simplificarla"
+          },
+          "2-convertir-la-igualdad-supuesta-en-una-ecuación-entre-enteros": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-2-convertir-la-igualdad-supuesta-en-una-ecuación-entre-enteros"
+          },
+          "3-mostrar-que-el-numerador-es-par": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-3-mostrar-que-el-numerador-es-par"
+          },
+          "4-sustituir-para-obtener-información-sobre-el-denominador": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-4-sustituir-para-obtener-información-sobre-el-denominador"
+          },
+          "5-identificar-la-contradicción": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-5-identificar-la-contradicción"
+          },
+          "6-expresar-la-conclusión": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-6-expresar-la-conclusión"
+          },
+          "cómo-se-combinan-los-métodos-de-demostración": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-cómo-se-combinan-los-métodos-de-demostración"
+          },
+          "comprobar-el-razonamiento": {
+            "key": "widerspruch-und-irrationalitaet",
+            "anchor": "from-widerspruch-und-irrationalitaet-comprobar-el-razonamiento"
+          }
+        }
+      },
+      "boolesche-grundgesetze": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Cinco leyes iniciales del álgebra de Boole",
+        "anchor": "from-boolesche-grundgesetze",
+        "fragments": {
+          "leyes-15": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-leyes-15"
+          },
+          "visualiza-la-agrupación": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-visualiza-la-agrupación"
+          },
+          "reconocer-la-forma-de-una-ley": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-boolesche-grundgesetze-reconocer-la-forma-de-una-ley"
+          }
+        }
+      },
+      "neutralitaet-und-idempotenz": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Hoja 1.1 · identidad e idempotencia",
+        "anchor": "from-neutralitaet-und-idempotenz",
+        "fragments": {
+          "dos-identidades-auxiliares-por-absorción": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-dos-identidades-auxiliares-por-absorción"
+          },
+          "6a--repetir-o-no-cambia-nada": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-6a--repetir-o-no-cambia-nada"
+          },
+          "6b--el-cálculo-dual": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-6b--el-cálculo-dual"
+          },
+          "cómo-se-encuentra-la-prueba": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-cómo-se-encuentra-la-prueba"
+          },
+          "práctica-con-las-leyes-iniciales": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-neutralitaet-und-idempotenz-práctica-con-las-leyes-iniciales"
+          }
+        }
+      },
+      "nullgesetze-und-konstanten": {
+        "order": 18,
+        "key": "boolesche-grundgesetze",
+        "title": "Hoja 1.1 · elementos absorbentes y constantes",
+        "anchor": "from-nullgesetze-und-konstanten",
+        "fragments": {
+          "7c-y-7d--los-valores-absorbentes": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-7c-y-7d--los-valores-absorbentes"
+          },
+          "8--negar-constantes": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-8--negar-constantes"
+          },
+          "elementos-neutros-y-absorbentes": {
+            "key": "boolesche-grundgesetze",
+            "anchor": "from-nullgesetze-und-konstanten-elementos-neutros-y-absorbentes"
+          }
+        }
+      },
+      "eindeutiges-komplement": {
+        "order": 19,
+        "key": "eindeutiges-komplement",
+        "title": "Hoja 1.2 · el complemento es único",
+        "anchor": "from-eindeutiges-komplement",
+        "fragments": {
+          "se-necesitan-ambas-condiciones": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-se-necesitan-ambas-condiciones"
+          },
+          "reduce-ambos-a-la-misma-expresión": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-reduce-ambos-a-la-misma-expresión"
+          },
+          "por-qué-comparar-bbb-con-ccc": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-eindeutiges-komplement-por-qué-comparar-bbb-con-ccc"
+          }
+        }
+      },
+      "de-morgan-und-doppelte-negation": {
+        "order": 19,
+        "key": "eindeutiges-komplement",
+        "title": "Hoja 1.2 · De Morgan y doble negación",
+        "anchor": "from-de-morgan-und-doppelte-negation",
+        "fragments": {
+          "9a--un-complemento-de-aba-lor--bab": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-9a--un-complemento-de-aba-lor--bab"
+          },
+          "10--doble-negación-de-forma-independiente": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-10--doble-negación-de-forma-independiente"
+          },
+          "9b--deduce-la-segunda-ley": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-9b--deduce-la-segunda-ley"
+          },
+          "la-estrategia-del-complemento": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-la-estrategia-del-complemento"
+          },
+          "negar-una-afirmación-compuesta": {
+            "key": "eindeutiges-komplement",
+            "anchor": "from-de-morgan-und-doppelte-negation-negar-una-afirmación-compuesta"
+          }
+        }
+      },
+      "nand-schaltungen": {
+        "order": 20,
+        "key": "nand-schaltungen",
+        "title": "NAND: de fórmulas a circuitos",
+        "anchor": "from-nand-schaltungen",
+        "fragments": {
+          "una-operación": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-una-operación"
+          },
+          "cambia-las-entradas-y-sigue-los-cables": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-cambia-las-entradas-y-sigue-los-cables"
+          },
+          "tres-construcciones": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-tres-construcciones"
+          },
+          "seguir-una-señal": {
+            "key": "nand-schaltungen",
+            "anchor": "from-nand-schaltungen-seguir-una-señal"
+          }
+        }
+      },
+      "real-sequences": {
+        "order": 15,
+        "key": "real-sequences",
+        "title": "Sucesiones reales",
+        "anchor": "from-real-sequences",
+        "fragments": {
+          "un-valor-en-cada-índice-positivo": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-un-valor-en-cada-índice-positivo"
+          },
+          "una-regla-debe-determinar-cada-posición": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-una-regla-debe-determinar-cada-posición"
+          },
+          "práctica": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "real-sequences",
+            "anchor": "from-real-sequences-lectura-en-voz-alta"
+          }
+        }
+      },
+      "absolute-value-and-distance": {
+        "order": 15,
+        "key": "real-sequences",
+        "title": "Valor absoluto y distancia",
+        "anchor": "from-absolute-value-and-distance",
+        "fragments": {
+          "desplazamiento-con-signo-y-distancia": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-desplazamiento-con-signo-y-distancia"
+          },
+          "una-tolerancia-estricta-es-un-intervalo-abierto": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-una-tolerancia-estricta-es-un-intervalo-abierto"
+          },
+          "práctica": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "real-sequences",
+            "anchor": "from-absolute-value-and-distance-lectura-en-voz-alta"
+          }
+        }
+      },
+      "reading-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Leer la convergencia de sucesiones",
+        "anchor": "from-reading-sequence-convergence",
+        "fragments": {
+          "fija-los-objetos-antes-de-leer-los-cuantificadores": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-fija-los-objetos-antes-de-leer-los-cuantificadores"
+          },
+          "la-definición-positiva": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-la-definición-positiva"
+          },
+          "práctica": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reading-sequence-convergence-lectura-en-voz-alta"
+          }
+        }
+      },
+      "proving-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Demostrar convergencia de sucesiones",
+        "anchor": "from-proving-sequence-convergence",
+        "fragments": {
+          "la-prueba-completa-para-una-sucesión-constante": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-la-prueba-completa-para-una-sucesión-constante"
+          },
+          "dependencia-de-elecciones-y-de-justificaciones": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-dependencia-de-elecciones-y-de-justificaciones"
+          },
+          "práctica": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-proving-sequence-convergence-lectura-en-voz-alta"
+          }
+        }
+      },
+      "reciprocal-sequence-convergence": {
+        "order": 16,
+        "key": "reading-sequence-convergence",
+        "title": "Convergencia de la sucesión recíproca",
+        "anchor": "from-reciprocal-sequence-convergence",
+        "fragments": {
+          "encuentra-un-umbral-y-verifica-toda-su-cola": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-encuentra-un-umbral-y-verifica-toda-su-cola"
+          },
+          "comprobar-la-frontera-estricta": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-comprobar-la-frontera-estricta"
+          },
+          "práctica": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "reading-sequence-convergence",
+            "anchor": "from-reciprocal-sequence-convergence-lectura-en-voz-alta"
+          }
+        }
+      },
+      "negating-sequence-convergence": {
+        "order": 17,
+        "key": "negating-sequence-convergence",
+        "title": "Negar la convergencia de sucesiones",
+        "anchor": "from-negating-sequence-convergence",
+        "fragments": {
+          "1-niega-la-definición-completa": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-1-niega-la-definición-completa"
+          },
+          "2-cruza-el-cuantificador-de-tolerancia": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-2-cruza-el-cuantificador-de-tolerancia"
+          },
+          "3-cruza-el-cuantificador-de-umbral": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-3-cruza-el-cuantificador-de-umbral"
+          },
+          "4-cruza-el-cuantificador-de-índice": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-4-cruza-el-cuantificador-de-índice"
+          },
+          "5-niega-el-condicional": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-5-niega-el-condicional"
+          },
+          "6-incluye-la-igualdad-en-el-fallo-de-distancia": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-6-incluye-la-igualdad-en-el-fallo-de-distancia"
+          },
+          "demuestra-un-fallo-real": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-demuestra-un-fallo-real"
+          },
+          "práctica": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-negating-sequence-convergence-lectura-en-voz-alta"
+          }
+        }
+      },
+      "no-real-limit": {
+        "order": 17,
+        "key": "negating-sequence-convergence",
+        "title": "Sin límite real",
+        "anchor": "from-no-real-limit",
+        "fragments": {
+          "intercambiar-cuantificadores-puede-destruir-la-prueba": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-intercambiar-cuantificadores-puede-destruir-la-prueba"
+          },
+          "matiz-opcional-una-forma-estricta-equivalente-por-separado": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-matiz-opcional-una-forma-estricta-equivalente-por-separado"
+          },
+          "práctica": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-práctica"
+          },
+          "lectura-en-voz-alta": {
+            "key": "negating-sequence-convergence",
+            "anchor": "from-no-real-limit-lectura-en-voz-alta"
+          }
+        }
+      },
+      "analysis-grundlagen-ueberblick": {
+        "order": 0,
+        "key": null,
+        "title": "Fundamentos de análisis · mapa de repaso",
+        "anchor": "from-analysis-grundlagen-ueberblick",
+        "fragments": {
+          "un-recorrido-compacto-por-el-material": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-un-recorrido-compacto-por-el-material"
+          },
+          "la-cadena-de-dependencias": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-la-cadena-de-dependencias"
+          },
+          "preguntas-para-responder-sin-mirar": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-preguntas-para-responder-sin-mirar"
+          },
+          "un-problema-combinado": {
+            "key": null,
+            "anchor": "from-analysis-grundlagen-ueberblick-un-problema-combinado"
+          }
+        }
+      }
+    }
+  },
+  "legacyChapterAnchors": [
+  {
+    "id": "analysis-zero-propositions",
+    "module": "analysis-foundations"
+  },
+  {
+    "id": "analysis-zero-connectives",
+    "module": "analysis-logic"
+  },
+  {
+    "id": "analysis-zero-reading",
+    "module": "analysis-foundations"
+  },
+  {
+    "id": "analysis-zero-negation",
+    "module": "analysis-logic"
+  },
+  {
+    "id": "analysis-zero-conditionals",
+    "module": "analysis-logic"
+  },
+  {
+    "id": "analysis-zero-equivalence",
+    "module": "analysis-logic"
+  },
+  {
+    "id": "analysis-zero-universal",
+    "module": "analysis-quantifiers"
+  },
+  {
+    "id": "analysis-zero-existence",
+    "module": "analysis-quantifiers"
+  },
+  {
+    "id": "analysis-zero-nested",
+    "module": "analysis-quantifiers"
+  },
+  {
+    "id": "analysis-zero-quantified-negation",
+    "module": "analysis-quantifiers"
+  },
+  {
+    "id": "analysis-language",
+    "module": "analysis-quantifiers"
+  },
+  {
+    "id": "analysis-proof",
+    "module": "analysis-proofs"
+  },
+  {
+    "id": "analysis-boolean",
+    "module": "analysis-boolean-applications"
+  },
+  {
+    "id": "analysis-circuits",
+    "module": "analysis-boolean-applications"
+  },
+  {
+    "id": "analysis-zero-sequences",
+    "module": "analysis-sequences"
+  },
+  {
+    "id": "analysis-recap",
+    "module": "analysis-review"
+  }
+]
+}

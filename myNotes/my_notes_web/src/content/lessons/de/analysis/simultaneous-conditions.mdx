@@ -1,26 +1,128 @@
 ---
 course: "analysis"
-chapter: "analysis-zero-connectives"
+chapter: "analysis-logic"
 sourceId: "analysis-zero"
 sourcePages: []
-sourceLocations: ["A0.1.3 Conjunction and disjunction/03 Multiple Simultaneous Conditions.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.3 Conjunction and disjunction/01 Conjunction - And.md", "A0.1.3 Conjunction and disjunction/02 Inclusive Or.md", "A0.1.3 Conjunction and disjunction/03 Multiple Simultaneous Conditions.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
 locale: "de"
-title: "Mehrere gleichzeitige Bedingungen"
-navTitle: "Mehrere gleichzeitige Bedingungen"
-description: "Ein vollständiges Kriterium verwenden, ohne es mit einer einseitigen Garantie zu verwechseln."
-order: 4
+title: "Logische Verknüpfungen und zusammengesetzte Bedingungen"
+navTitle: "Logische Verknüpfungen und zusammengesetzte Bedingungen"
+description: "Logische Verknüpfungen und zusammengesetzte Bedingungen"
+order: 3
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
-prerequisites: ["definitions-assumptions-results", "logische-verknuepfungen"]
+prerequisites: ["aussagen-und-aussageformen"]
 thumbnail: "logic"
+additionalSources: [{"sourceId": "analysis-concepts-2", "pages": [1], "locations": []}]
 ---
+
+<span id="from-logische-verknuepfungen"></span>
+
+## Logische Verknüpfungen
+
+<span id="from-logische-verknuepfungen-eine-karte-zwei-eigenschaften"></span>
+
+### Eine Karte, zwei Eigenschaften
+
+Fixiere eine Karte mit einer ganzen Zahl. $P$ bedeute „Ihre Zahl ist positiv“, $Q$ „Ihre Zahl ist gerade“. Positiv bedeutet größer als null, gerade bedeutet durch zwei mit ganzzahligem Ergebnis teilbar. Die Buchstaben benennen ganze Behauptungen, nicht die Zahl. Mit üblicher Arithmetik und Ordnung als Hintergrund ergibt sich:
+
+| Ganze Zahl | $P$ | $Q$ | $P\land Q$ | $P\lor Q$ |
+|---|---|---|---|---|
+| 6 | 1 | 1 | 1 | 1 |
+| 9 | 1 | 0 | 0 | 1 |
+| -2 | 0 | 1 | 0 | 1 |
+| -3 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 |
+
+Sechs erfüllt beides. Neun ist positiv, aber ungerade; minus zwei gerade, aber nicht positiv; minus drei erfüllt keines. Null ist wegen $0/2=0$ gerade, aber nicht positiv. Ein falscher Teil macht die Konjunktion falsch, nicht bedeutungslos.
+
+Eine Konjunktion nachzuweisen verlangt Gründe für **beide** Teile. Bei sechs gelten $6>0$ und ganzzahliges $6/2=3$. Zur Widerlegung genügt ein falscher Teil: Zwölf ist nicht kleiner als zehn; daher ist „positiv und unter zehn“ falsch, obwohl zwölf positiv ist. Aus einer wahren Konjunktion folgt jeder Teil. Eine falsche Konjunktion allein sagt nicht, welcher scheitert.
+
+Für eine einschließende Disjunktion genügt **eine** begründete Alternative; die andere muss nicht falsch sein. Zur Widerlegung müssen **beide** falsch sein. Minus drei scheitert deshalb an positiv-oder-gerade. „Nicht positiv“ allein lässt Geradheit offen, wie minus zwei zeigt.
+
+
+<span id="from-logische-verknuepfungen-einschließendes-oder-und-genau-eines"></span>
+
+### Einschließendes Oder und genau eines
+
+Einschließendes Oder erlaubt Überschneidung. Für $P=Q=1$ ist $P\lor Q$ wahr, **genau eines** aber falsch. In $10,01,00$ stimmen die Ergebnisse überein: $1,1,0$. Die Zeile mit zwei wahren Eingaben macht den Unterschied.
+
+„Suppe oder Salat“ auf einer Speisekarte kann eine einzige Wahl verlangen; das kommt aus dem Kontext. „Entweder“ allein beweist in mathematischen Texten keine Ausschließlichkeit. Manchmal verhindern die Eingaben selbst Überschneidung: Eine reelle Zahl kann nicht streng negativ und streng positiv sein. Das folgt aus der üblichen Ordnung, nicht aus einer anderen Oder-Regel. Eine vollständige abstrakte Wahrheitstabelle enthält die Belegung mit zwei wahren Eingaben trotzdem.
+
+„Gleichzeitige“ Erfüllung betrifft den festgelegten Zusammenhang, nicht zwingend denselben Augenblick. „Die Tür war mittags offen und um eins geschlossen“ kann wahr sein. Und behauptet weder zeitliche Reihenfolge noch Ursache. „Positiv, **aber** ungerade“ hat die Wahrheitsbedingungen einer Konjunktion; „aber“ fügt eine Betonung hinzu, keine andere logische Regel.
+
+
+<span id="from-logische-verknuepfungen-gruppierung-und-atomare-eingaben"></span>
+
+### Gruppierung und atomare Eingaben
+
+Auf dieser aussagenlogischen Ebene heißt eine Aussage **atomar**, wenn sie als eine Einheit behandelt und nicht durch logische Verknüpfungen zerlegt wird. Eine **zusammengesetzte Aussage** wird mithilfe logischer Verknüpfungen aus einer oder mehreren Aussagen gebildet.
+
+$x+1=3$ enthält Addition, ist auf dieser aussagenlogischen Ebene aber eine Bedingung. Addition verbindet Zahlen, keine Behauptungen. Eine quantifizierte Aussage kann vorübergehend eine aussagenlogische Eingabe sein, ohne dadurch prädikatenlogisch atomar zu werden. Offene Bedingungen wie $(x>0)\land(x<10)$ zu verbinden bindet $x$ nicht. Verwende dieselbe Belegung in beiden Teilen.
+
+$P$ bedeute Eintrittskarte, $Q$ Reservierung, $R$ Gästepass. Vergleiche
+
+$$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
+
+Das erste verlangt eine Eintrittskarte und zusätzlich Reservierung oder Pass. Das zweite erlaubt den Pass allein. Für $P=0,Q=0,R=1$ ist das erste falsch und das zweite wahr. Diese trennende Belegung zeigt, dass die Umgruppierung die allgemeine Bedeutung verändert.
+
+Reine Konjunktionen erlauben beide Gruppierungen, weil beide alle drei Eingaben verlangen. Reine einschließende Disjunktionen erlauben beide, weil mindestens eine von drei Eingaben genügt. Bei gemischten Verknüpfungen darf deshalb nicht beliebig umgruppiert werden.
+
+<details>
+<summary>Notation lesen: EN / DE / ES</summary>
+
+$P\land Q$: **EN** “P and Q”; **DE** „P und Q“; **ES** «pe y cu». $P\lor Q$: **EN** “P or Q, or both”; **DE** „P oder Q oder beides“; **ES** «pe o cu, o ambas». $P\land(Q\lor R)$: **EN** “P and, in addition, at least one of Q or R”; **DE** „P und zusätzlich mindestens eine der Aussagen Q oder R“; **ES** «pe y, además, al menos una de cu o erre». Manche Bücher schreiben $\to$ statt $\Rightarrow$ und $\leftrightarrow$ statt $\Leftrightarrow$.
+
+</details>
+
+
+<span id="from-logische-verknuepfungen-mit-begründung-üben"></span>
+
+### Mit Begründung üben
+
+Auf einer Karte steht neun, auf einer anderen minus zwei. Beweist das, dass eine bestimmte verdeckte Karte positiv und gerade ist? Benenne beide Lücken.
+
+<details>
+<summary>Hinweis</summary>
+
+Welches Objekt betraf jede Prüfung? Hat eine einzige Zahl beide bestanden?
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Keines der Beispiele liefert Information über die verdeckte Karte. Außerdem wurden Positivität und Geradheit an verschiedenen Zahlen geprüft. Die Konjunktion über eine feste Karte verlangt beide Behauptungen über genau diese Karte. Die getrennten Beispiele zeigen beides nicht.
+
+</details>
+
+<Exercise question="Eine Karte qualifiziert sich durch einen Stern oder durch Kreis und blauen Rand zusammen. Schreibe das Kriterium mit S, C, B. Genügt nur ein Stern? Genügt nur ein Kreis?">
+
+$S\lor(C\land B)$. Eine Karte nur mit Stern qualifiziert sich durch $S$, unabhängig von der zweiten Route. Nur ein Kreis genügt nicht: Es fehlen der Stern und der zum Kreis gehörende Rand. Die innere Checkliste bleibt gruppiert.
+
+</Exercise>
+
+<Exercise question="Du weißt, dass $P\lor Q$ wahr ist. Muss P wahr oder falsch sein? Was folgt zusätzlich aus falschem Q? Falls stattdessen nur $P\land Q$ falsch ist: Muss Q falsch sein?">
+
+Zunächst ist jeder Wert für $P$ möglich; $10$ und $01$ passen zum Bericht. Mit $Q=0$ muss $P=1$ gelten, damit die Disjunktion wahr bleibt. Eine falsche Konjunktion erzwingt dagegen nicht $Q=0$: $01$ macht sie falsch, während $Q$ wahr ist. Eine wahre Konjunktion erzwingt hingegen jeden wahren Teil, auch $Q$.
+
+</Exercise>
+
+[Wahrheitstabellen aufbauen](../logische-verknuepfungen/#from-building-truth-tables) behandelt den Aufbau auf leerem Papier, wiederholte Eingaben und arithmetische Realisierbarkeit. [Logische Negation](../logical-negation/#from-logical-negation) behandelt genaue Verneinungen; [mathematische Struktur lesen](../quantifier-order/#from-reading-mathematical-structure) wendet die Zerlegung von außen nach innen auf vollständige Behauptungen an.
+
+<span id="from-simultaneous-conditions"></span>
+
+## Mehrere gleichzeitige Bedingungen
 
 Für diese Lektion heiße eine ganze Zahl **zulässig** genau dann, wenn sie positiv, kleiner als zehn und gerade ist. Das ist eine lokale Übungsbezeichnung, keine übliche Zahlenklasse. Sechs erfüllt alles. Neun scheitert an der Geradheit, zehn an der strengen oberen Grenze. Zwei erfüllte Bedingungen gleichen die dritte nicht aus.
 
 Übliche ganzzahlige Arithmetik und Ordnung werden vorausgesetzt. Eine ganze Zahl ist gerade, wenn Division durch zwei eine ganze Zahl ergibt. Null ist gerade, aber nicht positiv.
 
-## Ein strukturiertes Kriterium lesen
+
+<span id="from-simultaneous-conditions-ein-strukturiertes-kriterium-lesen"></span>
+
+### Ein strukturiertes Kriterium lesen
 
 Lege zunächst Bereich und Objekt fest. Jede Bedingung betrifft **dieselbe ganze Zahl**. Eine positive nichtganze Zahl unter zehn ist keine zulässige ganze Zahl. Positivität an neun und Geradheit an minus zwei zu prüfen zeigt keine Konjunktion über eine einzelne Zahl, erst recht nicht über eine bestimmte verdeckte Karte.
 
@@ -34,13 +136,19 @@ verlangen alle drei Aussagen. In der ersten Gruppierung müssen $A$ und $B$ gelt
 
 Ein brauchbares Leseverfahren lautet: Bereich und Objekt festlegen; Bedingungen trennen; alle oder mindestens eine unterscheiden; innere Alternativen erhalten; Definition oder bloße Behauptung erkennen. Kommas allein bestimmen keine Verknüpfung.
 
-## Eine Bezeichnung nachweisen und auspacken
+
+<span id="from-simultaneous-conditions-eine-bezeichnung-nachweisen-und-auspacken"></span>
+
+### Eine Bezeichnung nachweisen und auspacken
 
 „Genau dann, wenn“ gibt ein vollständiges Kriterium. Für sechs prüfen wir $6>0$, $6<10$ und dass $6/2=3$ ganzzahlig ist. Umgekehrt liefert die Zulässigkeit einer ganzen Zahl **jede** dieser drei Eigenschaften, aber keinen eindeutigen Wert.
 
 Die vollständige Liste lautet $2,4,6,8$. Die Grenzen lassen nur die ganzen Zahlen $1$ bis $9$ zu; davon sind genau diese vier gerade. Damit sind alle Kandidaten erfasst. Vier passende Beispiele allein würden Vollständigkeit nicht beweisen. Null scheitert an Positivität, zehn an der strengen Grenze. Die Definition legt die Bedeutung fest; das Kandidatenargument begründet die Liste.
 
-## Eine hinreichende Regel ist etwas anderes
+
+<span id="from-simultaneous-conditions-eine-hinreichende-regel-ist-etwas-anderes"></span>
+
+### Eine hinreichende Regel ist etwas anderes
 
 Eine gewöhnliche Regel laute: „Eine ganze Zahl erhält eine blaue Markierung, wenn sie positiv, unter zehn und gerade ist.“ Das sei ausdrücklich **keine** vollständige Definition der Markierung. Die Checkliste garantiert eine Markierung, verbietet aber keine zusätzlichen.
 
@@ -48,7 +156,10 @@ Alle ganzen Zahlen blau zu markieren erfüllt die Regel. Trotzdem wäre neun mar
 
 Definitionen verwenden manchmal verkürzt „wenn“ und meinen ein vollständiges Kriterium. Das ergibt sich aus dem definierenden Zusammenhang, nicht aus einer allgemeinen Gleichbedeutung von „wenn“ und „genau dann, wenn“. Schreibe „bedeutet“ oder „genau dann, wenn“, falls beide Richtungen gemeint sind. Benenne Mehrdeutigkeit, statt die Umkehrung zu ergänzen.
 
-## Alternativen und Fehler üben
+
+<span id="from-simultaneous-conditions-alternativen-und-fehler-üben"></span>
+
+### Alternativen und Fehler üben
 
 Eine ganze Zahl muss positiv und außerdem gerade **oder gleich drei** sein; die gesamte Alternative gehört zusammen. Schreibe das Kriterium und prüfe $3,6,-2,9$.
 
@@ -74,7 +185,7 @@ $A\lor(B\land C)$. Null qualifiziert sich durch $A$, ohne positiv sein zu müsse
 
 <Exercise question="Welche Fakten liefert die ursprüngliche Zulässigkeit? Muss die Zahl sechs sein? Beschreibe Nichtzulässigkeit und prüfe null, neun und zehn an den Grenzen.">
 
-Die Zahl ist positiv, unter zehn und gerade. Sie muss nicht sechs sein, denn zwei ist ebenfalls zulässig. Nichtzulässigkeit bedeutet $n\le0$ **oder** $n\ge10$ **oder** $n$ ist nicht gerade; weiterhin gilt $n\in\mathbb Z$. Null verletzt nur Positivität, neun nur Geradheit und zehn nur die strenge obere Grenze. Nicht alle Prüfungen müssen scheitern. [Zusammengesetzte Bedingungen negieren](../negating-combined-conditions/) beweist die zugrunde liegenden Gesetze.
+Die Zahl ist positiv, unter zehn und gerade. Sie muss nicht sechs sein, denn zwei ist ebenfalls zulässig. Nichtzulässigkeit bedeutet $n\le0$ **oder** $n\ge10$ **oder** $n$ ist nicht gerade; weiterhin gilt $n\in\mathbb Z$. Null verletzt nur Positivität, neun nur Geradheit und zehn nur die strenge obere Grenze. Nicht alle Prüfungen müssen scheitern. [Zusammengesetzte Bedingungen negieren](../logical-negation/#from-negating-combined-conditions) beweist die zugrunde liegenden Gesetze.
 
 </Exercise>
 

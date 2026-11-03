@@ -1,0 +1,84 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/01 Logical Negation.md", "A0.1.2 Negation/02 Negating Equality.md"]
+locale: "de"
+title: "Logische Negation"
+navTitle: "Logische Negation"
+description: "Dieselbe vollständige Aussage verneinen, ohne Objekte oder Bereich zu ändern."
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "equality-and-equations"]
+thumbnail: "logic"
+---
+
+Auf einer Karte steht drei. „Ihre Zahl ist größer als drei“ ist falsch, aber „ihre Zahl ist kleiner als drei“ ebenfalls. Diese Sätze sind keine Negationen voneinander. Die richtige Verneinung „Ihre Zahl ist nicht größer als drei“ umfasst auch Gleichheit.
+
+## Definition der Negation
+
+Für eine sinnvolle klassische Aussage $P$ ist $\neg P$ wahr, wenn $P$ falsch ist, und falsch, wenn $P$ wahr ist. Beide Richtungen sind wichtig. Die Tabelle beschreibt die Definition, keine aus Kartenbeobachtungen gewonnene Regel.
+
+| $P$ | $\neg P$ |
+|---|---|
+| 1 | 0 |
+| 0 | 1 |
+
+Die Ziffern codieren wahr und falsch; sie sind keine Rechenanweisungen. Eine sichere erste Formulierung lautet „Es ist nicht der Fall, dass [die gesamte ursprüngliche Aussage gilt]“. Verkürze erst, nachdem der Geltungsbereich klar ist.
+
+**EN:** $\neg P$: “not P; it is not the case that P.” **DE:** „nicht P; es ist nicht der Fall, dass P gilt“. **ES:** «no pe; no es cierto que pe se cumpla».
+
+„Auf der Karte steht nicht drei“ verändert die Karte nicht. Bei zwei und bei vier ist diese Verneinung wahr. „Auf der Karte steht zwei“ ersetzt sie nicht: Bei vier wären beide Gleichheitsbehauptungen falsch. Ein erlaubter Fall, in dem Original und vorgeschlagene Negation übereinstimmen, widerlegt den Vorschlag. Einige erfolgreiche Stichproben beweisen ihn aber nicht allgemein.
+
+## Gleichheit verneinen
+
+Für Ausdrücke, die im gegebenen Zusammenhang sinnvolle Objekte bezeichnen, gilt
+
+$$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
+
+$\ne$ schreibt „ungleich“ kurz. $\Leftrightarrow$ heißt „genau dann, wenn“ und hält hier Übereinstimmung in jedem Fall fest. Die zweite Äquivalenz lässt sich direkt begründen: Bei gleichen Werten ist „ungleich“ falsch und seine Verneinung wahr; bei ungleichen Werten ist „ungleich“ wahr und seine Verneinung falsch. Das sind alle klassischen Fälle.
+
+**EN:** $a\ne b$: “a is not equal to b.” **DE:** „a ist ungleich b“. **ES:** «a es distinto de be».
+
+Für reelles $x$ wird $x+2=5$ zu $x+2\ne5$ negiert. Damit ist die Negation fertig; das Lösen ist eine andere Aufgabe. Die Eingabe $2$ liefert vier, die Eingabe $4$ sechs. Beide erfüllen die Verneinung. „Größer als“ statt Gleichheit würde die erste Eingabe verlieren. Ungleichheit legt keine Richtung fest; Gleichheit ist auch bei Objekten ohne festgelegte Ordnung sinnvoll.
+
+Logische Negation wirkt auf Aussagen. Arithmetische Negation bildet eine Zahl auf ihre Gegenzahl ab. Eine Gleichung zu verneinen ändert nicht die Vorzeichen ihrer Terme. Verschiedene Schreibweisen wie $2+1$ und $3$ können gleiche Werte bezeichnen.
+
+## Wissen, Sinn und Bereich
+
+Auf einer verschlossenen Karte kann null stehen, obwohl niemand das nachgewiesen hat. „$P$ ist nicht bewiesen“ und „$P$ ist nicht bekannt“ betreffen Wissen; daraus folgt nicht $\neg P$. „Unbekannt“ ist hier kein dritter Wahrheitswert.
+
+Ein Schalter mit den Stufen niedrig, mittel und hoch ist sowohl auf niedrig als auch auf mittel **nicht hoch**. „Niedrig“ allein lässt einen Fall aus. Ebenso bedeutet „nicht vollständig offen“ bei einer teilweise offenen Tür nicht zwingend „geschlossen“. Kläre die Bedeutung vor der Negation.
+
+Negation macht aus einer Aufforderung keine Aussage und repariert keine undefinierte Division. In der üblichen reellen Arithmetik bezeichnet $1/0$ keinen Wert. Aus $1/0=3$ durch Durchstreichen des Gleichheitszeichens $1/0\ne3$ zu machen ergibt daher keinen wohldefinierten wahren Vergleich.
+
+Bei einer offenen Bedingung wirkt Negation **punktweise** für dieselbe erlaubte Belegung. Sie bindet keine freie Variable und erweitert den Bereich nicht.
+
+## Aufgaben
+
+Erlaubt sind nur $0,1,2$. Negiere $x=1$, nenne die erfüllenden Eingaben und sage, ob $x$ gebunden wird. Negiere danach $x=2$ im selben Bereich.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte die erlaubte Liste fest. Eine Allaussage über Eingaben ist etwas anderes als die Auswertung einer offenen Bedingung an jeder Eingabe.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$x\ne1$ erfüllen $0$ und $2$; $x\ne2$ erfüllen $0$ und $1$. Kein Quantor wurde ergänzt, also bleibt $x$ frei. Drei ist kein erlaubtes Beispiel. Die vollständige Prüfung dieses endlichen Bereichs begründet die Listen, erweitert sie aber nicht auf alle reellen Zahlen.
+
+</details>
+
+<Exercise question="Negiere: Auf der festgelegten Karte steht null. Warum genügt ‘Dort steht eins’ nicht? Folgt die Negation allein daraus, dass der Umschlag verschlossen ist?">
+
+Die Negation lautet „Auf der festgelegten Karte steht nicht null“. Bei einer Karte mit zwei sind sowohl „null“ als auch „eins“ falsch; das widerlegt den vorgeschlagenen Ersatz. Der verschlossene Umschlag begründet keinen der beiden Wahrheitswerte. Er verbirgt eine feste Zahl, statt sie zu verändern.
+
+</Exercise>
+
+Vergleiche „Schreibe drei“, „Drei ist gleich drei“ und „Eins geteilt durch null ist gleich drei“. Nur der mittlere Satz ist eine sinnvolle Aussage, auf die diese Wahrheitsumkehr anwendbar ist. [Ordnungsvergleiche negieren](../negating-order-comparisons/) behandelt die Randregeln gesondert.

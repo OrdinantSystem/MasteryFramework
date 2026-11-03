@@ -1,0 +1,80 @@
+---
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/06 The Converse.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/07 The Inverse.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/08 The Contrapositive.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Converse Inverse and Contrapositive.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Equivalence of a Conditional and Its Contrapositive.md"
+locale: "es"
+title: "Implicación y contraposición"
+navTitle: "Implicación y contraposición"
+description: "Distingue la dirección de una afirmación de su recíproca."
+order: 15
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen"]
+thumbnail: "implication"
+---
+
+## Cambia el enunciado y comprueba todos los casos
+
+Para el original $A\Rightarrow B$, lee «si a, entonces be». Trata $A$ y $B$ como proposiciones completas, aunque contengan varias condiciones. Conserva el dominio al construir los enunciados siguientes:
+
+| Forma | Fórmula | Lectura y construcción |
+| --- | --- | --- |
+| Original | $A\Rightarrow B$ | Si a, entonces be |
+| Recíproca | $B\Rightarrow A$ | Si be, entonces a: intercambia los bloques |
+| Inversa | $\neg A\Rightarrow\neg B$ | Si no a, entonces no be: niega sin intercambiar |
+| Contraposición | $\neg B\Rightarrow\neg A$ | Si no be, entonces no a: intercambia y niega |
+
+Son definiciones de transformaciones, no pruebas de que el nuevo enunciado sea verdadero. La inversa tampoco es la negación del original: $\neg(A\Rightarrow B)$ significa $A\land\neg B$, hipótesis verdadera y conclusión falsa a la vez.
+
+Para reales, superar cinco implica superar dos por transitividad del orden. La recíproca, superar dos implica superar cinco, falla en tres. La inversa, ser a lo sumo cinco implica ser a lo sumo dos, falla en tres y cinco. Negar una cota estricta incluye la igualdad. La contraposición, ser a lo sumo dos implica ser a lo sumo cinco, es verdadera por el orden. Algunas recíprocas e inversas sí son verdaderas: $x+1=3$ implica $x=2$ por resta, su recíproca por suma, y su inversa se sigue porque $x=2$ forzaría $x+1=3$. «No equivalentes en general» no significa «siempre diferentes».
+
+Cambia ahora los valores de verdad de la actividad y compara columnas enteras, no solo una fila.
+
+<Interactive kind="logic" preset="implication" id="implication-lab" display />
+
+Coincidir en la fila seleccionada no basta para la equivalencia. Compara las cuatro. La contraposición siempre coincide con el original; la recíproca y la inversa coinciden entre sí, pero no necesariamente con el original.
+
+<Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
+
+## Por qué coinciden las parejas
+
+El original es falso exactamente cuando $A$ es verdadera y $B$ falsa. La contraposición es falsa exactamente cuando $\neg B$ es verdadera y $\neg A$ falsa: el mismo caso. Ambas son verdaderas en toda otra fila. Esto demuestra su equivalencia lógica a partir de la definición de implicación, incluso cuando el original es falso. Asimismo, recíproca e inversa son falsas exactamente cuando $A$ es falsa y $B$ verdadera, por lo que coinciden entre sí. Son resultados deducidos, no definiciones adicionales.
+
+Para probar un condicional en todo un dominio, se puede probar su contraposición en ese mismo dominio. Por ejemplo, para $x^2\ne0\Rightarrow x\ne0$ en los reales, demuestra $x=0\Rightarrow x^2=0$ por sustitución y multiplicación por cero. Escribir el enunciado transformado no bastaría para probarlo.
+
+Con bloques completos, $(0<x<1)\Rightarrow x<2$ tiene recíproca $x<2\Rightarrow(0<x<1)$, inversa $((x\le0)\lor(x\ge1))\Rightarrow x\ge2$ y contraposición $x\ge2\Rightarrow((x\le0)\lor(x\ge1))$. Negar todo el intervalo exige al menos una cota fallida, no ambas. Si la conclusión original fuera una conjunción, su negación en la nueva hipótesis sería igualmente una disyunción de fallos.
+
+Para una conclusión compuesta, la contraposición de $(x>5)\Rightarrow((x>2)\land(x>0))$ es $((x\le2)\lor(x\le0))\Rightarrow(x\le5)$. Se lee: «Si equis es a lo sumo dos o a lo sumo cero, entonces es a lo sumo cinco». Basta un componente fallido para negar la conjunción original; exigir ambos fallos cambiaría la hipótesis. En cualquiera de las alternativas, el orden da $x\le5$ y demuestra el enunciado transformado para toda entrada real.
+
+Conocer $B$ y la regla directa no establece $A$; el error es la **afirmación del consecuente**. Conocer $\neg A$ no establece $\neg B$; es la **negación del antecedente**. Para la regla de superar cinco, tres separa la primera inferencia; cero y tres muestran que una hipótesis falsa permite ambos valores de la conclusión.
+
+<Exercise question="Forma recíproca, inversa y contraposición de $((x>1)\land(x<4))\Rightarrow(x>0)$ en los reales. Prueba la recíproca en uno y demuestra la contraposición. ¿Qué fila hace falsos a la vez el original y su contraposición?">
+
+La recíproca es $x>0\Rightarrow((x>1)\land(x<4))$; falla en uno porque $1>1$ es falso. La inversa es $((x\le1)\lor(x\ge4))\Rightarrow x\le0$. La contraposición es $x\le0\Rightarrow((x\le1)\lor(x\ge4))$: todo real a lo sumo cero es a lo sumo uno, así que se cumple la primera alternativa. En general, la fila falsa común es $A$ verdadera, $B$ falsa; entonces $\neg B$ es verdadera y $\neg A$ falsa. Es el único caso de fallo de ambas formas, lo que prueba coincidencia en todas las filas.
+
+</Exercise>
+
+## Un ejemplo concreto con divisibilidad
+
+Escribe $a | n$ si $n=ak$ para algún entero $k$. Es divisibilidad, no división. Si 4 divide a $n$, entonces 2 divide a $n$. La contraposición dice: si 2 no divide a $n$, entonces 4 tampoco. La recíproca falla con $n = 6$: 2 divide a 6, pero 4 no.
+
+## Una prueba y su recíproca
+
+Supón que 4 divide a $n$. Entonces $n = 4k$ para un entero $k$. Reescribe $n = 2(2k)$; como 2k es entero, 2 divide a $n$. Esto prueba la ida para todo entero $n$, sin limitarse a ejemplos. La contraposición excluye el mismo caso: un $n$ impar no puede ser múltiplo de 4. La recíproca pregunta otra cosa: ¿ser par garantiza divisibilidad por 4? $n = 6$ lo refuta. $A$ es falso y $B$ verdadero: la implicación original es verdadera y la recíproca falsa.
+
+<Exercise question="¿$3 | n$ implica $6 | n$? Da un contraejemplo y la contraposición.">
+
+No: $n = 3$. La contraposición es «si 6 no divide a $n$, entonces 3 no divide a $n$»; también falla con $n = 3$. La contraposición conserva el valor de verdad incluso de una afirmación falsa.
+
+</Exercise>

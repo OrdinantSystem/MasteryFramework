@@ -1,0 +1,102 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Reelle Folgen"
+navTitle: "Reelle Folgen"
+description: "Reelle Folgen."
+order: 46
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["order-comparisons", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences"]
+thumbnail: "number-sets"
+---
+
+Ein Gerät meldet bei Beobachtung eins und zwei neun, danach bei jeder Beobachtung drei. Jede Meldung hat einen Wert und eine Position. „Die dritte Meldung ist drei“ unterscheidet Position und Messwert, auch wenn die Zahlen zufällig gleich sind.
+
+## Ein Wert an jeder positiven Indexstelle
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+Eine Funktion ordnet jeder erlaubten Eingabe genau einen Wert zu. Eine reelle Folge ist eine solche Zuordnung von den positiven natürlichen Zahlen in die reellen Zahlen. Null ist hier kein Index; andere Konventionen müssen genannt werden. $n$ ist der Index, $a_n$ das Folgenglied dort und $a$ die ganze Zuordnung. Ein Index ist keine Multiplikation. Der Pfeil nennt Eingabe- und Ausgabebereich, keine Konvergenz.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+Dies bezeichnet die ganze Folge mit Indizes ab eins ohne Ende. Unendlich ist selbst kein Index; es gibt kein letztes Glied und kein Glied bei unendlich. Jeder einzelne Index ist eine positive natürliche Zahl; der Wert dort darf negativ, null oder positiv sein.
+
+## Eine Regel muss jede Stelle bestimmen
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+Damit ist $a_1=2$, $a_2=4$, $a_3=6$. Eine konstante Folge hat dagegen für ein festes reelles $c$ an jeder Stelle $a_n=c$; etwa überall $-3$. Auch die Geräteregel ist vollständig: $a_1=a_2=9$ und $a_n=3$ für jedes $n\ge3$. Nur „neun, neun, drei, …“ bestimmt die Fortsetzung nicht: Unendlich viele Regeln teilen diesen Anfang.
+
+Folgen bewahren Reihenfolge und Wiederholungen. Die abwechselnden Folgen null, eins und eins, null sind verschieden: Schon ihre ersten Glieder unterscheiden sich. Beide haben die Wertemenge null und eins. Eine Menge vergisst Positionen und Wiederholungen. Zwei Folgen sind genau dann gleich, wenn ihre Werte an jeder Stelle übereinstimmen; ein endlicher Anfang beweist Gleichheit nicht.
+
+Ein Endstück beginnt an einem gewählten Index $N$ und enthält dieses sowie alle späteren Glieder. Beim Gerät enthält das Endstück ab $N=3$ nur Dreien. Großes $N$ markiert den Startindex, kleines $n$ eine geprüfte Stelle. Beide sind natürlich. Eine Folge mit zuerst null und danach immer eins stimmt ab Index zwei mit der konstanten Einsfolge überein, ist aber nicht dieselbe Folge.
+
+### Übung
+
+Nenne die ersten drei Glieder von $a_n=2n$. Darf eine reelle Folge negative Werte haben?
+
+<details>
+<summary>Hinweis</summary>
+
+Index und Glied haben verschiedene Rollen.
+
+</details>
+
+<Exercise>
+
+Zwei, vier, sechs. Ja: Allen positiven Indizes darf minus drei zugeordnet werden. Werte müssen nicht im Indexbereich liegen.
+
+</Exercise>
+
+Vergleiche die beiden abwechselnden Null-Eins-Folgen und ihre Wertemengen.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe die erste Stelle.
+
+</details>
+
+<Exercise>
+
+Verschiedene Folgen, gleiche Wertemenge. Die ersten Werte unterscheiden sich; die Menge merkt nur, welche Werte auftreten, nicht wo oder wie oft.
+
+</Exercise>
+
+Ist null und danach immer eins gleich der konstanten Einsfolge? Stimmen sie schließlich überein?
+
+<details>
+<summary>Hinweis</summary>
+
+Gleichheit prüft auch den Anfang.
+
+</details>
+
+<Exercise>
+
+Sie unterscheiden sich bei Index eins, stimmen aber ab zwei überall überein.
+
+</Exercise>
+
+Definiere später zwei verschiedene Fortsetzungen desselben Anfangs aus drei Gliedern und erkläre, warum Beobachtungen allein keine Folge definieren.
+
+## Laut lesen
+
+**EN:** a maps positive natural indices to real terms; a sub n is the output at index n.
+
+**DE:** a ordnet positiven natürlichen Indizes reelle Folgenglieder zu; a Index n ist der Wert an Stelle n.
+
+**ES:** a asigna términos reales a índices naturales positivos; a sub ene es la salida en el índice ene.

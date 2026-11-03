@@ -1,0 +1,44 @@
+---
+course: "analysis"
+chapter: "analysis-boolean"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+locale: "es"
+title: "Cinco leyes iniciales del álgebra de Boole"
+navTitle: "Cinco leyes iniciales del álgebra de Boole"
+description: "Ten presentes las reglas permitidas antes de deducir otras."
+order: 40
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logische-verknuepfungen"]
+thumbnail: "boolean-laws"
+---
+
+## Leyes 1–5
+
+<Math tex="\tag{1}(\colA{A}\lor \colB{B})\lor \colC{C}=\colA{A}\lor(\colB{B}\lor \colC{C}),\quad(\colA{A}\land \colB{B})\land \colC{C}=\colA{A}\land(\colB{B}\land \colC{C})" display />
+
+<Math tex="\tag{2}\colA{A}\lor \colB{B}=\colB{B}\lor \colA{A},\quad \colA{A}\land \colB{B}=\colB{B}\land \colA{A}" display />
+
+<Math tex="\tag{3}\colA{A}\land(\colB{B}\lor \colC{C})=(\colA{A}\land \colB{B})\lor(\colA{A}\land \colC{C})" display />
+
+<Math tex="\colA{A}\lor(\colB{B}\land \colC{C})=(\colA{A}\lor \colB{B})\land(\colA{A}\lor \colC{C})" display />
+
+<Math tex="\tag{4}\colA{A}\lor(\colA{A}\land \colB{B})=\colA{A},\quad \colA{A}\land(\colA{A}\lor \colB{B})=\colA{A}" display />
+
+<Math tex="\tag{5}\colA{A}\lor\neg \colA{A}=1,\quad \colA{A}\land\neg \colA{A}=0" display />
+
+Los números corresponden a asociatividad, conmutatividad, distributividad, absorción y complemento. Se permiten ambas formas duales. = expresa equivalencia lógica, no identidad de escritura. Al aplicar una ley puedes sustituir A, $B$ o $C$ por expresiones completas.
+
+## Visualiza la agrupación
+
+<ExpressionTrees />
+
+<ExpressionTrees variant="distributivity" display />
+
+La asociatividad cambia la agrupación de una misma operación. La distributividad cambia el árbol y repite A. En las hojas, las tablas de verdad no son el método de demostración: las reglas posteriores se deducen de estas cinco leyes.
+
+## Reconocer la forma de una ley
+
+En $A \land  (B \lor  C)$, $A$ se combina con una elección entre $B$ y $C$. Distribuir distingue las dos posibilidades: $A$ con $B$, o $A$ con $C$. Repetir $A$ es esencial. En $A \lor  (A \land  B)$ ya se aceptan todos los casos con $A$; el caso añadido exige $A$ y no aporta otros. Esta lectura explica las identidades; las deducciones de la hoja siguen usando las leyes permitidas.

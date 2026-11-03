@@ -1,0 +1,60 @@
+---
+course: "analysis"
+sourceId: "analysis-concepts-3"
+sourcePages: [1]
+locale: "de"
+title: "Kursrückblick"
+description: "Sprache, Beweise und Algebra verbinden, ohne ihre Rollen zu vermischen."
+reviewStatus: "unreviewed"
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1]}, {"sourceId": "analysis-concepts-2", "pages": [1]}, {"sourceId": "analysis-concepts-4", "pages": [1]}, {"sourceId": "analysis-sheet-1-1", "pages": [1]}, {"sourceId": "analysis-sheet-1-2", "pages": [1]}, {"sourceId": "analysis-zero", "pages": [], "locations": ["00 Analysis 0 Lessons.md"]}]
+---
+
+import {lessonUrl} from "../../../lib/content";
+
+<span id="from-analysis-grundlagen-ueberblick"></span>
+
+<span id="from-analysis-grundlagen-ueberblick-ein-kompakter-weg-durch-den-stoff"></span>
+
+### Ein kompakter Weg durch den Stoff
+
+Die obigen Abschnitte bilden den Hauptlernweg durch diese Grundlagen. Beginne mit <a href={lessonUrl("aussagen-und-aussageformen","de","analysis")+"#from-aussagen-und-aussageformen"}>Aussagen und Aussageformen</a>, dann folgen <a href={lessonUrl("aussagen-und-aussageformen","de","analysis")+"#from-definitions-assumptions-results"}>Definitionen</a>, <a href={lessonUrl("zahlenmengen","de","analysis")+"#from-equality-and-equations"}>Gleichheit</a> und <a href={lessonUrl("zahlenmengen","de","analysis")+"#from-order-comparisons"}>Ordnungsvergleiche</a>. <a href={lessonUrl("logische-verknuepfungen","de","analysis")+"#from-logische-verknuepfungen"}>Logische Verknüpfungen</a>, <a href={lessonUrl("logical-negation","de","analysis")+"#from-logical-negation"}>Negation</a> und der <a href={lessonUrl("logische-verknuepfungen","de","analysis")+"#from-building-truth-tables"}>Aufbau von Wahrheitstafeln</a> bereiten die Lektionen zu <a href={lessonUrl("implikation-und-kontraposition","de","analysis")+"#from-material-implication-and-vacuity"}>Implikation</a> und <a href={lessonUrl("biconditionals-and-equivalent-conditions","de","analysis")+"#from-biconditionals-and-equivalent-conditions"}>Äquivalenz</a> vor.
+
+Bei Quantoren führt der Weg über <a href={lessonUrl("universal-statements-and-domains","de","analysis")+"#from-universal-statements-and-domains"}>Allaussagen</a>, <a href={lessonUrl("universal-statements-and-domains","de","analysis")+"#from-bound-variables-and-scope"}>Geltungsbereiche</a>, <a href={lessonUrl("universal-statements-and-domains","de","analysis")+"#from-existence-and-witnesses"}>Existenz</a>, <a href={lessonUrl("quantifier-order","de","analysis")+"#from-quantifier-order"}>Reihenfolge und Abhängigkeit</a> zum <a href={lessonUrl("negating-nested-statements","de","analysis")+"#from-negating-quantified-statements-step-by-step"}>schrittweisen Negieren</a>. Die <a href={lessonUrl("reading-sequence-convergence","de","analysis")+"#from-reading-sequence-convergence"}>Anwendung auf Folgenkonvergenz</a> baut darauf auf und führt zuerst <a href={lessonUrl("real-sequences","de","analysis")+"#from-real-sequences"}>Folgen</a> sowie <a href={lessonUrl("real-sequences","de","analysis")+"#from-absolute-value-and-distance"}>Absolutbetrag und Abstand</a> ein. Die <a href={lessonUrl("negating-sequence-convergence","de","analysis")+"#from-negating-sequence-convergence"}>Herleitung der Negation</a> unterscheidet das Scheitern an einem bestimmten Zielwert davon, <a href={lessonUrl("negating-sequence-convergence","de","analysis")+"#from-no-real-limit"}>keinen reellen Grenzwert zu besitzen</a>.
+
+Die ursprünglichen Poster- und Übungsblattlektionen bleiben als Anwendungen erhalten. Insbesondere verlangen die folgenden booleschen Aufgaben ihren angegebenen algebraischen Beweisweg mit nummerierten Gesetzen; eine frühere Erklärung durch Wahrheitstafeln ersetzt diese Aufgabe nicht.
+
+1. Entscheide, ob der Satz eine Aussage ist oder noch freie Variablen enthält.
+2. Lege Bereich und Quantoren fest.
+3. Erkenne logische Struktur und Richtung der Behauptung.
+4. Wähle eine Beweismethode und begründe jeden Schritt.
+5. Halte bei booleschen Herleitungen fest, welche Regeln schon bewiesen sind.
+6. Unterscheide in Schaltungen einen geschriebenen Teilausdruck von einem physischen Gatter mit wiederverwendbarem Ausgang.
+
+
+<span id="from-analysis-grundlagen-ueberblick-die-abhängigkeitskette"></span>
+
+### Die Abhängigkeitskette
+
+<Math tex="(1\text{–}5)\longrightarrow H_1,H_2\longrightarrow(6\text{–}8)\longrightarrow U\longrightarrow\{9a,10\}\longrightarrow9b" display />
+
+$U$ bezeichnet hier die Eindeutigkeit des Komplements.
+
+
+<span id="from-analysis-grundlagen-ueberblick-fragen-zum-beantworten-ohne-nachsehen"></span>
+
+### Fragen zum Beantworten ohne Nachsehen
+
+- Warum braucht die Umkehrung einer wahren Implikation einen eigenen Beweis?
+- Was ist die Negation von „Für jedes $x$ gibt es ein $y$“?
+- Wo braucht der Beweis zu $\sqrt{2}$ den vollständig gekürzten Bruch?
+- Warum müssen die Neutralitätsgesetze vor ihrer Verwendung im Idempotenzbeweis hergeleitet werden?
+- Warum braucht die NAND-Realisierung von UND zwei statt drei Gatter?
+
+Kehre bei Unsicherheit zur entsprechenden Lektion zurück. Diese Grundlagen tragen spätere Analysis-Themen; Grenzwerte und Differentiation sind nicht Inhalt dieser sechs Dokumente.
+
+
+<span id="from-analysis-grundlagen-ueberblick-eine-verknüpfte-aufgabe"></span>
+
+### Eine verknüpfte Aufgabe
+
+Betrachte „Für jede ganze Zahl $n$ gilt: Ist $n^2$ gerade, dann ist $n$ durch 4 teilbar“. Bestimme zuerst Bereich und Implikation. Der Paritätssatz liefert nur Geradheit von $n$, also weniger als die behauptete Folgerung. Für $n = 2$ ist $n^2 = 4$ gerade, aber 4 teilt $n$ nicht. Dieser Fall widerlegt die Allaussage. Ein passender Satz beweist nicht automatisch alles Geforderte.

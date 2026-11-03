@@ -1,0 +1,126 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negating universal statements"
+navTitle: "Negating universal statements"
+description: "Negating universal statements."
+order: 31
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "existence-and-witnesses", "logical-negation", "negating-combined-conditions", "counterexamples"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/01 Negating Universal Claims.md#01 Negating Universal Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+A tray has a red card and a blue card. “Every card is red” is false: the blue card is enough to refute it. “Every card is not red” is also false because a red card remains. Two sentences false together cannot be exact negations.
+
+## Not every means some failure
+
+$$
+\neg(\forall x\in D\;P(x))\ \Longleftrightarrow\ \exists x\in D\;\neg P(x).
+$$
+
+Fix the domain $D$, the predicate $P$ and any other parameters. In classical two-valued logic, an exact negation has the opposite truth value in every meaningful situation. The equivalence says that not every allowed object passes exactly when at least one allowed object fails. It permits several failures and also permits successes to remain.
+
+For one direction, a failing member makes the universal false because that member is included. Conversely, if there were no failing member, every member would pass and the universal would be true. So a false universal has a failing member. This reasons from meanings, covers infinite domains and does not promise an algorithm to locate the failure. A finite model illustrates the rule but does not establish the general theorem.
+
+## Keep the domain and negate the whole predicate
+
+$$
+\neg(\forall x\in\mathbb Z\;(x>0))\ \Longleftrightarrow\ \exists x\in\mathbb Z\;(x\le0).
+$$
+
+Zero witnesses the denial: it is an integer and is not positive. A negative half fails the original predicate but is outside the integer domain. A positive integer is allowed but does not fail. If the domain instead were positive integers, the original would be true and its correct negation false. Writing a correct negation does not make it true.
+
+For “red and numbered”, failure means not red or not numbered, with inclusive or. One red unnumbered card is enough. On an empty domain every-object claims are true and their existential negations false. Empty restricted domains are allowed even when the wider universe is nonempty. A universal claim supplies no object by itself.
+
+### Practice
+
+Negate “Every tray card is red” on the mixed tray. Why not “No card is red”?
+
+<details>
+<summary>Hint</summary>
+
+Keep the red card.
+
+</details>
+
+<Exercise>
+
+Some tray card is not red, witnessed by blue. “No card is red” is false on this mixed tray too, so it is too strong.
+
+</Exercise>
+
+Negate $\forall x\in\mathbb Z\;(x=0)$ and give a witness.
+
+<details>
+<summary>Hint</summary>
+
+Keep the integer domain.
+
+</details>
+
+<Exercise>
+
+$\exists x\in\mathbb Z\;(x\ne0)$. One is an integer and differs from zero; no uniqueness is asserted.
+
+</Exercise>
+
+If the allowed domain is empty, evaluate every member passes and its negation.
+
+<details>
+<summary>Hint</summary>
+
+There is neither a failure nor a witness.
+
+</details>
+
+<Exercise>
+
+The universal is true because no member fails; some member fails is false because no member exists.
+
+</Exercise>
+
+Negate every card is red and numbered. What does a red unnumbered card show?
+
+<details>
+<summary>Hint</summary>
+
+Negate the entire conjunction.
+
+</details>
+
+<Exercise>
+
+Some card is not red or not numbered. The red unnumbered card fails the full conjunction and refutes the original; both properties need not fail.
+
+</Exercise>
+
+Can minus one refute “Every positive real is nonnegative”? State the exact denial.
+
+<details>
+<summary>Hint</summary>
+
+Check membership first.
+
+</details>
+
+<Exercise>
+
+No, it is outside the domain. The denial is “Some positive real is negative”, which is false in real order.
+
+</Exercise>
+
+Later, explain both directions of the dual law using a mixed collection and then an empty one.
+
+## Read aloud
+
+**EN:** Not every x in D satisfies P if and only if some x in D fails P.
+
+**DE:** Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
+
+**ES:** No todo equis en D cumple P si y solo si algún equis en D no cumple P.

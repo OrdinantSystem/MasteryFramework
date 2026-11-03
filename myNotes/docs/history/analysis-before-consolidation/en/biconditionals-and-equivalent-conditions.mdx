@@ -1,0 +1,73 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-equivalence"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/01 If and Only If.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/03 Equivalent Conditions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md"]
+title: "Biconditionals and equivalent conditions"
+navTitle: "Biconditionals and equivalent conditions"
+description: "Read necessary and sufficient conditions and prove agreement over the right range of cases."
+order: 17
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-conditionals", "material-implication-and-vacuity"]
+thumbnail: "parity"
+---
+
+“Keep a card **if** its label is two” requires keeping every two-card, but allows keeping others. “Keep a card **only if** its label is two” forbids keeping other labels, but permits rejecting every card. Together they require keeping exactly the two-cards.
+
+## If, only if, and both
+
+For propositions $A$ and $B$:
+
+- “$A$ if $B$” means $B\Rightarrow A$. Read “if $B$, then $A$.” Here $B$ is **sufficient** for $A$: it guarantees $A$.
+- “$A$ only if $B$” means $A\Rightarrow B$. Read “if $A$, then $B$.” Here $B$ is **necessary** for $A$: $A$ cannot hold without it.
+
+A club's formal rule “admitted only if ticketed” makes a ticket necessary, not sufficient. It does not promise admission to ticket holders. Adding “ticketed implies admitted” would make the ticket sufficient too. These are stipulated rules, not claims about actual admission policies.
+
+The **biconditional** $A\Leftrightarrow B$ reads “$A$ if and only if $B$,” abbreviated **iff**. Its definition is matching truth values, including two false values:
+
+| $A$ | $B$ | $A\Rightarrow B$ | $B\Rightarrow A$ | $A\Leftrightarrow B$ |
+| --- | --- | --- | --- | --- |
+| $1$ | $1$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ |
+| $0$ | $1$ | $1$ | $0$ | $0$ |
+| $0$ | $0$ | $1$ | $1$ | $1$ |
+
+Here $1$ means true and $0$ false. The table proves that the biconditional agrees with $(A\Rightarrow B)\land(B\Rightarrow A)$ in every row. The forward arrow excludes true/false; the backward arrow excludes false/true. These exhaust the mismatches. Conversely, matching values make both arrows true. This is why a proof of equivalence requires both directions.
+
+In particular, $(0=1)\Leftrightarrow(2=3)$ is true, while the conjunction of those equations is false. Agreement does not assert either side.
+
+## Start afresh for the reverse direction
+
+For every real $x$,
+
+$$(x+1=3)\Leftrightarrow(x=2).$$
+
+Read: “$x$ plus one equals three if and only if $x$ equals two.” Fix an arbitrary real $x$. **Forward:** assume $x+1=3$ and subtract one from both sides to obtain $x=2$. **Backward:** start instead from $x=2$ and add one to obtain $x+1=3$. Addition and subtraction preserve equality and undo each other, so the reasoning works for every real input.
+
+Assuming both equations at the start would skip both proof obligations. Logic explains which directions are needed; arithmetic establishes those directions for these equations. At zero both equations are false, which is fully consistent with their equivalence.
+
+## Three different ranges of agreement
+
+A true biconditional at one input gives **one-case agreement**. For $(x>5)\Leftrightarrow(x>2)$, six and zero give agreement, but three does not. The biconditional itself does not bind $x$ or silently claim “for every.”
+
+**Propositional logical equivalence**, written $F\equiv G$, means that formulas agree under every assignment to their atomic proposition letters. Repeated letters retain the same assigned value. For example, $(P\land Q)\equiv(Q\land P)$: both are true exactly when both letters are true, and false otherwise. Independent letters $P$ and $Q$ are not logically equivalent merely because one row assigns both true.
+
+**Equivalent conditions on a domain** agree at every allowed input and therefore have the same solution set. Our equation proof establishes this over the reals using arithmetic. It is not an unrestricted propositional law about two independent letters. The equals signs inside equations compare numbers; $\Leftrightarrow$ compares propositions' truth values. Some Boolean worksheets use $=$ for logical equivalence by convention; read their stated convention rather than changing numerical and logical equality into one meaning.
+
+Domains matter. Over all reals, $x>0$ and $x\ge0$ differ at zero. On nonzero reals they agree: positive implies nonnegative, and a nonnegative nonzero real must be positive. The restricted proof does not establish the all-real claim.
+
+<Exercise question="A sorting rule says a card is kept only if it is labelled two. Is a two-card necessarily kept? State the missing implication. Then prove $(x-2=3)\Leftrightarrow(x=5)$ for every real $x$, starting each direction from its own assumption.">
+
+A two-card may be rejected; the missing implication is labelled-two implies kept. For the equations, assume $x-2=3$ and add two to get $x=5$. Restart from $x=5$ and subtract two to get $x-2=3$. Both operations preserve equality for arbitrary real $x$, so neither mismatch is possible. This is an arithmetic proof, not merely a truth-table verdict.
+
+</Exercise>
+
+<Exercise question="Someone proves above-five implies above-two and calls the conditions equivalent. What survives the error? Also explain why equivalence of two equations does not make them true for every input.">
+
+The forward implication survives, by order. Three refutes only the missing reverse implication, hence the claimed equivalence. For $x+1=3$ and $x=2$, zero makes both false. Their solution sets agree, but neither solution set contains every real number.
+
+</Exercise>

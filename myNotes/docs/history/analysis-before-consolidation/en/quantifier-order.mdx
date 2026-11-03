@@ -1,0 +1,143 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Quantifier order"
+navTitle: "Quantifier order"
+description: "Quantifier order."
+order: 27
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "existence-and-witnesses"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Ana can use only red; Ben can use only blue. These are all the people, keys and permissions. Each person has a key, but no key works for everyone. The same objects answer two different questions.
+
+| Person | Red | Blue |
+| --- | --- | --- |
+| Ana | yes | no |
+| Ben | no | yes |
+
+Let $P$ be people, $K$ keys and $H(p,k)$ mean that person $p$ can use key $k$. Read the whole remainder as a bracket after each quantifier.
+
+$$
+\forall p\in P\;\exists k\in K\;H(p,k).
+$$
+
+For each person, a usable key exists. Red witnesses Ana, blue witnesses Ben. The choices may differ, but need not.
+
+$$
+\exists k\in K\;\forall p\in P\;H(p,k).
+$$
+
+Here choose a key for which the whole every-person claim holds. Red fails for Ben and blue fails for Ana; all candidates are excluded. A nested quantifier lies within another quantifier’s scope. Two separately quantified statements joined by “and” need not be nested. In these formulas both variables are bound and the first scope contains the second quantifier. This is logical order, not physical time or a promised algorithm.
+
+## The same distinction over the reals
+
+$$
+\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x).
+$$
+
+True: for arbitrary real $x$, choose $y=x+1$. Closure of addition gives a real output, and positivity of one gives $y>x$. These reasons cover every input, not just tested examples.
+
+$$
+\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y>x).
+$$
+
+False: for any proposed $y$, test the allowed value $x=y$. It would require $y>y$. The test defeats every proposed witness. The recipe $y=x+1$ cannot prove this order because it changes the supposedly fixed witness with the later input.
+
+## Safe swaps have conditions
+
+For fixed independent domains $D,E$, adjacent universal quantifiers commute: either order tests every ordered pair. To prove either direction, take any pair and apply the original two requirements to its entries. If either domain is empty, both orders are true. Adjacent existential quantifiers also commute: a successful pair can be presented in either order. If either domain is empty, both orders are false. Keep $R(x,y)$ unchanged; swapping binders does not swap relation arguments. A domain $E(x)$ cannot simply be moved before $x$ is introduced.
+
+### Practice
+
+Explain the complete red–blue model without symbols.
+
+<details>
+<summary>Hint</summary>
+
+Exclude each shared candidate.
+
+</details>
+
+<Exercise>
+
+Ana has red and Ben blue. Red fails for Ben and blue for Ana, so each has a key but none is shared.
+
+</Exercise>
+
+Compare $\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y=x)$ and the shared order.
+
+<details>
+<summary>Hint</summary>
+
+For shared equality test a different real.
+
+</details>
+
+<Exercise>
+
+The first is true with $y=x$. The shared claim is false: for any $y$, $x=y+1$ is real and different.
+
+</Exercise>
+
+Does swapping two universals prove everyone has every key?
+
+<details>
+<summary>Hint</summary>
+
+Equivalence is not truth.
+
+</details>
+
+<Exercise>
+
+No. Both orders test all pairs and are false in the workshop, for example at Ana–blue.
+
+</Exercise>
+
+Why does $y=x+1$ fail as a shared-witness proof?
+
+<details>
+<summary>Hint</summary>
+
+Which input is later?
+
+</details>
+
+<Exercise>
+
+It selects a new witness for each input; it proves universal-first, not one witness for all inputs.
+
+</Exercise>
+
+No people and no keys exist. Evaluate the two orders.
+
+<details>
+<summary>Hint</summary>
+
+Universal truth supplies no object.
+
+</details>
+
+<Exercise>
+
+Every person has a key is vacuously true. A shared key exists is false because there is no key.
+
+</Exercise>
+
+Later, reconstruct the arbitrary-real proof and disproof rather than testing large numbers.
+
+## Read aloud
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
