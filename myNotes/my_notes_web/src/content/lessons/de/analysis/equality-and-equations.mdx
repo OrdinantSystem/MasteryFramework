@@ -1,0 +1,90 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]
+locale: "de"
+title: "Gleichheit und Gleichungen"
+navTitle: "Gleichheit und Gleichungen"
+description: "Gleichheiten als Wertvergleiche lesen und jedes Kettenglied begründen."
+order: 6
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["definitions-assumptions-results"]
+thumbnail: "proof"
+---
+
+$2+1$ und $3$ sehen verschieden aus, bezeichnen aber dieselbe Zahl. Die Gleichheit $2+1=3$ hält diese Übereinstimmung fest. Ein Gleichheitszeichen bedeutet nicht „als Nächstes tue dies“. Jedes behauptet, dass beide Seiten im angegebenen Zusammenhang dasselbe Objekt oder denselben Wert bezeichnen.
+
+## Grundregeln der Gleichheit
+
+Diese Regeln verwenden wir als Grundlagen; wir beweisen sie hier nicht aus der Arithmetik:
+
+- **Reflexivität:** $a=a$.
+- **Symmetrie:** Aus $a=b$ folgt $b=a$.
+- **Transitivität:** Aus $a=b$ und $b=c$ folgt $a=c$.
+- **Ersetzung:** Gleiche Objekte dürfen in wohldefinierten mathematischen Ausdrücken oder Eigenschaften füreinander eingesetzt werden, ohne Wert oder Wahrheit zu verändern.
+
+Die letzte Regel verlangt weiterhin sinnvolle Ausdrücke. Für $a=b=0$ werden $1/a$ und $1/b$ dadurch in der üblichen reellen Arithmetik nicht definiert. Die Regel erlaubt auch nicht beliebige Ersetzungen innerhalb zitierter Wörter.
+
+## Jedes Kettenglied behauptet eine Gleichheit
+
+$$a=b=c$$
+
+Das kürzt $a=b$ und $b=c$ ab; Transitivität liefert zusätzlich $a=c$. Die Kette behauptet die Gleichheiten gemeinsam, keine Abfolge von Handlungen.
+
+$2+1=3+4=7$ ist falsch: Das erste Zeichen vergleicht drei mit sieben. Soll erst zwei und eins und danach vier addiert werden, schreibe $2+1=3$ und anschließend $3+4=7$. Oder behalte die zusätzliche Vier in der ganzen Kette bei:
+
+$$(2+1)+4=3+4=7.$$
+
+Im ersten Schritt wird $2+1$ innerhalb eines größeren Ausdrucks durch drei ersetzt. Der zweite Schritt wertet die Addition aus. Alle Ausdrücke der korrigierten Kette bezeichnen sieben.
+
+<Note title="Lesarten">
+
+$a=b=c$: **EN** “a equals b and b equals c”; **DE** „a ist gleich b und b ist gleich c“; **ES** «a es igual a be y be es igual a ce». $=$: **EN** “equals”; **DE** „ist gleich“; **ES** «es igual a». $\approx$: **EN** “is approximately equal to”; **DE** „ist ungefähr gleich“; **ES** «es aproximadamente igual a».
+
+</Note>
+
+Ungefähre Gleichheit braucht eine angegebene Genauigkeit oder Toleranz. Sie darf eine exakte Gleichheit in einer Kette nicht kommentarlos ersetzen.
+
+## Der Zusammenhang bestimmt die Rolle
+
+„Definiere $a:=0$“ führt einen Namen ein. „Angenommen, $a=0$“ führt eine lokale Hypothese ein. „Löse $x+1=3$ über den reellen Zahlen“ fragt nach den erlaubten Eingaben, für die die Gleichheit wahr ist; hier lautet die Lösung $x=2$. Keine dieser Rollen folgt allein aus dem Gleichheitszeichen.
+
+Die Identität $x+0=x$ gilt für jede reelle Eingabe, ist aber als Formel offen: Kein Quantor bindet $x$. Explizit lautet die Allaussage
+
+$$\forall x\in\mathbb R\;(x+0=x).$$
+
+Eine Wertzuweisung liefert einen Auswertungskontext, bindet die Variable aber nicht syntaktisch. Eine Ersetzung entfernt ihre Vorkommen und erzeugt eine andere Formel. Ein Quantor dagegen bindet Vorkommen in seinem Geltungsbereich.
+
+## Aufgaben
+
+Korrigiere $1+1=2+1=3$, ohne die beabsichtigte Rechnung zu ändern. Erkläre zuerst das falsche Kettenglied.
+
+<details>
+<summary>Hinweis</summary>
+
+Werte beide Seiten des ersten Gleichheitszeichens aus. In einer einzigen Kette muss die letzte Addition von Anfang an enthalten sein.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Das erste Kettenglied behauptet, zwei sei gleich drei. Richtig sind $1+1=2$, danach $2+1=3$, oder $(1+1)+1=2+1=3$. Jetzt bezeichnen alle Ausdrücke der Kette drei; der erste Schritt verwendet Ersetzung.
+
+</details>
+
+<Exercise question="Für beliebige reelle Zahlen a, b, c sei a gleich b und b gleich c. Benenne Voraussetzungen, Folgerung und Regel. Schreibe die vollständige Allaussage.">
+
+Die Voraussetzungen sind $a=b$ und $b=c$; die Folgerung ist $a=c$, begründet durch Transitivität:
+
+$$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
+
+Alle Variablenvorkommen sind gebunden. Das behauptet nicht, alle reellen Zahlen seien gleich. Es besagt: Wenn beide Voraussetzungen gelten, gilt die Folgerung. Die Gleichheitsregel gilt für beliebige passende Objekte; ein einzelnes Zahlenbeispiel ist nicht die allgemeine Begründung.
+
+Vollständige Lesart: **EN** “For every real a, b, and c, if a equals b and b equals c, then a equals c.” **DE** „Für alle reellen a, b und c gilt: Wenn a gleich b und b gleich c ist, dann ist a gleich c.“ **ES** «Para todos los reales a, be y ce, si a es igual a be y be es igual a ce, entonces a es igual a ce».
+
+</Exercise>

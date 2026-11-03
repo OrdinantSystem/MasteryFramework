@@ -1,0 +1,87 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Betrag und Abstand"
+navTitle: "Betrag und Abstand"
+description: "Betrag und Abstand."
+order: 47
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["order-comparisons", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+---
+
+Minus drei und plus drei liegen auf verschiedenen Seiten der Null, sind aber beide drei Einheiten entfernt. Abstand beschreibt die Entfernung, nicht die Richtung. Der Betrag macht aus einer vorzeichenbehafteten reellen Zahl ihren nichtnegativen Abstand von null.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+Dies ist eine Definition. Jede reelle Zahl fällt in genau einen Fall. Bei $x<0$ ist die Gegenzahl $-x$ positiv: Das Minuszeichen macht den Wert nicht negativ. Also gilt $|-3|=3$, $|3|=3$ und $|0|=0$. Nichtnegativ schließt null ein und bedeutet nicht strikt positiv. Gewöhnliche reelle Arithmetik und Ordnung werden vorausgesetzt.
+
+## Gerichtete Differenz und Abstand
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+Die Differenz $x-y$ ist die gerichtete Verschiebung von $y$ zu $x$. Ihr Betrag gibt die Streckenlänge. Umgekehrte Subtraktion negiert die Differenz. Eine Zahl und ihre Gegenzahl haben denselben Betrag: Bei positiver Eingabe ergeben beide den positiven Wert, bei negativer dessen positive Gegenzahl und bei null beide null. Also gilt $d(x,y)=d(y,x)$ allgemein, nicht nur im Beispiel.
+
+Außerdem gilt $d(x,y)=0$ genau dann, wenn $x=y$. Ist die Differenz nichtnegativ, bleibt sie unter dem Betrag unverändert; Abstand null erzwingt Differenz null. Ist sie negativ, ist ihr Betrag positiv und nicht null. Umgekehrt haben gleiche Punkte Differenz und Betrag null. Die Dreiecksungleichung wird nicht gebraucht.
+
+## Eine strenge Toleranz ist ein offenes Intervall
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+Fixiere Ziel $L$ und positive reelle Toleranz $\varepsilon$. Setze $u=t-L$. Bei $u\ge0$ gilt $|u|=u$: Der Abstandstest lautet $u<\varepsilon$, während $-\varepsilon<u$ bereits aus der positiven Toleranz folgt. Bei $u<0$ gilt $|u|=-u$: Der Test $-u<\varepsilon$ ist äquivalent zu $u>-\varepsilon$, während $u<\varepsilon$ schon gilt. Beide Fälle ergeben genau $-\varepsilon<u<\varepsilon$. Addition von $L$ liefert das angezeigte Intervall. Jeder Schritt ist umkehrbar, also gelten beide Richtungen.
+
+Die Kettenungleichung verlangt beide strengen Schranken. Bei Ziel drei und Toleranz $1/2$ sind die Endpunkte $2.5$ und $3.5$ ausgeschlossen: Ihr Abstand ist gleich der Toleranz. Epsilon ist eine veränderliche Toleranz, keine besondere winzige Konstante.
+
+### Übung
+
+Prüfe bei Ziel $3$ und Toleranz $1/2$ die Werte $2.5$, $3$ und $13/4$.
+
+<details>
+<summary>Hinweis</summary>
+
+Berechne zuerst den Abstand.
+
+</details>
+
+<Exercise>
+
+Die Abstände sind $1/2$, $0$, $1/4$. Der erste scheitert an Gleichheit, die anderen passen. Der Endpunkt liegt nicht strikt im Intervall.
+
+</Exercise>
+
+Ein Punkt liegt links vom Ziel. Liegt er wegen negativer Differenz in jeder positiven Toleranz?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze zwei und fünf.
+
+</details>
+
+<Exercise>
+
+Nein. Von Ziel fünf zu Punkt zwei ist die Differenz minus drei, der Abstand aber drei; Toleranz eins scheitert.
+
+</Exercise>
+
+Rekonstruiere später den Zweifallbeweis der Intervalläquivalenz und den Beweis zu Abstand null.
+
+## Laut lesen
+
+**EN:** The absolute value of t minus L is less than epsilon exactly when t lies strictly between L minus epsilon and L plus epsilon.
+
+**DE:** Der Betrag von t minus L ist kleiner als Epsilon genau dann, wenn t strikt zwischen L minus Epsilon und L plus Epsilon liegt.
+
+**ES:** El valor absoluto de te menos ele es menor que épsilon exactamente cuando te está estrictamente entre ele menos épsilon y ele más épsilon.

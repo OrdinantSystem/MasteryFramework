@@ -1,0 +1,90 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]
+locale: "es"
+title: "Igualdad y ecuaciones"
+navTitle: "Igualdad y ecuaciones"
+description: "Leer igualdades como comparaciones de valores y justificar cada eslabón."
+order: 6
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["definitions-assumptions-results"]
+thumbnail: "proof"
+---
+
+$2+1$ y $3$ tienen distinto aspecto, pero nombran el mismo número. La igualdad $2+1=3$ expresa esa coincidencia. El signo igual no significa «haz esto a continuación». Cada aparición afirma que ambos lados designan el mismo objeto o valor en el contexto indicado.
+
+## Reglas fundamentales de la igualdad
+
+Aceptamos estas reglas como fundamentos, sin deducirlas aquí de la aritmética:
+
+- **Reflexividad:** $a=a$.
+- **Simetría:** si $a=b$, entonces $b=a$.
+- **Transitividad:** si $a=b$ y $b=c$, entonces $a=c$.
+- **Sustitución:** podemos intercambiar objetos iguales en expresiones o propiedades matemáticas bien definidas sin cambiar el valor ni la verdad.
+
+La última regla sigue exigiendo expresiones con sentido. Si $a=b=0$, la sustitución no hace que $1/a$ ni $1/b$ estén definidos en la aritmética real habitual. Tampoco es una regla para sustituir palabras citadas en cualquier frase.
+
+## Cada eslabón afirma una igualdad
+
+$$a=b=c$$
+
+Abrevia $a=b$ y $b=c$; por transitividad también obtenemos $a=c$. Afirma esas igualdades conjuntamente, no una secuencia de acciones.
+
+La línea $2+1=3+4=7$ es incorrecta: su primera igualdad compara tres con siete. Si se pretende sumar dos y uno y después añadir cuatro, escribe $2+1=3$ y luego $3+4=7$. También puedes mantener el cuatro añadido en toda la cadena:
+
+$$(2+1)+4=3+4=7.$$
+
+El primer paso sustituye $2+1$ por tres dentro de una expresión mayor. El segundo calcula la suma. Todas las expresiones de la cadena corregida valen siete.
+
+<Note title="Lecturas">
+
+$a=b=c$: **EN** “a equals b and b equals c”; **DE** „a ist gleich b und b ist gleich c“; **ES** «a es igual a be y be es igual a ce». $=$: **EN** “equals”; **DE** „ist gleich“; **ES** «es igual a». $\approx$: **EN** “is approximately equal to”; **DE** „ist ungefähr gleich“; **ES** «es aproximadamente igual a».
+
+</Note>
+
+La igualdad aproximada necesita una precisión o tolerancia indicada. No permite reemplazar una igualdad exacta en una cadena sin explicar el cambio.
+
+## El contexto determina la función
+
+«Define $a:=0$» introduce un nombre. «Supongamos $a=0$» introduce una hipótesis local. «Resuelve $x+1=3$ en los reales» pide las entradas permitidas que hacen verdadera la igualdad; aquí la solución es $x=2$. El signo igual por sí solo no determina ninguna de esas funciones.
+
+La identidad $x+0=x$ vale para toda entrada real, pero está abierta tal como se escribe: ningún cuantificador liga $x$. Su forma universal explícita es
+
+$$\forall x\in\mathbb R\;(x+0=x).$$
+
+Una asignación aporta contexto para evaluar una ecuación abierta, pero no liga sintácticamente su variable. Una sustitución reemplaza las apariciones y produce otra fórmula. Un cuantificador, en cambio, liga apariciones dentro de su alcance.
+
+## Práctica
+
+Corrige $1+1=2+1=3$ sin cambiar el cálculo pretendido. Explica el eslabón falso antes de corregirlo.
+
+<details>
+<summary>Pista</summary>
+
+Calcula ambos lados del primer signo igual. Para usar una sola cadena, conserva la última suma en todas sus expresiones.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+El primer eslabón afirma que dos es igual a tres. Escribe $1+1=2$, después $2+1=3$, o bien $(1+1)+1=2+1=3$. Ahora todas las expresiones de la cadena valen tres; la primera transformación usa sustitución.
+
+</details>
+
+<Exercise question="Sean a, b, c reales arbitrarios. Supón que a es igual a b y b es igual a c. Identifica hipótesis, conclusión y regla. Escribe la afirmación universal completa.">
+
+Las hipótesis son $a=b$ y $b=c$; la conclusión es $a=c$, justificada por transitividad:
+
+$$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
+
+Todas las apariciones de variables están ligadas. Esto no afirma que todos los reales sean iguales: afirma que, cuando se cumplen las dos hipótesis, se cumple la conclusión. La regla se aplica a objetos arbitrarios que satisfagan esas hipótesis; comprobar una terna numérica no es la justificación general.
+
+Lectura completa: **EN** “For every real a, b, and c, if a equals b and b equals c, then a equals c.” **DE** „Für alle reellen a, b und c gilt: Wenn a gleich b und b gleich c ist, dann ist a gleich c.“ **ES** «Para todos los reales a, be y ce, si a es igual a be y be es igual a ce, entonces a es igual a ce».
+
+</Exercise>

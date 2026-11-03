@@ -1,0 +1,75 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md"]
+locale: "en"
+title: "Reading mathematical structure"
+navTitle: "Reading mathematical structure"
+description: "Identify roles, domains, scope, and whole hypotheses before proving a claim."
+order: 8
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "logische-verknuepfungen", "order-comparisons"]
+thumbnail: "proof"
+---
+
+“Find a real number less than two” is an instruction. “Every real number is less than two” makes a claim, and it is false. The first task in reading mathematics is to identify what the sentence does. A long string of symbols does not settle that question.
+
+## A reading procedure
+
+Use these questions when a claim is difficult to unpack. They organize reading; they are not a proof technique.
+
+1. Is the writer defining a term, asserting something, assuming something locally, asking a question, or giving an instruction?
+2. Which objects and domain are involved? Are all expressions meaningful? In ordinary real arithmetic, division by zero is not allowed.
+3. Which variable occurrences are free or bound? Separately, does the surrounding text fix a value for a free variable?
+4. Which quantifiers occur, in words or symbols? Preserve their domains and scopes. $\forall$ means “for every”; $\exists$ means “there exists at least one,” not “exactly one.”
+5. Find the connective joining the largest parts, then inspect those parts. Parentheses keep a whole input together.
+6. For a conditional, identify the **whole hypothesis** and the **whole conclusion**. A simple equality need not have a hypothesis; do not invent one.
+7. Separate parsing, evaluation, and justification. Knowing what a sentence says does not prove it.
+
+Addition in $x+y=3$ combines numbers inside one condition, not two propositions. At the propositional level we may treat a whole quantified statement as one input letter, but that does not make it an atomic formula in first-order syntax.
+
+## A universal claim with a conditional inside
+
+“Any real number strictly between zero and one is less than two” becomes
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+**EN:** “For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.” **DE:** „Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“ **ES:** «Para todo real equis, si cero es estrictamente menor que equis y equis es estrictamente menor que uno, entonces equis es estrictamente menor que dos».
+
+The quantifier governs the entire conditional and binds every occurrence of $x$. The formula is closed. Inside its scope the main connective is $\Rightarrow$, also written $\to$. Its left input is the entire conjunction; its right input is $x<2$. The symbol $\land$ means “and,” not a second outer connective.
+
+Keep both $0<x$ and $x<1$ in the translation. A later proof may not need the lower bound, but removing it while translating changes the stated hypothesis. Nor does the conditional assert that every real number lies between zero and one.
+
+At $x=1/2$, both hypothesis and conclusion hold. At $x=3$, the hypothesis fails, so three is not a counterexample, even though the conclusion fails too. A counterexample to a universal conditional must satisfy its **entire hypothesis** and fail its conclusion.
+
+For a proof, take any real $x$ satisfying the hypothesis. From $x<1$ and $1<2$, transitivity of the usual real order gives $x<2$. This arbitrary-input reasoning proves the claim. The translation and numerical checks alone did not. Classical semantics and ordinary real order are the accepted foundations here.
+
+## Practice in both directions
+
+<Exercise question="Parse $x=0\lor((x>0)\land(x<1))$. Give the outer connective, its two whole inputs, and the free variables. Then translate ‘x equals zero and it is not the case that y equals zero’.">
+
+The outer connective is $\lor$. Its inputs are $x=0$ and the whole conjunction $(x>0)\land(x<1)$. All occurrences of $x$ remain free unless context adds a quantifier. The second translation is $(x=0)\land\neg(y=0)$; only the second equality is negated, and both variables remain free as written.
+
+</Exercise>
+
+Translate “Every real number greater than one is greater than zero.” Identify the hypothesis and prove the claim without a list of successful examples. Does it claim that every real is positive?
+
+<details>
+<summary>Hint</summary>
+
+“For every number with a property” contains a conditional. Keep the domain outside that conditional.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$. The hypothesis is $x>1$; the conclusion is $x>0$. For arbitrary real $x$ above one, $1>0$ and transitivity give $x>0$. The quantifier binds every occurrence of $x$. The claim does not assert positivity of all reals: zero fails the hypothesis and is not a counterexample.
+
+</details>
+
+When checking a translation, look for changes from “if” to “and,” “some” to “every,” or strict to non-strict bounds. If the original wording is genuinely ambiguous, state the ambiguity. Later reading: [universal statements and domains](../universal-statements-and-domains/).

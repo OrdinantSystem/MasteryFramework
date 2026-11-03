@@ -1,0 +1,102 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Sucesiones reales"
+navTitle: "Sucesiones reales"
+description: "Sucesiones reales."
+order: 46
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["order-comparisons", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences"]
+thumbnail: "number-sets"
+---
+
+Un aparato informa nueve en las observaciones uno y dos, y tres en todas las posteriores. Cada lectura tiene un valor y una posición. «La tercera lectura es tres» distingue posición y valor, aunque sus números coincidan por casualidad.
+
+## Un valor en cada índice positivo
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+Una función es una asignación con exactamente una salida para cada entrada permitida. Una sucesión real es una función de los naturales positivos a los reales. Aquí cero no es índice; otras convenciones deben indicarse. $n$ es el índice, $a_n$ el término en esa posición y $a$ la asignación completa. El subíndice no significa multiplicación. La flecha indica dominios de entrada y salida, no convergencia.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+Esto nombra toda la sucesión, con índices desde uno sin final. Infinito no es un índice y no existe un último término ni un término en el infinito. Cada índice individual es natural positivo; su salida puede ser negativa, cero o positiva.
+
+## Una regla debe determinar cada posición
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+Así, $a_1=2$, $a_2=4$, $a_3=6$. Una sucesión constante tiene $a_n=c$ en cada índice para un real fijo $c$; por ejemplo, todas las salidas pueden ser $-3$. La regla del aparato también es completa: $a_1=a_2=9$ y $a_n=3$ para todo $n\ge3$. Escribir solo «nueve, nueve, tres, …» no determina la continuación: infinitas reglas comparten ese comienzo.
+
+Las sucesiones conservan orden y repeticiones. Alternar cero, uno para siempre y alternar uno, cero da sucesiones distintas: sus primeros términos difieren. Ambas tienen el conjunto de valores cero y uno. Un conjunto olvida posiciones y repeticiones. Dos sucesiones son iguales exactamente cuando coinciden en cada índice; un prefijo finito no demuestra igualdad.
+
+Una cola comienza en un índice elegido $N$ e incluye ese término y todos los posteriores. Para el aparato, la cola desde $N=3$ contiene solo treses. La ene mayúscula $N$ marca el umbral; la ene minúscula $n$ marca la posición que se comprueba. Ambas son naturales. Una sucesión que empieza en cero y después siempre vale uno coincide desde el índice dos con la constante uno, pero no es igual a ella.
+
+### Práctica
+
+Da los tres primeros términos de $a_n=2n$. ¿Puede una sucesión real tener salidas negativas?
+
+<details>
+<summary>Pista</summary>
+
+Índice y término tienen funciones distintas.
+
+</details>
+
+<Exercise>
+
+Dos, cuatro, seis. Sí: a todos los índices positivos se les puede asignar menos tres. La salida no tiene que pertenecer al dominio de los índices.
+
+</Exercise>
+
+Compara las dos sucesiones alternantes cero–uno y sus conjuntos de valores.
+
+<details>
+<summary>Pista</summary>
+
+Mira la primera posición.
+
+</details>
+
+<Exercise>
+
+Son sucesiones distintas con el mismo conjunto de valores. Sus primeras salidas difieren; el conjunto solo registra qué valores aparecen, no dónde ni cuántas veces.
+
+</Exercise>
+
+¿Cero y después siempre uno es igual a la constante uno? ¿Coinciden a partir de algún índice?
+
+<details>
+<summary>Pista</summary>
+
+La igualdad incluye el comienzo.
+
+</details>
+
+<Exercise>
+
+Difieren en el índice uno, pero coinciden en todos los índices desde dos.
+
+</Exercise>
+
+Más tarde, define dos continuaciones distintas de un mismo prefijo de tres términos para explicar por qué observar no basta para definir una sucesión.
+
+## Lectura en voz alta
+
+**EN:** a maps positive natural indices to real terms; a sub n is the output at index n.
+
+**DE:** a ordnet positiven natürlichen Indizes reelle Folgenglieder zu; a Index n ist der Wert an Stelle n.
+
+**ES:** a asigna términos reales a índices naturales positivos; a sub ene es la salida en el índice ene.

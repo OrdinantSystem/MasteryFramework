@@ -1,0 +1,143 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Reihenfolge der Quantoren"
+navTitle: "Reihenfolge der Quantoren"
+description: "Reihenfolge der Quantoren."
+order: 27
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "existence-and-witnesses"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Ana darf nur den roten Schlüssel nutzen, Ben nur den blauen. Das sind alle Personen, Schlüssel und Berechtigungen. Jede Person hat einen Schlüssel, aber keiner passt für alle. Dieselben Objekte beantworten zwei verschiedene Fragen.
+
+| Person | Rot | Blau |
+| --- | --- | --- |
+| Ana | ja | nein |
+| Ben | nein | ja |
+
+Seien $P$ die Personen und $K$ die Schlüssel; $H(p,k)$ bedeute, dass Person $p$ Schlüssel $k$ nutzen darf. Lies nach jedem Quantor den gesamten Rest als zusammengehörige Klammer.
+
+$$
+\forall p\in P\;\exists k\in K\;H(p,k).
+$$
+
+Für jede Person existiert ein nutzbarer Schlüssel. Rot bezeugt Ana, blau Ben. Die Wahl darf verschieden sein, muss es aber nicht.
+
+$$
+\exists k\in K\;\forall p\in P\;H(p,k).
+$$
+
+Hier muss ein Schlüssel die ganze Aussage über jede Person erfüllen. Rot scheitert bei Ben, blau bei Ana; alle Kandidaten sind ausgeschlossen. Ein verschachtelter Quantor liegt im Geltungsbereich eines anderen. Zwei getrennte quantifizierte Aussagen mit „und“ müssen nicht verschachtelt sein. Hier sind beide Variablen gebunden und der erste Geltungsbereich enthält den zweiten Quantor. Die Reihenfolge ist logisch, nicht zeitlich oder ein versprochener Algorithmus.
+
+## Dieselbe Unterscheidung über den reellen Zahlen
+
+$$
+\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x).
+$$
+
+Wahr: Für beliebiges reelles $x$ wähle $y=x+1$. Abgeschlossenheit der Addition liefert eine reelle Zahl und Positivität der Eins ergibt $y>x$. Diese Gründe erfassen jede Eingabe, nicht nur getestete Beispiele.
+
+$$
+\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y>x).
+$$
+
+Falsch: Prüfe für jeden vorgeschlagenen Wert $y$ den erlaubten Wert $x=y$. Gefordert wäre $y>y$. Dieser Test widerlegt jeden vorgeschlagenen Zeugen. Die Regel $y=x+1$ beweist diese Reihenfolge nicht, denn sie verändert den angeblich festen Zeugen mit der späteren Eingabe.
+
+## Zulässiges Vertauschen hat Bedingungen
+
+Bei festen unabhängigen Bereichen $D,E$ dürfen benachbarte Allquantoren vertauscht werden: Beide Reihenfolgen prüfen jedes geordnete Paar. Für jede Richtung nimmt man ein beliebiges Paar und wendet die ursprünglichen Anforderungen auf seine Einträge an. Ist ein Bereich leer, sind beide Reihenfolgen wahr. Auch benachbarte Existenzquantoren sind vertauschbar: Ein passendes Paar kann in beiden Reihenfolgen angegeben werden. Ist ein Bereich leer, sind beide falsch. Lass $R(x,y)$ unverändert; Quantoren zu tauschen vertauscht nicht die Argumente. Ein Bereich $E(x)$ darf nicht einfach vor Einführung von $x$ stehen.
+
+### Übung
+
+Erkläre das vollständige Rot-Blau-Modell ohne Symbole.
+
+<details>
+<summary>Hinweis</summary>
+
+Schließe jeden gemeinsamen Kandidaten aus.
+
+</details>
+
+<Exercise>
+
+Ana hat rot und Ben blau. Rot scheitert bei Ben, blau bei Ana; jede Person hat einen Schlüssel, keiner ist gemeinsam nutzbar.
+
+</Exercise>
+
+Vergleiche $\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y=x)$ mit der gemeinsamen Reihenfolge.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe bei gemeinsamer Gleichheit eine andere reelle Zahl.
+
+</details>
+
+<Exercise>
+
+Die erste gilt mit $y=x$. Die gemeinsame Aussage ist falsch: Für jedes $y$ ist $x=y+1$ reell und verschieden.
+
+</Exercise>
+
+Beweist das Tauschen zweier Allquantoren, dass jede Person jeden Schlüssel hat?
+
+<details>
+<summary>Hinweis</summary>
+
+Äquivalenz ist nicht Wahrheit.
+
+</details>
+
+<Exercise>
+
+Nein. Beide prüfen alle Paare und sind in der Werkstatt falsch, etwa bei Ana–blau.
+
+</Exercise>
+
+Warum scheitert $y=x+1$ als Beweis für einen gemeinsamen Zeugen?
+
+<details>
+<summary>Hinweis</summary>
+
+Welche Eingabe kommt später?
+
+</details>
+
+<Exercise>
+
+Die Regel wählt für jede Eingabe neu; sie beweist die All-zuerst-Aussage, nicht einen Zeugen für alle.
+
+</Exercise>
+
+Es gibt weder Personen noch Schlüssel. Bewerte beide Reihenfolgen.
+
+<details>
+<summary>Hinweis</summary>
+
+Eine wahre All-Aussage liefert kein Objekt.
+
+</details>
+
+<Exercise>
+
+Jede Person hat einen Schlüssel ist leer wahr. Ein gemeinsamer Schlüssel existiert ist falsch, weil kein Schlüssel da ist.
+
+</Exercise>
+
+Rekonstruiere später den Beweis und die Widerlegung für beliebige reelle Zahlen statt große Zahlen zu testen.
+
+## Laut lesen
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

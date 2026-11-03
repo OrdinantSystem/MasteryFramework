@@ -1,13 +1,14 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-zero-connectives"
 sourceId: "analysis-concepts-2"
 sourcePages: [1]
+additionalSources: [{"sourceId": "analysis-zero", "locations": ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.3 Conjunction and disjunction/01 Conjunction - And.md", "A0.1.3 Conjunction and disjunction/02 Inclusive Or.md"], "pages": []}]
 locale: "en"
 title: "Logical connectives"
 navTitle: "Logical connectives"
 description: "Build larger statements from small ones without changing the meaning of “or”."
-order: 4
+order: 3
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -60,3 +61,82 @@ To refute “if I pass, I buy dinner”, I must pass and not buy dinner. Negatin
 ## Reading an implication
 
 $A \Rightarrow  B$ rules out just one situation: $A$ happens and $B$ does not. Consider “if a number is divisible by 4, it is even”. An odd number does not meet the premise, so it cannot contradict the claim. This is why a false premise gives a true implication in the table. It does not prove a causal connection or establish that $B$ is true on its own. For $A \Leftrightarrow  B$, both directions must hold.
+
+## One card, two properties
+
+Fix a card bearing one integer. Let $P$ mean “its integer is positive” and $Q$ “its integer is even.” Positive means greater than zero; even means divisible by two with an integer result. The letters name whole claims, not the integer. Using ordinary arithmetic and order as background gives:
+
+| Integer | $P$ | $Q$ | $P\land Q$ | $P\lor Q$ |
+|---|---|---|---|---|
+| 6 | 1 | 1 | 1 | 1 |
+| 9 | 1 | 0 | 0 | 1 |
+| -2 | 0 | 1 | 0 | 1 |
+| -3 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 |
+
+Six meets both requirements. Nine is positive but odd; negative two is even but not positive; negative three meets neither. Zero is even because $0/2=0$, but not positive. A false component makes a conjunction false, not meaningless.
+
+To establish a conjunction, justify **both** components. For six, $6>0$ and $6/2=3$ is an integer. To refute it, one false component suffices: twelve is not below ten, so “positive and below ten” is false even though twelve is positive. From a true conjunction we may recover each component. A false conjunction alone does not identify which failed.
+
+To establish an inclusive disjunction, justify **one** alternative; the other need not be false. To refute it, justify that **both** are false. Negative three fails positive-or-even for both reasons. Merely “not positive” leaves evenness possible, as negative two shows.
+
+## Inclusive or and exactly one
+
+Inclusive “or” allows overlap. For $P=Q=1$, $P\lor Q$ is true, whereas **exactly one** is false. In rows $10,01,00$ their outputs agree: respectively $1,1,0$. The both-true row is the essential difference.
+
+A menu's “soup or salad” may impose a one-choice restriction, but that comes from context. “Either” alone does not establish exclusivity in mathematics. Sometimes the inputs themselves cannot overlap: a real cannot be both strictly negative and strictly positive. That restriction comes from ordinary real order, not a different disjunction rule. A complete abstract truth table still contains the both-true assignment.
+
+Conjunction's “simultaneous” satisfaction concerns the specified context, not necessarily one instant. “The door was open at noon and closed at one” can be true. Logical “and” does not assert time order or causation. “Positive **but** odd” has conjunction's truth conditions; “but” adds emphasis rather than another logical rule.
+
+## Grouping and atomic inputs
+
+At this propositional level, a claim treated as a single unit rather than split by logical connectives is called **atomic**. A **compound** claim is built from one or more claims using logical connectives.
+
+$x+1=3$ contains addition but is one condition at this propositional level. Arithmetic addition combines numbers, not claims. A whole quantified statement can temporarily be one propositional input without being a syntactically atomic first-order formula. Joining open conditions such as $(x>0)\land(x<10)$ does not bind $x$; use the same assigned value in both parts.
+
+Let $P$ mean a ticket, $Q$ a reservation, and $R$ a guest pass. Compare
+
+$$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
+
+The first needs a ticket as well as a reservation or pass. The second accepts a pass alone. With $P=0,Q=0,R=1$, the first is false and the second true. This separating assignment proves that changing the grouping changes the general meaning.
+
+Pure conjunctions allow either grouping because both require all three inputs. Pure inclusive disjunctions allow either grouping because both require at least one of the three. This reasoning does not authorize arbitrary regrouping when the connectives are mixed.
+
+<details>
+<summary>Notation readings: EN / DE / ES</summary>
+
+$P\land Q$: **EN** “P and Q”; **DE** „P und Q“; **ES** «pe y cu». $P\lor Q$: **EN** “P or Q, or both”; **DE** „P oder Q oder beides“; **ES** «pe o cu, o ambas». $P\land(Q\lor R)$: **EN** “P and, in addition, at least one of Q or R”; **DE** „P und zusätzlich mindestens eine der Aussagen Q oder R“; **ES** «pe y, además, al menos una de cu o erre». Some books write $\to$ for $\Rightarrow$ and $\leftrightarrow$ for $\Leftrightarrow$.
+
+</details>
+
+## Practice with reasons
+
+One card bears nine and another negative two. Does this prove that a particular hidden card is positive and even? Identify both gaps.
+
+<details>
+<summary>Hint</summary>
+
+Which object did each check concern? Did one integer pass both?
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+Neither example gives information about the hidden card. Moreover, positivity and evenness were checked on different integers. A conjunction about one fixed card needs both claims about that same card. Two separate examples establish neither point.
+
+</details>
+
+<Exercise question="A card qualifies through a star or through both a circle and a blue border. With letters S, C, B, write the criterion. Does a star-only card qualify? Does a circle-only card?">
+
+$S\lor(C\land B)$. The star-only card qualifies through $S$, regardless of the second route. A circle-only card qualifies through neither route: it lacks a star and the border required with a circle. A checklist inside an alternative stays grouped.
+
+</Exercise>
+
+<Exercise question="You know $P\lor Q$ is true. Must P be true or false? What follows if Q is additionally false? If instead you know only $P\land Q$ is false, must Q be false?">
+
+Initially either value of $P$ is possible; both $10$ and $01$ satisfy the report. With $Q=0$, $P$ must be $1$ to keep the disjunction true. A false conjunction does not force $Q=0$: assignment $01$ makes the conjunction false while $Q$ is true. Conversely, a true conjunction does force each component true, including $Q$.
+
+</Exercise>
+
+[Building truth tables](../building-truth-tables/) develops construction from a blank table, including repeated inputs and numerical realizability. [Logical negation](../logical-negation/) treats precise denial; [reading mathematical structure](../reading-mathematical-structure/) applies outside-in parsing to complete claims.

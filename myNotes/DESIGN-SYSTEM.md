@@ -132,7 +132,7 @@ Use inline dollar math and display dollar math in Markdown. Use the Math compone
 
 The same configuration is used for authored math and browser-updated equations. Trust is restricted to the htmlClass command used by these macros; do not enable arbitrary trusted TeX commands. Theme colors come from classes, not hardcoded TeX color values.
 
-Keep expressions centered where appropriate. Long expressions get their own horizontal scroll region. Explain variables and conditions in nearby prose. Use aligned equations for derivations and include the reason for consequential steps. A successful render is not a proof of mathematical correctness.
+The site supports inline dollar math, display dollar math, and the Math component with the same notation settings. Display expressions remain centered when they fit; wider expressions get a labeled, keyboard-focusable local scroll region with a visible focus outline. Do not shrink the page or crop a centered formula to hide overflow. Explain variables and conditions in nearby prose. Use aligned equations for derivations and include the reason for consequential steps. A successful render is not a proof of mathematical correctness.
 
 ## Teaching components
 
@@ -140,7 +140,7 @@ Keep expressions centered where appropriate. Long expressions get their own hori
 | --- | --- | --- |
 | Math | `tex`, optional `display` | Shared TeX configuration and accessible output |
 | Note | Optional title and body | Short useful qualification, restrained accent border |
-| Exercise | Question and solution body | Independent attempt before native solution disclosure |
+| Exercise | Optional question when the task is already visible immediately above; solution body | Independent attempt before native solution disclosure; no repeated generic prompt |
 | Flow | Named variant or explicit localized nodes/caption | Clear labels, directional relationship, caption |
 | Interactive | Vector preset, configurable matrix product, rotation, or shear | Public lesson API; see the representation library |
 | MatrixComparison | Labeled 2×2 matrices and caption | Static unit-square images and signed determinant, with a dashed input reference |
@@ -224,7 +224,7 @@ The build validates published counterparts and equation parity across translatio
 6. Add a data variant to a reusable family when possible. Create a new engine only when the mathematical relationship warrants it.
 7. Validate the mathematics, build, read the page, and try its relevant input modes on desktop and mobile.
 
-The current reference contains one populated course, not a finished multi-subject archive. Extending the navigation data and route model is required when actual new courses are added. Shared visual conventions are canonical; the current linear-algebra examples are not universal data.
+The archive has three registered courses, including the expanded Analysis 0 foundations inside Analysis I. Extend the shared navigation, source and course registries when adding real material; do not duplicate the application. Shared visual conventions are canonical, while each course supplies its own content, prerequisites and examples.
 
 ## Review and release gate
 
@@ -232,7 +232,7 @@ Run `npm ci` when dependencies change, then `npm run build` from my_notes_web/ w
 
 For an interaction change, also verify pointer dragging, numeric input, keyboard movement, reset, context changes, singular and zero states, explanatory feedback, both themes, relevant languages, and a compact viewport. Check that no page-wide overflow appears and that the active navigation remains discoverable.
 
-Changes to routes or localization require a repository-prefix build and preview. Committing, pushing, and publishing remain separate actions. GitHub Pages deployment is still an inactive template until requested.
+Changes to routes or localization require a repository-prefix build and preview. Committing, pushing, and publishing remain separate actions. GitHub Pages builds and deploys authorized relevant main pushes through `.github/workflows/mynotes-pages.yml`; the application-local deployment file is only a reference template.
 
 Keep verification findings and representative screenshots with the implementation. Record a concrete reason when extending a pattern; do not silently substitute a different design system.
 

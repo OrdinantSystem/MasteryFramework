@@ -1,0 +1,135 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negar enunciados cuantificados paso a paso"
+navTitle: "Negar enunciados cuantificados paso a paso"
+description: "Negar enunciados cuantificados paso a paso."
+order: 34
+kind: "recap"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-nested-statements", "negating-combined-conditions", "reading-conditionals", "biconditionals-and-equivalent-conditions"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/04 Switching Quantifier Types.md#04 Switching Quantifier Types", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+«No todo solicitante tiene un documento que supere todas las comprobaciones» dice que algún solicitante carece de un documento que las supere todas. Para ese solicitante fijo, cada documento falla al menos una comprobación. Cambiar tres palabras cuantificadoras de golpe puede ocultar qué objeto queda fijo. Sigue los paréntesis de fuera adentro.
+
+Sean $A$ los solicitantes, $B$ los documentos y $C$ las comprobaciones. $R(x,y,z)$ significa que el documento $y$ supera la comprobación $z$ para el solicitante $x$. Los tres dominios son fijos. Empieza por la negación completa, no por una afirmación positiva modificada:
+
+$$
+\begin{aligned}&\neg(\forall x\in A\;\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\neg(\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\neg(\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\exists z\in C\;\neg R(x,y,z).\end{aligned}
+$$
+
+La primera ley dual proporciona un solicitante que falla; la siguiente niega para él la existencia de un documento exitoso; la última proporciona una comprobación fallida para cada documento. El solicitante queda fijo. La comprobación puede depender del documento. No hace falta una sola comprobación que descarte todos los documentos.
+
+## Por qué cada sustitución es válida
+
+Trata toda la afirmación interior como un predicado de la variable actual. La ley dual conserva su valor para cualquier asignación de variables exteriores ya fijadas. Por eso también se conserva el valor de los cuantificadores exteriores que quedan sin cambiar. Repetirlo da una cadena de equivalencias. Todas sus líneas pueden ser falsas: identifica el fallo sin demostrar que ocurra. Para refutar el original, establece por separado la fórmula final.
+
+## Un método que respeta el alcance
+
+1. Pon entre paréntesis la afirmación exacta que se niega.
+2. Anota las variables en orden, sus dominios y los parámetros fijos.
+3. Cruza solo el siguiente cuantificador: cambia su tipo y niega todo el resto.
+4. Repite conservando posiciones y dominios.
+5. Ante una conectiva, aplica primero su regla y continúa en las partes afectadas. Niega también el predicado final.
+6. Lee el resultado y revisa qué información anterior puede usar cada testigo.
+
+No cambies cuantificadores fuera del alcance real de la negación. Una variable libre sigue libre. Un dominio de libros dependiente del estante sigue asociado a ese estante. «Real positivo» sigue siendo real positivo. Estas comprobaciones evitan que un truco memorizado para prefijos cambie silenciosamente la pregunta.
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+Un documento incumple «si está firmado, entonces pasa» exactamente cuando está firmado y no pasa. Uno sin firmar no puede refutar el condicional. Por eso la hipótesis original se mantiene verdadera en un contraejemplo.
+
+### Práctica
+
+Reconstruye la negación de solicitantes cuantificador por cuantificador.
+
+<details>
+<summary>Pista</summary>
+
+Fija primero al solicitante.
+
+</details>
+
+<Exercise>
+
+Hay un solicitante sin documento que supere todo; para ese solicitante, cada documento tiene una comprobación que falla. El orden es algún solicitante, todo documento, alguna comprobación fallida.
+
+</Exercise>
+
+En una negación propuesta, los reales positivos pasan a no positivos. Diagnostica.
+
+<details>
+<summary>Pista</summary>
+
+Revisa el registro de dominios.
+
+</details>
+
+<Exercise>
+
+Se ha complementado el dominio, lo que ninguna ley dual permite. Niega el predicado sobre la misma colección permitida.
+
+</Exercise>
+
+Niega: Todo solicitante está admitido o certificado, con o inclusiva.
+
+<details>
+<summary>Pista</summary>
+
+Una disyunción falla solo si fallan ambas partes.
+
+</details>
+
+<Exercise>
+
+Algún solicitante no está ni admitido ni certificado. Cambiar solo todo por alguno deja el predicado sin negar y resulta incompleto.
+
+</Exercise>
+
+Niega: Todo documento pasa si está firmado. ¿Puede refutarlo uno sin firmar?
+
+<details>
+<summary>Pista</summary>
+
+Exige una hipótesis verdadera.
+
+</details>
+
+<Exercise>
+
+Algún documento está firmado y falla. Ninguno sin firmar refuta la promesa, cualquiera que sea su resultado.
+
+</Exercise>
+
+Alguien dice que los pasos equivalentes solos demuestran falso el original. ¿Qué falta?
+
+<details>
+<summary>Pista</summary>
+
+Toda una cadena equivalente puede ser falsa.
+
+</details>
+
+<Exercise>
+
+Hay que demostrar la condición final de fallo: proporcionar sus testigos existenciales y cubrir todos sus casos universales.
+
+</Exercise>
+
+Más tarde, reconstruye los seis pasos y explica por qué sustituir dentro de cuantificadores exteriores conserva equivalencia.
+
+## Lectura en voz alta
+
+**EN:** There is an applicant such that every document has a check it fails.
+
+**DE:** Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.
+
+**ES:** Existe un solicitante tal que todo documento tiene una comprobación que falla.

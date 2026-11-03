@@ -1,0 +1,52 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/09 Implication versus Causation.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Converse Inverse and Contrapositive.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Equivalence of a Conditional and Its Contrapositive.md"]
+title: "Implicación e hipótesis del modelo"
+navTitle: "Implicación e hipótesis del modelo"
+description: "Distinguir la deducción lógica de la evidencia causal."
+order: 16
+kind: "note"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["material-implication-and-vacuity", "implikation-und-kontraposition"]
+thumbnail: "implication"
+---
+
+Siete supera cinco y supera dos. Compararlo con cinco no hace que cambie el número. La implicación relaciona dos propiedades del mismo número sin modificarlo.
+
+La implicación material es **veritativo-funcional**: los valores de verdad de sus partes determinan su valor. La tabla no tiene una columna adicional para «ocurre antes», «explica» o «causa». En aritmética habitual,
+
+$$(0=1)\Rightarrow(2=3)$$
+
+es verdadera porque su hipótesis es falsa. Se lee: «Si cero es igual a uno, entonces dos es igual a tres». Ambas partes siguen siendo falsas; la flecha no demuestra ninguna ni proporciona un mecanismo causal.
+
+## Una regla exacta dentro de un modelo hipotético
+
+Imagina un modelo de dispositivo cuya regla estipulada para todos los estados considerados sea: **si el interruptor está cerrado, la lámpara está encendida**. Es una hipótesis del ejemplo, no una afirmación verificada sobre equipos reales. $S$ significa «el interruptor está cerrado» y $L$ significa «la lámpara está encendida».
+
+| Datos dentro del modelo | Conclusión permitida | Razón |
+| --- | --- | --- |
+| $S\Rightarrow L$ y $S$ | $L$ | Modus ponens |
+| $S\Rightarrow L$ y $\neg L$ | $\neg S$ | Contraposición |
+| $S\Rightarrow L$ y $L$ | Ninguna sobre $S$ | No se ha dado la recíproca |
+| $S\Rightarrow L$ y $\neg S$ | Ninguna sobre $L$ | No se ha dado la inversa |
+
+Lee $\neg L\Rightarrow\neg S$ como «si la lámpara no está encendida, el interruptor no está cerrado». Esto identifica estados compatibles con la regla asumida. No afirma que la oscuridad abra el interruptor ni que se invierta una causa física.
+
+El estado $S$ falsa, $L$ verdadera cumple la regla directa. Por tanto, observar una lámpara encendida no obliga lógicamente a que el interruptor esté cerrado usando solo esa regla. Nuestra familiaridad con las lámparas no aporta una hipótesis ausente del modelo.
+
+## Deducción y observación responden preguntas distintas
+
+Evaluar una implicación pregunta si sus valores forman el par prohibido verdadera/falsa. Demostrar un teorema matemático pregunta por qué ninguna entrada permitida forma ese par: superar cinco implica superar dos para todos los reales por transitividad del orden. Respaldar un modelo empírico pregunta si sus hipótesis se ajustan al sistema y a la evidencia. Una deducción correcta dentro de un modelo no demuestra su exactitud.
+
+Si una observación precisa en el contexto previsto informa de un interruptor cerrado y una lámpara apagada, contradice la regla exacta. La observación y esa regla no pueden ser ambas correctas allí. La lógica por sí sola no identifica un componente averiado, una condición ausente ni la causa física. Hace falta investigar más.
+
+<Exercise question="Supón solo la regla del modelo $S\Rightarrow L$. Un informe dice que la lámpara está encendida. Da un estado que cumpla la regla y el informe pero haga falsa la conclusión de que el interruptor está cerrado. ¿Qué cambia si se informa de interruptor cerrado y lámpara apagada?">
+
+Toma $S$ falsa y $L$ verdadera. La implicación y el informe son verdaderos, pero $S$ es falsa: la inferencia hacia atrás es inválida. Un interruptor cerrado con lámpara apagada hace $S$ verdadera y $L$ falsa: refuta la regla exacta para ese contexto, si las descripciones son precisas. No diagnostica el dispositivo. Añadir la recíproca permitiría una inferencia nueva, pero también añadiría una hipótesis al modelo que necesitaría respaldo.
+
+</Exercise>

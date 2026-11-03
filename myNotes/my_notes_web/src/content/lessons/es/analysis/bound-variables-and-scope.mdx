@@ -1,0 +1,90 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/03 Bound Variables.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/04 Quantifier Scope.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Quantifiers and Scope - First Reading.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
+title: "Variables ligadas y alcance"
+navTitle: "Variables ligadas y alcance"
+description: "Seguir cada ligador hasta sus apariciones y renombrar sin captura."
+order: 21
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "simultaneous-conditions"]
+thumbnail: "quantifiers"
+---
+
+Sea $D=\{1,2\}$ y sea $y$ un valor real de comparación. En
+
+$$\forall x\in D\;(x<y),$$
+
+lee «para todo equis en de, equis es menor que ye». El número de tarjeta recorre $D$; el valor de comparación permanece fijo. La fórmula es verdadera en $y=3$ y falsa en $y=2$, porque la comparación estricta falla para el miembro dos.
+
+## Clasificar apariciones, no letras para siempre
+
+Una **aparición** es una presencia concreta de una variable. Un cuantificador **liga** las apariciones de la variable que nombra dentro de su **alcance**, la subfórmula que gobierna. Una aparición sin ligador que la gobierne es **libre**. Si un cuantificador interior usa el mismo nombre, gobierna ese nombre dentro de su propio alcance.
+
+En la comparación inicial, $x$ está ligada y $y$ es libre. La $x$ inmediatamente después de $\forall$ declara el nombre ligado; no es otra entrada externa. La fórmula escrita es abierta porque $y$ es libre. Dar $y=3$ permite evaluarla sin insertar un cuantificador, por lo que $y$ sigue libre en su sintaxis.
+
+## Un nombre nuevo seguro conserva las funciones
+
+Una etiqueta nueva da
+
+$$\forall t\in D\;(t<y).$$
+
+Se lee «para todo te en de, te es menor que ye». Renombra la declaración y exactamente las apariciones que liga; deja intactos el dominio y el valor libre de comparación. Se comparan los mismos números con el mismo $y$.
+
+Cambiar en cambio el ligador a $y$ produciría $\forall y\in D\;(y<y)$. Se lee «todo ye en de es menor que sí mismo». Es falso en este dominio no vacío, a diferencia del original con valor de comparación tres. La aparición antes libre queda ligada: la **captura de variables** cambió el enunciado.
+
+Cambiar solo la declaración también sería incorrecto: sus apariciones antiguas ya no quedarían ligadas como se pretendía. La sustitución global de texto es insegura si otros ligadores o apariciones libres usan la misma letra.
+
+## Los paréntesis determinan el alcance
+
+Compara
+
+$$(\forall x\in D\;(x<3))\land(x>0)$$
+
+con
+
+$$\forall x\in D\;((x<3)\land(x>0)).$$
+
+La primera se lee «todo equis en de es menor que tres, y el equis libre es positivo». Su conectivo principal es la conjunción. El cuantificador termina antes de la comparación derecha. Con el real libre $x=-1$, la fórmula completa es falsa, aunque su parte universal sea verdadera. Ese real libre no tiene por qué pertenecer a $D$.
+
+La segunda se lee «todo equis en de es menor que tres y positivo». La operación exterior es el cuantificador y ambas comparaciones quedan dentro de su alcance. Es verdadera porque uno y dos cumplen ambos requisitos. No queda ninguna $x$ libre, así que una asignación externa a $x$ no altera la prueba.
+
+Estar dentro del alcance no basta para quedar ligada: en $\forall x\in D\;((x<y)\land(y<3))$, ambas apariciones de $y$ siguen libres. Con $y=5/2$ la fórmula es verdadera; con $y=3$ falla la segunda comparación. El cuantificador solo nombra $x$.
+
+## Mover una condición fija exige revisar el dominio
+
+Sea $C$ una proposición independiente de $x$. Compara
+
+$$\forall x\in D\;(P(x)\land C)$$
+
+y
+
+$$(\forall x\in D\;P(x))\land C.$$
+
+La primera dice «para cada miembro, se cumplen $P$ y $C$»; la segunda afirma «cada miembro satisface $P$, y $C$ se cumple por separado». Si $D$ está vacío y $C$ es falsa, la primera es verdadera por vacuidad y la segunda falsa. La transformación no vale universalmente.
+
+Para $D$ no vacío son equivalentes: la primera da $P$ para cada miembro y proporciona $C$ usando cualquiera de ellos. A la inversa, la afirmación universal separada y $C$ proporcionan ambos requisitos en cada miembro. La no vaciedad permite el paso que falla en el caso vacío.
+
+<details>
+<summary>Cuando un cuantificador interior reutiliza un nombre</summary>
+
+Para $D=\{1,2\}$ y $E=\{-1\}$, $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ es verdadero. La $x$ exterior comprueba positividad en $D$; la interior comprueba negatividad en $E$. No se exige que la misma entrada sea positiva y negativa. Renombra solo el ligador interior y su comparación a $t$ para mostrarlo. Al renombrar el exterior hay que dejar intactas esas apariciones interiores.
+
+</details>
+
+<Exercise question="Con $D=\{1,2\}$, renombra de forma segura la variable ligada de $(\forall x\in D\;(x<3))\land(x>0)$ a $t$. Después evalúa en $x=-1$ libre. ¿Cambia la última aparición?">
+
+El resultado es $(\forall t\in D\;(t<3))\land(x>0)$. Solo cambian la declaración y la comparación que gobierna. La última $x$ está fuera del alcance y sigue libre. En $x=-1$, la parte universal es verdadera pero la comparación final falsa, así que la conjunción es falsa.
+
+</Exercise>
+
+<Exercise question="Alguien cambia $\forall x\in D\;(x\le y)$ por $\forall y\in D\;(y\le y)$. Ambas son verdaderas cuando la $y$ libre original vale $3$. ¿Por qué sigue siendo inseguro? Da una asignación que las separe y explica si conocer un valor libre lo convierte en ligado.">
+
+La segunda captura el valor libre de comparación y aquí siempre es verdadera, pues todo número es a lo sumo él mismo. Con $y=0$ en la original, la primera es falsa porque uno y dos superan cero. Coincidir en $y=3$ no conservó la dependencia respecto de $y$. Conocer el valor permite evaluar; solo cambiar la estructura escrita de ligadura cambia qué apariciones están ligadas.
+
+</Exercise>

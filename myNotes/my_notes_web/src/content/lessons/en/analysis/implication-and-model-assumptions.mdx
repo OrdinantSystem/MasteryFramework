@@ -1,0 +1,52 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/09 Implication versus Causation.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Converse Inverse and Contrapositive.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Equivalence of a Conditional and Its Contrapositive.md"]
+title: "Implication and model assumptions"
+navTitle: "Implication and model assumptions"
+description: "Separate truth-functional deduction from causal evidence."
+order: 16
+kind: "note"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["material-implication-and-vacuity", "implikation-und-kontraposition"]
+thumbnail: "implication"
+---
+
+Seven exceeds five and exceeds two. Comparing seven with five does not cause the number to change. The implication relates two properties of the same unchanged number.
+
+Material implication is **truth-functional**: the truth values of its two parts determine its value. There is no additional truth-table column for “happens earlier,” “explains,” or “causes.” In ordinary arithmetic,
+
+$$(0=1)\Rightarrow(2=3)$$
+
+is true because its hypothesis is false. Read: “If zero equals one, then two equals three.” Both parts remain false; the arrow proves neither one and supplies no causal mechanism.
+
+## An exact rule inside a hypothetical model
+
+Imagine a device model with this stipulated rule for every state under discussion: **if the switch is closed, the lamp is lit**. This is an assumption for the example, not a verified claim about real equipment. Let $S$ mean “the switch is closed” and $L$ mean “the lamp is lit.”
+
+| Given within the model | Licensed conclusion | Reason |
+| --- | --- | --- |
+| $S\Rightarrow L$ and $S$ | $L$ | Modus ponens |
+| $S\Rightarrow L$ and $\neg L$ | $\neg S$ | Contraposition |
+| $S\Rightarrow L$ and $L$ | No conclusion about $S$ | The converse was not supplied |
+| $S\Rightarrow L$ and $\neg S$ | No conclusion about $L$ | The inverse was not supplied |
+
+Read $\neg L\Rightarrow\neg S$ as “if the lamp is not lit, then the switch is not closed.” This identifies states consistent with the assumed rule. It does not say that darkness opens the switch or reverses a physical cause.
+
+The state $S$ false, $L$ true satisfies the forward rule. Thus an observed lit lamp does not logically force a closed switch from that rule alone. Our familiarity with lamps cannot supply a missing model assumption.
+
+## Deduction and observation answer different questions
+
+Evaluating one conditional asks whether its two truth values form the forbidden true/false pair. Proving a mathematical theorem asks why no allowed input forms that pair: above five implies above two for all real numbers by transitivity of order. Supporting an empirical model asks whether its assumptions fit the intended system and evidence. A correct deduction within a model does not establish the model's accuracy.
+
+If an accurate observation in the intended setting reports a closed switch and an unlit lamp, it contradicts the exact rule. The observation and that rule cannot both be correct there. Logic alone does not identify a broken component, a missing condition, or the physical cause. Those require further investigation.
+
+<Exercise question="Assume only the model rule $S\Rightarrow L$. A report says the lamp is lit. Give a state satisfying the rule and report but falsifying the conclusion that the switch is closed. What changes if a report instead says the switch is closed and the lamp is unlit?">
+
+Take $S$ false and $L$ true. The implication and report are true, but $S$ is false, so the backward inference is invalid. A closed switch with an unlit lamp instead makes $S$ true and $L$ false: it refutes the exact rule for that setting, assuming accurate descriptions. It does not diagnose the device. Adding a converse would justify a new inference, but would also add a new model assumption needing support.
+
+</Exercise>

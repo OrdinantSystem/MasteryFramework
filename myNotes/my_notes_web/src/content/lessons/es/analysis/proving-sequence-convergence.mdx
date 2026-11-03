@@ -1,0 +1,132 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Demostrar convergencia de sucesiones"
+navTitle: "Demostrar convergencia de sucesiones"
+description: "Demostrar convergencia de sucesiones."
+order: 49
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-sequence-convergence", "definitions-assumptions-results"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+Una sucesión que ya vale tres en toda posición debe converger a tres. La prueba es breve, pero cada cuantificador tiene una función. Fija sucesión y objetivo antes de aceptar la tolerancia arbitraria; no elijas un objetivo nuevo para cada término.
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+## La prueba completa para una sucesión constante
+
+Sea $a_n=3$ para todo $n\in\mathbb N$ y sea $L=3$. Toma un real positivo arbitrario $\varepsilon$. Elige $N=1$, que es natural positivo. Toma ahora cualquier natural $n\ge N$. La regla de la sucesión da $a_n=3$, por lo que:
+
+$$
+|a_n-3|=|3-3|=|0|=0<\varepsilon.
+$$
+
+La primera igualdad usa la regla de la sucesión; la siguiente, la resta de reales iguales; la siguiente, el valor absoluto en cero; la desigualdad estricta final, la positividad de la tolerancia arbitraria. Todo índice considerado pasa. Como la tolerancia era arbitraria, se cumple la definición. No se usaron ni la falta de cota superior de los naturales ni la desigualdad triangular.
+
+## Dependencia de elecciones y de justificaciones
+
+La dependencia de elección pregunta qué información puede usar $N$: tolerancia y contexto fijo, no el $n$ universal posterior. La dependencia de justificación pregunta qué hechos sostienen la estimación de distancia. Un orden correcto no repara una cuenta falsa, ni una cuenta correcta una elección tardía. El umbral constante puede ignorar la tolerancia porque sirve para todas.
+
+Para los dos primeros términos nueve y todos los posteriores tres, elige $N=3$ para cualquier tolerancia positiva. Todo $n\ge3$ tiene término tres y distancia cero. Las excepciones iniciales quedan fuera de la cola exigida. Si sirve $N$ y $M\ge N$ es natural, todo $n\ge M$ también cumple $n\ge N$, así que sirve $M$. No hace falta minimalidad.
+
+<Note title="Un umbral tardío cambia la afirmación">
+
+Elegir $N=n+1$ después de ver cada índice lo coloca antes de su nuevo umbral. El condicional se cumple por vacuidad en ese índice, pero no se ha proporcionado un umbral fijo para todos los posteriores. El error no es que el umbral sea grande, sino que cambia con una entrada posterior prohibida.
+
+</Note>
+
+### Práctica
+
+Demuestra que la constante menos cuatro converge a menos cuatro.
+
+<details>
+<summary>Pista</summary>
+
+Importa la distancia, no el signo del término.
+
+</details>
+
+<Exercise>
+
+Para $\varepsilon>0$ arbitrario, elige $N=1$. Para todo $n\ge1$, $|-4-(-4)|=0<\varepsilon$. Regla de la sucesión, resta, valor absoluto de cero y positividad justifican los pasos.
+
+</Exercise>
+
+Primer término cien y todos los posteriores cero: demuestra convergencia a cero. ¿Debe variar el umbral con la tolerancia?
+
+<details>
+<summary>Pista</summary>
+
+Empieza después de la excepción.
+
+</details>
+
+<Exercise>
+
+Para todo $\varepsilon>0$, elige $N=2$. Todo $n\ge2$ tiene término y distancia cero, menor que $\varepsilon$. El mismo umbral sirve siempre.
+
+</Exercise>
+
+Corrige «Dadas tolerancia e índice de prueba, elige $N=n+1$».
+
+<details>
+<summary>Pista</summary>
+
+Mantén un testigo para todas las pruebas.
+
+</details>
+
+<Exercise>
+
+Elige un umbral permitido antes del índice arbitrario y demuestra después la estimación para toda la cola. Sacar cada índice de la cola solo demuestra otro orden de cuantificadores.
+
+</Exercise>
+
+¿Qué hecho adicional necesita la prueba opcional de recíprocos y hace falta aquí?
+
+<details>
+<summary>Pista</summary>
+
+Un natural mayor que cualquier cota real necesita justificación.
+
+</details>
+
+<Exercise>
+
+La [ampliación opcional](../reciprocal-sequence-convergence/) acepta explícitamente la propiedad arquimediana para obtener el umbral y el orden de recíprocos positivos para estimar la cola. La prueba constante elige el natural conocido uno y no necesita esa propiedad.
+
+</Exercise>
+
+¿Converge la constante cero al objetivo uno? ¿Demuestra eso que no tiene límite real?
+
+<details>
+<summary>Pista</summary>
+
+Compara los mismos términos con objetivo cero.
+
+</details>
+
+<Exercise>
+
+Todo término dista uno del objetivo uno, así que tolerancia $1/2$ falla en toda cola. Sin embargo, para objetivo cero sirve cualquier tolerancia positiva con $N=1$. Fallar en un objetivo no es fallar en todos.
+
+</Exercise>
+
+Más tarde, reconstruye la prueba completa y justifica cada igualdad.
+
+## Lectura en voz alta
+
+**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
+
+**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
+
+**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.

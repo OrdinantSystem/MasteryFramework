@@ -1,0 +1,71 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/04 When an Implication Is False.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/06 Counterexamples.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Counterexamples to Universal Claims.md"]
+title: "Contraejemplos"
+navTitle: "Contraejemplos"
+description: "Refutar el enunciado universal exacto mediante un fallo permitido y comprobado."
+order: 22
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "reading-conditionals", "negating-order-comparisons"]
+thumbnail: "proof"
+---
+
+Dos y menos dos tienen cuadrados positivos. Cero no: $0^2=0$, y cero no es estrictamente positivo. Así, «todo cuadrado real es estrictamente positivo» es falso, por muchos ejemplos no nulos que pasen. El enunciado también incluía cero.
+
+## Por qué basta un fallo
+
+Un **contraejemplo** a $\forall x\in D\;P(x)$ es un miembro de $D$ cuyo predicado tiene significado y es falso. Lee la fórmula como «todo equis en de satisface pe». Si fuera verdadera, exigiría $P$ también en el miembro propuesto; su fallo comprobado contradice ese requisito. No es una votación ni dice que todos los miembros fallen.
+
+Para un condicional universal, comprueba tres cosas del **mismo objeto**: pertenencia al dominio, verdad de toda la hipótesis y falsedad de toda la conclusión. La razón se deduce de
+
+$$\neg(P\Rightarrow Q)\equiv(P\land\neg Q).$$
+
+Se lee: «La negación de si pe entonces cu equivale a pe y no cu». Si ambas partes son verdaderas, la implicación es verdadera y ambos lados de esta identidad son falsos. Si $P$ es verdadera y $Q$ falsa, ambos lados son verdaderos. Si $P$ es falsa, la implicación es verdadera y su negación falsa; la conjunción derecha también es falsa sea cual sea $Q$. Son todos los casos clásicos. La inversa $\neg P\Rightarrow\neg Q$ no es esta negación.
+
+## Encontrar toda la región de fallo
+
+Considera
+
+$$\forall x\in\mathbb R\;((x>2)\Rightarrow(x>5)).$$
+
+Se lee: «Para todo real equis, si equis supera dos, entonces supera cinco». Fallar exige $x>2$ y $x\le5$, así que **todos** los contraejemplos cumplen $2<x\le5$.
+
+| Candidato | Hipótesis $x>2$ | Conclusión $x>5$ | ¿Contraejemplo? |
+| --- | --- | --- | --- |
+| $0$ | Falsa | Falsa | No: hipótesis falsa |
+| $2$ | Falsa | Falsa | No: límite inferior estricto |
+| $3$ | Verdadera | Falsa | Sí |
+| $5$ | Verdadera | Falsa | Sí: la igualdad falla la conclusión |
+| $7$ | Verdadera | Verdadera | No: se cumple la conclusión |
+
+Dos queda excluido; cinco incluido. Una conclusión falsa no basta. Tampoco se puede tomar siete para una hipótesis verdadera y cero para una conclusión falsa: son dos objetos, no un fallo común. Para la regla opuesta, superar-cinco implica superar-dos, tres no es un contraejemplo; refuta solo la recíproca.
+
+## No omitir un requisito compuesto
+
+Para entradas reales, $((x>0)\land(x<2))\Rightarrow(x^2>1)$ falla en uno. Uno es real, positivo y menor que dos; su cuadrado es igual a uno, no mayor. Cero falla la positividad. Tres falla la cota superior. Ninguno refuta el condicional, aunque se atienda solo a una parte conveniente de la hipótesis.
+
+El ejemplo de intervalo más estrecho $0<x<1\Rightarrow x<1/2$ falla en $3/4$ y en $1/2$. Ambos cumplen toda la hipótesis; la igualdad derrota la conclusión estricta en el segundo. Dos falla la hipótesis superior y no es un contraejemplo.
+
+## Búsqueda, verificación y reparación
+
+Probar cero, enteros pequeños, negativos o extremos puede orientar una búsqueda cuando el dominio lo permita. El argumento es la verificación posterior, no la heurística. Una búsqueda fallida en una muestra finita no demuestra una afirmación sobre un dominio infinito. Una expresión indefinida no es el predicado falso que requiere un contraejemplo: repara primero su dominio o interpretación. Si hay parámetros libres, fija sus valores durante toda la comprobación.
+
+Cero refuta la positividad estricta de todos los cuadrados reales, pero no demuestra un sustituto. Para la versión sobre reales **no nulos**, da una prueba nueva: un positivo por sí mismo es positivo; un negativo por sí mismo es positivo por la regla de signos. Los casos agotan los reales no nulos. Incluir el caso cero también demuestra que todos los cuadrados reales son no negativos. Ninguno de estos teoremas se deduce solo de encontrar cero.
+
+<Exercise question="Se propone $-1/2$ contra todo-entero-tiene-cuadrado-al-menos-uno. Diagnostica el candidato y refuta correctamente la misma afirmación. ¿Un candidato inválido hace verdadero el teorema?">
+
+La fracción no es entera, así que queda fuera del dominio. Cero es entero y $0^2=0<1$, por lo que refuta el enunciado. Un contraejemplo propuesto inválido no demuestra nada en ninguna dirección; el teorema puede seguir siendo falso.
+
+</Exercise>
+
+<Exercise question="Inventa un condicional universal con dos requisitos en la hipótesis, un contraejemplo genuino y un candidato inválido tentador. Comprueba cada requisito y explica por qué no-todos no significa ninguno.">
+
+Para todo real $x$, supón la afirmación $1<x<4\Rightarrow x>2$. El candidato $x=2$ es real, mayor que uno y menor que cuatro, pero no estrictamente mayor que dos. Refuta el enunciado. Cero falla la hipótesis inferior y cinco la superior; ninguno es un contraejemplo. Tres cumple la hipótesis y la conclusión, así que la refutación no hace fallar toda instancia admisible.
+
+</Exercise>

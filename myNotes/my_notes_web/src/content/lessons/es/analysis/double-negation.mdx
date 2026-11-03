@@ -1,0 +1,85 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/05 Double Negation.md"]
+locale: "es"
+title: "Doble negación"
+navTitle: "Doble negación"
+description: "Demostrar dos negaciones anidadas y distinguirlas de negaciones separadas."
+order: 11
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation"]
+thumbnail: "logic"
+---
+
+«No es cierto que el número sea distinto de tres» dice que el número es igual a tres. La afirmación interior niega la igualdad; la frase exterior niega esa negación completa. El número no cambia.
+
+## El teorema clásico
+
+Para cualquier proposición $P$,
+
+$$\neg(\neg P)\Leftrightarrow P.$$
+
+**EN:** “not (not P) if and only if P.” **DE:** „nicht (nicht P) genau dann, wenn P gilt“. **ES:** «no (no pe) si y solo si pe».
+
+Es una equivalencia de valores de verdad en todos los casos, no una afirmación de que $P$ sea verdadera. Se deduce de la bivalencia clásica y de la definición de negación como inversión de verdad. No afirma que todo sistema lógico siga esta ley.
+
+## Demostración: los dos valores iniciales
+
+Toma una proposición arbitraria. Si $P$ es verdadera, $\neg P$ es falsa y $\neg(\neg P)$ es verdadera. El original y su doble negación coinciden.
+
+Si $P$ es falsa, $\neg P$ es verdadera y $\neg(\neg P)$ es falsa. Vuelven a coincidir. En particular, dos negaciones no han convertido una proposición falsa en verdadera.
+
+En este marco no hay un tercer valor inicial. Los dos casos agotan todas las posibilidades y demuestran el teorema sin presuponerlo. Comprobar una igualdad numérica verdadera ilustraría el primer caso y dejaría el segundo sin demostrar.
+
+## El alcance determina qué pareja se elimina
+
+Sustituir una igualdad completa da
+
+$$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
+
+Para $x=0$ ambos lados son verdaderos; para $x=2$, falsos. El teorema explica la coincidencia para toda entrada permitida. Una $x$ libre sigue libre, el dominio se conserva y ninguna operación toma el opuesto aritmético de $x$. «No distinto de cero» no significa «negativo».
+
+La proposición que ocupa el lugar de $P$ puede ser compuesta:
+
+$$\neg\bigl(\neg(P\land Q)\bigr)\Leftrightarrow(P\land Q).$$
+
+Trata la conjunción completa como una entrada. No hace falta llevar las negaciones a su interior.
+
+En cambio, $(\neg P)\land(\neg Q)$ tiene dos negaciones de **entradas diferentes**. Ninguna niega el resultado de la otra. Si $P=Q=1$, $P\land Q$ es verdadera y $(\neg P)\land(\neg Q)$ falsa. Borrar ambos signos cambia el valor de verdad.
+
+Con tres negaciones anidadas, elimina una pareja y queda $\neg P$. Con cuatro, elimina una pareja y luego la restante para obtener $P$. Esto usa repetidamente el teorema, no una regla de multiplicación de números negativos.
+
+## Práctica con alcances
+
+Supón $P$ falsa. Reconstruye los dos valores intermedios. Simplifica después tres y cuatro negaciones anidadas sin una regla mnemotécnica de signos.
+
+<details>
+<summary>Pista</summary>
+
+Cada negación invierte el valor de su entrada completa. Busca una pareja en la que una negación tenga la otra como entrada.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+La primera negación da verdadero; la segunda, falso, coincidiendo con $P$. En $\neg(\neg(\neg P))$, elimina la pareja exterior y queda $\neg P$. En $\neg(\neg(\neg(\neg P)))$, quitar la pareja exterior da $\neg(\neg P)$; quitar la restante da $P$.
+
+</details>
+
+<Exercise question="Simplifica $\neg(\neg(P\lor Q))$ sin cambiar el interior de la disyunción. ¿Por qué se aplica el teorema? ¿Se pueden borrar también los signos de $\neg P\land\neg Q$?">
+
+La simplificación es $P\lor Q$. La disyunción inclusiva completa tiene un valor clásico, que se invierte dos veces. Las negaciones separadas no se pueden borrar: para $P=Q=1$ el supuesto cambio convierte falso en verdadero. Contar dos signos no establece un alcance anidado.
+
+</Exercise>
+
+## Palabras negativas en el habla corriente
+
+Varias palabras negativas no siempre expresan dos operadores lógicos anidados. «No vino nadie» tiene concordancia negativa: significa que no vino persona alguna, no que viniera alguien. Otras lenguas también tienen construcciones cuyo significado no se obtiene contando palabras negativas.
+
+«No he demostrado que $P$ sea falsa» habla de una demostración, no es una negación directa de $\neg P$. No establece $P$. Traduce primero el alcance pretendido. Una [demostración booleana posterior](../de-morgan-und-doppelte-negation/) obtiene la misma ley clásica mediante la unicidad del complemento bajo las reglas permitidas en esa hoja. Aquí se ha dado la demostración semántica elemental.

@@ -3,11 +3,12 @@ course: "analysis"
 chapter: "analysis-language"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources: [{sourceId: "analysis-zero", pages: [], locations: ["A0.1.6 Universal quantifier", "A0.1.7 Existential quantifier", "A0.1.8 Nested quantifiers", "A0.1.9 Negation of quantified statements"]}]
 locale: "en"
 title: "Quantifiers and negation"
 navTitle: "Quantifiers and negation"
 description: "Read “every” and “there exists” carefully—and negate the whole claim."
-order: 2
+order: 36
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -17,9 +18,13 @@ thumbnail: "quantifiers"
 
 ## A witness versus every case
 
+This page is a compact reference. For a first explanation, begin with [universal statements and their domains](../universal-statements-and-domains/) and [existence and witnesses](../existence-and-witnesses/). Then work through [bound variables and scope](../bound-variables-and-scope/), [quantifier order](../quantifier-order/) and [negating universal claims](../negating-universal-statements/). Those lessons develop the examples and proofs behind the formulas collected here.
+
 Existence needs one witness. A universal claim covers every element of its stated domain; one counterexample refutes it. $\exists!$ means exactly one, combining existence and uniqueness.
 
 <Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+The left-hand claim is true because $7$ belongs to the domain and satisfies the equation. The universal claim inside the negation is false: for example, $x=1$ gives $1+3=4$, not $10$. Thus both displayed claims are true, but for different reasons. One successful input establishes existence; a different, unsuccessful input refutes universality.
 
 ## Push the negation inward
 

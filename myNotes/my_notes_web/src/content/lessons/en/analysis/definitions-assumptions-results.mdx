@@ -1,0 +1,73 @@
+---
+course: "analysis"
+chapter: "analysis-zero-propositions"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/02 Propositions versus Definitions.md"]
+locale: "en"
+title: "Definitions, assumptions, and results"
+navTitle: "Definitions, assumptions, and results"
+description: "Distinguish choosing a meaning from using it in a claim."
+order: 2
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "proof"
+---
+
+A library calls a loan **short** when it lasts fewer than seven days. That fixes a meaning. A three-day loan is short; a ten-day loan is not. These are claims made using the definition. A false application does not disprove the choice of meaning.
+
+The same distinction appears in mathematics. Call an integer positive when it is greater than zero. Integers, written $\mathbb Z$, include negative whole numbers and zero. For an integer $n$, the defining condition is $n>0$. Three meets it; zero does not, because the comparison is strict. “Zero is positive” is a false proposition, not a failed definition.
+
+## What the writer is doing
+
+A **definition** specifies meaning. An **assumption** or **hypothesis** is a claim accepted for a particular argument. An **axiom** is an accepted starting assertion of a theory. A **theorem**, **lemma**, or textbook **Proposition** presents a proved result; a lemma is usually used to prove something else. These labels do not change the standard of proof.
+
+In logic, *proposition* also means any definite true-or-false claim, including a false one. A textbook heading uses the word more narrowly.
+
+Suppose an integer is greater than five. This is a local assumption, not a claim about every integer. Since five is greater than zero, transitivity of ordinary order tells us that our integer is greater than zero. The definition then lets us call it positive. The order rule supplies the reason; the definition supplies the word.
+
+An equality or “if and only if” can appear in a definition or in a claim. Read the surrounding passage to decide its role.
+
+## Introducing a name
+
+$$a:=0 \qquad a=0$$
+
+The first introduces $a$ as a name for zero. Afterwards the second is a true equality. “Define,” “suppose,” and “therefore” describe different uses even when similar symbols follow them.
+
+<Note title="Notation readings">
+
+**EN:** $a:=0$: “a is defined to be zero”; $a=0$: “a equals zero.” **DE:** „a wird als null definiert“; „a ist gleich null“. **ES:** «a se define como cero»; «a es igual a cero». $n>0$: **EN** “n is greater than zero”; **DE** „n ist größer als null“; **ES** «ene es mayor que cero».
+
+</Note>
+
+## A property need not have an instance
+
+We can name the property “greater than zero and less than zero,” although no integer has it. We cannot thereby introduce an integer having that property. Similarly, “the unique object satisfying …” may require proofs of **existence** (at least one object) and **uniqueness** (no second object). A stipulation of vocabulary does not settle those obligations. Ordinary arithmetic and order are accepted background here, not results derived from this vocabulary.
+
+## Practice with roles and definitions
+
+Classify these uses: “Call an integer nonnegative when it is at least zero”; “Zero is nonnegative”; “Suppose $x>0$”; “Define $b:=1$”; “Therefore $b=1$.” Explain each role.
+
+<details>
+<summary>Hint</summary>
+
+Ask which sentence introduces meaning, which assumes something locally, and which claims a consequence.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+The first is a definition. The second is a true claim using it: equality is allowed. The third is a hypothesis, not a universal assertion. The fourth introduces a name. The fifth asserts a consequence of that naming definition. A definition itself is not proved like a theorem, but introducing an object by a description can require existence and uniqueness checks.
+
+</details>
+
+<Exercise question="Locally call a real number admissible when it is at least zero and at most one. Write the criterion. Is zero admissible? What follows from an unspecified admissible real number?">
+
+For $x\in\mathbb R$, the criterion is $(0\le x)\land(x\le1)$. Zero passes both comparisons, so it is admissible. From the label we recover both bounds, not a unique value: $0$, $1/2$, and $1$ all qualify. The word is local to this example. Both bounds allow equality; replacing either by a strict comparison would change the definition.
+
+</Exercise>
+
+Try inventing another property name, then write a true and a false claim using it. Keep the defining sentence separate from those applications. [Several simultaneous conditions](../simultaneous-conditions/) develops a longer criterion.

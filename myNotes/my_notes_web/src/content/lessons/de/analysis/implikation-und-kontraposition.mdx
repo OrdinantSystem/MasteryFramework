@@ -1,13 +1,22 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-zero-conditionals"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/06 The Converse.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/07 The Inverse.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/08 The Contrapositive.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Converse Inverse and Contrapositive.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Equivalence of a Conditional and Its Contrapositive.md"
 locale: "de"
 title: "Implikation und Kontraposition"
 navTitle: "Implikation und Kontraposition"
 description: "Die Richtung einer Behauptung von ihrer Umkehrung unterscheiden."
-order: 5
+order: 15
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -17,11 +26,44 @@ thumbnail: "implication"
 
 ## Die Aussage ändern und alle Fälle prüfen
 
+Lies das Original $A\Rightarrow B$ als „Wenn $A$, dann $B$“. $A$ und $B$ sind vollständige Aussagen, auch wenn sie mehrere Bedingungen enthalten. Der Bereich bleibt bei den folgenden Umformungen unverändert:
+
+| Form | Formel | Lesart und Konstruktion |
+| --- | --- | --- |
+| Original | $A\Rightarrow B$ | Wenn $A$, dann $B$ |
+| Umkehrung | $B\Rightarrow A$ | Wenn $B$, dann $A$: Blöcke vertauschen |
+| Inverse | $\neg A\Rightarrow\neg B$ | Wenn nicht $A$, dann nicht $B$: negieren ohne Vertauschen |
+| Kontraposition | $\neg B\Rightarrow\neg A$ | Wenn nicht $B$, dann nicht $A$: vertauschen und negieren |
+
+Das sind Definitionen von Umformungen, keine Beweise ihrer Wahrheit. Die Inverse ist auch nicht die Negation des Originals: $\neg(A\Rightarrow B)$ bedeutet $A\land\neg B$, also wahre Voraussetzung und falsche Folgerung gemeinsam.
+
+Für reelle Zahlen folgt aus über fünf durch Transitivität über zwei. Die Umkehrung, über zwei impliziert über fünf, scheitert bei drei. Die Inverse, höchstens fünf impliziert höchstens zwei, scheitert bei drei und fünf. Die Negation einer strikten Schranke schließt Gleichheit ein. Die Kontraposition, höchstens zwei impliziert höchstens fünf, gilt nach der Ordnung. Manche Umkehrungen und Inversen sind tatsächlich wahr: Aus $x+1=3$ folgt durch Subtraktion $x=2$, die Umkehrung durch Addition; die Inverse folgt, weil $x=2$ die Gleichung $x+1=3$ erzwingen würde. „Nicht allgemein äquivalent“ heißt nicht „immer verschieden“.
+
+Ändere nun die Wahrheitswerte in der Aktivität und vergleiche ganze Spalten statt nur einer Zeile.
+
 <Interactive kind="logic" preset="implication" id="implication-lab" display />
 
 Übereinstimmung in der ausgewählten Zeile reicht für Äquivalenz nicht aus. Vergleiche alle vier Zeilen. Die Kontraposition stimmt immer mit dem Original überein; Umkehrung und Inverse stimmen miteinander überein, müssen aber nicht dem Original entsprechen.
 
 <Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
+
+## Warum die Formen paarweise übereinstimmen
+
+Das Original ist genau dann falsch, wenn $A$ wahr und $B$ falsch ist. Die Kontraposition ist genau dann falsch, wenn $\neg B$ wahr und $\neg A$ falsch ist: im selben Fall. In jeder anderen Zeile sind beide wahr. Das beweist ihre logische Äquivalenz aus der Implikationsdefinition, auch bei falschem Original. Ebenso sind Umkehrung und Inverse genau bei falschem $A$ und wahrem $B$ falsch und stimmen daher miteinander überein. Das sind hergeleitete Ergebnisse, keine weiteren Definitionen.
+
+Um eine Implikation im ganzen Bereich zu beweisen, darf man deshalb ihre Kontraposition im selben Bereich beweisen. Für $x^2\ne0\Rightarrow x\ne0$ über den reellen Zahlen beweist man etwa $x=0\Rightarrow x^2=0$ durch Einsetzen und Multiplikation mit null. Die umgeformte Aussage nur hinzuschreiben würde sie nicht beweisen.
+
+Für ganze Blöcke hat $(0<x<1)\Rightarrow x<2$ die Umkehrung $x<2\Rightarrow(0<x<1)$, die Inverse $((x\le0)\lor(x\ge1))\Rightarrow x\ge2$ und die Kontraposition $x\ge2\Rightarrow((x\le0)\lor(x\ge1))$. Die Negation des ganzen Intervalls verlangt mindestens eine verletzte Schranke, nicht beide. Wäre die ursprüngliche Folgerung eine Konjunktion, wäre ihre Negation in der neuen Voraussetzung ebenfalls eine Disjunktion von Fehlern.
+
+Bei zusammengesetzter Folgerung lautet die Kontraposition von $(x>5)\Rightarrow((x>2)\land(x>0))$ so: $((x\le2)\lor(x\le0))\Rightarrow(x\le5)$. Gelesen: „Wenn $x$ höchstens zwei oder höchstens null ist, ist es höchstens fünf.“ Ein fehlgeschlagener Teil genügt zur Negation der alten Konjunktion; beide Fehler zu verlangen würde die Voraussetzung ändern. In jeder Alternative liefert die Ordnung $x\le5$ und beweist damit die umgeformte Aussage für alle reellen Eingaben.
+
+Aus $B$ und der Hinrichtung folgt nicht $A$; dieser Fehlschluss heißt **Bejahung der Folgerung**. Aus $\neg A$ folgt nicht $\neg B$; das ist die **Verneinung der Voraussetzung**. Bei der Über-fünf-Regel widerlegt drei den ersten Schluss. Null und drei zeigen, dass bei falscher Voraussetzung beide Werte der Folgerung möglich sind.
+
+<Exercise question="Bilde Umkehrung, Inverse und Kontraposition von $((x>1)\land(x<4))\Rightarrow(x>0)$ über den reellen Zahlen. Prüfe die Umkehrung bei eins und beweise die Kontraposition. Welche Zeile macht Original und Kontraposition gemeinsam falsch?">
+
+Die Umkehrung ist $x>0\Rightarrow((x>1)\land(x<4))$; sie scheitert bei eins, weil $1>1$ falsch ist. Die Inverse ist $((x\le1)\lor(x\ge4))\Rightarrow x\le0$. Die Kontraposition ist $x\le0\Rightarrow((x\le1)\lor(x\ge4))$: Jede reelle Zahl höchstens null ist höchstens eins, also gilt die erste Alternative. Allgemein ist die gemeinsame falsche Zeile $A$ wahr, $B$ falsch; dann ist $\neg B$ wahr und $\neg A$ falsch. Das ist der einzige Fehlerfall beider Formen und beweist ihre Übereinstimmung in allen Zeilen.
+
+</Exercise>
 
 ## Teilbarkeit liefert ein konkretes Beispiel
 

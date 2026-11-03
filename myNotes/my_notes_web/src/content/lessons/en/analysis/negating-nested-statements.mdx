@@ -1,0 +1,126 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negating nested statements"
+navTitle: "Negating nested statements"
+description: "Negating nested statements."
+order: 33
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-existential-statements", "quantifier-order", "negating-order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/03 Negating Nested Quantifiers.md#03 Negating Nested Quantifiers", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+“Every student can read a shelf book” fails when one student cannot read any shelf book. “A shelf book can be read by every student” fails when each proposed book has a student who cannot read it. That student may vary with the book. Separate reading successes need not supply a shared book.
+
+## Work outside in on a finite domain
+
+Let $D=\{1,2\}$. The claim $\forall x\in D\;\exists y\in D\;(y>x)$ fails at $x=2$: neither allowed $y$ is larger. Derive that failure, keeping the whole inner existence claim together.
+
+$$
+\begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
+$$
+
+The first step denies every input by selecting one failing input. The second says no witness works for that input, so every candidate fails. The last includes equality in not greater. Choose two once and keep it fixed while testing one and two. Switching the binder types in place does not reverse their order or exchange relation arguments.
+
+## Start with existence instead
+
+$$
+\neg(\exists x\in D\;\forall y\in D\;(y<x))\ \Longleftrightarrow\ \forall x\in D\;\exists y\in D\;(y\ge x).
+$$
+
+The original asks for an $x$ strictly exceeding every member, including itself; it is not the usual non-strict maximum condition. For any proposed $x$, the test $y=x$ defeats it. The denial is true with that same allowed value as $y$. On an empty domain the original is false and the denial vacuously true; no witness must be supplied for an outer universal with no cases.
+
+Changing the first finite domain to all reals makes the original larger-member claim true by adding one; its correct negation becomes false. The logical pattern is unchanged, but truth depends on the domain. Correct symbolic negation is not a proof that failure occurs.
+
+### Practice
+
+Negate every class student can read a book on this shelf. Keep both restrictions.
+
+<details>
+<summary>Hint</summary>
+
+Choose the failing student first.
+
+</details>
+
+<Exercise>
+
+Some student in this class cannot read any book on this shelf. One student stays fixed while every shelf book fails for them.
+
+</Exercise>
+
+Negate a shelf book is readable by every class student. Must one student fail every book?
+
+<details>
+<summary>Hint</summary>
+
+Book first, then failing student.
+
+</details>
+
+<Exercise>
+
+Every shelf book has a class student who cannot read it. The student may depend on the book. A red–blue style model can give each student a readable book but no shared one.
+
+</Exercise>
+
+Negate $\forall x\in D\;\exists y\in D\;(y=x)$ for $D=\{1,2\}$ and evaluate.
+
+<details>
+<summary>Hint</summary>
+
+The input is itself an allowed witness.
+
+</details>
+
+<Exercise>
+
+$\exists x\in D\;\forall y\in D\;(y\ne x)$. Original true with $y=x$; denial false because every proposed $x$ has itself as a test.
+
+</Exercise>
+
+Repair the claimed denial of every real has a larger real: “For every real y, some real x is at least y”.
+
+<details>
+<summary>Hint</summary>
+
+The proposed claim is true, just like the original.
+
+</details>
+
+<Exercise>
+
+The actual denial is $\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$, false since $y=x+1$ defeats any proposed $x$. The proposed answer wrongly lets $x$ respond to $y$.
+
+</Exercise>
+
+Negate: Every student has a shelf on which every book is readable by that student.
+
+<details>
+<summary>Hint</summary>
+
+Keep the book domain tied to the shelf.
+
+</details>
+
+<Exercise>
+
+There is a student such that for every shelf there is a book on that shelf the student cannot read. Fix the student; a shelf is proposed; the bad book may depend on it.
+
+</Exercise>
+
+Later, reconstruct both finite examples and then explain what changes over all reals.
+
+## Read aloud
+
+**EN:** Some x in D has every y in D at most x.
+
+**DE:** Es gibt ein x in D, sodass jedes y in D höchstens x ist.
+
+**ES:** Existe un equis en D tal que todo ye en D es como máximo equis.

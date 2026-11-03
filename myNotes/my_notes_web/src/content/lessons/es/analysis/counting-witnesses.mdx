@@ -1,0 +1,120 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Contar testigos"
+navTitle: "Contar testigos"
+description: "Contar testigos."
+order: 26
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-uniqueness", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md#05 · More than one possible witness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Las tarjetas con siete y nueve demuestran ambas que hay una tarjeta con número impar. Elegir siete para una prueba no elimina nueve. La evidencia necesaria depende de la pregunta: dar uno, dar dos distintos o encontrar todos.
+
+Un objeto verificado demuestra existencia. Dos objetos distintos verificados refutan a lo sumo uno, sin afirmar exactamente dos. Una lista completa exige verificar cada entrada y excluir todo objeto no incluido. El tamaño del dominio no es el número de testigos: un dominio infinito puede tener cero, uno, finitos o infinitos éxitos.
+
+$$
+\{n\in\mathbb Z:4<n<8\}=\{5,6,7\}.
+$$
+
+Cada número de la lista es entero y cumple ambas cotas. A la inversa, un entero mayor que cuatro es al menos cinco y uno menor que ocho es como máximo siete. Así, cualquier testigo es cinco, seis o siete. Este argumento de exclusión, basado en la separación entre enteros, hace completa la lista. Tres éxitos por sí solos no bastarían.
+
+## Cambiar el dominio cambia el recuento
+
+En los reales también sirven $5.5$ y $6.25$. Hay infinitos testigos. Empieza con cinco y seis e inserta su punto medio. Después inserta repetidamente el punto medio entre cinco y el último valor añadido. Cada resultado es real, mayor que cinco y menor que el anterior, así que sigue entre cuatro y ocho. Es distinto de cinco y de todos los valores insertados antes. Tras cualquier número de pasos se puede añadir otro testigo nuevo. Se usa aritmética de puntos medios y orden, no un teorema de convergencia.
+
+Expresiones distintas no tienen por qué ser objetos distintos: $1/2=2/4$. Dos tarjetas físicas con la misma etiqueta siete son tarjetas distintas, aunque solo haya un valor numérico distinto. Especifica qué cuentas. Una bandeja vacía no tiene candidatos; una con solo pares tiene candidatos, pero ningún éxito impar. En ambas es falsa la existencia de una tarjeta impar. Una afirmación universal sobre la bandeja vacía sigue siendo verdadera sin proporcionar un testigo.
+
+### Práctica
+
+Para $4<n<8$ en los enteros, justifica uno, dos distintos y todos los testigos.
+
+<details>
+<summary>Pista</summary>
+
+Solo la última requiere excluir otros.
+
+</details>
+
+<Exercise>
+
+Cinco demuestra existencia; cinco y seis refutan unicidad. Todos son cinco, seis y siete, pues cualquier entero permitido debe ser al menos cinco y como máximo siete.
+
+</Exercise>
+
+¿Dan $1/2$ y $2/4$ dos testigos de $2x=1$ en los reales?
+
+<details>
+<summary>Pista</summary>
+
+Cuenta valores, no escrituras.
+
+</details>
+
+<Exercise>
+
+Demuestran existencia al verificar la ecuación, pero nombran un solo valor y no refutan unicidad. Esto tampoco constituye por sí solo una prueba de unicidad.
+
+</Exercise>
+
+Dos tarjetas distintas llevan siete. ¿Hay dos tarjetas impares y dos etiquetas numéricas distintas?
+
+<details>
+<summary>Pista</summary>
+
+Especifica los objetos.
+
+</details>
+
+<Exercise>
+
+Hay dos tarjetas distintas con etiqueta impar, pero un solo valor entero distinto.
+
+</Exercise>
+
+Compara una bandeja vacía y otra con solo pares para la existencia de una tarjeta impar.
+
+<details>
+<summary>Pista</summary>
+
+Sin candidatos no es lo mismo que sin éxitos.
+
+</details>
+
+<Exercise>
+
+Ambas afirmaciones son falsas. En la primera faltan objetos; en la segunda todos los disponibles incumplen la condición.
+
+</Exercise>
+
+Una lista afirma que cinco, seis y siete son todos los testigos reales entre cuatro y ocho. Revísala.
+
+<details>
+<summary>Pista</summary>
+
+Inserta un punto medio.
+
+</details>
+
+<Exercise>
+
+Cinco y medio es un testigo real omitido, así que falla la exhaustividad. Cinco ya demuestra existencia.
+
+</Exercise>
+
+Más tarde, construye ejemplos con cero, uno y varios éxitos y aporta la evidencia adecuada para cada caso.
+
+## Lectura en voz alta
+
+**EN:** One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.
+
+**DE:** Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.
+
+**ES:** Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.

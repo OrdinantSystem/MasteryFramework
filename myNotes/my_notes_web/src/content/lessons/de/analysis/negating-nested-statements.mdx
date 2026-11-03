@@ -1,0 +1,126 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Verschachtelte Aussagen negieren"
+navTitle: "Verschachtelte Aussagen negieren"
+description: "Verschachtelte Aussagen negieren."
+order: 33
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-existential-statements", "quantifier-order", "negating-order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/03 Negating Nested Quantifiers.md#03 Negating Nested Quantifiers", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+„Alle Studierenden können ein Regalbuch lesen“ scheitert, wenn eine studierende Person kein Regalbuch lesen kann. „Ein Regalbuch ist für alle Studierenden lesbar“ scheitert, wenn es zu jedem vorgeschlagenen Buch eine studierende Person gibt, die es nicht lesen kann. Diese Person darf vom Buch abhängen. Getrennte Leseerfolge liefern nicht unbedingt ein gemeinsames Buch.
+
+## Auf einem endlichen Bereich von außen nach innen
+
+Sei $D=\{1,2\}$. Die Aussage $\forall x\in D\;\exists y\in D\;(y>x)$ scheitert bei $x=2$: Kein erlaubtes $y$ ist größer. Leite diese Negation her und halte die gesamte innere Existenzbehauptung zusammen.
+
+$$
+\begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
+$$
+
+Der erste Schritt wählt zur Negation aller Eingaben eine scheiternde Eingabe. Der zweite sagt, dass dafür kein Zeuge passt, also jeder Kandidat scheitert. Der letzte schließt bei nicht größer die Gleichheit ein. Wähle zwei einmal und halte sie beim Prüfen von eins und zwei fest. Quantortypen an Ort und Stelle zu wechseln kehrt ihre Reihenfolge nicht um und tauscht keine Argumente.
+
+## Mit Existenz beginnen
+
+$$
+\neg(\exists x\in D\;\forall y\in D\;(y<x))\ \Longleftrightarrow\ \forall x\in D\;\exists y\in D\;(y\ge x).
+$$
+
+Das Original verlangt ein $x$, das jedes Element einschließlich sich selbst strikt übertrifft; das ist nicht die übliche nichtstrenge Maximalbedingung. Für jeden Vorschlag $x$ widerlegt der Test $y=x$ die Aussage. Die Negation gilt mit demselben erlaubten Wert als $y$. Im leeren Bereich ist das Original falsch und die Negation leer wahr; ein äußerer Allquantor ohne Fälle verlangt keinen Zeugen.
+
+Ändert man im ersten Beispiel den endlichen Bereich zu allen reellen Zahlen, wird das Original durch plus eins wahr und seine richtige Negation falsch. Das logische Muster bleibt gleich, die Wahrheit hängt jedoch vom Bereich ab. Richtige symbolische Negation beweist keinen tatsächlichen Fehlerfall.
+
+### Übung
+
+Negiere: Alle Studierenden dieser Klasse können ein Buch dieses Regals lesen. Bewahre beide Einschränkungen.
+
+<details>
+<summary>Hinweis</summary>
+
+Wähle zuerst die scheiternde Person.
+
+</details>
+
+<Exercise>
+
+Eine studierende Person dieser Klasse kann kein Buch dieses Regals lesen. Diese Person bleibt fest, während jedes Regalbuch für sie scheitert.
+
+</Exercise>
+
+Negiere: Ein Regalbuch ist für alle Studierenden dieser Klasse lesbar. Muss dieselbe studierende Person bei jedem Buch scheitern?
+
+<details>
+<summary>Hinweis</summary>
+
+Zuerst Buch, dann scheiternde Person.
+
+</details>
+
+<Exercise>
+
+Zu jedem Regalbuch gibt es eine studierende Person aus dieser Klasse, die es nicht lesen kann. Die Person darf vom Buch abhängen. Ein Modell wie rot–blau gibt jeder Person ein lesbares Buch, aber kein gemeinsames.
+
+</Exercise>
+
+Negiere $\forall x\in D\;\exists y\in D\;(y=x)$ für $D=\{1,2\}$ und bewerte.
+
+<details>
+<summary>Hinweis</summary>
+
+Die Eingabe ist selbst ein erlaubter Zeuge.
+
+</details>
+
+<Exercise>
+
+$\exists x\in D\;\forall y\in D\;(y\ne x)$. Original wahr mit $y=x$; Negation falsch, weil jedes vorgeschlagene $x$ selbst geprüft wird.
+
+</Exercise>
+
+Repariere die angebliche Negation von jede reelle Zahl hat eine größere: „Für jedes reelle y gibt es ein reelles x mindestens y“.
+
+<details>
+<summary>Hinweis</summary>
+
+Der Vorschlag ist wahr wie das Original.
+
+</details>
+
+<Exercise>
+
+Die richtige Negation ist $\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$, falsch, weil $y=x+1$ jeden Vorschlag $x$ widerlegt. Der Vorschlag lässt fälschlich $x$ auf $y$ reagieren.
+
+</Exercise>
+
+Negiere: Jede studierende Person hat ein Regal, auf dem jedes Buch für sie lesbar ist.
+
+<details>
+<summary>Hinweis</summary>
+
+Binde den Buchbereich weiterhin an das Regal.
+
+</details>
+
+<Exercise>
+
+Es gibt eine studierende Person, sodass für jedes Regal ein Buch darauf existiert, das sie nicht lesen kann. Halte die Person fest; nach Vorschlag des Regals darf das ungeeignete Buch davon abhängen.
+
+</Exercise>
+
+Rekonstruiere später beide endlichen Beispiele und erkläre dann die Änderung über allen reellen Zahlen.
+
+## Laut lesen
+
+**EN:** Some x in D has every y in D at most x.
+
+**DE:** Es gibt ein x in D, sodass jedes y in D höchstens x ist.
+
+**ES:** Existe un equis en D tal que todo ye en D es como máximo equis.

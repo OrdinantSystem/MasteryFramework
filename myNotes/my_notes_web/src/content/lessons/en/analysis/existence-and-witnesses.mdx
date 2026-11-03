@@ -1,0 +1,199 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Existence and witnesses"
+navTitle: "Existence and witnesses"
+description: "Existence and witnesses."
+order: 23
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+A tray holds cards labelled two, four and seven. Seven makes “There is an odd-labelled card” true. Two and four do not spoil it: the claim did not require every card to be odd. A second success, nine, would leave it true.
+
+$$
+\exists x\in D\;P(x).
+$$
+
+$D$ is the domain of allowed objects; $P$ is their required condition, or predicate. The existential quantifier $\exists$ means at least one. It permits several successes, even all members when the domain is nonempty. It does not assert exactly one or suggest that others fail. The quantifier binds $x$ within its scope, not any other variable in $P$. A proposition results once the domain, predicate and remaining parameters are specified. Fixing a parameter does not syntactically bind it.
+
+“There is a red token” asserts something; “Find a red token” requests an action. Existence also differs from knowledge. A sealed bag can contain a red token before we know it does. Unknown is not false. A known empty bag, however, supplies no possible witness. Restricted domains may be empty even when the wider universe is not.
+
+## Candidate, membership, whole condition
+
+For $\exists n\in\mathbb Z\;(n+5=12)$, seven is a witness: it is an integer and $7+5=12$. The witness is the object; the verification is the argument about it. A candidate becomes a witness once both checks are justified. For $4<n<8$, five passes both strict bounds. Nine passes only the lower bound and three only the upper: they cannot be combined. The repeated variable means the same object throughout.
+
+A club needs a member available Tuesday and trained in first aid. Ada being available and Ben being trained do not suffice. Cora qualifies if she belongs to the club and has both qualities. Someone outside the club fails membership even with both qualities.
+
+One half solves $2x=1$ over the reals, not over the integers. No integer solves it: each integer is at most zero or at least one, so its double is at most zero or at least two. Similarly, $0<x<1$ has the real witness $1/2$ but no integer witness. These arguments exclude all integers. Failed samples alone exclude only those tried; a finite search disproves existence only when it exhausts the domain.
+
+### Practice
+
+A shelf contains one red and two blue books. Is “Some book is blue” true, and does it assert uniqueness?
+
+<details>
+<summary>Hint</summary>
+
+Ask for the minimum required.
+
+</details>
+
+<Exercise>
+
+True: either blue book witnesses it. Two successes are compatible with at least one, but not exactly one.
+
+</Exercise>
+
+Read $\exists n\in\mathbb Z\;(n+5=12)$ without solving: give its three parts.
+
+<details>
+<summary>Hint</summary>
+
+Amount, domain, condition.
+
+</details>
+
+<Exercise>
+
+At least one; integers; adding five gives twelve. Reading the requirement does not require finding the solution.
+
+</Exercise>
+
+Compare real and integer witnesses for $0<x<1$.
+
+<details>
+<summary>Hint</summary>
+
+Use a fraction, then integer spacing.
+
+</details>
+
+<Exercise>
+
+$1/2$ is real and passes both bounds. A positive integer is at least one, excluding every integer.
+
+</Exercise>
+
+Classify: “There is a red token”; “Find a red token”; “Exactly one token is red”.
+
+<details>
+<summary>Hint</summary>
+
+Which have truth values?
+
+</details>
+
+<Exercise>
+
+Existential assertion; request; existence plus exclusion of a distinct second success. The last says more than ordinary existence.
+
+</Exercise>
+
+Compare a known empty bag and a sealed bag of unknown contents.
+
+<details>
+<summary>Hint</summary>
+
+Objects and information are different.
+
+</details>
+
+<Exercise>
+
+Red-token existence is false for the empty bag. Information does not decide the sealed bag; its actual contents still determine the truth.
+
+</Exercise>
+
+### Checking witnesses
+
+Which of $1,2,3,4$ satisfy $1<n<4$ over integers?
+
+<details>
+<summary>Hint</summary>
+
+Check strict endpoints.
+
+</details>
+
+<Exercise>
+
+Two and three pass. One fails the lower bound, four the upper bound.
+
+</Exercise>
+
+Repair the split witness $9>4$ and $3<8$.
+
+<details>
+<summary>Hint</summary>
+
+Use one object.
+
+</details>
+
+<Exercise>
+
+Neither satisfies both. Five is an integer and $4<5<8$.
+
+</Exercise>
+
+Audit $1/2$ as an integer witness for $2x=1$.
+
+<details>
+<summary>Hint</summary>
+
+Separate the checks.
+
+</details>
+
+<Exercise>
+
+The equation holds but membership fails. It is a witness for the real version, not the integer version.
+
+</Exercise>
+
+After trying $0,1,2$, someone denies that an integer square can equal $25$. Diagnose.
+
+<details>
+<summary>Hint</summary>
+
+Were all candidates tested?
+
+</details>
+
+<Exercise>
+
+The domain was not exhausted. Five is an integer and $5^2=25$; negative five also works. One verified success suffices.
+
+</Exercise>
+
+One box contains exactly two tokens in total, neither blue. Another has two inspected nonblue tokens and unexamined contents. Which refutes blue-token existence?
+
+<details>
+<summary>Hint</summary>
+
+Exhaustiveness matters.
+
+</details>
+
+<Exercise>
+
+Only the first excludes every possible witness. The second leaves candidates unchecked.
+
+</Exercise>
+
+Later, explain existence using two successes, then change the collection to have none.
+
+## Read aloud
+
+**EN:** There exists at least one x in D such that P of x holds.
+
+**DE:** Es gibt mindestens ein x in D, für das P von x gilt.
+
+**ES:** Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.

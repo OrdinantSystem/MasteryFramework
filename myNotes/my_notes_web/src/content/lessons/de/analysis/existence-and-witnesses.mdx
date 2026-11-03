@@ -1,0 +1,199 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Existenz und Zeugen"
+navTitle: "Existenz und Zeugen"
+description: "Existenz und Zeugen."
+order: 23
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Auf einem Tablett liegen Karten mit zwei, vier und sieben. Die Sieben macht „Es gibt eine Karte mit ungerader Zahl“ wahr. Zwei und vier stören nicht: Nicht jede Zahl muss ungerade sein. Ein zweiter Erfolg, neun, würde die Aussage wahr lassen.
+
+$$
+\exists x\in D\;P(x).
+$$
+
+$D$ ist der Bereich erlaubter Objekte; $P$ ist die geforderte Bedingung, das Prädikat. Der Existenzquantor $\exists$ bedeutet mindestens eines. Mehrere oder sogar alle Elemente dürfen passen, wenn der Bereich nicht leer ist. Weder genau eines noch das Scheitern anderer wird behauptet. Der Quantor bindet $x$ in seinem Geltungsbereich, keine andere Variable in $P$. Sind Bereich, Prädikat und übrige Parameter festgelegt, erhält man eine Aussage. Einen Parameter festzulegen bindet ihn nicht syntaktisch.
+
+„Es gibt eine rote Marke“ behauptet etwas; „Finde eine rote Marke“ fordert eine Handlung. Existenz ist auch nicht Wissen. Ein verschlossener Beutel kann eine rote Marke enthalten, ohne dass wir es wissen. Unbekannt bedeutet nicht falsch. Ein sicher leerer Beutel liefert dagegen keinen möglichen Zeugen. Eingeschränkte Bereiche dürfen leer sein, obwohl die weitere Welt Objekte enthält.
+
+## Kandidat, Zugehörigkeit, ganze Bedingung
+
+Für $\exists n\in\mathbb Z\;(n+5=12)$ ist sieben ein Zeuge: Die Zahl ist ganzzahlig und $7+5=12$. Der Zeuge ist das Objekt, die Prüfung das Argument darüber. Ein Kandidat wird zum Zeugen, sobald beide Prüfungen begründet sind. Bei $4<n<8$ erfüllt die Zahl fünf beide strengen Ungleichungen. Neun erfüllt nur die untere, drei nur die obere: Zusammen ergeben sie keinen Zeugen. Die wiederholte Variable meint durchgehend dasselbe Objekt.
+
+Ein Verein braucht ein Mitglied mit Zeit am Dienstag und Erste-Hilfe-Ausbildung. Adas Zeit und Bens Ausbildung genügen nicht. Cora passt, wenn sie Mitglied ist und beides hat. Eine Person außerhalb des Vereins scheitert trotz beider Eigenschaften an der Zugehörigkeit.
+
+Ein Halb löst $2x=1$ über den reellen, nicht über den ganzen Zahlen. Jede ganze Zahl ist höchstens null oder mindestens eins; ihr Doppeltes ist höchstens null oder mindestens zwei. Ebenso hat $0<x<1$ den reellen Zeugen $1/2$, aber keinen ganzzahligen. Diese Argumente schließen alle ganzen Zahlen aus. Fehlversuche allein betreffen nur die getesteten Kandidaten; eine endliche Suche widerlegt Existenz nur, wenn sie den ganzen Bereich erfasst.
+
+### Übung
+
+Ein Regal enthält ein rotes und zwei blaue Bücher. Ist die Aussage „Ein Buch ist blau“ wahr? Behauptet sie, dass genau ein Buch blau ist?
+
+<details>
+<summary>Hinweis</summary>
+
+Frage nach der Mindestanzahl.
+
+</details>
+
+<Exercise>
+
+Wahr: Jedes blaue Buch ist ein Zeuge. Zwei Erfolge passen zu mindestens einem, aber nicht zu genau einem.
+
+</Exercise>
+
+Lies $\exists n\in\mathbb Z\;(n+5=12)$ ohne zu lösen: Nenne die drei Teile.
+
+<details>
+<summary>Hinweis</summary>
+
+Anzahl, Bereich, Bedingung.
+
+</details>
+
+<Exercise>
+
+Mindestens eine; ganze Zahlen; plus fünf ergibt zwölf. Zum Lesen der Anforderung braucht man die Lösung nicht.
+
+</Exercise>
+
+Vergleiche reelle und ganzzahlige Zeugen für $0<x<1$.
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze einen Bruch, dann den Abstand ganzer Zahlen.
+
+</details>
+
+<Exercise>
+
+$1/2$ ist reell und erfüllt beide Schranken. Eine positive ganze Zahl ist mindestens eins, also scheiden alle ganzen Zahlen aus.
+
+</Exercise>
+
+Ordne ein: „Es gibt eine rote Marke“; „Finde eine rote Marke“; „Genau eine Marke ist rot“.
+
+<details>
+<summary>Hinweis</summary>
+
+Welche haben Wahrheitswerte?
+
+</details>
+
+<Exercise>
+
+Existenzbehauptung; Aufforderung; Existenz mit Ausschluss eines zweiten verschiedenen Erfolgs. Der letzte Satz sagt mehr als bloße Existenz.
+
+</Exercise>
+
+Vergleiche einen sicher leeren Beutel und einen verschlossenen Beutel, dessen Inhalt unbekannt ist.
+
+<details>
+<summary>Hinweis</summary>
+
+Objekte und Information sind verschieden.
+
+</details>
+
+<Exercise>
+
+Im leeren Beutel ist die Existenz einer roten Marke falsch. Beim verschlossenen reicht die Information nicht; sein tatsächlicher Inhalt bestimmt dennoch die Wahrheit.
+
+</Exercise>
+
+### Zeugen prüfen
+
+Welche Zahlen aus $1,2,3,4$ erfüllen $1<n<4$ ganzzahlig?
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe die strengen Grenzen.
+
+</details>
+
+<Exercise>
+
+Zwei und drei passen. Eins verletzt die untere, vier die obere Schranke.
+
+</Exercise>
+
+Repariere den aufgeteilten Zeugen $9>4$ und $3<8$.
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze ein Objekt.
+
+</details>
+
+<Exercise>
+
+Keine der Zahlen erfüllt beides. Fünf ist ganzzahlig und $4<5<8$.
+
+</Exercise>
+
+Prüfe $1/2$ als ganzzahligen Zeugen für $2x=1$.
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne die Prüfungen.
+
+</details>
+
+<Exercise>
+
+Die Gleichung stimmt, die Zugehörigkeit nicht. Es ist ein reeller, kein ganzzahliger Zeuge.
+
+</Exercise>
+
+Nach Tests mit $0,1,2$ wird bestritten, dass ein ganzzahliges Quadrat $25$ sein kann. Diagnose?
+
+<details>
+<summary>Hinweis</summary>
+
+Wurden alle Kandidaten geprüft?
+
+</details>
+
+<Exercise>
+
+Der Bereich wurde nicht ausgeschöpft. Fünf ist ganzzahlig und $5^2=25$; minus fünf passt auch. Ein geprüfter Erfolg genügt.
+
+</Exercise>
+
+Eine Schachtel enthält insgesamt genau zwei Marken; keine davon ist blau. In einer anderen wurden zwei nichtblaue Marken geprüft; ihr übriger Inhalt ist noch ungeprüft. Welche widerlegt die Existenz einer blauen Marke?
+
+<details>
+<summary>Hinweis</summary>
+
+Vollständigkeit ist entscheidend.
+
+</details>
+
+<Exercise>
+
+Nur die erste schließt jeden möglichen Zeugen aus. In der zweiten bleiben Kandidaten ungeprüft.
+
+</Exercise>
+
+Erkläre später Existenz an zwei Erfolgen und ändere dann die Sammlung so, dass keiner bleibt.
+
+## Laut lesen
+
+**EN:** There exists at least one x in D such that P of x holds.
+
+**DE:** Es gibt mindestens ein x in D, für das P von x gilt.
+
+**ES:** Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.

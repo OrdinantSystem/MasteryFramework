@@ -1,0 +1,73 @@
+---
+course: "analysis"
+chapter: "analysis-zero-propositions"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/02 Propositions versus Definitions.md"]
+locale: "de"
+title: "Definitionen, Annahmen und Ergebnisse"
+navTitle: "Definitionen, Annahmen und Ergebnisse"
+description: "Eine Bedeutung festlegen und eine Behauptung damit begründen."
+order: 2
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "proof"
+---
+
+Eine Bibliothek nennt eine Ausleihe **kurz**, wenn sie weniger als sieben Tage dauert. Das legt eine Bedeutung fest. Eine dreitägige Ausleihe ist kurz; eine zehntägige nicht. Diese beiden Behauptungen verwenden die Definition. Eine falsche Anwendung widerlegt nicht die gewählte Bedeutung.
+
+In der Mathematik gilt dieselbe Unterscheidung. Eine ganze Zahl heißt positiv, wenn sie größer als null ist. Die ganzen Zahlen, geschrieben $\mathbb Z$, umfassen auch negative ganze Zahlen und null. Für eine ganze Zahl $n$ lautet die Bedingung $n>0$. Drei erfüllt sie; null nicht, denn der Vergleich ist streng. „Null ist positiv“ ist eine falsche Aussage, keine widerlegte Definition.
+
+## Welche Rolle hat der Satz?
+
+Eine **Definition** legt eine Bedeutung fest. Eine **Annahme** oder **Hypothese** wird für ein bestimmtes Argument vorausgesetzt. Ein **Axiom** ist eine akzeptierte Ausgangsaussage einer Theorie. **Satz**, **Lemma** und **Proposition** bezeichnen bewiesene Ergebnisse; ein Lemma dient häufig dem Beweis eines weiteren Ergebnisses. Die Bezeichnungen ändern den Anspruch an den Beweis nicht.
+
+In der Logik bedeutet *Proposition* auch eine bestimmte wahrheitsfähige Behauptung, die durchaus falsch sein kann. Als Lehrbuchüberschrift wird das Wort enger verwendet.
+
+Angenommen, eine ganze Zahl ist größer als fünf. Das ist eine lokale Annahme, keine Behauptung über alle ganzen Zahlen. Weil fünf größer als null ist, folgt mit der Transitivität der üblichen Ordnung, dass unsere Zahl größer als null ist. Nach Definition ist sie positiv. Die Ordnungsregel begründet den Schluss; die Definition liefert die Bezeichnung.
+
+Eine Gleichung oder „genau dann, wenn“ kann sowohl in einer Definition als auch in einer Behauptung stehen. Erst der Zusammenhang zeigt ihre Rolle.
+
+## Einen Namen einführen
+
+$$a:=0 \qquad a=0$$
+
+Der erste Ausdruck führt $a$ als Namen für null ein. Danach ist die zweite Gleichung wahr. „Definiere“, „angenommen“ und „also“ kennzeichnen verschiedene Verwendungen, auch wenn ähnliche Zeichen folgen.
+
+<Note title="Notation lesen">
+
+**EN:** $a:=0$: “a is defined to be zero”; $a=0$: “a equals zero.” **DE:** „a wird als null definiert“; „a ist gleich null“. **ES:** «a se define como cero»; «a es igual a cero». $n>0$: **EN** “n is greater than zero”; **DE** „n ist größer als null“; **ES** «ene es mayor que cero».
+
+</Note>
+
+## Eine Eigenschaft muss kein Beispiel haben
+
+Wir dürfen der Eigenschaft „größer als null und kleiner als null“ einen Namen geben, obwohl keine ganze Zahl sie besitzt. Dadurch entsteht aber keine Zahl mit dieser Eigenschaft. Ebenso kann die Beschreibung „das eindeutig bestimmte Objekt mit …“ Nachweise der **Existenz** (mindestens ein Objekt) und **Eindeutigkeit** (kein zweites Objekt) verlangen. Eine sprachliche Festlegung erledigt diese Aufgaben nicht. Übliche Arithmetik und Ordnung sind hier vorausgesetzte Grundlagen, keine aus dem Wortschatz abgeleiteten Ergebnisse.
+
+## Rollen und Definitionen anwenden
+
+Ordne zu und begründe: „Eine ganze Zahl heißt nichtnegativ, wenn sie mindestens null ist“; „Null ist nichtnegativ“; „Angenommen, $x>0$“; „Definiere $b:=1$“; „Also gilt $b=1$“.
+
+<details>
+<summary>Hinweis</summary>
+
+Welcher Satz führt eine Bedeutung ein, welcher setzt etwas lokal voraus und welcher behauptet eine Folgerung?
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Der erste Satz ist eine Definition. Der zweite ist eine wahre Anwendung, denn Gleichheit ist erlaubt. Der dritte ist eine Hypothese, keine Allaussage. Der vierte führt einen Namen ein. Der fünfte behauptet die daraus folgende Gleichheit. Eine Definition wird nicht wie ein Satz bewiesen; eine Objektbeschreibung kann trotzdem Existenz- und Eindeutigkeitsnachweise erfordern.
+
+</details>
+
+<Exercise question="Eine reelle Zahl heiße hier zulässig, wenn sie mindestens null und höchstens eins ist. Schreibe das Kriterium. Ist null zulässig? Was folgt aus der Zulässigkeit einer nicht näher bestimmten Zahl?">
+
+Für $x\in\mathbb R$ lautet das Kriterium $(0\le x)\land(x\le1)$. Null erfüllt beide Vergleiche und ist zulässig. Aus der Bezeichnung folgen beide Grenzen, aber kein eindeutiger Wert: $0$, $1/2$ und $1$ erfüllen das Kriterium. Die Bezeichnung gilt nur in diesem Beispiel. Beide Grenzen erlauben Gleichheit; ein strenger Vergleich würde die Definition ändern.
+
+</Exercise>
+
+Erfinde eine weitere Eigenschaftsbezeichnung und formuliere eine wahre sowie eine falsche Anwendung. Trenne die Definition von ihren Anwendungen. [Mehrere gleichzeitige Bedingungen](../simultaneous-conditions/) behandelt ein längeres Kriterium.

@@ -1,0 +1,199 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Existencia y testigos"
+navTitle: "Existencia y testigos"
+description: "Existencia y testigos."
+order: 23
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "bound-variables-and-scope", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Una bandeja contiene tarjetas con dos, cuatro y siete. El siete hace verdadera «Hay una tarjeta con número impar». El dos y el cuatro no la invalidan: no se exige que todas sean impares. Otro éxito, nueve, tampoco la invalidaría.
+
+$$
+\exists x\in D\;P(x).
+$$
+
+$D$ es el dominio de objetos permitidos; $P$ es la condición exigida, o predicado. El cuantificador existencial $\exists$ significa al menos uno. Permite varios éxitos, e incluso todos los elementos si el dominio no es vacío. No afirma exactamente uno ni que otros fallen. Liga $x$ dentro de su alcance, pero no otras variables de $P$. Se obtiene una proposición al especificar dominio, predicado y demás parámetros. Fijar un parámetro no lo liga sintácticamente.
+
+«Hay una ficha roja» afirma algo; «Busca una ficha roja» pide una acción. Existencia tampoco es conocimiento. Una bolsa cerrada puede contener una ficha roja sin que lo sepamos. Desconocido no significa falso. Una bolsa que se sabe vacía, en cambio, no proporciona ningún testigo. Los dominios restringidos pueden ser vacíos aunque existan otros objetos.
+
+## Candidato, pertenencia y condición completa
+
+Para $\exists n\in\mathbb Z\;(n+5=12)$, siete es un testigo: es entero y $7+5=12$. El testigo es el objeto; la verificación es el argumento sobre él. Un candidato es un testigo cuando se justifican ambas comprobaciones. Para $4<n<8$, cinco cumple ambas cotas estrictas. Nueve solo supera la inferior y tres solo cumple la superior: no pueden combinarse. La variable repetida representa el mismo objeto en toda la condición.
+
+Un club necesita un miembro disponible el martes y formado en primeros auxilios. No bastan la disponibilidad de Ada y la formación de Ben. Cora sirve si pertenece al club y reúne ambas cualidades. Alguien ajeno al club falla en la pertenencia aunque reúna las dos.
+
+Un medio resuelve $2x=1$ en los reales, no en los enteros. Todo entero es como máximo cero o como mínimo uno; su doble es como máximo cero o como mínimo dos. Igualmente, $0<x<1$ tiene el testigo real $1/2$, pero ningún testigo entero. Estos argumentos excluyen todos los enteros. Los intentos fallidos solo excluyen los candidatos probados; una búsqueda finita refuta existencia únicamente si agota el dominio.
+
+### Práctica
+
+Un estante contiene un libro rojo y dos azules. ¿Es verdadera «Algún libro es azul»? ¿Afirma unicidad?
+
+<details>
+<summary>Pista</summary>
+
+Piensa en el mínimo exigido.
+
+</details>
+
+<Exercise>
+
+Es verdadera: cualquiera de los azules sirve. Dos éxitos son compatibles con al menos uno, no con exactamente uno.
+
+</Exercise>
+
+Lee $\exists n\in\mathbb Z\;(n+5=12)$ sin resolver: identifica sus tres partes.
+
+<details>
+<summary>Pista</summary>
+
+Cantidad, dominio, condición.
+
+</details>
+
+<Exercise>
+
+Al menos uno; enteros; sumar cinco da doce. Interpretar la condición no requiere encontrar la solución.
+
+</Exercise>
+
+Compara testigos reales y enteros para $0<x<1$.
+
+<details>
+<summary>Pista</summary>
+
+Usa una fracción y la separación entre enteros.
+
+</details>
+
+<Exercise>
+
+$1/2$ es real y cumple ambas cotas. Un entero positivo es al menos uno, lo que excluye todos los enteros.
+
+</Exercise>
+
+Clasifica: «Hay una ficha roja»; «Busca una ficha roja»; «Exactamente una ficha es roja».
+
+<details>
+<summary>Pista</summary>
+
+¿Cuáles tienen valor de verdad?
+
+</details>
+
+<Exercise>
+
+Afirmación existencial; petición; existencia que excluye un segundo éxito distinto. La última dice más que la existencia ordinaria.
+
+</Exercise>
+
+Compara una bolsa que se sabe vacía y una cerrada de contenido desconocido.
+
+<details>
+<summary>Pista</summary>
+
+Objetos e información son distintos.
+
+</details>
+
+<Exercise>
+
+La existencia de una ficha roja es falsa en la vacía. La información no decide la cerrada; su contenido real sigue determinando la verdad.
+
+</Exercise>
+
+### Comprobar testigos
+
+¿Cuáles de $1,2,3,4$ cumplen $1<n<4$ en los enteros?
+
+<details>
+<summary>Pista</summary>
+
+Comprueba los extremos estrictos.
+
+</details>
+
+<Exercise>
+
+Dos y tres sirven. Uno falla en la cota inferior y cuatro en la superior.
+
+</Exercise>
+
+Corrige el testigo dividido $9>4$ y $3<8$.
+
+<details>
+<summary>Pista</summary>
+
+Usa un solo objeto.
+
+</details>
+
+<Exercise>
+
+Ninguno cumple ambas condiciones. Cinco es entero y $4<5<8$.
+
+</Exercise>
+
+Revisa $1/2$ como testigo entero de $2x=1$.
+
+<details>
+<summary>Pista</summary>
+
+Separa las comprobaciones.
+
+</details>
+
+<Exercise>
+
+La ecuación se cumple, pero falla la pertenencia. Es un testigo de la versión real, no de la entera.
+
+</Exercise>
+
+Tras probar $0,1,2$, alguien niega que un cuadrado entero sea $25$. Diagnostica.
+
+<details>
+<summary>Pista</summary>
+
+¿Se probaron todos los candidatos?
+
+</details>
+
+<Exercise>
+
+No se agotó el dominio. Cinco es entero y $5^2=25$; menos cinco también sirve. Basta un éxito verificado.
+
+</Exercise>
+
+Una caja contiene exactamente dos fichas en total y ninguna es azul. En otra se inspeccionaron dos fichas no azules y quedan objetos sin revisar. ¿Cuál refuta que haya una azul?
+
+<details>
+<summary>Pista</summary>
+
+Importa que la inspección sea exhaustiva.
+
+</details>
+
+<Exercise>
+
+Solo la primera excluye todos los posibles testigos. La segunda deja candidatos sin comprobar.
+
+</Exercise>
+
+Más tarde, explica existencia con dos éxitos y cambia después la colección para que no haya ninguno.
+
+## Lectura en voz alta
+
+**EN:** There exists at least one x in D such that P of x holds.
+
+**DE:** Es gibt mindestens ein x in D, für das P von x gilt.
+
+**ES:** Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.

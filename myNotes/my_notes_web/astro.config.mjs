@@ -61,6 +61,19 @@ function centeredTables() {
             children: [child],
           };
         }
+        if (child.type === "element" && child.properties?.className?.includes("katex-display")) {
+          return {
+            type: "element",
+            tagName: "div",
+            properties: {
+              className: ["math-block"],
+              tabIndex: 0,
+              role: "region",
+              "aria-label": { en: "Mathematical expression", de: "Mathematischer Ausdruck", es: "Expresión matemática" }[locale],
+            },
+            children: [child],
+          };
+        }
         visit(child);
         return child;
       });

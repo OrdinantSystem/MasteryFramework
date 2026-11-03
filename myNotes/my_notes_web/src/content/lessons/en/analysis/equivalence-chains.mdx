@@ -1,0 +1,67 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-equivalence"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/04 Chains of Equivalences.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Chains of Logical Equivalences.md"]
+title: "Chains of equivalences"
+navTitle: "Chains of equivalences"
+description: "Justify both directions at every link and track lost or added solutions."
+order: 18
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["biconditionals-and-equivalent-conditions", "equality-and-equations"]
+thumbnail: "proof"
+---
+
+Solving an equation is not just finding a plausible final number. We want exactly the original solutions. A reversible step preserves them; a one-way step may introduce candidates or discard cases.
+
+## What the chain says
+
+For every real $x$, ordinary arithmetic gives
+
+$$(2x+2=6)\Leftrightarrow(2x=4)\Leftrightarrow(x=2).$$
+
+Read: “Twice $x$ plus two equals six iff twice $x$ equals four; twice $x$ equals four iff $x$ equals two.” Writing $2x$ means multiplication. The equals signs compare numbers inside equations; the arrows compare the truth of whole equations.
+
+The chain abbreviates **two adjacent equivalence claims**. It is not a new three-input connective or an instruction to associate biconditionals arbitrarily. Every link uses the same input, domain, and assumptions.
+
+There are four short reasons here. Subtracting two gives the middle equation; adding two recovers the first. Dividing by the nonzero number two gives the last equation; multiplying by two recovers the middle. Both directions of each link are valid for every real $x$, not just for the eventual solution.
+
+## Why the endpoints agree
+
+Equivalence is **transitive**. Fix any allowed input. If the first condition has the same truth value as the second, and the second as the third, the first and third agree. Since the input was arbitrary, they agree throughout the domain.
+
+In implication language, the first condition gives the second and then the third. Starting from the third, the reverse links give the second and then the first. This proves both endpoint directions. For a chain $F\equiv G\equiv H$ of propositional formulas, use an arbitrary truth assignment instead of a number and keep repeated letters' values fixed. This proves transitivity; it does not prove any unchecked adjacent link.
+
+## Squaring can add a candidate
+
+Over all reals, $(x=2)\Rightarrow(x^2=4)$ is valid, but the reverse fails at $x=-2$: its square is four and it is not two. Read the single arrow as “if $x$ equals two, then its square equals four.” Replacing it with a biconditional would incorrectly erase the sign distinction.
+
+After a forward-only step, solutions of the new equation are **candidates**. Check each against the original. A nonnegative-domain restriction can repair some squaring equivalences, but it must be stated before the claim and its reverse justified there. Quietly discarding negative inputs changes an all-real problem.
+
+## Division can lose an original solution
+
+The equation $x^2=x$ is true at zero. Dividing by $x$ and claiming $x=1$ loses that solution because division required $x\ne0$.
+
+Split cases instead. At $x=0$ the original equation holds. For $x\ne0$, divide by $x$ to obtain $x=1$; conversely, multiplying $x=1$ by $x$ recovers $x^2=x$. Check one in the original as well. Thus the real solutions are exactly zero and one. On the explicitly nonzero domain the divided equations are equivalent, but that restricted result alone does not solve the original problem.
+
+<Note title="Keep worksheet restrictions separate">
+
+Existing [Boolean derivations](../boolesche-grundgesetze/) may restrict which numbered laws a proof is allowed to use. These general reasoning principles do not remove those exercise-specific restrictions. A truth-table argument can establish a fact without satisfying a task that specifically asks for a derivation from designated laws.
+
+</Note>
+
+<Exercise question="Audit $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$ over the reals. Give the operation in both directions of each link. May you append $(x^2=4)$ with another equivalence arrow?">
+
+Subtract three and reverse by adding three. Divide by nonzero three and reverse by multiplying by three. Each link preserves the solution set, and transitivity connects the endpoints. Do not append the squared equation as an equivalence over all reals: $-2$ satisfies it but not $x=2$. A single forward arrow is justified; its extra candidate must be checked against the original equation.
+
+</Exercise>
+
+<Exercise question="Construct a fresh two-link linear-equation chain using subtraction and division by a nonzero constant. Explain how you know no solution was added or lost, rather than merely testing the final number.">
+
+One example is $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Subtract four or add four for the first link; divide by four or multiply by four for the second. Four is nonzero. Each operation and its inverse work on the unchanged real domain, so the same inputs satisfy every equation. Testing two alone would verify a solution, not exclude all others.
+
+</Exercise>

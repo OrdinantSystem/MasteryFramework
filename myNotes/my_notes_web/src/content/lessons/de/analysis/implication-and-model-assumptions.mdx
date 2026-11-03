@@ -1,0 +1,52 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/09 Implication versus Causation.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Converse Inverse and Contrapositive.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Equivalence of a Conditional and Its Contrapositive.md"]
+title: "Implikation und Modellannahmen"
+navTitle: "Implikation und Modellannahmen"
+description: "Wahrheitsfunktionale Schlüsse von kausaler Evidenz trennen."
+order: 16
+kind: "note"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["material-implication-and-vacuity", "implikation-und-kontraposition"]
+thumbnail: "implication"
+---
+
+Sieben ist größer als fünf und größer als zwei. Der Vergleich mit fünf verändert die Zahl nicht. Die Implikation verknüpft zwei Eigenschaften derselben unveränderten Zahl.
+
+Materiale Implikation ist **wahrheitsfunktional**: Die Wahrheitswerte ihrer Teile bestimmen ihren Wert. Die Wahrheitstabelle hat keine zusätzliche Spalte für „geschieht früher“, „erklärt“ oder „verursacht“. In gewöhnlicher Arithmetik ist
+
+$$(0=1)\Rightarrow(2=3)$$
+
+wahr, weil die Voraussetzung falsch ist. Gelesen: „Wenn null gleich eins ist, dann ist zwei gleich drei.“ Beide Teile bleiben falsch; der Pfeil beweist keinen davon und liefert keinen kausalen Mechanismus.
+
+## Eine genaue Regel in einem hypothetischen Modell
+
+Ein Gerätemodell habe für alle betrachteten Zustände die vereinbarte Regel: **Ist der Schalter geschlossen, leuchtet die Lampe**. Das ist eine Annahme dieses Beispiels, keine überprüfte Behauptung über echte Geräte. $S$ bedeute „Der Schalter ist geschlossen“, $L$ bedeute „Die Lampe leuchtet“.
+
+| Im Modell gegeben | Erlaubte Folgerung | Grund |
+| --- | --- | --- |
+| $S\Rightarrow L$ und $S$ | $L$ | Modus ponens |
+| $S\Rightarrow L$ und $\neg L$ | $\neg S$ | Kontraposition |
+| $S\Rightarrow L$ und $L$ | Keine Aussage über $S$ | Die Umkehrung fehlt |
+| $S\Rightarrow L$ und $\neg S$ | Keine Aussage über $L$ | Die Inverse fehlt |
+
+Lies $\neg L\Rightarrow\neg S$ als „Wenn die Lampe nicht leuchtet, ist der Schalter nicht geschlossen“. Das kennzeichnet Zustände, die zur angenommenen Regel passen. Es behauptet nicht, dass Dunkelheit den Schalter öffnet oder eine physikalische Ursache umkehrt.
+
+Der Zustand $S$ falsch, $L$ wahr erfüllt die Hinrichtung. Eine leuchtende Lampe erzwingt aus dieser Regel allein also keinen geschlossenen Schalter. Unsere Vertrautheit mit Lampen ersetzt keine fehlende Modellannahme.
+
+## Schluss und Beobachtung beantworten verschiedene Fragen
+
+Eine einzelne Implikation auszuwerten heißt zu prüfen, ob ihre Werte das verbotene Paar wahr/falsch bilden. Einen mathematischen Satz zu beweisen heißt zu begründen, warum keine erlaubte Eingabe dieses Paar erzeugt: Über fünf impliziert über zwei für alle reellen Zahlen durch Transitivität der Ordnung. Ein empirisches Modell zu stützen heißt zu prüfen, ob seine Annahmen zum gemeinten System und zu den Belegen passen. Ein korrekter Schluss innerhalb eines Modells beweist dessen Genauigkeit nicht.
+
+Meldet eine zutreffende Beobachtung im gemeinten Kontext einen geschlossenen Schalter und eine dunkle Lampe, widerspricht sie der genauen Regel. Beide können dort nicht zugleich stimmen. Die Logik allein findet weder ein defektes Bauteil noch eine fehlende Bedingung oder die physikalische Ursache. Dafür braucht es weitere Untersuchung.
+
+<Exercise question="Es gelte nur die Modellregel $S\Rightarrow L$. Laut Bericht leuchtet die Lampe. Gib einen Zustand an, der Regel und Bericht erfüllt, aber die Folgerung eines geschlossenen Schalters falsch macht. Was ändert ein Bericht über einen geschlossenen Schalter und eine dunkle Lampe?">
+
+Wähle $S$ falsch und $L$ wahr. Implikation und Bericht sind wahr, $S$ ist aber falsch; der Rückwärtsschluss ist ungültig. Ein geschlossener Schalter mit dunkler Lampe macht dagegen $S$ wahr und $L$ falsch. Bei zutreffenden Beschreibungen widerlegt das die genaue Regel für diesen Kontext, diagnostiziert aber nicht das Gerät. Eine zusätzliche Umkehrung würde einen neuen Schluss erlauben, wäre jedoch auch eine neue, begründungsbedürftige Modellannahme.
+
+</Exercise>

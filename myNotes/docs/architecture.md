@@ -27,13 +27,13 @@ The canonical package is ../my_notes_web/. Source is shared through Git; the dep
 
 1. Astro loads MDX/Markdown collections and validates metadata.
 2. getLessons filters published content, checks matching languages, order, navigation, prerequisites, and cycles.
-3. The route generator builds English /, German /de/, Spanish /es/, their search pages, and /lessons/<stable-key>/ counterparts.
-4. MDX renders through the central component registry. KaTeX emits visual HTML and accessible MathML; CSS/fonts are local. Tables get a centered focusable scroll wrapper.
+3. The route generator builds localized archive, course and search pages. Analysis lessons use `/analysis/lessons/<stable-key>/`, Learning Methodology uses `/learning/lessons/<stable-key>/`, and legacy Linear Algebra retains `/lessons/<stable-key>/`; DE/ES counterparts prepend their locale.
+4. MDX renders through the central component registry. KaTeX emits visual HTML and accessible MathML; CSS/fonts are local. Tables and Markdown display equations get labeled, focusable scroll wrappers. The Math component provides the same local scrolling and keyboard focus for display expressions.
 5. Interactive components emit initial HTML/SVG/equations during the build. Only components actually rendered add their browser controller. Browser state derives drawings, values, equations, and feedback from one model.
 6. Pagefind indexes published lesson bodies by actual html language. It excludes shell, rendered equation duplication, and the developer gallery.
 7. The verifier checks generated links, anchors, assets, localized counterparts, source exclusion, math samples, and token contrast.
 
-The build currently emits 68 pages: 57 localized overview/search/lesson pages, a 404, nine legacy redirects, and the library. Checks derive lesson counts from published content; add a new route family deliberately and update its route-count contract.
+The build currently emits 287 pages: 261 localized lesson pages, 15 localized archive/course/search pages, a 404, nine legacy redirects, and the library. Checks derive lesson counts from published content; add a new route family deliberately and update its route-count contract.
 
 ## Representation layers
 
@@ -43,7 +43,7 @@ matrix.ts creates equations for arbitrary compatible matrices. MatrixProduct.ast
 
 ## Current boundaries
 
-The archive has three courses and 49 published lessons per language: 17 in Linear Algebra I, 15 in Analysis I, and 17 in learning methodology. Chapters have localized labels, exact group membership, and source identities. The original Linear Algebra concept map stays scoped to its first chapter. New subjects extend the shared course registry and shell. Source identities and PDF page bounds are registered in src/lib/sources.ts and validated by the content schema. See source-ingestion.md for the multi-document workflow.
+The archive has three courses and 87 published lessons per language: 17 in Linear Algebra I, 53 in Analysis I (including Analysis 0 foundations), and 17 in learning methodology. Chapters have localized labels, exact group membership, and source identities. The original Linear Algebra concept map stays scoped to its first chapter. New subjects extend the shared course registry and shell. Source identities and PDF page bounds are registered in src/lib/sources.ts and validated by the content schema. See source-ingestion.md for the multi-document workflow.
 
 The original source is not public content. references/source/, generated files, dependency folders, and local runtime metadata are ignored. deployment/ contains a template only. Existing sibling websites remain separate and preserved.
 

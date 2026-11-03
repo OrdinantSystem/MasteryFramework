@@ -1,0 +1,73 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-equivalence"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/01 If and Only If.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/03 Equivalent Conditions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md"]
+title: "Äquivalenzen und gleichwertige Bedingungen"
+navTitle: "Äquivalenzen und gleichwertige Bedingungen"
+description: "Notwendige und hinreichende Bedingungen lesen und den richtigen Geltungsbereich beweisen."
+order: 17
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-conditionals", "material-implication-and-vacuity"]
+thumbnail: "parity"
+---
+
+„Behalte eine Karte, **wenn** ihre Zahl zwei ist“ verlangt, jede Zweierkarte zu behalten, erlaubt aber weitere Karten. „Behalte eine Karte **nur wenn** ihre Zahl zwei ist“ verbietet andere Zahlen, erlaubt aber, alle Karten abzulehnen. Zusammen verlangen die Regeln, genau die Zweierkarten zu behalten.
+
+## Wenn, nur wenn und beides
+
+Für Aussagen $A$ und $B$ gilt:
+
+- „$A$, wenn $B$“ bedeutet $B\Rightarrow A$: „Wenn $B$, dann $A$.“ $B$ ist **hinreichend** für $A$: Es garantiert $A$.
+- „$A$ nur wenn $B$“ bedeutet $A\Rightarrow B$: „Wenn $A$, dann $B$.“ $B$ ist **notwendig** für $A$: Ohne $B$ kann $A$ nicht gelten.
+
+Die formale Clubregel „Einlass nur mit Eintrittskarte“ macht die Karte notwendig, nicht hinreichend. Sie verspricht Karteninhabern keinen Einlass. Erst die zusätzliche Regel „Karte impliziert Einlass“ machte sie auch hinreichend. Das sind vereinbarte Regeln, keine Aussagen über tatsächliche Einlassbedingungen.
+
+Die **Äquivalenzaussage** $A\Leftrightarrow B$ liest man „$A$ genau dann, wenn $B$“, im Englischen kurz **iff**. Sie ist definitionsgemäß bei gleichen Wahrheitswerten wahr, auch wenn beide falsch sind:
+
+| $A$ | $B$ | $A\Rightarrow B$ | $B\Rightarrow A$ | $A\Leftrightarrow B$ |
+| --- | --- | --- | --- | --- |
+| $1$ | $1$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ |
+| $0$ | $1$ | $1$ | $0$ | $0$ |
+| $0$ | $0$ | $1$ | $1$ | $1$ |
+
+$1$ bedeutet wahr, $0$ falsch. Die Tabelle beweist die Übereinstimmung mit $(A\Rightarrow B)\land(B\Rightarrow A)$ in jeder Zeile. Die Hinrichtung schließt wahr/falsch aus, die Rückrichtung falsch/wahr. Das sind alle möglichen Unterschiede. Umgekehrt machen gleiche Werte beide Pfeile wahr. Deshalb braucht ein Äquivalenzbeweis beide Richtungen.
+
+Insbesondere ist $(0=1)\Leftrightarrow(2=3)$ wahr, während die Konjunktion dieser Gleichungen falsch ist. Übereinstimmung behauptet keine der beiden Seiten.
+
+## Die Rückrichtung neu beginnen
+
+Für jedes reelle $x$ gilt
+
+$$(x+1=3)\Leftrightarrow(x=2).$$
+
+Gelesen: „$x$ plus eins ist gleich drei genau dann, wenn $x$ gleich zwei ist.“ Fixiere ein beliebiges reelles $x$. **Hinrichtung:** Nimm $x+1=3$ an und subtrahiere auf beiden Seiten eins; daraus folgt $x=2$. **Rückrichtung:** Beginne stattdessen mit $x=2$ und addiere eins; daraus folgt $x+1=3$. Addition und Subtraktion erhalten Gleichheit und machen einander rückgängig. Das Argument gilt daher für jede reelle Eingabe.
+
+Beide Gleichungen schon am Anfang anzunehmen würde beide Beweisaufgaben überspringen. Die Logik bestimmt die nötigen Richtungen; die Arithmetik begründet sie für diese Gleichungen. Bei null sind beide Gleichungen falsch, was mit ihrer Äquivalenz völlig vereinbar ist.
+
+## Drei verschiedene Geltungsbereiche
+
+Eine wahre Äquivalenzaussage bei einer Eingabe liefert **Übereinstimmung im Einzelfall**. Bei $(x>5)\Leftrightarrow(x>2)$ stimmen die Seiten bei sechs und null überein, bei drei nicht. Der Doppelpfeil bindet $x$ nicht und behauptet nicht stillschweigend „für jedes“.
+
+**Aussagenlogische Äquivalenz**, geschrieben $F\equiv G$, verlangt Übereinstimmung bei jeder Belegung der atomaren Aussagebuchstaben. Wiederholte Buchstaben behalten denselben Wert. Zum Beispiel gilt $(P\land Q)\equiv(Q\land P)$: Beide Seiten sind genau dann wahr, wenn beide Buchstaben wahr sind, sonst falsch. Unabhängige $P$ und $Q$ sind nicht schon logisch äquivalent, weil eine Zeile beide wahr setzt.
+
+**Gleichwertige Bedingungen auf einem Bereich** stimmen bei jeder erlaubten Eingabe überein und haben damit dieselbe Lösungsmenge. Unser Gleichungsbeweis zeigt das mittels Arithmetik für die reellen Zahlen. Er ist kein uneingeschränktes aussagenlogisches Gesetz über zwei unabhängige Buchstaben. Die Gleichheitszeichen innerhalb der Gleichungen vergleichen Zahlen; $\Leftrightarrow$ vergleicht Wahrheitswerte von Aussagen. Manche booleschen Arbeitsblätter benutzen vereinbarungsgemäß $=$ für logische Äquivalenz. Beachte diese Konvention, statt numerische und logische Gleichheit gleichzusetzen.
+
+Der Bereich zählt. Auf allen reellen Zahlen unterscheiden sich $x>0$ und $x\ge0$ bei null. Auf reellen Zahlen ohne null stimmen sie überein: Positiv impliziert nichtnegativ, und eine nichtnegative Zahl ungleich null ist positiv. Der eingeschränkte Beweis begründet nicht die Allaussage über alle reellen Zahlen.
+
+<Exercise question="Eine Sortierregel erlaubt das Behalten einer Karte nur bei der Zahl zwei. Wird eine Zweierkarte zwingend behalten? Nenne die fehlende Implikation. Beweise dann $(x-2=3)\Leftrightarrow(x=5)$ für jedes reelle $x$, mit einem eigenen Anfang für jede Richtung.">
+
+Eine Zweierkarte darf abgelehnt werden; es fehlt Zweierkarte impliziert behalten. Für die Gleichungen nimm $x-2=3$ an und addiere zwei; so erhältst du $x=5$. Beginne neu mit $x=5$ und subtrahiere zwei; so folgt $x-2=3$. Beide Operationen erhalten Gleichheit für beliebiges reelles $x$. Kein Unterschied der Wahrheitswerte ist möglich. Das ist ein arithmetischer Beweis, nicht bloß ein Urteil aus der Wahrheitstabelle.
+
+</Exercise>
+
+<Exercise question="Jemand beweist Über-fünf impliziert Über-zwei und nennt die Bedingungen äquivalent. Was bleibt trotz des Fehlers richtig? Warum macht außerdem die Äquivalenz zweier Gleichungen nicht beide für jede Eingabe wahr?">
+
+Die Hinrichtung bleibt durch die Ordnung richtig. Drei widerlegt nur die fehlende Rückrichtung und damit die behauptete Äquivalenz. Bei $x+1=3$ und $x=2$ macht null beide Seiten falsch. Ihre Lösungsmengen stimmen überein, umfassen aber nicht alle reellen Zahlen.
+
+</Exercise>

@@ -1,0 +1,87 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Convergencia de la sucesión recíproca"
+navTitle: "Convergencia de la sucesión recíproca"
+description: "Convergencia de la sucesión recíproca."
+order: 50
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proving-sequence-convergence", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+Los términos uno, un medio, un tercio, etcétera sugieren acercarse a cero sin alcanzarlo. Una prueba completa necesita más que un dibujo: debe proporcionar un umbral natural para cada tolerancia real positiva y justificar todas las estimaciones posteriores.
+
+<Note title="Ampliación opcional: hechos adicionales aceptados">
+
+Esta página es opcional. La ruta principal hacia [negar convergencia](../negating-sequence-convergence/) no depende de ella. Aceptamos sin demostrar aquí la propiedad arquimediana: toda cota real es superada por algún natural positivo. Usamos también el orden de los recíprocos positivos: aumentar un denominador positivo disminuye o mantiene su recíproco. Son requisitos matemáticos de este ejemplo, no consecuencias de escribir cuantificadores.
+
+</Note>
+
+## Encuentra un umbral y verifica toda su cola
+
+$$
+a_n=\frac1n\quad(n\in\mathbb N),\qquad L=0.
+$$
+
+Todos los índices son positivos, así que cada término está definido y es positivo. Toma cualquier real $\varepsilon>0$. Su recíproco $1/\varepsilon$ es real. La propiedad arquimediana aceptada proporciona un natural positivo $N>1/\varepsilon$. Fija ese umbral antes de comprobar índices. Para cualquier natural $n\ge N$:
+
+$$
+|a_n-0|=|1/n|=1/n\le1/N<\varepsilon.
+$$
+
+La primera igualdad usa la regla y restar cero. La positividad de $1/n$ elimina el valor absoluto. El orden de recíprocos da $1/n\le1/N$ a partir de $n\ge N$. La elección estricta $N>1/\varepsilon$ da $1/N<\varepsilon$: multiplicar por $\varepsilon$ positivo da $N\varepsilon>1$ y dividir por $N$ positivo da el resultado. Así, todo término de la cola cumple la tolerancia. Como era arbitraria, la sucesión converge a cero.
+
+Cada término sigue siendo positivo, por lo que ninguno iguala al límite. La convergencia exige distancia pequeña en colas suficientemente tardías, no igualdad en alguna posición. Los dos hechos adicionales cubren infinitas tolerancias e índices; una lista finita larga no lo haría.
+
+## Comprobar la frontera estricta
+
+Con $\varepsilon=1/10$, sirve $N=11$ porque $1/11<1/10$ y los recíprocos posteriores no son mayores. $N=10$ falla en $n=10$, donde distancia y tolerancia coinciden. Estas comprobaciones racionales ilustran la frontera; el argumento general es la prueba para tolerancia arbitraria. Cualquier umbral natural mayor que uno válido también sirve.
+
+### Práctica
+
+¿Por qué queda incompleto «Elige un umbral natural suficientemente grande» si no se justifica su existencia?
+
+<details>
+<summary>Pista</summary>
+
+Los cuantificadores expresan requisitos, no teoremas aritméticos.
+
+</details>
+
+<Exercise>
+
+La propiedad arquimediana garantiza un natural permitido mayor que la cota real. Sin aceptarla o demostrarla, solo se ha pedido el testigo, no se ha proporcionado. La prueba constante solo necesita el natural conocido uno, no esta propiedad.
+
+</Exercise>
+
+Con tolerancia $1/10$, explica por qué diez falla y once sirve para todo índice posterior.
+
+<details>
+<summary>Pista</summary>
+
+El umbral mismo pertenece a la cola.
+
+</details>
+
+<Exercise>
+
+En diez la distancia es $1/10$, no estrictamente menor. Desde once es como máximo $1/11<1/10$.
+
+</Exercise>
+
+Más tarde, reconstruye la prueba indicando dónde intervienen existencia del umbral y orden de recíprocos, sin convertir este resultado opcional en requisito para la negación lógica.
+
+## Lectura en voz alta
+
+**EN:** For n at least capital N greater than one over epsilon, one over n is at most one over capital N and strictly less than epsilon.
+
+**DE:** Für n mindestens großes N größer als eins durch Epsilon ist eins durch n höchstens eins durch großes N und strikt kleiner als Epsilon.
+
+**ES:** Para ene al menos ene mayúscula mayor que uno entre épsilon, uno entre ene es como máximo uno entre ene mayúscula y estrictamente menor que épsilon.

@@ -1,0 +1,87 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Reciprocal sequence convergence"
+navTitle: "Reciprocal sequence convergence"
+description: "Reciprocal sequence convergence."
+order: 50
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proving-sequence-convergence", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+The terms one, one half, one third and so on suggest approaching zero without ever reaching it. A complete proof needs more than a picture: it must supply a natural threshold for every positive real tolerance and justify every later estimate.
+
+<Note title="Optional extension: additional accepted background">
+
+This page is optional. The main route to [negating convergence](../negating-sequence-convergence/) does not depend on it. We accept, without proving here, the Archimedean property: every real bound is exceeded by some positive natural number. We also use positive reciprocal order: increasing a positive denominator decreases or preserves its reciprocal. These are mathematical prerequisites for this example, not consequences of writing quantifiers.
+
+</Note>
+
+## Find a threshold, then prove its tail works
+
+$$
+a_n=\frac1n\quad(n\in\mathbb N),\qquad L=0.
+$$
+
+All indices are positive, so every term is well-defined and positive. Take any real $\varepsilon>0$. Its reciprocal $1/\varepsilon$ is real. The accepted Archimedean property gives a positive natural $N>1/\varepsilon$. Fix that threshold before testing indices. For any natural $n\ge N$:
+
+$$
+|a_n-0|=|1/n|=1/n\le1/N<\varepsilon.
+$$
+
+The first equality uses the sequence rule and subtracting zero. Positivity of $1/n$ removes the absolute value. Positive reciprocal order gives $1/n\le1/N$ from $n\ge N$. The strict choice $N>1/\varepsilon$ gives $1/N<\varepsilon$: multiplying the first inequality by positive $\varepsilon$ gives $N\varepsilon>1$, then dividing by positive $N$ gives the result. Hence every term in the tail meets the tolerance. Since the tolerance was arbitrary, the sequence converges to zero.
+
+Every term remains positive, so no term equals the limit. Convergence requires small distance in every sufficiently late tail, not equality at some position. This proof uses its two extra facts to cover infinitely many tolerances and indices; displaying a long finite list would not do that.
+
+## A strict boundary check
+
+At $\varepsilon=1/10$, $N=11$ works since $1/11<1/10$ and later reciprocals are no larger. $N=10$ fails at $n=10$, where the distance equals the tolerance. These rational checks illustrate strictness; the arbitrary-tolerance proof above is the general argument. Any larger natural threshold than a successful one also works.
+
+### Practice
+
+Why is “Choose a large enough natural threshold” incomplete unless an existence reason is supplied?
+
+<details>
+<summary>Hint</summary>
+
+Quantifiers state obligations, not arithmetic theorems.
+
+</details>
+
+<Exercise>
+
+The Archimedean property ensures an allowed natural exceeds the real bound. Without accepting or proving it, the witness has been requested rather than supplied. The constant-sequence proof needs only known natural one, not this property.
+
+</Exercise>
+
+At tolerance $1/10$, explain why threshold ten fails but eleven works for every later index.
+
+<details>
+<summary>Hint</summary>
+
+The threshold itself belongs to the tail.
+
+</details>
+
+<Exercise>
+
+At ten the distance is $1/10$, not strictly less. From eleven onward it is at most $1/11<1/10$.
+
+</Exercise>
+
+Later, reconstruct the proof naming where natural-threshold existence and reciprocal order enter, without making this optional result a prerequisite for logical negation.
+
+## Read aloud
+
+**EN:** For n at least capital N greater than one over epsilon, one over n is at most one over capital N and strictly less than epsilon.
+
+**DE:** Für n mindestens großes N größer als eins durch Epsilon ist eins durch n höchstens eins durch großes N und strikt kleiner als Epsilon.
+
+**ES:** Para ene al menos ene mayúscula mayor que uno entre épsilon, uno entre ene es como máximo uno entre ene mayúscula y estrictamente menor que épsilon.

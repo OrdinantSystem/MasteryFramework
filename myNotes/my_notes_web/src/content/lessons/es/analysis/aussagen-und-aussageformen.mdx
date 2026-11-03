@@ -1,8 +1,9 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-zero-propositions"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources: [{"sourceId": "analysis-zero", "locations": ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md"], "pages": []}]
 locale: "es"
 title: "Enunciados y predicados"
 navTitle: "Enunciados y predicados"
@@ -23,7 +24,9 @@ Un enunciado tiene un valor de verdad definido: verdadero (1) o falso (0). No ha
 
 $P(x): x + 3 = 10$ es un predicado. Su verdad depende de $x$. Indicar $x \in  \mathbb{N}$ restringe el dominio, pero no liga $x$. Sustituir $x = 7$ produce un enunciado verdadero; $x = 2$, uno falso. También puede ligar la variable un cuantificador.
 
-<Math tex="P(7):7+3=10\qquad P(2):2+3\ne10" display />
+<Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
+
+El $P(2)$ mostrado es la igualdad falsa $2+3=10$, no una redefinición de $P$ como su negación.
 
 ## Comprueba la clasificación
 
@@ -38,3 +41,76 @@ Para $P(x): x + 3 = 10$, elegir $x = 7$ produce un enunciado verdadero; $x = 4$,
 La primera es un predicado con $x$ libre. La segunda es un enunciado verdadero con testigo $x = 2$.
 
 </Exercise>
+
+## Afirmaciones, expresiones e instrucciones
+
+«La suma de dos números» es una frase que nombra un objeto. $x+1$ es una expresión numérica, no una afirmación. $x+1=3$ es una condición cuya evaluación necesita una entrada. $7$ por sí solo nombra un número; «Siete es igual a siete» y «Siete es mayor que cero» afirman algo sobre él. Una frase matemática no necesita símbolos, y los símbolos solos no forman necesariamente una proposición.
+
+Clasifica la **frase completa**. «Demuestra que cero es igual a uno» es una instrucción aunque mencione una proposición falsa. «Encuentra todos los reales menores que uno» es una orden; «Todo real es menor que uno» es una proposición falsa, refutada por dos. Una pregunta que menciona una afirmación sigue siendo pregunta.
+
+Primero hay que fijar significado y referentes. «Este número es pequeño» queda definida si el número es siete y «pequeño» significa menor que diez. Hacen falta tanto el objeto como el umbral. Una tarjeta concreta cerrada, con un entero ya escrito, no es lo mismo que una elección futura sin valor ni regla especificados. Que la información esté oculta no significa que el objeto no esté fijado.
+
+En la aritmética real habitual, $1/0=2$ no es una igualdad falsa corriente: el lado izquierdo carece de valor real. El cociente necesitaría un real cuyo producto por cero fuera uno, pero todo producto así es cero. La indefinición es un problema de significado bajo estas convenciones, no un tercer valor de verdad.
+
+## Verdad, conocimiento y razones
+
+Nuestro marco clásico acepta la **bivalencia**: una proposición con sentido tiene exactamente uno de dos valores de verdad. Es un fundamento aquí, no un teorema demostrado en esta página. $T/F$ y los $1/0$ del sitio son etiquetas alternativas, no números para sumar o multiplicar.
+
+El número de una tarjeta fija es cero o no lo es antes de abrir el sobre. Encontrar cinco cambia nuestro conocimiento, no el valor de verdad original. Una habitación con tres sillas por la mañana y cuatro por la tarde da distintas **afirmaciones con un tiempo especificado**, no una proposición fija con dos valores. Asignar entradas diferentes a un predicado abierto también evalúa afirmaciones completadas distintas.
+
+La razón debe abarcar tanto como la conclusión. Un testigo demuestra una afirmación existencial; un contraejemplo refuta una universal. Para establecer una universal puede hacer falta un argumento con entrada arbitraria. En un dominio finito también basta comprobar todos los miembros. Unos aciertos seleccionados en un dominio infinito no bastan. Por ejemplo, para cualquier real $x<1$, de $1<2$ y la transitividad se obtiene $x<2$. Nombrar la estructura lógica no aportaría por sí solo ese argumento de orden.
+
+## Apariciones libres, alcance y asignaciones
+
+$\mathbb Z$ designa enteros y $\mathbb R$ reales. $x\in\mathbb R$ expresa pertenencia, no igualdad. «Sea $x$ real» fija un dominio y a menudo introduce una entrada **arbitraria pero fija** en una demostración. «Sea $x=2$» aporta un valor concreto. Ninguna frase inserta un cuantificador en la fórmula escrita.
+
+Una **aparición** es un lugar donde figura una variable. Un cuantificador liga las apariciones de la variable que nombra dentro de su **alcance**, salvo donde un cuantificador interior liga esa misma variable. Una aparición sin cuantificador que la ligue es libre. «Abierta» significa al menos una aparición libre; «cerrada» significa ninguna, no «sin letras».
+
+$$\forall x\in\mathbb R\;(x+y=y+x)$$
+
+Ambas apariciones de $x$ están ligadas, pero $y$ sigue libre, aunque la conmutatividad haga verdadera la condición para toda asignación real de $y$. Ser verdadera bajo toda asignación no crea un cuantificador ausente. Añadir $\forall y\in\mathbb R$ la cierra:
+
+$$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
+
+Una asignación $y=0$ aporta contexto de evaluación, no ligadura sintáctica. Sustituir realmente cero por $y$ produce una **fórmula escrita diferente**, reemplazando esas apariciones. Son operaciones distintas.
+
+Asimismo, $\exists x\in\mathbb R\;(x=y)$ sigue abierta en $y$, aunque toda asignación real de $y$ aporte un testigo coincidente. Existencia significa al menos uno, no unicidad. En $\forall x\in\mathbb R\;(x=y)$, asignar $y=0$ deja libre la $y$ escrita, pero produce una afirmación contextual falsa, refutada por $x=1$.
+
+<details>
+<summary>Lecturas de notación: EN / DE / ES</summary>
+
+$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
+
+</details>
+
+## Comprobaciones independientes
+
+Clasifica «Uno es igual a cero», «Explica por qué uno es igual a uno» y $7$. Convierte la última expresión en dos afirmaciones. Repara después $x=0$ de dos maneras: mediante contexto y mediante cuantificación.
+
+<details>
+<summary>Pista</summary>
+
+Separa la acción solicitada de la afirmación mencionada. Para las reparaciones, distingue elegir una entrada de hablar de todas las entradas.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+«Uno es igual a cero» es una proposición falsa. «Explica…» es una instrucción que menciona una igualdad verdadera. Siete solo nombra un número; «Siete es igual a siete» y «Siete es mayor que cero» son afirmaciones. Para $x=0$, especifica en el contexto que $x$ nombra un real concreto, por ejemplo cero; la condición puede evaluarse, pero $x$ sigue libre tal como se escribe. O escribe «Todo real es igual a cero», una proposición cerrada falsa. Su falsedad no la convierte en una orden.
+
+</details>
+
+<Exercise question="En $\forall x\in\mathbb R\;(x<y)$, sea y también real. ¿Qué apariciones están ligadas? ¿Qué cambia al asignar cero a y? Compara con $\exists x\in\mathbb R\;(x=0)$ y con ‘Todo entero es positivo’.">
+
+Solo $x$ está ligada en la primera fórmula; $y$ sigue libre. Asignar cero permite evaluarla como falsa, con $x=1$ de contraejemplo, pero no liga $y$. La fórmula existencial es cerrada y verdadera con testigo cero. «Todo entero es positivo» es una afirmación cuantificada cerrada incluso sin letra escrita; es falsa con contraejemplo cero.
+
+</Exercise>
+
+<Exercise question="Traduce ‘Hay un real que es al menos cero y menor que uno’. Da un testigo; después cambia ‘hay’ por ‘todo’ y justifica el nuevo valor de verdad. ¿Qué permanece igual?">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ es verdadera con testigo cero. La universal $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ es falsa porque uno incumple la cota superior estricta. Ambas son cerradas; el dominio real y las dos comparaciones permanecen iguales. El cuantificador cambia si se requiere una entrada o todas.
+
+</Exercise>
+
+Reconstruye la distinción entre desconocido, indefinido y sin justificar: una tarjeta fija cerrada oculta un valor de verdad; dividir entre cero no produce un real; una respuesta afortunada sin razón adecuada puede ser correcta. [Leer la estructura matemática](../reading-mathematical-structure/) reúne estas comprobaciones.

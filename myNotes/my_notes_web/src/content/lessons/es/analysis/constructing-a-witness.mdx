@@ -1,0 +1,120 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Construir un testigo"
+navTitle: "Construir un testigo"
+description: "Construir un testigo."
+order: 24
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/03 Constructive Existence.md#03 · Constructive existence: exhibit, then verify", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Restar cinco de doce sugiere siete. Para terminar, comprueba la petición original: siete es entero y siete más cinco es doce. Explorar encuentra un candidato; verificar establece que sirve.
+
+<Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
+
+## Una prueba directa completa
+
+Elige $n=7$. Pertenece a $\mathbb Z$. Cumple $7+5=12$. Por tanto, un objeto permitido satisface la condición y se demuestra existencia. Los cuatro pasos son candidato, dominio, predicado completo y conclusión. Una sola comprobación demuestra esta afirmación existencial porque se pide un éxito. No establece unicidad.
+
+«Constructivo» significa aquí producir y verificar un objeto explícito. Seguimos en matemática clásica, donde una prueba de existencia no siempre nombra un testigo. «Elige un entero que sirva; por tanto existe» es circular: supone disponible una elección exitosa. Elegir un entero conocido y demostrar después su propiedad evita esa suposición.
+
+## Trabajo hacia atrás y comprobación del dominio
+
+De $2x=1$ se deduce necesariamente $x=1/2$. Tras comprobar pertenencia y sustitución se demuestra existencia real, pero no se obtiene un testigo entero. Un candidato necesario por sí solo no demuestra existencia. El álgebra reversible puede dar una equivalencia suficiente si se comprueba el dominio; razonar hacia atrás no es inválido en sí. Una afirmación falsa no admite una prueba válida porque un ejercicio la pida.
+
+Para $4<n<8$, elige cinco y comprueba que es entero y cumple ambas desigualdades estrictas. Cuatro falla en el extremo. Seis o siete servirían igual. Para cualquier real $x$, la regla $x+1$ construye un real mayor: la suma sigue siendo real y sumar uno positivo aumenta la entrada. Probar solo en cero no demostraría esta regla general.
+
+### Práctica
+
+Demuestra $\exists n\in\mathbb Z\;(n+8=3)$.
+
+<details>
+<summary>Pista</summary>
+
+Se permiten enteros negativos.
+
+</details>
+
+<Exercise>
+
+Elige $-5\in\mathbb Z$. Como $-5+8=3$, satisface la ecuación original y demuestra existencia.
+
+</Exercise>
+
+Completa «Toma un medio» para un real entre cero y uno.
+
+<details>
+<summary>Pista</summary>
+
+Comprueba los tres requisitos.
+
+</details>
+
+<Exercise>
+
+$1/2\in\mathbb R$ y $0<1/2<1$, así que es un testigo permitido. No se afirma unicidad.
+
+</Exercise>
+
+Corrige «Elige un entero de cuadrado $25$; por tanto existe».
+
+<details>
+<summary>Pista</summary>
+
+Nombra un candidato sin suponer que sirve.
+
+</details>
+
+<Exercise>
+
+Elige cinco, que es entero, y verifica $5\cdot5=25$. La versión original suponía la conclusión al dar por disponible una elección exitosa.
+
+</Exercise>
+
+Construye un entero que cumpla $n>4$ y $n<8$. ¿Es única la respuesta?
+
+<details>
+<summary>Pista</summary>
+
+Evita los extremos.
+
+</details>
+
+<Exercise>
+
+Seis es entero y $4<6<8$. Cinco y siete también sirven. Construir explícitamente no exige unicidad.
+
+</Exercise>
+
+¿Por qué sirve $x+1$ para todo real? ¿Por qué no basta probar en cero?
+
+<details>
+<summary>Pista</summary>
+
+Usa clausura y positividad.
+
+</details>
+
+<Exercise>
+
+La suma real da un resultado real y sumar uno positivo aumenta cualquier entrada. Probar en cero cubre una sola entrada.
+
+</Exercise>
+
+Más tarde, escribe otra prueba de cuatro frases e identifica la función de cada una.
+
+## Lectura en voz alta
+
+**EN:** Exhibit a candidate, check membership and the full property, then conclude existence.
+
+**DE:** Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
+
+**ES:** Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.

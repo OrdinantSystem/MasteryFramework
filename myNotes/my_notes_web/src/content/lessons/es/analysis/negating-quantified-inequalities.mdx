@@ -1,0 +1,94 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negar desigualdades cuantificadas"
+navTitle: "Negar desigualdades cuantificadas"
+description: "Negar desigualdades cuantificadas."
+order: 35
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-quantified-statements-step-by-step", "negating-order-comparisons", "building-truth-tables"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+Una promesa exige que una lectura esté estrictamente a menos de una unidad del objetivo. Una lectura exactamente a una unidad la incumple. Decir «a más de una unidad» omitiría ese fallo en la frontera. Antes de trabajar con cuantificadores, identifica qué lado incluye la igualdad.
+
+## El orden real separa todos los casos
+
+Para reales $x,c$, se cumple exactamente uno de menor, igual y mayor. Negar conserva precisamente los casos excluidos por la comparación original. Quitar menor deja igual o mayor; quitar menor-o-igual deja solo mayor. Intercambiar mayor y menor da las otras dos reglas. Esto usa el orden total habitual de los reales, no solo la sintaxis de cuantificadores.
+
+$$
+\begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
+$$
+
+En igualdad, exactamente una de la comparación original y su negación es verdadera. Negar $x=c$ da $x\ne c$, no una dirección elegida; negar $x\ne c$ da igualdad. La [lección sobre negar comparaciones](../negating-order-comparisons/) desarrolla estas fronteras por separado.
+
+## Un ejemplo cuantificado de frontera
+
+$$
+\neg(\forall x>0\;(x<1))\ \Longleftrightarrow\ \exists x>0\;(x\ge1).
+$$
+
+Que todo real positivo sea menor que uno es falso. Uno es un contraejemplo permitido situado exactamente en la frontera. Cero no está permitido. Cambiamos todo por alguno, conservamos reales positivos y complementamos la comparación interior. Otro ejemplo como dos es innecesario: uno ya demuestra la negación.
+
+## Cuando el predicado es condicional
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+| $A$ | $B$ | $A\Rightarrow B$ | $\neg(A\Rightarrow B)$ | $A\land\neg B$ |
+| --- | --- | --- | --- | --- |
+| verdadera | verdadera | verdadera | falsa | falsa |
+| verdadera | falsa | falsa | verdadera | verdadera |
+| falsa | verdadera | verdadera | falsa | falsa |
+| falsa | falsa | verdadera | falsa | falsa |
+
+Las dos últimas columnas coinciden en los cuatro casos posibles, demostrando la equivalencia. Una hipótesis falsa nunca refuta el condicional. En la aplicación a sucesiones, la hipótesis dirá que un índice está en una cola propuesta. El fallo debe estar dentro de esa cola e incumplir la conclusión de distancia. Ambas son comprobaciones del mismo índice.
+
+### Práctica
+
+Niega $x\le3$ y comprueba ambas afirmaciones en $x=3$.
+
+<details>
+<summary>Pista</summary>
+
+El original incluye igualdad.
+
+</details>
+
+<Exercise>
+
+La negación es $x>3$. En tres el original es verdadero y la negación falsa; por debajo sigue siendo verdadero el original y por encima solo la negación.
+
+</Exercise>
+
+¿Por qué un error grande anterior al umbral propuesto no refuta esa condición de cola?
+
+<details>
+<summary>Pista</summary>
+
+Identifica la hipótesis del condicional.
+
+</details>
+
+<Exercise>
+
+Antes del umbral la hipótesis es falsa y el condicional verdadero cualquiera que sea la distancia. Exige un índice al menos igual al umbral y el fallo de la cota estricta.
+
+</Exercise>
+
+Más tarde, reproduce los cuatro complementos y las cuatro filas del condicional antes de derivar la negación de convergencia completa.
+
+## Lectura en voz alta
+
+**EN:** Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
+
+**DE:** Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
+
+**ES:** No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.

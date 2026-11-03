@@ -1,0 +1,120 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Zeugen zählen"
+navTitle: "Zeugen zählen"
+description: "Zeugen zählen."
+order: 26
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-uniqueness", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md#05 · More than one possible witness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Karten mit sieben und neun bezeugen beide die Existenz einer Karte mit ungerader Zahl. Sieben für einen Beweis zu wählen entfernt neun nicht. Wie viel Begründung nötig ist, hängt von der Aufgabe ab: einen, zwei verschiedene oder alle Zeugen angeben.
+
+Ein geprüftes Objekt beweist Existenz. Zwei verschiedene geprüfte Objekte widerlegen höchstens eines, ohne genau zwei zu behaupten. Eine vollständige Liste verlangt Prüfung jedes Eintrags und Ausschluss aller nicht aufgeführten Objekte. Bereichsgröße ist nicht Zeugenanzahl: Ein unendlicher Bereich kann null, einen, endlich oder unendlich viele Erfolge enthalten.
+
+$$
+\{n\in\mathbb Z:4<n<8\}=\{5,6,7\}.
+$$
+
+Jede aufgeführte Zahl ist ganzzahlig und erfüllt beide Schranken. Umgekehrt ist eine ganze Zahl über vier mindestens fünf und unter acht höchstens sieben. Jeder Zeuge ist also fünf, sechs oder sieben. Erst dieses Ausschlussargument mit dem Abstand ganzer Zahlen macht die Liste vollständig. Drei Erfolge allein würden nicht genügen.
+
+## Ein anderer Bereich verändert die Anzahl
+
+Über den reellen Zahlen passen auch $5.5$ und $6.25$. Es gibt unendlich viele Zeugen. Beginne mit fünf und sechs und füge ihren Mittelpunkt ein. Füge danach wiederholt den Mittelpunkt zwischen fünf und dem zuletzt eingefügten Wert ein. Jeder neue Wert ist reell, über fünf und unter seinem Vorgänger, also weiterhin zwischen vier und acht. Er unterscheidet sich von fünf und allen früher eingefügten Werten. Nach beliebig vielen Schritten kann ein weiterer neuer Zeuge folgen. Das nutzt gewöhnliche Mittelpunktrechnung und Ordnung, keinen Konvergenzsatz.
+
+Verschiedene Ausdrücke müssen keine verschiedenen Objekte sein: $1/2=2/4$. Zwei physische Karten mit derselben Sieben sind dagegen verschiedene Karten, aber nur ein verschiedener Zahlenwert. Sage, was du zählst. Ein leeres Tablett hat keine Kandidaten; ein Tablett nur mit geraden Zahlen hat Kandidaten, aber keinen ungeraden Erfolg. In beiden Fällen ist Existenz einer ungeraden Karte falsch. Eine All-Aussage über das leere Tablett bleibt wahr, ohne einen Zeugen zu liefern.
+
+### Übung
+
+Begründe für ganzzahliges $4<n<8$ einen, zwei verschiedene und alle Zeugen.
+
+<details>
+<summary>Hinweis</summary>
+
+Nur die letzte Aufgabe braucht Ausschluss.
+
+</details>
+
+<Exercise>
+
+Fünf beweist Existenz; fünf und sechs widerlegen Eindeutigkeit. Alle sind fünf, sechs, sieben, weil jede passende ganze Zahl mindestens fünf und höchstens sieben ist.
+
+</Exercise>
+
+Liefern $1/2$ und $2/4$ zwei Zeugen für $2x=1$ über den reellen Zahlen?
+
+<details>
+<summary>Hinweis</summary>
+
+Zähle Werte, nicht Schreibweisen.
+
+</details>
+
+<Exercise>
+
+Nach Prüfung der Gleichung belegen sie Existenz, benennen aber einen Wert und widerlegen daher keine Eindeutigkeit. Allein daraus folgt auch kein Eindeutigkeitsbeweis.
+
+</Exercise>
+
+Zwei getrennte Karten tragen sieben. Gibt es zwei ungerade Karten und zwei verschiedene Zahlenwerte?
+
+<details>
+<summary>Hinweis</summary>
+
+Lege die Objekte fest.
+
+</details>
+
+<Exercise>
+
+Es gibt zwei verschiedene Karten mit ungerader Zahl, aber nur einen verschiedenen ganzzahligen Wert.
+
+</Exercise>
+
+Vergleiche ein leeres und ein rein gerades Tablett hinsichtlich einer ungeraden Karte.
+
+<details>
+<summary>Hinweis</summary>
+
+Keine Kandidaten ist nicht keine Erfolge.
+
+</details>
+
+<Exercise>
+
+Beide Behauptungen sind falsch. Im ersten Fall fehlen Objekte; im zweiten scheitert jedes vorhandene Objekt an der Bedingung.
+
+</Exercise>
+
+Eine Liste nennt fünf, sechs und sieben als alle reellen Zeugen zwischen vier und acht. Prüfe sie.
+
+<details>
+<summary>Hinweis</summary>
+
+Füge einen Mittelpunkt ein.
+
+</details>
+
+<Exercise>
+
+Fünfeinhalb ist ein fehlender reeller Zeuge, also fehlt Vollständigkeit. Fünf beweist bereits Existenz.
+
+</Exercise>
+
+Konstruiere später Beispiele mit null, einem und mehreren Erfolgen und begründe jeweils die passende Anzahl.
+
+## Laut lesen
+
+**EN:** One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.
+
+**DE:** Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.
+
+**ES:** Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.

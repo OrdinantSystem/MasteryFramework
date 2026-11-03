@@ -1,0 +1,132 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Folgenkonvergenz beweisen"
+navTitle: "Folgenkonvergenz beweisen"
+description: "Folgenkonvergenz beweisen."
+order: 49
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-sequence-convergence", "definitions-assumptions-results"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+Eine Folge, die überall drei ist, sollte gegen drei konvergieren. Der Beweis ist kurz, doch jeder Quantor hat eine Aufgabe. Fixiere Folge und Ziel vor der beliebigen Toleranz; wähle nicht für jedes Glied ein neues Ziel.
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+## Der vollständige Beweis für eine konstante Folge
+
+Sei $a_n=3$ für jedes $n\in\mathbb N$ und $L=3$. Sei $\varepsilon$ eine beliebige positive reelle Zahl. Wähle $N=1$, eine positive natürliche Zahl. Nimm nun ein beliebiges natürliches $n\ge N$. Die Folgenregel ergibt $a_n=3$, also:
+
+$$
+|a_n-3|=|3-3|=|0|=0<\varepsilon.
+$$
+
+Die erste Gleichheit nutzt die Folgenregel, die nächste Subtraktion gleicher reeller Zahlen, die nächste den Betrag von null und die letzte strenge Ungleichung die positive beliebige Toleranz. Jeder geprüfte Index passt. Die Toleranz war beliebig, also gilt die Definition. Weder Unbeschränktheit natürlicher Zahlen noch Dreiecksungleichung wurden benutzt.
+
+## Wahlabhängigkeit und Beweisabhängigkeit
+
+Wahlabhängigkeit fragt, welche Information $N$ nutzen darf: Toleranz und festen Kontext, nicht das spätere universelle $n$. Beweisabhängigkeit fragt, welche Tatsachen die Abstandsschätzung begründen. Richtige Reihenfolge repariert keine falsche Rechnung, richtige Rechnung keine zu späte Zeugenwahl. Der konstante Startindex darf die Toleranz ignorieren, weil er für alle passt.
+
+Für die ersten beiden Glieder neun und danach immer drei wähle für jede positive Toleranz $N=3$. Jedes $n\ge3$ hat Glied drei und Abstand null. Frühe Ausnahmen liegen außerhalb des geforderten Endstücks. Passt $N$ und ist $M\ge N$ natürlich, dann gilt für jedes $n\ge M$ auch $n\ge N$, also passt $M$ ebenfalls. Minimalität ist unnötig.
+
+<Note title="Ein später Startindex ändert die Aussage">
+
+$N=n+1$ erst nach dem Prüfindex zu wählen setzt diesen vor seinen neuen Startindex. Die Implikation gilt dort leer, aber ein einzelner Startindex für alle späteren Indizes wurde nie geliefert. Der Fehler ist nicht seine Größe, sondern die Änderung mit einer verbotenen späteren Eingabe.
+
+</Note>
+
+### Übung
+
+Beweise Konvergenz der konstanten Folge minus vier gegen minus vier.
+
+<details>
+<summary>Hinweis</summary>
+
+Der Abstand zählt, nicht das Vorzeichen des Glieds.
+
+</details>
+
+<Exercise>
+
+Für beliebiges $\varepsilon>0$ wähle $N=1$. Für jedes $n\ge1$ gilt $|-4-(-4)|=0<\varepsilon$. Folgenregel, Subtraktion, Betrag von null und Positivität begründen alle Schritte.
+
+</Exercise>
+
+Erstes Glied hundert, danach nur null: Beweise Konvergenz gegen null. Muss der Startindex mit der Toleranz wechseln?
+
+<details>
+<summary>Hinweis</summary>
+
+Beginne nach der Ausnahme.
+
+</details>
+
+<Exercise>
+
+Für jedes $\varepsilon>0$ wähle $N=2$. Jedes $n\ge2$ hat Wert und Abstand null, kleiner als $\varepsilon$. Derselbe Startindex passt immer.
+
+</Exercise>
+
+Repariere „Nach Toleranz und Prüfindex wähle $N=n+1$“.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte einen Zeugen für alle Tests fest.
+
+</details>
+
+<Exercise>
+
+Wähle einen erlaubten Startindex vor dem beliebigen Prüfindex und beweise dann die ganze Endstückschätzung. Jeden Prüfindex aus dem Endstück zu schieben beweist eine andere Quantorenreihenfolge.
+
+</Exercise>
+
+Welche zusätzliche Tatsache braucht der optionale Kehrwertbeweis, und wird sie hier benötigt?
+
+<details>
+<summary>Hinweis</summary>
+
+Eine natürliche Zahl jenseits jeder reellen Schranke braucht Begründung.
+
+</details>
+
+<Exercise>
+
+Die [optionale Erweiterung](../reciprocal-sequence-convergence/) nimmt ausdrücklich die archimedische Eigenschaft für den Startindex und die Ordnung positiver Kehrwerte für die Schätzung an. Der konstante Beweis wählt nur die bekannte natürliche Eins und braucht jene Eigenschaft nicht.
+
+</Exercise>
+
+Konvergiert die Nullfolge gegen Ziel eins? Zeigt das, dass sie keinen reellen Grenzwert hat?
+
+<details>
+<summary>Hinweis</summary>
+
+Vergleiche dieselben Glieder mit Ziel null.
+
+</details>
+
+<Exercise>
+
+Jedes Glied hat Abstand eins zu Ziel eins; Toleranz $1/2$ scheitert auf jedem Endstück. Für Ziel null passt jede positive Toleranz mit $N=1$. Scheitern an einem Ziel ist nicht Scheitern an allen.
+
+</Exercise>
+
+Rekonstruiere später den ganzen Beweis und begründe jede Gleichheit.
+
+## Laut lesen
+
+**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
+
+**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
+
+**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.

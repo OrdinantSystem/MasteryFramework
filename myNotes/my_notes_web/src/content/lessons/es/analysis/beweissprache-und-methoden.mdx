@@ -3,11 +3,17 @@ course: "analysis"
 chapter: "analysis-proof"
 sourceId: "analysis-concepts-3"
 sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"
 locale: "es"
 title: "Lenguaje y estructura de una demostración"
 navTitle: "Lenguaje y estructura de una demostración"
 description: "Justifica cada paso y precisa el alcance de cada afirmación."
-order: 7
+order: 38
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -30,6 +36,18 @@ Una definición fija un significado. Un axioma se acepta como punto de partida. 
 ## Un pequeño proceso
 
 Escribe la afirmación exacta y el dominio. Desarrolla las definiciones. Elige un método. Justifica cada transición. Indica qué se ha demostrado. Para $\exists n \in  \mathbb{N} : n^2 = 9$ basta el testigo $n = 3$. Para $\forall n \in  \mathbb{N} : n^2 > n$ basta el contraejemplo $n = 1$. Ninguna tarea requiere una deducción larga. No uses la propia afirmación para justificar un paso intermedio: sería circular.
+
+## Arbitrario no significa muestra representativa
+
+Para probar $\forall x\in\mathbb R\;(x+2>x)$, lee «para todo real equis, equis más dos supera equis». Fija un real arbitrario $x$. A partir de $2>0$, suma $x$ en ambos lados y obtén $x+2>x+0=x$. La suma conserva el orden; sumar cero no cambia nada. Ningún paso exige positividad, ser entero o un valor particular de $x$, así que el argumento cubre toda entrada real.
+
+Para un condicional universal, supón temporalmente toda la hipótesis y deduce la conclusión. Las entradas con hipótesis falsa ya hacen verdadero el condicional. Esto no afirma que toda entrada cumpla la hipótesis ni que exista una entrada que la cumpla. En una colección restringida vacía no puede fallar ningún miembro. También se puede razonar bajo una hipótesis temporal de pertenencia y descargarla sin afirmar que la colección tenga un miembro. Véanse [dominios](../universal-statements-and-domains/) y [contraejemplos](../counterexamples/) para las comprobaciones completas.
+
+<Exercise question="Una prueba sobre todo real empieza con un real positivo arbitrario y después comprueba siete. ¿Qué ha establecido y cómo debe tratar una hipótesis de positividad que sea realmente necesaria?">
+
+La comprobación numérica cubre solo siete. Un argumento por lo demás general bajo positividad cubre a lo sumo los reales positivos, no cero ni negativos. Para el enunciado original sobre todos los reales, evita esa hipótesis o añade casos justificados para cero y negativos. Otra opción es enunciar y probar un teorema explícitamente restringido, sin presentarlo como el original. Llamar arbitrario a un símbolo no deshace una restricción posterior.
+
+</Exercise>
 
 ## De una definición a una prueba
 

@@ -1,0 +1,73 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-equivalence"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/01 If and Only If.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/03 Equivalent Conditions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md"]
+title: "Bicondicionales y condiciones equivalentes"
+navTitle: "Bicondicionales y condiciones equivalentes"
+description: "Leer condiciones necesarias y suficientes y demostrar coincidencia en el ámbito adecuado."
+order: 17
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-conditionals", "material-implication-and-vacuity"]
+thumbnail: "parity"
+---
+
+«Conserva una tarjeta **si** su etiqueta es dos» exige conservar todas las tarjetas con dos, pero permite conservar otras. «Conserva una tarjeta **solo si** su etiqueta es dos» prohíbe conservar otras etiquetas, pero permite rechazarlas todas. Juntas, las reglas exigen conservar exactamente las tarjetas con dos.
+
+## Si, solo si y ambas direcciones
+
+Para proposiciones $A$ y $B$:
+
+- «$A$ si $B$» significa $B\Rightarrow A$. Se lee «si be, entonces a». $B$ es **suficiente** para $A$: la garantiza.
+- «$A$ solo si $B$» significa $A\Rightarrow B$. Se lee «si a, entonces be». $B$ es **necesaria** para $A$: $A$ no puede cumplirse sin ella.
+
+La regla formal de un club «se admite solo a quien tenga entrada» hace la entrada necesaria, no suficiente. No promete admitir a todos los que la tengan. Añadir «tener entrada implica ser admitido» la haría también suficiente. Son reglas estipuladas, no afirmaciones sobre políticas reales de admisión.
+
+El **bicondicional** $A\Leftrightarrow B$ se lee «a si y solo si be»; en inglés se abrevia **iff**. Su definición es la coincidencia de valores de verdad, incluidos dos valores falsos:
+
+| $A$ | $B$ | $A\Rightarrow B$ | $B\Rightarrow A$ | $A\Leftrightarrow B$ |
+| --- | --- | --- | --- | --- |
+| $1$ | $1$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ |
+| $0$ | $1$ | $1$ | $0$ | $0$ |
+| $0$ | $0$ | $1$ | $1$ | $1$ |
+
+$1$ significa verdadero y $0$ falso. La tabla demuestra que el bicondicional coincide con $(A\Rightarrow B)\land(B\Rightarrow A)$ en toda fila. La ida excluye verdadera/falsa; la vuelta excluye falsa/verdadera. Son todos los desacuerdos posibles. A la inversa, valores coincidentes hacen verdaderas ambas flechas. Por eso una prueba de equivalencia necesita las dos direcciones.
+
+En particular, $(0=1)\Leftrightarrow(2=3)$ es verdadero, mientras que la conjunción de esas igualdades es falsa. Coincidir no afirma ninguna de las partes.
+
+## Empezar de nuevo para la vuelta
+
+Para todo real $x$,
+
+$$(x+1=3)\Leftrightarrow(x=2).$$
+
+Se lee: «Equis más uno es igual a tres si y solo si equis es igual a dos». Fija un real arbitrario $x$. **Ida:** supón $x+1=3$ y resta uno en ambos lados para obtener $x=2$. **Vuelta:** parte ahora de $x=2$ y suma uno para obtener $x+1=3$. Sumar y restar conservan la igualdad y se deshacen mutuamente; el razonamiento vale para cualquier entrada real.
+
+Asumir las dos ecuaciones al principio eludiría ambas obligaciones. La lógica indica qué direcciones hacen falta; la aritmética demuestra esas direcciones para estas ecuaciones. En cero ambas son falsas, algo totalmente compatible con su equivalencia.
+
+## Tres ámbitos de coincidencia
+
+Un bicondicional verdadero en una entrada da **coincidencia en un caso**. En $(x>5)\Leftrightarrow(x>2)$, seis y cero dan coincidencia, pero tres no. El bicondicional no liga $x$ ni afirma tácitamente «para todo».
+
+La **equivalencia lógica proposicional**, escrita $F\equiv G$, exige coincidencia bajo toda asignación a las letras proposicionales atómicas. Una letra repetida conserva el mismo valor asignado. Por ejemplo, $(P\land Q)\equiv(Q\land P)$: ambas son verdaderas exactamente cuando ambas letras lo son, y falsas en los demás casos. Letras independientes $P$ y $Q$ no son lógicamente equivalentes porque una fila las haga ambas verdaderas.
+
+Las **condiciones equivalentes en un dominio** coinciden en toda entrada permitida y tienen el mismo conjunto de soluciones. Nuestra prueba con ecuaciones establece esto en los reales usando aritmética. No es una ley proposicional irrestricta sobre dos letras independientes. Los signos iguales dentro de las ecuaciones comparan números; $\Leftrightarrow$ compara valores de verdad. Algunas hojas de álgebra de Boole usan $=$ para la equivalencia lógica por convenio; hay que leer ese convenio sin confundir igualdad numérica y lógica.
+
+El dominio importa. En todos los reales, $x>0$ y $x\ge0$ difieren en cero. En los reales no nulos coinciden: positivo implica no negativo, y un real no negativo distinto de cero debe ser positivo. La prueba restringida no establece la afirmación sobre todos los reales.
+
+<Exercise question="Una regla permite conservar una tarjeta solo si está etiquetada con dos. ¿Se conserva necesariamente una tarjeta con dos? Indica la implicación ausente. Después demuestra $(x-2=3)\Leftrightarrow(x=5)$ para todo real $x$, iniciando cada dirección con su propia hipótesis.">
+
+Se puede rechazar la tarjeta con dos; falta etiquetada-con-dos implica conservada. Para las ecuaciones, supón $x-2=3$ y suma dos para obtener $x=5$. Reinicia desde $x=5$ y resta dos para obtener $x-2=3$. Ambas operaciones conservan la igualdad para un real arbitrario $x$, así que ninguno de los desacuerdos es posible. Es una prueba aritmética, no solo un resultado de tabla.
+
+</Exercise>
+
+<Exercise question="Alguien demuestra superar-cinco implica superar-dos y llama equivalentes a las condiciones. ¿Qué se conserva del argumento? Explica también por qué la equivalencia de dos ecuaciones no las hace verdaderas para toda entrada.">
+
+La ida sigue siendo válida por el orden. Tres refuta solo la vuelta ausente y, por tanto, la equivalencia afirmada. Para $x+1=3$ y $x=2$, cero hace falsas ambas ecuaciones. Sus conjuntos de soluciones coinciden, pero ninguno contiene todos los reales.
+
+</Exercise>

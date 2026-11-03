@@ -1,0 +1,135 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negating quantified statements step by step"
+navTitle: "Negating quantified statements step by step"
+description: "Negating quantified statements step by step."
+order: 34
+kind: "recap"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-nested-statements", "negating-combined-conditions", "reading-conditionals", "biconditionals-and-equivalent-conditions"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/04 Switching Quantifier Types.md#04 Switching Quantifier Types", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+“Not every applicant has a document passing every check” says that some applicant has no document passing them all. For that fixed applicant, every document fails at least one check. Changing three quantifier words together can hide which object stays fixed. Follow the parentheses from the outside inward.
+
+Let $A$ be applicants, $B$ documents, $C$ checks. Let $R(x,y,z)$ mean document $y$ passes check $z$ for applicant $x$. All three domains are fixed here. Begin with the full negation, not an edited unnegated claim:
+
+$$
+\begin{aligned}&\neg(\forall x\in A\;\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\neg(\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\neg(\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\exists z\in C\;\neg R(x,y,z).\end{aligned}
+$$
+
+The first dual law supplies a failing applicant; the next denies existence of a successful document for that applicant; the final law supplies a failing check for each document. The applicant stays fixed. The check may depend on the document. No one check needs to defeat all documents.
+
+## Why each replacement is legitimate
+
+Treat the whole inner claim as one predicate of the current variable. The dual law preserves its truth value for every assignment of already fixed outer variables. Therefore leaving the surrounding quantifiers unchanged preserves their truth values too. Repeating this gives an equivalence chain. All its lines can be false: it identifies failure without proving failure occurs. To prove the original false, establish the final formula separately.
+
+## A method that respects scope
+
+1. Parenthesize the exact claim being denied.
+2. Record the ordered variables, their domains and the fixed parameters.
+3. Cross the next quantifier only: switch its type and negate the whole remainder.
+4. Repeat, preserving positions and domains.
+5. At a connective, apply its own rule before proceeding into the affected parts. Negate the final predicate too.
+6. Read back the result and audit which witnesses may use which earlier information.
+
+Do not flip quantifiers outside the negation’s actual scope. A free variable remains free. A shelf-dependent book domain stays attached to its shelf. “Positive real” remains positive real. These checks prevent a memorized prefix trick from silently changing the question.
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+A signed document fails the promise “if signed, then passes” exactly when it is signed and does not pass. An unsigned document cannot refute the implication. This is why the original hypothesis remains true in a counterexample.
+
+### Practice
+
+Reconstruct the applicant denial one quantifier at a time.
+
+<details>
+<summary>Hint</summary>
+
+Fix the applicant first.
+
+</details>
+
+<Exercise>
+
+There is an applicant with no document passing all checks; for that applicant, every document has a check it fails. Thus the order is some applicant, every document, some failed check.
+
+</Exercise>
+
+A positive-real domain is changed to nonpositive reals in a proposed negation. Diagnose.
+
+<details>
+<summary>Hint</summary>
+
+Track the domain ledger.
+
+</details>
+
+<Exercise>
+
+The domain has been complemented, which neither dual law permits. Negate the predicate over the same allowed collection.
+
+</Exercise>
+
+Negate every applicant is admitted or certified, with inclusive or.
+
+<details>
+<summary>Hint</summary>
+
+A disjunction fails only if both parts fail.
+
+</details>
+
+<Exercise>
+
+Some applicant is neither admitted nor certified. Switching only every to some leaves the predicate unnegated and is incomplete.
+
+</Exercise>
+
+Negate every document passes if signed. Can an unsigned document refute it?
+
+<details>
+<summary>Hint</summary>
+
+Require a true hypothesis.
+
+</details>
+
+<Exercise>
+
+Some document is signed and fails. No unsigned document refutes the promise, regardless of its result.
+
+</Exercise>
+
+A colleague says equivalence steps alone prove the original false. What is missing?
+
+<details>
+<summary>Hint</summary>
+
+An entire equivalence chain may be false.
+
+</details>
+
+<Exercise>
+
+One must prove the final failure condition: provide its existential witnesses and cover all universal cases.
+
+</Exercise>
+
+Later, reconstruct the six-step method and explain why substitution inside outer quantifiers preserves equivalence.
+
+## Read aloud
+
+**EN:** There is an applicant such that every document has a check it fails.
+
+**DE:** Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.
+
+**ES:** Existe un solicitante tal que todo documento tiene una comprobación que falla.

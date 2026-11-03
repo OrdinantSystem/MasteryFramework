@@ -1,0 +1,71 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/04 When an Implication Is False.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/06 Counterexamples.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Counterexamples to Universal Claims.md"]
+title: "Gegenbeispiele"
+navTitle: "Gegenbeispiele"
+description: "Die genaue Allaussage durch einen vollständig geprüften erlaubten Fehler widerlegen."
+order: 22
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "reading-conditionals", "negating-order-comparisons"]
+thumbnail: "proof"
+---
+
+Zwei und minus zwei haben positive Quadrate. Null nicht: $0^2=0$, und null ist nicht strikt positiv. Damit ist „Jedes reelle Quadrat ist strikt positiv“ falsch, egal wie viele Beispiele ungleich null bestehen. Die Aussage umfasste auch null.
+
+## Warum ein Fehler genügt
+
+Ein **Gegenbeispiel** zu $\forall x\in D\;P(x)$ ist ein Mitglied von $D$, bei dem das Prädikat sinnvoll und falsch ist. Lies die Formel als „Jedes $x$ in $D$ erfüllt $P$“. Wäre die Aussage wahr, verlangte sie $P$ auch beim vorgeschlagenen Mitglied; dessen geprüfter Fehler widerspricht ihr. Das ist keine Abstimmung und behauptet nicht, dass jedes Mitglied scheitert.
+
+Prüfe bei einer universellen Implikation drei Dinge am **selben Objekt**: Zugehörigkeit zum Bereich, Wahrheit der ganzen Voraussetzung und Falschheit der ganzen Folgerung. Der Grund folgt direkt aus
+
+$$\neg(P\Rightarrow Q)\equiv(P\land\neg Q).$$
+
+Gelesen: „Die Negation von Wenn $P$, dann $Q$ ist äquivalent zu $P$ und nicht $Q$.“ Sind beide Teile wahr, ist die Implikation wahr und beide Seiten hier falsch. Ist $P$ wahr und $Q$ falsch, sind beide Seiten wahr. Ist $P$ falsch, ist die Implikation wahr und ihre Negation falsch; die rechte Konjunktion ist unabhängig von $Q$ ebenfalls falsch. Das sind alle klassischen Fälle. Die Inverse $\neg P\Rightarrow\neg Q$ ist nicht diese Negation.
+
+## Den ganzen Fehlerbereich finden
+
+Betrachte
+
+$$\forall x\in\mathbb R\;((x>2)\Rightarrow(x>5)).$$
+
+Gelesen: „Für jede reelle Zahl $x$ gilt: Wenn $x$ größer als zwei ist, ist $x$ größer als fünf.“ Ein Fehler verlangt $x>2$ und $x\le5$; **alle** Gegenbeispiele erfüllen also $2<x\le5$.
+
+| Kandidat | Voraussetzung $x>2$ | Folgerung $x>5$ | Gegenbeispiel? |
+| --- | --- | --- | --- |
+| $0$ | Falsch | Falsch | Nein: falsche Voraussetzung |
+| $2$ | Falsch | Falsch | Nein: strikte untere Grenze |
+| $3$ | Wahr | Falsch | Ja |
+| $5$ | Wahr | Falsch | Ja: Gleichheit verletzt die Folgerung |
+| $7$ | Wahr | Wahr | Nein: Folgerung erfüllt |
+
+Zwei ist ausgeschlossen, fünf eingeschlossen. Eine falsche Folgerung allein genügt nicht. Ebenso wenig darf man sieben für eine wahre Voraussetzung und null für eine falsche Folgerung nehmen: Das sind zwei Objekte, kein gemeinsamer Fehler. Bei der entgegengesetzten Regel Über-fünf impliziert Über-zwei ist drei kein Gegenbeispiel; es widerlegt nur die Umkehrung.
+
+## Keine zusammengesetzte Anforderung weglassen
+
+Für reelle Eingaben scheitert $((x>0)\land(x<2))\Rightarrow(x^2>1)$ bei eins. Eins ist reell, positiv und kleiner als zwei; sein Quadrat ist gleich eins statt größer. Null scheitert an der Positivität, drei an der oberen Schranke. Keiner der beiden Werte widerlegt die Implikation, auch wenn man nur einen günstigen Teil der Voraussetzung betrachtet.
+
+Das engere Intervallbeispiel $0<x<1\Rightarrow x<1/2$ scheitert bei $3/4$ und bei $1/2$. Beide erfüllen die ganze Voraussetzung; beim zweiten verletzt Gleichheit die strikte Folgerung. Zwei scheitert an der oberen Voraussetzung und ist kein Gegenbeispiel.
+
+## Suche, Prüfung und Reparatur
+
+Null, kleine ganze Zahlen, negative Werte und Randpunkte können die Suche leiten, sofern der Bereich sie erlaubt. Das Argument ist die anschließende Prüfung, nicht die Heuristik. Eine erfolglose Suche in einer endlichen Stichprobe beweist keine Aussage über unendlich viele Eingaben. Ein undefinierter Ausdruck ist nicht das benötigte falsche Prädikat; repariere zuerst Bereich oder Interpretation. Freie Parameter müssen während der Prüfung feste Werte behalten.
+
+Null widerlegt die strikte Positivität aller reellen Quadrate, beweist aber keinen Ersatzsatz. Für den geänderten Satz über reelle Zahlen **ungleich null** braucht es einen neuen Beweis: Eine positive Zahl mal sich selbst ist positiv; eine negative mal sich selbst ist nach der Vorzeichenregel positiv. Diese Fälle erschöpfen die reellen Zahlen ungleich null. Nimmt man den Nullfall hinzu, folgt auch die Nichtnegativität aller reellen Quadrate. Kein Satz folgt allein aus dem Fund von null.
+
+<Exercise question="Jemand schlägt $-1/2$ gegen Jede-ganze-Zahl-hat-Quadrat-mindestens-eins vor. Prüfe den Kandidaten und widerlege denselben Satz korrekt. Macht ein ungültiger Kandidat den Satz wahr?">
+
+Der Bruch ist nicht ganzzahlig und liegt außerhalb des Bereichs. Null ist ganzzahlig und $0^2=0<1$; es widerlegt den Satz. Ein ungültiges vorgeschlagenes Gegenbeispiel beweist nichts in irgendeiner Richtung; der Satz kann weiterhin falsch sein.
+
+</Exercise>
+
+<Exercise question="Erfinde eine universelle Implikation mit zwei Voraussetzungen, einem echten Gegenbeispiel und einem verlockenden ungültigen Kandidaten. Prüfe jede Anforderung und erkläre, warum Nicht-alle nicht Keines bedeutet.">
+
+Für jedes reelle $x$ sei behauptet: $1<x<4\Rightarrow x>2$. Der Kandidat $x=2$ ist reell, größer als eins und kleiner als vier, aber nicht strikt größer als zwei. Er widerlegt die Aussage. Null scheitert an der unteren Voraussetzung, fünf an der oberen; beide sind keine Gegenbeispiele. Drei erfüllt Voraussetzung und Folgerung. Die Widerlegung macht also nicht jeden passenden Einzelfall falsch.
+
+</Exercise>

@@ -1,0 +1,71 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]
+locale: "en"
+title: "Order comparisons and endpoints"
+navTitle: "Order comparisons and endpoints"
+description: "Read strict and non-strict bounds without losing the equality case."
+order: 7
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["equality-and-equations", "logische-verknuepfungen"]
+thumbnail: "logic"
+---
+
+“At most three books” permits exactly three. “Fewer than three books” does not. A boundary can change the truth of a comparison, even when all the smaller examples agree. Here we use the usual order of real numbers; no order on arbitrary objects or complex numbers is being introduced.
+
+## Comparisons and their readings
+
+| | EN | DE | ES |
+|---|---|---|---|
+| $a<b$ | a is strictly less than b | a ist kleiner als b | a es estrictamente menor que be |
+| $a>b$ | a is strictly greater than b | a ist größer als b | a es estrictamente mayor que be |
+| $a\le b$ | a is less than or equal to b | a ist kleiner oder gleich b | a es menor o igual que be |
+| $a\ge b$ | a is greater than or equal to b | a ist größer oder gleich b | a es mayor o igual que be |
+| $a\ne b$ | a is not equal to b | a ist ungleich b | a es distinto de be |
+
+The strict comparisons $<$ and $>$ exclude equality. The non-strict comparisons $\le$ and $\ge$ include it. Thus $0\le0$ is true, but $0<0$ is false. Writing $a>b$ says the same thing as $b<a$: reverse the two expressions as well as the sign.
+
+The precise meaning of $a\le b$ is $(a<b)\lor(a=b)$, with inclusive “or.” For $a\ge b$, either $a>b$ or $a=b$. Unequal values need not have a particular direction: $0\ne1$ is true, but $0>1$ is false. Equality itself can be meaningful even where no order has been specified.
+
+## Two bounds concern one input
+
+$$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
+
+The chain requires **both** comparisons for the same $x$. It excludes the lower endpoint and includes the upper endpoint, assuming $a<b$. Passing only one test does not suffice.
+
+**EN:** “a is strictly less than x and x is less than or equal to b.” **DE:** „a ist kleiner als x und x ist kleiner oder gleich b“. **ES:** «a es estrictamente menor que equis y equis es menor o igual que be».
+
+“At least a” means $x\ge a$; “at most b” means $x\le b$. Both allow equality. “Strictly between a and b” means $a<x<b$, excluding both endpoints. “Between” without an endpoint convention can be ambiguous; ask which endpoints count rather than silently choosing.
+
+For example, $0\le x<1$ allows zero and excludes one. In interval notation the same condition is $x\in[0,1)$: a square bracket includes an endpoint and a round parenthesis excludes it. Likewise $0<x\le2$ describes $x\in(0,2]$. Some texts use outward-facing square brackets for excluded endpoints; check their convention. As written, these conditions remain open. A value supplied by context lets us evaluate them but leaves their variable occurrences free; a quantifier binds $x$ within its scope in the formula.
+
+## Endpoint checks
+
+Translate “a real number is at least zero and at most one,” and compare it with “strictly between zero and one.” Check $0$, $1/2$, and $1$.
+
+<details>
+<summary>Hint</summary>
+
+Write both comparisons separately. Decide whether each allows equality before joining them.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+The first is $0\le x\le1$, or $x\in[0,1]$. All three inputs pass. The second is $0<x<1$, or $x\in(0,1)$; only $1/2$ passes. Each endpoint fails one strict comparison. The domain is real numbers in both cases.
+
+</details>
+
+<Exercise question="Expand $0\le x<1$ using a connective. Can the two comparisons be checked using different values of x? Does the chain bind x?">
+
+It is $(0\le x)\land(x<1)$. Both refer to the same input. Choosing $x=2$ for the first and $x=0$ for the second proves nothing about a single input satisfying the chain. The conjunction does not bind $x$; its occurrences remain free unless a quantifier governs them.
+
+</Exercise>
+
+These conventions explain what comparisons say, not how to solve inequalities. Ordinary order properties are background. For exact truth reversal at a boundary, continue with [negating order comparisons](../negating-order-comparisons/).

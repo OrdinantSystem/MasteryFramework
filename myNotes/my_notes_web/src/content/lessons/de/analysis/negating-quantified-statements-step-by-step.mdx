@@ -1,0 +1,135 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Quantifizierte Aussagen schrittweise negieren"
+navTitle: "Quantifizierte Aussagen schrittweise negieren"
+description: "Quantifizierte Aussagen schrittweise negieren."
+order: 34
+kind: "recap"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-nested-statements", "negating-combined-conditions", "reading-conditionals", "biconditionals-and-equivalent-conditions"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/04 Switching Quantifier Types.md#04 Switching Quantifier Types", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+„Nicht jede bewerbende Person hat ein Dokument, das jede Prüfung besteht“ besagt, dass es eine bewerbende Person gibt, die kein durchgehend passendes Dokument hat. Für diese feste Person scheitert jedes Dokument an mindestens einer Prüfung. Drei Quantorwörter gleichzeitig zu ändern kann verbergen, welches Objekt fest bleibt. Folge den Klammern von außen nach innen.
+
+Seien $A$ die Bewerbenden, $B$ die Dokumente und $C$ die Prüfungen. $R(x,y,z)$ bedeute, dass Dokument $y$ Prüfung $z$ für Person $x$ besteht. Alle drei Bereiche sind hier fest. Beginne mit der vollständigen Negation, nicht einer bearbeiteten positiven Aussage:
+
+$$
+\begin{aligned}&\neg(\forall x\in A\;\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\neg(\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\neg(\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\exists z\in C\;\neg R(x,y,z).\end{aligned}
+$$
+
+Das erste Dualgesetz liefert eine bewerbende Person, für die die Anforderung scheitert; das nächste verneint für sie die Existenz eines passenden Dokuments; das letzte liefert für jedes Dokument eine scheiternde Prüfung. Die Person bleibt fest. Die Prüfung darf vom Dokument abhängen. Keine einzelne Prüfung muss alle Dokumente scheitern lassen.
+
+## Warum jeder Ersatz zulässig ist
+
+Behandle die ganze innere Aussage als ein Prädikat der aktuellen Variablen. Das Dualgesetz bewahrt ihren Wahrheitswert bei jeder Belegung bereits festgehaltener äußerer Variablen. Deshalb bleiben auch die Wahrheitswerte der unveränderten äußeren Quantoren erhalten. Wiederholung ergibt eine Äquivalenzkette. Alle Zeilen können falsch sein: Die Kette beschreibt Scheitern, beweist dessen Auftreten aber nicht. Um das Original zu widerlegen, beweise die letzte Formel gesondert.
+
+## Eine Methode mit Geltungsbereich
+
+1. Klammere genau die zu negierende Aussage ein.
+2. Notiere Variablen in ihrer Reihenfolge, ihre Bereiche und feste Parameter.
+3. Gehe nur über den nächsten Quantor: Wechsle seinen Typ und negiere den ganzen Rest.
+4. Wiederhole dies mit unveränderten Positionen und Bereichen.
+5. Wende an einem Junktor zuerst dessen Regel an und fahre in den betroffenen Teilen fort. Negiere auch das letzte Prädikat.
+6. Lies zurück und prüfe, welche frühere Information jeder Zeuge nutzen darf.
+
+Wechsle keine Quantoren außerhalb des tatsächlichen Negationsbereichs. Eine freie Variable bleibt frei. Ein vom Regal abhängiger Buchbereich bleibt an dieses Regal gebunden. „Positive reelle Zahl“ bleibt positiv reell. Diese Prüfungen verhindern, dass ein auswendig gelernter Vorsilbentrick unbemerkt die Frage verändert.
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+Ein Dokument verletzt „wenn unterschrieben, dann bestanden“ genau dann, wenn es unterschrieben ist und nicht besteht. Ein nicht unterschriebenes Dokument widerlegt die Implikation nicht. Deshalb bleibt die ursprüngliche Voraussetzung im Gegenbeispiel wahr.
+
+### Übung
+
+Rekonstruiere die Bewerbungsnegation Quantor für Quantor.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte zuerst die Person fest.
+
+</details>
+
+<Exercise>
+
+Es gibt eine bewerbende Person ohne Dokument, das alle Prüfungen besteht; für sie hat jedes Dokument eine Prüfung, an der es scheitert. Also: eine bewerbende Person, jedes Dokument, eine fehlgeschlagene Prüfung.
+
+</Exercise>
+
+Ein positiver reeller Bereich wird in einer Negation durch nichtpositive Zahlen ersetzt. Diagnose?
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe die Bereichsliste.
+
+</details>
+
+<Exercise>
+
+Der Bereich wurde komplementiert; kein Dualgesetz erlaubt das. Negiere das Prädikat über derselben erlaubten Sammlung.
+
+</Exercise>
+
+Negiere: Alle Bewerbenden sind zugelassen oder zertifiziert, mit einschließendem Oder.
+
+<details>
+<summary>Hinweis</summary>
+
+Ein Oder scheitert nur, wenn beide Teile scheitern.
+
+</details>
+
+<Exercise>
+
+Es gibt eine bewerbende Person, die weder zugelassen noch zertifiziert ist. Nur alle durch einige zu ersetzen lässt das Prädikat unnegiert und ist unvollständig.
+
+</Exercise>
+
+Negiere: Jedes Dokument besteht, wenn es unterschrieben ist. Kann ein nicht unterschriebenes Dokument widerlegen?
+
+<details>
+<summary>Hinweis</summary>
+
+Verlange eine wahre Voraussetzung.
+
+</details>
+
+<Exercise>
+
+Ein Dokument ist unterschrieben und besteht nicht. Kein nicht unterschriebenes widerlegt das Versprechen, unabhängig vom Ergebnis.
+
+</Exercise>
+
+Eine Kollegin meint, Äquivalenzschritte allein widerlegten das Original. Was fehlt?
+
+<details>
+<summary>Hinweis</summary>
+
+Eine ganze Äquivalenzkette darf falsch sein.
+
+</details>
+
+<Exercise>
+
+Die letzte Fehlerbedingung muss bewiesen werden: Existenzzeugen liefern und alle All-Fälle erfassen.
+
+</Exercise>
+
+Rekonstruiere später die sechs Schritte und erkläre, warum Ersatz innerhalb äußerer Quantoren Äquivalenz bewahrt.
+
+## Laut lesen
+
+**EN:** There is an applicant such that every document has a check it fails.
+
+**DE:** Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.
+
+**ES:** Existe un solicitante tal que todo documento tiene una comprobación que falla.

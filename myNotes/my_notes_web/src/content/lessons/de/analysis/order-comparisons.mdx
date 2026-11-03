@@ -1,0 +1,71 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]
+locale: "de"
+title: "Ordnungsvergleiche und Randpunkte"
+navTitle: "Ordnungsvergleiche und Randpunkte"
+description: "Strenge und nichtstrenge Grenzen einschließlich ihrer Randfälle lesen."
+order: 7
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["equality-and-equations", "logische-verknuepfungen"]
+thumbnail: "logic"
+---
+
+„Höchstens drei Bücher“ erlaubt genau drei. „Weniger als drei Bücher“ nicht. Am Rand kann sich der Wahrheitswert ändern, obwohl alle kleineren Beispiele übereinstimmen. Hier verwenden wir die übliche Ordnung der reellen Zahlen; wir führen keine Ordnung beliebiger Objekte oder komplexer Zahlen ein.
+
+## Vergleiche und ihre Lesarten
+
+| | EN | DE | ES |
+|---|---|---|---|
+| $a<b$ | a is strictly less than b | a ist kleiner als b | a es estrictamente menor que be |
+| $a>b$ | a is strictly greater than b | a ist größer als b | a es estrictamente mayor que be |
+| $a\le b$ | a is less than or equal to b | a ist kleiner oder gleich b | a es menor o igual que be |
+| $a\ge b$ | a is greater than or equal to b | a ist größer oder gleich b | a es mayor o igual que be |
+| $a\ne b$ | a is not equal to b | a ist ungleich b | a es distinto de be |
+
+Die strengen Vergleiche $<$ und $>$ schließen Gleichheit aus. Die nichtstrengen Vergleiche $\le$ und $\ge$ erlauben sie. Deshalb ist $0\le0$ wahr, aber $0<0$ falsch. $a>b$ bedeutet dasselbe wie $b<a$: Neben dem Zeichen müssen auch die beiden Ausdrücke vertauscht werden.
+
+Genau bedeutet $a\le b$ die Bedingung $(a<b)\lor(a=b)$ mit einschließendem Oder. Bei $a\ge b$ gilt entweder $a>b$ oder $a=b$. Ungleichheit legt keine Richtung fest: $0\ne1$ ist wahr, $0>1$ aber falsch. Gleichheit kann auch dort sinnvoll sein, wo keine Ordnung festgelegt wurde.
+
+## Zwei Grenzen für dieselbe Eingabe
+
+$$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
+
+Die Kette verlangt **beide** Vergleiche für dasselbe $x$. Für $a<b$ schließt sie den unteren Rand aus und den oberen ein. Nur einen Vergleich zu erfüllen reicht nicht.
+
+**EN:** “a is strictly less than x and x is less than or equal to b.” **DE:** „a ist kleiner als x und x ist kleiner oder gleich b“. **ES:** «a es estrictamente menor que equis y equis es menor o igual que be».
+
+„Mindestens a“ bedeutet $x\ge a$, „höchstens b“ bedeutet $x\le b$. Beide erlauben Gleichheit. „Streng zwischen a und b“ bedeutet $a<x<b$ und schließt beide Randpunkte aus. „Zwischen“ allein kann mehrdeutig sein; kläre die Randpunkte, statt stillschweigend eine Lesart zu wählen.
+
+Zum Beispiel erlaubt $0\le x<1$ die null, aber nicht die eins. In Intervallschreibweise heißt dieselbe Bedingung $x\in[0,1)$: Eine eckige Klammer schließt den Rand ein, eine runde ihn aus. Entsprechend beschreibt $0<x\le2$ das Intervall $x\in(0,2]$. Manche Texte verwenden nach außen gerichtete eckige Klammern für ausgeschlossene Ränder; prüfe ihre Konvention. Als geschriebene Formeln bleiben diese Bedingungen offen. Ein im Kontext festgelegter Wert erlaubt die Auswertung, lässt ihre Variablenvorkommen aber frei; ein Quantor bindet $x$ innerhalb seines Geltungsbereichs in der Formel.
+
+## Randpunkte prüfen
+
+Übersetze „Eine reelle Zahl ist mindestens null und höchstens eins“ und vergleiche mit „streng zwischen null und eins“. Prüfe $0$, $1/2$ und $1$.
+
+<details>
+<summary>Hinweis</summary>
+
+Schreibe beide Vergleiche einzeln. Entscheide vor dem Verknüpfen, ob jeder Gleichheit erlaubt.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Das erste Kriterium lautet $0\le x\le1$, also $x\in[0,1]$. Alle drei Eingaben erfüllen es. Das zweite lautet $0<x<1$, also $x\in(0,1)$; nur $1/2$ erfüllt es. Jeder Randpunkt scheitert an einem strengen Vergleich. Der Bereich bleibt jeweils die reellen Zahlen.
+
+</details>
+
+<Exercise question="Schreibe $0\le x<1$ mit einer logischen Verknüpfung. Dürfen die Vergleiche mit verschiedenen Werten von x geprüft werden? Bindet die Kette x?">
+
+Die Bedingung lautet $(0\le x)\land(x<1)$. Beide Teile betreffen dieselbe Eingabe. $x=2$ für den ersten und $x=0$ für den zweiten Teil nachzuweisen zeigt nichts über eine gemeinsame Eingabe. Die Konjunktion bindet $x$ nicht; ohne passenden Quantor bleiben seine Vorkommen frei.
+
+</Exercise>
+
+Diese Konventionen erklären die Bedeutung der Vergleiche, nicht das Lösen von Ungleichungen. Die üblichen Ordnungseigenschaften werden vorausgesetzt. Die genaue Wahrheitsumkehr am Rand behandelt [Ordnungsvergleiche negieren](../negating-order-comparisons/).

@@ -1,0 +1,120 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Constructing a witness"
+navTitle: "Constructing a witness"
+description: "Constructing a witness."
+order: 24
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/03 Constructive Existence.md#03 · Constructive existence: exhibit, then verify", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Subtracting five from twelve suggests seven. To finish, check the original request: seven is an integer and seven plus five equals twelve. Discovery finds a candidate; verification establishes that it works.
+
+<Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
+
+## A complete direct proof
+
+Choose $n=7$. It belongs to $\mathbb Z$. It satisfies $7+5=12$. Therefore an allowed object meets the requirement and existence follows. These four moves are candidate, domain, full predicate and conclusion. A single test proves this existential claim because the claim asks only for one success. It says nothing about uniqueness.
+
+“Constructive” here means explicitly producing and checking an object. We remain in classical mathematics, where existence proofs need not always name a witness. “Choose an integer that works; therefore one exists” is circular: it assumes a successful choice is available. Choosing a known integer, then proving its property, avoids that assumption.
+
+## Backward work and domain checks
+
+From $2x=1$, backward work forces $x=1/2$. This proves real existence after checking membership and substitution, but cannot supply an integer witness. Necessary-candidate reasoning alone is not existence. Fully reversible algebra can prove an equivalence and, with domain checks, be sufficient; backward reasoning is not inherently invalid. A false assertion has no valid proof merely because a task asks for one.
+
+For $4<n<8$, choose five and check integer membership and both strict inequalities. Four fails at the boundary. Six or seven would work equally well. For an arbitrary real input $x$, the rule $x+1$ constructs a larger real: addition stays in the reals and adding positive one increases the input. Testing only at zero would not establish this general rule.
+
+### Practice
+
+Prove $\exists n\in\mathbb Z\;(n+8=3)$.
+
+<details>
+<summary>Hint</summary>
+
+Negative integers are allowed.
+
+</details>
+
+<Exercise>
+
+Choose $-5\in\mathbb Z$. Since $-5+8=3$, it satisfies the original equation and proves existence.
+
+</Exercise>
+
+Complete “Take one half” for a real between zero and one.
+
+<details>
+<summary>Hint</summary>
+
+Check all three requirements.
+
+</details>
+
+<Exercise>
+
+$1/2\in\mathbb R$ and $0<1/2<1$, so it is an allowed witness. This does not assert uniqueness.
+
+</Exercise>
+
+Repair “Choose an integer with square $25$; therefore it exists”.
+
+<details>
+<summary>Hint</summary>
+
+Name a candidate without assuming success.
+
+</details>
+
+<Exercise>
+
+Choose five, an integer, and verify $5\cdot5=25$. The original assumed the conclusion by assuming the successful choice.
+
+</Exercise>
+
+Construct an integer satisfying $n>4$ and $n<8$. Is the answer unique?
+
+<details>
+<summary>Hint</summary>
+
+Avoid endpoints.
+
+</details>
+
+<Exercise>
+
+Six is an integer with $4<6<8$. Five and seven also pass. Explicit construction does not require uniqueness.
+
+</Exercise>
+
+Why does $x+1$ work for every real input? Why is testing zero insufficient?
+
+<details>
+<summary>Hint</summary>
+
+Use closure and positivity.
+
+</details>
+
+<Exercise>
+
+Real addition gives a real output, and positive one increases any input. A test at zero covers one input only.
+
+</Exercise>
+
+Later, write a new four-sentence proof and label the job of each sentence.
+
+## Read aloud
+
+**EN:** Exhibit a candidate, check membership and the full property, then conclude existence.
+
+**DE:** Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
+
+**ES:** Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.

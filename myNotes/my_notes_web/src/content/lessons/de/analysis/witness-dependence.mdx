@@ -1,0 +1,126 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Abhängigkeit von Zeugen"
+navTitle: "Abhängigkeit von Zeugen"
+description: "Abhängigkeit von Zeugen."
+order: 28
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["quantifier-order"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/02 Dependence between Variables.md#02 · What information may a witness use?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Nennt eine Freundin eine reelle Zahl vor deiner Antwort, liefert „plus eins“ eine größere reelle Zahl. Muss die Antwort für jede erst danach genannte Zahl passen, nutzt dieselbe Regel Information, die die Anforderung nicht erlaubt.
+
+## Verfügbare Information festhalten
+
+Halte bei einer Zeugenwahl feste Parameter, frühere beliebige Eingaben in ihrem Geltungsbereich und zuvor gewählte Zeugen fest. Diese stehen zur Verfügung. Spätere universell geprüfte Eingaben dürfen frühere Wahlen nicht verändern. Abhängigkeit ist erlaubt, nicht vorgeschrieben: Wird nur Positivität verlangt, darf die Wahl eins eine frühere Eingabe ignorieren. Eine Existenzbehauptung verspricht keine berechenbare Methode.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+$x$ und $y$ stehen beide zur Verfügung. Wähle $z=x+y$; Abgeschlossenheit der reellen Addition begründet die Zugehörigkeit, die Wahl die Gleichung. Das Argument gilt für jedes reelle Paar.
+
+$$
+\forall x\in\mathbb R\;\exists z\in\mathbb R\;\forall y\in\mathbb R\;(z=x+y).
+$$
+
+Nun darf $z$ von $x$ abhängen, muss aber für jedes spätere $y$ fest bleiben. Bei $y=0$ wird $z=x$ verlangt, bei $y=1$ wird $z=x+1$ verlangt. Derselbe Wert kann nicht beides erfüllen. Zwei unvereinbare Anforderungen widerlegen jeden Kandidaten; das ist kein Schluss aus einer Stichprobe.
+
+Eine spätere Umschlagwahl darf einen zuvor gewählten Schlüssel verwenden: Frühere Existenzwahlen können zusammenwirken. Bindung ist eine andere Frage. Bei festem reellem $c$ darf $y=x+c$ den Parameter $c$ nutzen, obwohl seine Vorkommen ohne geschriebenen Quantor für $c$ syntaktisch frei bleiben. Der Kontext hält seinen Wert fest. Ein gebundener Zeuge kann von einer früheren Eingabe abhängen, ohne frei zu werden.
+
+Erlaubte Information reicht nicht für Erfolg. Die Konstante $y=1$ nutzt keine verbotene Eingabe, verletzt aber $y>x$ bei $x=1$. Die Regel $y=x/2$ nutzt nur die frühere Eingabe, scheitert aber bei $x=1$ an Ganzzahligkeit. Prüfe Information, Zugehörigkeit und vollständiges Prädikat getrennt.
+
+### Übung
+
+Für jedes reelle $x$ wird ein positives reelles $y$ verlangt. Darfst du stets eins wählen?
+
+<details>
+<summary>Hinweis</summary>
+
+Eine Eingabe nutzen zu dürfen ist keine Pflicht.
+
+</details>
+
+<Exercise>
+
+Ja: Eins ist für jede Eingabe positiv und reell. Veränderung ist nicht verlangt.
+
+</Exercise>
+
+Welche Eingaben darf der Summenzeuge in den beiden Formeln nutzen?
+
+<details>
+<summary>Hinweis</summary>
+
+Halte bei Einführung des Zeugen an.
+
+</details>
+
+<Exercise>
+
+Im ersten Fall beide, im zweiten nur die frühere Eingabe. Die spätere All-Eingabe darf den Zeugen nicht verändern.
+
+</Exercise>
+
+Ist bei $y>x$ über den reellen Zahlen $y=1$ erlaubt und erfolgreich?
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne Erlaubnis und Wahrheit.
+
+</details>
+
+<Exercise>
+
+Erlaubt, aber bei $x=1$ oder größer erfolglos. $y=x+1$ ist erlaubt und passt für alle reellen Eingaben.
+
+</Exercise>
+
+Fixiere reelles $c$. Begründe $y=x+c$ und sage, ob $c$ gebunden ist.
+
+<details>
+<summary>Hinweis</summary>
+
+Kontext ist kein geschriebener Quantor.
+
+</details>
+
+<Exercise>
+
+Die reelle Summe nutzt verfügbares $x$ und festes $c$ und erfüllt die Gleichung. Das Festlegen von $c$ bindet seine Vorkommen nicht.
+
+</Exercise>
+
+Für jedes ganzzahlige $x$ wird ganzzahliges $y$ mit $2y=x$ verlangt. Prüfe $y=x/2$.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe eine ungerade Eingabe.
+
+</details>
+
+<Exercise>
+
+Bei Eingabe eins entsteht ein Halb, keine ganze Zahl. Tatsächlich verdoppelt sich keine ganze Zahl zu eins, also ist die Behauptung selbst falsch.
+
+</Exercise>
+
+Rekonstruiere später ohne Vorlage die verfügbare Information für beide Summenformeln.
+
+## Laut lesen
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

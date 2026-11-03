@@ -393,9 +393,17 @@ kbd {
 }
 .math-block {
   display: block;
+  max-width: 100%;
   overflow-x: auto;
   padding: 10px 2px;
   margin: 12px 0;
+}
+.math-block > .katex-display {
+  min-width: max-content;
+}
+.math-block:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 :root .katex {
   font-size: 1.16em;

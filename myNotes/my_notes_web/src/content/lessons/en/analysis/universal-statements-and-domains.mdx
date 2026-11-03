@@ -1,0 +1,75 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/01 Meaning of For Every.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/02 Domain of Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
+title: "Universal statements and domains"
+navTitle: "Universal statements and domains"
+description: "Read every as every allowed input, with meaningful predicates and no promise of existence."
+order: 20
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "material-implication-and-vacuity"]
+thumbnail: "quantifiers"
+---
+
+A box contains exactly the cards two, four, and six. “Every card is positive” is true: each of its three members passes. Add zero and the claim becomes false. Most cards still pass, but “every” permits no exception. A zero card outside the box would not matter.
+
+## Domain, predicate, quantifier
+
+The **domain** $D$ is the specified collection of allowed objects. A **predicate** $P$ is a condition meaningful at each member. With any other parameters fixed, write
+
+$$\forall x\in D\;P(x).$$
+
+Read: “For every $x$ in $D$, $P$ of $x$ holds.” $\forall$ means for every, $\in$ means belongs to, and the parentheses in $P(x)$ name its input, not multiplication. The formula is true exactly when every member of $D$ satisfies the predicate; one permitted failure makes it false. This defines universal truth, not a promise that every universal statement is true.
+
+For example, $\forall x\in\mathbb R\;(x>0)$ says “every real number is positive” and is false at zero. Here $\mathbb R$ denotes real numbers, including zero, negatives, and fractions. The same positivity condition is true on the positive integers but false on all integers $\mathbb Z$. Minus one half cannot refute an integer claim because it is not an integer.
+
+## Defined, false, or outside the claim?
+
+These are different diagnoses. A noninteger input is outside an integer domain. At zero, $x>0$ is meaningful and false. In a proposed reciprocal claim over all reals, $1/x$ is undefined at zero: it is not an ordinary false equality or a third truth value.
+
+Use an explicit domain repair:
+
+$$\forall x\in\mathbb R\setminus\{0\}\;(x\cdot(1/x)=1).$$
+
+Read: “For every nonzero real $x$, $x$ times its reciprocal equals one.” The set difference removes zero; the reciprocal property now applies to every input. Under our explicit-domain convention, a false hypothesis is not a programming guard that gives an undefined expression a value. Informal guarded notation needs its own agreed interpretation.
+
+When all predicates are defined on the ambient domain, a hypothesis can select a subset:
+
+$$\forall x\in\mathbb R\;((x>5)\Rightarrow(x>2)).$$
+
+Read: “For every real $x$, if $x$ exceeds five, then it exceeds two.” The quantifier covers all reals; the hypothesis selects those above five. A real outside that selected subset gives a true conditional through a false hypothesis. An eligible real exceeds two by transitivity of order. Both cases account for the whole ambient domain.
+
+## Empty collections and changed domains
+
+“Every card in this box is red” is true for an empty box: there is no nonred card inside. It does not provide a red card. A nonempty room may contain the box and table while the restricted collection of cards is empty. This does not require changing the convention in formal logic that an overall universe is nonempty.
+
+Removing objects from a domain where every member passes cannot introduce a failure, even if all members are removed. Enlarging it can: adding zero spoiled the positive-card claim. Restricting a false all-real claim may give a true new statement, but it does not prove the original.
+
+## What proves an infinite-domain claim?
+
+For a finite domain, an exhaustive check is a proof if the list really includes every member. For all reals, a finite sample leaves untested inputs. Instead take an **arbitrary** real $x$, using no special value or extra positivity assumption. Since $2>0$, adding $x$ to both sides gives
+
+$$x+2>x+0=x.$$
+
+Read: “$x$ plus two exceeds $x$ plus zero, which equals $x$.” Order is preserved by adding the same real amount; zero is an additive identity. These ordinary arithmetic facts prove $\forall x\in\mathbb R\;(x+2>x)$. Calling $x$ arbitrary and then choosing $x=7$ would destroy generality.
+
+The formula $\forall x\in\mathbb R\;(x+a>x)$ still has a free parameter $a$: the quantifier binds $x$, not $a$. It is true with $a=2$ and false with $a=0$. Assigning a value permits evaluation but does not add a written binder. See [bound variables and scope](../bound-variables-and-scope/) for this distinction.
+
+For a possibly empty restricted collection, do not assert that a member exists. One can handle the empty case directly and then prove the nonempty case with an arbitrary member. A standard conditional proof may also reason from an arbitrary symbol under the temporary assumption that it belongs to the collection, then discharge that assumption. This does not claim there is such a member.
+
+<Exercise question="A box is known to contain exactly $2$, $4$, and $6$. Why can a complete check prove that every card is positive, while three checks cannot prove this about all reals? What changes after adding zero, and what does not-all-positive mean?">
+
+The three cards exhaust the box, but not the real numbers. All three pass; adding zero creates a permitted failure, so the enlarged universal claim is false. Not all positive means at least one card is not positive, not that no card is positive: the original three still are.
+
+</Exercise>
+
+<Exercise question="Distinguish these objections: minus one half against an integer claim; zero against every-real-is-positive; zero in a proposed all-real reciprocal formula. Then prove that every real above eight is above three, including the false-hypothesis cases.">
+
+Minus one half is outside the integer domain. Zero is an allowed, defined failure of positivity. Its reciprocal is undefined, so that formula needs repair before evaluation. For the final theorem, take any real $x$. If $x>8$, then $x>3$ because $8>3$ and order is transitive. Otherwise the hypothesis is false and the conditional true. Every real is covered; no claim of an eligible input's existence is needed.
+
+</Exercise>

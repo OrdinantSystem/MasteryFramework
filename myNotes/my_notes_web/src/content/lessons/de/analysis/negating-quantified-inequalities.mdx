@@ -1,0 +1,94 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Quantifizierte Ungleichungen negieren"
+navTitle: "Quantifizierte Ungleichungen negieren"
+description: "Quantifizierte Ungleichungen negieren."
+order: 35
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-quantified-statements-step-by-step", "negating-order-comparisons", "building-truth-tables"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+Ein Versprechen verlangt einen Messwert strikt innerhalb einer Einheit vom Ziel. Ein Wert genau eine Einheit entfernt verletzt es. „Mehr als eine Einheit entfernt“ würde diesen Grenzfehler übersehen. Kläre vor den Quantoren, welche Seite die Gleichheit enthält.
+
+## Reelle Ordnung zerlegt alle Fälle
+
+Für reelle $x,c$ gilt genau einer der Fälle kleiner, gleich, größer. Negation behält genau die vom ursprünglichen Vergleich ausgeschlossenen Fälle. Ohne kleiner bleiben gleich oder größer; ohne kleiner-oder-gleich bleibt nur größer. Vertauschen von größer und kleiner liefert die anderen beiden Regeln. Das nutzt die übliche totale Ordnung der reellen Zahlen, nicht nur Quantorensyntax.
+
+$$
+\begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
+$$
+
+Bei Gleichheit ist genau einer der ursprünglichen und negierten Vergleiche wahr. Aus der Negation von $x=c$ wird $x\ne c$, keine ausgewählte Richtung; die Negation von $x\ne c$ ist Gleichheit. Die [Lektion zu Vergleichsnegationen](../negating-order-comparisons/) behandelt diese Grenzen gesondert.
+
+## Ein quantifiziertes Grenzbeispiel
+
+$$
+\neg(\forall x>0\;(x<1))\ \Longleftrightarrow\ \exists x>0\;(x\ge1).
+$$
+
+Dass jede positive reelle Zahl unter eins liegt, ist falsch. Eins ist ein erlaubtes Gegenbeispiel genau auf der Grenze. Null ist nicht erlaubt. Wir wechseln alle zu einige, bewahren positive reelle Zahlen und negieren den inneren Vergleich. Ein weiteres Beispiel wie zwei ist unnötig; eins beweist die Negation bereits.
+
+## Wenn das Prädikat eine Implikation ist
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+| $A$ | $B$ | $A\Rightarrow B$ | $\neg(A\Rightarrow B)$ | $A\land\neg B$ |
+| --- | --- | --- | --- | --- |
+| wahr | wahr | wahr | falsch | falsch |
+| wahr | falsch | falsch | wahr | wahr |
+| falsch | wahr | wahr | falsch | falsch |
+| falsch | falsch | wahr | falsch | falsch |
+
+Die letzten beiden Spalten stimmen in allen vier möglichen Fällen überein und beweisen die Äquivalenz. Eine falsche Voraussetzung widerlegt nie die Implikation. In der Folgenanwendung sagt die Voraussetzung, dass ein Index im vorgeschlagenen Endstück liegt. Der Fehler muss darin liegen und die Abstandsforderung verletzen. Beides sind Prüfungen desselben Index.
+
+### Übung
+
+Negiere $x\le3$ und prüfe beide Aussagen bei $x=3$.
+
+<details>
+<summary>Hinweis</summary>
+
+Das Original enthält Gleichheit.
+
+</details>
+
+<Exercise>
+
+Die Negation ist $x>3$. Bei drei ist das Original wahr und die Negation falsch; darunter bleibt das Original wahr, darüber nur die Negation.
+
+</Exercise>
+
+Warum widerlegt ein großer Fehler vor dem Startindex die Endstückbedingung nicht?
+
+<details>
+<summary>Hinweis</summary>
+
+Bestimme die Voraussetzung der Implikation.
+
+</details>
+
+<Exercise>
+
+Vor dem Startindex ist die Voraussetzung falsch, die Implikation also unabhängig vom Abstand wahr. Verlange einen Index mindestens am Start und das Scheitern der strengen Abstandsschranke.
+
+</Exercise>
+
+Rekonstruiere später die vier Vergleichsnegationen und alle vier Tabellenzeilen vor der vollständigen Konvergenzableitung.
+
+## Laut lesen
+
+**EN:** Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
+
+**DE:** Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
+
+**ES:** No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.

@@ -1,0 +1,71 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]
+locale: "es"
+title: "Comparaciones de orden y extremos"
+navTitle: "Comparaciones de orden y extremos"
+description: "Leer cotas estrictas y no estrictas sin perder el caso de igualdad."
+order: 7
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["equality-and-equations", "logische-verknuepfungen"]
+thumbnail: "logic"
+---
+
+«Como máximo tres libros» permite exactamente tres. «Menos de tres libros» no. Un extremo puede cambiar el valor de verdad de una comparación aunque todos los ejemplos menores coincidan. Usamos el orden habitual de los reales; no estamos definiendo un orden sobre objetos arbitrarios ni sobre los complejos.
+
+## Comparaciones y lecturas
+
+| | EN | DE | ES |
+|---|---|---|---|
+| $a<b$ | a is strictly less than b | a ist kleiner als b | a es estrictamente menor que be |
+| $a>b$ | a is strictly greater than b | a ist größer als b | a es estrictamente mayor que be |
+| $a\le b$ | a is less than or equal to b | a ist kleiner oder gleich b | a es menor o igual que be |
+| $a\ge b$ | a is greater than or equal to b | a ist größer oder gleich b | a es mayor o igual que be |
+| $a\ne b$ | a is not equal to b | a ist ungleich b | a es distinto de be |
+
+Las comparaciones estrictas $<$ y $>$ excluyen la igualdad. Las no estrictas $\le$ y $\ge$ la incluyen. Así, $0\le0$ es verdadera y $0<0$ es falsa. Escribir $a>b$ dice lo mismo que $b<a$: hay que invertir tanto el orden de las expresiones como el signo.
+
+El significado preciso de $a\le b$ es $(a<b)\lor(a=b)$, con «o» inclusiva. Para $a\ge b$, se cumple $a>b$ o $a=b$. Ser distintos no determina una dirección: $0\ne1$ es verdadera, pero $0>1$ es falsa. La igualdad también puede tener sentido donde no se ha especificado un orden.
+
+## Dos cotas para una misma entrada
+
+$$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
+
+La cadena exige **ambas** comparaciones para el mismo $x$. Si $a<b$, excluye el extremo inferior e incluye el superior. Superar una sola comprobación no basta.
+
+**EN:** “a is strictly less than x and x is less than or equal to b.” **DE:** „a ist kleiner als x und x ist kleiner oder gleich b“. **ES:** «a es estrictamente menor que equis y equis es menor o igual que be».
+
+«Al menos a» significa $x\ge a$; «como máximo b» significa $x\le b$. Ambas expresiones permiten igualdad. «Estrictamente entre a y b» significa $a<x<b$, excluyendo ambos extremos. «Entre» sin una convención sobre los extremos puede ser ambiguo; aclara cuáles se incluyen.
+
+Por ejemplo, $0\le x<1$ admite cero y excluye uno. En notación de intervalos es $x\in[0,1)$: un corchete incluye el extremo y un paréntesis lo excluye. Del mismo modo, $0<x\le2$ describe $x\in(0,2]$. Algunos textos usan corchetes orientados hacia fuera para extremos excluidos; comprueba su convención. Tal como se escriben, estas condiciones siguen abiertas. Un valor aportado por el contexto permite evaluarlas, pero deja libres sus apariciones de variables; un cuantificador liga $x$ dentro de su alcance en la fórmula.
+
+## Comprobar los extremos
+
+Traduce «un real es al menos cero y como máximo uno» y compáralo con «estrictamente entre cero y uno». Comprueba $0$, $1/2$ y $1$.
+
+<details>
+<summary>Pista</summary>
+
+Escribe cada comparación por separado. Antes de unirlas, decide si cada una permite igualdad.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+La primera condición es $0\le x\le1$, o $x\in[0,1]$. Las tres entradas la cumplen. La segunda es $0<x<1$, o $x\in(0,1)$; solo $1/2$ la cumple. Cada extremo incumple una comparación estricta. El dominio sigue siendo los reales en ambos casos.
+
+</details>
+
+<Exercise question="Expande $0\le x<1$ con una conectiva. ¿Puedes comprobar las comparaciones con valores distintos de x? ¿La cadena liga x?">
+
+La condición es $(0\le x)\land(x<1)$. Ambas partes se refieren a la misma entrada. Elegir $x=2$ para la primera y $x=0$ para la segunda no demuestra que una entrada satisfaga la cadena. La conjunción no liga $x$: sus apariciones siguen libres salvo que un cuantificador las gobierne.
+
+</Exercise>
+
+Estas convenciones explican qué dicen las comparaciones, no cómo resolver inecuaciones. Las propiedades habituales del orden se aceptan como base. Para invertir exactamente la verdad en un extremo, consulta [negar comparaciones de orden](../negating-order-comparisons/).

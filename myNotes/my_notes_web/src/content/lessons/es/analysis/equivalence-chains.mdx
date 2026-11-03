@@ -1,0 +1,67 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-equivalence"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/04 Chains of Equivalences.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Chains of Logical Equivalences.md"]
+title: "Cadenas de equivalencias"
+navTitle: "Cadenas de equivalencias"
+description: "Justificar cada enlace en ambas direcciones y detectar soluciones añadidas o perdidas."
+order: 18
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["biconditionals-and-equivalent-conditions", "equality-and-equations"]
+thumbnail: "proof"
+---
+
+Resolver una ecuación no es solo encontrar un número final plausible. Buscamos exactamente las soluciones originales. Un paso reversible las conserva; uno de una sola dirección puede introducir candidatos o descartar casos.
+
+## Qué afirma la cadena
+
+Para todo real $x$, la aritmética habitual da
+
+$$(2x+2=6)\Leftrightarrow(2x=4)\Leftrightarrow(x=2).$$
+
+Se lee: «Dos por equis más dos es igual a seis si y solo si dos por equis es igual a cuatro; dos por equis es igual a cuatro si y solo si equis es igual a dos». $2x$ significa multiplicación. Los signos iguales comparan números dentro de las ecuaciones; las flechas comparan la verdad de ecuaciones completas.
+
+La cadena abrevia **dos afirmaciones de equivalencia entre vecinas**. No es un conectivo nuevo de tres entradas ni una instrucción para asociar bicondicionales arbitrariamente. Cada enlace usa la misma entrada, dominio e hipótesis.
+
+Hay cuatro razones breves. Restar dos da la ecuación intermedia; sumar dos recupera la primera. Dividir entre dos, que no es cero, da la última; multiplicar por dos recupera la intermedia. Las dos direcciones de cada enlace valen para todo real $x$, no solo para la solución final.
+
+## Por qué coinciden los extremos
+
+La equivalencia es **transitiva**. Fija cualquier entrada permitida. Si la primera condición tiene el mismo valor de verdad que la segunda, y esta que la tercera, la primera y la tercera coinciden. Como la entrada era arbitraria, coinciden en todo el dominio.
+
+En lenguaje de implicaciones, la primera condición da la segunda y después la tercera. Desde la tercera, los enlaces inversos dan la segunda y luego la primera. Esto demuestra las dos direcciones entre los extremos. Para una cadena $F\equiv G\equiv H$ de fórmulas proposicionales, usa una asignación de verdad arbitraria en lugar de un número y conserva el valor de las letras repetidas. Esto demuestra la transitividad; no demuestra un enlace vecino que no se haya justificado.
+
+## Elevar al cuadrado puede añadir un candidato
+
+En todos los reales, $(x=2)\Rightarrow(x^2=4)$ es válido, pero la vuelta falla en $x=-2$: su cuadrado es cuatro y no es dos. Lee la flecha simple como «si equis es igual a dos, su cuadrado es igual a cuatro». Sustituirla por un bicondicional borraría indebidamente la distinción de signo.
+
+Tras un paso solo de ida, las soluciones de la nueva ecuación son **candidatos**. Compruébalos en la original. Restringir a no negativos puede reparar algunas equivalencias al cuadrar, pero hay que declarar la restricción antes del enunciado y justificar allí la vuelta. Descartar negativos tácitamente cambia un problema sobre todos los reales.
+
+## Dividir puede perder una solución original
+
+La ecuación $x^2=x$ es verdadera en cero. Dividir entre $x$ y afirmar $x=1$ pierde esa solución: la división requería $x\ne0$.
+
+Separa casos. En $x=0$, la ecuación original se cumple. Para $x\ne0$, divide entre $x$ y obtén $x=1$; a la inversa, multiplicar $x=1$ por $x$ recupera $x^2=x$. Comprueba también uno en la original. Así, las soluciones reales son exactamente cero y uno. En el dominio explícitamente no nulo las ecuaciones divididas son equivalentes, pero ese resultado restringido no resuelve por sí solo el problema original.
+
+<Note title="Conservar las restricciones de cada hoja">
+
+Las [deducciones booleanas](../boolesche-grundgesetze/) existentes pueden limitar qué leyes numeradas se permite usar. Estos principios generales no eliminan esas restricciones del ejercicio. Un argumento con tabla de verdad puede demostrar un hecho sin cumplir una tarea que pida expresamente deducirlo a partir de leyes concretas.
+
+</Note>
+
+<Exercise question="Revisa $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$ en los reales. Da la operación en ambas direcciones de cada enlace. ¿Puedes añadir $(x^2=4)$ con otra flecha de equivalencia?">
+
+Resta tres y revierte sumando tres. Divide entre tres no nulo y revierte multiplicando por tres. Cada enlace conserva el conjunto de soluciones; la transitividad conecta los extremos. No añadas la ecuación al cuadrado como equivalencia en todos los reales: $-2$ la cumple pero no cumple $x=2$. Se justifica una flecha de ida; su candidato extra debe comprobarse en la ecuación original.
+
+</Exercise>
+
+<Exercise question="Construye una cadena nueva de dos enlaces para una ecuación lineal usando resta y división entre una constante no nula. Explica por qué no se añade ni pierde ninguna solución, sin limitarte a probar el número final.">
+
+Un ejemplo es $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Resta cuatro o suma cuatro para el primer enlace; divide entre cuatro o multiplica por cuatro para el segundo. Cuatro no es cero. Cada operación y su inversa valen en el dominio real sin cambiarlo, así que las mismas entradas satisfacen todas las ecuaciones. Probar solo dos verificaría una solución, pero no excluiría las demás.
+
+</Exercise>

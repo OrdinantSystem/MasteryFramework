@@ -1,0 +1,126 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "All-Aussagen negieren"
+navTitle: "All-Aussagen negieren"
+description: "All-Aussagen negieren."
+order: 31
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "existence-and-witnesses", "logical-negation", "negating-combined-conditions", "counterexamples"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/01 Negating Universal Claims.md#01 Negating Universal Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+Auf einem Tablett liegen eine rote und eine blaue Karte. „Jede Karte ist rot“ ist falsch: Die blaue genügt zur Widerlegung. „Jede Karte ist nicht rot“ ist ebenfalls falsch, weil eine rote bleibt. Zwei gemeinsam falsche Sätze können keine genauen Negationen sein.
+
+## Nicht jede bedeutet einen Fehlerfall
+
+$$
+\neg(\forall x\in D\;P(x))\ \Longleftrightarrow\ \exists x\in D\;\neg P(x).
+$$
+
+Fixiere Bereich $D$, Prädikat $P$ und alle übrigen Parameter. In klassischer zweiwertiger Logik hat eine genaue Negation in jeder sinnvollen Situation den entgegengesetzten Wahrheitswert. Die Äquivalenz besagt: Nicht alle erlaubten Objekte bestehen genau dann, wenn mindestens eines scheitert. Mehrere Fehlerfälle und weiterhin erfolgreiche Objekte sind erlaubt.
+
+In einer Richtung macht ein scheiterndes Element die All-Aussage falsch, weil sie dieses Element einschließt. Umgekehrt würden ohne scheiterndes Element alle bestehen und die All-Aussage wäre wahr. Eine falsche All-Aussage hat daher einen Fehlerfall. Das folgt aus den Bedeutungen, erfasst unendliche Bereiche und verspricht keinen Suchalgorithmus. Ein endliches Modell illustriert die Regel, beweist aber nicht den allgemeinen Satz.
+
+## Bereich bewahren und ganzes Prädikat negieren
+
+$$
+\neg(\forall x\in\mathbb Z\;(x>0))\ \Longleftrightarrow\ \exists x\in\mathbb Z\;(x\le0).
+$$
+
+Null bezeugt die Negation: Sie ist ganzzahlig und nicht positiv. Ein negatives Halb verletzt das ursprüngliche Prädikat, liegt aber außerhalb der ganzen Zahlen. Eine positive ganze Zahl ist erlaubt, scheitert jedoch nicht. Wäre der Bereich stattdessen positive ganze Zahlen, wäre das Original wahr und die richtige Negation falsch. Eine richtige Negation aufzuschreiben macht sie nicht wahr.
+
+Bei „rot und nummeriert“ bedeutet Scheitern nicht rot oder nicht nummeriert, mit einschließendem Oder. Eine rote unnummerierte Karte genügt. Auf einem leeren Bereich sind All-Aussagen wahr und ihre Existenznegationen falsch. Leere eingeschränkte Bereiche sind trotz nichtleerer weiterer Welt erlaubt. Eine All-Aussage liefert für sich kein Objekt.
+
+### Übung
+
+Negiere „Jede Karte auf dem Tablett ist rot“. Warum nicht „Keine ist rot“?
+
+<details>
+<summary>Hinweis</summary>
+
+Lass die rote Karte liegen.
+
+</details>
+
+<Exercise>
+
+Eine Karte auf dem Tablett ist nicht rot, bezeugt durch blau. „Keine ist rot“ ist dort ebenfalls falsch, also zu stark.
+
+</Exercise>
+
+Negiere $\forall x\in\mathbb Z\;(x=0)$ und gib einen Zeugen.
+
+<details>
+<summary>Hinweis</summary>
+
+Bewahre den ganzzahligen Bereich.
+
+</details>
+
+<Exercise>
+
+$\exists x\in\mathbb Z\;(x\ne0)$. Eins ist ganzzahlig und ungleich null; Eindeutigkeit wird nicht behauptet.
+
+</Exercise>
+
+Bewerte bei leerem Bereich: Jedes Element besteht und die Negation davon.
+
+<details>
+<summary>Hinweis</summary>
+
+Es gibt weder Fehlerfall noch Zeugen.
+
+</details>
+
+<Exercise>
+
+Die All-Aussage ist wahr, weil kein Element scheitert; ein Element scheitert ist falsch, weil kein Element existiert.
+
+</Exercise>
+
+Negiere: Jede Karte ist rot und nummeriert. Was zeigt eine rote unnummerierte Karte?
+
+<details>
+<summary>Hinweis</summary>
+
+Negiere die ganze Konjunktion.
+
+</details>
+
+<Exercise>
+
+Eine Karte ist nicht rot oder nicht nummeriert. Die rote unnummerierte Karte verletzt die ganze Konjunktion und widerlegt das Original; nicht beide Eigenschaften müssen fehlen.
+
+</Exercise>
+
+Widerlegt minus eins „Jede positive reelle Zahl ist nichtnegativ“? Nenne die genaue Negation.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe zuerst Zugehörigkeit.
+
+</details>
+
+<Exercise>
+
+Nein, die Zahl liegt außerhalb. Die Negation lautet „Eine positive reelle Zahl ist negativ“ und ist in reeller Ordnung falsch.
+
+</Exercise>
+
+Erkläre später beide Richtungen des Gesetzes an einer gemischten und dann einer leeren Sammlung.
+
+## Laut lesen
+
+**EN:** Not every x in D satisfies P if and only if some x in D fails P.
+
+**DE:** Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
+
+**ES:** No todo equis en D cumple P si y solo si algún equis en D no cumple P.

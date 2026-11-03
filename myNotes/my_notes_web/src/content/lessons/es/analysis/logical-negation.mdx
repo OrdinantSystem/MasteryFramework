@@ -1,0 +1,84 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/01 Logical Negation.md", "A0.1.2 Negation/02 Negating Equality.md"]
+locale: "es"
+title: "Negación lógica"
+navTitle: "Negación lógica"
+description: "Negar la misma afirmación completa sin cambiar objetos ni dominio."
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "equality-and-equations"]
+thumbnail: "logic"
+---
+
+Una tarjeta lleva el número tres. «Su número es mayor que tres» es falso, pero «su número es menor que tres» también. No son negaciones entre sí. La negación correcta, «su número no es mayor que tres», incluye el caso de igualdad.
+
+## Definición de negación
+
+Para una proposición clásica con sentido $P$, $\neg P$ es verdadera cuando $P$ es falsa, y falsa cuando $P$ es verdadera. Importan ambas direcciones. La tabla expresa la definición, no una regla inferida de observar tarjetas.
+
+| $P$ | $\neg P$ |
+|---|---|
+| 1 | 0 |
+| 0 | 1 |
+
+Los dígitos codifican verdadero y falso; no son instrucciones aritméticas. Una primera formulación segura es «No es cierto que [la afirmación original completa]». Abrevia solo después de identificar su alcance.
+
+**EN:** $\neg P$: “not P; it is not the case that P.” **DE:** „nicht P; es ist nicht der Fall, dass P gilt“. **ES:** «no pe; no es cierto que pe se cumpla».
+
+«La tarjeta no lleva tres» no cambia la tarjeta. Si lleva dos o cuatro, la negación es verdadera en ambos casos. «La tarjeta lleva dos» no la reemplaza: con cuatro ambas igualdades serían falsas. Un caso permitido donde el original y la negación propuesta coincidan refuta la propuesta. Varias muestras favorables no la demuestran para toda entrada.
+
+## La igualdad y su negación
+
+Para expresiones que designen objetos con sentido en el contexto indicado,
+
+$$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
+
+$\ne$ abrevia «distinto de». $\Leftrightarrow$ se lee «si y solo si» y aquí indica coincidencia en todos los casos. La segunda equivalencia se justifica directamente: si los valores son iguales, «distintos» es falso y su negación verdadera; si son distintos, «distintos» es verdadero y su negación falsa. Esos son todos los casos clásicos.
+
+**EN:** $a\ne b$: “a is not equal to b.” **DE:** „a ist ungleich b“. **ES:** «a es distinto de be».
+
+Para $x$ real, negar $x+2=5$ da $x+2\ne5$. Eso completa la negación; resolver es otra tarea. La entrada $2$ produce cuatro y la entrada $4$ produce seis: ambas satisfacen la negación. Reemplazar la igualdad por «mayor que» pierde la primera entrada. Ser distintos no fija un orden, y la igualdad puede usarse para objetos sin orden especificado.
+
+La negación lógica actúa sobre afirmaciones. La negación aritmética toma un número y produce su opuesto. Negar una ecuación no cambia los signos de sus términos. Expresiones distintas como $2+1$ y $3$ pueden designar valores iguales.
+
+## Conocimiento, sentido y dominio
+
+Una tarjeta cerrada puede llevar cero aunque nadie lo haya establecido. «No se ha demostrado $P$» y «no se sabe $P$» hablan del conocimiento; ninguna establece $\neg P$. En este marco clásico, desconocido no es un tercer valor de verdad.
+
+Un interruptor con niveles bajo, medio y alto **no está alto** tanto en bajo como en medio. «Está bajo» omite un caso. Del mismo modo, «no completamente abierta» no significa necesariamente «cerrada» si una puerta puede estar entreabierta. Fija el significado antes de negar.
+
+La negación no convierte una orden en proposición ni repara una división indefinida. En la aritmética real habitual, $1/0$ no designa un real; cambiar $1/0=3$ por $1/0\ne3$ no produce una comparación verdadera bien definida.
+
+Para una condición abierta, la negación actúa **punto a punto** con la misma asignación permitida. No liga variables libres ni amplía el dominio.
+
+## Práctica
+
+Solo se permiten $0,1,2$. Niega $x=1$, enumera las entradas que la satisfacen e indica si $x$ queda ligada. Después niega $x=2$ en el mismo dominio.
+
+<details>
+<summary>Pista</summary>
+
+Conserva la lista permitida. Una afirmación cuantificada sobre todas las entradas no es lo mismo que evaluar una condición abierta en cada entrada.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+$x\ne1$ se satisface en $0$ y $2$; $x\ne2$, en $0$ y $1$. No se añadió ningún cuantificador: $x$ sigue libre. Tres no es un ejemplo permitido. Agotar este dominio finito justifica las listas, pero no las extiende a todos los reales.
+
+</details>
+
+<Exercise question="Niega: La tarjeta fija lleva cero. ¿Por qué no basta ‘lleva uno’? ¿Puedes inferir la negación solo porque el sobre está cerrado?">
+
+La negación es «La tarjeta fija no lleva cero». Una tarjeta con dos hace falsas tanto «cero» como «uno», refutando la sustitución propuesta. El sobre cerrado no aporta pruebas de ninguno de los valores de verdad: oculta un entero fijo, no lo cambia.
+
+</Exercise>
+
+Compara «Escribe tres», «Tres es igual a tres» y «Uno dividido entre cero es igual a tres». Solo la segunda es una proposición con sentido a la que se aplica esta inversión de verdad. [Negar comparaciones de orden](../negating-order-comparisons/) trata por separado las reglas de los extremos.

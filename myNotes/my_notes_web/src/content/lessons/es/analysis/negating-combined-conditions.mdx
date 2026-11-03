@@ -1,0 +1,122 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/04 Negating Compound Statements.md", "A0.1.2 Negation/06 De Morgan Laws.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "es"
+title: "Negar condiciones compuestas"
+navTitle: "Negar condiciones compuestas"
+description: "Demostrar las leyes de De Morgan y conservar el alcance en condiciones anidadas."
+order: 12
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "logische-verknuepfungen", "negating-order-comparisons"]
+thumbnail: "logic"
+---
+
+Una tarjeta cumple el requisito cuando es roja y cuadrada. Un triángulo rojo falla aunque tenga el color correcto. Decir «no roja y no cuadrada» lo omitiría. Un triángulo azul también falla: no tiene que faltar **exactamente una** propiedad.
+
+Sea $P$ roja y $Q$ cuadrada para la **misma tarjeta**. $\neg(P\land Q)$ niega el requisito entero. $(\neg P)\land Q$ exige, en cambio, un cuadrado no rojo. Un triángulo rojo satisface la primera y no la segunda. El alcance importa.
+
+## Negación de una conjunción
+
+Un requisito unido por «y» falla cuando falla al menos una parte. Pueden fallar ambas. La ley clásica de De Morgan para la conjunción es:
+
+$$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
+
+| $P$ | $Q$ | $P\land Q$ | $\neg(P\land Q)$ | $\neg P$ | $\neg Q$ | $\neg P\lor\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Compara la cuarta columna con la última: coinciden en todas las filas. La tercera evalúa la conjunción original y la siguiente invierte su valor. A la derecha negamos las entradas antes de unirlas mediante «o» inclusiva.
+
+## Negación de una disyunción inclusiva
+
+Si la regla es «roja o cuadrada», cumplen un triángulo rojo, un cuadrado azul y también un cuadrado rojo. Solo falla una tarjeta sin ninguna propiedad. Por tanto, deben fallar ambas alternativas:
+
+$$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
+
+| $P$ | $Q$ | $P\lor Q$ | $\neg(P\lor Q)$ | $\neg P$ | $\neg Q$ | $\neg P\land\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+La cuarta columna vuelve a coincidir con la última. En cada fila mixta, una entrada mantiene verdadera la disyunción original y su negación es falsa. Cuando ambas entradas son falsas, la negación y la conjunción de negaciones son verdaderas.
+
+Cada entrada tiene exactamente dos valores de verdad. Las cuatro parejas agotan todas las asignaciones y demuestran ambas leyes a partir de las definiciones de negación, conjunción y disyunción inclusiva. $1,0$ codifican verdadero y falso. Son demostraciones semánticas para proposiciones clásicas arbitrarias, incluidas entradas compuestas. Unos ejemplos aritméticos no aportarían este argumento exhaustivo.
+
+<Note title="Leer el alcance en voz alta">
+
+$\neg(P\land Q)$: **EN** “not both P and Q”; **DE** „Es gelten nicht beide Aussagen P und Q“; **ES** «No se cumplen a la vez las proposiciones pe y cu». $\neg(P\lor Q)$: **EN** “neither P nor Q”; **DE** „Weder P noch Q gilt“; **ES** «No se cumple ni pe ni cu». $\Leftrightarrow$: **EN** “if and only if”; **DE** „genau dann, wenn“; **ES** «si y solo si».
+
+</Note>
+
+## Un requisito anidado
+
+Ahora $P$ significa roja, $Q$ tener círculo y $R$ tener estrella. Se exige $P\land(Q\lor R)$. Hay dos requisitos exteriores: el color y la alternativa completa de marcas. Niega primero esa conjunción exterior:
+
+$$\neg\bigl(P\land(Q\lor R)\bigr)\Leftrightarrow\neg P\lor\neg(Q\lor R).$$
+
+Después niega solo la disyunción agrupada, dejando intacto el fragmento exterior:
+
+$$\neg P\lor\neg(Q\lor R)\Leftrightarrow\neg P\lor(\neg Q\land\neg R).$$
+
+Fallar significa no ser roja **o** carecer de ambas marcas. Si $P$ es falsa, el original falla cualesquiera que sean las marcas y $\neg P$ hace verdadera la respuesta. Si $P$ es verdadera, el original falla exactamente cuando faltan ambas marcas. Esos dos casos exhaustivos verifican el significado general.
+
+La reagrupación $(\neg P\lor\neg Q)\land\neg R$ es incorrecta: una tarjeta no roja con estrella falla el original, pero tampoco satisface esta supuesta negación. Exige indebidamente ausencia de estrella cuando el color ya basta. Según la convención usual, «y» agrupa antes que «o». Omitir paréntesis opcionales bajo esa convención no equivale a cambiar explícitamente la agrupación. Escríbelos mientras aprendes.
+
+## Práctica independiente
+
+Reconstruye la comparación de $\neg(P\land Q)$ con $\neg P\land\neg Q$. Identifica **todas** las filas diferentes y explica qué exige cada condición.
+
+<details>
+<summary>Pista</summary>
+
+Incluye ambas asignaciones mixtas. Una conjunción puede fallar por una sola parte.
+
+</details>
+
+<details>
+<summary>Tabla y explicación de referencia</summary>
+
+
+| $P$ | $Q$ | $\neg(P\land Q)$ | $\neg P\land\neg Q$ |
+|---|---|---|---|
+| 1 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 |
+
+
+Las dos filas mixtas difieren. «No ambas» necesita al menos un fallo; «ambas no» exige dos. Para una tarjeta con nueve, se cumple positividad pero no paridad: realiza una fila mixta. Cualquiera de las diferencias basta para refutar la equivalencia.
+
+</details>
+
+<Exercise question="Una tarjeta cumple si tiene estrella o si tiene círculo y borde azul. Usa S, C, B y niega la regla en dos etapas. Comprueba una tarjeta sin estrella, con círculo y sin borde.">
+
+La regla es $S\lor(C\land B)$. Su negación es primero $\neg S\land\neg(C\land B)$ y después $\neg S\land(\neg C\lor\neg B)$. Deben fallar ambas alternativas; para que falle la conjunción interior basta una propiedad ausente. La tarjeta indicada satisface la negación por no tener estrella ni borde; sí puede tener círculo.
+
+</Exercise>
+
+## Extremos numéricos
+
+Para $x$ real,
+
+$$\neg\bigl((0<x)\land(x\le2)\bigr)\Leftrightarrow(x\le0)\lor(x>2).$$
+
+Cero satisface la negación porque incumple la comparación inferior estricta. Dos no la satisface porque cumple ambas comparaciones originales. Unir las comparaciones negadas con «y» exigiría estar simultáneamente por debajo y por encima del intervalo, lo cual es imposible.
+
+<Exercise question="Niega la condición exterior $x<0\lor x>2$. Explica ambos extremos y por qué conservar ‘o’ sería incorrecto.">
+
+La negación es $(x\ge0)\land(x\le2)$. Deben fallar ambas comparaciones exteriores estrictas, así que se incluyen cero y dos. Mantener «o» aceptaría una entrada negativa solo por ser como máximo dos, aunque el original exterior sea verdadero allí.
+
+</Exercise>
+
+Mantén fijos dominio y asignaciones. Estas leyes no atraviesan cuantificadores. La [hoja booleana posterior](../de-morgan-und-doppelte-negation/) da una demostración algebraica separada bajo sus leyes permitidas; esta prueba semántica no sustituye esas obligaciones.

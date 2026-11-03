@@ -1,0 +1,122 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/04 Negating Compound Statements.md", "A0.1.2 Negation/06 De Morgan Laws.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "en"
+title: "Negating combined conditions"
+navTitle: "Negating combined conditions"
+description: "Prove De Morgan’s laws and preserve scope through nested requirements."
+order: 12
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "logische-verknuepfungen", "negating-order-comparisons"]
+thumbnail: "logic"
+---
+
+A card qualifies when it is red and square. A red triangle fails, although its colour is correct. Saying “not red and not square” would miss it. A blue triangle fails too: failure need not mean **exactly one** missing property.
+
+Let $P$ mean red and $Q$ square for the **same card**. $\neg(P\land Q)$ denies the whole requirement. $(\neg P)\land Q$ instead demands a non-red square. A red triangle satisfies the first and fails the second, so their scopes matter.
+
+## Negation of conjunction
+
+An “and” requirement fails when at least one component fails. This includes both failing. The classical De Morgan law for conjunction is:
+
+$$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
+
+| $P$ | $Q$ | $P\land Q$ | $\neg(P\land Q)$ | $\neg P$ | $\neg Q$ | $\neg P\lor\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Compare the fourth and last columns: they agree in every row. The third column evaluates the original conjunction; the next reverses it. On the right we negate the two inputs before joining them with inclusive “or.”
+
+## Negation of inclusive disjunction
+
+If the rule is instead “red or square,” a red triangle qualifies, a blue square qualifies, and a red square qualifies too. Only a card with neither property fails. Thus both alternatives must fail:
+
+$$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
+
+| $P$ | $Q$ | $P\lor Q$ | $\neg(P\lor Q)$ | $\neg P$ | $\neg Q$ | $\neg P\land\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Again the fourth and last columns agree. In either mixed row, one input keeps the original disjunction true, so its denial is false. When both inputs are false, the denial and the conjunction of denials are true.
+
+Each input has exactly two truth values. The four pairs exhaust every possible assignment, proving both laws from the definitions of negation, conjunction, and inclusive disjunction. The digits $1,0$ encode true and false. These are semantic proofs for arbitrary classical propositions, including compounds used as inputs. A few arithmetic examples would not supply this exhaustive argument.
+
+<Note title="Read the scope aloud">
+
+$\neg(P\land Q)$: **EN** “not both P and Q”; **DE** „Es gelten nicht beide Aussagen P und Q“; **ES** «No se cumplen a la vez las proposiciones pe y cu». $\neg(P\lor Q)$: **EN** “neither P nor Q”; **DE** „Weder P noch Q gilt“; **ES** «No se cumple ni pe ni cu». $\Leftrightarrow$: **EN** “if and only if”; **DE** „genau dann, wenn“; **ES** «si y solo si».
+
+</Note>
+
+## A nested card requirement
+
+Now $P$ means red, $Q$ having a circle, and $R$ having a star. A card must satisfy $P\land(Q\lor R)$. There are two outer requirements: redness, and the entire marking alternative. Negate that outer conjunction first:
+
+$$\neg\bigl(P\land(Q\lor R)\bigr)\Leftrightarrow\neg P\lor\neg(Q\lor R).$$
+
+Next negate only the grouped disjunction, leaving the outer fragment untouched:
+
+$$\neg P\lor\neg(Q\lor R)\Leftrightarrow\neg P\lor(\neg Q\land\neg R).$$
+
+Failure means non-red **or** missing both markings. If $P$ is false, the original fails whatever the markings and the answer is true through $\neg P$. If $P$ is true, the original fails exactly when both markings are absent. These two exhaustive cases verify the meaning generally.
+
+The regrouping $(\neg P\lor\neg Q)\land\neg R$ is wrong: a non-red card with a star fails the original but fails this proposed denial too. It wrongly requires absence of a star even when colour already defeats the original. Under the usual convention, “and” binds more tightly than “or”; omitting optional parentheses under that convention is not the same as explicitly changing their grouping. Use explicit grouping while learning.
+
+## Independent practice
+
+Rebuild the comparison of $\neg(P\land Q)$ with $\neg P\land\neg Q$. Identify **every** disagreement row and explain what it requires.
+
+<details>
+<summary>Hint</summary>
+
+Include both mixed assignments. A conjunction can fail through only one component.
+
+</details>
+
+<details>
+<summary>Reference table and explanation</summary>
+
+
+| $P$ | $Q$ | $\neg(P\land Q)$ | $\neg P\land\neg Q$ |
+|---|---|---|---|
+| 1 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 |
+
+
+Both mixed rows disagree. “Not both” needs at least one failure; “both not” requires two. For a card bearing nine, positivity holds but evenness fails: this realizes one mixed row. Either disagreement alone refutes equivalence.
+
+</details>
+
+<Exercise question="A card qualifies through a star, or through both a circle and a blue border. With input letters S, C, B, negate the rule in two stages. Check a star-free card with a circle but no border.">
+
+The rule is $S\lor(C\land B)$. Its denial is first $\neg S\land\neg(C\land B)$, then $\neg S\land(\neg C\lor\neg B)$. Both alternatives must fail; failure of the inner conjunction needs only one absent property. The suggested card satisfies the denial through no star and no border; its circle is allowed.
+
+</Exercise>
+
+## Numerical boundaries
+
+For real $x$,
+
+$$\neg\bigl((0<x)\land(x\le2)\bigr)\Leftrightarrow(x\le0)\lor(x>2).$$
+
+Zero satisfies the denial because it fails the strict lower comparison. Two fails the denial because both original comparisons hold. Joining the failed comparisons with “and” would require an impossible simultaneous lower and upper outside position.
+
+<Exercise question="Negate the outside condition $x<0\lor x>2$. Explain both endpoints and why keeping ‘or’ would be wrong.">
+
+The denial is $(x\ge0)\land(x\le2)$. Both strict outside tests must fail, so zero and two are included. Keeping “or” would accept a negative input merely because it is at most two, even though the original outside condition is true there.
+
+</Exercise>
+
+Keep domains and assignments fixed. These laws do not move negation through quantifiers. The later [Boolean worksheet](../de-morgan-und-doppelte-negation/) gives a separate algebraic proof under its permitted laws; this semantic proof does not replace those proof obligations.

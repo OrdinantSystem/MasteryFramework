@@ -1,0 +1,68 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/03 Formal Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/05 Vacuous Truth.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Conditionals Hypotheses and Conclusions.md"]
+title: "Materiale Implikation und leere Wahrheit"
+navTitle: "Materiale Implikation und leere Wahrheit"
+description: "Alle Wahrheitsfälle auswerten und Einzelfall, Satz und Schluss unterscheiden."
+order: 13
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["building-truth-tables", "logical-negation"]
+thumbnail: "logic"
+---
+
+Teste für eine reelle Zahl $x$ die Regel „Wenn $x$ größer als zwei ist, dann ist $x$ größer als fünf“. Sieben erfüllt beide Vergleiche; drei erfüllt den ersten, aber nicht den zweiten. Null erfüllt keinen. Auch diesem letzten Fall gibt die klassische Logik einen Wahrheitswert für die ganze Implikation.
+
+## Die Definition umfasst vier Fälle
+
+Für sinnvolle Aussagen $P$ und $Q$ bedeutet die **materiale Implikation** $P\Rightarrow Q$: „Wenn $P$, dann $Q$“. Sie ist definitionsgemäß genau dann falsch, wenn $P$ wahr und $Q$ falsch ist. Schreibe $1$ für wahr und $0$ für falsch:
+
+| $P$ | $Q$ | $P\Rightarrow Q$ |
+| --- | --- | --- |
+| $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ |
+| $0$ | $1$ | $1$ |
+| $0$ | $0$ | $1$ |
+
+Diese Tabelle definiert den Junktor in der klassischen zweiwertigen Logik. „Uns unbekannt“ ist kein fünfter Fall: Eine feste verdeckte Karte hat trotzdem eine Zahl. Der Pfeil bedeutet nicht Und, beschreibt keinen kausalen Vorgang und behauptet nicht, dass einer der Teile zutrifft.
+
+Aus der Definition folgt ein nützliches Ergebnis:
+
+$$(P\Rightarrow Q)\equiv(\neg P\lor Q).$$
+
+Gelesen: „Wenn $P$, dann $Q$ ist logisch äquivalent zu nicht $P$ oder $Q$.“ $\equiv$ bedeutet Übereinstimmung bei jeder Wahrheitsbelegung; $\lor$ ist das einschließende Oder. Ist $P$ falsch, ist $\neg P$ wahr; die Disjunktion ist unabhängig von $Q$ wahr. Ist $P$ wahr, ist $\neg P$ falsch; die Disjunktion übernimmt den Wert von $Q$. Die beiden Fälle umfassen alle Zeilen und beweisen das Ergebnis aus der Definition.
+
+## Was leere Wahrheit besagt
+
+Eine Implikation mit falscher Voraussetzung heißt **vakuos wahr**, auch leer wahr. Beide Zeilen mit falscher Voraussetzung zählen. Für die Regel von über fünf zu über zwei ist die Folgerung bei null falsch, bei drei wahr. Beide Implikationen sind wahr. Eine falsche Voraussetzung legt also den Wahrheitswert der Folgerung nicht fest.
+
+Eine Schachtel enthalte genau null und drei; ihre Regel lautet: „Jede Karte über fünf liegt über zwei.“ Keine Karte erfüllt die Voraussetzung, also verletzt keine die Regel. Der Grundbereich ist nicht leer, wohl aber die ausgewählte Teilmenge. Bei einer leeren Schachtel ist der Grundbereich selbst leer. Keiner der Fälle liefert eine Karte über fünf. Die Regel allein beweist weder die Existenz einer Karte über fünf noch die einer Karte über zwei. Bei der Schachtel mit null und drei folgt die Existenz einer Karte über zwei aus dem angegebenen Inhalt, nicht aus der Regel. Wahrheit, Existenz und Nützlichkeit sind getrennte Fragen.
+
+Für die **andere** Regel von über zwei zu über fünf ist der Einzelfall bei null wahr, der bei drei falsch. Beschränken wir den Bereich ausdrücklich auf reelle Zahlen höchstens zwei, gilt die Regel überall dort: Jede Voraussetzung ist falsch. Das beweist eine veränderte Aussage, nicht die ursprüngliche Behauptung über alle reellen Zahlen.
+
+## Eine Belegung ist keine logische Folgerungsbeziehung
+
+Bei $x=7$ sind $P(x):x>2$ und $Q(x):x>5$ wahr. Bei $x=3$ ist die Implikation falsch, bei $x=0$ wieder wahr. Die Kombination $P$ falsch und $Q$ wahr kann bei diesen verknüpften Vergleichen nicht auftreten: Aus über fünf folgt nach der reellen Ordnung über zwei. Die allgemeine Tabelle braucht diese Zeile trotzdem für andere Aussagen, etwa $P:(0=1)$ und $Q:(2=2)$.
+
+Eine **logische Folgerungsbeziehung** verlangt, dass keine erlaubte Belegung oder kein erlaubtes Modell alle Prämissen wahr und die Folgerung falsch macht. Eine in einer Belegung wahre Implikation beweist diese Beziehung zwischen unabhängigen $P$ und $Q$ nicht. Ebenso beweist ein wahrer Zahlenfall keine Aussage für alle Eingaben. Ein arithmetischer Beweis für einen ganzen Bereich benutzt auch seine arithmetischen Annahmen, nicht nur frei belegbare Aussagebuchstaben.
+
+## Bedeutung vor Wahrheitstabelle
+
+Der gewöhnliche reelle Kehrwert ist bei null undefiniert. $1/0=2$ hinter eine falsche Voraussetzung zu setzen macht daraus keine sinnvolle reelle Gleichung. Bei Kehrwerten verwenden wir ausdrücklich Bereiche ohne null. Manche informelle Schreibweisen mit vorgeschalteter Bedingung haben eine vereinbarte Bedeutung; ohne solche Vereinbarung ist die Implikation keine Kurzschlussauswertung eines Programms, die undefinierte Rechnungen repariert.
+
+<Exercise question="Werte $(x>2)\Rightarrow(x>5)$ bei $7$, $3$ und $0$ aus. Beweist der wahre Nullfall einen Satz über alle reellen Zahlen? Stelle die fehlende Falsch/Wahr-Zeile mit anderen Aussagen her.">
+
+Die Paare sind wahr/wahr, wahr/falsch und falsch/falsch; die Implikation hat die Werte $1,0,1$. Drei widerlegt die Allaussage trotz des wahren Nullfalls. Diese Vergleiche liefern kein falsch/wahr, aber „null ist gleich eins“ und „zwei ist gleich zwei“ tun es. Auch solche Aussagen muss die Definition erfassen.
+
+</Exercise>
+
+<Exercise question="Eine Schachtel erfüllt die Regel Jede-Karte-über-fünf-liegt-über-zwei und enthält keine Karte über fünf. Müssen ihre Karten höchstens zwei sein? Vergleiche eine leere Schachtel, eine nur mit null und eine nur mit drei.">
+
+Nein. Alle drei Schachteln erfüllen die Regel. Die leere hat keine Karten; null ist höchstens zwei; drei ist größer als zwei. Keine enthält eine Karte über fünf. Die Regel und das Fehlen passender Karten entscheiden also nicht, ob eine Karte über zwei existiert, und behaupten überhaupt keine Existenz.
+
+</Exercise>

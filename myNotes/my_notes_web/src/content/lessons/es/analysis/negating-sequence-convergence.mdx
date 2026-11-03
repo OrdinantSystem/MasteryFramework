@@ -1,0 +1,136 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Negar la convergencia de sucesiones"
+navTitle: "Negar la convergencia de sucesiones"
+description: "Negar la convergencia de sucesiones."
+order: 51
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proving-sequence-convergence", "negating-quantified-statements-step-by-step", "negating-quantified-inequalities", "reading-conditionals"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Deriving Negation of Sequence Convergence.md#Deriving Negation of Sequence Convergence", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "quantifiers"
+---
+
+La sucesión constante cero dista cero del objetivo cero, pero uno del objetivo uno. Primero derivamos el fallo en un objetivo especificado, no la ausencia de todo límite real posible. Mantén fijos toda la sucesión y el objetivo durante la derivación.
+
+Una sucesión real asigna un término real $a_n$ a cada $n\in\mathbb N=\{1,2,3,\ldots\}$. Su distancia al real fijo $L$ es $|a_n-L|$. El real positivo $\varepsilon$ es la tolerancia; el natural $N$ inicia la cola y el natural $n$ comprueba una posición. Recordemos la definición positiva:
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Cada tolerancia exige un umbral cuya cola completa cumpla la condición. Puede usar la tolerancia, pero no cambiar con cada índice posterior. La definición no exige cercanía antes de ese umbral. Las seis etapas siguientes son formas equivalentes de su negación, no todavía una prueba de que una sucesión concreta falle.
+
+## 1. Niega la definición completa
+
+$$
+\neg\Bigl(\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+En esta etapa sitúa la negación fuera de toda la afirmación y deja intactos los símbolos interiores. El contexto fijo no cambia.
+
+## 2. Cruza el cuantificador de tolerancia
+
+$$
+\exists\varepsilon>0\;\neg\Bigl(\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+No funciona toda tolerancia positiva, así que alguna tolerancia positiva hace fallar el requisito restante. Se conserva positividad; no cambiamos a tolerancias no positivas.
+
+## 3. Cruza el cuantificador de umbral
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\neg\Bigl(\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Para esa tolerancia fija no sirve ningún umbral natural. Por tanto, todo umbral propuesto falla en la afirmación interior completa sobre índices. Mantén fija la tolerancia mientras varían los umbrales.
+
+## 4. Cruza el cuantificador de índice
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\neg\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+No hace falta fallar en todos los índices. Para cada umbral debe haber un índice que haga falso el condicional. Ese índice puede depender del umbral y del contexto ya fijado.
+
+## 5. Niega el condicional
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land\neg(|a_n-L|<\varepsilon)\bigr).
+$$
+
+Un condicional falso tiene hipótesis verdadera y conclusión falsa. El mismo índice debe estar en la cola y fallar la prueba de distancia. Conserva la comparación de la hipótesis y sustituye el condicional por conjunción. Un término anterior no incumple una promesa sobre la cola.
+
+## 6. Incluye la igualdad en el fallo de distancia
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+Una distancia real que no es menor que $\varepsilon$ es al menos $\varepsilon$. Este es el complemento literal de la comparación con la misma tolerancia, de modo que debe incluirse igualdad. Lee el resultado: elige una tolerancia positiva; frente a todo umbral, encuentra un término de su cola al menos así de lejos de $L$. «Arbitrariamente lejos» significa a partir de cualquier umbral propuesto, no que fallen todos los términos tardíos.
+
+## Demuestra un fallo real
+
+Para $a_n=0$ en todos los índices y $L=1$, elige $\varepsilon=1$. Para cualquier natural $N$, elige $n=N$. Se cumplen pertenencia y $n\ge N$, y $|a_n-1|=1\ge\varepsilon$. Esto cubre todo umbral y demuestra fallo en uno. Para objetivo cero, en cambio, cualquier $\varepsilon>0$ sirve con $N=1$: toda distancia es cero. Por tanto, esta sucesión tiene límite real aunque falle en el objetivo uno.
+
+### Práctica
+
+¿Por qué es incorrecto conservar un condicional en la condición final de fallo?
+
+<details>
+<summary>Pista</summary>
+
+Considera un índice anterior cuando exista.
+
+</details>
+
+<Exercise>
+
+Podría cumplirse con una hipótesis de cola falsa sin ningún término malo dentro de ella. Fallar exige pertenencia verdadera y fallo de distancia: una conjunción.
+
+</Exercise>
+
+Para la constante cero, reconstruye fallo en uno y éxito en cero sin muestrear tolerancias.
+
+<details>
+<summary>Pista</summary>
+
+Usa umbrales arbitrarios para fallar y tolerancias arbitrarias para converger.
+
+</details>
+
+<Exercise>
+
+En uno, $\varepsilon=1$ fijo y $n=N$ sirven para todo $N$. En cero, para cualquier $\varepsilon>0$ elige $N=1$ y obtén $0<\varepsilon$ en cada índice. Ningún argumento necesita el ejemplo opcional de recíprocos.
+
+</Exercise>
+
+Más tarde, deriva las seis etapas antes de añadir el cuantificador exterior de objetivo en [sin límite real](../no-real-limit/).
+
+¿Qué elecciones pueden depender del umbral? ¿Debe incumplir la tolerancia todo índice posterior?
+
+<details>
+<summary>Pista</summary>
+
+Lee los tres cuantificadores en orden.
+
+</details>
+
+<Exercise>
+
+El índice fallido puede usar el umbral; la tolerancia queda fija antes de todos los umbrales. Solo se exige un fallo por cola propuesta. Otros términos de esa misma cola pueden estar cerca del objetivo.
+
+</Exercise>
+
+## Lectura en voz alta
+
+**EN:** There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
+
+**DE:** Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
+
+**ES:** Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.

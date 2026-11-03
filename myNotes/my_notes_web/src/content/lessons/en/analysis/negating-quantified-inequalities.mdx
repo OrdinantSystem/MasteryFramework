@@ -1,0 +1,94 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negating quantified inequalities"
+navTitle: "Negating quantified inequalities"
+description: "Negating quantified inequalities."
+order: 35
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-quantified-statements-step-by-step", "negating-order-comparisons", "building-truth-tables"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+A promise says a reading lies strictly within one unit of a target. A reading exactly one unit away breaks it. Saying “more than one unit away” would miss that boundary failure. Before working through the quantifiers, know which side includes equality.
+
+## Real order partitions every case
+
+For real $x,c$, exactly one of below, equal and above holds. Negation keeps precisely the cases excluded by the original comparison. Removing below leaves equal or above; removing below-or-equal leaves only above. Exchanging above and below gives the other two rules. This uses the ordinary total order of the reals, not quantifier syntax alone.
+
+$$
+\begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
+$$
+
+At equality exactly one of the original comparison and its negation is true. Negating $x=c$ gives $x\ne c$, not one chosen direction; negating $x\ne c$ gives equality. The [order-comparison lesson](../negating-order-comparisons/) develops these elementary boundaries separately.
+
+## A quantified boundary example
+
+$$
+\neg(\forall x>0\;(x<1))\ \Longleftrightarrow\ \exists x>0\;(x\ge1).
+$$
+
+Every positive real being below one is false. One is an allowed counterexample and lies exactly on the boundary. Zero is not allowed. We changed every to some, retained positive reals and complemented the inner comparison. A second true example such as two is unnecessary; one already proves the negation.
+
+## When the predicate is conditional
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+| $A$ | $B$ | $A\Rightarrow B$ | $\neg(A\Rightarrow B)$ | $A\land\neg B$ |
+| --- | --- | --- | --- | --- |
+| true | true | true | false | false |
+| true | false | false | true | true |
+| false | true | true | false | false |
+| false | false | true | false | false |
+
+The last two columns agree in all four possible cases, proving the equivalence. A false hypothesis never refutes the implication. In the sequence application, the hypothesis will say that an index lies in a proposed tail. Failure must occur inside that tail and violate the distance conclusion. These are independent checks on the same index.
+
+### Practice
+
+Negate $x\le3$ and check both claims at $x=3$.
+
+<details>
+<summary>Hint</summary>
+
+The original owns equality.
+
+</details>
+
+<Exercise>
+
+The negation is $x>3$. At three the original is true and the negation false; below three the original remains true, above it only the negation is true.
+
+</Exercise>
+
+Why can a large error before a proposed threshold not refute that tail condition?
+
+<details>
+<summary>Hint</summary>
+
+Identify the implication’s hypothesis.
+
+</details>
+
+<Exercise>
+
+Before the threshold the hypothesis is false, making the implication true regardless of distance. Require an index at least the threshold and failure of the strict distance bound.
+
+</Exercise>
+
+Later, reproduce the four complements and all four conditional truth-table rows before the full convergence derivation.
+
+## Read aloud
+
+**EN:** Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
+
+**DE:** Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
+
+**ES:** No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.

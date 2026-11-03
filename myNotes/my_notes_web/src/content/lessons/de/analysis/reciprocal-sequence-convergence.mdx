@@ -1,0 +1,87 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Konvergenz der Kehrwertfolge"
+navTitle: "Konvergenz der Kehrwertfolge"
+description: "Konvergenz der Kehrwertfolge."
+order: 50
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proving-sequence-convergence", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+Die Glieder eins, ein Halb, ein Drittel und so weiter legen eine Annäherung an null nahe, ohne null je zu erreichen. Ein vollständiger Beweis braucht mehr als ein Bild: Er muss für jede positive reelle Toleranz einen natürlichen Startindex liefern und jede spätere Schätzung begründen.
+
+<Note title="Optionale Erweiterung: zusätzlich vorausgesetztes Wissen">
+
+Diese Seite ist optional. Der Hauptweg zur [Negation der Konvergenz](../negating-sequence-convergence/) hängt nicht von ihr ab. Wir akzeptieren hier ohne Beweis die archimedische Eigenschaft: Jede reelle Schranke wird von einer positiven natürlichen Zahl übertroffen. Außerdem nutzen wir die Ordnung positiver Kehrwerte: Ein größerer positiver Nenner hat einen kleineren oder gleichen Kehrwert. Das sind mathematische Voraussetzungen dieses Beispiels, keine Folgen der Quantorenschreibweise.
+
+</Note>
+
+## Startindex finden und sein Endstück prüfen
+
+$$
+a_n=\frac1n\quad(n\in\mathbb N),\qquad L=0.
+$$
+
+Alle Indizes sind positiv, daher ist jedes Glied definiert und positiv. Sei $\varepsilon>0$ beliebig reell. Sein Kehrwert $1/\varepsilon$ ist reell. Die vorausgesetzte archimedische Eigenschaft liefert ein positives natürliches $N>1/\varepsilon$. Halte diesen Startindex vor der Indexprüfung fest. Für jedes natürliche $n\ge N$ gilt:
+
+$$
+|a_n-0|=|1/n|=1/n\le1/N<\varepsilon.
+$$
+
+Die erste Gleichheit nutzt Folgenregel und Subtraktion von null. Positivität von $1/n$ entfernt den Betrag. Aus $n\ge N$ folgt durch Kehrwertordnung $1/n\le1/N$. Die strenge Wahl $N>1/\varepsilon$ liefert $1/N<\varepsilon$: Multipliziere zuerst mit positivem $\varepsilon$ zu $N\varepsilon>1$ und teile dann durch positives $N$. Also erfüllt jedes Glied im Endstück die Toleranz. Da sie beliebig war, konvergiert die Folge gegen null.
+
+Jedes Glied bleibt positiv, erreicht den Grenzwert also nicht. Konvergenz verlangt kleinen Abstand auf hinreichend späten Endstücken, nicht Gleichheit an einer Stelle. Die beiden zusätzlichen Tatsachen erfassen unendlich viele Toleranzen und Indizes; eine lange endliche Liste würde das nicht leisten.
+
+## Die strenge Grenze prüfen
+
+Bei $\varepsilon=1/10$ passt $N=11$, weil $1/11<1/10$ und spätere Kehrwerte nicht größer sind. $N=10$ scheitert bei $n=10$, wo Abstand und Toleranz gleich sind. Diese rationalen Prüfungen illustrieren die Strenge; der allgemeine Beweis steht oben für beliebige Toleranz. Jeder größere natürliche Startindex als ein erfolgreicher passt ebenfalls.
+
+### Übung
+
+Warum ist „Wähle einen hinreichend großen natürlichen Startindex“ ohne Existenzbegründung unvollständig?
+
+<details>
+<summary>Hinweis</summary>
+
+Quantoren stellen Anforderungen, keine arithmetischen Sätze.
+
+</details>
+
+<Exercise>
+
+Die archimedische Eigenschaft sichert eine erlaubte natürliche Zahl oberhalb der reellen Schranke. Ohne Annahme oder Beweis wird der Zeuge nur verlangt, nicht geliefert. Der konstante Beweis braucht nur die bekannte natürliche Eins, nicht diese Eigenschaft.
+
+</Exercise>
+
+Erkläre bei Toleranz $1/10$, warum zehn scheitert, elf aber für alle späteren Indizes passt.
+
+<details>
+<summary>Hinweis</summary>
+
+Der Startindex selbst gehört zum Endstück.
+
+</details>
+
+<Exercise>
+
+Bei zehn ist der Abstand $1/10$, nicht strikt kleiner. Ab elf ist er höchstens $1/11<1/10$.
+
+</Exercise>
+
+Rekonstruiere später den Beweis und benenne die Stellen für Startindexexistenz und Kehrwertordnung, ohne dieses optionale Ergebnis zur Voraussetzung der logischen Negation zu machen.
+
+## Laut lesen
+
+**EN:** For n at least capital N greater than one over epsilon, one over n is at most one over capital N and strictly less than epsilon.
+
+**DE:** Für n mindestens großes N größer als eins durch Epsilon ist eins durch n höchstens eins durch großes N und strikt kleiner als Epsilon.
+
+**ES:** Para ene al menos ene mayúscula mayor que uno entre épsilon, uno entre ene es como máximo uno entre ene mayúscula y estrictamente menor que épsilon.

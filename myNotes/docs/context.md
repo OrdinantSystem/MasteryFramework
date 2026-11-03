@@ -1,6 +1,6 @@
 # Context for future sessions
 
-Updated 2 November 2026. This file records current state; AGENTS.md and DESIGN-SYSTEM.md define the rules.
+Updated 3 November 2026. This file records current state; AGENTS.md and DESIGN-SYSTEM.md define the rules.
 
 ## Established
 
@@ -11,15 +11,21 @@ Updated 2 November 2026. This file records current state; AGENTS.md and DESIGN-S
 - Lesson metadata, translations, MDX registration, source-page bounds, counts, and navigation validation have shared contracts. Read the authoring guide rather than copying an entire page implementation.
 - Worksheet 2.1 adds nine lessons per language (seventeen total), two chapter branches, explicit source ids/page validation, MatrixComparison, configurable Flow nodes, and an area/orientation preset. See source-ingestion.md for coverage and source corrections.
 - Analysis I adds 15 lessons per language from six visually inspected one-page posters. At that stage the archive had two courses, 32 lessons per language, course-specific overviews/prerequisites/numbering, and multilingual search. New number-domain, expression-tree, implication, and NAND assets are documented in representation-library.md.
-- Learning & Teaching now forms a second knowledge area with one methodology course: 17 lessons per language (including four distinct transcript guides), 49 total lessons per language. The area/course registry, generic new-course routes, text-source locations, reusable process graphs, static method figures, Bloom question lens, and nine blank Markdown downloads are documented in learning-teaching.md. Jean moved the original study documents and deep-learning-method folder into Learning&Teaching/; do not undo that source reorganization.
+- The Learning & Teaching expansion introduced a second knowledge area with one methodology course: 17 lessons per language (including four distinct transcript guides), bringing the archive at that stage to 49 lessons per language. The area/course registry, generic new-course routes, text-source locations, reusable process graphs, static method figures, Bloom question lens, and nine blank Markdown downloads are documented in learning-teaching.md. Jean moved the original study documents and deep-learning-method folder into Learning&Teaching/; do not undo that source reorganization.
 - All answers remain local. The site collects no submissions. GitHub Pages publishing is configured in .github/workflows/mynotes-pages.yml for https://ordinantsystem.github.io/MyNotes/.
+
+## Analysis 0 migration
+
+The authored A0.1.1–A0.1.9 material is integrated through 38 new focused lessons per language and expansions of existing pages. Analysis now has 53 lessons per language; the archive has 87 per language and builds 287 static pages. The [coverage ledger](analysis-zero-coverage.json) maps all 52 original lessons and 28 companion concepts to 43 substantive teaching destinations. Read [analysis-zero.md](analysis-zero.md) before revising this material. Existing routes and the original Boolean worksheet proof requirements remain intact; numeric ordering and chapter placement now follow the prerequisite route. MyNotes owns the public teaching narrative for this migration; Obsidian preserves original drafts and private learning evidence, with its course index pointing to published counterparts. No automatic two-way lesson sync is established.
+
+Markdown display equations and the shared Math display component scroll locally with labeled keyboard-focusable regions, avoiding mobile-wide overflow. Independent review and concrete execution results belong in VERIFICATION.md; publication or a passing build does not promote unreviewed mathematical/translation status.
 
 ## Open work
 
 1. Human review of translations and mathematical explanations. Current review flags remain unreviewed; visual approval does not change them.
 2. Future subjects must extend the existing course registry and validated source/chapter metadata. The first Linear Algebra concept map remains scoped to its original chapter.
 3. Physical touch/pen and screen-reader checks. Mouse, numeric, keyboard, and responsive checks are recorded in the verification file; these do not imply a full accessibility audit.
-4. Confirm the first authorized GitHub Pages workflow run succeeds at https://ordinantsystem.github.io/MyNotes/; the root workflow now controls build and deployment.
+4. For each authorized main push, verify the exact GitHub Actions build/deploy run and the resulting live content at https://ordinantsystem.github.io/MyNotes/; the root workflow controls deployment.
 5. New interaction families only when a real teaching relationship requires them. No plotting package, React runtime, or general game engine is required by the current library.
 
 ## Resume procedure

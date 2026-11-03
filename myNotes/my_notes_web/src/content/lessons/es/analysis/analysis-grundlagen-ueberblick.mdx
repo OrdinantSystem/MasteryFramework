@@ -1,22 +1,28 @@
 ---
 course: "analysis"
-chapter: "analysis-circuits"
+chapter: "analysis-recap"
 sourceId: "analysis-concepts-3"
 sourcePages: [1]
 locale: "es"
 title: "Fundamentos de análisis · mapa de repaso"
 navTitle: "Fundamentos de análisis · mapa de repaso"
 description: "Reconecta lenguaje, demostraciones y álgebra sin confundir sus funciones."
-order: 15
+order: 53
 kind: "recap"
 status: "published"
 reviewStatus: "unreviewed"
 prerequisites: ["widerspruch-und-irrationalitaet", "de-morgan-und-doppelte-negation", "nand-schaltungen"]
 thumbnail: "proof"
-additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1]}, {"sourceId": "analysis-concepts-2", "pages": [1]}, {"sourceId": "analysis-concepts-4", "pages": [1]}, {"sourceId": "analysis-sheet-1-1", "pages": [1]}, {"sourceId": "analysis-sheet-1-2", "pages": [1]}]
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1]}, {"sourceId": "analysis-concepts-2", "pages": [1]}, {"sourceId": "analysis-concepts-4", "pages": [1]}, {"sourceId": "analysis-sheet-1-1", "pages": [1]}, {"sourceId": "analysis-sheet-1-2", "pages": [1]}, {"sourceId": "analysis-zero", "pages": [], "locations": ["00 Analysis 0 Lessons.md"]}]
 ---
 
 ## Un recorrido compacto por el material
+
+Las lecciones de Análisis 0 desarrollan estos fundamentos con más detalle. Empieza por [enunciados y predicados](../aussagen-und-aussageformen/), y continúa con [definiciones](../definitions-assumptions-results/), [igualdad](../equality-and-equations/) y [comparaciones de orden](../order-comparisons/). Las [conectivas lógicas](../logische-verknuepfungen/), la [negación](../logical-negation/) y la [construcción de tablas de verdad](../building-truth-tables/) preparan las lecciones de [implicación](../material-implication-and-vacuity/) y [equivalencia](../biconditionals-and-equivalent-conditions/).
+
+Para los cuantificadores, sigue con [enunciados universales](../universal-statements-and-domains/), [alcance](../bound-variables-and-scope/), [existencia](../existence-and-witnesses/), [orden y dependencia](../quantifier-order/) y el [procedimiento de negación](../negating-quantified-statements-step-by-step/). La [aplicación a la convergencia](../reading-sequence-convergence/) utiliza esas ideas después de introducir las [sucesiones](../real-sequences/) y la [distancia absoluta](../absolute-value-and-distance/). La [deducción de su negación](../negating-sequence-convergence/) distingue fallar en un valor objetivo de [no tener ningún límite real](../no-real-limit/).
+
+Las lecciones originales de los pósteres y las hojas de ejercicios siguen sirviendo como aplicaciones. En particular, los ejercicios booleanos siguientes exigen la deducción algebraica indicada a partir de leyes numeradas; una explicación anterior mediante tablas de verdad no sustituye esa tarea.
 
 1. Decide si la frase es un enunciado o aún tiene variables libres.
 2. Precisa dominio y cuantificadores.
@@ -34,10 +40,10 @@ Aquí $U$ representa la unicidad del complemento.
 ## Preguntas para responder sin mirar
 
 - ¿Por qué necesita una demostración propia la recíproca de una implicación verdadera?
-- ¿Cuál es la negación de «para todo $x$ existe y»?
+- ¿Cuál es la negación de «para todo $x$ existe un $y$»?
 - ¿Dónde usa la demostración de $\sqrt{2}$ la hipótesis de fracción irreducible?
 - ¿Por qué deben deducirse las identidades antes de usarlas para demostrar idempotencia?
-- ¿Por qué la implementación NAND de $Y$ necesita dos puertas en lugar de tres?
+- ¿Por qué la implementación NAND de la conjunción necesita dos puertas en lugar de tres?
 
 Si dudas, vuelve a la lección correspondiente. Estos fundamentos apoyan los temas posteriores de análisis; los límites y la diferenciación no forman parte de estos seis documentos.
 

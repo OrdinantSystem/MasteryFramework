@@ -11,12 +11,15 @@ for(const [a,b] of assignments){
 }
 for(let n=-40;n<=40;n++)assert.equal(n%2===0,(n*n)%2===0);
 assert.equal(1*1>1,false);
+const analysisInventory=[];
 for(const locale of ['en','de','es']){
- const dir=`src/content/lessons/${locale}/analysis`,names=await readdir(dir);assert.equal(names.length,15);
+ const dir=`src/content/lessons/${locale}/analysis`,names=(await readdir(dir)).filter(name=>name.endsWith('.mdx')).sort();
+ assert.ok(names.length>0);analysisInventory.push(names);
+ if(analysisInventory.length>1)assert.deepEqual(names,analysisInventory[0],`${locale}: matching Analysis lesson inventory`);
  for(const filename of names){const source=await readFile(`${dir}/${filename}`,'utf8');assert.ok(!/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(source),'No escaped TeX control characters');assert.match(source,/course: "analysis"/);}
  const connectives=await readFile(`${dir}/logische-verknuepfungen.mdx`,'utf8');
  const tables=connectives.match(/(?:^\|.*\|\r?\n?)+/gm);
- assert.equal(tables?.length,2,`${locale}: retain both truth tables`);
+ assert.ok(tables?.length>=2,`${locale}: retain both original truth tables; additional worked tables are allowed`);
  const rows=tables[1].trim().split(/\r?\n/).map(line=>line.split('|').slice(1,-1).map(cell=>cell.trim()));
  assert.deepEqual(rows[0],[String.raw`$A$`,String.raw`$B$`,String.raw`$C$`,String.raw`$A \land B$`,String.raw`$(A \land B) \land C$`,String.raw`$B \lor C$`,String.raw`$A \lor (B \lor C)$`,String.raw`$(A \land B) \Rightarrow C$`,String.raw`$(A \land B) \Leftrightarrow C$`]);
  const expected=[];
@@ -26,4 +29,4 @@ for(const locale of ['en','de','es']){
  assert.deepEqual(rows.slice(2),expected,`${locale}: all eight assignments and six derived columns are correct`);
  for(const file of ['neutralitaet-und-idempotenz','nullgesetze-und-konstanten','eindeutiges-komplement','de-morgan-und-doppelte-negation']){const source=await readFile(`${dir}/${file}.mdx`,'utf8');assert.ok(!source.includes('<Interactive'),'Formal worksheet proofs must not substitute an activity for derivation');assert.ok(source.includes('\\overset'),'Proofs retain rule annotations');}
 }
-console.log('Verified Boolean models, NAND networks, complement uniqueness, parity boundaries, and 45 localized Analysis lessons.');
+console.log(`Verified Boolean models, NAND networks, complement uniqueness, parity boundaries, and ${analysisInventory.reduce((sum,names)=>sum+names.length,0)} localized Analysis lessons.`);

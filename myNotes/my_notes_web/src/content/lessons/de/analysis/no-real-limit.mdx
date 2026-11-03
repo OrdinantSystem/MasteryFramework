@@ -1,0 +1,89 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Kein reeller Grenzwert"
+navTitle: "Kein reeller Grenzwert"
+description: "Kein reeller Grenzwert."
+order: 52
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-sequence-convergence"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Deriving Negation of Sequence Convergence.md#Deriving Negation of Sequence Convergence"]
+thumbnail: "quantifiers"
+---
+
+Die Nullfolge konvergiert nicht gegen eins, aber gegen null. Ein gescheitertes Ziel genügt daher nicht für das Fehlen eines reellen Grenzwerts. Es fehlt das Scheitern bei jedem möglichen reellen Ziel. Halte die Folge fest, während die Ziele variieren.
+
+Schreibe $C(L)$ für die vollständige positive Konvergenzdefinition dieser festen Folge bei Ziel $L$. Das ist eine Abkürzung, keine neue Definition. Einen reellen Grenzwert zu haben bedeutet $\exists L\in\mathbb R\;C(L)$. Negiere diese äußere Existenzbehauptung:
+
+$$
+\neg(\exists L\in\mathbb R\;C(L))\ \Longleftrightarrow\ \forall L\in\mathbb R\;\neg C(L).
+$$
+
+Ersetze für jedes Ziel die Negation durch die bereits hergeleitete Fehlerbedingung. Das Ziel steht vor der Toleranz, also darf diese davon abhängen. Für dieses Ziel muss sie dennoch gegen alle Startindizes fest bleiben.
+
+$$
+\forall L\in\mathbb R\;\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+Dies bedeutet, dass kein endlicher reeller Grenzwert existiert, auch Divergenz als reelle Folge genannt. Es verlangt weder Wachstum noch Streben gegen unendlich. Ebenso wird keine gemeinsame Toleranz für alle Ziele verlangt: Die Toleranz vor das Ziel zu ziehen wäre stärker und bräuchte eigene Begründung. Der Fehlerindex darf Ziel und Startindex sowie gewählte Toleranz und feste Folge nutzen.
+
+## Ein Quantorentausch kann den Test zerstören
+
+$$
+\forall N\in\mathbb N\;\exists\varepsilon>0\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|>\varepsilon\bigr).
+$$
+
+Diese vorgeschlagene direkte Negation enthält zwei unbegründete Änderungen. Sie lässt die Toleranz nach jedem Startindex neu wählen, statt eine gegen alle festzulegen. Außerdem ersetzt sie bei derselben Toleranz strikt kleiner durch strikt größer und lässt Gleichheit aus. Negation wechselt Quantortypen an Ort und Stelle; sie vertauscht sie nicht.
+
+Ein optionales Gegenmodell zum vertauschten Aufbau nutzt das [Kehrwertergebnis](../reciprocal-sequence-convergence/) mit seiner ausdrücklich angenommenen archimedischen Voraussetzung. Bei Ziel null konvergiert $a_n=1/n$, erfüllt aber die angezeigte falsche Reihenfolge: Wähle für jedes $N$ den Index $n=N$ und $\varepsilon=1/(2N)$. Dann gilt $1/N>1/(2N)>0$. Dieses Gegenmodell ist optional; der Hauptweg zur Negation braucht nur die konstanten Beweise.
+
+## Optionale Feinheit: eine gesondert äquivalente strenge Form
+
+Mit richtiger Reihenfolge $\exists\varepsilon>0\;\forall N\;\exists n$ ist eine strenge Abstandsversion tatsächlich äquivalent zum Scheitern. Tritt in jedem Endstück Abstand mindestens $\varepsilon$ auf, wähle die kleinere positive Toleranz $\varepsilon/2$. Dieselben Fehlerglieder haben strikt größeren Abstand als diese Hälfte. Umgekehrt impliziert Abstand größer als eine positive Toleranz auch mindestens diese Toleranz. Das beweist Äquivalenz durch Toleranzänderung, nicht durch die falsche Behauptung, $\neg(d<\varepsilon)$ bedeute bei festem Wert $d>\varepsilon$. Halbieren repariert den Quantorentausch nicht.
+
+### Übung
+
+Wovon darf die Toleranz beim festen Ziel und beim fehlenden reellen Grenzwert abhängen? Müssen alle späten Glieder scheitern?
+
+<details>
+<summary>Hinweis</summary>
+
+Lies das äußere Ziel vor der Toleranz.
+
+</details>
+
+<Exercise>
+
+Beim festen Ziel steht der Kontext bereit, nicht der spätere Startindex. Ohne reellen Grenzwert ist das Ziel eine frühere universelle Eingabe, also darf die Toleranz es nutzen. Der Index darf vom Startindex abhängen. Nur ein Fehler in jedem vorgeschlagenen Endstück wird verlangt, nicht das Scheitern jedes Glieds.
+
+</Exercise>
+
+Rekonstruiere von positiver Konvergenz aus Scheitern am festen Ziel und dann keinen reellen Grenzwert. Erkläre beide Fehler im angezeigten Vorschlag.
+
+<details>
+<summary>Hinweis</summary>
+
+Negiere die Implikation erst nach den drei Quantoren.
+
+</details>
+
+<Exercise>
+
+Scheitern am festen Ziel lautet $\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;(n\ge N\land |a_n-L|\ge\varepsilon)$. Kein reeller Grenzwert ergänzt außen $\forall L\in\mathbb R$. Epsilon bleibt vor jedem Startindex und die direkte Vergleichsnegation enthält Gleichheit. Die gesondert bewiesene strenge Version darf Epsilon halbieren, muss aber die Reihenfolge bewahren.
+
+</Exercise>
+
+Leite später die sechs Stufen ohne Abschreiben her und unterscheide an der Nullfolge Scheitern bei einem Ziel von Scheitern bei allen.
+
+## Laut lesen
+
+**EN:** For every real target L there is a positive tolerance such that every natural threshold has a later or equal term at least that far from L.
+
+**DE:** Für jedes reelle Ziel L gibt es eine positive Toleranz, sodass ab jedem natürlichen Startindex ein Glied mindestens so weit von L entfernt ist.
+
+**ES:** Para todo objetivo real ele existe una tolerancia positiva tal que todo umbral natural tiene un término en él o después al menos así de lejos de ele.

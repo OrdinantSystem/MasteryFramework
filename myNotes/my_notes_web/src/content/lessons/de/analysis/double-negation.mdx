@@ -1,0 +1,85 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/05 Double Negation.md"]
+locale: "de"
+title: "Doppelte Negation"
+navTitle: "Doppelte Negation"
+description: "Zwei verschachtelte Verneinungen beweisen und von getrennten unterscheiden."
+order: 11
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation"]
+thumbnail: "logic"
+---
+
+„Es ist nicht der Fall, dass die Zahl ungleich drei ist“ sagt, dass die Zahl gleich drei ist. Die innere Behauptung verneint Gleichheit; die äußere Formulierung verneint diese gesamte Verneinung. Die Zahl selbst verändert sich nicht.
+
+## Der klassische Satz
+
+Für jede Aussage $P$ gilt
+
+$$\neg(\neg P)\Leftrightarrow P.$$
+
+**EN:** “not (not P) if and only if P.” **DE:** „nicht (nicht P) genau dann, wenn P gilt“. **ES:** «no (no pe) si y solo si pe».
+
+Das ist eine Übereinstimmung der Wahrheitswerte in jedem Fall, keine Behauptung, $P$ sei wahr. Sie folgt aus klassischer Zweiwertigkeit und der Definition der Negation als Wahrheitsumkehr. Sie gilt nicht als Behauptung über jedes logische System.
+
+## Beweis: beide möglichen Ausgangswerte
+
+Betrachte eine beliebige Aussage. Ist $P$ wahr, so ist $\neg P$ falsch und $\neg(\neg P)$ wahr. Original und doppelte Negation stimmen überein.
+
+Ist $P$ falsch, so ist $\neg P$ wahr und $\neg(\neg P)$ falsch. Wieder stimmen sie überein. Insbesondere machen zwei Negationen aus einer falschen Aussage keine wahre.
+
+In diesem Rahmen gibt es keinen dritten Ausgangswert. Die beiden Fälle erschöpfen alle Möglichkeiten und beweisen den Satz, ohne ihn vorauszusetzen. Eine einzelne wahre Zahlengleichheit würde nur den ersten Fall veranschaulichen und den zweiten unbewiesen lassen.
+
+## Der Geltungsbereich entscheidet
+
+Setzt man eine ganze Gleichheit ein, erhält man
+
+$$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
+
+Für $x=0$ sind beide Seiten wahr, für $x=2$ falsch. Der Satz erklärt die Übereinstimmung für jede erlaubte Eingabe. Ein freies $x$ bleibt frei, der Bereich bleibt gleich, und es wird keine Gegenzahl von $x$ gebildet. „Nicht ungleich null“ bedeutet nicht „negativ“.
+
+Auch eine zusammengesetzte Aussage darf für $P$ eingesetzt werden:
+
+$$\neg\bigl(\neg(P\land Q)\bigr)\Leftrightarrow(P\land Q).$$
+
+Die ganze Konjunktion ist eine Eingabe. Es ist nicht nötig, die Negationen in sie hineinzuschieben.
+
+Dagegen enthält $(\neg P)\land(\neg Q)$ zwei Negationen **verschiedener Eingaben**. Keine verneint das Ergebnis der anderen. Für $P=Q=1$ ist $P\land Q$ wahr, aber $(\neg P)\land(\neg Q)$ falsch. Beide Zeichen zu löschen verändert den Wahrheitswert.
+
+Bei drei verschachtelten Negationen lässt das Entfernen eines Paares $\neg P$ übrig. Bei vier entfernt man erst ein Paar und dann das verbleibende Paar und erhält $P$. Das verwendet wiederholt den Satz, keine Regel über die Multiplikation negativer Zahlen.
+
+## Verschachtelt und getrennt üben
+
+Sei $P$ falsch. Rekonstruiere beide Zwischenwerte. Vereinfache dann drei und vier verschachtelte Negationen ohne Vorzeichenmerksatz.
+
+<details>
+<summary>Hinweis</summary>
+
+Jede Negation kehrt den Wert ihrer gesamten Eingabe um. Suche ein Paar, bei dem eine Verneinung die andere als Eingabe hat.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Die erste Negation ist wahr, die zweite falsch und stimmt mit $P$ überein. In $\neg(\neg(\neg P))$ kann das äußere Paar entfernt werden; übrig bleibt $\neg P$. Bei $\neg(\neg(\neg(\neg P)))$ bleibt nach dem äußeren Paar $\neg(\neg P)$ und nach dem zweiten Paar $P$.
+
+</details>
+
+<Exercise question="Vereinfache $\neg(\neg(P\lor Q))$, ohne im Inneren der Disjunktion etwas zu verändern. Warum gilt der Satz? Dürfen auch die Zeichen in $\neg P\land\neg Q$ gelöscht werden?">
+
+Das Ergebnis lautet $P\lor Q$. Die ganze einschließende Disjunktion hat einen klassischen Wahrheitswert, der zweimal umgekehrt wird. Die getrennten Negationen dürfen nicht gelöscht werden: Für $P=Q=1$ würde aus falsch wahr. Zwei Zeichen zu zählen weist keine verschachtelten Geltungsbereiche nach.
+
+</Exercise>
+
+## Negative Wörter in der Alltagssprache
+
+Mehrere negative Wörter drücken nicht immer zwei verschachtelte logische Operatoren aus. Das spanische „No vino nadie“ verwendet negative Kongruenz: Niemand kam, nicht etwa jemand. Auch andere Sprachen besitzen Konstruktionen, deren Bedeutung sich nicht durch Zählen negativer Wörter ergibt.
+
+„Ich habe nicht bewiesen, dass $P$ falsch ist“ betrifft einen Beweis und ist keine direkte Verneinung von $\neg P$. Daraus folgt $P$ nicht. Übersetze zuerst die beabsichtigten Geltungsbereiche. Ein späterer [boolescher Beweis](../de-morgan-und-doppelte-negation/) leitet dasselbe klassische Gesetz mit der Eindeutigkeit des Komplements innerhalb der dort erlaubten Regeln her. Hier steht der elementare semantische Beweis.

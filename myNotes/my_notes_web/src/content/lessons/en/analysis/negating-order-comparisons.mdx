@@ -1,0 +1,78 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/03 Negating Inequalities.md"]
+locale: "en"
+title: "Negating order comparisons"
+navTitle: "Negating order comparisons"
+description: "Derive all four comparison negations from the three possible order positions."
+order: 10
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "order-comparisons"]
+thumbnail: "logic"
+---
+
+“At least three” includes three. Its negation must exclude three, so “at most three” cannot be right: both would hold at the boundary. The correct denial is “strictly less than three.”
+
+Let $x$ and $c$ be real numbers in their usual order. Here $c$ is the boundary. The following are derived rules, not four unrelated replacements to memorize:
+
+$$\neg(x>c)\Leftrightarrow x\le c$$
+$$\neg(x\ge c)\Leftrightarrow x<c$$
+$$\neg(x<c)\Leftrightarrow x\ge c$$
+$$\neg(x\le c)\Leftrightarrow x>c$$
+
+In each line $\Leftrightarrow$ says that both conditions agree for every allowed assignment. Direction changes, and the inclusion of equality changes too.
+
+<details>
+<summary>EN / DE / ES readings</summary>
+
+**EN:** “not greater than” means “less than or equal to”; “not at least” means “strictly less than”; “not less than” means “greater than or equal to”; “not at most” means “strictly greater than.” **DE:** „Es ist nicht der Fall, dass x größer als c ist“ heißt „x ist kleiner oder gleich c“; „Es ist nicht der Fall, dass x mindestens c ist“ heißt „x ist streng kleiner als c“; „Es ist nicht der Fall, dass x kleiner als c ist“ heißt „x ist größer oder gleich c“; „Es ist nicht der Fall, dass x höchstens c ist“ heißt „x ist streng größer als c“. **ES:** «No es cierto que equis sea mayor que ce» significa «equis es menor o igual que ce»; «No es cierto que equis sea mayor o igual que ce» significa «equis es estrictamente menor que ce»; «No es cierto que equis sea menor que ce» significa «equis es mayor o igual que ce»; «No es cierto que equis sea menor o igual que ce» significa «equis es estrictamente mayor que ce».
+
+</details>
+
+## Proof from trichotomy
+
+Fix any real input $x$ and boundary $c$. The usual real order places $x$ in exactly one of three positions: below $c$, equal to $c$, or above $c$. This property, **trichotomy**, is accepted as foundational order background.
+
+- “Above” is true only in the above position. Its negation selects below and equal: $x\le c$.
+- “Above or equal” selects two positions. Its negation selects only below: $x<c$.
+- “Below” selects one position. Its negation selects equal and above: $x\ge c$.
+- “Below or equal” selects two positions. Its negation selects only above: $x>c$.
+
+Every real input has exactly one of these positions, and nothing depended on a special numerical choice. This proves all four laws. Checking $2,3,4$ around the boundary three illustrates them and can expose errors, but three samples alone do not prove a law for infinitely many real inputs. These rules need not hold unchanged for arbitrary partial orders, where incomparable objects may occur.
+
+## Read the full comparison and keep the domain
+
+The negation of $0<x$ is $0\ge x$, equivalently $x\le0$. Read the input on the right as carefully as one on the left. Equality belongs in the answer because zero fails the original strict comparison.
+
+If $x$ is restricted to **nonnegative reals**, denying $x>3$ gives $x\le3$ in that same domain: exactly the inputs in $[0,3]$. Negative one is not allowed, even though it satisfies the comparison on the larger real line. No quantifier is added, and a free $x$ stays free. Negating is not an inequality-solving operation or permission to change the universe of inputs.
+
+## Boundary practice
+
+Negate $x>3$, $x\ge3$, $x<3$, and $x\le3$. Give the truth values of both originals and denials at $x=3$.
+
+<details>
+<summary>Hint</summary>
+
+At equality, the strict originals are false and the non-strict originals are true. Reverse those verdicts.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+In order: $x\le3$, $x<3$, $x\ge3$, $x>3$. At three the originals have values $0,1,0,1$ and the denials $1,0,1,0$. Changing direction without changing equality inclusion fails this check.
+
+</details>
+
+<Exercise question="Write the denial of ‘x is at most five’. Explain why five itself fails it. Then negate ‘zero is strictly less than x’ for nonnegative real x, describing every permitted solution.">
+
+The first answer is $x>5$. Five satisfies the original, so it must fail the denial. The second is $x\le0$ in the nonnegative domain; only $x=0$ satisfies it. Negative inputs have not become permitted. These conclusions concern the same inputs and boundaries as their originals.
+
+</Exercise>
+
+Reconstruct one rule using arbitrary below/equal/above positions. Explain why that argument covers more than any finite list of successful real-number tests.

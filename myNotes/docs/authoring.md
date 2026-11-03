@@ -32,7 +32,7 @@ sourcePages contains positive page numbers from the supplied reference, without 
 
 ## Shared content vocabulary
 
-Registered components are in src/components/mdx.ts and need no repeated imports:
+Registered components are in src/components/mdx.ts and need no repeated imports. `Exercise` normally receives its visible task in `question`. When a longer task is already stated immediately above the component (with an optional hint), omit `question` and use the existing solution disclosure rather than repeating a generic instruction. Keep the actual task visible and its answer inside the disclosure; a formula reading that supplies the requested answer belongs inside that answer too.
 
 ```mdx
 ## Meaning

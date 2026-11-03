@@ -1,0 +1,87 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Valor absoluto y distancia"
+navTitle: "Valor absoluto y distancia"
+description: "Valor absoluto y distancia."
+order: 47
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["order-comparisons", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+---
+
+Menos tres y más tres están a lados opuestos de cero, pero ambos distan tres unidades. La distancia mide separación, no dirección. El valor absoluto convierte un real con signo en su distancia no negativa a cero.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+Esto es una definición. Todo real pertenece exactamente a una rama. Si $x<0$, su opuesto $-x$ es positivo: el signo menos no vuelve negativa la salida. Así, $|-3|=3$, $|3|=3$ y $|0|=0$. No negativo incluye cero; no significa estrictamente positivo. Usamos la aritmética y el orden reales habituales.
+
+## Desplazamiento con signo y distancia
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+La diferencia $x-y$ es el desplazamiento con signo de $y$ a $x$. Su valor absoluto da la longitud del segmento. Invertir la resta cambia el signo. Un número y su opuesto tienen el mismo valor absoluto: para una entrada positiva ambos dan esa entrada; para una negativa ambos dan su opuesto positivo; en cero ambos dan cero. Por ello $d(x,y)=d(y,x)$ para todos los reales, no solo en el ejemplo.
+
+Además, $d(x,y)=0$ exactamente cuando $x=y$. Si la diferencia es no negativa, su valor absoluto es ella misma, así que distancia cero obliga a diferencia cero. Si es negativa, su valor absoluto es positivo y no puede ser cero. A la inversa, puntos iguales tienen diferencia y valor absoluto cero. No hace falta la desigualdad triangular.
+
+## Una tolerancia estricta es un intervalo abierto
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+Fija el objetivo $L$ y una tolerancia real positiva $\varepsilon$. Pon $u=t-L$. Si $u\ge0$, entonces $|u|=u$: la prueba de distancia es $u<\varepsilon$, mientras que $-\varepsilon<u$ ya se sigue de la tolerancia positiva. Si $u<0$, entonces $|u|=-u$: $-u<\varepsilon$ equivale a $u>-\varepsilon$, mientras que $u<\varepsilon$ ya se cumple. En ambos casos resulta exactamente $-\varepsilon<u<\varepsilon$. Sumar $L$ da el intervalo mostrado. Cada paso es reversible, así que se demuestran ambas direcciones.
+
+La comparación encadenada exige ambas cotas estrictas. Para objetivo tres y tolerancia $1/2$, los extremos $2.5$ y $3.5$ quedan excluidos: su distancia iguala la tolerancia. Épsilon es una tolerancia variable, no una constante diminuta especial.
+
+### Práctica
+
+Con objetivo $3$ y tolerancia $1/2$, comprueba $2.5$, $3$ y $13/4$.
+
+<details>
+<summary>Pista</summary>
+
+Calcula primero la distancia.
+
+</details>
+
+<Exercise>
+
+Las distancias son $1/2$, $0$, $1/4$. El primero falla por igualdad; los otros pasan. El extremo no está estrictamente dentro del intervalo.
+
+</Exercise>
+
+Un punto está a la izquierda del objetivo. ¿El desplazamiento negativo lo sitúa dentro de cualquier tolerancia positiva?
+
+<details>
+<summary>Pista</summary>
+
+Usa dos y cinco.
+
+</details>
+
+<Exercise>
+
+No. Del objetivo cinco al punto dos, el desplazamiento es menos tres, pero la distancia es tres, que incumple tolerancia uno.
+
+</Exercise>
+
+Más tarde, reconstruye la prueba por signos de la equivalencia con el intervalo y la prueba de distancia cero.
+
+## Lectura en voz alta
+
+**EN:** The absolute value of t minus L is less than epsilon exactly when t lies strictly between L minus epsilon and L plus epsilon.
+
+**DE:** Der Betrag von t minus L ist kleiner als Epsilon genau dann, wenn t strikt zwischen L minus Epsilon und L plus Epsilon liegt.
+
+**ES:** El valor absoluto de te menos ele es menor que épsilon exactamente cuando te está estrictamente entre ele menos épsilon y ele más épsilon.

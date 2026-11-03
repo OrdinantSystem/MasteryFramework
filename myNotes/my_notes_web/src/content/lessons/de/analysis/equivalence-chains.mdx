@@ -1,0 +1,67 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-equivalence"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/04 Chains of Equivalences.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Chains of Logical Equivalences.md"]
+title: "Äquivalenzketten"
+navTitle: "Äquivalenzketten"
+description: "Jedes Glied in beiden Richtungen begründen und veränderte Lösungsmengen erkennen."
+order: 18
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["biconditionals-and-equivalent-conditions", "equality-and-equations"]
+thumbnail: "proof"
+---
+
+Eine Gleichung zu lösen heißt nicht nur, eine plausible Endzahl zu finden. Gesucht sind genau die ursprünglichen Lösungen. Ein umkehrbarer Schritt erhält sie; ein einseitiger Schritt kann Kandidaten hinzufügen oder Fälle ausschließen.
+
+## Was die Kette behauptet
+
+Für jedes reelle $x$ gilt nach gewöhnlicher Arithmetik
+
+$$(2x+2=6)\Leftrightarrow(2x=4)\Leftrightarrow(x=2).$$
+
+Gelesen: „Zweimal $x$ plus zwei ist gleich sechs genau dann, wenn zweimal $x$ gleich vier ist; zweimal $x$ ist gleich vier genau dann, wenn $x$ gleich zwei ist.“ $2x$ bedeutet Multiplikation. Gleichheitszeichen vergleichen Zahlen innerhalb der Gleichungen; Pfeile vergleichen Wahrheitswerte ganzer Gleichungen.
+
+Die Kette kürzt **zwei benachbarte Äquivalenzaussagen** ab. Sie ist kein neuer dreistelliger Junktor und keine Erlaubnis, Äquivalenzpfeile beliebig zu klammern. Alle Glieder verwenden dieselbe Eingabe, denselben Bereich und dieselben Annahmen.
+
+Hier gibt es vier kurze Begründungen. Subtraktion von zwei ergibt die mittlere Gleichung; Addition von zwei stellt die erste wieder her. Division durch die von null verschiedene Zahl zwei ergibt die letzte; Multiplikation mit zwei stellt die mittlere wieder her. Beide Richtungen gelten für jedes reelle $x$, nicht nur für die spätere Lösung.
+
+## Warum die Enden übereinstimmen
+
+Äquivalenz ist **transitiv**. Fixiere eine beliebige erlaubte Eingabe. Stimmen erster und zweiter Wahrheitswert überein und ebenso zweiter und dritter, dann stimmen erster und dritter überein. Da die Eingabe beliebig war, gilt das im ganzen Bereich.
+
+Als Implikationen gelesen liefert die erste Bedingung die zweite und dann die dritte. Von der dritten aus führen die Rückrichtungen zur zweiten und dann zur ersten. Das beweist beide Richtungen zwischen den Enden. Bei einer aussagenlogischen Kette $F\equiv G\equiv H$ nimmt man statt einer Zahl eine beliebige Wahrheitsbelegung; wiederholte Buchstaben behalten ihren Wert. Das beweist Transitivität, aber kein ungeprüftes Nachbarglied.
+
+## Quadrieren kann Kandidaten hinzufügen
+
+Auf allen reellen Zahlen gilt $(x=2)\Rightarrow(x^2=4)$, aber die Rückrichtung scheitert bei $x=-2$: Das Quadrat ist vier, die Zahl ist nicht zwei. Lies den einfachen Pfeil als „Wenn $x$ gleich zwei ist, ist sein Quadrat gleich vier“. Ein Äquivalenzpfeil würde den Vorzeichenunterschied fälschlich beseitigen.
+
+Nach einem nur vorwärts gültigen Schritt sind Lösungen der neuen Gleichung **Kandidaten**. Prüfe sie am Original. Eine Beschränkung auf nichtnegative Zahlen kann manche Quadrieräquivalenzen ermöglichen, muss aber vor der Behauptung genannt und die Rückrichtung dort begründet werden. Negative Eingaben stillschweigend zu verwerfen verändert eine Aufgabe über alle reellen Zahlen.
+
+## Division kann eine Lösung verlieren
+
+Die Gleichung $x^2=x$ gilt bei null. Wer durch $x$ dividiert und $x=1$ behauptet, verliert diese Lösung: Die Division verlangte $x\ne0$.
+
+Unterscheide stattdessen Fälle. Bei $x=0$ gilt die ursprüngliche Gleichung. Für $x\ne0$ liefert Division durch $x$ die Gleichung $x=1$; umgekehrt ergibt Multiplikation von $x=1$ mit $x$ wieder $x^2=x$. Prüfe auch eins im Original. Die reellen Lösungen sind damit genau null und eins. Im ausdrücklich von null befreiten Bereich sind die dividierten Gleichungen äquivalent; dieses eingeschränkte Ergebnis allein löst aber nicht die ursprüngliche Aufgabe.
+
+<Note title="Arbeitsblattvorgaben gesondert beachten">
+
+Die vorhandenen [booleschen Herleitungen](../boolesche-grundgesetze/) können festlegen, welche nummerierten Gesetze ein Beweis verwenden darf. Diese allgemeinen Überlegungen heben solche Übungsvorgaben nicht auf. Eine Wahrheitstabelle kann eine Tatsache beweisen, ohne eine Aufgabe zu erfüllen, die ausdrücklich eine Herleitung aus bestimmten Gesetzen verlangt.
+
+</Note>
+
+<Exercise question="Prüfe $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$ auf den reellen Zahlen. Nenne beide Richtungen jedes Glieds. Darf $(x^2=4)$ mit einem weiteren Äquivalenzpfeil folgen?">
+
+Subtrahiere drei und mache das durch Addition von drei rückgängig. Dividiere durch die von null verschiedene drei und kehre durch Multiplikation mit drei zurück. Jedes Glied erhält die Lösungsmenge; Transitivität verbindet die Enden. Die quadrierte Gleichung darf auf allen reellen Zahlen nicht als Äquivalenz folgen: $-2$ erfüllt sie, aber nicht $x=2$. Ein einfacher Vorwärtspfeil ist erlaubt; der zusätzliche Kandidat muss im Original geprüft werden.
+
+</Exercise>
+
+<Exercise question="Konstruiere eine neue lineare Gleichungskette mit zwei Gliedern, Subtraktion und Division durch eine Konstante ungleich null. Begründe ohne bloße Probe der Endzahl, warum keine Lösung hinzukam oder verloren ging.">
+
+Ein Beispiel ist $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Subtrahiere oder addiere vier im ersten Glied; dividiere oder multipliziere mit vier im zweiten. Vier ist ungleich null. Jede Operation und ihre Umkehrung gelten im unveränderten reellen Bereich. Daher erfüllen genau dieselben Eingaben alle Gleichungen. Die Probe mit zwei allein bestätigt nur eine Lösung und schließt andere nicht aus.
+
+</Exercise>

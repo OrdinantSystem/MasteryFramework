@@ -1,0 +1,78 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/03 Negating Inequalities.md"]
+locale: "es"
+title: "Negar comparaciones de orden"
+navTitle: "Negar comparaciones de orden"
+description: "Deducir las cuatro negaciones a partir de las tres posiciones posibles."
+order: 10
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "order-comparisons"]
+thumbnail: "logic"
+---
+
+«Al menos tres» incluye tres. Su negación debe excluirlo, así que «como máximo tres» no sirve: ambas se cumplirían en el extremo. La negación correcta es «estrictamente menor que tres».
+
+Sean $x$ y $c$ reales con su orden habitual. $c$ es la frontera. Las siguientes reglas son resultados deducidos, no cuatro sustituciones independientes que memorizar:
+
+$$\neg(x>c)\Leftrightarrow x\le c$$
+$$\neg(x\ge c)\Leftrightarrow x<c$$
+$$\neg(x<c)\Leftrightarrow x\ge c$$
+$$\neg(x\le c)\Leftrightarrow x>c$$
+
+En cada línea, $\Leftrightarrow$ indica que ambas condiciones coinciden para toda asignación permitida. Cambian tanto la dirección como la inclusión de la igualdad.
+
+<details>
+<summary>Lecturas EN / DE / ES</summary>
+
+**EN:** “not greater than” means “less than or equal to”; “not at least” means “strictly less than”; “not less than” means “greater than or equal to”; “not at most” means “strictly greater than.” **DE:** „Es ist nicht der Fall, dass x größer als c ist“ heißt „x ist kleiner oder gleich c“; „Es ist nicht der Fall, dass x mindestens c ist“ heißt „x ist streng kleiner als c“; „Es ist nicht der Fall, dass x kleiner als c ist“ heißt „x ist größer oder gleich c“; „Es ist nicht der Fall, dass x höchstens c ist“ heißt „x ist streng größer als c“. **ES:** «No es cierto que equis sea mayor que ce» significa «equis es menor o igual que ce»; «No es cierto que equis sea mayor o igual que ce» significa «equis es estrictamente menor que ce»; «No es cierto que equis sea menor que ce» significa «equis es mayor o igual que ce»; «No es cierto que equis sea menor o igual que ce» significa «equis es estrictamente mayor que ce».
+
+</details>
+
+## Demostración por tricotomía
+
+Fija una entrada real arbitraria $x$ y una frontera $c$. El orden real habitual coloca $x$ en exactamente una de tres posiciones: por debajo de $c$, igual a $c$ o por encima de $c$. Esta **tricotomía** se acepta como fundamento del orden.
+
+- «Por encima» es verdadero solo en esa posición. Su negación selecciona por debajo e igual: $x\le c$.
+- «Por encima o igual» selecciona dos posiciones. Su negación deja solo por debajo: $x<c$.
+- «Por debajo» selecciona una posición. Su negación deja igual y por encima: $x\ge c$.
+- «Por debajo o igual» selecciona dos posiciones. Su negación deja solo por encima: $x>c$.
+
+Todo real ocupa exactamente una de esas posiciones, y nada dependió de una elección numérica especial. Esto demuestra las cuatro leyes. Comprobar $2,3,4$ alrededor de tres las ilustra y permite detectar errores, pero tres muestras no demuestran una ley para infinitos reales. Las reglas no se trasladan sin cambios a órdenes parciales arbitrarios, donde puede haber objetos incomparables.
+
+## Leer la comparación entera y conservar el dominio
+
+La negación de $0<x$ es $0\ge x$, equivalentemente $x\le0$. Lee una entrada a la derecha del signo con el mismo cuidado que una a la izquierda. Hay que incluir igualdad porque cero incumple la comparación estricta original.
+
+Si $x$ se restringe a los **reales no negativos**, negar $x>3$ da $x\le3$ en ese mismo dominio: exactamente las entradas de $[0,3]$. Menos uno no está permitido, aunque satisfaga la comparación en la recta real completa. No se añade ningún cuantificador y una $x$ libre sigue libre. Negar no es resolver una inecuación ni ampliar el universo de entradas.
+
+## Práctica en la frontera
+
+Niega $x>3$, $x\ge3$, $x<3$ y $x\le3$. Da los valores de verdad de originales y negaciones para $x=3$.
+
+<details>
+<summary>Pista</summary>
+
+En la igualdad, los originales estrictos son falsos y los no estrictos verdaderos. Invierte esos valores.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+En orden: $x\le3$, $x<3$, $x\ge3$, $x>3$. En tres, los originales tienen valores $0,1,0,1$ y las negaciones $1,0,1,0$. Cambiar la dirección sin cambiar la inclusión de igualdad falla en esta comprobación.
+
+</details>
+
+<Exercise question="Escribe la negación de ‘x es como máximo cinco’. Explica por qué cinco la incumple. Después niega ‘cero es estrictamente menor que x’ para x real no negativo y describe todas las soluciones permitidas.">
+
+La primera respuesta es $x>5$. Cinco cumple el original y debe incumplir la negación. La segunda es $x\le0$ en el dominio no negativo; solo $x=0$ la satisface. Las entradas negativas no pasan a estar permitidas. Las respuestas mantienen las mismas entradas y fronteras que los originales.
+
+</Exercise>
+
+Reconstruye una regla usando posiciones arbitrarias por debajo, igual y por encima. Explica por qué ese argumento abarca más que cualquier lista finita de pruebas numéricas favorables.

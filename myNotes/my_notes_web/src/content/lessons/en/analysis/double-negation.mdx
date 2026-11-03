@@ -1,0 +1,85 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/05 Double Negation.md"]
+locale: "en"
+title: "Double negation"
+navTitle: "Double negation"
+description: "Prove two nested denials preserve truth, and distinguish separate negations."
+order: 11
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation"]
+thumbnail: "logic"
+---
+
+“It is not the case that the number is unequal to three” says that the number equals three. The inner claim denies equality; the outer phrase denies that whole denial. The number itself does not change.
+
+## The classical theorem
+
+For any proposition $P$,
+
+$$\neg(\neg P)\Leftrightarrow P.$$
+
+**EN:** “not (not P) if and only if P.” **DE:** „nicht (nicht P) genau dann, wenn P gilt“. **ES:** «no (no pe) si y solo si pe».
+
+This is an equivalence of truth values in every case, not a claim that $P$ is true. It is derived from classical bivalence and the truth-reversing definition of negation. It is not a statement about every logical system.
+
+## Proof: both possible starting values
+
+Take an arbitrary proposition. If $P$ is true, $\neg P$ is false, so $\neg(\neg P)$ is true. The original and the double negation agree.
+
+If $P$ is false, $\neg P$ is true, so $\neg(\neg P)$ is false. They agree again. In particular, two negations have not made a false proposition true.
+
+There is no third starting truth value in this setting. These two cases exhaust all possibilities, proving the theorem without assuming it. A numerical check of one true equality would illustrate the first case and leave the second unproved.
+
+## Scope determines whether a pair can be removed
+
+Substituting a whole equality gives
+
+$$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
+
+For $x=0$ both sides are true; for $x=2$ both are false. The theorem explains agreement for every allowed input. A free $x$ remains free, the domain remains fixed, and no operation takes the arithmetic negative of $x$. “Not unequal to zero” does not mean “negative.”
+
+The proposition substituted for $P$ may itself be compound:
+
+$$\neg\bigl(\neg(P\land Q)\bigr)\Leftrightarrow(P\land Q).$$
+
+Treat the whole conjunction as one input. There is no need to move either negation inside it.
+
+By contrast, $(\neg P)\land(\neg Q)$ has two negations of **different inputs**. Neither negates the result of the other. If $P=Q=1$, then $P\land Q$ is true, while $(\neg P)\land(\neg Q)$ is false. Deleting both signs changes the truth value.
+
+With three nested negations, remove one nested pair to leave $\neg P$. With four, remove a pair and then the remaining pair to leave $P$. This uses the theorem repeatedly, not a rule about multiplying negative numbers.
+
+## Practice with nested and separate denials
+
+Assume $P$ is false. Reconstruct the two intermediate truth values. Then simplify three and four nested negations without using a sign mnemonic.
+
+<details>
+<summary>Hint</summary>
+
+Each negation reverses the value of its entire input. Locate a pair where one denial takes the other denial as its input.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+The first negation gives true; the second gives false, agreeing with $P$. In $\neg(\neg(\neg P))$, remove the outer nested pair to leave $\neg P$. In $\neg(\neg(\neg(\neg P)))$, remove the outer pair, obtaining $\neg(\neg P)$, then remove that pair to obtain $P$.
+
+</details>
+
+<Exercise question="Simplify $\neg(\neg(P\lor Q))$ without changing anything inside the disjunction. Why does the theorem apply? Can the two signs in $\neg P\land\neg Q$ also be deleted?">
+
+The simplification is $P\lor Q$. The whole inclusive disjunction has one classical truth value, which is reversed twice. The separate negations cannot be deleted: for $P=Q=1$ the proposed deletion changes false to true. Counting two negative marks does not establish nested scope.
+
+</Exercise>
+
+## Negative words in ordinary speech
+
+Repeated negative words do not always express two nested logical operators. Spanish «No vino nadie» has negative concord: it says that nobody came, not that somebody did. Other languages also have constructions whose meaning cannot be read by counting negatives.
+
+“I have not proved that $P$ is false” concerns a proof, not a direct denial of $\neg P$. It does not establish $P$. Translate the intended scope first. A later [Boolean-algebra proof](../de-morgan-und-doppelte-negation/) establishes the same classical law through complement uniqueness under that worksheet's permitted rules; the proof here is the elementary semantic one.

@@ -1,0 +1,75 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md"]
+locale: "es"
+title: "Leer la estructura matemática"
+navTitle: "Leer la estructura matemática"
+description: "Reconocer funciones, dominios, alcances e hipótesis completas antes de demostrar."
+order: 8
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "logische-verknuepfungen", "order-comparisons"]
+thumbnail: "proof"
+---
+
+«Encuentra un real menor que dos» es una instrucción. «Todo real es menor que dos» hace una afirmación, y es falsa. La primera tarea al leer matemáticas es reconocer qué hace la frase. Una larga cadena de símbolos no resuelve esa cuestión.
+
+## Un procedimiento de lectura
+
+Estas preguntas ayudan a descomponer una afirmación. Organizan la lectura; no constituyen un método de demostración.
+
+1. ¿Se define un término, se afirma algo, se supone algo localmente, se pregunta o se da una instrucción?
+2. ¿Qué objetos y dominio intervienen? ¿Tienen sentido todas las expresiones? En la aritmética real habitual no se permite dividir entre cero.
+3. ¿Qué apariciones de variables están libres o ligadas? Por separado, ¿fija el contexto un valor para alguna variable libre?
+4. ¿Qué cuantificadores aparecen en palabras o símbolos? Conserva sus dominios y alcances. $\forall$ significa «para todo»; $\exists$, «existe al menos uno», no «exactamente uno».
+5. Busca la conectiva que une las partes mayores y examina después cada parte. Los paréntesis mantienen completa una entrada.
+6. En un condicional, identifica la **hipótesis completa** y la **conclusión completa**. Una igualdad simple no necesita una hipótesis inventada.
+7. Separa descomposición, evaluación y justificación. Entender qué dice una frase no la demuestra.
+
+La suma en $x+y=3$ combina números dentro de una condición, no proposiciones. En el nivel proposicional podemos tratar un enunciado cuantificado entero como una sola letra; eso no lo convierte en una fórmula atómica de la sintaxis de primer orden.
+
+## Un enunciado universal con un condicional dentro
+
+«Todo real estrictamente entre cero y uno es menor que dos» se traduce como
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+**EN:** “For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.” **DE:** „Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“ **ES:** «Para todo real equis, si cero es estrictamente menor que equis y equis es estrictamente menor que uno, entonces equis es estrictamente menor que dos».
+
+El cuantificador abarca el condicional entero y liga todas las apariciones de $x$. La fórmula está cerrada. Dentro de su alcance, la conectiva principal es $\Rightarrow$, también escrita $\to$. A la izquierda está la conjunción completa; a la derecha, $x<2$. $\land$ significa «y», no otra conectiva exterior.
+
+Conserva $0<x$ y $x<1$ en la traducción. Una demostración posterior quizá no necesite la cota inferior, pero quitarla al traducir cambia la hipótesis expresada. El condicional tampoco afirma que todo real esté entre cero y uno.
+
+Para $x=1/2$ se cumplen hipótesis y conclusión. Para $x=3$ falla la hipótesis, de modo que tres no es un contraejemplo aunque también falle la conclusión. Un contraejemplo debe satisfacer la **hipótesis entera** e incumplir la conclusión.
+
+Para demostrarlo, toma cualquier real $x$ que satisfaga la hipótesis. De $x<1$ y $1<2$, la transitividad del orden real da $x<2$. Este razonamiento para una entrada arbitraria demuestra la afirmación. La traducción y las comprobaciones numéricas no bastaban. La semántica clásica y el orden real habitual son los fundamentos aceptados aquí.
+
+## Práctica en ambas direcciones
+
+<Exercise question="Descompón $x=0\lor((x>0)\land(x<1))$. Indica conectiva exterior, entradas completas y variables libres. Después traduce: x es cero y no es cierto que y sea cero.">
+
+La conectiva exterior es $\lor$. Sus entradas son $x=0$ y la conjunción completa $(x>0)\land(x<1)$. Todas las apariciones de $x$ siguen libres salvo que el contexto añada un cuantificador. La segunda traducción es $(x=0)\land\neg(y=0)$. Solo se niega la segunda igualdad; ambas variables siguen libres tal como se escribe.
+
+</Exercise>
+
+Traduce «Todo real mayor que uno es mayor que cero». Identifica la hipótesis y demuestra la afirmación sin enumerar ejemplos favorables. ¿Afirma que todo real es positivo?
+
+<details>
+<summary>Pista</summary>
+
+«Todo número con esta propiedad» contiene un condicional. Mantén el dominio fuera de ese condicional.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$. La hipótesis es $x>1$ y la conclusión, $x>0$. Para cualquier real $x$ mayor que uno, $1>0$ y la transitividad dan $x>0$. El cuantificador liga todas las apariciones de $x$. No afirma que todos los reales sean positivos: cero no cumple la hipótesis y no es un contraejemplo.
+
+</details>
+
+Al revisar una traducción, busca cambios de «si» a «y», de «alguno» a «todo», o de cotas estrictas a no estrictas. Señala las ambigüedades reales. Lectura posterior: [enunciados universales y dominios](../universal-statements-and-domains/).

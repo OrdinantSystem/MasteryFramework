@@ -1,0 +1,126 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Dependencia de los testigos"
+navTitle: "Dependencia de los testigos"
+description: "Dependencia de los testigos."
+order: 28
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["quantifier-order"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/02 Dependence between Variables.md#02 · What information may a witness use?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Si una amiga nombra un real antes de que respondas, «sumar uno» da otro mayor. Si tu respuesta debe servir para cualquier número que nombre después, la misma regla usa información que el requisito no permite.
+
+## Lleva un registro de la información
+
+Al elegir un testigo, anota parámetros fijos, entradas arbitrarias anteriores dentro de cuyo alcance está la elección y testigos ya elegidos. Esa información está disponible. Las entradas universales posteriores no pueden cambiar una elección anterior. Depender está permitido, no exigido: elegir uno positivo puede ignorar una entrada anterior si solo se pide positividad. Una afirmación existencial no promete un método computable.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Están disponibles tanto $x$ como $y$. Elige $z=x+y$; la clausura de la suma real garantiza pertenencia y la elección verifica la igualdad. El argumento vale para cualquier par real.
+
+$$
+\forall x\in\mathbb R\;\exists z\in\mathbb R\;\forall y\in\mathbb R\;(z=x+y).
+$$
+
+Ahora $z$ puede usar $x$, pero debe permanecer fijo para todo $y$ posterior. Con $y=0$ se exige $z=x$; con $y=1$ se exige $z=x+1$. Un mismo valor no puede satisfacer ambas. Dos requisitos incompatibles descartan todos los candidatos; no se está generalizando desde una muestra.
+
+La elección posterior de un sobre puede usar una llave ya elegida: las elecciones existenciales anteriores pueden coordinarse. La ligadura es otra cuestión. Con un real fijo $c$, la regla $y=x+c$ puede usar $c$, aunque sus apariciones sigan sintácticamente libres si no hay cuantificador para $c$. El contexto fija su valor. Un testigo ligado puede depender de una entrada anterior sin volverse libre.
+
+La información permitida no basta para tener éxito. La constante $y=1$ no usa entradas prohibidas, pero falla en $y>x$ cuando $x=1$. La regla $y=x/2$ solo usa la entrada anterior, pero falla en la pertenencia a los enteros si $x=1$. Comprueba por separado información, pertenencia y predicado completo.
+
+### Práctica
+
+Para todo real $x$ se pide un real positivo $y$. ¿Puedes elegir siempre uno?
+
+<details>
+<summary>Pista</summary>
+
+Poder usar una entrada no obliga a hacerlo.
+
+</details>
+
+<Exercise>
+
+Sí: uno es positivo y real para cualquier entrada. No se exige variación.
+
+</Exercise>
+
+¿Qué entradas puede usar el testigo suma en cada fórmula?
+
+<details>
+<summary>Pista</summary>
+
+Detente donde se introduce el testigo.
+
+</details>
+
+<Exercise>
+
+Ambas en la primera; solo la anterior en la segunda. La entrada universal posterior no puede modificar el testigo.
+
+</Exercise>
+
+Para $y>x$ en los reales, ¿está permitido $y=1$ y tiene éxito?
+
+<details>
+<summary>Pista</summary>
+
+Separa permiso y verdad.
+
+</details>
+
+<Exercise>
+
+Está permitido, pero falla con $x=1$ o mayor. $y=x+1$ está permitido y sirve para todas las entradas reales.
+
+</Exercise>
+
+Fija un real $c$. Justifica $y=x+c$ y explica si $c$ está ligado.
+
+<details>
+<summary>Pista</summary>
+
+Contexto no es cuantificador escrito.
+
+</details>
+
+<Exercise>
+
+La suma real usa $x$ disponible y $c$ fijo y cumple la igualdad. Fijar $c$ no liga sus apariciones en la fórmula.
+
+</Exercise>
+
+Se pide un entero $y$ con $2y=x$ para todo entero $x$. Revisa $y=x/2$.
+
+<details>
+<summary>Pista</summary>
+
+Prueba una entrada impar.
+
+</details>
+
+<Exercise>
+
+Con entrada uno sale un medio, que no es entero. Ningún entero se duplica hasta dar uno, por lo que la afirmación misma es falsa.
+
+</Exercise>
+
+Más tarde, reconstruye sin mirar el registro de información de ambas fórmulas de suma.
+
+## Lectura en voz alta
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

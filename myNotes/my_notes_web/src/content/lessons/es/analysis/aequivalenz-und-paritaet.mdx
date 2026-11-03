@@ -1,13 +1,19 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-zero-equivalence"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md"
 locale: "es"
 title: "Equivalencia y paridad"
 navTitle: "Equivalencia y paridad"
 description: "Demuestra ambas direcciones con la estrategia adecuada."
-order: 6
+order: 19
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -21,6 +27,8 @@ thumbnail: "parity"
 
 «Par» significa $n = 2k$ para un entero $k$. «Impar» significa $n = 2k + 1$. Una equivalencia exige ambas direcciones; una sola implicación deja la mitad sin demostrar.
 
+Lee la afirmación: «Para todo entero ene, dos divide a ene si y solo si dos divide a su cuadrado». La [base del bicondicional](../biconditionals-and-equivalent-conditions/) explica las dos implicaciones necesarias. Usamos el hecho entero habitual de que todo entero es exactamente par o impar. Por tanto, no par significa impar y no impar significa par; esta dicotomía justifica las negaciones de la prueba de vuelta.
+
 ## Ida: usa la definición
 
 <Math tex="n=2k\quad\Longrightarrow\quad n^2=4k^2=2(2k^2)" display />
@@ -31,7 +39,7 @@ El término entre paréntesis es entero, por lo que el cuadrado es par.
 
 <Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
 
-Un entero impar tiene cuadrado impar. Esto demuestra la contraposición de «si el cuadrado es par, el entero es par». También vale para enteros negativos y cero; no restrinjas tácitamente el dominio a los positivos.
+Un entero impar tiene cuadrado impar. Esto demuestra la contraposición de «si el cuadrado es par, el entero es par». La equivalencia completa vale también para enteros negativos y cero; el cálculo con la forma impar no representa al propio cero. Cero es par y tiene cuadrado par, así que la ida lo cubre. No restrinjas tácitamente el dominio a los positivos.
 
 ## ¿Por qué usar contraposición aquí?
 

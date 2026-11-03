@@ -1,0 +1,71 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/04 When an Implication Is False.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/06 Counterexamples.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Counterexamples to Universal Claims.md"]
+title: "Counterexamples"
+navTitle: "Counterexamples"
+description: "Refute the exact universal claim with one fully checked allowed failure."
+order: 22
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "reading-conditionals", "negating-order-comparisons"]
+thumbnail: "proof"
+---
+
+Two and minus two have positive squares. Zero does not: $0^2=0$, and zero is not strictly positive. Thus “every real square is strictly positive” is false, however many nonzero examples pass. The claim included zero too.
+
+## Why one failure is enough
+
+A **counterexample** to $\forall x\in D\;P(x)$ is one member of $D$ where the predicate is meaningful and false. Read the universal formula as “every $x$ in $D$ satisfies $P$.” If that statement were true, it would require $P$ at the proposed member as well; the verified failure contradicts that requirement. This is not a vote and does not say that every member fails.
+
+For a universal conditional, check three things about the **same object**: membership in the domain, truth of the whole hypothesis, and falsity of the whole conclusion. The reason follows directly from
+
+$$\neg(P\Rightarrow Q)\equiv(P\land\neg Q).$$
+
+Read: “The negation of if $P$ then $Q$ is equivalent to $P$ and not $Q$.” If both parts are true, the implication is true and both sides here are false. If $P$ is true and $Q$ false, both sides are true. If $P$ is false, the implication is true and its negation false; the right conjunction is also false whatever $Q$ is. These are all classical cases. The inverse $\neg P\Rightarrow\neg Q$ is not this negation.
+
+## Find the full failure region
+
+Consider
+
+$$\forall x\in\mathbb R\;((x>2)\Rightarrow(x>5)).$$
+
+Read: “For every real $x$, if $x$ exceeds two, then it exceeds five.” Failure requires $x>2$ and $x\le5$, so **all** counterexamples satisfy $2<x\le5$.
+
+| Candidate | Hypothesis $x>2$ | Conclusion $x>5$ | Counterexample? |
+| --- | --- | --- | --- |
+| $0$ | False | False | No: false hypothesis |
+| $2$ | False | False | No: strict lower boundary |
+| $3$ | True | False | Yes |
+| $5$ | True | False | Yes: equality fails the conclusion |
+| $7$ | True | True | No: conclusion holds |
+
+Two is excluded; five is included. A failed conclusion alone is not enough. Nor can you take seven for a true hypothesis and zero for a false conclusion: that is two objects, not one failure. For the opposite rule, above-five implies above-two, three is not a counterexample; it refutes only the converse.
+
+## Do not drop a compound requirement
+
+For real inputs, the claim $((x>0)\land(x<2))\Rightarrow(x^2>1)$ fails at one. One is real, positive, and below two; its square equals one rather than exceeding it. Zero fails the positivity requirement. Three fails the upper requirement. Neither can refute this conditional, even if one focuses on a convenient part of its hypothesis.
+
+The narrower interval example $0<x<1\Rightarrow x<1/2$ fails at $3/4$ and at $1/2$. Both satisfy the whole hypothesis; equality defeats the strict conclusion at the latter. Two fails the upper hypothesis and is not a counterexample.
+
+## Search, verification, and repair
+
+Trying zero, small integers, negatives, or endpoints can guide a search when the domain permits them. The argument is the subsequent verification, not the heuristic. A failed search over a finite sample does not prove an infinite-domain claim. An undefined expression is not the false predicate required for a counterexample; repair its domain or interpretation first. If free parameters occur, fix their values throughout the check.
+
+Zero refutes strict positivity of all real squares. It does not prove a replacement. For the revised claim about **nonzero** reals, give a fresh proof: a positive input times itself is positive; a negative input times itself is positive by the sign rule. These cases exhaust nonzero reals. Nonnegativity of all real squares also follows by including the zero case. Neither theorem follows merely from finding zero.
+
+<Exercise question="Someone proposes $-1/2$ against every-integer-has-square-at-least-one. Diagnose the candidate and refute the same claim correctly. Does an invalid candidate make the theorem true?">
+
+The fraction is not an integer, so it is outside the domain. Zero is an integer and $0^2=0<1$, so it refutes the claim. An invalid proposed counterexample supplies no proof in either direction; the theorem can still be false.
+
+</Exercise>
+
+<Exercise question="Invent a universal conditional with two hypothesis requirements, a genuine counterexample, and a tempting invalid candidate. Check every requirement and explain why not-all does not mean none.">
+
+For every real $x$, suppose $1<x<4\Rightarrow x>2$. The candidate $x=2$ is real, above one and below four, but not strictly above two. It refutes the statement. Zero fails the lower hypothesis; five fails the upper, so neither is a counterexample. Three satisfies the hypothesis and conclusion, showing that the refutation does not make every eligible instance fail.
+
+</Exercise>

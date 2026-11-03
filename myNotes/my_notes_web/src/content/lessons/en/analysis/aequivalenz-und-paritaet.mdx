@@ -1,13 +1,19 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-zero-equivalence"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md"
 locale: "en"
 title: "Equivalence and parity"
 navTitle: "Equivalence and parity"
 description: "Prove both directions, choosing a different strategy for each."
-order: 6
+order: 19
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -21,6 +27,8 @@ thumbnail: "parity"
 
 “Even” means $n = 2k$ for an integer $k$. “Odd” means $n = 2k + 1$. An equivalence requires both directions; proving only one implication leaves half the work undone.
 
+Read the claim: “For every integer $n$, two divides $n$ if and only if two divides its square.” The [biconditional foundation](../biconditionals-and-equivalent-conditions/) explains why this requires two implications. We use the ordinary integer fact that every integer is exactly one of even or odd. Thus not even means odd, and not odd means even; this dichotomy justifies the negations in the reverse proof.
+
 ## Forward: use the definition
 
 <Math tex="n=2k\quad\Longrightarrow\quad n^2=4k^2=2(2k^2)" display />
@@ -31,7 +39,7 @@ The term in parentheses is an integer, so the square is even.
 
 <Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
 
-An odd input has an odd square. This proves the contrapositive of “if the square is even, then the input is even”. It also works for negative integers and zero; do not silently restrict the domain to positive numbers.
+An odd input has an odd square. This proves the contrapositive of “if the square is even, then the input is even”. The overall equivalence holds for negative integers and zero too; the odd-form calculation itself does not represent zero. Zero is even and has even square, so the forward argument covers it. Do not silently restrict the domain to positive numbers.
 
 ## Why use contraposition here?
 

@@ -1,0 +1,68 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/03 Formal Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/05 Vacuous Truth.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Conditionals Hypotheses and Conclusions.md"]
+title: "Material implication and vacuity"
+navTitle: "Material implication and vacuity"
+description: "Evaluate every truth case without confusing an instance, a theorem, and an inference."
+order: 13
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["building-truth-tables", "logical-negation"]
+thumbnail: "logic"
+---
+
+For a real number $x$, try the rule “if $x$ exceeds two, then $x$ exceeds five.” Seven meets both comparisons; three meets the first but fails the second. Zero meets neither. Classical logic assigns a truth value to the whole conditional in that last case too.
+
+## The definition includes four cases
+
+For meaningful propositions $P$ and $Q$, **material implication** $P\Rightarrow Q$ means “if $P$, then $Q$.” By definition it is false exactly when $P$ is true and $Q$ is false. Write $1$ for true and $0$ for false:
+
+| $P$ | $Q$ | $P\Rightarrow Q$ |
+| --- | --- | --- |
+| $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ |
+| $0$ | $1$ | $1$ |
+| $0$ | $0$ | $1$ |
+
+This table defines the connective in classical two-valued logic. “Unknown to us” is not a fifth case: a fixed hidden card still has a number. The arrow does not mean “and,” describe a causal process, or assert that either part holds.
+
+The definition gives a useful result:
+
+$$(P\Rightarrow Q)\equiv(\neg P\lor Q).$$
+
+Read: “If $P$, then $Q$, is logically equivalent to not $P$ or $Q$.” The sign $\equiv$ means agreement under every truth assignment; $\lor$ is inclusive or. If $P$ is false, $\neg P$ is true, so the disjunction is true whatever $Q$ is. If $P$ is true, $\neg P$ is false, and the disjunction takes $Q$'s value. These two cases cover all rows and prove the result from the definition.
+
+## What vacuous truth does and does not say
+
+A conditional with false hypothesis is **vacuously true**. Both false-hypothesis rows matter. For the above-five-to-above-two rule, zero gives a false conclusion while three gives a true conclusion. Both whole conditionals are true. A false hypothesis therefore leaves the conclusion undetermined.
+
+Imagine a box containing exactly zero and three, with the rule “every card above five is above two.” Neither card meets the hypothesis, so neither breaks the rule. The domain is nonempty but the eligible subset is empty. In an empty box, the domain itself is empty. Neither situation supplies a card above five. The rule alone proves neither that a card above five exists nor that a card above two exists. In the box containing zero and three, we know that a card above two exists from its stated contents, not from the rule. Truth, existence, and usefulness are separate questions.
+
+For the **different** rule above-two-to-above-five, the instance at zero is true but the instance at three is false. Restrict the domain explicitly to reals at most two and the rule becomes true throughout that domain: every hypothesis is false. This proves a changed statement, not the original all-real claim.
+
+## One assignment is not logical consequence
+
+At $x=7$, $P(x):x>2$ and $Q(x):x>5$ are true. At $x=3$ the implication is false; at $x=0$ it is true again. The pair $P$ false, $Q$ true is impossible for these linked comparisons, since above five entails above two by real order. The general table still needs that row for other propositions, for example $P:(0=1)$ and $Q:(2=2)$.
+
+**Logical consequence** requires that no permitted assignment or model make all premises true and the conclusion false. A conditional true in one assignment does not establish that relationship between independent $P$ and $Q$. Nor is one true numerical instance a proof that a conditional holds for every domain input. A domain-wide arithmetic proof also uses its arithmetic assumptions, not just unrestricted propositional letters.
+
+## Meaning comes before the table
+
+An ordinary real reciprocal is undefined at zero. Placing $1/0=2$ after a false hypothesis does not make it a meaningful real equality. We use explicit nonzero domains when reciprocals occur. Some informal guarded notation has an agreed interpretation; without such an agreement, implication is not a programming short-circuit instruction that repairs partial arithmetic.
+
+<Exercise question="Evaluate $(x>2)\Rightarrow(x>5)$ at $7$, $3$, and $0$. Does the true instance at zero prove a theorem about all reals? Reconstruct the missing false/true row using other propositions.">
+
+The pairs are true/true, true/false, and false/false, so the conditional values are $1,0,1$. Three disproves the all-real claim despite the true zero instance. These comparisons cannot produce false/true, but “zero equals one” and “two equals two” do. The connective's definition must cover those propositions too.
+
+</Exercise>
+
+<Exercise question="A box obeys every-card-above-five-is-above-two and contains no card above five. Must its cards be at most two? Contrast an empty box, a box containing only zero, and a box containing only three.">
+
+No. All three boxes obey the rule. The empty box has no cards; zero is at most two; three exceeds two. None contains a card above five. Thus the rule and the absence of qualifying cards do not determine whether any card exceeds two, and they imply no existence claim.
+
+</Exercise>

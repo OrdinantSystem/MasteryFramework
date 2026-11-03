@@ -1,0 +1,120 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Einen Zeugen konstruieren"
+navTitle: "Einen Zeugen konstruieren"
+description: "Einen Zeugen konstruieren."
+order: 24
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/03 Constructive Existence.md#03 · Constructive existence: exhibit, then verify", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Zwölf minus fünf legt sieben nahe. Zum Abschluss prüfe die ursprüngliche Aufgabe: Sieben ist ganzzahlig und sieben plus fünf ist zwölf. Die Suche findet einen Kandidaten; die Prüfung zeigt, dass er passt.
+
+<Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
+
+## Ein vollständiger direkter Beweis
+
+Wähle $n=7$. Die Zahl gehört zu $\mathbb Z$. Sie erfüllt $7+5=12$. Damit erfüllt ein erlaubtes Objekt die Bedingung, also folgt Existenz. Die vier Schritte sind Kandidat, Bereich, vollständiges Prädikat und Schluss. Ein einzelner Test beweist diese Existenzbehauptung, weil sie nur einen Erfolg verlangt. Eindeutigkeit folgt nicht.
+
+„Konstruktiv“ bedeutet hier, ein Objekt ausdrücklich anzugeben und zu prüfen. Wir bleiben in klassischer Mathematik, in der Existenzbeweise nicht immer Zeugen nennen müssen. „Wähle eine passende ganze Zahl; also existiert eine“ ist zirkulär: Die Verfügbarkeit einer passenden Wahl wird vorausgesetzt. Eine bekannte ganze Zahl zu wählen und dann ihre Eignung zu beweisen vermeidet das.
+
+## Rückwärtsrechnen und Bereichsprüfung
+
+Aus $2x=1$ folgt rückwärts $x=1/2$. Nach Zugehörigkeitsprüfung und Einsetzen ist reelle Existenz bewiesen, aber kein ganzzahliger Zeuge geliefert. Ein notwendiger Kandidat allein beweist keine Existenz. Vollständig umkehrbare Algebra kann mit Bereichsprüfung eine ausreichende Äquivalenz begründen; Rückwärtsrechnen ist nicht grundsätzlich falsch. Eine falsche Behauptung erhält keinen gültigen Beweis dadurch, dass eine Aufgabe ihn verlangt.
+
+Für $4<n<8$ wähle fünf und prüfe Ganzzahligkeit sowie beide strengen Ungleichungen. Vier scheitert an der Grenze. Sechs oder sieben wären ebenso gültig. Für beliebiges reelles $x$ konstruiert $x+1$ eine größere reelle Zahl: Die Summe ist wieder reell, und das Addieren der positiven Zahl eins erhöht die Eingabe. Ein Test nur bei null würde diese allgemeine Regel nicht beweisen.
+
+### Übung
+
+Beweise $\exists n\in\mathbb Z\;(n+8=3)$.
+
+<details>
+<summary>Hinweis</summary>
+
+Negative ganze Zahlen sind erlaubt.
+
+</details>
+
+<Exercise>
+
+Wähle $-5\in\mathbb Z$. Wegen $-5+8=3$ erfüllt die Zahl die ursprüngliche Gleichung und beweist Existenz.
+
+</Exercise>
+
+Vervollständige „Nimm ein Halb“ für eine reelle Zahl zwischen null und eins.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe alle drei Anforderungen.
+
+</details>
+
+<Exercise>
+
+$1/2\in\mathbb R$ und $0<1/2<1$, also ist es ein erlaubter Zeuge. Eindeutigkeit wird nicht behauptet.
+
+</Exercise>
+
+Repariere „Wähle eine ganze Zahl mit Quadrat $25$; also existiert sie“.
+
+<details>
+<summary>Hinweis</summary>
+
+Nenne einen Kandidaten ohne Erfolg vorauszusetzen.
+
+</details>
+
+<Exercise>
+
+Wähle fünf, eine ganze Zahl, und prüfe $5\cdot5=25$. Der ursprüngliche Satz setzte mit der passenden Wahl das Ziel voraus.
+
+</Exercise>
+
+Konstruiere eine ganze Zahl mit $n>4$ und $n<8$. Ist die Antwort eindeutig?
+
+<details>
+<summary>Hinweis</summary>
+
+Meide Endpunkte.
+
+</details>
+
+<Exercise>
+
+Sechs ist ganzzahlig und $4<6<8$. Fünf und sieben passen ebenfalls. Explizite Konstruktion verlangt keine Eindeutigkeit.
+
+</Exercise>
+
+Warum passt $x+1$ für jede reelle Eingabe? Warum genügt ein Test bei null nicht?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze Abgeschlossenheit und Positivität.
+
+</details>
+
+<Exercise>
+
+Reelle Addition liefert ein reelles Ergebnis, und das Addieren der positiven Zahl eins erhöht jede Eingabe. Der Test bei null erfasst nur eine Eingabe.
+
+</Exercise>
+
+Schreibe später einen neuen Beweis in vier Sätzen und benenne ihre Aufgaben.
+
+## Laut lesen
+
+**EN:** Exhibit a candidate, check membership and the full property, then conclude existence.
+
+**DE:** Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
+
+**ES:** Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.

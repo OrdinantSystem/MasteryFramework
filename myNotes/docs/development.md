@@ -14,7 +14,7 @@ Run commands in ../my_notes_web/ with Node 24 and the committed lockfile. No pri
 
 ## Build contract
 
-npm run build runs Astro diagnostics, verify:library, static generation, Pagefind, worksheet arithmetic/word checks (verify:content), and scripts/verify.mjs. Presets are validated both in the library check and when initialized by the Astro view. Equation parity treats digit-surrounded TeX decimal commas and decimal points as equivalent, so EN/DE/ES numerical notation may be localized without weakening comparison of values.
+npm run build runs Astro diagnostics, verify:library, static generation, Pagefind, worksheet arithmetic/word checks (verify:content), and scripts/verify.mjs. Analysis checks derive matching localized inventories rather than assuming 15 lessons. The Analysis 0 check reconciles all 52 source dispositions and 28 concept mappings, preserves original keys, and tests finite quantifier models including empty domains and numerical boundary examples; it is not proof or translation certification. Presets are validated both in the library check and when initialized by the Astro view. Equation parity treats digit-surrounded TeX decimal commas and decimal points as equivalent, so EN/DE/ES numerical notation may be localized without weakening comparison of values.
 
 Generated-output checks derive published lesson counts, enforce localized counterparts, verify links/assets/anchors, check private source exclusion, and explicitly count text-contrast pairs so formatting cannot silently disable checks.
 

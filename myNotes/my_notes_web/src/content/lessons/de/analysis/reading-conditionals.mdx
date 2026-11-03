@@ -1,0 +1,65 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/01 The Hypothesis.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/02 The Conclusion.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Conditionals Hypotheses and Conclusions.md"]
+title: "Bedingte Aussagen lesen"
+navTitle: "Bedingte Aussagen lesen"
+description: "Die ganze Voraussetzung, das genaue Ziel und die Voraussetzungen einer Anwendung erkennen."
+order: 14
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["material-implication-and-vacuity", "simultaneous-conditions"]
+thumbnail: "implication"
+---
+
+Eine Schachtel enthält Karten mit reellen Zahlen. Ihre Regel lautet: „Eine Karte liegt über zwei, wenn sie über fünf liegt.“ **Wenn** kennzeichnet die Voraussetzung, auch wenn sie am Satzende steht. Die Regel führt von über fünf zu über zwei.
+
+## Voraussetzung und Folgerung
+
+Lies $P\Rightarrow Q$ als „Wenn $P$, dann $Q$“. Die ganze Aussage $P$ heißt **Voraussetzung** oder Antezedens; die ganze Aussage $Q$ heißt **Folgerung** oder Konsequens. Das sind Rollen im Satz, keine Behauptung, dass beide wahr seien. Auch die falsche Aussage „Wenn drei größer als zwei ist, dann ist drei größer als fünf“ hat eine erkennbare Folgerung.
+
+Für eine feste reelle Zahl $x$ betrachten wir
+
+$$((x>0)\land(x<1))\Rightarrow(x<2).$$
+
+Gelesen: „Wenn $x$ positiv und kleiner als eins ist, dann ist $x$ kleiner als zwei.“ Der äußerste Junktor ist der Pfeil. Sein vollständiger linker Block verlangt **beide** Vergleiche. Der Grundbereich besteht aus den reellen Zahlen; die Voraussetzung wählt daraus die Zahlen zwischen null und eins aus. Grundbereich und Voraussetzung erfüllen verschiedene Aufgaben.
+
+Ein Halb erfüllt beide Bedingungen. Minus eins erfüllt nur die obere Schranke; zwei erfüllt nur die untere. Keine dieser beiden Zahlen erfüllt die ganze Voraussetzung. Der Pfeil bindet $x$ nicht und bedeutet nicht von sich aus „für jedes“. Der Kontext muss sagen, ob eine feste Eingabe oder alle reellen Eingaben gemeint sind.
+
+## Die angegebenen Annahmen beibehalten
+
+Zum Beweis für alle reellen Eingaben betrachten wir eine beliebige reelle Zahl, die beide Schranken erfüllt. Aus $x<1$ und $1<2$ folgt durch Transitivität der Ordnung $x<2$. Dabei setzen wir die übliche reelle Ordnung voraus.
+
+Die untere Schranke $x>0$ wurde nicht benutzt. Sie gehört trotzdem zur Aussage des Satzes. Ihr Weglassen ergäbe eine stärkere Behauptung: Dieselbe Folgerung wäre nun für mehr Eingaben verlangt. Hier stimmt auch diese stärkere Aussage nach demselben Ordnungsargument. Eine unbenutzte Annahme zu erkennen erlaubt aber nicht, sie beim Zitieren des ursprünglichen Satzes zu streichen. Zusätzliche Voraussetzungen erleichtern im Allgemeinen die Gültigkeit eines bedingten Satzes; weniger Voraussetzungen erweitern seinen Anspruch.
+
+## Das ganze Ziel beweisen
+
+Nun hat die Folgerung zwei Teile:
+
+$$(x>5)\Rightarrow((x>2)\land(x>0)).$$
+
+Gelesen: „Wenn $x$ größer als fünf ist, dann ist $x$ größer als zwei und größer als null.“ Aus $x>5$ folgt $x>2$; wegen $2>0$ folgt auch $x>0$. Beides wird verlangt. Bei einem Ziel mit einschließendem Oder genügte dagegen eine bewiesene Alternative.
+
+Auch die genaue Schranke zählt. Lautet das Ziel $x<2$, lässt ein Beweis von $x\le2$ die Gleichheit offen. Der stärkere Nachweis $x<1$ genügt hingegen, denn $x<1<2$.
+
+## Eine Regel anwenden braucht zwei Prämissen
+
+Die Kartenregel sei wahr, und eine verdeckte Karte liege nachweislich über fünf. Dann liegt sie über zwei, auch wenn ihre genaue Zahl unbekannt bleibt. Das ist **Modus ponens**: Aus $P\Rightarrow Q$ und $P$ folgt $Q$.
+
+Warum genügt das? Wäre $Q$ falsch und $P$ wahr, wäre die Implikation falsch, entgegen der ersten Prämisse. Die Regel allein genügt nicht: Eine Karte mit null erfüllt die Regel, ohne über zwei zu liegen. Nur zu wissen, dass eine Karte über zwei liegt, genügt ebenfalls nicht: Drei muss nicht über fünf liegen.
+
+<Exercise question="Lies für reelles $x$ die Aussage $((x>1)\land(x<4))\Rightarrow(x>0)$. Nenne die ganze Voraussetzung und Folgerung; prüfe $0$, $2$ und $4$ auf Zulässigkeit; beweise die Aussage dann ohne spezielle Eingabe.">
+
+Die Voraussetzung ist $x>1$ **und** $x<4$; die Folgerung ist $x>0$. Nur $2$ erfüllt die Voraussetzung. Null scheitert an der unteren Schranke; $4$ an der strikten oberen, obwohl die Folgerung dort wahr ist. Für jedes zulässige reelle $x$ liefern die untere Schranke und $1>0$ durch Transitivität $x>0$. Die obere Schranke bleibt trotz Nichtverwendung Teil der Voraussetzung.
+
+</Exercise>
+
+<Exercise question="Ein Beweis mit Ziel $x<2$ endet bei $x\le2$. Was fehlt? Formuliere danach eine eigene zweiteilige Voraussetzung mit einer unbenutzten Annahme und erkläre, was deren Weglassen ändert.">
+
+Der Beweis muss $x=2$ ausschließen; die schwächere Schranke lässt diesen Wert zu. Damit wird nicht behauptet, dass $2$ die ursprünglichen Voraussetzungen erfüllt. Ein neues Beispiel: Aus $1<x<4$ folgt $x<5$; die obere Schranke genügt. Ohne $x>1$ gilt der Anspruch für alle reellen Zahlen unter $4$, auch negative. Das ist ein stärkerer Satz, den ebenfalls die Transitivität beweist.
+
+</Exercise>

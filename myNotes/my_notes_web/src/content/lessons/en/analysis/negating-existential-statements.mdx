@@ -1,0 +1,124 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negating existential statements"
+navTitle: "Negating existential statements"
+description: "Negating existential statements."
+order: 32
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-universal-statements"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/02 Negating Existential Claims.md#02 Negating Existential Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+A box contains red and blue cards. Taking out a blue card does not refute “There is a red card”. The red card still witnesses it. “Some card is not red” and “Some card is red” can both be true, so they cannot be exact negations.
+
+$$
+\neg(\exists x\in D\;P(x))\ \Longleftrightarrow\ \forall x\in D\;\neg P(x).
+$$
+
+Keep $D$, $P$ and other parameters fixed. If no allowed object satisfies $P$, take any allowed candidate: it cannot satisfy $P$, so it satisfies $\neg P$. Since the candidate was arbitrary, all fail. Conversely, if $P$ is false for every allowed object, no candidate can be a witness. These two directions establish the existential dual law in classical logic, including infinite domains.
+
+A complete finite inspection can establish nonexistence. On an infinite domain a hundred failures do not cover every candidate; a general arbitrary-candidate argument can. This differs from refuting a universal, where one failure suffices. Negating ordinary existence rules out all witnesses, not merely exactly one: two successful witnesses still make ordinary existence true.
+
+## The restriction stays positive
+
+$$
+\neg(\exists x>0\;(x<0))\ \Longleftrightarrow\ \forall x>0\;(x\ge0).
+$$
+
+The shorthand $x>0$ beside either quantifier restricts the domain to positive reals. The comparison inside parentheses is the predicate. Negation changes the claim about that same domain, not the domain to nonpositive reals. The original is false because no positive real is negative; its denial is true because any positive real is nonnegative. Zero is not an allowed candidate.
+
+“Some integer has square zero” is true with witness zero; its denial, every integer has nonzero square, is false at that same integer. “Some real has negative square” is false using the explicitly assumed arithmetic fact that every real square is nonnegative. Logic alone does not supply that arithmetic fact. On an empty restricted domain existence is false and its universal denial true: no object contradicts it, but no object is supplied.
+
+### Practice
+
+Negate red-card existence. Does one blue card establish the denial?
+
+<details>
+<summary>Hint</summary>
+
+A success may remain underneath.
+
+</details>
+
+<Exercise>
+
+Every card in the same box is not red. One blue card is insufficient; every candidate must be excluded.
+
+</Exercise>
+
+Negate and evaluate $\exists x\in\mathbb Z\;(x=1)$.
+
+<details>
+<summary>Hint</summary>
+
+Transformation and truth are different.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb Z\;(x\ne1)$. The original is true with one; the correct denial is false because one is an integer equal to one.
+
+</Exercise>
+
+Negate “Some positive real is negative”. Does the domain become nonpositive?
+
+<details>
+<summary>Hint</summary>
+
+Separate restriction and predicate.
+
+</details>
+
+<Exercise>
+
+Every positive real is nonnegative. The positive domain stays unchanged; the predicate alone is complemented.
+
+</Exercise>
+
+Evaluate “Some empty-box card is numbered” and “Every empty-box card is unnumbered”.
+
+<details>
+<summary>Hint</summary>
+
+No existential witness is available.
+
+</details>
+
+<Exercise>
+
+False and true. The universal has no exception and does not assert that an unnumbered card exists.
+
+</Exercise>
+
+Negate “Some card is red and numbered”. Refute “Every card is neither red nor numbered” as its denial.
+
+<details>
+<summary>Hint</summary>
+
+Failing one conjunct suffices.
+
+</details>
+
+<Exercise>
+
+Every card is not red or not numbered. A box containing just a red unnumbered card makes the original false and the correct denial true, but the proposed stronger denial false.
+
+</Exercise>
+
+Later, explain why some failure suffices against every, while every failure is needed against some.
+
+## Read aloud
+
+**EN:** There is no x in D satisfying P if and only if every x in D fails P.
+
+**DE:** Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
+
+**ES:** No existe equis en D que cumpla P si y solo si todo equis en D incumple P.

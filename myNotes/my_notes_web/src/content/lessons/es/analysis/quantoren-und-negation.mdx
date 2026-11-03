@@ -3,11 +3,12 @@ course: "analysis"
 chapter: "analysis-language"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources: [{sourceId: "analysis-zero", pages: [], locations: ["A0.1.6 Universal quantifier", "A0.1.7 Existential quantifier", "A0.1.8 Nested quantifiers", "A0.1.9 Negation of quantified statements"]}]
 locale: "es"
 title: "Cuantificadores y negación"
 navTitle: "Cuantificadores y negación"
 description: "Lee con precisión «para todo» y «existe», y niega la afirmación completa."
-order: 2
+order: 36
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -17,9 +18,13 @@ thumbnail: "quantifiers"
 
 ## Un testigo frente a todos los casos
 
+Esta página sirve como referencia breve. Para una primera explicación, empieza por [los enunciados universales y sus dominios](../universal-statements-and-domains/) y [la existencia y los testigos](../existence-and-witnesses/). Después, estudia [las variables ligadas y el alcance](../bound-variables-and-scope/), [el orden de los cuantificadores](../quantifier-order/) y [la negación de los enunciados universales](../negating-universal-statements/). Esas lecciones desarrollan los ejemplos y las demostraciones de las fórmulas reunidas aquí.
+
 La existencia necesita un testigo. Una afirmación universal abarca cada elemento de su dominio; un contraejemplo la refuta. $\exists!$ significa exactamente uno: existencia y unicidad juntas.
 
 <Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+La afirmación de la izquierda es verdadera porque $7$ pertenece al dominio y satisface la ecuación. El enunciado universal que aparece dentro de la negación es falso: por ejemplo, $x=1$ da $1+3=4$, no $10$. Las dos afirmaciones mostradas son verdaderas, pero por razones distintas. Un valor que satisface la condición demuestra existencia; otro que no la satisface refuta la universalidad.
 
 ## Lleva la negación hacia dentro
 
@@ -27,7 +32,7 @@ La existencia necesita un testigo. Una afirmación universal abarca cada element
 
 <Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
 
-La negación cambia el cuantificador y el predicado, manteniendo el dominio. Con cuantificadores anidados, cambia cada uno por orden. El orden importa: un único y común a todos los $x$ exige más que un y posiblemente distinto para cada $x$.
+La negación cambia el cuantificador y el predicado, manteniendo el dominio. Con cuantificadores anidados, cambia cada uno por orden. El orden importa: un mismo $y$ que sirva para todos los $x$ exige más que un $y$ posiblemente distinto para cada $x$. Que sea el mismo testigo no significa que sea el único posible.
 
 <Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
 
@@ -37,7 +42,7 @@ La afirmación $n^2 > n$ para todo natural falla en $n = 1$. Si $\mathbb{N}$ emp
 
 ## Orden de los cuantificadores
 
-En $\mathbb{N}$, «para todo $x$ existe un y mayor que $x$» es verdadero: dado $x$, elige $y = x + 1$. «Existe un y mayor que todo $x$» es falso: fijado y, tomar $x = y$ refuta la afirmación. En el primero, y puede depender de $x$; en el segundo debe servir un mismo y. Negar el primero significa que existe un $x$ sin ningún natural y mayor. Cambian ambos cuantificadores, no solo la desigualdad.
+En $\mathbb{N}$, «para todo $x$ existe un $y$ mayor que $x$» es verdadero: dado $x$, elige $y = x + 1$. «Existe un $y$ mayor que todo $x$» es falso: fijado $y$, tomar $x = y$ refuta la afirmación. En el primero, $y$ puede depender de $x$; en el segundo debe servir un mismo $y$. Negar el primero significa que existe un $x$ sin ningún natural $y$ mayor. Cambian ambos cuantificadores, no solo la desigualdad.
 
 <Exercise question="Niega: todo número natural es par.">
 

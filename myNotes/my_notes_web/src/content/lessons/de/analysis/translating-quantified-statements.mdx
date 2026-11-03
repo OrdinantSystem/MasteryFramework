@@ -1,0 +1,136 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Quantifizierte Aussagen übersetzen"
+navTitle: "Quantifizierte Aussagen übersetzen"
+description: "Quantifizierte Aussagen übersetzen."
+order: 30
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["separate-and-shared-witnesses", "reading-conditionals"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/04 Translating into Formal Quantifiers.md#04 · Turn the sentence into a formula", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+„Alle Studierenden haben ein Buch gelesen“ lässt die Buchwahl je Person offen. „Es gibt ein Buch, das alle gelesen haben“ verlangt ein gemeinsames Buch. Lege für eine formale Beschreibung zuerst Objekte und Beziehung fest.
+
+Seien $S$ die Studierenden und $B$ die Bücher; $R(s,b)$ bedeute, dass $s$ das Buch $b$ gelesen hat. Halte diese Beziehung unverändert; wechsle nicht unbemerkt von Lesen zu Besitzen.
+
+$$
+\forall s\in S\;\exists b\in B\;R(s,b).
+$$
+
+$$
+\exists b\in B\;\forall s\in S\;R(s,b).
+$$
+
+Lies die erste Formel zurück als „je Person ein gelesenes Buch“, die zweite als „ein Buch, das alle gelesen haben“. Keine verlangt genau ein Buch. Die erste behauptet nicht, dass Studierende existieren. Ohne Studierende ist sie wahr; die zweite braucht dennoch ein tatsächliches Buch.
+
+## Schreiben und zurücklesen
+
+Lege jeden Bereich und die abschließende Beziehung fest. Entscheide, welche Anforderung den Rest umfasst, und schreibe Quantoren mit ihren Geltungsbereichen. Prüfe jede Variable: hier gebunden oder im Kontext festgelegt? Lies die Formel zurück und prüfe eine kleine Situation, in der eine verlockende Alternative abweicht. Übersetzung und Beweis sind getrennte Aufgaben. Übersetze auch eine falsche Aussage treu, statt ihre Reihenfolge wahr zu machen.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Dies übersetzt „Jedes Paar reeller Zahlen hat eine reelle Summe“. Beide Eingaben stehen vor dem Zeugen. Die Wahrheit nutzt zusätzlich die Abgeschlossenheit reeller Addition; die Quantoren allein beweisen diese arithmetische Tatsache nicht.
+
+## Eine Bedingung schränkt die Anforderung ein
+
+$$
+\forall s\in S\;\bigl(A(s)\Rightarrow\exists b\in B\;R(s,b)\bigr).
+$$
+
+$A(s)$ bedeutet Teilnahme am Seminar. Nur Teilnehmende müssen ein gelesenes Buch vorweisen. Verschiebt man $\exists b$ vor die Implikation, kann auch von Nichtteilnehmenden ein Buch verlangt werden. Nimm eine nichtteilnehmende Person und keine Bücher: Die angezeigte Implikation ist wahr, aber $\forall s\in S\;\exists b\in B\;(A(s)\Rightarrow R(s,b))$ ist falsch. Klammern und leere Bereiche zeigen den Unterschied. $S$ ausdrücklich auf Teilnehmende zu beschränken ist ebenfalls eine treue Übersetzung.
+
+### Übung
+
+Mit Personen $P$, Schlüsseln $K$ und Nutzbarkeit $H$: Übersetze „Jede Person kann einen Schlüssel nutzen“.
+
+<details>
+<summary>Hinweis</summary>
+
+Person zuerst.
+
+</details>
+
+<Exercise>
+
+$\forall p\in P\;\exists k\in K\;H(p,k)$. Die Wahl darf von der Person abhängen; verschiedene Wahlen sind nicht verlangt.
+
+</Exercise>
+
+Übersetze in derselben Sprache „Ein Schlüssel kann von jeder Person genutzt werden“.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte einen Schlüssel fest.
+
+</details>
+
+<Exercise>
+
+$\exists k\in K\;\forall p\in P\;H(p,k)$. Ein fester Schlüssel muss für jede Person passen; er muss nicht eindeutig sein.
+
+</Exercise>
+
+Übersetze und beweise „Jede reelle Zahl hat eine echt größere reelle Zahl“.
+
+<details>
+<summary>Hinweis</summary>
+
+Führe die Eingabe vor dem Zeugen ein.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x)$. Wähle für beliebiges $x$ die reelle Summe $y=x+1$; Positivität der Eins macht sie größer.
+
+</Exercise>
+
+Übersetze „Eine reelle Zahl gleicht jeder reellen Zahl“ und bewerte.
+
+<details>
+<summary>Hinweis</summary>
+
+Verändere keine falsche Aussage.
+
+</details>
+
+<Exercise>
+
+$\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y=x)$. Falsch: Jedes vorgeschlagene $y$ scheitert bei reellem $x=y+1$.
+
+</Exercise>
+
+Übersetze „Für jedes reelle $x$ gibt es ein reelles $y$, sodass für jedes reelle $z$ gilt: $x+y=z$“.
+
+<details>
+<summary>Hinweis</summary>
+
+Bewahre alle drei Ebenen.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;\forall z\in\mathbb R\;(x+y=z)$. Der Zeuge darf $x$, nicht das spätere $z$ nutzen. Falsch: Eine feste Summe kann nicht null und eins sein.
+
+</Exercise>
+
+Schreibe später beide Buchübersetzungen aus dem Gedächtnis und lies sie zurück.
+
+## Laut lesen
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

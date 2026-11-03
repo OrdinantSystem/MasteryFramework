@@ -1,0 +1,78 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/03 Negating Inequalities.md"]
+locale: "de"
+title: "Ordnungsvergleiche negieren"
+navTitle: "Ordnungsvergleiche negieren"
+description: "Vier Negationsregeln aus den drei möglichen Ordnungslagen herleiten."
+order: 10
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "order-comparisons"]
+thumbnail: "logic"
+---
+
+„Mindestens drei“ schließt drei ein. Die Negation muss drei ausschließen. „Höchstens drei“ ist daher falsch: Am Rand würden beide gelten. Richtig ist „kleiner als drei“.
+
+Seien $x$ und $c$ reelle Zahlen mit ihrer üblichen Ordnung. $c$ bezeichnet die Grenze. Die folgenden Regeln sind hergeleitete Ergebnisse, keine vier voneinander unabhängigen Zeichentricks:
+
+$$\neg(x>c)\Leftrightarrow x\le c$$
+$$\neg(x\ge c)\Leftrightarrow x<c$$
+$$\neg(x<c)\Leftrightarrow x\ge c$$
+$$\neg(x\le c)\Leftrightarrow x>c$$
+
+$\Leftrightarrow$ besagt jeweils, dass beide Bedingungen für jede erlaubte Belegung übereinstimmen. Sowohl die Richtung als auch der Einschluss der Gleichheit ändern sich.
+
+<details>
+<summary>Lesarten EN / DE / ES</summary>
+
+**EN:** “not greater than” means “less than or equal to”; “not at least” means “strictly less than”; “not less than” means “greater than or equal to”; “not at most” means “strictly greater than.” **DE:** „Es ist nicht der Fall, dass x größer als c ist“ heißt „x ist kleiner oder gleich c“; „Es ist nicht der Fall, dass x mindestens c ist“ heißt „x ist streng kleiner als c“; „Es ist nicht der Fall, dass x kleiner als c ist“ heißt „x ist größer oder gleich c“; „Es ist nicht der Fall, dass x höchstens c ist“ heißt „x ist streng größer als c“. **ES:** «No es cierto que equis sea mayor que ce» significa «equis es menor o igual que ce»; «No es cierto que equis sea mayor o igual que ce» significa «equis es estrictamente menor que ce»; «No es cierto que equis sea menor que ce» significa «equis es mayor o igual que ce»; «No es cierto que equis sea menor o igual que ce» significa «equis es estrictamente mayor que ce».
+
+</details>
+
+## Beweis mit Trichotomie
+
+Fixiere eine beliebige reelle Eingabe $x$ und Grenze $c$. In der üblichen reellen Ordnung liegt $x$ genau in einer von drei Lagen: unter $c$, gleich $c$ oder über $c$. Diese **Trichotomie** wird als grundlegende Ordnungseigenschaft vorausgesetzt.
+
+- „Darüber“ gilt nur in einer Lage. Die Negation wählt darunter und gleich: $x\le c$.
+- „Darüber oder gleich“ wählt zwei Lagen. Die Negation wählt nur darunter: $x<c$.
+- „Darunter“ wählt eine Lage. Die Negation wählt gleich und darüber: $x\ge c$.
+- „Darunter oder gleich“ wählt zwei Lagen. Die Negation wählt nur darüber: $x>c$.
+
+Jede reelle Eingabe liegt in genau einer dieser Lagen. Keine bestimmte Zahl wurde benötigt. Damit sind alle vier Regeln bewiesen. $2,3,4$ an der Grenze drei zu prüfen veranschaulicht sie und kann Fehler aufdecken. Drei Stichproben allein beweisen aber keine Regel über unendlich viele reelle Eingaben. Für beliebige partielle Ordnungen gelten die Regeln nicht unverändert: Dort können Objekte unvergleichbar sein.
+
+## Den ganzen Vergleich und den Bereich erhalten
+
+Die Negation von $0<x$ lautet $0\ge x$, gleichbedeutend mit $x\le0$. Eine Eingabe rechts vom Zeichen verlangt dieselbe Sorgfalt wie eine links. Gleichheit gehört zur Antwort, weil null den ursprünglichen strengen Vergleich nicht erfüllt.
+
+Ist $x$ auf **nichtnegative reelle Zahlen** beschränkt, lautet die Negation von $x>3$ weiterhin $x\le3$ in demselben Bereich: genau die Eingaben in $[0,3]$. Minus eins bleibt unerlaubt, obwohl es den Vergleich auf der größeren Zahlengeraden erfüllt. Es kommt kein Quantor hinzu; freies $x$ bleibt frei. Negieren ist weder das Lösen einer Ungleichung noch eine Erlaubnis, den Eingabebereich zu ändern.
+
+## Am Rand üben
+
+Negiere $x>3$, $x\ge3$, $x<3$ und $x\le3$. Gib für $x=3$ die Wahrheitswerte der Originale und ihrer Negationen an.
+
+<details>
+<summary>Hinweis</summary>
+
+Bei Gleichheit sind die strengen Originale falsch, die nichtstrengen wahr. Kehre diese Werte um.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+In derselben Reihenfolge: $x\le3$, $x<3$, $x\ge3$, $x>3$. Bei drei haben die Originale die Werte $0,1,0,1$, die Negationen $1,0,1,0$. Nur die Richtung zu wechseln und den Gleichheitseinschluss beizubehalten scheitert an diesem Test.
+
+</details>
+
+<Exercise question="Schreibe die Negation von ‘x ist höchstens fünf’. Warum erfüllt fünf sie nicht? Negiere danach ‘Null ist kleiner als x’ für nichtnegatives reelles x und beschreibe alle erlaubten Lösungen.">
+
+Die erste Antwort ist $x>5$. Fünf erfüllt das Original und muss deshalb die Negation verletzen. Die zweite Antwort ist $x\le0$ im nichtnegativen Bereich; nur $x=0$ erfüllt sie. Negative Eingaben werden nicht erlaubt. Die Antworten betreffen dieselben Eingaben und Grenzen wie ihre Originale.
+
+</Exercise>
+
+Rekonstruiere eine Regel anhand beliebiger Lagen darunter, gleich und darüber. Erkläre, weshalb dieses Argument mehr abdeckt als jede endliche Liste erfolgreicher Zahlenproben.

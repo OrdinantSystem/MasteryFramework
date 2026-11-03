@@ -1,0 +1,126 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Testigos separados y compartidos"
+navTitle: "Testigos separados y compartidos"
+description: "Testigos separados y compartidos."
+order: 29
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["witness-dependence", "material-implication-and-vacuity"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md#03 · A key per person is not necessarily one key for all", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Ana usa solo roja y Ben solo azul. Cada persona tiene una llave, pero ninguna sirve para todos. Añade una verde que ambos puedan usar: ahora se cumplen ambos requisitos. Con dos llaves maestras, cualquiera sirve como testigo compartido. Compartido significa que se mantiene fijo, no necesariamente que sea único.
+
+$$
+\underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
+$$
+
+$P,K$ son dominios fijos de personas y llaves; $H(p,k)$ significa que $p$ puede usar $k$. Para demostrar la implicación, supone S y fija una llave que proporciona. Toma cualquier persona permitida. La llave sirve para ella porque sirve para todas. Reutilízala como su testigo. No se exige que las elecciones sean distintas. Así, S implica T. El modelo completo rojo–azul refuta la recíproca.
+
+Más fuerte significa que el éxito compartido implica el separado. No significa valores de verdad opuestos en toda situación. Con verde ambas son verdaderas; si alguien no tiene ninguna llave utilizable, ambas son falsas. Una tabla finita completa puede establecer estas afirmaciones finitas; una muestra de un dominio infinito no resuelve todos los casos.
+
+## Todos los casos con dominios vacíos
+
+| Personas | Llaves | Separado T | Compartido S |
+| --- | --- | --- | --- |
+| vacío | no vacío | verdadera | verdadera |
+| no vacío | vacío | falsa | falsa |
+| vacío | vacío | verdadera | falsa |
+
+Sin personas, la forma universal primero no tiene ninguna persona que falle. La compartida sigue necesitando una llave: cualquiera existente sirve por vacuidad, pero si no existe ninguna es falsa. Con personas y sin llaves, cada persona carece de testigo. La implicación de S a T sigue siendo válida en todos los casos. Una premisa verdadera proporciona una llave reutilizable; una premisa falsa hace verdadera la implicación.
+
+Para comparaciones reales, [el orden de los cuantificadores](../quantifier-order/) demuestra que $y>x$ separado es verdadero y $y>x$ compartido es falso. Para $y\ge x$, por separado basta incluso $y=x$. El éxito compartido sigue fallando, pero $x=y$ ya no lo refuta: usa $x=y+1$.
+
+### Práctica
+
+Todos pueden usar roja y azul. Evalúa ambas formas y la unicidad.
+
+<details>
+<summary>Pista</summary>
+
+Fija una y considera después la otra.
+
+</details>
+
+<Exercise>
+
+Ambas son verdaderas. Cualquiera es testigo compartido; la forma compartida no afirma unicidad.
+
+</Exercise>
+
+Construye un contramodelo completo a que separado implique compartido.
+
+<details>
+<summary>Pista</summary>
+
+Especifica todas las autorizaciones.
+
+</details>
+
+<Exercise>
+
+Exactamente Ana y Ben, exactamente roja y azul: Ana solo roja y Ben solo azul. Cada fila tiene un éxito, pero ninguna columna sirve para todos. Se descartan todos los candidatos compartidos.
+
+</Exercise>
+
+Demuestra la implicación válida sin símbolos.
+
+<details>
+<summary>Pista</summary>
+
+Reutiliza la llave proporcionada.
+
+</details>
+
+<Exercise>
+
+Fija una llave que se supone válida para todos. Úsala para cualquier persona. Sirve para esa persona arbitraria, lo que establece éxito separado. El argumento usa deliberadamente el mismo testigo.
+
+</Exercise>
+
+Sin personas y con una llave: evalúa y después retira la llave.
+
+<details>
+<summary>Pista</summary>
+
+El existencial inicial sigue exigiendo un objeto.
+
+</details>
+
+<Exercise>
+
+Al principio ambas son verdaderas. Tras retirarla, separado sigue siendo verdadero por vacuidad y compartido pasa a falso.
+
+</Exercise>
+
+Evalúa $y\ge x$ separado y compartido en todos los reales.
+
+<details>
+<summary>Pista</summary>
+
+La igualdad cambia la prueba útil.
+
+</details>
+
+<Exercise>
+
+Separado es verdadero con $y=x$. Compartido es falso: cualquier $y$ falla para el real $x=y+1$.
+
+</Exercise>
+
+Más tarde, reconstruye las tres filas de dominios vacíos y explica por qué ninguna invalida la implicación.
+
+## Lectura en voz alta
+
+**EN:** One fixed witness for all inputs implies a witness for each input, but not conversely.
+
+**DE:** Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
+
+**ES:** Un testigo fijo para todas las entradas implica un testigo para cada entrada, pero no al revés.

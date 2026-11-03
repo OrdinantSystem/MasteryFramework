@@ -1,0 +1,90 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/03 Bound Variables.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/04 Quantifier Scope.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Quantifiers and Scope - First Reading.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
+title: "Gebundene Variablen und Geltungsbereiche"
+navTitle: "Gebundene Variablen und Geltungsbereiche"
+description: "Jeden Quantor seinen Vorkommen zuordnen und ohne Variablenfang umbenennen."
+order: 21
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "simultaneous-conditions"]
+thumbnail: "quantifiers"
+---
+
+Sei $D=\{1,2\}$ und $y$ ein reeller Vergleichswert. In
+
+$$\forall x\in D\;(x<y)$$
+
+liest man: „Für jedes $x$ in $D$ ist $x$ kleiner als $y$.“ Die Kartenzahl durchläuft $D$; der Vergleichswert bleibt fest. Die Formel ist für $y=3$ wahr, für $y=2$ falsch, weil der strikte Vergleich beim Mitglied zwei scheitert.
+
+## Vorkommen statt Buchstaben ein für alle Mal einordnen
+
+Ein **Vorkommen** ist ein bestimmtes Auftreten einer Variablen. Ein Quantor **bindet** Vorkommen seiner benannten Variablen in seinem **Geltungsbereich**, der von ihm erfassten Teilformel. Ohne zuständigen Quantor ist ein Vorkommen **frei**. Benutzt ein innerer Quantor denselben Namen, übernimmt er dessen Vorkommen in seinem eigenen Bereich.
+
+Im ersten Vergleich ist $x$ gebunden, $y$ frei. Das $x$ unmittelbar nach $\forall$ legt den gebundenen Namen fest; es ist keine weitere externe Eingabe. Die geschriebene Formel ist wegen $y$ offen. Die Angabe $y=3$ erlaubt ihre Auswertung, fügt aber keinen Quantor ein; $y$ bleibt syntaktisch frei.
+
+## Ein sicherer neuer Name erhält die Rollen
+
+Ein frischer Name liefert
+
+$$\forall t\in D\;(t<y).$$
+
+Gelesen: „Für jedes $t$ in $D$ ist $t$ kleiner als $y$.“ Ändere die Deklaration und genau die von ihr gebundenen Vorkommen; lasse Bereich und freien Vergleichswert unverändert. Dieselben Zahlen werden mit demselben $y$ verglichen.
+
+Die Umbenennung des Quantors in $y$ ergäbe hingegen $\forall y\in D\;(y<y)$. Gelesen: „Jedes $y$ in $D$ ist kleiner als es selbst.“ Das ist auf dem nichtleeren Bereich falsch, anders als das Original bei Vergleichswert drei. Das zuvor freie Vergleichsvorkommen wurde gebunden: **Variablenfang** hat die Aussage verändert.
+
+Nur die Deklaration zu ändern wäre ebenfalls falsch, weil die alten Vorkommen ihr nicht mehr zugeordnet wären. Globales Ersetzen ist unsicher, wenn andere Quantoren oder freie Vorkommen denselben Buchstaben benutzen.
+
+## Klammern bestimmen die Reichweite
+
+Vergleiche
+
+$$(\forall x\in D\;(x<3))\land(x>0)$$
+
+mit
+
+$$\forall x\in D\;((x<3)\land(x>0)).$$
+
+Die erste Formel liest man „Jedes $x$ in $D$ ist kleiner als drei, und das freie $x$ ist positiv“. Ihr äußerster Junktor ist die Konjunktion. Der Quantor endet vor dem rechten Vergleich. Bei freiem reellem $x=-1$ ist die Gesamtformel falsch, obwohl ihr universeller Teil wahr ist. Dieser freie reelle Wert muss nicht in $D$ liegen.
+
+Die zweite liest man „Jedes $x$ in $D$ ist kleiner als drei und positiv“. Außen steht der Quantor; beide Vergleiche liegen in seinem Bereich. Die Formel ist wahr, weil eins und zwei beide Anforderungen erfüllen. Kein freies $x$ bleibt, daher verändert eine externe Belegung von $x$ die Prüfung nicht.
+
+Innerhalb eines Bereichs zu liegen genügt noch nicht zum Gebundensein: In $\forall x\in D\;((x<y)\land(y<3))$ bleiben beide $y$ frei. Für $y=5/2$ ist die Formel wahr; für $y=3$ scheitert der zweite Vergleich. Der Quantor benennt nur $x$.
+
+## Eine feste Bedingung verschieben verlangt eine Bereichsprüfung
+
+Sei $C$ eine von $x$ unabhängige Aussage. Vergleiche
+
+$$\forall x\in D\;(P(x)\land C)$$
+
+und
+
+$$(\forall x\in D\;P(x))\land C.$$
+
+Die erste sagt „Für jedes Mitglied gelten $P$ und $C$“; die zweite behauptet getrennt „Jedes Mitglied erfüllt $P$, und $C$ gilt“. Für leeres $D$ und falsches $C$ ist die erste vakuos wahr, die zweite falsch. Die Umformung gilt also nicht allgemein.
+
+Für nichtleeres $D$ sind sie äquivalent: Die erste liefert $P$ für jedes Mitglied und über irgendein Mitglied auch $C$. Umgekehrt liefern die getrennte Allaussage und $C$ beide Anforderungen für jedes Mitglied. Nichtleere ermöglicht genau den Schritt, der im leeren Fall scheitert.
+
+<details>
+<summary>Wenn ein innerer Quantor einen Namen wiederverwendet</summary>
+
+Für $D=\{1,2\}$ und $E=\{-1\}$ ist $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ wahr. Das äußere $x$ prüft Positivität in $D$; das innere Negativität in $E$. Es wird nicht dieselbe Eingabe zugleich positiv und negativ verlangt. Benenne nur den inneren Quantor und seinen Vergleich in $t$ um, um das sichtbar zu machen. Eine Umbenennung des äußeren Quantors muss diese inneren Vorkommen unverändert lassen.
+
+</details>
+
+<Exercise question="Benenne für $D=\{1,2\}$ die gebundene Variable in $(\forall x\in D\;(x<3))\land(x>0)$ sicher in $t$ um. Werte dann bei freiem $x=-1$ aus. Ändert sich das letzte Vorkommen?">
+
+Das Ergebnis ist $(\forall t\in D\;(t<3))\land(x>0)$. Nur Deklaration und zugehöriger Vergleich ändern sich. Das letzte $x$ liegt außerhalb des Bereichs und bleibt frei. Bei $x=-1$ ist die Allaussage wahr, der letzte Vergleich falsch; die Konjunktion ist falsch.
+
+</Exercise>
+
+<Exercise question="Jemand ersetzt $\forall x\in D\;(x\le y)$ durch $\forall y\in D\;(y\le y)$. Bei ursprünglich freiem $y=3$ sind beide wahr. Warum ist das dennoch unsicher? Gib eine unterscheidende Belegung an und erkläre, ob ein bekannter freier Wert dadurch gebunden wird.">
+
+Die zweite Formel fängt den freien Vergleichswert ein und ist hier immer wahr, da jede Zahl höchstens sie selbst ist. Bei ursprünglich $y=0$ ist die erste falsch, weil eins und zwei größer als null sind. Die Übereinstimmung bei $y=3$ hat die Abhängigkeit von $y$ nicht erhalten. Ein bekannter Wert erlaubt die Auswertung; nur eine Änderung der geschriebenen Bindungsstruktur verändert, welche Vorkommen gebunden sind.
+
+</Exercise>

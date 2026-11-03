@@ -1,0 +1,132 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Proving sequence convergence"
+navTitle: "Proving sequence convergence"
+description: "Proving sequence convergence."
+order: 49
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-sequence-convergence", "definitions-assumptions-results"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "proof"
+---
+
+A sequence already equal to three at every position should converge to three. The proof is short, but each quantifier still has a job. Fix the sequence and target before accepting the arbitrary tolerance; do not choose a target separately for each term.
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+## The full constant-sequence proof
+
+Let $a_n=3$ for every $n\in\mathbb N$ and let $L=3$. Take any positive real $\varepsilon$. Choose $N=1$, which is a positive natural number. Now take any natural $n\ge N$. The sequence rule gives $a_n=3$, hence:
+
+$$
+|a_n-3|=|3-3|=|0|=0<\varepsilon.
+$$
+
+The first equality uses the sequence rule; the next uses subtraction of equal reals; the next uses the absolute value at zero; the final strict inequality uses positivity of the arbitrary tolerance. Every tested index passes. The tolerance was arbitrary, so the definition holds. Neither natural-number unboundedness nor the triangle inequality was used.
+
+## Choice dependence and proof dependence
+
+Choice dependence asks which information $N$ may use: the tolerance and fixed context, but not the later universal $n$. Proof dependence asks which facts justify the distance estimate. Correct order cannot repair false arithmetic, and correct arithmetic cannot repair a late witness choice. The constant threshold may ignore the tolerance because it works for all of them.
+
+For first two terms nine and every later term three, choose $N=3$ for every positive tolerance. Any $n\ge3$ has term three and distance zero. Early exceptions are outside the demanded tail. If $N$ works and $M\ge N$ is natural, every $n\ge M$ also satisfies $n\ge N$, so $M$ works too. Minimality is unnecessary.
+
+<Note title="A late threshold changes the claim">
+
+Choosing $N=n+1$ after seeing each test index makes that index earlier than its new threshold. The implication then holds vacuously for that index, but no single threshold has been supplied for all later indices. The error is not that the threshold is large; it is that it changes with a forbidden later input.
+
+</Note>
+
+### Practice
+
+Prove constant negative four converges to negative four.
+
+<details>
+<summary>Hint</summary>
+
+Distance, not sign of the term, matters.
+
+</details>
+
+<Exercise>
+
+For arbitrary $\varepsilon>0$, choose $N=1$. For any $n\ge1$, $|-4-(-4)|=0<\varepsilon$. The sequence rule, subtraction, absolute value at zero and positivity justify all steps.
+
+</Exercise>
+
+First term one hundred, all later terms zero: prove convergence to zero. Must the threshold change with tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Start after the exception.
+
+</details>
+
+<Exercise>
+
+For every $\varepsilon>0$, choose $N=2$. Any $n\ge2$ has zero term and zero distance, below $\varepsilon$. The same threshold works throughout.
+
+</Exercise>
+
+Repair “Given tolerance and test index, choose $N=n+1$”.
+
+<details>
+<summary>Hint</summary>
+
+Keep one witness for every test.
+
+</details>
+
+<Exercise>
+
+Choose an allowed threshold before the arbitrary test index, then prove the whole tail estimate. Merely moving each tested index out of the tail proves a different quantifier order.
+
+</Exercise>
+
+Which extra fact is needed for the optional reciprocal proof, and is it needed here?
+
+<details>
+<summary>Hint</summary>
+
+A natural number beyond an arbitrary real bound needs justification.
+
+</details>
+
+<Exercise>
+
+The [optional extension](../reciprocal-sequence-convergence/) explicitly accepts the Archimedean property to supply its threshold and positive reciprocal order to estimate the tail. The constant proof simply chooses known natural one; it does not need that property.
+
+</Exercise>
+
+Does constant zero converge to target one? Does that show it has no real limit?
+
+<details>
+<summary>Hint</summary>
+
+Compare the same terms with target zero.
+
+</details>
+
+<Exercise>
+
+Every term has distance one to target one, so tolerance $1/2$ fails on every tail. Yet for target zero any positive tolerance succeeds with $N=1$. Failure at one target is not failure at all targets.
+
+</Exercise>
+
+Later, reconstruct the full proof and justify each equality.
+
+## Read aloud
+
+**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
+
+**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
+
+**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.

@@ -1,0 +1,126 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Witness dependence"
+navTitle: "Witness dependence"
+description: "Witness dependence."
+order: 28
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["quantifier-order"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/02 Dependence between Variables.md#02 · What information may a witness use?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+If a friend names a real number before you must reply, “add one” gives a larger real. If your reply must work for every number the friend might name afterward, the same recipe uses information the requirement does not permit.
+
+## Keep an information ledger
+
+At a witness choice, list fixed parameters, earlier arbitrary inputs in whose scope it lies and earlier chosen witnesses. These are available. Later universally tested inputs cannot change an earlier choice. Dependence is permitted, not required: choosing positive one may ignore an earlier input when only positivity is requested. An existential assertion does not promise a computable method.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Both $x$ and $y$ are available. Choose $z=x+y$; closure of real addition supplies membership and the chosen equality supplies the predicate. The argument applies to any real pair.
+
+$$
+\forall x\in\mathbb R\;\exists z\in\mathbb R\;\forall y\in\mathbb R\;(z=x+y).
+$$
+
+Now $z$ may use $x$, but must remain fixed for every later $y$. At $y=0$ the condition forces $z=x$; at $y=1$ it forces $z=x+1$. The same value cannot satisfy both. This defeats every candidate using two incompatible requirements, not an inference from a sample.
+
+A later envelope choice may use a previously selected key: earlier existential choices can coordinate. Binding is a different matter. In a formula with fixed real $c$, the recipe $y=x+c$ may use $c$, although its occurrences remain syntactically free if no binder for $c$ is written. The context fixes its value. A bound witness may depend on an earlier input without becoming free.
+
+Legal information is not enough for success. The constant $y=1$ uses no forbidden input but fails $y>x$ at $x=1$. The rule $y=x/2$ uses only the earlier input, yet fails integer membership when $x=1$. Always check information, membership and the whole predicate separately.
+
+### Practice
+
+For every real $x$, a positive real $y$ is needed. May you always choose one?
+
+<details>
+<summary>Hint</summary>
+
+Permission to use an input is not an obligation.
+
+</details>
+
+<Exercise>
+
+Yes: one is positive and real for every input. No variation is required.
+
+</Exercise>
+
+Which inputs may the sum witness use in each displayed formula?
+
+<details>
+<summary>Hint</summary>
+
+Stop where the witness is introduced.
+
+</details>
+
+<Exercise>
+
+Both inputs in the first; only the earlier input in the second. The later universal input cannot revise the witness.
+
+</Exercise>
+
+For $y>x$ over reals, is $y=1$ allowed and successful?
+
+<details>
+<summary>Hint</summary>
+
+Separate permission from truth.
+
+</details>
+
+<Exercise>
+
+It is allowed but fails at $x=1$ or larger. $y=x+1$ is allowed and succeeds for all real inputs.
+
+</Exercise>
+
+Fix real $c$. Supply $y=x+c$ and explain whether $c$ is bound.
+
+<details>
+<summary>Hint</summary>
+
+Context differs from a written binder.
+
+</details>
+
+<Exercise>
+
+The real sum uses available $x$ and fixed $c$ and satisfies the equality. Fixing $c$ does not bind its occurrences in the formula.
+
+</Exercise>
+
+A claim asks for integer $y$ with $2y=x$ for every integer $x$. Audit $y=x/2$.
+
+<details>
+<summary>Hint</summary>
+
+Try an odd input.
+
+</details>
+
+<Exercise>
+
+At input one the output is a half, not an integer. Indeed no integer doubles to one, so the claim itself is false.
+
+</Exercise>
+
+Later, recreate the information ledger for both sum formulas without looking.
+
+## Read aloud
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

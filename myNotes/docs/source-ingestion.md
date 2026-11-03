@@ -47,6 +47,12 @@ Source correction: Konzepte 01 marks the universal strict inequality n² > n as 
 
 Worksheet proof order: laws 1–5 → helper neutral identities H₁/H₂ (7a/7b) → idempotence 6 → absorbing laws 7c/7d → constants 8 → complement uniqueness → 9a and 10 independently → 9b. Truth tables are used to teach logic, never as a substitute for these requested algebraic proofs.
 
+## Analysis 0 · authored Markdown notes
+
+The `analysis-zero` text source supplies the expanded logic foundations and first sequence-convergence application inside the existing Analysis course. It accounts for 52 authored lessons and 28 companion concepts; [analysis-zero.md](analysis-zero.md) defines the teaching/source-of-truth boundary and [analysis-zero-coverage.json](analysis-zero-coverage.json) records every destination.
+
+Keep `sourcePages: []` and use actual relative lesson/heading locations. Expanded poster-derived pages retain their original primary source and declare `analysis-zero` through `additionalSources`. Original Obsidian notes, personal learning evidence and private PDFs are not public artifacts. Preserve existing website keys and worksheet proof constraints; deduplicate repeated explanations without dropping distinct mathematical examples, assumptions or practice.
+
 ## Course and route contract
 
 - Root / is the archive directory. /analysis/ and /linear-algebra/ are course overviews, with corresponding /de/ and /es/ prefixes.

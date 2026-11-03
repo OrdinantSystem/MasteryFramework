@@ -1,0 +1,90 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-universal"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/03 Bound Variables.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/04 Quantifier Scope.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Quantifiers and Scope - First Reading.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]
+title: "Bound variables and scope"
+navTitle: "Bound variables and scope"
+description: "Follow each binder to its occurrences and rename without capture."
+order: 21
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains", "simultaneous-conditions"]
+thumbnail: "quantifiers"
+---
+
+Let $D=\{1,2\}$ and let $y$ be a real comparison value. In
+
+$$\forall x\in D\;(x<y),$$
+
+read “for every $x$ in $D$, $x$ is less than $y$.” The card number varies across $D$; the comparison value stays fixed. The formula is true at $y=3$ and false at $y=2$, because strict comparison fails for the member two.
+
+## Classify occurrences, not letters forever
+
+An **occurrence** is a particular appearance of a variable. A quantifier **binds** occurrences of its named variable inside its **scope**, the subformula it governs. An occurrence with no governing binder is **free**. If an inner quantifier uses the same name, it governs that name within its own scope.
+
+In the opening comparison, $x$ is bound and $y$ is free. The $x$ immediately after $\forall$ declares the bound name; it is not another external input. The written formula is open because $y$ is free. Supplying $y=3$ lets us evaluate it without inserting a quantifier, so $y$ remains free in its syntax.
+
+## A safe new name keeps the roles
+
+A fresh label gives
+
+$$\forall t\in D\;(t<y).$$
+
+Read: “For every $t$ in $D$, $t$ is less than $y$.” Rename the declaration and exactly the occurrences it binds; leave the domain and the free comparison value untouched. This checks the same numbers against the same $y$.
+
+Changing the binder to $y$ instead would produce $\forall y\in D\;(y<y)$. Read: “Every $y$ in $D$ is less than itself.” It is false on this nonempty domain, unlike the original at comparison value three. The formerly free comparison occurrence has become bound: **variable capture** changed the claim.
+
+Changing only the declaration would also be wrong, because its old occurrences would no longer belong to it. Global text replacement is unsafe when other binders or free occurrences use the same letter.
+
+## Parentheses determine the reach
+
+Compare
+
+$$(\forall x\in D\;(x<3))\land(x>0)$$
+
+with
+
+$$\forall x\in D\;((x<3)\land(x>0)).$$
+
+The first reads “every $x$ in $D$ is below three, and the free $x$ is positive.” Its outermost connective is conjunction. The quantifier stops before the right comparison. With the free real $x=-1$, the whole formula is false, though its universal part is true. That free real need not belong to $D$.
+
+The second reads “every $x$ in $D$ is below three and positive.” Its outermost operation is the quantifier, and both comparisons lie in its scope. It is true because both one and two meet both requirements. No free $x$ remains, so an external assignment to $x$ does not alter its test.
+
+Being inside a scope is not enough to be bound: in $\forall x\in D\;((x<y)\land(y<3))$, both occurrences of $y$ remain free. With $y=5/2$ the formula is true; with $y=3$ the second comparison fails. The quantifier names only $x$.
+
+## Moving a fixed condition needs a domain check
+
+Let $C$ be a proposition independent of $x$. Compare
+
+$$\forall x\in D\;(P(x)\land C)$$
+
+and
+
+$$(\forall x\in D\;P(x))\land C.$$
+
+Read the first as “for every member, both $P$ and $C$ hold”; the second asserts “every member satisfies $P$, and $C$ holds separately.” If $D$ is empty and $C$ false, the first is vacuously true and the second false. Thus the rewrite is not universally valid.
+
+For nonempty $D$ they are equivalent: the first gives $P$ for every member and gives $C$ by any one member; conversely, the separate universal statement and $C$ provide both requirements at each member. Nonemptiness supplies the step that fails in the empty case.
+
+<details>
+<summary>When an inner quantifier reuses a name</summary>
+
+For $D=\{1,2\}$ and $E=\{-1\}$, $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ is true. The outer $x$ tests positivity in $D$; the inner $x$ tests negativity in $E$. They are not the same input required to be both positive and negative. Rename only the inner binder and its comparison to $t$ to make the distinction visible. Renaming the outer binder must leave those inner occurrences alone.
+
+</details>
+
+<Exercise question="With $D=\{1,2\}$, safely rename the bound variable in $(\forall x\in D\;(x<3))\land(x>0)$ to $t$. Then evaluate it at free $x=-1$. Does the final occurrence change?">
+
+The result is $(\forall t\in D\;(t<3))\land(x>0)$. Only the declaration and its governed comparison change. The final $x$ is outside the scope and stays free. At $x=-1$ the universal part is true but the final comparison false, so the conjunction is false.
+
+</Exercise>
+
+<Exercise question="Someone changes $\forall x\in D\;(x\le y)$ to $\forall y\in D\;(y\le y)$. Both are true when the original free $y=3$. Why is this still unsafe? Give a separating assignment and explain whether knowing a free value makes it bound.">
+
+The second formula captures the free comparison value and is always true here, since each number is at most itself. At original $y=0$, the first is false because one and two exceed zero. Agreement for $y=3$ did not preserve the dependence on $y$. Knowing that value permits evaluation; only changing the written binding structure changes which occurrences are bound.
+
+</Exercise>

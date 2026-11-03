@@ -1,0 +1,126 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Existenz und Eindeutigkeit"
+navTitle: "Existenz und Eindeutigkeit"
+description: "Existenz und Eindeutigkeit."
+order: 25
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Zwei verschiedene Schlüssel öffnen ein Schloss. Die Prüfung des ersten beweist, dass ein passender Schlüssel existiert; der zweite macht den Beweis nicht falsch. Er widerlegt eine andere Aussage: Genau ein Schlüssel öffnet das Schloss. Lege zuerst fest, welche Schublade die erlaubten Schlüssel enthält.
+
+## Drei verschiedene Anforderungen
+
+Existenz bedeutet mindestens einen erlaubten Erfolg. Höchstens einer bedeutet, dass keine zwei verschiedenen erlaubten Objekte passen; null ist zulässig. Eindeutige Existenz bedeutet genau einen: Existenz zusammen mit höchstens einem. In einer leeren Schublade ist Existenz falsch, höchstens einer wahr und eindeutige Existenz falsch. Einen zweiten Erfolg auszuschließen liefert keinen ersten.
+
+$$
+\exists! x\in D\;P(x).
+$$
+
+Das Ausrufezeichen fügt die Höchstens-eins-Forderung hinzu; es ist keine Betonung. Gib zunächst einen Zeugen in $D$ mit Eigenschaft $P$. Zeige dann, dass jedes Objekt aus $D$, das $P$ erfüllt, diesem Zeugen gleicht. Objekte ohne $P$ müssen ihm nicht gleichen. Gleichheit betrifft Objekte oder Werte, nicht Schreibweisen: $1/2$ und $2/4$ bezeichnen dieselbe reelle Zahl.
+
+## Ein Beweis mit beiden Aufgaben
+
+$$
+\exists! n\in\mathbb Z\;(n+5=12).
+$$
+
+Existenz: $7\in\mathbb Z$ und $7+5=12$. Eindeutigkeit: Sei $n$ eine beliebige ganze Zahl mit $n+5=12$. Subtraktion von fünf auf beiden Seiten ergibt $n=7$. Jede mögliche Lösung gleicht also dem geprüften Zeugen. Wir betrachten eine beliebige Lösung, nicht jede ganze Zahl als angebliche Sieben und auch keine endliche Stichprobe gescheiterter Alternativen.
+
+Beschränke den Bereich nun auf ganze Zahlen größer als zehn. Dieselbe Subtraktion zwingt jede hypothetische Lösung auf sieben, außerhalb des Bereichs. Höchstens eine gilt weiterhin, Existenz aber nicht. Bei $4<n<8$ sind dagegen fünf und sechs verschiedene ganzzahlige Zeugen; das widerlegt Eindeutigkeit ohne vollständige Liste.
+
+### Übung
+
+Beweise, dass genau eine ganze Zahl $n+3=9$ erfüllt.
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne die beiden Aufgaben.
+
+</details>
+
+<Exercise>
+
+Sechs ist ganzzahlig und $6+3=9$. Jede ganzzahlige Lösung erfüllt $n=9-3=6$. Der erste Teil liefert eine Lösung, der zweite schließt eine verschiedene zweite aus.
+
+</Exercise>
+
+Beweist $5^2=25$, dass genau eine ganze Zahl Quadrat $25$ hat?
+
+<details>
+<summary>Hinweis</summary>
+
+Betrachte eine negative Zahl.
+
+</details>
+
+<Exercise>
+
+Es beweist nur Existenz. $-5$ ist eine verschiedene ganze Zahl und $(-5)^2=25$, also ist Eindeutigkeit falsch, Existenz aber weiterhin wahr.
+
+</Exercise>
+
+Bewerte in einer leeren Schachtel: eine blaue Marke, höchstens eine blaue Marke, genau eine blaue Marke.
+
+<details>
+<summary>Hinweis</summary>
+
+Nur eine Aussage lässt null zu.
+
+</details>
+
+<Exercise>
+
+Falsch, wahr, falsch. Keine Marke liefert Existenz; zwei verschiedene blaue Marken können nicht vorkommen, also gilt höchstens eine.
+
+</Exercise>
+
+Repariere „Um Eindeutigkeit von sieben zu zeigen, muss jede ganze Zahl sieben sein“.
+
+<details>
+<summary>Hinweis</summary>
+
+Beschränke dich auf Lösungen.
+
+</details>
+
+<Exercise>
+
+Zeige, dass jede ganze Zahl, die die ursprüngliche Gleichung erfüllt, sieben ist. Nichtlösungen müssen nicht sieben sein.
+
+</Exercise>
+
+Prüfe im Bereich $n>10$: „$n+5=12$ erzwingt sieben, also genau eine Lösung“.
+
+<details>
+<summary>Hinweis</summary>
+
+Ein notwendiger Kandidat kann ausgeschlossen sein.
+
+</details>
+
+<Exercise>
+
+Sieben ist ausgeschlossen. Das Argument ergibt höchstens eine und mit der Bereichsbeschränkung tatsächlich keine Lösung.
+
+</Exercise>
+
+Vergleiche später Sammlungen mit null, einem und zwei Erfolgen und rekonstruiere beide Beweisaufgaben.
+
+## Laut lesen
+
+**EN:** There exists exactly one x in D satisfying P.
+
+**DE:** Es gibt genau ein x in D, das P erfüllt.
+
+**ES:** Existe exactamente un equis en D que cumple P.

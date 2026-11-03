@@ -1,0 +1,120 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Counting witnesses"
+navTitle: "Counting witnesses"
+description: "Counting witnesses."
+order: 26
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-uniqueness", "order-comparisons"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md#05 · More than one possible witness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Cards labelled seven and nine both witness the existence of an odd-labelled card. Choosing seven for a proof does not remove nine. The amount of evidence needed depends on the question: give one, give two distinct examples, or find all.
+
+One checked object proves existence. Two distinct checked objects refute at most one, without asserting exactly two. A complete list needs both verification of each entry and an argument excluding every unlisted object. Domain size is not witness count: an infinite domain can have zero, one, finitely many or infinitely many successes.
+
+$$
+\{n\in\mathbb Z:4<n<8\}=\{5,6,7\}.
+$$
+
+Each listed number is an integer and passes both bounds. Conversely, an integer above four is at least five and one below eight is at most seven. Thus any witness is five, six or seven. This exclusion argument, using the spacing of integers, is what makes the list complete. Trying three successful numbers alone would not.
+
+## Changing the domain changes the count
+
+Over the reals, $5.5$ and $6.25$ also work. There are infinitely many witnesses. Start with five and six; insert their midpoint. Then repeatedly insert the midpoint between five and the last inserted value. Each result is real, above five and below the preceding result, hence still between four and eight. It is different from five and from every earlier inserted value. However many steps we take, another new witness can be added. This uses ordinary midpoint arithmetic and order, not a convergence theorem.
+
+Distinct expressions need not be distinct objects: $1/2=2/4$. But two physical cards carrying the same label seven are distinct cards, although there is only one distinct numerical label. State what you count. An empty tray has no candidates; an even-only tray has candidates but no odd successes. Both make odd-card existence false. A universal statement on an empty tray remains true without supplying any witness.
+
+### Practice
+
+For integer $4<n<8$, prove one, two distinct, and all witnesses.
+
+<details>
+<summary>Hint</summary>
+
+Only the last task needs exclusion.
+
+</details>
+
+<Exercise>
+
+Five proves existence; five and six refute uniqueness. All are five, six, seven, because any allowed integer must be at least five and at most seven.
+
+</Exercise>
+
+Do $1/2$ and $2/4$ give two witnesses for $2x=1$ over reals?
+
+<details>
+<summary>Hint</summary>
+
+Count values, not spellings.
+
+</details>
+
+<Exercise>
+
+They establish existence after checking the equation but name one value, so they do not refute uniqueness. This alone is not a uniqueness proof either.
+
+</Exercise>
+
+Two separate cards both bear seven. Are there two odd cards and two distinct labels?
+
+<details>
+<summary>Hint</summary>
+
+Specify the objects.
+
+</details>
+
+<Exercise>
+
+There are two distinct odd-labelled cards but only one distinct integer label.
+
+</Exercise>
+
+Compare an empty tray with an even-only tray for odd-card existence.
+
+<details>
+<summary>Hint</summary>
+
+No candidates differs from no successes.
+
+</details>
+
+<Exercise>
+
+Both claims are false. The first lacks objects; in the second every available object fails the condition.
+
+</Exercise>
+
+A list claims five, six and seven are all real witnesses between four and eight. Audit it.
+
+<details>
+<summary>Hint</summary>
+
+Insert a midpoint.
+
+</details>
+
+<Exercise>
+
+Five and a half is a missing real witness, so completeness fails. Five already proves existence.
+
+</Exercise>
+
+Later, build examples with zero, one and multiple successes and give the appropriate amount of evidence for each.
+
+## Read aloud
+
+**EN:** One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.
+
+**DE:** Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.
+
+**ES:** Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.

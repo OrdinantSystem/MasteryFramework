@@ -1,0 +1,90 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]
+locale: "en"
+title: "Equality and equations"
+navTitle: "Equality and equations"
+description: "Read equalities as comparisons of values and justify every link of a chain."
+order: 6
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["definitions-assumptions-results"]
+thumbnail: "proof"
+---
+
+$2+1$ and $3$ look different, but name the same number. The equality $2+1=3$ records that agreement. An equals sign does not mean “next, do this.” Every occurrence asserts that its two sides name the same object or value in the stated setting.
+
+## Foundational equality rules
+
+We accept these rules as foundations rather than proving them from arithmetic here:
+
+- **Reflexivity:** $a=a$.
+- **Symmetry:** if $a=b$, then $b=a$.
+- **Transitivity:** if $a=b$ and $b=c$, then $a=c$.
+- **Substitution:** equal objects can replace each other in well-defined mathematical expressions or properties without changing value or truth.
+
+The last rule still requires meaningful expressions. If $a=b=0$, substitution does not make $1/a$ or $1/b$ defined in ordinary real arithmetic. Nor is substitution a rule for changing quoted words in arbitrary sentences.
+
+## Every link of a chain makes a claim
+
+$$a=b=c$$
+
+This abbreviates $a=b$ and $b=c$; transitivity then gives $a=c$. It asserts the equalities together, not a sequence of actions.
+
+The line $2+1=3+4=7$ is wrong: its first equality compares three with seven. If the intended instruction is to add two and one, then add four, write $2+1=3$, followed by $3+4=7$. Alternatively keep the added four throughout:
+
+$$(2+1)+4=3+4=7.$$
+
+The first step substitutes three for $2+1$ inside a larger expression. The second evaluates the addition. Every expression in the corrected chain names seven.
+
+<Note title="Readings">
+
+$a=b=c$: **EN** “a equals b and b equals c”; **DE** „a ist gleich b und b ist gleich c“; **ES** «a es igual a be y be es igual a ce». $=$: **EN** “equals”; **DE** „ist gleich“; **ES** «es igual a». $\approx$: **EN** “is approximately equal to”; **DE** „ist ungefähr gleich“; **ES** «es aproximadamente igual a».
+
+</Note>
+
+Approximate equality needs a stated precision or tolerance. It does not permit replacing an exact equality in a chain without explaining the change.
+
+## An equation's role depends on context
+
+“Define $a:=0$” introduces a name. “Suppose $a=0$” introduces a local hypothesis. “Solve $x+1=3$ over the reals” asks which allowed inputs make the equality true; here the answer is $x=2$. None of these roles is determined by the equals sign alone.
+
+The identity $x+0=x$ holds for every real input, but is open as written: no quantifier binds $x$. Its explicit universal form is
+
+$$\forall x\in\mathbb R\;(x+0=x).$$
+
+An assignment supplies context for evaluating an open equation. It does not syntactically bind its variable; substitution replaces the occurrences and produces a different formula. A quantifier, by contrast, binds occurrences in its scope.
+
+## Practice
+
+Repair $1+1=2+1=3$ while preserving the intended calculation. Explain the false link before correcting it.
+
+<details>
+<summary>Hint</summary>
+
+Evaluate the expressions on either side of the first equals sign. Keep the final addition in every expression of a single chain.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+The first link says two equals three. Write $1+1=2$, then $2+1=3$, or $(1+1)+1=2+1=3$. In the chain all expressions now name three; the first replacement uses substitution.
+
+</details>
+
+<Exercise question="For arbitrary real numbers a, b, c, suppose a equals b and b equals c. Identify assumptions, conclusion, and rule. Write the full universal claim.">
+
+The assumptions are $a=b$ and $b=c$; the conclusion is $a=c$, justified by transitivity:
+
+$$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
+
+Every variable occurrence is bound. This does not assert that all reals are equal: it says that whenever the two assumptions hold, the conclusion holds. The equality rule applies to arbitrary objects satisfying them; checking one numerical triple is not the general justification.
+
+Read the universal claim in full: **EN** “For every real a, b, and c, if a equals b and b equals c, then a equals c.” **DE** „Für alle reellen a, b und c gilt: Wenn a gleich b und b gleich c ist, dann ist a gleich c.“ **ES** «Para todos los reales a, be y ce, si a es igual a be y be es igual a ce, entonces a es igual a ce».
+
+</Exercise>

@@ -8,6 +8,7 @@ export const sourceCatalog = {
   "analysis-concepts-4":{title:"Analysis I — Konzepte 4",pages:1,kind:"pdf",course:"analysis"},
   "analysis-sheet-1-1":{title:"Analysis I — Übungsblatt 1.1",pages:1,kind:"pdf",course:"analysis"},
   "analysis-sheet-1-2":{title:"Analysis I — Übungsblatt 1.2",pages:1,kind:"pdf",course:"analysis"},
+  'analysis-zero':{title:'Analysis 0 · Logic teaching notes',kind:'markdown',pages:0,course:'analysis'},
   'learning-method':{title:'Universal Learning Method v1.0',kind:'markdown',pages:0,course:'learning'},
   'learning-bloom':{title:'Bloom’s Taxonomy and Higher-Order Learning v1.0',kind:'markdown',pages:0,course:'learning'},
   'learning-protocol':{title:'Deep Learning Method v0.1.0',kind:'markdown',pages:0,course:'learning'},

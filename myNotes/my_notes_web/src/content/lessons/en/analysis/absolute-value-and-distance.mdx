@@ -1,0 +1,87 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Absolute value and distance"
+navTitle: "Absolute value and distance"
+description: "Absolute value and distance."
+order: 47
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["order-comparisons", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+---
+
+Minus three and positive three lie on opposite sides of zero, but each is three units away. Distance records how far apart points are, not the direction of travel. Absolute value converts a signed real number to its nonnegative distance from zero.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+This is a definition. Every real falls into exactly one branch. If $x<0$, its opposite $-x$ is positive: the minus sign does not make the output negative. Thus $|-3|=3$, $|3|=3$ and $|0|=0$. Nonnegative includes zero; it does not mean strictly positive. We use familiar real arithmetic and order here.
+
+## Signed displacement and distance
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+The difference $x-y$ is signed displacement from $y$ to $x$. Taking its absolute value gives the segment length. Reversing the subtraction negates the displacement. A number and its opposite have equal absolute values: for positive input both give the positive input; for negative input both give its positive opposite; at zero both give zero. Hence $d(x,y)=d(y,x)$ for all reals, not just the displayed example.
+
+Also, $d(x,y)=0$ exactly when $x=y$. If the difference is nonnegative, its absolute value is itself, so zero distance forces zero difference. If the difference is negative its absolute value is positive, so it cannot give zero. Conversely, equal points have difference zero and absolute value zero. No triangle inequality is needed.
+
+## A strict tolerance is an open interval
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+Fix target $L$ and positive real tolerance $\varepsilon$. Put $u=t-L$. If $u\ge0$, then $|u|=u$: the distance test is $u<\varepsilon$, while $-\varepsilon<u$ already follows from positivity of the tolerance. If $u<0$, then $|u|=-u$: the test $-u<\varepsilon$ is equivalent to $u>-\varepsilon$, while $u<\varepsilon$ already holds. Both cases therefore give exactly $-\varepsilon<u<\varepsilon$. Adding $L$ gives the displayed interval. Every step is reversible, proving both directions.
+
+The chained comparison requires both strict bounds. At target three and tolerance $1/2$, the endpoints $2.5$ and $3.5$ are excluded: their distance equals the tolerance. Epsilon is a variable tolerance, not a special tiny constant.
+
+### Practice
+
+At target $3$ and tolerance $1/2$, test $2.5$, $3$ and $13/4$.
+
+<details>
+<summary>Hint</summary>
+
+Compute distance before comparing.
+
+</details>
+
+<Exercise>
+
+Distances are $1/2$, $0$, $1/4$. The first fails at equality; the other two pass. The endpoint is not strictly inside the interval.
+
+</Exercise>
+
+A point lies left of its target. Does negative displacement put it inside every positive tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Use two and five.
+
+</details>
+
+<Exercise>
+
+No. From target five to point two, displacement is negative three but distance is three, failing tolerance one.
+
+</Exercise>
+
+Later, reconstruct the two-sign proof of the interval equivalence and the zero-distance proof.
+
+## Read aloud
+
+**EN:** The absolute value of t minus L is less than epsilon exactly when t lies strictly between L minus epsilon and L plus epsilon.
+
+**DE:** Der Betrag von t minus L ist kleiner als Epsilon genau dann, wenn t strikt zwischen L minus Epsilon und L plus Epsilon liegt.
+
+**ES:** El valor absoluto de te menos ele es menor que épsilon exactamente cuando te está estrictamente entre ele menos épsilon y ele más épsilon.

@@ -1,0 +1,126 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Getrennte und gemeinsame Zeugen"
+navTitle: "Getrennte und gemeinsame Zeugen"
+description: "Getrennte und gemeinsame Zeugen."
+order: 29
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["witness-dependence", "material-implication-and-vacuity"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md#03 · A key per person is not necessarily one key for all", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Ana nutzt nur rot, Ben nur blau. Jede Person hat einen Schlüssel, doch keiner passt für alle. Füge einen grünen Schlüssel für beide hinzu: Nun gelten beide Anforderungen. Mit zwei Generalschlüsseln kann jeder die gemeinsame Aussage bezeugen. Ein gemeinsamer Zeuge wird festgehalten, muss aber nicht eindeutig sein.
+
+$$
+\underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
+$$
+
+$P,K$ sind feste Personen- und Schlüsselbereiche; $H(p,k)$ bedeutet, dass $p$ den Schlüssel $k$ nutzen darf. Zum Beweis nehme S an und halte einen dadurch gelieferten Schlüssel fest. Nimm eine beliebige erlaubte Person. Der Schlüssel passt für sie, weil er für alle passt. Nutze ihn als ihren Zeugen. Verschiedene Wahlen werden nicht verlangt. Also impliziert S die Aussage T. Das vollständige Rot-Blau-Modell widerlegt die Umkehrung.
+
+Stärker bedeutet, dass gemeinsamer Erfolg getrennten Erfolg impliziert. Es bedeutet nicht überall entgegengesetzte Wahrheitswerte. Mit grün sind beide wahr; hat eine Person keinen nutzbaren Schlüssel, sind beide falsch. Eine vollständige endliche Berechtigungstabelle kann diese endlichen Aussagen klären; eine Stichprobe aus einem unendlichen Bereich nicht jeden Fall.
+
+## Alle Fälle mit leeren Bereichen
+
+| Personen | Schlüssel | Getrennt T | Gemeinsam S |
+| --- | --- | --- | --- |
+| leer | nicht leer | wahr | wahr |
+| nicht leer | leer | falsch | falsch |
+| leer | leer | wahr | falsch |
+
+Ohne Personen hat die All-zuerst-Aussage keine scheiternde Person. Die gemeinsame Aussage braucht weiterhin einen Schlüssel: Jeder vorhandene passt leer, ohne Schlüssel ist sie falsch. Mit Personen, aber ohne Schlüssel, fehlt jeder Person ein Zeuge. Die Implikation von S nach T bleibt stets gültig. Eine wahre Voraussetzung liefert einen wiederverwendbaren Schlüssel; bei falscher Voraussetzung ist die Implikation wahr.
+
+Für reelle Vergleiche zeigt die [Quantorenreihenfolge](../quantifier-order/), dass getrenntes $y>x$ wahr und gemeinsames $y>x$ falsch ist. Bei $y\ge x$ genügt getrennt sogar $y=x$. Gemeinsamer Erfolg scheitert weiterhin, aber $x=y$ widerlegt ihn nicht mehr: Prüfe stattdessen $x=y+1$.
+
+### Übung
+
+Alle dürfen rot und blau nutzen. Bewerte beide Formen und Eindeutigkeit.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte einen fest und betrachte den anderen.
+
+</details>
+
+<Exercise>
+
+Beide sind wahr. Jeder Schlüssel ist ein gemeinsamer Zeuge; die gemeinsame Form behauptet keine Eindeutigkeit.
+
+</Exercise>
+
+Konstruiere ein vollständiges Gegenmodell zur Umkehrung.
+
+<details>
+<summary>Hinweis</summary>
+
+Lege jede Berechtigung fest.
+
+</details>
+
+<Exercise>
+
+Genau Ana und Ben, genau rot und blau: Ana nur rot, Ben nur blau. Jede Zeile hat Erfolg, keine Spalte passt für alle. Alle gemeinsamen Kandidaten sind ausgeschlossen.
+
+</Exercise>
+
+Beweise die gültige Richtung ohne Symbole.
+
+<details>
+<summary>Hinweis</summary>
+
+Verwende den gelieferten Schlüssel erneut.
+
+</details>
+
+<Exercise>
+
+Halte einen für alle passenden Schlüssel fest. Nutze ihn für jede beliebige Person. Er passt für diese beliebige Person, also folgt getrennter Erfolg. Das Argument verwendet bewusst denselben Zeugen.
+
+</Exercise>
+
+Keine Personen, ein Schlüssel: Bewerte und entferne dann den Schlüssel.
+
+<details>
+<summary>Hinweis</summary>
+
+Die führende Existenz verlangt weiterhin ein Objekt.
+
+</details>
+
+<Exercise>
+
+Zunächst sind beide wahr. Danach bleibt getrennt leer wahr, gemeinsam wird falsch.
+
+</Exercise>
+
+Bewerte getrenntes und gemeinsames $y\ge x$ über allen reellen Zahlen.
+
+<details>
+<summary>Hinweis</summary>
+
+Gleichheit verändert den geeigneten Test.
+
+</details>
+
+<Exercise>
+
+Getrennt gilt mit $y=x$. Gemeinsam ist falsch: Jedes $y$ scheitert bei reellem $x=y+1$.
+
+</Exercise>
+
+Rekonstruiere später alle drei Zeilen mit leeren Bereichen und erkläre, warum keine die gültige Implikation verletzt.
+
+## Laut lesen
+
+**EN:** One fixed witness for all inputs implies a witness for each input, but not conversely.
+
+**DE:** Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
+
+**ES:** Un testigo fijo para todas las entradas implica un testigo para cada entrada, pero no al revés.

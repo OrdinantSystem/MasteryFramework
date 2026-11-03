@@ -1,13 +1,19 @@
 ---
 course: "analysis"
-chapter: "analysis-language"
+chapter: "analysis-zero-equivalence"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md"
 locale: "de"
 title: "Äquivalenz und Parität"
 navTitle: "Äquivalenz und Parität"
 description: "Beide Richtungen beweisen und die passende Strategie wählen."
-order: 6
+order: 19
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -21,6 +27,8 @@ thumbnail: "parity"
 
 „Gerade“ bedeutet $n = 2k$ mit ganzzahligem $k$. „Ungerade“ bedeutet $n = 2k + 1$. Eine Äquivalenz verlangt beide Richtungen; eine einzelne Implikation erledigt nur die Hälfte.
 
+Lies die Behauptung: „Für jede ganze Zahl $n$ teilt zwei die Zahl $n$ genau dann, wenn zwei ihr Quadrat teilt.“ Die [Grundlage zur Äquivalenz](../biconditionals-and-equivalent-conditions/) begründet die beiden nötigen Implikationen. Wir benutzen die gewöhnliche ganzzahlige Tatsache, dass jede ganze Zahl entweder gerade oder ungerade ist, aber nicht beides. Nicht gerade bedeutet daher ungerade und nicht ungerade gerade. Diese Fallunterscheidung rechtfertigt die Negationen im Rückwärtsbeweis.
+
 ## Hinrichtung: die Definition nutzen
 
 <Math tex="n=2k\quad\Longrightarrow\quad n^2=4k^2=2(2k^2)" display />
@@ -31,7 +39,7 @@ Der Klammerausdruck ist ganzzahlig, also ist das Quadrat gerade.
 
 <Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
 
-Eine ungerade Zahl hat ein ungerades Quadrat. Das beweist die Kontraposition von „Wenn das Quadrat gerade ist, ist die Zahl gerade“. Der Beweis gilt auch für negative ganze Zahlen und null; der Bereich darf nicht stillschweigend auf positive Zahlen eingeschränkt werden.
+Eine ungerade Zahl hat ein ungerades Quadrat. Das beweist die Kontraposition von „Wenn das Quadrat gerade ist, ist die Zahl gerade“. Die gesamte Äquivalenz gilt auch für negative ganze Zahlen und null; die Rechnung mit der ungeraden Form stellt null selbst nicht dar. Null ist gerade und hat ein gerades Quadrat, wird also von der Hinrichtung erfasst. Der Bereich darf nicht stillschweigend auf positive Zahlen eingeschränkt werden.
 
 ## Warum hier Kontraposition?
 

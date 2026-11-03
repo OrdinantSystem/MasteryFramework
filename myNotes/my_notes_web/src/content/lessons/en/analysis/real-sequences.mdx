@@ -1,0 +1,102 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-sequences"
+sourceId: "analysis-zero"
+title: "Real sequences"
+navTitle: "Real sequences"
+description: "Real sequences."
+order: 46
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["order-comparisons", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences"]
+thumbnail: "number-sets"
+---
+
+A device reports nine at observations one and two, then three at every observation thereafter. Each report has a value and a position. “The third report is three” distinguishes the position three from the measured value three, even though their numbers happen to agree.
+
+## One output at every positive index
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+A function is an assignment giving exactly one output for each permitted input. A real sequence is such a function from the positive natural numbers to the reals. Here zero is not an index; other conventions must be stated. $n$ is the index, $a_n$ the term at that position, and $a$ the entire assignment. A subscript is not multiplication. The arrow gives input and output domains, not convergence.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+This names the whole sequence, indexed from one onward without end. Infinity is not itself an index, and there is no last term or term at infinity. Each individual index is a positive natural number; its output may be negative, zero or positive.
+
+## A rule must specify every position
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+This gives $a_1=2$, $a_2=4$, $a_3=6$. A constant sequence instead has $a_n=c$ at every index for one fixed real $c$; for instance every output can be $-3$. The device rule is also complete: $a_1=a_2=9$ and $a_n=3$ for every $n\ge3$. Merely writing “nine, nine, three, …” does not determine the continuation: infinitely many rules share that prefix.
+
+Sequences retain order and repetitions. Alternating zero, one forever and alternating one, zero forever are different sequences: their first terms differ. Their sets of values are both zero and one. A set forgets positions and repetitions. Two sequences are equal exactly when their outputs agree at every index; a finite prefix cannot establish equality.
+
+A tail starts at a chosen index $N$ and includes that term and all later terms. For the device, the tail from $N=3$ contains only threes. Capital $N$ marks the threshold; lowercase $n$ marks whichever position we test. Both are natural numbers. A sequence beginning with zero and then always one eventually agrees with the constant-one sequence from index two, but is not equal to it.
+
+### Practice
+
+Give the first three terms of $a_n=2n$. May a real sequence have negative outputs?
+
+<details>
+<summary>Hint</summary>
+
+Index and term have different roles.
+
+</details>
+
+<Exercise>
+
+Two, four, six. Yes: positive indices can all be assigned negative three. The output need not share the index domain.
+
+</Exercise>
+
+Compare the two alternating zero–one sequences and their value sets.
+
+<details>
+<summary>Hint</summary>
+
+Inspect the first position.
+
+</details>
+
+<Exercise>
+
+Different sequences, same value set. Their first outputs differ; the set records only which values occur, not where or how often.
+
+</Exercise>
+
+Does zero then always one equal constant one? Do they eventually agree?
+
+<details>
+<summary>Hint</summary>
+
+Equality checks the beginning too.
+
+</details>
+
+<Exercise>
+
+They are unequal at index one, but agree at every index from two onward.
+
+</Exercise>
+
+Later, define two different continuations of the same three-term prefix to explain why observations alone do not define a sequence.
+
+## Read aloud
+
+**EN:** a maps positive natural indices to real terms; a sub n is the output at index n.
+
+**DE:** a ordnet positiven natürlichen Indizes reelle Folgenglieder zu; a Index n ist der Wert an Stelle n.
+
+**ES:** a asigna términos reales a índices naturales positivos; a sub ene es la salida en el índice ene.

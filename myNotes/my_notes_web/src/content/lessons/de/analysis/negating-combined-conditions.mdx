@@ -1,0 +1,122 @@
+---
+course: "analysis"
+chapter: "analysis-zero-negation"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/04 Negating Compound Statements.md", "A0.1.2 Negation/06 De Morgan Laws.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "de"
+title: "Zusammengesetzte Bedingungen negieren"
+navTitle: "Zusammengesetzte Bedingungen negieren"
+description: "De-Morgan-Gesetze beweisen und Geltungsbereiche bei Verschachtelungen erhalten."
+order: 12
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "logische-verknuepfungen", "negating-order-comparisons"]
+thumbnail: "logic"
+---
+
+Eine Karte qualifiziert sich, wenn sie rot und quadratisch ist. Ein rotes Dreieck scheitert trotz passender Farbe. „Nicht rot und nicht quadratisch“ würde diese Karte übersehen. Ein blaues Dreieck scheitert ebenfalls: Es muss nicht **genau eine** Eigenschaft fehlen.
+
+$P$ bedeute rot und $Q$ quadratisch für **dieselbe Karte**. $\neg(P\land Q)$ verneint das ganze Kriterium. $(\neg P)\land Q$ verlangt dagegen ein nichtrotes Quadrat. Ein rotes Dreieck erfüllt die erste und verletzt die zweite Bedingung. Der Geltungsbereich entscheidet.
+
+## Negation einer Konjunktion
+
+Eine Und-Bedingung scheitert, sobald mindestens ein Teil scheitert. Auch beide dürfen scheitern. Das klassische De-Morgan-Gesetz für die Konjunktion lautet:
+
+$$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
+
+| $P$ | $Q$ | $P\land Q$ | $\neg(P\land Q)$ | $\neg P$ | $\neg Q$ | $\neg P\lor\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Die vierte und letzte Spalte stimmen in jeder Zeile überein. Die dritte wertet die ursprüngliche Konjunktion aus, die nächste kehrt ihren Wert um. Rechts werden zuerst die Eingaben negiert und dann mit einschließendem Oder verbunden.
+
+## Negation einer einschließenden Disjunktion
+
+Lautet die Regel „rot oder quadratisch“, qualifizieren sich ein rotes Dreieck, ein blaues Quadrat und auch ein rotes Quadrat. Nur eine Karte ohne beide Eigenschaften scheitert. Deshalb müssen beide Alternativen scheitern:
+
+$$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
+
+| $P$ | $Q$ | $P\lor Q$ | $\neg(P\lor Q)$ | $\neg P$ | $\neg Q$ | $\neg P\land\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Wieder stimmen die vierte und letzte Spalte überein. In jeder gemischten Zeile hält ein wahrer Teil die ursprüngliche Disjunktion wahr; ihre Negation ist falsch. Sind beide Eingaben falsch, sind die Negation und die Konjunktion der Negationen wahr.
+
+Jede Eingabe hat genau zwei Wahrheitswerte. Die vier Paare erschöpfen alle Belegungen und beweisen beide Gesetze aus den Definitionen von Negation, Konjunktion und einschließender Disjunktion. $1,0$ codieren wahr und falsch. Dies sind semantische Beweise für beliebige klassische Aussagen, auch zusammengesetzte Eingaben. Einige Zahlenbeispiele wären kein vollständiger Beweis.
+
+<Note title="Geltungsbereiche vorlesen">
+
+$\neg(P\land Q)$: **EN** “not both P and Q”; **DE** „Es gelten nicht beide Aussagen P und Q“; **ES** «No se cumplen a la vez las proposiciones pe y cu». $\neg(P\lor Q)$: **EN** “neither P nor Q”; **DE** „Weder P noch Q gilt“; **ES** «No se cumple ni pe ni cu». $\Leftrightarrow$: **EN** “if and only if”; **DE** „genau dann, wenn“; **ES** «si y solo si».
+
+</Note>
+
+## Ein verschachteltes Kartenkriterium
+
+Nun bedeute $P$ rot, $Q$ ein Kreis und $R$ ein Stern. Die Karte soll $P\land(Q\lor R)$ erfüllen. Außen gibt es zwei Anforderungen: die Farbe und die gesamte Alternative der Markierungen. Negiere zuerst diese äußere Konjunktion:
+
+$$\neg\bigl(P\land(Q\lor R)\bigr)\Leftrightarrow\neg P\lor\neg(Q\lor R).$$
+
+Negiere danach nur die gruppierte Disjunktion; der äußere Teil bleibt unverändert:
+
+$$\neg P\lor\neg(Q\lor R)\Leftrightarrow\neg P\lor(\neg Q\land\neg R).$$
+
+Scheitern heißt: nichtrot **oder** beide Markierungen fehlen. Ist $P$ falsch, scheitert das Original unabhängig von den Markierungen und $\neg P$ macht die Antwort wahr. Ist $P$ wahr, scheitert das Original genau dann, wenn beide Markierungen fehlen. Diese zwei vollständigen Fälle prüfen die Bedeutung allgemein.
+
+Die Umgruppierung $(\neg P\lor\neg Q)\land\neg R$ ist falsch: Eine nichtrote Karte mit Stern scheitert am Original, erfüllt aber auch diese vermeintliche Negation nicht. Sie verlangt fälschlich Sternlosigkeit, obwohl schon die Farbe genügt. Üblicherweise bindet Und stärker als Oder. Optionale Klammern nach dieser Konvention wegzulassen ist nicht dasselbe, wie die Gruppierung ausdrücklich zu verändern. Schreibe sie beim Lernen aus.
+
+## Selbstständige Aufgaben
+
+Erstelle den vollständigen Vergleich von $\neg(P\land Q)$ und $\neg P\land\neg Q$. Benenne **alle** abweichenden Zeilen und ihre Bedeutung.
+
+<details>
+<summary>Hinweis</summary>
+
+Berücksichtige beide gemischten Belegungen. Eine Konjunktion kann an nur einem Teil scheitern.
+
+</details>
+
+<details>
+<summary>Referenztabelle und Erklärung</summary>
+
+
+| $P$ | $Q$ | $\neg(P\land Q)$ | $\neg P\land\neg Q$ |
+|---|---|---|---|
+| 1 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 |
+
+
+Beide gemischten Zeilen weichen ab. „Nicht beide“ verlangt mindestens einen Fehler, „beide nicht“ zwei. Bei einer Karte mit neun gilt Positivität, aber Geradheit nicht: Das verwirklicht eine gemischte Zeile. Jede einzelne Abweichung widerlegt bereits Äquivalenz.
+
+</details>
+
+<Exercise question="Eine Karte qualifiziert sich durch einen Stern oder durch Kreis und blauen Rand zusammen. Verwende S, C, B und negiere in zwei Schritten. Prüfe eine sternlose Karte mit Kreis, aber ohne Rand.">
+
+Das Kriterium ist $S\lor(C\land B)$. Zuerst erhält man $\neg S\land\neg(C\land B)$, dann $\neg S\land(\neg C\lor\neg B)$. Beide Alternativen müssen scheitern; innen genügt eine fehlende Eigenschaft. Die beschriebene Karte erfüllt die Negation wegen des fehlenden Sterns und Randes. Der Kreis darf vorhanden sein.
+
+</Exercise>
+
+## Zahlen und Randpunkte
+
+Für reelles $x$ gilt
+
+$$\neg\bigl((0<x)\land(x\le2)\bigr)\Leftrightarrow(x\le0)\lor(x>2).$$
+
+Null erfüllt die Negation, weil der strenge untere Vergleich scheitert. Zwei erfüllt sie nicht, denn beide ursprünglichen Vergleiche gelten. Mit Und würden die fehlgeschlagenen Vergleiche eine unmögliche gleichzeitige Lage unterhalb und oberhalb des Intervalls verlangen.
+
+<Exercise question="Negiere die Außenbedingung $x<0\lor x>2$. Erkläre beide Randpunkte und weshalb Oder in der Antwort falsch wäre.">
+
+Die Negation lautet $(x\ge0)\land(x\le2)$. Beide strengen Außentests müssen scheitern; null und zwei gehören dazu. Oder würde eine negative Eingabe allein deshalb akzeptieren, weil sie höchstens zwei ist, obwohl das Original dort wahr ist.
+
+</Exercise>
+
+Bereich und Belegung bleiben fest. Diese Gesetze verschieben keine Negation durch Quantoren. Das spätere [boolesche Arbeitsblatt](../de-morgan-und-doppelte-negation/) verlangt einen eigenen algebraischen Beweis mit seinen zugelassenen Gesetzen; dieser semantische Beweis ersetzt ihn nicht.

@@ -1,0 +1,124 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Negar enunciados existenciales"
+navTitle: "Negar enunciados existenciales"
+description: "Negar enunciados existenciales."
+order: 32
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-universal-statements"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/02 Negating Existential Claims.md#02 Negating Existential Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+Una caja contiene tarjetas rojas y azules. Sacar una azul no refuta «Hay una tarjeta roja». La roja sigue siendo testigo. «Alguna no es roja» y «Alguna es roja» pueden ser verdaderas a la vez y no son negaciones exactas.
+
+$$
+\neg(\exists x\in D\;P(x))\ \Longleftrightarrow\ \forall x\in D\;\neg P(x).
+$$
+
+Mantén fijos $D$, $P$ y los demás parámetros. Si ningún objeto permitido cumple $P$, toma cualquier candidato permitido: no puede cumplir $P$, así que cumple $\neg P$. Como era arbitrario, todos fallan. A la inversa, si $P$ es falso para todo objeto permitido, ningún candidato puede ser testigo. Ambas direcciones establecen la ley dual existencial en lógica clásica, también para dominios infinitos.
+
+Una inspección finita completa puede demostrar inexistencia. En un dominio infinito, cien fallos no cubren todos los candidatos; un argumento general sobre un candidato arbitrario sí puede hacerlo. En cambio, para refutar un universal basta un fallo. Negar existencia ordinaria excluye todos los testigos, no solo exactamente uno: dos éxitos siguen haciendo verdadera la existencia.
+
+## La restricción sigue siendo positiva
+
+$$
+\neg(\exists x>0\;(x<0))\ \Longleftrightarrow\ \forall x>0\;(x\ge0).
+$$
+
+La abreviatura $x>0$ junto al cuantificador restringe el dominio a reales positivos. La comparación entre paréntesis es el predicado. Negar cambia lo afirmado sobre ese mismo dominio, no lo sustituye por los no positivos. El original es falso porque ningún real positivo es negativo; la negación es verdadera porque todo real positivo es no negativo. Cero no es candidato permitido.
+
+«Algún entero tiene cuadrado cero» es verdadero con testigo cero; su negación, todo entero tiene cuadrado distinto de cero, falla en ese mismo entero. «Algún real tiene cuadrado negativo» es falso usando el hecho aritmético explícitamente supuesto de que todo cuadrado real es no negativo. La lógica sola no proporciona ese hecho. En un dominio restringido vacío, existencia es falsa y su negación universal verdadera: ningún objeto la contradice, pero tampoco se proporciona ninguno.
+
+### Práctica
+
+Niega la existencia de una tarjeta roja. ¿Una azul establece la negación?
+
+<details>
+<summary>Pista</summary>
+
+Puede quedar un éxito debajo.
+
+</details>
+
+<Exercise>
+
+Toda tarjeta de la misma caja es no roja. Una azul no basta; hay que excluir todos los candidatos.
+
+</Exercise>
+
+Niega y evalúa $\exists x\in\mathbb Z\;(x=1)$.
+
+<details>
+<summary>Pista</summary>
+
+Transformación y verdad son distintas.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb Z\;(x\ne1)$. El original es verdadero con uno; la negación correcta es falsa porque uno es un entero igual a uno.
+
+</Exercise>
+
+Niega «Algún real positivo es negativo». ¿Pasa el dominio a ser no positivo?
+
+<details>
+<summary>Pista</summary>
+
+Separa restricción y predicado.
+
+</details>
+
+<Exercise>
+
+Todo real positivo es no negativo. El dominio positivo no cambia; solo se complementa el predicado.
+
+</Exercise>
+
+Evalúa «Alguna tarjeta de la caja vacía está numerada» y «Todas están sin numerar».
+
+<details>
+<summary>Pista</summary>
+
+No hay testigo existencial disponible.
+
+</details>
+
+<Exercise>
+
+Falsa y verdadera. El universal no tiene excepción y no afirma que exista una tarjeta sin numerar.
+
+</Exercise>
+
+Niega «Alguna tarjeta es roja y numerada». Refuta «Ninguna tarjeta es roja ni está numerada» como negación.
+
+<details>
+<summary>Pista</summary>
+
+Basta fallar un componente.
+
+</details>
+
+<Exercise>
+
+Cada tarjeta cumple al menos una de estas condiciones: no es roja o no está numerada. Una caja con solo una roja sin número hace falso el original y verdadera la negación correcta, pero falsa la propuesta más fuerte.
+
+</Exercise>
+
+Más tarde, explica por qué un fallo basta contra todos, mientras que contra alguno deben fallar todos los candidatos.
+
+## Lectura en voz alta
+
+**EN:** There is no x in D satisfying P if and only if every x in D fails P.
+
+**DE:** Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
+
+**ES:** No existe equis en D que cumpla P si y solo si todo equis en D incumple P.

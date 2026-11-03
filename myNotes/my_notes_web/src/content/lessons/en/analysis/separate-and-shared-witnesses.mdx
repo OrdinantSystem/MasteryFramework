@@ -1,0 +1,126 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Separate and shared witnesses"
+navTitle: "Separate and shared witnesses"
+description: "Separate and shared witnesses."
+order: 29
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["witness-dependence", "material-implication-and-vacuity"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md#03 · A key per person is not necessarily one key for all", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+Ana uses only red and Ben only blue. Each has a key, yet no key works for everyone. Add a green key both may use: now both requirements hold. Add two master keys: either can witness the shared claim. A shared witness is held fixed, not necessarily unique.
+
+$$
+\underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
+$$
+
+Here $P,K$ are fixed people and key domains, and $H(p,k)$ means that $p$ can use $k$. To prove the implication, assume S and fix a key it supplies. Take any allowed person. The key works for that person because it works for all. Reuse it as that person’s witness. No distinctness of choices is required. Thus S implies T. The complete red–blue model refutes the converse.
+
+Stronger means that shared success implies separate success. It does not mean opposite truth values in every situation. With green both are true; if someone has no usable key both are false. A finite complete permission table can establish these finite claims; a sample from an infinite domain cannot settle every case.
+
+## All empty-domain cases
+
+| People | Keys | Separate T | Shared S |
+| --- | --- | --- | --- |
+| empty | nonempty | true | true |
+| nonempty | empty | false | false |
+| empty | empty | true | false |
+
+With no people, the universal-first form has no failing person. The shared form still needs a key: any existing key works vacuously, but if no key exists the form is false. With people but no keys, each person lacks a witness. The implication S to T remains valid in every case. A true premise supplies a key to reuse; a false premise makes the implication true.
+
+For real comparisons, [quantifier order](../quantifier-order/) proves separate $y>x$ true and shared $y>x$ false. For the non-strict variant $y\ge x$, separate success follows even with $y=x$. Shared success still fails, but testing $x=y$ no longer defeats it: test $x=y+1$ instead.
+
+### Practice
+
+Everyone may use both red and blue. Evaluate both forms and uniqueness.
+
+<details>
+<summary>Hint</summary>
+
+Fix one, then consider the other.
+
+</details>
+
+<Exercise>
+
+Both forms are true. Either key is a shared witness; the shared form makes no uniqueness assertion.
+
+</Exercise>
+
+Construct a complete countermodel to separate implying shared.
+
+<details>
+<summary>Hint</summary>
+
+Specify every permission.
+
+</details>
+
+<Exercise>
+
+Exactly Ana and Ben, exactly red and blue: Ana only red, Ben only blue. Every row succeeds but no column succeeds for everyone. All shared candidates are excluded.
+
+</Exercise>
+
+Prove the valid implication without symbols.
+
+<details>
+<summary>Hint</summary>
+
+Reuse the supplied key.
+
+</details>
+
+<Exercise>
+
+Fix a key assumed to work for all. For any person use that key. It works for this arbitrary person, establishing separate success. The argument deliberately uses the same witness.
+
+</Exercise>
+
+No people, one key: evaluate, then remove the key.
+
+<details>
+<summary>Hint</summary>
+
+The leading existential still requires an object.
+
+</details>
+
+<Exercise>
+
+Initially both are true. After removal separate remains vacuously true and shared becomes false.
+
+</Exercise>
+
+Assess separate and shared $y\ge x$ over all reals.
+
+<details>
+<summary>Hint</summary>
+
+Equality changes the useful test.
+
+</details>
+
+<Exercise>
+
+Separate is true with $y=x$. Shared is false: any $y$ fails at real $x=y+1$.
+
+</Exercise>
+
+Later, recreate all three empty-domain rows and explain why none breaks the valid implication.
+
+## Read aloud
+
+**EN:** One fixed witness for all inputs implies a witness for each input, but not conversely.
+
+**DE:** Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
+
+**ES:** Un testigo fijo para todas las entradas implica un testigo para cada entrada, pero no al revés.

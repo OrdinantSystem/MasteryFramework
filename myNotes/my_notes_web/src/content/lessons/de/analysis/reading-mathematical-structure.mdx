@@ -1,0 +1,75 @@
+---
+course: "analysis"
+chapter: "analysis-zero-reading"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md"]
+locale: "de"
+title: "Mathematische Struktur lesen"
+navTitle: "Mathematische Struktur lesen"
+description: "Rollen, Bereiche, Geltungsbereiche und vollständige Voraussetzungen erkennen."
+order: 8
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen", "logische-verknuepfungen", "order-comparisons"]
+thumbnail: "proof"
+---
+
+„Finde eine reelle Zahl kleiner als zwei“ ist eine Aufforderung. „Jede reelle Zahl ist kleiner als zwei“ ist eine Behauptung, und zwar eine falsche. Beim Lesen ist zuerst zu klären, was der Satz tut. Eine lange Symbolfolge beantwortet diese Frage nicht.
+
+## Ein Verfahren zum Lesen
+
+Diese Fragen helfen beim Zerlegen eines Satzes. Sie ordnen das Lesen, ersetzen aber keinen Beweis.
+
+1. Definiert der Text einen Begriff, behauptet er etwas, setzt er etwas lokal voraus, fragt er oder fordert er zu etwas auf?
+2. Welche Objekte und welcher Bereich sind gemeint? Sind alle Ausdrücke sinnvoll? In der üblichen reellen Arithmetik ist Division durch null nicht erlaubt.
+3. Welche Variablenvorkommen sind frei oder gebunden? Legt der umgebende Text unabhängig davon einen Wert fest?
+4. Welche Quantoren stehen in Worten oder Symbolen da? Erhalte Bereich und Geltungsbereich. $\forall$ heißt „für alle“, $\exists$ heißt „es gibt mindestens eines“, nicht „genau eines“.
+5. Suche die Verknüpfung der größten Teile und untersuche dann deren Struktur. Klammern halten vollständige Eingaben zusammen.
+6. Bestimme bei einer Implikation die **ganze Voraussetzung** und die **ganze Folgerung**. Eine einfache Gleichheit braucht keine erfundene Voraussetzung.
+7. Trenne Zerlegung, Auswertung und Begründung. Zu verstehen, was ein Satz sagt, beweist ihn nicht.
+
+Addition in $x+y=3$ verbindet Zahlen innerhalb einer Bedingung, keine Aussagen. Auf aussagenlogischer Ebene dürfen wir eine ganze quantifizierte Aussage als einen Buchstaben behandeln. Dadurch wird sie aber nicht zu einer atomaren Formel der Prädikatenlogik.
+
+## Eine Allaussage mit innerer Implikation
+
+„Jede reelle Zahl streng zwischen null und eins ist kleiner als zwei“ wird zu
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+**EN:** “For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.” **DE:** „Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“ **ES:** «Para todo real equis, si cero es estrictamente menor que equis y equis es estrictamente menor que uno, entonces equis es estrictamente menor que dos».
+
+Der Quantor umfasst die gesamte Implikation und bindet jedes Vorkommen von $x$. Die Formel ist geschlossen. Innerhalb seines Geltungsbereichs ist $\Rightarrow$, auch $\to$ geschrieben, die Hauptverknüpfung. Links steht die ganze Konjunktion, rechts $x<2$. $\land$ bedeutet „und“ und ist keine zweite äußere Verknüpfung.
+
+Behalte $0<x$ und $x<1$ in der Übersetzung. Ein späterer Beweis braucht vielleicht die untere Grenze nicht; sie beim Übersetzen wegzulassen verändert trotzdem die angegebene Voraussetzung. Die Implikation behauptet auch nicht, alle reellen Zahlen lägen zwischen null und eins.
+
+Für $x=1/2$ gelten Voraussetzung und Folgerung. Für $x=3$ scheitert die Voraussetzung. Drei ist daher kein Gegenbeispiel, obwohl auch die Folgerung scheitert. Ein Gegenbeispiel muss die **gesamte Voraussetzung** erfüllen und die Folgerung verletzen.
+
+Zum Beweis sei $x$ eine beliebige reelle Zahl, die die Voraussetzung erfüllt. Aus $x<1$ und $1<2$ folgt mit Transitivität $x<2$. Dieses Argument für eine beliebige Eingabe beweist den Satz. Die Übersetzung und die Zahlenbeispiele allein taten das nicht. Klassische Semantik und die übliche reelle Ordnung sind hier akzeptierte Grundlagen.
+
+## In beide Richtungen üben
+
+<Exercise question="Zerlege $x=0\lor((x>0)\land(x<1))$. Nenne äußere Verknüpfung, vollständige Eingaben und freie Variablen. Übersetze danach: x ist null, und es ist nicht der Fall, dass y null ist.">
+
+Die äußere Verknüpfung ist $\lor$. Ihre Eingaben sind $x=0$ und die ganze Konjunktion $(x>0)\land(x<1)$. Ohne zusätzlichen Quantor bleiben alle Vorkommen von $x$ frei. Die zweite Übersetzung lautet $(x=0)\land\neg(y=0)$. Nur die zweite Gleichheit wird negiert; beide Variablen bleiben als geschrieben frei.
+
+</Exercise>
+
+Übersetze „Jede reelle Zahl größer als eins ist größer als null“. Bestimme die Voraussetzung und beweise die Aussage ohne eine Liste erfolgreicher Beispiele. Behauptet sie, alle reellen Zahlen seien positiv?
+
+<details>
+<summary>Hinweis</summary>
+
+„Jede Zahl mit einer Eigenschaft“ enthält eine Implikation. Der Bereich gehört außerhalb dieser Implikation.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$. Die Voraussetzung ist $x>1$, die Folgerung $x>0$. Für beliebiges reelles $x$ über eins liefern $1>0$ und Transitivität die Folgerung. Der Quantor bindet jedes Vorkommen von $x$. Nicht alle reellen Zahlen werden positiv genannt: Null erfüllt die Voraussetzung nicht und ist kein Gegenbeispiel.
+
+</details>
+
+Prüfe Übersetzungen auf Wechsel von „wenn“ zu „und“, von „einige“ zu „alle“ oder von strengen zu nichtstrengen Grenzen. Benenne echte Mehrdeutigkeit. Weiterführend: [Allaussagen und Bereiche](../universal-statements-and-domains/).

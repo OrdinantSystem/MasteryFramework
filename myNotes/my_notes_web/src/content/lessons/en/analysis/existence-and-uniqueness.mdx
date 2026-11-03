@@ -1,0 +1,126 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-existence"
+sourceId: "analysis-zero"
+title: "Existence and uniqueness"
+navTitle: "Existence and uniqueness"
+description: "Existence and uniqueness."
+order: 25
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-witnesses", "equality-and-equations"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+thumbnail: "quantifiers"
+---
+
+Two different keys open a lock. Checking the first proves that an opening key exists; checking the second does not invalidate that proof. It refutes a different claim: exactly one key opens the lock. Fix the drawer of allowed keys before counting.
+
+## Three different requirements
+
+Existence means at least one allowed success. At most one means that no two distinct allowed objects succeed; zero is permitted. Unique existence means exactly one: existence together with at most one. In an empty drawer, existence is false, at most one is true and unique existence is false. Ruling out a second success does not supply a first.
+
+$$
+\exists! x\in D\;P(x).
+$$
+
+The exclamation mark adds the at-most-one obligation. It is not emphasis. First provide a witness in $D$ satisfying $P$. Then show that any object in $D$ satisfying $P$ equals that witness. Objects failing $P$ need not equal it. Equality concerns objects or values, not how expressions are spelled: $1/2$ and $2/4$ name the same real number.
+
+## A proof with both obligations
+
+$$
+\exists! n\in\mathbb Z\;(n+5=12).
+$$
+
+Existence: $7\in\mathbb Z$ and $7+5=12$. Uniqueness: let $n$ be any integer satisfying $n+5=12$. Subtracting five from both sides gives $n=7$. Thus every possible solution equals the checked witness. We used an arbitrary solution, not an arbitrary integer assumed to be seven, and not a finite sample of failed alternatives.
+
+Now restrict the domain to integers greater than ten. The same subtraction forces any hypothetical solution to be seven, outside the domain. At most one still holds, but existence fails. By contrast, for $4<n<8$, five and six are distinct integer witnesses, so uniqueness fails without needing a complete list.
+
+### Practice
+
+Prove exactly one integer satisfies $n+3=9$.
+
+<details>
+<summary>Hint</summary>
+
+Separate the two obligations.
+
+</details>
+
+<Exercise>
+
+Six is an integer and $6+3=9$. Any integer solution satisfies $n=9-3=6$. The first supplies a solution, the second excludes a distinct second one.
+
+</Exercise>
+
+Does checking $5^2=25$ prove exactly one integer has square $25$?
+
+<details>
+<summary>Hint</summary>
+
+Consider a negative value.
+
+</details>
+
+<Exercise>
+
+It proves existence only. $-5$ is a distinct integer and $(-5)^2=25$, so uniqueness is false while existence remains true.
+
+</Exercise>
+
+In an empty box, evaluate some blue token, at most one blue token, exactly one blue token.
+
+<details>
+<summary>Hint</summary>
+
+Zero is allowed by only one of these.
+
+</details>
+
+<Exercise>
+
+False, true, false. No token supplies existence; two distinct blue tokens cannot occur, so at most one holds.
+
+</Exercise>
+
+Repair “To prove seven unique, show every integer equals seven”.
+
+<details>
+<summary>Hint</summary>
+
+Restrict to solutions.
+
+</details>
+
+<Exercise>
+
+Show every integer satisfying the original equation equals seven. Nonsolutions impose no equality requirement.
+
+</Exercise>
+
+For the domain $n>10$, audit “$n+5=12$ forces seven, so exactly one”.
+
+<details>
+<summary>Hint</summary>
+
+A necessary candidate may be excluded.
+
+</details>
+
+<Exercise>
+
+Seven is excluded. The argument gives at most one and, together with the domain restriction, actually no solutions.
+
+</Exercise>
+
+Later, compare collections with zero, one and two successes and reconstruct both proof obligations.
+
+## Read aloud
+
+**EN:** There exists exactly one x in D satisfying P.
+
+**DE:** Es gibt genau ein x in D, das P erfüllt.
+
+**ES:** Existe exactamente un equis en D que cumple P.

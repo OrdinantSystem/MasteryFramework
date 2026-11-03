@@ -3,11 +3,17 @@ course: "analysis"
 chapter: "analysis-proof"
 sourceId: "analysis-concepts-3"
 sourcePages: [1]
+additionalSources:
+  - sourceId: analysis-zero
+    pages: []
+    locations:
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md"
+      - "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"
 locale: "de"
 title: "Sprache und Aufbau von Beweisen"
 navTitle: "Sprache und Aufbau von Beweisen"
 description: "Jeden Schritt begründen und den Geltungsbereich beachten."
-order: 7
+order: 38
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -30,6 +36,18 @@ Eine Definition legt eine Bedeutung fest. Ein Axiom wird als Ausgangspunkt angen
 ## Ein kleiner Arbeitsablauf
 
 Formuliere Behauptung und Bereich genau. Löse Definitionen auf. Wähle eine Methode. Begründe jeden Übergang. Halte fest, was bewiesen ist. Für $\exists n \in  \mathbb{N} : n^2 = 9$ genügt $n = 3$ als Zeuge. Für $\forall n \in  \mathbb{N} : n^2 > n$ genügt $n = 1$ als Gegenbeispiel. Beides braucht keine lange Rechnung. Nutze die Behauptung nicht selbst zur Begründung eines Zwischenschritts: Das wäre ein Zirkelschluss.
+
+## Beliebig bedeutet keine repräsentative Stichprobe
+
+Zum Beweis von $\forall x\in\mathbb R\;(x+2>x)$ lies „Für jede reelle Zahl $x$ ist $x$ plus zwei größer als $x$“. Fixiere ein beliebiges reelles $x$. Addiere zu beiden Seiten von $2>0$ die Zahl $x$; daraus folgt $x+2>x+0=x$. Addition erhält die Ordnung; Addition von null ändert nichts. Kein Schritt verlangt Positivität, Ganzzahligkeit oder einen speziellen Wert von $x$. Das Argument erfasst daher jede reelle Eingabe.
+
+Bei einer universellen Implikation nimmt man vorläufig die ganze Voraussetzung an und leitet die Folgerung her. Eingaben mit falscher Voraussetzung machen die Implikation bereits wahr. Das behauptet weder, dass jede Eingabe die Voraussetzung erfüllt, noch dass eine passende Eingabe existiert. In einer leeren Teilmenge kann kein Mitglied scheitern. Man darf auch unter einer vorläufigen Zugehörigkeitsannahme argumentieren und diese anschließend aufheben, ohne ein Mitglied zu behaupten. Die vollständigen Prüfungen stehen bei [Grundbereichen](../universal-statements-and-domains/) und [Gegenbeispielen](../counterexamples/).
+
+<Exercise question="Ein Beweis über alle reellen Zahlen beginnt mit einer beliebigen positiven reellen Zahl und prüft danach sieben. Was ist damit gezeigt? Wie muss er mit einer wirklich nötigen Positivitätsannahme umgehen?">
+
+Die Zahlenprobe erfasst nur sieben. Ein ansonsten allgemeines Argument unter Positivität erfasst höchstens positive reelle Zahlen, nicht null oder negative. Für die ursprüngliche Allaussage muss die Annahme vermieden oder durch begründete Null- und Negativfälle ergänzt werden. Alternativ kann man einen ausdrücklich eingeschränkten Satz formulieren und beweisen, darf ihn aber nicht als den ursprünglichen ausgeben. Das Wort beliebig hebt eine spätere Einschränkung nicht auf.
+
+</Exercise>
 
 ## Von einer Definition zum Beweis
 

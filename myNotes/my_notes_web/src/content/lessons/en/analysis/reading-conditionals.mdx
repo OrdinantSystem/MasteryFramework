@@ -1,0 +1,65 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/01 The Hypothesis.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/02 The Conclusion.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Conditionals Hypotheses and Conclusions.md"]
+title: "Reading conditionals"
+navTitle: "Reading conditionals"
+description: "Identify the whole hypothesis, the exact target, and the premises needed to apply a rule."
+order: 14
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["material-implication-and-vacuity", "simultaneous-conditions"]
+thumbnail: "implication"
+---
+
+A box contains cards with real numbers. Its rule says: “A card is above two if it is above five.” The word **if** introduces the starting condition, even though that condition comes last in the sentence. The rule runs from above five to above two.
+
+## Hypothesis and conclusion
+
+In $P\Rightarrow Q$, read “if $P$, then $Q$.” The whole proposition $P$ is the **hypothesis**, or antecedent; the whole proposition $Q$ is the **conclusion**, or consequent. These names describe their roles. They do not announce that either proposition is true. Even the false statement “if three exceeds two, then three exceeds five” has an identifiable conclusion.
+
+For a fixed real number $x$, consider
+
+$$((x>0)\land(x<1))\Rightarrow(x<2).$$
+
+Read: “If $x$ is positive and less than one, then $x$ is less than two.” The outermost connective is the arrow. Its complete left block requires **both** comparisons. The domain is the real numbers; the hypothesis selects the numbers between zero and one. The domain and the hypothesis do different jobs.
+
+One half meets both requirements. Negative one meets only the upper bound; two meets only the lower bound. Neither satisfies the whole hypothesis. The arrow itself neither binds $x$ nor supplies “for every”; the surrounding sentence must specify whether we discuss a fixed input or all real inputs.
+
+## Keep the stated assumptions
+
+To prove the displayed conditional for every real input, take an arbitrary real number satisfying both bounds. Since $x<1$ and $1<2$, transitivity of order gives $x<2$. This uses ordinary real order as background.
+
+The lower bound $x>0$ was unused. It still belongs to the theorem as stated. Removing it would produce a stronger claim: the same conclusion would now be required for more inputs. That stronger claim is true here by the same order argument, but identifying an unused assumption is not permission to erase it while quoting the original theorem. Adding assumptions generally makes a conditional theorem easier to satisfy; removing them increases its reach.
+
+## Prove the whole target
+
+Now let the conclusion have two parts:
+
+$$(x>5)\Rightarrow((x>2)\land(x>0)).$$
+
+Read: “If $x$ exceeds five, then it exceeds two and it exceeds zero.” Starting from $x>5$, order gives $x>2$; since $2>0$, it also gives $x>0$. Both are required. For an inclusive-or target, one proved alternative would suffice instead.
+
+The exact bound matters too. If the target is $x<2$, proving $x\le2$ leaves equality unresolved. Proving $x<1$ is stronger and does finish the task, because $x<1<2$.
+
+## Applying a rule needs two premises
+
+Suppose the card rule is known true and a hidden card is known to exceed five. It follows that the card exceeds two, even without knowing its exact number. This is **modus ponens**: use both $P\Rightarrow Q$ and $P$ to infer $Q$.
+
+Why are both enough? If $Q$ were false while $P$ was true, the conditional would be false, contrary to the first premise. The rule alone does not suffice: a card numbered zero satisfies the above-five rule without exceeding two. Knowing only that a card exceeds two does not suffice either: three need not exceed five.
+
+<Exercise question="For real $x$, read $((x>1)\land(x<4))\Rightarrow(x>0)$. State the full hypothesis and conclusion; test $0$, $2$, and $4$ for eligibility; then give a proof without choosing a special input.">
+
+The hypothesis is $x>1$ **and** $x<4$; the conclusion is $x>0$. Only $2$ is eligible. Zero fails the lower bound; $4$ fails the strict upper bound, although its conclusion is true. For any eligible real $x$, the lower bound and $1>0$ give $x>0$ by transitivity. The upper bound is unused but remains part of the stated hypothesis.
+
+</Exercise>
+
+<Exercise question="A proof of a conditional with target $x<2$ stops at $x\le2$. What is missing? Then write your own two-part hypothesis with an unused assumption and explain what removing it changes.">
+
+The proof must exclude $x=2$; the weaker bound alone allows it. This does not assert that $2$ meets the original hypotheses. For a new example, $1<x<4$ implies $x<5$: the upper bound alone proves the conclusion. Removing $x>1$ extends the claim to all reals below $4$, including negative ones, so it is a stronger theorem. Transitivity proves that revised theorem as well.
+
+</Exercise>

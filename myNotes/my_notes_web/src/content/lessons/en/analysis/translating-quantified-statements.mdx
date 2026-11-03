@@ -1,0 +1,136 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-zero-nested"
+sourceId: "analysis-zero"
+title: "Translating quantified statements"
+navTitle: "Translating quantified statements"
+description: "Translating quantified statements."
+order: 30
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["separate-and-shared-witnesses", "reading-conditionals"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/04 Translating into Formal Quantifiers.md#04 · Turn the sentence into a formula", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence"]
+thumbnail: "quantifiers"
+---
+
+“Every student has read a book” leaves the book available for each student. “There is a book every student has read” requires one shared book. To write a specification, define the objects and relation before choosing symbols.
+
+Let $S$ be students, $B$ books and $R(s,b)$ mean that $s$ has read $b$. Keep that relation unchanged; do not silently switch from reading to ownership.
+
+$$
+\forall s\in S\;\exists b\in B\;R(s,b).
+$$
+
+$$
+\exists b\in B\;\forall s\in S\;R(s,b).
+$$
+
+Read back the first as “for each student, a book they have read”; the second as “a book read by every student”. Neither requires exactly one book. The first does not assert that students exist. With no students it is true; the second still requires an actual book.
+
+## Write, then read back
+
+Specify each domain and the final relation. Decide which requirement governs the rest, then write the binders and their scopes. Check every variable: bound here or fixed in context? Finally read the formula back and test a small situation where a tempting alternative differs. Translation and proof are separate tasks. Preserve a false assertion faithfully instead of changing its order to make it true.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+This translates “Every pair of reals has a real sum”. Both inputs precede the witness. Its truth additionally uses closure of real addition; the quantifier symbols alone do not prove that arithmetic fact.
+
+## A conditional limits the requirement
+
+$$
+\forall s\in S\;\bigl(A(s)\Rightarrow\exists b\in B\;R(s,b)\bigr).
+$$
+
+Here $A(s)$ means attending the seminar. Only attending students must supply a read book. Moving $\exists b$ outside the conditional can demand a book for nonattenders too. Take one nonattending student and no books: the displayed conditional is true, but $\forall s\in S\;\exists b\in B\;(A(s)\Rightarrow R(s,b))$ is false. Parentheses and empty domains expose the difference. Restricting $S$ explicitly to attenders is another faithful translation.
+
+### Practice
+
+With people $P$, keys $K$ and usability $H$, translate “Each person can use a key”.
+
+<details>
+<summary>Hint</summary>
+
+Person first.
+
+</details>
+
+<Exercise>
+
+$\forall p\in P\;\exists k\in K\;H(p,k)$. The key may depend on the person; distinct choices are not required.
+
+</Exercise>
+
+Translate “A key can be used by every person” in the same language.
+
+<details>
+<summary>Hint</summary>
+
+Keep one key fixed.
+
+</details>
+
+<Exercise>
+
+$\exists k\in K\;\forall p\in P\;H(p,k)$. One fixed key must work for every person; it need not be unique.
+
+</Exercise>
+
+Translate and prove “Every real has a strictly larger real”.
+
+<details>
+<summary>Hint</summary>
+
+Introduce the input before the witness.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x)$. For arbitrary $x$, choose the real sum $y=x+1$; positivity of one makes it larger.
+
+</Exercise>
+
+Translate “A real number equals every real number”, then evaluate.
+
+<details>
+<summary>Hint</summary>
+
+Do not alter a false assertion.
+
+</details>
+
+<Exercise>
+
+$\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y=x)$. False: any proposed $y$ fails at real $x=y+1$.
+
+</Exercise>
+
+Translate “For every real $x$ there is a real $y$ such that for every real $z$, $x+y=z$”.
+
+<details>
+<summary>Hint</summary>
+
+Preserve all three layers.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;\forall z\in\mathbb R\;(x+y=z)$. The witness may use $x$, not later $z$. False: one fixed sum cannot equal both zero and one.
+
+</Exercise>
+
+Later, write both book translations from memory and read them back.
+
+## Read aloud
+
+**EN:** For every x in D, there exists y in E such that R of x and y holds.
+
+**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
+
+**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.

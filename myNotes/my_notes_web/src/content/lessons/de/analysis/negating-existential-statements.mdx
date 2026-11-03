@@ -1,0 +1,124 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-zero-quantified-negation"
+sourceId: "analysis-zero"
+title: "Existenz-Aussagen negieren"
+navTitle: "Existenz-Aussagen negieren"
+description: "Existenz-Aussagen negieren."
+order: 32
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["negating-universal-statements"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/02 Negating Existential Claims.md#02 Negating Existential Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements"]
+thumbnail: "quantifiers"
+---
+
+In einer Schachtel liegen rote und blaue Karten. Eine blaue herauszunehmen widerlegt „Es gibt eine rote Karte“ nicht. Die rote bleibt ein Zeuge. „Eine Karte ist nicht rot“ und „Eine Karte ist rot“ können beide wahr sein und sind daher keine genauen Negationen.
+
+$$
+\neg(\exists x\in D\;P(x))\ \Longleftrightarrow\ \forall x\in D\;\neg P(x).
+$$
+
+Halte $D$, $P$ und weitere Parameter fest. Erfüllt kein erlaubtes Objekt $P$, nimm einen beliebigen erlaubten Kandidaten: Er kann $P$ nicht erfüllen und erfüllt daher $\neg P$. Weil er beliebig war, scheitern alle. Ist umgekehrt $P$ für jedes erlaubte Objekt falsch, kann kein Kandidat ein Zeuge sein. Beide Richtungen begründen das Existenz-Dualgesetz in klassischer Logik, auch für unendliche Bereiche.
+
+Eine vollständige endliche Prüfung kann Nichtexistenz zeigen. Bei einem unendlichen Bereich erfassen hundert Fehlversuche nicht alle Kandidaten; ein allgemeines Argument über einen beliebigen Kandidaten kann es. Zur Widerlegung einer All-Aussage genügt dagegen ein Fehlerfall. Die Negation gewöhnlicher Existenz schließt alle Zeugen aus, nicht nur genau einen: Zwei Erfolge machen gewöhnliche Existenz weiterhin wahr.
+
+## Die Einschränkung bleibt positiv
+
+$$
+\neg(\exists x>0\;(x<0))\ \Longleftrightarrow\ \forall x>0\;(x\ge0).
+$$
+
+Die Kurzschreibweise $x>0$ am Quantor beschränkt den Bereich auf positive reelle Zahlen. Der Vergleich in Klammern ist das Prädikat. Negation verändert die Aussage über denselben Bereich, ersetzt ihn nicht durch nichtpositive Zahlen. Das Original ist falsch, weil keine positive reelle Zahl negativ ist; die Negation wahr, weil jede positive reelle Zahl nichtnegativ ist. Null ist kein erlaubter Kandidat.
+
+„Eine ganze Zahl hat Quadrat null“ ist mit Zeuge null wahr; die Negation, jedes ganzzahlige Quadrat sei ungleich null, ist bei derselben Zahl falsch. „Eine reelle Zahl hat negatives Quadrat“ ist falsch aufgrund der ausdrücklich vorausgesetzten arithmetischen Tatsache, dass reelle Quadrate nichtnegativ sind. Logik allein liefert diese Tatsache nicht. Im leeren eingeschränkten Bereich ist Existenz falsch und ihre All-Negation wahr: Kein Objekt widerspricht ihr, doch keines wird geliefert.
+
+### Übung
+
+Negiere die Existenz einer roten Karte. Beweist eine blaue Karte die Negation?
+
+<details>
+<summary>Hinweis</summary>
+
+Ein Erfolg könnte darunter liegen.
+
+</details>
+
+<Exercise>
+
+Jede Karte derselben Schachtel ist nicht rot. Eine blaue genügt nicht; jeder Kandidat muss ausgeschlossen werden.
+
+</Exercise>
+
+Negiere und bewerte $\exists x\in\mathbb Z\;(x=1)$.
+
+<details>
+<summary>Hinweis</summary>
+
+Umformung und Wahrheit sind verschieden.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb Z\;(x\ne1)$. Das Original ist mit eins wahr; die richtige Negation ist falsch, weil eins eine ganze Zahl gleich eins ist.
+
+</Exercise>
+
+Negiere „Eine positive reelle Zahl ist negativ“. Wird der Bereich nichtpositiv?
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne Bereichseinschränkung und Prädikat.
+
+</details>
+
+<Exercise>
+
+Jede positive reelle Zahl ist nichtnegativ. Der positive Bereich bleibt unverändert; nur das Prädikat wird negiert.
+
+</Exercise>
+
+Bewerte „Eine Karte der leeren Schachtel ist nummeriert“ und „Jede ist unnummeriert“.
+
+<details>
+<summary>Hinweis</summary>
+
+Kein Existenzzeuge ist verfügbar.
+
+</details>
+
+<Exercise>
+
+Falsch und wahr. Die All-Aussage hat keine Ausnahme und behauptet nicht die Existenz einer unnummerierten Karte.
+
+</Exercise>
+
+Negiere „Eine Karte ist rot und nummeriert“. Widerlege „Jede Karte ist weder rot noch nummeriert“ als Negation.
+
+<details>
+<summary>Hinweis</summary>
+
+Ein fehlender Teil genügt.
+
+</details>
+
+<Exercise>
+
+Jede Karte ist nicht rot oder nicht nummeriert. Eine Schachtel mit nur einer roten unnummerierten Karte macht das Original falsch und die richtige Negation wahr, die stärkere vorgeschlagene aber falsch.
+
+</Exercise>
+
+Erkläre später, warum gegen alle ein Fehler genügt, gegen einige dagegen alle Kandidaten scheitern müssen.
+
+## Laut lesen
+
+**EN:** There is no x in D satisfying P if and only if every x in D fails P.
+
+**DE:** Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
+
+**ES:** No existe equis en D que cumpla P si y solo si todo equis en D incumple P.

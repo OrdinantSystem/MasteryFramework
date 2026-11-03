@@ -1,0 +1,65 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/01 The Hypothesis.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/02 The Conclusion.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Conditionals Hypotheses and Conclusions.md"]
+title: "Leer enunciados condicionales"
+navTitle: "Leer enunciados condicionales"
+description: "Identificar la hipótesis completa, la conclusión exacta y las premisas para aplicar una regla."
+order: 14
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["material-implication-and-vacuity", "simultaneous-conditions"]
+thumbnail: "implication"
+---
+
+Una caja contiene tarjetas con números reales. Su regla dice: «Una tarjeta supera dos si supera cinco». **Si** introduce la condición de partida, aunque aparezca al final de la frase. La regla va de superar cinco a superar dos.
+
+## Hipótesis y conclusión
+
+Lee $P\Rightarrow Q$ como «Si $P$, entonces $Q$». La proposición completa $P$ es la **hipótesis**, o antecedente; la proposición completa $Q$ es la **conclusión**, o consecuente. Son funciones dentro del enunciado, no una afirmación de que ambas sean verdaderas. Incluso el enunciado falso «si tres supera dos, entonces tres supera cinco» tiene una conclusión identificable.
+
+Para un número real fijo $x$, considera
+
+$$((x>0)\land(x<1))\Rightarrow(x<2).$$
+
+Se lee: «Si equis es positivo y menor que uno, entonces equis es menor que dos». El conectivo principal es la flecha. Su bloque izquierdo completo exige **ambas** comparaciones. El dominio son los reales; la hipótesis selecciona los números entre cero y uno. El dominio y la hipótesis cumplen funciones distintas.
+
+Un medio cumple ambos requisitos. Menos uno cumple solo la cota superior; dos cumple solo la inferior. Ninguno satisface la hipótesis completa. La flecha no liga $x$ ni añade «para todo»; el contexto debe indicar si tratamos una entrada fija o todas las entradas reales.
+
+## Conservar las hipótesis enunciadas
+
+Para demostrar la implicación para todas las entradas reales, toma un real arbitrario que cumpla ambas cotas. Como $x<1$ y $1<2$, la transitividad del orden da $x<2$. Usamos el orden real habitual como base.
+
+No se ha utilizado la cota inferior $x>0$. Aun así, forma parte del teorema enunciado. Suprimirla produciría una afirmación más fuerte: la misma conclusión se exigiría a más entradas. Aquí esa afirmación también es cierta por el mismo argumento de orden, pero detectar una hipótesis innecesaria no permite borrarla al citar el teorema original. Añadir hipótesis suele facilitar que un teorema condicional sea válido; quitarlas amplía lo que exige.
+
+## Demostrar todo el objetivo
+
+Ahora la conclusión tiene dos partes:
+
+$$(x>5)\Rightarrow((x>2)\land(x>0)).$$
+
+Se lee: «Si equis supera cinco, entonces supera dos y supera cero». De $x>5$, el orden da $x>2$; como $2>0$, también da $x>0$. Se requieren las dos. En una conclusión con disyunción inclusiva bastaría demostrar una alternativa.
+
+La cota exacta también importa. Si el objetivo es $x<2$, demostrar $x\le2$ deja pendiente excluir la igualdad. Demostrar $x<1$ es más fuerte y sí basta, porque $x<1<2$.
+
+## Aplicar una regla requiere dos premisas
+
+Supón que la regla de las tarjetas es verdadera y sabemos que una tarjeta oculta supera cinco. Se deduce que supera dos, sin conocer su número exacto. Es **modus ponens**: usar $P\Rightarrow Q$ y $P$ para inferir $Q$.
+
+¿Por qué bastan ambas? Si $Q$ fuera falsa con $P$ verdadera, la implicación sería falsa, contra la primera premisa. La regla sola no basta: una tarjeta con cero satisface la regla sin superar dos. Saber solo que una tarjeta supera dos tampoco basta: tres no tiene por qué superar cinco.
+
+<Exercise question="Para $x$ real, lee $((x>1)\land(x<4))\Rightarrow(x>0)$. Indica la hipótesis completa y la conclusión; comprueba si $0$, $2$ y $4$ cumplen la hipótesis; después demuestra el enunciado sin elegir una entrada particular.">
+
+La hipótesis es $x>1$ **y** $x<4$; la conclusión es $x>0$. Solo $2$ cumple la hipótesis. Cero falla la cota inferior; $4$ falla la superior estricta, aunque su conclusión sea verdadera. Para cualquier real admisible $x$, la cota inferior y $1>0$ dan $x>0$ por transitividad. La cota superior sigue siendo parte de la hipótesis aunque no se utilice.
+
+</Exercise>
+
+<Exercise question="Una prueba cuyo objetivo es $x<2$ termina en $x\le2$. ¿Qué falta? Escribe después una hipótesis de dos partes con un requisito no utilizado y explica qué cambia al quitarlo.">
+
+Hay que excluir $x=2$, permitido por la cota más débil. Esto no afirma que $2$ cumpla las hipótesis originales. Como nuevo ejemplo, $1<x<4$ implica $x<5$: basta la cota superior. Quitar $x>1$ amplía el enunciado a todos los reales menores que $4$, incluidos los negativos; por eso es un teorema más fuerte. La transitividad también demuestra esa versión.
+
+</Exercise>

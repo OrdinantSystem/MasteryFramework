@@ -1,0 +1,68 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-zero-conditionals"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/03 Formal Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.4 Implication/05 Vacuous Truth.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Conditionals Hypotheses and Conclusions.md"]
+title: "Implicación material y verdad vacía"
+navTitle: "Implicación material y verdad vacía"
+description: "Evaluar todos los casos sin confundir una instancia, un teorema y una inferencia."
+order: 13
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["building-truth-tables", "logical-negation"]
+thumbnail: "logic"
+---
+
+Para un real $x$, prueba la regla «si equis supera dos, entonces supera cinco». Siete cumple ambas comparaciones; tres cumple la primera pero no la segunda. Cero no cumple ninguna. La lógica clásica asigna también un valor de verdad a la implicación completa en este último caso.
+
+## La definición incluye cuatro casos
+
+Para proposiciones con significado $P$ y $Q$, la **implicación material** $P\Rightarrow Q$ se lee «si pe, entonces cu». Por definición es falsa exactamente cuando $P$ es verdadera y $Q$ es falsa. Escribimos $1$ para verdadero y $0$ para falso:
+
+| $P$ | $Q$ | $P\Rightarrow Q$ |
+| --- | --- | --- |
+| $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ |
+| $0$ | $1$ | $1$ |
+| $0$ | $0$ | $1$ |
+
+La tabla define el conectivo en la lógica clásica de dos valores. «No lo sabemos» no es un quinto caso: una tarjeta oculta fija sigue teniendo un número. La flecha no significa conjunción, no describe un proceso causal ni afirma que se cumpla alguna de sus partes.
+
+De la definición se deduce un resultado útil:
+
+$$(P\Rightarrow Q)\equiv(\neg P\lor Q).$$
+
+Se lee: «Si pe, entonces cu es lógicamente equivalente a no pe o cu». $\equiv$ significa coincidencia bajo toda asignación de verdad; $\lor$ es la disyunción inclusiva. Si $P$ es falsa, $\neg P$ es verdadera y la disyunción es verdadera sea cual sea $Q$. Si $P$ es verdadera, $\neg P$ es falsa y la disyunción toma el valor de $Q$. Estos dos casos cubren todas las filas y demuestran el resultado a partir de la definición.
+
+## Qué dice la verdad vacía
+
+Una implicación con hipótesis falsa es **verdadera por vacuidad**. Importan ambas filas con hipótesis falsa. Para la regla de superar cinco a superar dos, cero da una conclusión falsa y tres una verdadera. Ambas implicaciones completas son verdaderas. Una hipótesis falsa deja, por tanto, indeterminado el valor de la conclusión.
+
+Imagina una caja que contiene exactamente cero y tres, con la regla «toda tarjeta que supere cinco supera dos». Ninguna cumple la hipótesis, así que ninguna infringe la regla. El dominio no está vacío, pero el subconjunto seleccionado sí. En una caja vacía, es el propio dominio el que está vacío. Ningún caso proporciona una tarjeta superior a cinco. La regla por sí sola no demuestra que exista una tarjeta superior a cinco ni una superior a dos. En la caja con cero y tres, sabemos que existe una tarjeta superior a dos por su contenido especificado, no por la regla. Verdad, existencia y utilidad son preguntas distintas.
+
+Para la regla **diferente** de superar dos a superar cinco, la instancia en cero es verdadera pero la de tres es falsa. Si restringimos explícitamente el dominio a los reales a lo sumo dos, la regla es verdadera en todo ese dominio: todas sus hipótesis son falsas. Esto demuestra un enunciado modificado, no la afirmación original sobre todos los reales.
+
+## Una asignación no es consecuencia lógica
+
+En $x=7$, $P(x):x>2$ y $Q(x):x>5$ son verdaderas. En $x=3$ la implicación es falsa; en $x=0$ vuelve a ser verdadera. El par $P$ falsa, $Q$ verdadera es imposible para estas comparaciones vinculadas: superar cinco implica superar dos por el orden real. La tabla general sigue necesitando esa fila para otras proposiciones, por ejemplo $P:(0=1)$ y $Q:(2=2)$.
+
+La **consecuencia lógica** exige que ninguna asignación o modelo permitido haga verdaderas todas las premisas y falsa la conclusión. Una implicación verdadera en una sola asignación no demuestra esa relación entre $P$ y $Q$ independientes. Tampoco una instancia numérica verdadera prueba que una implicación valga para toda entrada del dominio. Una prueba aritmética general utiliza además sus hipótesis aritméticas, no solo letras proposicionales de libre asignación.
+
+## El significado precede a la tabla
+
+El recíproco real habitual no está definido en cero. Poner $1/0=2$ después de una hipótesis falsa no lo convierte en una igualdad real con significado. Cuando aparezcan recíprocos usaremos dominios explícitos sin cero. Algunas notaciones informales con una condición previa tienen una interpretación acordada; sin ese acuerdo, la implicación no es una instrucción de cortocircuito de un programa que arregle operaciones parciales.
+
+<Exercise question="Evalúa $(x>2)\Rightarrow(x>5)$ en $7$, $3$ y $0$. ¿La instancia verdadera en cero demuestra un teorema sobre todos los reales? Construye la fila falsa/verdadera que falta usando otras proposiciones.">
+
+Los pares son verdadera/verdadera, verdadera/falsa y falsa/falsa, de modo que los valores de la implicación son $1,0,1$. Tres refuta la afirmación universal a pesar de la instancia verdadera en cero. Estas comparaciones no producen falsa/verdadera, pero «cero es igual a uno» y «dos es igual a dos» sí. La definición también debe cubrir esas proposiciones.
+
+</Exercise>
+
+<Exercise question="Una caja cumple toda-tarjeta-superior-a-cinco-supera-dos y no contiene tarjetas superiores a cinco. ¿Todas sus tarjetas deben ser a lo sumo dos? Compara una caja vacía, una que solo contiene cero y otra que solo contiene tres.">
+
+No. Las tres cumplen la regla. La vacía no tiene tarjetas; cero es a lo sumo dos; tres supera dos. Ninguna contiene una tarjeta superior a cinco. Así, la regla y la ausencia de tarjetas que cumplan la hipótesis no determinan si hay tarjetas superiores a dos, ni implican existencia alguna.
+
+</Exercise>

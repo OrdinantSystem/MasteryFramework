@@ -3,11 +3,12 @@ course: "analysis"
 chapter: "analysis-language"
 sourceId: "analysis-concepts-1"
 sourcePages: [1]
+additionalSources: [{sourceId: "analysis-zero", pages: [], locations: ["A0.1.6 Universal quantifier", "A0.1.7 Existential quantifier", "A0.1.8 Nested quantifiers", "A0.1.9 Negation of quantified statements"]}]
 locale: "de"
 title: "Quantoren und Negation"
 navTitle: "Quantoren und Negation"
 description: "„Für alle“ und „es gibt“ genau lesen und die ganze Behauptung negieren."
-order: 2
+order: 36
 kind: "concept"
 status: "published"
 reviewStatus: "unreviewed"
@@ -17,9 +18,13 @@ thumbnail: "quantifiers"
 
 ## Ein Zeuge oder alle Fälle
 
-Eine Existenzaussage braucht einen Zeugen. Eine Allaussage umfasst jedes Element ihres angegebenen Bereichs; ein Gegenbeispiel widerlegt sie. $\exists!$ bedeutet genau eines: Existenz und Eindeutigkeit zusammen.
+Diese Seite ist eine kurze Übersicht. Für einen ersten Zugang beginne mit [Allaussagen und ihren Bereichen](../universal-statements-and-domains/) sowie [Existenz und Zeugen](../existence-and-witnesses/). Danach folgen [gebundene Variablen und Geltungsbereiche](../bound-variables-and-scope/), die [Reihenfolge der Quantoren](../quantifier-order/) und das [Negieren von Allaussagen](../negating-universal-statements/). Dort werden die Beispiele und Beweise hinter den hier gesammelten Formeln entwickelt.
+
+Eine Existenzaussage braucht einen Zeugen. Eine Allaussage umfasst jedes Element ihres angegebenen Bereichs; ein Gegenbeispiel widerlegt sie. $\exists!$ bedeutet, dass es genau ein passendes Element gibt: Existenz und Eindeutigkeit zusammen.
 
 <Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+Die linke Aussage ist wahr, weil $7$ zum Bereich gehört und die Gleichung erfüllt. Die Allaussage innerhalb der Negation ist falsch: Bei $x=1$ gilt zum Beispiel $1+3=4$, nicht $10$. Beide angezeigten Aussagen sind also wahr, aber aus verschiedenen Gründen. Ein passender Wert beweist Existenz; ein anderer, unpassender Wert widerlegt die Allaussage.
 
 ## Die Negation nach innen ziehen
 
