@@ -1,3 +1,11 @@
+# GitHub Pages activation · 3 November 2026
+
+- Activated repository-root .github/workflows/mynotes-pages.yml at Jean's request. Relevant main pushes run Node 24, npm ci and the full production build, upload only the static dist artifact, and deploy through the github-pages environment with scoped Pages/OIDC permissions. Pull requests run checks without deploying. Manual workflow dispatch is available.
+- Updated checkout/setup-node/upload-pages-artifact versions and included configure-pages before deployment. The configured origin is https://ordinantsystem.github.io and the base derives from the repository name (currently /MasteryFramework). Updated active hosting documentation; the former deployment template remains a reference.
+- Local Node 24.22.1 production builds passed with the Pages prefix and again at the root to restore local preview output: 173 pages, 147 indexed lessons, 12,156 local links/assets, contrast checks and 3,051 TeX annotations. No lesson or interface changes. Remote deployment outcome is reported in the activation chat and GitHub Actions run.
+
+---
+
 # Session release validation · 3 November 2026
 
 - Ran the complete production build on Node 24.22.1 before creating the session commits. Repeated it with SITE_URL=https://ordinantsystem.github.io and BASE_PATH=/MasteryFramework, then restored the normal root build. All three runs passed: Astro diagnostics (0 errors/warnings/hints), library/content checks, 173 static pages, 147 indexed lessons, 12,156 local links/assets, contrast checks and 3,051 generated TeX annotations.

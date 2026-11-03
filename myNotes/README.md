@@ -54,7 +54,7 @@ myNotes/
 
 Astro generates HTML from MDX; KaTeX renders mathematics; Pagefind builds language-specific search. Small native browser components handle optional interactions. There is no application backend or visitor submission service.
 
-The archive contains Mathematics (Linear Algebra I: 17 lessons; Analysis I: 15 lessons) and Learning & Teaching (learning methodology: 17 lessons), each in English, German, and Spanish. Courses, source documents, chapters, localized routes, and course-local prerequisites/orders have validated identities. See docs/source-ingestion.md before extending the archive. Mathematical and translation review remains separate from design approval. Publishing is not active. Earlier sites and private source material remain preserved.
+The archive contains Mathematics (Linear Algebra I: 17 lessons; Analysis I: 15 lessons) and Learning & Teaching (learning methodology: 17 lessons), each in English, German, and Spanish. Courses, source documents, chapters, localized routes, and course-local prerequisites/orders have validated identities. See docs/source-ingestion.md before extending the archive. Mathematical and translation review remains separate from design approval. Automatic Pages publishing is configured by the repository-root .github/workflows/mynotes-pages.yml workflow. Earlier sites and private source material remain preserved.
 
 The [original plan](docs/history/original-plan.md) is historical context, not an alternate implementation specification.
 

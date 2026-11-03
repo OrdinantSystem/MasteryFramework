@@ -38,6 +38,6 @@ Do not track dist/, node_modules/, .astro/, .sites-runtime/, or private referenc
 
 ## GitHub Pages
 
-The inactive template is my_notes_web/deployment/github-pages.yml. Its working directory, Node file, npm lockfile cache, and artifact paths use myNotes/my_notes_web. GitHub discovers workflows only at repository-root .github/workflows/. Activation still requires actual repository settings and an explicit publication request.
+The active workflow is repository-root .github/workflows/mynotes-pages.yml, authorized on 3 November 2026. It builds pull requests and relevant main pushes with Node 24 and npm ci, runs the complete production checks, and deploys successful main builds to https://ordinantsystem.github.io/MasteryFramework/. GitHub Pages must use GitHub Actions as its source. The artifact contains only myNotes/my_notes_web/dist. The older my_notes_web/deployment/github-pages.yml remains a reference template; edit the active workflow for hosting changes.
 
 The intended flow remains: edit → validate/build → authorized commit/push → CI build → successful publishing-branch deployment. A local commit does not itself publish. Generated files are artifacts, not source commits. Confirm current hosting/action details when activating the template; a folder rename does not authorize deployment.

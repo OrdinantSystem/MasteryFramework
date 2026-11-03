@@ -12,14 +12,14 @@ Updated 2 November 2026. This file records current state; AGENTS.md and DESIGN-S
 - Worksheet 2.1 adds nine lessons per language (seventeen total), two chapter branches, explicit source ids/page validation, MatrixComparison, configurable Flow nodes, and an area/orientation preset. See source-ingestion.md for coverage and source corrections.
 - Analysis I adds 15 lessons per language from six visually inspected one-page posters. At that stage the archive had two courses, 32 lessons per language, course-specific overviews/prerequisites/numbering, and multilingual search. New number-domain, expression-tree, implication, and NAND assets are documented in representation-library.md.
 - Learning & Teaching now forms a second knowledge area with one methodology course: 17 lessons per language (including four distinct transcript guides), 49 total lessons per language. The area/course registry, generic new-course routes, text-source locations, reusable process graphs, static method figures, Bloom question lens, and nine blank Markdown downloads are documented in learning-teaching.md. Jean moved the original study documents and deep-learning-method folder into Learning&Teaching/; do not undo that source reorganization.
-- All answers remain local. The site collects no submissions. No GitHub Pages deployment is active.
+- All answers remain local. The site collects no submissions. GitHub Pages publishing is configured in .github/workflows/mynotes-pages.yml for https://ordinantsystem.github.io/MasteryFramework/.
 
 ## Open work
 
 1. Human review of translations and mathematical explanations. Current review flags remain unreviewed; visual approval does not change them.
 2. Future subjects must extend the existing course registry and validated source/chapter metadata. The first Linear Algebra concept map remains scoped to its original chapter.
 3. Physical touch/pen and screen-reader checks. Mouse, numeric, keyboard, and responsive checks are recorded in the verification file; these do not imply a full accessibility audit.
-4. Actual repository Pages URL, authorized workflow activation, and publication. The template uses current folder paths but is inactive.
+4. Confirm the first authorized GitHub Pages workflow run succeeds at https://ordinantsystem.github.io/MasteryFramework/; the root workflow now controls build and deployment.
 5. New interaction families only when a real teaching relationship requires them. No plotting package, React runtime, or general game engine is required by the current library.
 
 ## Resume procedure
