@@ -21,14 +21,14 @@ sourceLocations: []
 
 ## Materiale Implikation und leere Wahrheit
 
-Teste für eine reelle Zahl $x$ die Regel „Wenn $x$ größer als zwei ist, dann ist $x$ größer als fünf“. Sieben erfüllt beide Vergleiche; drei erfüllt den ersten, aber nicht den zweiten. Null erfüllt keinen. Auch diesem letzten Fall gibt die klassische Logik einen Wahrheitswert für die ganze Implikation.
+Für reelles $x$ teste „über zwei impliziert über fünf“: Sieben erfüllt beides, drei nur die Voraussetzung, null keines. Klassische Logik bewertet auch den letzten Fall.
 
 
 <span id="from-material-implication-and-vacuity-die-definition-umfasst-vier-fälle"></span>
 
 ### Die Definition umfasst vier Fälle
 
-Für sinnvolle Aussagen $P$ und $Q$ bedeutet die **materiale Implikation** $P\Rightarrow Q$: „Wenn $P$, dann $Q$“. Sie ist definitionsgemäß genau dann falsch, wenn $P$ wahr und $Q$ falsch ist. Schreibe $1$ für wahr und $0$ für falsch:
+Für sinnvolle $P,Q$ ist **materiale Implikation** $P\Rightarrow Q$ („wenn P, dann Q“) genau bei wahrem $P$, falschem $Q$ falsch. $1$ und $0$ bedeuten wahr/falsch:
 
 | $P$ | $Q$ | $P\Rightarrow Q$ |
 | --- | --- | --- |
@@ -37,50 +37,50 @@ Für sinnvolle Aussagen $P$ und $Q$ bedeutet die **materiale Implikation** $P\Ri
 | $0$ | $1$ | $1$ |
 | $0$ | $0$ | $1$ |
 
-Diese Tabelle definiert den Junktor in der klassischen zweiwertigen Logik. „Uns unbekannt“ ist kein fünfter Fall: Eine feste verdeckte Karte hat trotzdem eine Zahl. Der Pfeil bedeutet nicht Und, beschreibt keinen kausalen Vorgang und behauptet nicht, dass einer der Teile zutrifft.
+Das definiert den klassischen Junktor. Unbekannt ist kein fünfter Fall: Verdeckte Karten tragen feste Zahlen. Der Pfeil behauptet weder Teile noch Konjunktion oder Ursache.
 
-Aus der Definition folgt ein nützliches Ergebnis:
+Aus der Definition:
 
 $$(P\Rightarrow Q)\equiv(\neg P\lor Q).$$
 
-Gelesen: „Wenn $P$, dann $Q$ ist logisch äquivalent zu nicht $P$ oder $Q$.“ $\equiv$ bedeutet Übereinstimmung bei jeder Wahrheitsbelegung; $\lor$ ist das einschließende Oder. Ist $P$ falsch, ist $\neg P$ wahr; die Disjunktion ist unabhängig von $Q$ wahr. Ist $P$ wahr, ist $\neg P$ falsch; die Disjunktion übernimmt den Wert von $Q$. Die beiden Fälle umfassen alle Zeilen und beweisen das Ergebnis aus der Definition.
+„Wenn P, dann Q“ entspricht einschließendem „nicht P oder Q“. $\equiv$ bedeutet Übereinstimmung jeder Belegung: Falsches $P$ macht $\neg P$ und ODER unabhängig von $Q$ wahr; wahres $P$ lässt ODER den Wert von $Q$ übernehmen. Beide Fälle beweisen das Ergebnis.
 
 
 <span id="from-material-implication-and-vacuity-was-leere-wahrheit-besagt"></span>
 
 ### Was leere Wahrheit besagt
 
-Eine Implikation mit falscher Voraussetzung heißt **vakuos wahr**, auch leer wahr. Beide Zeilen mit falscher Voraussetzung zählen. Für die Regel von über fünf zu über zwei ist die Folgerung bei null falsch, bei drei wahr. Beide Implikationen sind wahr. Eine falsche Voraussetzung legt also den Wahrheitswert der Folgerung nicht fest.
+Falsche Voraussetzungen ergeben **vakuos wahre** Implikationen. Bei über-fünf-zu-über-zwei hat null eine falsche, drei eine wahre Folgerung; beide Implikationen gelten. Die Folgerung bleibt unbestimmt.
 
-Eine Schachtel enthalte genau null und drei; ihre Regel lautet: „Jede Karte über fünf liegt über zwei.“ Keine Karte erfüllt die Voraussetzung, also verletzt keine die Regel. Der Grundbereich ist nicht leer, wohl aber die ausgewählte Teilmenge. Bei einer leeren Schachtel ist der Grundbereich selbst leer. Keiner der Fälle liefert eine Karte über fünf. Die Regel allein beweist weder die Existenz einer Karte über fünf noch die einer Karte über zwei. Bei der Schachtel mit null und drei folgt die Existenz einer Karte über zwei aus dem angegebenen Inhalt, nicht aus der Regel. Wahrheit, Existenz und Nützlichkeit sind getrennte Fragen.
+Eine Schachtel nur mit null und drei erfüllt „Jede Karte über fünf liegt über zwei“: nichtleerer Bereich, leere passende Teilmenge. Eine leere Schachtel hat leeren Bereich. Keine liefert eine Karte über fünf. Die Regel begründet weder Existenz über fünf noch über zwei; hier begründet der Inhalt Letzteres. Wahrheit, Existenz und Nützlichkeit unterscheiden sich.
 
-Für die **andere** Regel von über zwei zu über fünf ist der Einzelfall bei null wahr, der bei drei falsch. Beschränken wir den Bereich ausdrücklich auf reelle Zahlen höchstens zwei, gilt die Regel überall dort: Jede Voraussetzung ist falsch. Das beweist eine veränderte Aussage, nicht die ursprüngliche Behauptung über alle reellen Zahlen.
+Bei **über-zwei-zu-über-fünf** ergibt null wahr, drei falsch. Beschränkung auf Reelle höchstens zwei macht alle Voraussetzungen falsch und die Regel dort allgemeingültig, verändert aber die ursprüngliche Allaussage.
 
 
 <span id="from-material-implication-and-vacuity-eine-belegung-ist-keine-logische-folgerungsbeziehung"></span>
 
 ### Eine Belegung ist keine logische Folgerungsbeziehung
 
-Für die einleitenden Vergleiche $P(x):x>2$ und $Q(x):x>5$ ist das fehlende Paar $P$ falsch, $Q$ wahr unmöglich: Aus über fünf folgt nach der reellen Ordnung über zwei. Die allgemeine Tabelle braucht diese Zeile trotzdem für andere Aussagen, etwa $P:(0=1)$ und $Q:(2=2)$.
+Für $P(x):x>2$, $Q(x):x>5$ verhindert reelle Ordnung falsch/wahr. Andere Aussagen realisieren es, etwa $P:(0=1)$, $Q:(2=2)$; die allgemeine Tabelle braucht diese Zeile.
 
-Eine **logische Folgerungsbeziehung** verlangt, dass keine erlaubte Belegung oder kein erlaubtes Modell alle Prämissen wahr und die Folgerung falsch macht. Eine in einer Belegung wahre Implikation beweist diese Beziehung zwischen unabhängigen $P$ und $Q$ nicht. Ebenso beweist ein wahrer Zahlenfall keine Aussage für alle Eingaben. Ein arithmetischer Beweis für einen ganzen Bereich benutzt auch seine arithmetischen Annahmen, nicht nur frei belegbare Aussagebuchstaben.
+**Logische Folgerung** verbietet jede erlaubte Belegung/jedes Modell mit wahren Prämissen und falscher Folgerung. Eine wahre Implikationsbelegung beweist weder uneingeschränkte Folgerung noch Gültigkeit aller Zahleneingaben. Bereichsweite arithmetische Beweise nutzen auch arithmetische Annahmen.
 
 
 <span id="from-material-implication-and-vacuity-bedeutung-vor-wahrheitstabelle"></span>
 
 ### Bedeutung vor Wahrheitstabelle
 
-Der gewöhnliche reelle Kehrwert ist bei null undefiniert. $1/0=2$ hinter eine falsche Voraussetzung zu setzen macht daraus keine sinnvolle reelle Gleichung. Bei Kehrwerten verwenden wir ausdrücklich Bereiche ohne null. Manche informelle Schreibweisen mit vorgeschalteter Bedingung haben eine vereinbarte Bedeutung; ohne solche Vereinbarung ist die Implikation keine Kurzschlussauswertung eines Programms, die undefinierte Rechnungen repariert.
+Falsche Voraussetzungen machen $1/0=2$ reell nicht sinnvoll. Bei Kehrwerten null explizit ausschließen. Informelle Bedingungsschreibweise braucht vereinbarte Interpretation; Implikation allein ist keine programmierte Kurzschlussauswertung zur Reparatur partieller Operationen.
 
-<Exercise question="Werte $(x>2)\Rightarrow(x>5)$ bei $7$, $3$ und $0$ aus. Beweist der wahre Nullfall einen Satz über alle reellen Zahlen? Stelle die fehlende Falsch/Wahr-Zeile mit anderen Aussagen her.">
+<Exercise question="Werte $(x>2)\Rightarrow(x>5)$ bei $7,3,0$ aus. Beweist null einen Allsatz? Realisiere falsch/wahr durch andere Aussagen.">
 
-Die Paare sind wahr/wahr, wahr/falsch und falsch/falsch; die Implikation hat die Werte $1,0,1$. Drei widerlegt die Allaussage trotz des wahren Nullfalls. Diese Vergleiche liefern kein falsch/wahr, aber „null ist gleich eins“ und „zwei ist gleich zwei“ tun es. Auch solche Aussagen muss die Definition erfassen.
+Wahr/wahr, wahr/falsch, falsch/falsch liefern $1,0,1$. Drei widerlegt Allgemeingültigkeit trotz null. Diese Vergleiche liefern kein falsch/wahr, aber „null gleich eins“ und „zwei gleich zwei“ tun es; die Definition erfasst auch sie.
 
 </Exercise>
 
-<Exercise question="Eine Schachtel erfüllt die Regel Jede-Karte-über-fünf-liegt-über-zwei und enthält keine Karte über fünf. Müssen ihre Karten höchstens zwei sein? Vergleiche eine leere Schachtel, eine nur mit null und eine nur mit drei.">
+<Exercise question="Eine Schachtel erfüllt über-fünf-impliziert-über-zwei ohne Karte über fünf. Müssen alle Karten höchstens zwei sein? Vergleiche leer, nur null, nur drei.">
 
-Nein. Alle drei Schachteln erfüllen die Regel. Die leere hat keine Karten; null ist höchstens zwei; drei ist größer als zwei. Keine enthält eine Karte über fünf. Die Regel und das Fehlen passender Karten entscheiden also nicht, ob eine Karte über zwei existiert, und behaupten überhaupt keine Existenz.
+Nein: Alle erfüllen die Regel ohne Karte über fünf. Leer enthält nichts; null ist höchstens zwei, drei über zwei. Regel und fehlende passende Karten begründen keine Existenz und entscheiden nicht über Karten über zwei.
 
 </Exercise>
 
@@ -88,63 +88,63 @@ Nein. Alle drei Schachteln erfüllen die Regel. Die leere hat keine Karten; null
 
 ## Bedingte Aussagen lesen
 
-Lies die Schachtelregel mit umgestellter Satzfolge: „Eine Karte liegt über zwei, wenn sie über fünf liegt.“ **Wenn** kennzeichnet auch am Satzende die Voraussetzung; die Regel führt von über fünf zu über zwei.
+„Eine Karte liegt über zwei, **wenn** sie über fünf liegt“ läuft weiter über-fünf zu über-zwei: Wenn leitet auch am Ende die Voraussetzung ein.
 
 
 <span id="from-reading-conditionals-voraussetzung-und-folgerung"></span>
 
 ### Voraussetzung und Folgerung
 
-Lies $P\Rightarrow Q$ als „Wenn $P$, dann $Q$“. Die ganze Aussage $P$ heißt **Voraussetzung** oder Antezedens; die ganze Aussage $Q$ heißt **Folgerung** oder Konsequens. Das sind Rollen im Satz, keine Behauptung, dass beide wahr seien. Auch die falsche Aussage „Wenn drei größer als zwei ist, dann ist drei größer als fünf“ hat eine erkennbare Folgerung.
+In $P\Rightarrow Q$ ist ganz $P$ **Voraussetzung/Antezedens**, ganz $Q$ **Folgerung/Konsequens**. Rollen behaupten keine Wahrheit: Auch falsches „wenn drei über zwei liegt, liegt drei über fünf“ hat eine erkennbare Folgerung.
 
-Für eine feste reelle Zahl $x$ betrachten wir
+Für festes reelles $x$:
 
 $$((x>0)\land(x<1))\Rightarrow(x<2).$$
 
-Gelesen: „Wenn $x$ positiv und kleiner als eins ist, dann ist $x$ kleiner als zwei.“ Der äußerste Junktor ist der Pfeil. Sein vollständiger linker Block verlangt **beide** Vergleiche. Der Grundbereich besteht aus den reellen Zahlen; die Voraussetzung wählt daraus die Zahlen zwischen null und eins aus. Grundbereich und Voraussetzung erfüllen verschiedene Aufgaben.
+„Wenn x positiv und unter eins, dann unter zwei.“ Der äußere Pfeil verbindet die **zweiteilige** Voraussetzung mit der Folgerung. Reelle bilden den Bereich; die Voraussetzung wählt Eingaben zwischen null und eins.
 
-Ein Halb erfüllt beide Bedingungen. Minus eins erfüllt nur die obere Schranke; zwei erfüllt nur die untere. Keine dieser beiden Zahlen erfüllt die ganze Voraussetzung. Der Pfeil bindet $x$ nicht und bedeutet nicht von sich aus „für jedes“. Der Kontext muss sagen, ob eine feste Eingabe oder alle reellen Eingaben gemeint sind.
+Ein Halb erfüllt beides; minus eins nur die Obergrenze, zwei nur die Untergrenze. Letztere sind nicht zulässig. Der Pfeil bindet $x$ nicht und quantifiziert nicht; der Kontext bestimmt eine/alle Eingaben.
 
 
 <span id="from-reading-conditionals-die-angegebenen-annahmen-beibehalten"></span>
 
 ### Die angegebenen Annahmen beibehalten
 
-Zum Beweis für alle reellen Eingaben betrachten wir eine beliebige reelle Zahl, die beide Schranken erfüllt. Aus $x<1$ und $1<2$ folgt durch Transitivität der Ordnung $x<2$. Dabei setzen wir die übliche reelle Ordnung voraus.
+Für beliebiges zulässiges reelles $x$ liefern $x<1$ und $1<2$ durch übliche Ordnungstransitivität $x<2$.
 
-Die untere Schranke $x>0$ wurde nicht benutzt. Sie gehört trotzdem zur Aussage des Satzes. Ihr Weglassen ergäbe eine stärkere Behauptung: Dieselbe Folgerung wäre nun für mehr Eingaben verlangt. Hier stimmt auch diese stärkere Aussage nach demselben Ordnungsargument. Eine unbenutzte Annahme zu erkennen erlaubt aber nicht, sie beim Zitieren des ursprünglichen Satzes zu streichen. Zusätzliche Voraussetzungen erleichtern im Allgemeinen die Gültigkeit eines bedingten Satzes; weniger Voraussetzungen erweitern seinen Anspruch.
+Unbenutztes $x>0$ bleibt im Satz. Weglassen stärkt ihn auf mehr Eingaben, hier mit gleichem Beweis wahr, ist aber nicht das ursprüngliche Zitat. Zusätzliche Annahmen erleichtern allgemein bedingte Gültigkeit; Entfernen erweitert den Anspruch.
 
 
 <span id="from-reading-conditionals-das-ganze-ziel-beweisen"></span>
 
 ### Das ganze Ziel beweisen
 
-Nun hat die Folgerung zwei Teile:
+Eine zweiteilige Folgerung:
 
 $$(x>5)\Rightarrow((x>2)\land(x>0)).$$
 
-Gelesen: „Wenn $x$ größer als fünf ist, dann ist $x$ größer als zwei und größer als null.“ Aus $x>5$ folgt $x>2$; wegen $2>0$ folgt auch $x>0$. Beides wird verlangt. Bei einem Ziel mit einschließendem Oder genügte dagegen eine bewiesene Alternative.
+„Über fünf impliziert über zwei und über null.“ Ordnung liefert $x>2$, dann $x>0$ wegen $2>0$. Beweise beides; einschließendes ODER bräuchte eine Alternative.
 
-Auch die genaue Schranke zählt. Lautet das Ziel $x<2$, lässt ein Beweis von $x\le2$ die Gleichheit offen. Der stärkere Nachweis $x<1$ genügt hingegen, denn $x<1<2$.
+Für Ziel $x<2$ lässt $x\le2$ Gleichheit offen; stärkeres $x<1$ genügt wegen $x<1<2$.
 
 
 <span id="from-reading-conditionals-eine-regel-anwenden-braucht-zwei-prämissen"></span>
 
 ### Eine Regel anwenden braucht zwei Prämissen
 
-Die Kartenregel sei wahr, und eine verdeckte Karte liege nachweislich über fünf. Dann liegt sie über zwei, auch wenn ihre genaue Zahl unbekannt bleibt. Das ist **Modus ponens**: Aus $P\Rightarrow Q$ und $P$ folgt $Q$.
+Kennt man die wahre Regel und eine verdeckte Karte über fünf, folgt über zwei ohne exakten Zahlenwert. **Modus ponens** nutzt $P\Rightarrow Q$ und $P$, um $Q$ zu folgern.
 
-Warum genügt das? Wäre $Q$ falsch und $P$ wahr, wäre die Implikation falsch, entgegen der ersten Prämisse. Die Regel allein genügt nicht: Eine Karte mit null erfüllt die Regel, ohne über zwei zu liegen. Nur zu wissen, dass eine Karte über zwei liegt, genügt ebenfalls nicht: Drei muss nicht über fünf liegen.
+Andernfalls widerlegten wahres $P$, falsches $Q$ die angenommene Regel. Regel allein scheitert bei Karte null; Folgerung allein liefert keine Voraussetzung: Drei übersteigt zwei, nicht fünf.
 
-<Exercise question="Lies für reelles $x$ die Aussage $((x>1)\land(x<4))\Rightarrow(x>0)$. Nenne die ganze Voraussetzung und Folgerung; prüfe $0$, $2$ und $4$ auf Zulässigkeit; beweise die Aussage dann ohne spezielle Eingabe.">
+<Exercise question="Zerlege für reelles x $((x>1)\land(x<4))\Rightarrow(x>0)$. Nenne ganze Voraussetzung/Folgerung; prüfe $0,2,4$ auf Zulässigkeit; beweise für beliebige Eingabe.">
 
-Die Voraussetzung ist $x>1$ **und** $x<4$; die Folgerung ist $x>0$. Nur $2$ erfüllt die Voraussetzung. Null scheitert an der unteren Schranke; $4$ an der strikten oberen, obwohl die Folgerung dort wahr ist. Für jedes zulässige reelle $x$ liefern die untere Schranke und $1>0$ durch Transitivität $x>0$. Die obere Schranke bleibt trotz Nichtverwendung Teil der Voraussetzung.
+Voraussetzung: $x>1$ **und** $x<4$; Folgerung: $x>0$. Nur zwei ist zulässig: Null verfehlt Untergrenze, vier strenge Obergrenze trotz wahrer Folgerung. Beliebiges zulässiges $x$ erfüllt transitiv $x>1>0$. Unbenutzte Obergrenze bleibt angegeben.
 
 </Exercise>
 
-<Exercise question="Ein Beweis mit Ziel $x<2$ endet bei $x\le2$. Was fehlt? Formuliere danach eine eigene zweiteilige Voraussetzung mit einer unbenutzten Annahme und erkläre, was deren Weglassen ändert.">
+<Exercise question="Ein Beweis für $x<2$ endet bei $x\le2$. Was fehlt? Erfinde eine zweiteilige Voraussetzung mit unbenutzter Annahme; erkläre deren Weglassen.">
 
-Der Beweis muss $x=2$ ausschließen; die schwächere Schranke lässt diesen Wert zu. Damit wird nicht behauptet, dass $2$ die ursprünglichen Voraussetzungen erfüllt. Ein neues Beispiel: Aus $1<x<4$ folgt $x<5$; die obere Schranke genügt. Ohne $x>1$ gilt der Anspruch für alle reellen Zahlen unter $4$, auch negative. Das ist ein stärkerer Satz, den ebenfalls die Transitivität beweist.
+Schließe $x=2$ aus, das die schwächere Grenze erlaubt; damit erfüllt es nicht automatisch ursprüngliche Voraussetzungen. Beispiel: $1<x<4$ impliziert $x<5$ durch Obergrenze und Transitivität. Ohne $x>1$ kommen negative Reelle unter vier hinzu: stärkerer, ebenfalls transitiv bewiesener Satz.
 
 </Exercise>
 
@@ -158,12 +158,12 @@ Der Beweis muss $x=2$ ausschließen; die schwächere Schranke lässt diesen Wert
 
 <Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
 
-Die Negation wählt genau die falsche Zeile der Implikation: $A$ wahr und $B$ falsch. Um „Wenn ich bestehe, lade ich zum Essen ein“ zu widerlegen, muss ich bestehen und nicht einladen. Beide Teile zu negieren würde einen anderen Fall auswählen.
+Negation wählt wahres $A$, falsches $B$: „Wenn ich bestehe, lade ich zum Essen ein“ widerlegt Bestehen ohne Einladung. Beide Teile zu negieren wählt einen anderen Fall.
 
 
 <span id="from-logische-verknuepfungen-eine-implikation-lesen"></span>
 
-Wer **beide** Richtungen verlangt, schreibt $A \Leftrightarrow B$, nicht nur $A \Rightarrow B$. Der Teilbarkeitsbeweis unten zeigt, warum eine ungerade Eingabe die Hinrichtung nicht widerlegt.
+**Beide** Richtungen verlangen $A\Leftrightarrow B$, nicht nur $A\Rightarrow B$. Unten können ungerade Eingaben die Teilbarkeits-Hinrichtung nicht widerlegen.
 
 <span id="from-implikation-und-kontraposition"></span>
 
@@ -173,7 +173,7 @@ Wer **beide** Richtungen verlangt, schreibt $A \Leftrightarrow B$, nicht nur $A 
 
 ### Die Aussage ändern und alle Fälle prüfen
 
-Lies das Original $A\Rightarrow B$ als „Wenn $A$, dann $B$“. $A$ und $B$ sind vollständige Aussagen, auch wenn sie mehrere Bedingungen enthalten. Der Bereich bleibt bei den folgenden Umformungen unverändert:
+Lies $A\Rightarrow B$ als „wenn A, dann B“. Transformiere ganze, auch zusammengesetzte Blöcke bei gleichem Bereich:
 
 | Form | Formel | Lesart und Konstruktion |
 | --- | --- | --- |
@@ -182,15 +182,15 @@ Lies das Original $A\Rightarrow B$ als „Wenn $A$, dann $B$“. $A$ und $B$ sin
 | Inverse | $\neg A\Rightarrow\neg B$ | Wenn nicht $A$, dann nicht $B$: negieren ohne Vertauschen |
 | Kontraposition | $\neg B\Rightarrow\neg A$ | Wenn nicht $B$, dann nicht $A$: vertauschen und negieren |
 
-Das sind Definitionen von Umformungen, keine Beweise ihrer Wahrheit. Die Inverse ist auch nicht die Negation des Originals: $\neg(A\Rightarrow B)$ bedeutet $A\land\neg B$, also wahre Voraussetzung und falsche Folgerung gemeinsam.
+Diese Umformungen definieren Aussagen, beweisen sie nicht. Inverse ist keine Negation: $\neg(A\Rightarrow B)$ ist $A\land\neg B$.
 
-Für reelle Zahlen folgt aus über fünf durch Transitivität über zwei. Die Umkehrung, über zwei impliziert über fünf, scheitert bei drei. Die Inverse, höchstens fünf impliziert höchstens zwei, scheitert bei drei und fünf. Die Negation einer strikten Schranke schließt Gleichheit ein. Die Kontraposition, höchstens zwei impliziert höchstens fünf, gilt nach der Ordnung. Manche Umkehrungen und Inversen sind tatsächlich wahr: Aus $x+1=3$ folgt durch Subtraktion $x=2$, die Umkehrung durch Addition; die Inverse folgt, weil $x=2$ die Gleichung $x+1=3$ erzwingen würde. „Nicht allgemein äquivalent“ heißt nicht „immer verschieden“.
+Reelle über fünf liegen transitiv über zwei. Umkehrung scheitert bei drei; Inverse (höchstens fünf impliziert höchstens zwei) bei drei und fünf, mit Gleichheit. Kontraposition (höchstens zwei impliziert höchstens fünf) gilt nach Ordnung. Manche Umkehrungen/Inversen stimmen: $x+1=3$ impliziert $x=2$ durch Subtraktion, Umkehrung durch Addition, Inverse weil $x=2$ die Gleichung erzwingen würde. Nicht allgemein äquivalent heißt nicht immer verschieden.
 
-Ändere nun die Wahrheitswerte in der Aktivität und vergleiche ganze Spalten statt nur einer Zeile.
+Variiere die Aktivität; vergleiche ganze Spalten statt einer Zeile.
 
 <Interactive kind="logic" preset="implication" id="implication-lab" display />
 
-Übereinstimmung in der ausgewählten Zeile reicht für Äquivalenz nicht aus. Vergleiche alle vier Zeilen. Die Kontraposition stimmt immer mit dem Original überein; Umkehrung und Inverse stimmen miteinander überein, müssen aber nicht dem Original entsprechen.
+Alle vier Zeilen zählen: Original und Kontraposition stimmen überein; Umkehrung und Inverse miteinander, nicht zwingend mit dem Original.
 
 <Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
 
@@ -199,19 +199,19 @@ Für reelle Zahlen folgt aus über fünf durch Transitivität über zwei. Die Um
 
 ### Warum die Formen paarweise übereinstimmen
 
-Das Original ist genau dann falsch, wenn $A$ wahr und $B$ falsch ist. Die Kontraposition ist genau dann falsch, wenn $\neg B$ wahr und $\neg A$ falsch ist: im selben Fall. In jeder anderen Zeile sind beide wahr. Das beweist ihre logische Äquivalenz aus der Implikationsdefinition, auch bei falschem Original. Ebenso sind Umkehrung und Inverse genau bei falschem $A$ und wahrem $B$ falsch und stimmen daher miteinander überein. Das sind hergeleitete Ergebnisse, keine weiteren Definitionen.
+Das Original scheitert nur bei wahrem $A$, falschem $B$. Kontraposition scheitert bei wahrem $\neg B$, falschem $\neg A$: dieselbe Zeile. Sonst gelten beide; daraus folgt Äquivalenz auch falscher Originale. Umkehrung und Inverse scheitern beide nur bei falschem $A$, wahrem $B$: auch ihre Übereinstimmung ist hergeleitet.
 
-Um eine Implikation im ganzen Bereich zu beweisen, darf man deshalb ihre Kontraposition im selben Bereich beweisen. Für $x^2\ne0\Rightarrow x\ne0$ über den reellen Zahlen beweist man etwa $x=0\Rightarrow x^2=0$ durch Einsetzen und Multiplikation mit null. Die umgeformte Aussage nur hinzuschreiben würde sie nicht beweisen.
+Beweise daher eine bereichsweite Implikation durch ihre Kontraposition im selben Bereich. Für reelles $x^2\ne0\Rightarrow x\ne0$ beweise $x=0\Rightarrow x^2=0$ durch Ersetzung und Nullmultiplikation, nicht nur durch Hinschreiben.
 
-Für ganze Blöcke hat $(0<x<1)\Rightarrow x<2$ die Umkehrung $x<2\Rightarrow(0<x<1)$, die Inverse $((x\le0)\lor(x\ge1))\Rightarrow x\ge2$ und die Kontraposition $x\ge2\Rightarrow((x\le0)\lor(x\ge1))$. Die Negation des ganzen Intervalls verlangt mindestens eine verletzte Schranke, nicht beide. Wäre die ursprüngliche Folgerung eine Konjunktion, wäre ihre Negation in der neuen Voraussetzung ebenfalls eine Disjunktion von Fehlern.
+Für $(0<x<1)\Rightarrow x<2$: Umkehrung $x<2\Rightarrow(0<x<1)$; Inverse $((x\le0)\lor(x\ge1))\Rightarrow x\ge2$; Kontraposition $x\ge2\Rightarrow((x\le0)\lor(x\ge1))$. Ganze Intervalle durch mindestens eine verletzte Grenze negieren, nicht beide. Die Negation einer Konjunktion als Folgerung ergibt ebenso ein ODER von Fehlern.
 
-Bei zusammengesetzter Folgerung lautet die Kontraposition von $(x>5)\Rightarrow((x>2)\land(x>0))$ so: $((x\le2)\lor(x\le0))\Rightarrow(x\le5)$. Gelesen: „Wenn $x$ höchstens zwei oder höchstens null ist, ist es höchstens fünf.“ Ein fehlgeschlagener Teil genügt zur Negation der alten Konjunktion; beide Fehler zu verlangen würde die Voraussetzung ändern. In jeder Alternative liefert die Ordnung $x\le5$ und beweist damit die umgeformte Aussage für alle reellen Eingaben.
+Für $(x>5)\Rightarrow((x>2)\land(x>0))$ ergibt Kontraposition $((x\le2)\lor(x\le0))\Rightarrow(x\le5)$: „höchstens zwei oder höchstens null impliziert höchstens fünf“. Jede Alternative beweist das Ziel durch Ordnung für alle Reellen. Beide Fehler zu verlangen ändert die Voraussetzung.
 
-Aus $B$ und der Hinrichtung folgt nicht $A$; dieser Fehlschluss heißt **Bejahung der Folgerung**. Aus $\neg A$ folgt nicht $\neg B$; das ist die **Verneinung der Voraussetzung**. Bei der Über-fünf-Regel widerlegt drei den ersten Schluss. Null und drei zeigen, dass bei falscher Voraussetzung beide Werte der Folgerung möglich sind.
+$A$ aus $B$ und der Regel zu folgern **bejaht die Folgerung**; $\neg B$ aus $\neg A$ zu folgern **verneint die Voraussetzung**. Drei widerlegt Ersteres; null und drei zeigen beide Folgerungswerte bei falscher Voraussetzung.
 
-<Exercise question="Bilde Umkehrung, Inverse und Kontraposition von $((x>1)\land(x<4))\Rightarrow(x>0)$ über den reellen Zahlen. Prüfe die Umkehrung bei eins und beweise die Kontraposition. Welche Zeile macht Original und Kontraposition gemeinsam falsch?">
+<Exercise question="Transformiere reell $((x>1)\land(x<4))\Rightarrow(x>0)$ in Umkehrung, Inverse, Kontraposition. Prüfe Umkehrung bei eins; beweise Kontraposition. Nenne die gemeinsame abstrakte falsche Zeile.">
 
-Die Umkehrung ist $x>0\Rightarrow((x>1)\land(x<4))$; sie scheitert bei eins, weil $1>1$ falsch ist. Die Inverse ist $((x\le1)\lor(x\ge4))\Rightarrow x\le0$. Die Kontraposition ist $x\le0\Rightarrow((x\le1)\lor(x\ge4))$: Jede reelle Zahl höchstens null ist höchstens eins, also gilt die erste Alternative. Allgemein ist die gemeinsame falsche Zeile $A$ wahr, $B$ falsch; dann ist $\neg B$ wahr und $\neg A$ falsch. Das ist der einzige Fehlerfall beider Formen und beweist ihre Übereinstimmung in allen Zeilen.
+Umkehrung: $x>0\Rightarrow((x>1)\land(x<4))$, falsch bei eins wegen $1>1$. Inverse: $((x\le1)\lor(x\ge4))\Rightarrow x\le0$. Kontraposition: $x\le0\Rightarrow((x\le1)\lor(x\ge4))$, bewiesen durch $x\le0\le1$. Gemeinsames abstraktes Scheitern: wahres $A$, falsches $B$, also wahres $\neg B$, falsches $\neg A$. Als einziger Fehlerfall beweist das Übereinstimmung.
 
 </Exercise>
 
@@ -220,18 +220,18 @@ Die Umkehrung ist $x>0\Rightarrow((x>1)\land(x<4))$; sie scheitert bei eins, wei
 
 ### Teilbarkeit liefert ein konkretes Beispiel
 
-Schreibe $a | n$, wenn $n=ak$ für eine ganze Zahl $k$ gilt. Das bezeichnet Teilbarkeit, keine Division. Wir beweisen, dass aus $4 | n$ auch $2 | n$ folgt, und vergleichen dann Kontraposition und Umkehrung.
+$a | n$ heißt $n=ak$ für ganzzahliges $k$: Teilbarkeit, keine Division. Beweise $4 | n$ impliziert $2 | n$; vergleiche Kontraposition und Umkehrung.
 
 
 <span id="from-implikation-und-kontraposition-ein-beweis-und-seine-umkehrung"></span>
 
 ### Ein Beweis und seine Umkehrung
 
-Angenommen, 4 teilt $n$. Dann ist $n = 4k$ für ein ganzzahliges $k$. Schreibe $n = 2(2k)$. Da 2k ganzzahlig ist, teilt 2 die Zahl $n$. Das beweist die Hinrichtung für alle ganzen Zahlen statt für einige Beispiele. Die Kontraposition schließt denselben Fall aus: Ein ungerades $n$ kann kein Vielfaches von 4 sein. Die Umkehrung fragt etwas anderes: Garantiert Geradheit die Teilbarkeit durch 4? $n = 6$ widerlegt das. $A$ ist falsch und $B$ wahr; die ursprüngliche Implikation ist wahr, ihre Umkehrung falsch.
+Ist $n=4k$ mit ganzzahligem $k$, dann $n=2(2k)$ mit ganzzahligem $2k$: Zwei teilt $n$ für jede ganze Zahl $n$. Kontraposition: Ungerades $n$ ist kein Vielfaches von vier. Geradheit garantiert keine Viererteilbarkeit: Sechs liefert falsches $A$, wahres $B$, wahres Original und falsche Umkehrung.
 
 <Exercise question="Folgt aus $3 | n$ auch $6 | n$? Nenne ein Gegenbeispiel und die Kontraposition.">
 
-Nein: $n = 3$. Die Kontraposition lautet: „Wenn 6 $n$ nicht teilt, dann teilt 3 $n$ nicht.“ Auch sie ist bei $n = 3$ falsch. Kontraposition erhält den Wahrheitswert auch bei einer falschen Behauptung.
+Nein: $n=3$. Kontraposition: „Wenn sechs n nicht teilt, teilt drei n nicht“, ebenfalls falsch bei drei. Kontraposition erhält auch Falschheit.
 
 </Exercise>
 
@@ -239,20 +239,20 @@ Nein: $n = 3$. Die Kontraposition lautet: „Wenn 6 $n$ nicht teilt, dann teilt 
 
 ## Implikation und Modellannahmen
 
-Sieben liegt über fünf und über zwei. Das sind Eigenschaften derselben unveränderten Zahl, keine Wirkungen des Vergleichs mit fünf.
+Sieben übersteigt fünf und zwei unverändert; Vergleiche beschreiben Eigenschaften, keine Ursachen.
 
-Materiale Implikation ist **wahrheitsfunktional**: Die Wahrheitswerte ihrer Teile bestimmen ihren Wert. Die Wahrheitstabelle hat keine zusätzliche Spalte für „geschieht früher“, „erklärt“ oder „verursacht“. In gewöhnlicher Arithmetik ist
+Materiale Implikation ist **wahrheitsfunktional**, bestimmt durch Teilwerte, ohne Zusatzspalte für Zeit, Erklärung oder Ursache. In üblicher Arithmetik ist
 
 $$(0=1)\Rightarrow(2=3)$$
 
-wahr, weil die Voraussetzung falsch ist. Gelesen: „Wenn null gleich eins ist, dann ist zwei gleich drei.“ Beide Teile bleiben falsch; der Pfeil beweist keinen davon und liefert keinen kausalen Mechanismus.
+wahr wegen falscher Voraussetzung: „Wenn null gleich eins, dann zwei gleich drei.“ Beide Teile bleiben falsch; der Pfeil beweist keinen und liefert keine Ursache.
 
 
 <span id="from-implication-and-model-assumptions-eine-genaue-regel-in-einem-hypothetischen-modell"></span>
 
 ### Eine genaue Regel in einem hypothetischen Modell
 
-Ein Gerätemodell habe für alle betrachteten Zustände die vereinbarte Regel: **Ist der Schalter geschlossen, leuchtet die Lampe**. Das ist eine Annahme dieses Beispiels, keine überprüfte Behauptung über echte Geräte. $S$ bedeute „Der Schalter ist geschlossen“, $L$ bedeute „Die Lampe leuchtet“.
+Ein hypothetisches Gerätemodell setze für jeden betrachteten Zustand voraus: **geschlossener Schalter impliziert leuchtende Lampe**. Keine verifizierte Geräteaussage. $S$ heißt Schalter geschlossen, $L$ Lampe leuchtet.
 
 | Im Modell gegeben | Erlaubte Folgerung | Grund |
 | --- | --- | --- |
@@ -261,21 +261,21 @@ Ein Gerätemodell habe für alle betrachteten Zustände die vereinbarte Regel: *
 | $S\Rightarrow L$ und $L$ | Keine Aussage über $S$ | Die Umkehrung fehlt |
 | $S\Rightarrow L$ und $\neg S$ | Keine Aussage über $L$ | Die Inverse fehlt |
 
-Lies $\neg L\Rightarrow\neg S$ als „Wenn die Lampe nicht leuchtet, ist der Schalter nicht geschlossen“. Das kennzeichnet Zustände, die zur angenommenen Regel passen. Es behauptet nicht, dass Dunkelheit den Schalter öffnet oder eine physikalische Ursache umkehrt.
+$\neg L\Rightarrow\neg S$ liest sich „dunkle Lampe impliziert nichtgeschlossenen Schalter“: regelkonforme Zustände, nicht Dunkelheit als Schalteröffner oder umgekehrte Ursache.
 
-Der Zustand $S$ falsch, $L$ wahr erfüllt die Hinrichtung. Eine leuchtende Lampe erzwingt aus dieser Regel allein also keinen geschlossenen Schalter. Unsere Vertrautheit mit Lampen ersetzt keine fehlende Modellannahme.
+Falsches $S$, wahres $L$ erfüllt die Regel: Licht allein erzwingt keinen geschlossenen Schalter. Vertrautheit ersetzt keine Modellannahme.
 
 
 <span id="from-implication-and-model-assumptions-schluss-und-beobachtung-beantworten-verschiedene-fragen"></span>
 
 ### Schluss und Beobachtung beantworten verschiedene Fragen
 
-Eine einzelne Implikation auszuwerten heißt zu prüfen, ob ihre Werte das verbotene Paar wahr/falsch bilden. Einen mathematischen Satz zu beweisen heißt zu begründen, warum keine erlaubte Eingabe dieses Paar erzeugt: Über fünf impliziert über zwei für alle reellen Zahlen durch Transitivität der Ordnung. Ein empirisches Modell zu stützen heißt zu prüfen, ob seine Annahmen zum gemeinten System und zu den Belegen passen. Ein korrekter Schluss innerhalb eines Modells beweist dessen Genauigkeit nicht.
+Auswertung prüft ein Paar auf wahr/falsch; Satzbeweis schließt dieses Paar für alle erlaubten Eingaben aus (über fünf impliziert über zwei durch Ordnungstransitivität). Empirische Stützung prüft Annahmen gegen System und Belege. Korrekte Modellschlüsse validieren das Modell nicht.
 
-Meldet eine zutreffende Beobachtung im gemeinten Kontext einen geschlossenen Schalter und eine dunkle Lampe, widerspricht sie der genauen Regel. Beide können dort nicht zugleich stimmen. Die Logik allein findet weder ein defektes Bauteil noch eine fehlende Bedingung oder die physikalische Ursache. Dafür braucht es weitere Untersuchung.
+Zutreffend beobachteter geschlossener Schalter mit dunkler Lampe widerspricht der genauen Regel im gemeinten Kontext. Beides kann nicht stimmen. Logik diagnostiziert allein weder defekte Teile, fehlende Bedingungen noch Ursachen; weiter untersuchen.
 
-<Exercise question="Es gelte nur die Modellregel $S\Rightarrow L$. Laut Bericht leuchtet die Lampe. Gib einen Zustand an, der Regel und Bericht erfüllt, aber die Folgerung eines geschlossenen Schalters falsch macht. Was ändert ein Bericht über einen geschlossenen Schalter und eine dunkle Lampe?">
+<Exercise question="Bei nur $S\Rightarrow L$ und gemeldetem Licht: Widerlege ‘Schalter geschlossen’ durch einen passenden Zustand. Was ändert gemeldeter geschlossener Schalter mit dunkler Lampe?">
 
-Wähle $S$ falsch und $L$ wahr. Implikation und Bericht sind wahr, $S$ ist aber falsch; der Rückwärtsschluss ist ungültig. Ein geschlossener Schalter mit dunkler Lampe macht dagegen $S$ wahr und $L$ falsch. Bei zutreffenden Beschreibungen widerlegt das die genaue Regel für diesen Kontext, diagnostiziert aber nicht das Gerät. Eine zusätzliche Umkehrung würde einen neuen Schluss erlauben, wäre jedoch auch eine neue, begründungsbedürftige Modellannahme.
+Falsches $S$, wahres $L$ erfüllt Regel und Bericht, widerlegt aber Rückwärtsschluss. Wahres $S$, falsches $L$ widerlegt bei zutreffender Beschreibung die genaue Regel, ohne Gerätediagnose. Ergänzte Umkehrung erlaubt neuen Schluss, braucht aber eine zusätzlich begründete Annahme.
 
 </Exercise>

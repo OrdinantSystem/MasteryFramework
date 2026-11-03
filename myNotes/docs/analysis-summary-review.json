@@ -1,0 +1,1232 @@
+{
+  "baseline_commit": "4bb67fc7345a5c1bfb29a8b3703f15c50b4e77c3",
+  "status": "accepted-final-sources",
+  "scope": "Analysis I only: twenty lessons and overview review in EN/DE/ES",
+  "review_method": {
+    "A": {
+      "initial_full_review_files": 21,
+      "fresh_repaired_file_pairs": 15,
+      "unchanged_initial_reviews_hash_carried": 6
+    },
+    "B": {
+      "initial_full_review_files": 15,
+      "fresh_repaired_file_pairs": 15,
+      "unchanged_initial_reviews_hash_carried": 0
+    },
+    "C": {
+      "initial_full_review_files": 27,
+      "fresh_repaired_file_pairs": 6,
+      "unchanged_initial_reviews_hash_carried": 21
+    }
+  },
+  "findings": [
+    {
+      "id": "A-01",
+      "status": "resolved",
+      "assessment": "All three locales now explicitly restrict OR-of-failures to negating a conjunctive conclusion. The disjunctive countermodel no longer contradicts the text."
+    },
+    {
+      "id": "A-02",
+      "status": "resolved",
+      "assessment": "Both Spanish task and answer now say no tienen por qué. Identical solution sets need not contain all reals; equivalence does not prohibit identities true everywhere. The zero example remains."
+    },
+    {
+      "id": "A-03",
+      "status": "resolved",
+      "assessment": "EN no need, DE nicht nötig and ES no hace falta restore optionality. The separate exercise instruction to leave the interior unchanged remains task-specific, not a general mathematical prohibition."
+    },
+    {
+      "id": "A-04",
+      "status": "resolved",
+      "assessment": "DE and ES now separate the reals containing both classes from the irrational-only failure of integer-quotient representation; the sqrt(2) example and set difference remain."
+    },
+    {
+      "id": "A-05",
+      "status": "resolved",
+      "assessment": "Whole-number restriction restored in all three integer definitions; zero convention and negative example retained."
+    },
+    {
+      "id": "A-06",
+      "status": "resolved",
+      "assessment": "All three locales explain contained but not equal before the proof obligation. Both every-element inclusion and a larger-set element absent from the smaller set are explicit; all four strictness witnesses remain."
+    },
+    {
+      "id": "A-07",
+      "status": "resolved",
+      "assessment": "Spanish known-truth/known-falsity questions are complete clauses; German endpoint argument names first, second and third conditions and both directions; Spanish table explanation explicitly names the conjunction and retains both reasons for failed implication/equivalence."
+    },
+    {
+      "id": "A-08",
+      "status": "resolved",
+      "assessment": "All five named terminology targets repaired: Spanish evenness is ser par/is par, German equivalent-in-domain phrase is ordinary wording, Integer and Integerproben replaced by ganze Zahl and Zahlenproben."
+    },
+    {
+      "id": "A-09",
+      "status": "resolved",
+      "assessment": "All three named agreement/imperative targets repaired to número real arbitrario, supón and un x real fijo; independent-direction reasoning and arbitrary-real scope unchanged."
+    },
+    {
+      "id": "B-01",
+      "status": "resolved",
+      "assessment": "All three questions now state exactly two tokens IN TOTAL, both nonblue. Only A excludes every candidate; B explicitly retains unchecked contents. The existing answer follows again."
+    },
+    {
+      "id": "B-02",
+      "status": "resolved",
+      "assessment": "Condition/Bedingung/condición explicitly defines the predicate; meaningfulness for each allowed object and fixed other parameters remain in the same paragraph."
+    },
+    {
+      "id": "B-03",
+      "status": "resolved",
+      "assessment": "Can/kann/puede restores sufficiency, not necessity, of a complete finite permission table. The infinite-domain sampling limitation and shared-implies-separate argument remain."
+    },
+    {
+      "id": "B-04",
+      "status": "resolved",
+      "assessment": "All three repaired answers explicitly assert a fixed person who cannot read a book on each shelf, with the book on that shelf and permitted to depend on it. No intrinsic-illegibility or ownership claim remains in the repaired sentence. German class membership reads in the established class context."
+    },
+    {
+      "id": "B-05",
+      "status": "resolved",
+      "assessment": "The targeted German and Spanish closure/positive-one explanation and corresponding answer are now grammatical complete sentences: real addition preserves membership and adding positive one makes the result greater than the input. Targeted five/six wording, blue-token existence, odd-card existence and empty-universal wording preserve their meanings. Other terse recap phrasing remains, but the repaired passages no longer require reconstructing a missing comparison."
+    },
+    {
+      "id": "B-06",
+      "status": "resolved",
+      "assessment": "Each locale now restricts the domain OF a true universal statement, including the empty set. Enlargement may introduce failure; restricting a false claim does not prove the original. No truth property is assigned to a domain."
+    },
+    {
+      "id": "B-07",
+      "status": "resolved",
+      "assessment": "Each hint unambiguously negates the whole conjunction. The adjacent answer retains inclusive OR and the red-unnumbered separating example, not two simultaneous failures."
+    },
+    {
+      "id": "B-08",
+      "status": "resolved",
+      "assessment": "The Spanish deferred prompt explicitly reconstructs all four complements and all four conditional rows before deriving the NEGATION of convergence."
+    },
+    {
+      "id": "B-09",
+      "status": "resolved",
+      "assessment": "All nine deferred production/mutation instructions are restored: change the collection from two successes to none; write a new four-sentence proof and label its sentence roles; construct and justify zero/one/multiple-success examples. The fourth zero/one/two comparison prompt and practice wrappers remain."
+    },
+    {
+      "id": "B-10",
+      "status": "resolved",
+      "assessment": "Receipt-only P3 advice is recorded as y=3 VERSUS y=2, not the fraction 3/2. The actual lesson displays forall x in {1,2}: x<y; y=3 makes it true, y=2 makes it false at x=2. An assigned free value enables evaluation without syntactically binding y. Corrected objective ordinal 8 is included in this report for all locales; original receipt and shared integration map are intentionally untouched."
+    },
+    {
+      "id": "C-01",
+      "status": "resolved",
+      "assessment": [
+        {
+          "path": "src/content/lessons/en/analysis/reading-sequence-convergence.mdx",
+          "line": 123,
+          "reviewed_wording": "Choice dependence permits tolerance and fixed context, not later $n$. Proof dependence concerns the estimate’s justification. Correct choice order cannot repair false arithmetic, and correct arithmetic cannot repair a witness chosen after the test index. Constant $N$ may ignore tolerance."
+        },
+        {
+          "path": "src/content/lessons/de/analysis/reading-sequence-convergence.mdx",
+          "line": 123,
+          "reviewed_wording": "Wahlabhängigkeit erlaubt Toleranz und festen Kontext, nicht späteres $n$. Beweisabhängigkeit betrifft die Schätzungsbegründung. Die richtige Wahlreihenfolge behebt keine falsche Rechnung, und eine richtige Rechnung behebt keine Zeugenwahl nach dem Prüfindex. Konstantes $N$ darf die Toleranz ignorieren."
+        },
+        {
+          "path": "src/content/lessons/es/analysis/reading-sequence-convergence.mdx",
+          "line": 123,
+          "reviewed_wording": "La dependencia de elección permite tolerancia y contexto fijo, no el $n$ posterior. La de justificación concierne a la estimación. El orden correcto de elección no corrige cuentas falsas, y las cuentas correctas no corrigen la elección de un testigo después del índice de prueba. Un $N$ constante puede ignorar la tolerancia."
+        }
+      ]
+    },
+    {
+      "id": "C-02",
+      "status": "resolved",
+      "assessment": [
+        {
+          "path": "src/content/lessons/en/analysis/reading-sequence-convergence.mdx",
+          "line": 291,
+          "reviewed_wording": "Later, reconstruct the full proof, identifying where the existence of a natural threshold and positive reciprocal order enter; logical negation does not require this proof."
+        },
+        {
+          "path": "src/content/lessons/de/analysis/reading-sequence-convergence.mdx",
+          "line": 291,
+          "reviewed_wording": "Rekonstruiere später den vollständigen Beweis und benenne, wo die Existenz eines natürlichen Startindex und die positive Kehrwertordnung eingehen; logische Negation benötigt diesen Beweis nicht."
+        },
+        {
+          "path": "src/content/lessons/es/analysis/reading-sequence-convergence.mdx",
+          "line": 291,
+          "reviewed_wording": "Reconstruye después la prueba completa e indica dónde intervienen la existencia de un umbral natural y el orden de recíprocos positivos; la negación lógica no requiere esta prueba."
+        }
+      ]
+    },
+    {
+      "id": "C-03",
+      "status": "resolved",
+      "assessment": [
+        {
+          "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+          "line": 35,
+          "reviewed_wording": "A real sequence assigns one real term to every positive natural index. Zero is excluded here; specify other conventions. Here $n$ is the index, $a_n$ is the term at that index, and $a$ is the whole function. Subscripts do not multiply; the arrow specifies domains, not convergence."
+        },
+        {
+          "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+          "line": 56,
+          "reviewed_wording": "A tail includes $N$ and all later indices: from $N=3$ the device gives only threes. Both $N$ and $n$ are natural numbers: $N$ starts the tail, and $n$ is the index being tested. Zero then always one agrees with constant one from two onward, but is unequal to it."
+        },
+        {
+          "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+          "line": 137,
+          "reviewed_wording": "$x-y$ is displacement from $y$ to $x$; absolute value gives length. Reversing subtraction negates displacement. A number and its opposite have equal absolute values. For a positive input, both absolute values equal that input; for a negative input, both equal its positive opposite; at zero, both equal zero. Hence $d(x,y)=d(y,x)$ universally."
+        },
+        {
+          "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+          "line": 35,
+          "reviewed_wording": "Eine reelle Folge ordnet jedem positiven natürlichen Index genau ein reelles Glied zu. Null ist hier ausgeschlossen; andere Konventionen sind anzugeben. Dabei ist $n$ der Index, $a_n$ das Glied an diesem Index und $a$ die ganze Funktion. Indizes multiplizieren nicht; der Pfeil nennt Bereiche, nicht Konvergenz."
+        },
+        {
+          "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+          "line": 56,
+          "reviewed_wording": "Ein Endstück enthält das Glied am Index $N$ und alle späteren Glieder: Beim Gerät sind ab $N=3$ alle Glieder drei. Beide Indizes sind natürliche Zahlen: $N$ beginnt das Endstück, und $n$ ist der zu prüfende Index. Die Folge mit null am Anfang und danach immer eins stimmt ab Index zwei mit der konstanten Einsfolge überein; die beiden Folgen sind aber nicht gleich."
+        },
+        {
+          "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+          "line": 137,
+          "reviewed_wording": "$x-y$ ist Verschiebung von $y$ zu $x$; ihr Betrag gibt die Länge. Umgekehrte Subtraktion negiert sie. Eine Zahl und ihre Gegenzahl haben gleiche Beträge. Bei positiver Eingabe sind beide Beträge gleich dem Eingabewert; bei negativer Eingabe sind beide gleich seiner positiven Gegenzahl; bei null sind beide null. Somit gilt $d(x,y)=d(y,x)$ allgemein."
+        },
+        {
+          "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+          "line": 35,
+          "reviewed_wording": "Una sucesión real asigna un término real a cada índice natural positivo. Aquí cero queda excluido; indica otras convenciones. Aquí $n$ es el índice, $a_n$ es el término en ese índice y $a$ es la función completa. Los subíndices no multiplican; la flecha indica dominios, no convergencia."
+        },
+        {
+          "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+          "line": 56,
+          "reviewed_wording": "Una cola incluye el término de índice $N$ y todos los posteriores: desde $N=3$, el aparato solo da treses. Tanto $N$ como $n$ son naturales: $N$ inicia la cola y $n$ es el índice que se comprueba. La sucesión que empieza con cero y sigue siempre con uno coincide desde el índice dos con la sucesión constante uno, pero las dos sucesiones no son iguales."
+        },
+        {
+          "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+          "line": 137,
+          "reviewed_wording": "$x-y$ es desplazamiento de $y$ a $x$; su valor absoluto da longitud. Invertir la resta lo niega. Un número y su opuesto tienen el mismo valor absoluto. Si la entrada es positiva, ambos valores absolutos son iguales a ella; si es negativa, ambos son iguales a su opuesto positivo; si es cero, ambos son cero. Así, $d(x,y)=d(y,x)$ universalmente."
+        }
+      ]
+    },
+    {
+      "id": "C-04",
+      "status": "resolved",
+      "assessment": [
+        {
+          "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+          "line": 107,
+          "reviewed_wording": "Later, construct two different continuations of one three-term prefix: why do observations not define a sequence?"
+        },
+        {
+          "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+          "line": 107,
+          "reviewed_wording": "Konstruiere später zwei verschiedene Fortsetzungen desselben Drei-Glieder-Anfangs: Warum definieren Beobachtungen keine Folge?"
+        },
+        {
+          "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+          "line": 107,
+          "reviewed_wording": "Construye después dos continuaciones distintas del mismo prefijo de tres términos: ¿por qué observar no define una sucesión?"
+        }
+      ]
+    },
+    {
+      "id": "C-05",
+      "status": "resolved",
+      "assessment": [
+        {
+          "path": "src/content/lessons/en/analysis/reading-sequence-convergence.mdx",
+          "line": 227,
+          "reviewed_wording": "Optional, not required for [logical negation](../negating-sequence-convergence/#from-negating-sequence-convergence). Accept without proof: **Archimedean unboundedness**, every real bound is exceeded by some positive natural number; **positive reciprocal order**, increasing a positive denominator decreases or preserves its reciprocal. Quantifier notation proves neither fact."
+        },
+        {
+          "path": "src/content/lessons/de/analysis/reading-sequence-convergence.mdx",
+          "line": 227,
+          "reviewed_wording": "Optional, nicht nötig für [logische Negation](../negating-sequence-convergence/#from-negating-sequence-convergence). Akzeptiere ohne Beweis: **Archimedische Unbeschränktheit**, zu jeder reellen Schranke gibt es eine größere positive natürliche Zahl; **positive Kehrwertordnung**, größere positive Nenner liefern kleinere oder gleiche Kehrwerte. Quantorenschreibweise beweist beides nicht."
+        },
+        {
+          "path": "src/content/lessons/es/analysis/reading-sequence-convergence.mdx",
+          "line": 227,
+          "reviewed_wording": "Opcional, no necesaria para [negación lógica](../negating-sequence-convergence/#from-negating-sequence-convergence). Acepta sin prueba: **propiedad arquimediana**, toda cota real es superada por algún natural positivo; **orden de recíprocos positivos**, aumentar un denominador positivo disminuye o mantiene su recíproco. La notación de cuantificadores no demuestra estos hechos."
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "src/content/lessons/de/analysis/simultaneous-conditions.mdx",
+      "baseline_sha256": "b64fa01a2b6b8772867e5594754c66418452374e89f645ea409c03ce16506672",
+      "reviewed_sha256": "77f281c1010bb666b8e276972a7662d9e3b1aa0aad3ce1f16bf3817acdf8b5c8",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "77f281c1010bb666b8e276972a7662d9e3b1aa0aad3ce1f16bf3817acdf8b5c8",
+        "verdict": "pass",
+        "method": "Carried initial independent full-baseline/current review including answers ONLY after frozen baseline SHA-256 and actual final bytes SHA-256 matched the initial reviewed inputs exactly; no repair diff.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/beweissprache-und-methoden.mdx",
+      "baseline_sha256": "96c8be337e6cc547fd567f977c37c30078ccbc4a3e27de0071dbb42b4a3aed56",
+      "reviewed_sha256": "4a39fde11f31cb369523939a4e67ba1637c9a0fe096dee9769f5979044655ce5",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "4a39fde11f31cb369523939a4e67ba1637c9a0fe096dee9769f5979044655ce5",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/implikation-und-kontraposition.mdx",
+      "baseline_sha256": "6548654867e2e3396f495672d812ff8f1b23343abc080ce18119e0ffbe01c46a",
+      "reviewed_sha256": "8ec07760aa93bded97453fd9e41aeb1c86fc63d881185bc5301a3b3fa268686b",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "8ec07760aa93bded97453fd9e41aeb1c86fc63d881185bc5301a3b3fa268686b",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/negating-universal-statements.mdx",
+      "baseline_sha256": "2f9350f91ad0458189eb6b6bba369ed2519bc7bc94fbf50b86af9e21aeafdd08",
+      "reviewed_sha256": "699502c642880f4b9af8ea24ac5946de110250d3d65c3c72e97c28462895df65",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "699502c642880f4b9af8ea24ac5946de110250d3d65c3c72e97c28462895df65",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/quantifier-order.mdx",
+      "baseline_sha256": "53cdc8e110cdb884794c307bd226d8534926e47acf166f8f140dffb086752950",
+      "reviewed_sha256": "b5e80085990c66bb512987011279259bd61b8f331fd198a83027ab4ee3c5e7c2",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "b5e80085990c66bb512987011279259bd61b8f331fd198a83027ab4ee3c5e7c2",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/aussagen-und-aussageformen.mdx",
+      "baseline_sha256": "7e20f8cecdb5e41ef02a94867df296dfddce6fc7bb3287d3a7bb491a51120846",
+      "reviewed_sha256": "d67c2da06c996591da1d92222896a2b54fa2508c73f678634573c828adea656a",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "d67c2da06c996591da1d92222896a2b54fa2508c73f678634573c828adea656a",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/reading-sequence-convergence.mdx",
+      "baseline_sha256": "2b24744b92d1a1c5113215fe10380af36560190cfb3dc84d38187d4899d95c95",
+      "reviewed_sha256": "53e473b817cab45c5b88643386110c562181419bcfcc37b32d451a1fcaec75e7",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "53e473b817cab45c5b88643386110c562181419bcfcc37b32d451a1fcaec75e7",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/current paired-line semantic and EN/DE/ES wording read, lines 1–298; identical lines shown once, every different baseline/current line shown in full, including every question, hint and answer. Exact pre-repair/current patch and inverse independently replayed.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/boolesche-grundgesetze.mdx",
+      "baseline_sha256": "c39bd507ae0ea1063016872c3ec52340c3db16ddeecb1509699ac7a0d85cc7d3",
+      "reviewed_sha256": "2501e1d22b3aa181e7237174a72a248f65cee93465d8cacbdf1596c675f043bb",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "2501e1d22b3aa181e7237174a72a248f65cee93465d8cacbdf1596c675f043bb",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/eindeutiges-komplement.mdx",
+      "baseline_sha256": "19af0fb438f9cba57716dd56c8f56fa00b163dd77d5e2f1d80cca79b65fa8a2b",
+      "reviewed_sha256": "60c9d075d7366cd4e4cd46d36822de6914fc1c8a87e80056aaf0fa8e9b526dcc",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "60c9d075d7366cd4e4cd46d36822de6914fc1c8a87e80056aaf0fa8e9b526dcc",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/negating-nested-statements.mdx",
+      "baseline_sha256": "ce421197963f37bb6e57426a080a17753a7fb3dddaa013d011901c07dec677d5",
+      "reviewed_sha256": "b16b96c65e63895751bbf725eeb14d1bdec0003eaa99d21f3d60b98139514095",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "b16b96c65e63895751bbf725eeb14d1bdec0003eaa99d21f3d60b98139514095",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/logische-verknuepfungen.mdx",
+      "baseline_sha256": "5208a7d40f6026078399c9eb112187784b9bc7a72d317f036bb5093ae1577f2b",
+      "reviewed_sha256": "8dbf3d482fae5fc747e19e41712e1052530c08f416cb7a3e6bb4867130426f01",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "8dbf3d482fae5fc747e19e41712e1052530c08f416cb7a3e6bb4867130426f01",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/nand-schaltungen.mdx",
+      "baseline_sha256": "14225312c3bd004c17daa2434dab2a4cb6e04e203a9090599ebc9087676c8778",
+      "reviewed_sha256": "0a8a3585fa474c6e6ffab2a04daebc13dc3a09ee782d92ca7311cb153f508116",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "0a8a3585fa474c6e6ffab2a04daebc13dc3a09ee782d92ca7311cb153f508116",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/biconditionals-and-equivalent-conditions.mdx",
+      "baseline_sha256": "ad8e08626c7bfe94fe3f5523f9d21ce4adc380da4dab0950756b8b0a78b19f6b",
+      "reviewed_sha256": "3bee8682c0e67fe1fc46655ac412443310c283c27bbdc55fad2f656e406a5a09",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "3bee8682c0e67fe1fc46655ac412443310c283c27bbdc55fad2f656e406a5a09",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+      "baseline_sha256": "a5a1c231f7d73498f5b0aede31d25a4e8ba39251ce018c9f372e4b46402bfdba",
+      "reviewed_sha256": "2b41d82839bce9b501acfd0b416166702d4e646b871d9ccfddbe3fb74c0960e4",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "2b41d82839bce9b501acfd0b416166702d4e646b871d9ccfddbe3fb74c0960e4",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/current paired-line semantic and EN/DE/ES wording read, lines 1–195; identical lines shown once, every different baseline/current line shown in full, including every question, hint and answer. Exact pre-repair/current patch and inverse independently replayed.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/zahlenmengen.mdx",
+      "baseline_sha256": "f5986d92d4cc22ad38ef8f9b6a20f211a4b2d4b02a68bec218adf9f615fbc6e8",
+      "reviewed_sha256": "985accfef7d6d36da49ecdfb4f310ce9d3ca10062a12ac9c582f4ef2d5450191",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "985accfef7d6d36da49ecdfb4f310ce9d3ca10062a12ac9c582f4ef2d5450191",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/logical-negation.mdx",
+      "baseline_sha256": "b6d3a16adca765d2b23822da4ba6dfd3b7ed5608b6509fdd8e50beebade629a6",
+      "reviewed_sha256": "ad6922943787a28fa27aaa779eb733f6bf9eca02375f5a657d298794519f1b90",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "ad6922943787a28fa27aaa779eb733f6bf9eca02375f5a657d298794519f1b90",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/existence-and-uniqueness.mdx",
+      "baseline_sha256": "7b02fdb40eedb3d864349ce1e6a2cef152f986c9258f82ede7fdc52c0a7e5f2d",
+      "reviewed_sha256": "544414bf3477751f1567f83b35149657ae82d0def844a96c1dc86d8a58e49e35",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "544414bf3477751f1567f83b35149657ae82d0def844a96c1dc86d8a58e49e35",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/widerspruch-und-irrationalitaet.mdx",
+      "baseline_sha256": "bf244ad284c536245bbd2b8b3f9aba9663e0bf7948d2249821ebd07cb6e02d75",
+      "reviewed_sha256": "6391d840cb287db27639fa8402bfbdafb4e748fd6216b34d64d56d7bc9c79ae2",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "6391d840cb287db27639fa8402bfbdafb4e748fd6216b34d64d56d7bc9c79ae2",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/universal-statements-and-domains.mdx",
+      "baseline_sha256": "69b8ede486731696bcc3bfbc5ff8994896732fe8834c8f07391deee6b7e1d8ba",
+      "reviewed_sha256": "57caad966a48002b1dcbb4878a967f76e2db9748c72ba783ac07cb278b8dfd19",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "57caad966a48002b1dcbb4878a967f76e2db9748c72ba783ac07cb278b8dfd19",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/de/analysis/negating-sequence-convergence.mdx",
+      "baseline_sha256": "9cdd10bf8f88b84076bb56dc7580ce3dc967ebdaa7f282fc6731e09604d63ef4",
+      "reviewed_sha256": "b296b748ddba69fdff9d585d438f91984b8f3ff00ee80773fe66fcc7f05ef7a9",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "b296b748ddba69fdff9d585d438f91984b8f3ff00ee80773fe66fcc7f05ef7a9",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/simultaneous-conditions.mdx",
+      "baseline_sha256": "1f1528123c84c8ef0e3cdf5678cd3cfea6504a462874e41c378976eda51a1e51",
+      "reviewed_sha256": "7d5ec4f501b6a683890a8e54cc65f989cdbf21d19d7012626101a4b3d66b7aa7",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "7d5ec4f501b6a683890a8e54cc65f989cdbf21d19d7012626101a4b3d66b7aa7",
+        "verdict": "pass",
+        "method": "Carried initial independent full-baseline/current review including answers ONLY after frozen baseline SHA-256 and actual final bytes SHA-256 matched the initial reviewed inputs exactly; no repair diff.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/beweissprache-und-methoden.mdx",
+      "baseline_sha256": "e52c78d013f3c30508a1f9b524d2b4e3b91110cda7d0b12987e0e5eb39ef616f",
+      "reviewed_sha256": "acc291554c8958addec0a25a4d360c1d5d7e88a65ab88d0169bd342d771be895",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "acc291554c8958addec0a25a4d360c1d5d7e88a65ab88d0169bd342d771be895",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/implikation-und-kontraposition.mdx",
+      "baseline_sha256": "855eb12b1c80a5baad222bdfac416fcba2c2b27386b5d6251d7f13430e7500df",
+      "reviewed_sha256": "e637eb66674a2ff92d7feaeafed0f4024e9fe46926090698b3e5277daa245b2e",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "e637eb66674a2ff92d7feaeafed0f4024e9fe46926090698b3e5277daa245b2e",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/negating-universal-statements.mdx",
+      "baseline_sha256": "9e0a2d15609807c2a4cdc253f9cbe1f8229de90179fde8199ea05968c2a4b9bf",
+      "reviewed_sha256": "2d9c067481a14c38ad76117451a7f5d25289ec6db8d392ab87ce22994f01d4a9",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "2d9c067481a14c38ad76117451a7f5d25289ec6db8d392ab87ce22994f01d4a9",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/quantifier-order.mdx",
+      "baseline_sha256": "8866a743d44be3260bbc1b8729c307b91705ef6b22a79277070296b234775d24",
+      "reviewed_sha256": "51eb6f4ab2794b58fd4bddd8310c9b1666adff24a0338f03264bceb3c2a8d152",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "51eb6f4ab2794b58fd4bddd8310c9b1666adff24a0338f03264bceb3c2a8d152",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/aussagen-und-aussageformen.mdx",
+      "baseline_sha256": "67a8a1426233c7f94654649e83787197a9904ab204c4ad549f61b362a7adf8df",
+      "reviewed_sha256": "8adb24cfc8e84d0353f527592fa8884f07e569d017033a24975cb89f67a1f85d",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "8adb24cfc8e84d0353f527592fa8884f07e569d017033a24975cb89f67a1f85d",
+        "verdict": "pass",
+        "method": "Carried initial independent full-baseline/current review including answers ONLY after frozen baseline SHA-256 and actual final bytes SHA-256 matched the initial reviewed inputs exactly; no repair diff.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/reading-sequence-convergence.mdx",
+      "baseline_sha256": "181aa94a7a471b4b6deb191b44f44dba7ef8e8670489a9ea8895ae65811cca16",
+      "reviewed_sha256": "777260b1b4636d6734e432bc64dc2886e285eb9534d685b4e10f82376f01f07d",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "777260b1b4636d6734e432bc64dc2886e285eb9534d685b4e10f82376f01f07d",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/current paired-line semantic and EN/DE/ES wording read, lines 1–298; identical lines shown once, every different baseline/current line shown in full, including every question, hint and answer. Exact pre-repair/current patch and inverse independently replayed.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/boolesche-grundgesetze.mdx",
+      "baseline_sha256": "0009843f4633df5c83eb1867fe6086975623952c7a596ca65334a09bde1ff5ab",
+      "reviewed_sha256": "3efda9928d37019831b963c27091e08eff50188db56d871d7d753250cc4cdd87",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "3efda9928d37019831b963c27091e08eff50188db56d871d7d753250cc4cdd87",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/eindeutiges-komplement.mdx",
+      "baseline_sha256": "b9d0f3b9298ecaa7e12e8e739abc1e8cbed17caaa820b05000ab13e0ed1d095d",
+      "reviewed_sha256": "0d724f60eb2997818d03b2a3799286d6c232041965d212b3b2fd5a58ef738fa3",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "0d724f60eb2997818d03b2a3799286d6c232041965d212b3b2fd5a58ef738fa3",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/negating-nested-statements.mdx",
+      "baseline_sha256": "59049f9dff7d6f4fd4decbedb9e0bf9bf13245b18eef817384b6b48099250a25",
+      "reviewed_sha256": "bc076ef24e8c294a18e84f14fdeb32f31795be4d1ad479b2b340a53792a57878",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "bc076ef24e8c294a18e84f14fdeb32f31795be4d1ad479b2b340a53792a57878",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/logische-verknuepfungen.mdx",
+      "baseline_sha256": "2ddee154f768ec36c5aef72bf6154627bf210812f29e9f5ae19ded869b9449c3",
+      "reviewed_sha256": "d42742a39f34ff5dfa49076788dda8179f2220735fccdf7e1a1f5382c1ca7e23",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "d42742a39f34ff5dfa49076788dda8179f2220735fccdf7e1a1f5382c1ca7e23",
+        "verdict": "pass",
+        "method": "Carried initial independent full-baseline/current review including answers ONLY after frozen baseline SHA-256 and actual final bytes SHA-256 matched the initial reviewed inputs exactly; no repair diff.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/nand-schaltungen.mdx",
+      "baseline_sha256": "2b4486e74e2da9e4aa46b13a2a8eb06222276e3dde0b77bf8f6dd4efbac2eb1f",
+      "reviewed_sha256": "6a7e0c6c2d38fd661f78c93784a4d91740f33ef8a6e1ddff4c2e0417e2778280",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "6a7e0c6c2d38fd661f78c93784a4d91740f33ef8a6e1ddff4c2e0417e2778280",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/biconditionals-and-equivalent-conditions.mdx",
+      "baseline_sha256": "30d140953e6b3f83fee9c63cbb1a2d4d2824d4fe9a7d4a973cdc63cb821dc82c",
+      "reviewed_sha256": "0a99b345492cc55b4f5a18e93970eb8d6408f5a361e64528b1c615068aeabf07",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "0a99b345492cc55b4f5a18e93970eb8d6408f5a361e64528b1c615068aeabf07",
+        "verdict": "pass",
+        "method": "Carried initial independent full-baseline/current review including answers ONLY after frozen baseline SHA-256 and actual final bytes SHA-256 matched the initial reviewed inputs exactly; no repair diff.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+      "baseline_sha256": "af2e579ebf520ffe3720d2003f3a0f1ca71784adba8341ffc436c008b21d5338",
+      "reviewed_sha256": "3312a48f0c3c3dfcb9094dc2bccf77a8e525bff774ba3553129c1f445623938e",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "3312a48f0c3c3dfcb9094dc2bccf77a8e525bff774ba3553129c1f445623938e",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/current paired-line semantic and EN/DE/ES wording read, lines 1–195; identical lines shown once, every different baseline/current line shown in full, including every question, hint and answer. Exact pre-repair/current patch and inverse independently replayed.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/zahlenmengen.mdx",
+      "baseline_sha256": "fcdd18a85d6e79b52293969a8dabce0d4a27bf1c7f8a1258b521d259197ce02b",
+      "reviewed_sha256": "16c06dbf2210a1329eb0b9e7b8407ca6b4f41e73ac59080fafddfa62b8d34a6e",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "16c06dbf2210a1329eb0b9e7b8407ca6b4f41e73ac59080fafddfa62b8d34a6e",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/logical-negation.mdx",
+      "baseline_sha256": "a30ae51c816774318343fdc829ca4e482ee677f1c8370b025001b81908408266",
+      "reviewed_sha256": "6c6e2d08f025547e9be20cf356c161dcbe3b5f7641c2b4197ebc6b322317be45",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "6c6e2d08f025547e9be20cf356c161dcbe3b5f7641c2b4197ebc6b322317be45",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/existence-and-uniqueness.mdx",
+      "baseline_sha256": "0593555186d3150dcae0b291d535120542263779b0e55076f37b6e445f4e1501",
+      "reviewed_sha256": "b220b6f4c8145ff1d9cad63405a72767e7ef50adc8c25f09d216a28447222211",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "b220b6f4c8145ff1d9cad63405a72767e7ef50adc8c25f09d216a28447222211",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/widerspruch-und-irrationalitaet.mdx",
+      "baseline_sha256": "411c9f72e9b7e090392c9b9803c7c3942372a33dc93d54336a934c5617073a81",
+      "reviewed_sha256": "262f09eadf2586d97fe564ae65bc93e43ea0686030f06051421fbeaa4f9033f9",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "262f09eadf2586d97fe564ae65bc93e43ea0686030f06051421fbeaa4f9033f9",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/universal-statements-and-domains.mdx",
+      "baseline_sha256": "cb0ed70dd619f4f70612732cef0f4a1f5571438f01ccf41be2a711a0814acb76",
+      "reviewed_sha256": "e75fbf5b1e74850b4c85e0903f3eca9326d3955ea922bbd67c17902905017fe7",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "e75fbf5b1e74850b4c85e0903f3eca9326d3955ea922bbd67c17902905017fe7",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/en/analysis/negating-sequence-convergence.mdx",
+      "baseline_sha256": "d62b94e8390ef2b9c92c6fa174676b5f220138523cdba1da3cd6582076141f63",
+      "reviewed_sha256": "70ab4360cd5f5a29450764b723abde11c49bda28ac232b4f5ec4af468809e920",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "70ab4360cd5f5a29450764b723abde11c49bda28ac232b4f5ec4af468809e920",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/simultaneous-conditions.mdx",
+      "baseline_sha256": "a5b130575775d5535e9516500409ce3fcdf4c5e26128221f2b83bed52907967b",
+      "reviewed_sha256": "63e8bfaada6150a371fd65e7ca0947004562c05a1395cde69c6124142001e363",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "63e8bfaada6150a371fd65e7ca0947004562c05a1395cde69c6124142001e363",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/beweissprache-und-methoden.mdx",
+      "baseline_sha256": "2f06b4498671112ad3e0b94f199a862df632b8506999b4d9f77f438e75833572",
+      "reviewed_sha256": "2d09e201d2bad94a7fa5f1df78bd873fa8f44d6309ff0dfc0590f5b661471fa0",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "2d09e201d2bad94a7fa5f1df78bd873fa8f44d6309ff0dfc0590f5b661471fa0",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/implikation-und-kontraposition.mdx",
+      "baseline_sha256": "969784fe1929a18ea2abfe3b267b4f8b55c6d36eaed211d6365a8e3f9663d30a",
+      "reviewed_sha256": "be4785b1be75fe5d5835cc01c8fe6a70a45a7358c0ea25c387bc2111c0eaee26",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "be4785b1be75fe5d5835cc01c8fe6a70a45a7358c0ea25c387bc2111c0eaee26",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/negating-universal-statements.mdx",
+      "baseline_sha256": "f5183c1467f06021f15752d45b42e1d685e7f3338f63768532436bae1affcf2b",
+      "reviewed_sha256": "d5bc7c106b1b9e9ab9c424b67841c7da2e64750c3b73979397345fe1f7ce60ce",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "d5bc7c106b1b9e9ab9c424b67841c7da2e64750c3b73979397345fe1f7ce60ce",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/quantifier-order.mdx",
+      "baseline_sha256": "9c6ea6afd74bba5dfc33eb06d3b783b631074d9b70cfd61b2de55ce3bc5bfc7c",
+      "reviewed_sha256": "24403a098804e9452d261e17dd154da56725a1b77dad10f7cd9078af1360d72e",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "24403a098804e9452d261e17dd154da56725a1b77dad10f7cd9078af1360d72e",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/aussagen-und-aussageformen.mdx",
+      "baseline_sha256": "87ef1310e90e83fe6adfae01369093bac85c74204614a013fc855a886449b345",
+      "reviewed_sha256": "331ca88f8cb7aeaa8d42e7419be576b0834719ad7b3818b3e8a4ffdd897d231e",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "331ca88f8cb7aeaa8d42e7419be576b0834719ad7b3818b3e8a4ffdd897d231e",
+        "verdict": "pass",
+        "method": "Carried initial independent full-baseline/current review including answers ONLY after frozen baseline SHA-256 and actual final bytes SHA-256 matched the initial reviewed inputs exactly; no repair diff.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/reading-sequence-convergence.mdx",
+      "baseline_sha256": "3724f7d87f06c70b473ad9657e0aecbdd70ecf07c1edf6e0a920b02e377950d7",
+      "reviewed_sha256": "10ec22988e1a0aee054c45a515e961c9de1ff6a45e79cc95f379f1035477f972",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "10ec22988e1a0aee054c45a515e961c9de1ff6a45e79cc95f379f1035477f972",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/current paired-line semantic and EN/DE/ES wording read, lines 1–298; identical lines shown once, every different baseline/current line shown in full, including every question, hint and answer. Exact pre-repair/current patch and inverse independently replayed.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/boolesche-grundgesetze.mdx",
+      "baseline_sha256": "92c7d7c2e9d906a2fb2ba7bbac9404b810dc66e8caab2a86e7a936425840dd6a",
+      "reviewed_sha256": "0729b46b079fbf2d54b4a1d68a0dc4657619db644e56328614f72ff50c077ed9",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "0729b46b079fbf2d54b4a1d68a0dc4657619db644e56328614f72ff50c077ed9",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/eindeutiges-komplement.mdx",
+      "baseline_sha256": "a60bd48befe1f33957d5280cd54fb72d8ca850e4010ef561b8859fbfaa255ef6",
+      "reviewed_sha256": "d7fc276a4184c6e4e6762c2bf4e535ad6ab302cf4c2bf80cb0de37abf8d7fa2f",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "d7fc276a4184c6e4e6762c2bf4e535ad6ab302cf4c2bf80cb0de37abf8d7fa2f",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/negating-nested-statements.mdx",
+      "baseline_sha256": "7211e4f508b47dc2bb03fe531ba74a2f43b8c437a8a155337629e83103d743b4",
+      "reviewed_sha256": "2646a40c103d67d03a34357326aac7628716f5767dd38aa2a14ac087b1ac9b86",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "2646a40c103d67d03a34357326aac7628716f5767dd38aa2a14ac087b1ac9b86",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/logische-verknuepfungen.mdx",
+      "baseline_sha256": "b028f9ed6620e331947f7071c66539c0f7f0f6327a951db78ed5cf900a13a459",
+      "reviewed_sha256": "ced7faad723f72ffbec13c939037585e9ac6f1b434d5995a164660c65a08d4f6",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "ced7faad723f72ffbec13c939037585e9ac6f1b434d5995a164660c65a08d4f6",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/nand-schaltungen.mdx",
+      "baseline_sha256": "6def2229f524aea1335d05fa7fbb01e4fc577e9ca93b0d055ebb14d40595579e",
+      "reviewed_sha256": "1ef050a76f64b13aa7d49ca9c678d7083b66fc68756b5d64b092407cbcd02bfa",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "1ef050a76f64b13aa7d49ca9c678d7083b66fc68756b5d64b092407cbcd02bfa",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/biconditionals-and-equivalent-conditions.mdx",
+      "baseline_sha256": "b8651eb0cb61d7d2329fd3d8cfe2bf803518d120ae1b92b7981144dd8a060e5e",
+      "reviewed_sha256": "ae7c064d6adb748eadf791c34988792c6acedbdce7c3f46b4df9c9fc599952d8",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "ae7c064d6adb748eadf791c34988792c6acedbdce7c3f46b4df9c9fc599952d8",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+      "baseline_sha256": "af01d70dfaeebbeb6dd08a4fd38e0570e903eab2c46d9fd5b91fc63ac0215b6d",
+      "reviewed_sha256": "921e7c77ebbbb860b40d6cfc52a0c8af2a26466a95f7e0e819a5fc88cdff3a7f",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "921e7c77ebbbb860b40d6cfc52a0c8af2a26466a95f7e0e819a5fc88cdff3a7f",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/current paired-line semantic and EN/DE/ES wording read, lines 1–195; identical lines shown once, every different baseline/current line shown in full, including every question, hint and answer. Exact pre-repair/current patch and inverse independently replayed.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/zahlenmengen.mdx",
+      "baseline_sha256": "3cb081e97e28558f33090be777026b1d789834b6c9d983f450c0ff6c36c7f3c6",
+      "reviewed_sha256": "afb70e7424de16c7e44627694f8aea5fe2c132d3bb3013368db5874143e3c84c",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "afb70e7424de16c7e44627694f8aea5fe2c132d3bb3013368db5874143e3c84c",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/logical-negation.mdx",
+      "baseline_sha256": "32a14ddb7edadf071cef0b4572b5978c5555492f0bc24159a12b39d03f8c283b",
+      "reviewed_sha256": "6d3b89216114dbaddfca5d8938fe11693b6f9d383b7b4d206df8dd8df8b338d9",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane A, plus separate post-repair acceptance",
+        "reviewed_sha256": "6d3b89216114dbaddfca5d8938fe11693b6f9d383b7b4d206df8dd8df8b338d9",
+        "verdict": "pass",
+        "method": "Fresh complete frozen-baseline/final reading via lossless merged stream, including every unchanged line, all tasks, hints, answers, tables and metadata; exact initial-review-to-final diff inspected; forward patch replay and inverse reconstruction match initial independent-review SHA-256.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/existence-and-uniqueness.mdx",
+      "baseline_sha256": "6703ba89c6660a07e4b7c2344dbb241849bacdb444f6b19a812872b4c1d79e1c",
+      "reviewed_sha256": "bd8ee89a8df6b75c02cd827d25e79363704371dcf8ff3a6eab71145328e19f2b",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "bd8ee89a8df6b75c02cd827d25e79363704371dcf8ff3a6eab71145328e19f2b",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/widerspruch-und-irrationalitaet.mdx",
+      "baseline_sha256": "37177fb0e142321abe8a3daaa065eaa096fef6364c40a85ae21f154a7c144e18",
+      "reviewed_sha256": "d66ba8f309f0d04aec3b877d6a56cd3f2d83fb453c550478b4b149f9d913a283",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "d66ba8f309f0d04aec3b877d6a56cd3f2d83fb453c550478b4b149f9d913a283",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/universal-statements-and-domains.mdx",
+      "baseline_sha256": "6881fbcbb51f9912c37f3c3c8b463948c8afb4aeba85805759dde96ff18cfc39",
+      "reviewed_sha256": "02391d571dc333394475e043b50b079dccdfbf25494da6fdf91f24bb34653011",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane B, plus separate post-repair acceptance",
+        "reviewed_sha256": "02391d571dc333394475e043b50b079dccdfbf25494da6fdf91f24bb34653011",
+        "verdict": "pass",
+        "method": "Independent full paragraph-level BASE/NOW/BOTH source comparison. BOTH is byte-identical content read for both versions, not an omission. Includes frontmatter, all formulas/tables/tags, task context, hints, every complete answer, standalone reference answer and deferred tasks; then checked first-review task/goal map and exact repair delta.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/lessons/es/analysis/negating-sequence-convergence.mdx",
+      "baseline_sha256": "dec9d33dec6ad0af71ec5484cc72441d1bb1023b99141e5f1b1a5b096a57a45c",
+      "reviewed_sha256": "c719a8b831a05b025b21f921a1a391227d03d038a999a8bb790d37e6c1c64c28",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "c719a8b831a05b025b21f921a1a391227d03d038a999a8bb790d37e6c1c64c28",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": false
+      }
+    },
+    {
+      "path": "src/content/course-guides/de/analysis.mdx",
+      "baseline_sha256": "b7b7204de74fca7d1b50b1d7f542bdad8f44e8688709d90f0908c0c2e3482422",
+      "reviewed_sha256": "192637b90626e5873182cce3fdb353007f4d474f2e2f992a370ad7ba11f3cd2b",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "192637b90626e5873182cce3fdb353007f4d474f2e2f992a370ad7ba11f3cd2b",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/course-guides/en/analysis.mdx",
+      "baseline_sha256": "acfca20e541505f074f4c1f043b6a1d9b42548238cf5dd476639d82b780ffd7b",
+      "reviewed_sha256": "25f26c0c6cd0a53e40e2fffeeee2e1806f0acb90039da7fead9beb6dd500dbea",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "25f26c0c6cd0a53e40e2fffeeee2e1806f0acb90039da7fead9beb6dd500dbea",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": true
+      }
+    },
+    {
+      "path": "src/content/course-guides/es/analysis.mdx",
+      "baseline_sha256": "1189e34f2ac485cb4c2b2b082b91551b678b09420a77de54cd867f2124019988",
+      "reviewed_sha256": "a38efff326bfcc1e850b76a162f9d495558f7a44ae84c67c3c2f9dd7ded74c1e",
+      "review": {
+        "baseline_full_read": true,
+        "current_full_read": true,
+        "including_answers": true,
+        "independent_reviewer": "Independent agent review lane C, plus separate post-repair acceptance",
+        "reviewed_sha256": "a38efff326bfcc1e850b76a162f9d495558f7a44ae84c67c3c2f9dd7ded74c1e",
+        "verdict": "pass",
+        "method": "No fresh full-source reread claimed: carry forward review-C.json full baseline/current read including all questions, hints and answers; independently recomputed frozen baseline hash against baseline.json inventory and current hash against initial review and edited-pass1.json, with exact current=initial-reviewed-content equality.",
+        "reference_tasks_reviewed": true
+      }
+    }
+  ],
+  "metrics": {
+    "de": {
+      "before": 26354,
+      "after": 16844,
+      "raw_before": 32032,
+      "raw_after": 22066,
+      "reduction_percent": 36.08560370342263,
+      "raw_reduction_percent": 31.11263736263736
+    },
+    "en": {
+      "before": 27673,
+      "after": 17518,
+      "raw_before": 33346,
+      "raw_after": 22733,
+      "reduction_percent": 36.696418892060855,
+      "raw_reduction_percent": 31.826905775805194
+    },
+    "es": {
+      "before": 28575,
+      "after": 18075,
+      "raw_before": 34191,
+      "raw_after": 23275,
+      "reduction_percent": 36.74540682414698,
+      "raw_reduction_percent": 31.9265303734901
+    }
+  },
+  "limitations": [
+    "Independent agent editorial/mathematical/native-prose review, not human expert certification. Content reviewStatus remains unreviewed.",
+    "Fresh post-repair baseline/final full reads cover36 changed files.27 unchanged files carry the initial full paired-source review only after exact hash identity checks.",
+    "Prose counts include closed practice, questions, hints and answers; raw-body counts also include mathematics and markup. Neither is a reading-time or mastery estimate."
+  ]
+}

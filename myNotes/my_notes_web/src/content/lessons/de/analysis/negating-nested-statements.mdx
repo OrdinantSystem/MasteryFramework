@@ -21,20 +21,20 @@ additionalSources: []
 
 ## Verschachtelte Aussagen negieren
 
-„Alle Studierenden können ein Regalbuch lesen“ scheitert, wenn eine studierende Person kein Regalbuch lesen kann. „Ein Regalbuch ist für alle Studierenden lesbar“ scheitert, wenn es zu jedem vorgeschlagenen Buch eine studierende Person gibt, die es nicht lesen kann. Diese Person darf vom Buch abhängen. Getrennte Leseerfolge liefern nicht unbedingt ein gemeinsames Buch.
+Getrennte Lesbarkeit scheitert an einer Person ohne lesbares Regalbuch; gemeinsame an möglicherweise anderer Person je Buch. Getrennte Erfolge liefern nicht unbedingt ein gemeinsames Buch.
 
 
 <span id="from-negating-nested-statements-auf-einem-endlichen-bereich-von-außen-nach-innen"></span>
 
 ### Auf einem endlichen Bereich von außen nach innen
 
-Sei $D=\{1,2\}$. Die Aussage $\forall x\in D\;\exists y\in D\;(y>x)$ scheitert bei $x=2$: Kein erlaubtes $y$ ist größer. Leite diese Negation her und halte die gesamte innere Existenzbehauptung zusammen.
+Für $D=\{1,2\}$ scheitert $\forall x\in D\;\exists y\in D\;(y>x)$ bei zwei: Kein $y$ ist größer. Negiere innere Existenz als Einheit:
 
 $$
 \begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
 $$
 
-Der erste Schritt wählt zur Negation aller Eingaben eine scheiternde Eingabe. Der zweite sagt, dass dafür kein Zeuge passt, also jeder Kandidat scheitert. Der letzte schließt bei nicht größer die Gleichheit ein. Wähle zwei einmal und halte sie beim Prüfen von eins und zwei fest.
+Wähle scheiternde Eingabe; kein Zeuge passt, also scheitern alle Kandidaten. Nicht größer enthält Gleichheit: Fixiere zwei, prüfe eins und zwei.
 
 
 <span id="from-negating-nested-statements-mit-existenz-beginnen"></span>
@@ -45,15 +45,15 @@ $$
 \neg(\exists x\in D\;\forall y\in D\;(y<x))\ \Longleftrightarrow\ \forall x\in D\;\exists y\in D\;(y\ge x).
 $$
 
-Das Original verlangt ein $x$, das jedes Element einschließlich sich selbst strikt übertrifft; das ist nicht die übliche nichtstrenge Maximalbedingung. Für jeden Vorschlag $x$ widerlegt der Test $y=x$ die Aussage. Die Negation gilt mit demselben erlaubten Wert als $y$. Im leeren Bereich ist das Original falsch und die Negation leer wahr; ein äußerer Allquantor ohne Fälle verlangt keinen Zeugen.
+Die Forderung „strikt über jedem Mitglied“ umfasst auch sich selbst, anders als ein nichtstrenges Maximum. Erlaubtes $y=x$ widerlegt jedes $x$ und bezeugt Negation. Leerer Bereich: Original falsch, Negation leer wahr; keine äußeren Allfälle verlangen Zeugen.
 
-Ändert man im ersten Beispiel den endlichen Bereich zu allen reellen Zahlen, wird das Original durch plus eins wahr und seine richtige Negation falsch. Das logische Muster bleibt gleich, die Wahrheit hängt jedoch vom Bereich ab. Richtige symbolische Negation beweist keinen tatsächlichen Fehlerfall.
+Über Reellem macht plus eins die erste Aussage wahr, ihre Negation falsch. Bereich ändert Wahrheit, nicht logisches Muster; symbolische Negation beweist keinen Fehlerfall.
 
 <span id="from-negating-nested-statements-übung"></span>
 
 #### Übung
 
-Negiere: Alle Studierenden dieser Klasse können ein Buch dieses Regals lesen. Bewahre beide Einschränkungen.
+Negiere „Jede Person dieser Klasse kann ein Buch dieses Regals lesen“; erhalte beide Einschränkungen.
 
 <details>
 <summary>Hinweis</summary>
@@ -64,11 +64,11 @@ Wähle zuerst die scheiternde Person.
 
 <Exercise>
 
-Eine studierende Person dieser Klasse kann kein Buch dieses Regals lesen. Diese Person bleibt fest, während jedes Regalbuch für sie scheitert.
+Eine feste Person dieser Klasse kann kein Buch dieses Regals lesen.
 
 </Exercise>
 
-Negiere: Ein Regalbuch ist für alle Studierenden dieser Klasse lesbar. Muss dieselbe studierende Person bei jedem Buch scheitern?
+Negiere „Ein Regalbuch ist allen in dieser Klasse lesbar“. Muss die scheiternde Person fest bleiben?
 
 <details>
 <summary>Hinweis</summary>
@@ -79,7 +79,7 @@ Zuerst Buch, dann scheiternde Person.
 
 <Exercise>
 
-Zu jedem Regalbuch gibt es eine studierende Person aus dieser Klasse, die es nicht lesen kann. Die Person darf vom Buch abhängen. Ein Modell wie rot–blau gibt jeder Person ein lesbares Buch, aber kein gemeinsames.
+Jedes Regalbuch hat eine scheiternde Klassenperson, möglicherweise verschieden. Rot-Blau gibt jeder ein lesbares Buch, keines gemeinsam.
 
 </Exercise>
 
@@ -94,26 +94,26 @@ Die Eingabe ist selbst ein erlaubter Zeuge.
 
 <Exercise>
 
-$\exists x\in D\;\forall y\in D\;(y\ne x)$. Original wahr mit $y=x$; Negation falsch, weil jedes vorgeschlagene $x$ selbst geprüft wird.
+$\exists x\in D\;\forall y\in D\;(y\ne x)$ ist falsch: Jedes $x$ hat erlaubtes $y=x$, das das Original wahr macht.
 
 </Exercise>
 
-Repariere die angebliche Negation von jede reelle Zahl hat eine größere: „Für jedes reelle y gibt es ein reelles x mindestens y“.
+Repariere die vermeintliche Negation von „Jede reelle Zahl hat eine größere“: „Für jedes reelle y gibt es ein reelles x mindestens y“.
 
 <details>
 <summary>Hinweis</summary>
 
-Der Vorschlag ist wahr wie das Original.
+Beide Aussagen sind wahr.
 
 </details>
 
 <Exercise>
 
-Die richtige Negation ist $\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$, falsch, weil $y=x+1$ jeden Vorschlag $x$ widerlegt. Der Vorschlag lässt fälschlich $x$ auf $y$ reagieren.
+$\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$ ist die Negation, falsch, da $y=x+1$ jedes $x$ widerlegt. Der Vorschlag lässt $x$ fälschlich auf $y$ reagieren.
 
 </Exercise>
 
-Negiere: Jede studierende Person hat ein Regal, auf dem jedes Buch für sie lesbar ist.
+Negiere: Jede studierende Person hat ein Regal mit ausschließlich für sie lesbaren Büchern.
 
 <details>
 <summary>Hinweis</summary>
@@ -124,11 +124,11 @@ Binde den Buchbereich weiterhin an das Regal.
 
 <Exercise>
 
-Es gibt eine studierende Person, sodass für jedes Regal ein Buch darauf existiert, das sie nicht lesen kann. Halte die Person fest; nach Vorschlag des Regals darf das ungeeignete Buch davon abhängen.
+Es gibt eine feste Person aus der Klasse, die auf jedem Regal mindestens ein dort stehendes Buch nicht lesen kann. Das Buch darf vom Regal abhängen.
 
 </Exercise>
 
-Rekonstruiere später beide endlichen Beispiele und erkläre dann die Änderung über allen reellen Zahlen.
+Rekonstruiere später beide endlichen Beispiele und ihre reellen Varianten.
 
 
 <span id="from-negating-nested-statements-laut-lesen"></span>
@@ -141,46 +141,46 @@ Es gibt ein x in D, sodass jedes y in D höchstens x ist.
 
 ## Quantifizierte Aussagen schrittweise negieren
 
-„Nicht jede bewerbende Person hat ein Dokument, das jede Prüfung besteht“ besagt, dass es eine bewerbende Person gibt, die kein durchgehend passendes Dokument hat. Für diese feste Person scheitert jedes Dokument an mindestens einer Prüfung. Drei Quantorwörter gleichzeitig zu ändern kann verbergen, welches Objekt fest bleibt. Folge den Klammern von außen nach innen.
+Negiere „Jede bewerbende Person hat ein Dokument für alle Prüfungen“ von außen: Fixiere scheiternde Person; jedes Dokument scheitert irgendwo. Gleichzeitiger Worttausch kann feste Objekte verdecken.
 
-Seien $A$ die Bewerbenden, $B$ die Dokumente und $C$ die Prüfungen. $R(x,y,z)$ bedeute, dass Dokument $y$ Prüfung $z$ für Person $x$ besteht. Alle drei Bereiche sind hier fest. Beginne mit der vollständigen Negation, nicht einer bearbeiteten positiven Aussage:
+Fixiere $A$ Bewerbende, $B$ Dokumente, $C$ Prüfungen; $R(x,y,z)$ bedeutet: $y$ besteht $z$ für $x$. Beginne vollständig negiert:
 
 $$
 \begin{aligned}&\neg(\forall x\in A\;\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\neg(\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\neg(\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\exists z\in C\;\neg R(x,y,z).\end{aligned}
 $$
 
-Das erste Dualgesetz liefert eine bewerbende Person, für die die Anforderung scheitert; das nächste verneint für sie die Existenz eines passenden Dokuments; das letzte liefert für jedes Dokument eine scheiternde Prüfung. Die Person bleibt fest. Die Prüfung darf vom Dokument abhängen. Keine einzelne Prüfung muss alle Dokumente scheitern lassen.
+Fixiere zuerst scheiternde Person; schließe dann passende Dokumente aus; liefere zuletzt fehlgeschlagene Prüfung je Dokument. Prüfungen dürfen wechseln, keine muss alle widerlegen.
 
 
 <span id="from-negating-quantified-statements-step-by-step-warum-jeder-ersatz-zulässig-ist"></span>
 
 ### Warum jeder Ersatz zulässig ist
 
-Behandle die ganze innere Aussage als ein Prädikat der aktuellen Variablen. Das Dualgesetz bewahrt ihren Wahrheitswert bei jeder Belegung bereits festgehaltener äußerer Variablen. Deshalb bleiben auch die Wahrheitswerte der unveränderten äußeren Quantoren erhalten. Wiederholung ergibt eine Äquivalenzkette. Alle Zeilen können falsch sein: Die Kette beschreibt Scheitern, beweist dessen Auftreten aber nicht. Um das Original zu widerlegen, beweise die letzte Formel gesondert.
+Das Dualgesetz jedes ganzen inneren Prädikats erhält Wahrheit für **jede äußere Variablenbelegung**. Unveränderte äußere Quantoren erhalten daher Äquivalenz; Wiederholung beweist die Kette. Alle Zeilen können falsch sein: Widerlegung braucht zusätzlich den Beweis der letzten Fehlerbedingung.
 
 
 <span id="from-negating-quantified-statements-step-by-step-eine-methode-mit-geltungsbereich"></span>
 
 ### Eine Methode mit Geltungsbereich
 
-1. Klammere genau die negierte Aussage ein; Quantoren außerhalb dieses Bereichs bleiben unverändert.
-2. Notiere Variablen in ihrer Reihenfolge, Bereiche und feste Parameter. Freie Vorkommen bleiben frei.
-3. Gehe über einen Quantor: Wechsle seinen Typ und negiere den ganzen Rest.
-4. Wiederhole dies ohne Umkehrung der Reihenfolge, Tausch von Relationsargumenten oder Änderung der Bereiche. Der Buchbereich bleibt an sein Regal gebunden; positive reelle Zahlen bleiben positiv.
-5. Nutze an einem Junktor dessen Negationsregel; negiere auch das letzte Prädikat.
-6. Lies zurück und prüfe die erlaubte frühere Information jedes Zeugen.
+1. Klammere genau den negierten Bereich ein; äußere Quantoren bleiben unverändert.
+2. Notiere Variablenreihenfolge, Bereiche und feste Parameter; freie Vorkommen bleiben frei.
+3. Wechsle einen Quantor und negiere seinen ganzen Rest.
+4. Wiederhole mit unveränderter Reihenfolge, Relationsargumenten und Bereichen: Bücher bleiben regalabhängig, positive Zahlen positiv.
+5. Nutze die Negationsregel jedes Junktors und negiere das Endprädikat.
+6. Lies zurück; prüfe erlaubte frühere Information jedes Zeugen.
 
 $$
 \neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
 $$
 
-Wende die Implikationsnegation der vorigen Lektion an: Ein Dokument widerlegt „wenn unterschrieben, dann bestanden“ genau dann, wenn es unterschrieben ist und nicht besteht. Ein nicht unterschriebenes Dokument widerlegt sie nicht.
+Unterschrieben-und-gescheitert widerlegt „wenn unterschrieben, bestanden“; ohne Unterschrift nicht.
 
 <span id="from-negating-quantified-statements-step-by-step-übung"></span>
 
 #### Übung
 
-Rekonstruiere die Bewerbungsnegation Quantor für Quantor.
+Rekonstruiere Bewerbungsnegation Quantor für Quantor.
 
 <details>
 <summary>Hinweis</summary>
@@ -191,11 +191,11 @@ Halte zuerst die Person fest.
 
 <Exercise>
 
-Es gibt eine bewerbende Person ohne Dokument, das alle Prüfungen besteht; für sie hat jedes Dokument eine Prüfung, an der es scheitert. Also: eine bewerbende Person, jedes Dokument, eine fehlgeschlagene Prüfung.
+Fixiere Person ohne Dokument für alle Prüfungen: Jedes scheitert irgendwo. Also eine Person, jedes Dokument, eine fehlgeschlagene Prüfung.
 
 </Exercise>
 
-Ein positiver reeller Bereich wird in einer Negation durch nichtpositive Zahlen ersetzt. Diagnose?
+Eine Negation macht positive reelle Zahlen nichtpositiv. Diagnose?
 
 <details>
 <summary>Hinweis</summary>
@@ -206,26 +206,26 @@ Prüfe die Bereichsliste.
 
 <Exercise>
 
-Der Bereich wurde komplementiert; kein Dualgesetz erlaubt das. Negiere das Prädikat über derselben erlaubten Sammlung.
+Dualgesetze erhalten Bereiche; negiere Prädikate über derselben Sammlung.
 
 </Exercise>
 
-Negiere: Alle Bewerbenden sind zugelassen oder zertifiziert, mit einschließendem Oder.
+Negiere alle Bewerbenden zugelassen oder zertifiziert (einschließend).
 
 <details>
 <summary>Hinweis</summary>
 
-Ein Oder scheitert nur, wenn beide Teile scheitern.
+Oder scheitert, wenn beide scheitern.
 
 </details>
 
 <Exercise>
 
-Es gibt eine bewerbende Person, die weder zugelassen noch zertifiziert ist. Nur alle durch einige zu ersetzen lässt das Prädikat unnegiert und ist unvollständig.
+Eine Person ist weder zugelassen noch zertifiziert. Nur Quantortausch lässt Prädikatnegation fehlen.
 
 </Exercise>
 
-Negiere: Jedes Dokument besteht, wenn es unterschrieben ist. Kann ein nicht unterschriebenes Dokument widerlegen?
+Negiere „Jedes unterschriebene Dokument besteht“. Widerlegt eines ohne Unterschrift?
 
 <details>
 <summary>Hinweis</summary>
@@ -236,26 +236,26 @@ Verlange eine wahre Voraussetzung.
 
 <Exercise>
 
-Ein Dokument ist unterschrieben und besteht nicht. Kein nicht unterschriebenes widerlegt das Versprechen, unabhängig vom Ergebnis.
+Ein Dokument ist unterschrieben und scheitert. Ohne Unterschrift widerlegt es unabhängig vom Ergebnis nicht.
 
 </Exercise>
 
-Eine Kollegin meint, Äquivalenzschritte allein widerlegten das Original. Was fehlt?
+Widerlegt Äquivalenz allein das Original? Was fehlt?
 
 <details>
 <summary>Hinweis</summary>
 
-Eine ganze Äquivalenzkette darf falsch sein.
+Alle Zeilen könnten falsch sein.
 
 </details>
 
 <Exercise>
 
-Die letzte Fehlerbedingung muss bewiesen werden: Existenzzeugen liefern und alle All-Fälle erfassen.
+Beweise die letzte Fehlerbedingung: Liefere Existenzzeugen und erfasse jeden Allfall.
 
 </Exercise>
 
-Rekonstruiere später die sechs Schritte und erkläre, warum Ersatz innerhalb äußerer Quantoren Äquivalenz bewahrt.
+Rekonstruiere später sechs Schritte und begründe Äquivalenz unter äußeren Quantoren.
 
 
 <span id="from-negating-quantified-statements-step-by-step-laut-lesen"></span>

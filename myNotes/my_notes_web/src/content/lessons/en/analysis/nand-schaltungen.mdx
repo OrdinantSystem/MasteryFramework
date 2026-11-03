@@ -25,7 +25,7 @@ additionalSources: []
 
 <Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
 
-NAND outputs 0 only when both inputs are 1. Its symbol may be written | or ↑. Here | denotes NAND, while $a | n$ in the earlier number-theory example denoted divisibility: context matters. In a circuit, the small circle on the output means negation.
+NAND gives $0$ only for two $1$ inputs. Symbols | or ↑ mean NAND here, unlike divisibility $a | n$. A gate’s output circle means negation.
 
 
 <span id="from-nand-schaltungen-change-inputs-and-follow-the-wires"></span>
@@ -43,11 +43,11 @@ NAND outputs 0 only when both inputs are 1. Its symbol may be written | or ↑. 
 
 <Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
 
-NOT connects A to both inputs of one NAND. AND reuses the first NAND output at both inputs of a second gate: two physical gates, even though the expression repeats a term. OR first negates each input, then NANDs the results: three gates. Since NOT, AND, and OR can all be constructed, NAND is functionally complete.
+NOT ties $A$ to both NAND inputs. AND feeds one NAND output to both inputs of another: two physical gates despite the repeated term. OR negates both inputs, then NANDs them: three gates. Constructing NOT, AND and OR makes NAND functionally complete.
 
 
 <span id="from-nand-schaltungen-following-one-signal"></span>
 
 ## Following one signal
 
-Take $A = 1$ and $B = 0$ in the OR circuit. The first two gates produce $\neg A = 0$ and $\neg B = 1$. The final NAND negates $0 \land  1$, so its output is 1. With $A = B = 0$, the first gates both output 1 and the final output is 0. These traces explain the construction; the identity follows because $\neg (\neg A \land  \neg B) = A \lor  B$ by De Morgan and double negation. One signal may feed several gate inputs without requiring the original gate to be rebuilt.
+For OR with $A=1$, $B=0$, the first gates give $\neg A=0$, $\neg B=1$; the final NAND negates $0\land1$, giving $1$. With $A=B=0$, both first outputs are $1$, giving final $0$. De Morgan and double negation prove the general identity $\neg(\neg A\land\neg B)=A\lor B$. One signal may feed multiple inputs without rebuilding its gate.

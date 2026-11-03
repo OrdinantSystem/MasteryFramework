@@ -21,69 +21,69 @@ additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations
 
 ## Allaussagen und Grundbereiche
 
-Eine Schachtel enthält genau die Karten zwei, vier und sechs. „Jede Karte ist positiv“ ist wahr: Alle drei bestehen die Prüfung. Kommt null hinzu, wird die Aussage falsch. Die meisten Karten bestehen weiterhin, aber „jede“ erlaubt keine Ausnahme. Eine Nullkarte außerhalb der Schachtel wäre unerheblich.
+Eine Schachtel enthält genau zwei, vier und sechs: Jede Karte ist positiv. Null hinzuzufügen widerlegt „jede“, obwohl die meisten positiv bleiben; eine Nullkarte außerhalb ist unerheblich.
 
 
 <span id="from-universal-statements-and-domains-grundbereich-prädikat-und-quantor"></span>
 
 ### Grundbereich, Prädikat und Quantor
 
-Der **Grundbereich** $D$ ist die festgelegte Menge erlaubter Objekte. Ein **Prädikat** $P$ ist eine Bedingung, die für jedes Mitglied sinnvoll ist. Bei festgehaltenen weiteren Parametern schreiben wir
+Der **Grundbereich** $D$ enthält erlaubte Objekte; das **Prädikat** $P$ ist eine Bedingung, die für jedes erlaubte Objekt sinnvoll definiert ist. Bei festen weiteren Parametern schreiben wir:
 
 $$\forall x\in D\;P(x).$$
 
-Gelesen: „Für jedes $x$ in $D$ gilt $P$ von $x$.“ $\forall$ bedeutet für jedes, $\in$ bedeutet gehört zu, und die Klammern in $P(x)$ benennen die Eingabe, keine Multiplikation. Die Formel ist genau dann wahr, wenn jedes Mitglied von $D$ das Prädikat erfüllt; ein erlaubter Fehler macht sie falsch. Das definiert universelle Wahrheit, verspricht aber nicht, dass jede Allaussage wahr sei.
+Gelesen: „Jedes $x$ in $D$ erfüllt $P$.“ $\forall$ bedeutet jedes, $\in$ Zugehörigkeit; $P(x)$ ist Prädikatanwendung, keine Multiplikation. Universelle Wahrheit verlangt alle Mitglieder; ein erlaubter Fehler widerlegt sie. Nicht jede Allaussage ist wahr.
 
-Zum Beispiel sagt $\forall x\in\mathbb R\;(x>0)$ „Jede reelle Zahl ist positiv“ und ist bei null falsch. $\mathbb R$ bezeichnet reelle Zahlen einschließlich null, negativer Zahlen und Brüche. Dieselbe Bedingung gilt auf den positiven ganzen Zahlen, aber nicht auf allen ganzen Zahlen $\mathbb Z$. Minus ein Halb widerlegt keine Aussage über ganze Zahlen, denn es ist nicht ganzzahlig.
+$\forall x\in\mathbb R\;(x>0)$ scheitert bei null. Reelle Zahlen $\mathbb R$ umfassen null, Negative und Brüche. Positivität gilt für positive ganze Zahlen, nicht alle ganzen Zahlen $\mathbb Z$. Minus ein Halb widerlegt keine ganzzahlige Aussage.
 
 
 <span id="from-universal-statements-and-domains-definiert-falsch-oder-außerhalb-der-aussage"></span>
 
 ### Definiert, falsch oder außerhalb der Aussage?
 
-Das sind verschiedene Diagnosen. Eine nicht ganze Eingabe liegt außerhalb eines ganzzahligen Bereichs. Bei null ist $x>0$ sinnvoll und falsch. Bei einer behaupteten Kehrwertaussage über alle reellen Zahlen ist $1/x$ bei null undefiniert: Das ist weder eine gewöhnliche falsche Gleichung noch ein dritter Wahrheitswert.
+Unterscheide eine nichtganzzahlige Eingabe außerhalb des Bereichs, das definierte, falsche $x>0$ bei null und das dort undefinierte $1/x$. Undefiniert ist weder gewöhnlich falsch noch ein dritter Wahrheitswert.
 
 Repariere den Bereich ausdrücklich:
 
 $$\forall x\in\mathbb R\setminus\{0\}\;(x\cdot(1/x)=1).$$
 
-Gelesen: „Für jede reelle Zahl $x$ ungleich null ist $x$ mal ihr Kehrwert gleich eins.“ Die Mengendifferenz entfernt null; die Kehrwerteigenschaft gilt nun für jede Eingabe. Nach unserer Konvention mit expliziten Bereichen ist eine falsche Voraussetzung keine Programmierabfrage, die einem undefinierten Ausdruck einen Wert gibt. Informelle bedingte Schreibweisen brauchen eine vereinbarte Interpretation.
+Ohne null ergibt jede reelle Zahl mal Kehrwert eins. Bei expliziten Bereichen gibt eine falsche Voraussetzung undefinierten Ausdrücken keinen Wert; informelle bedingte Notation braucht eine vereinbarte Interpretation.
 
-Sind alle Prädikate im größeren Grundbereich definiert, kann eine Voraussetzung eine Teilmenge auswählen:
+Eine Voraussetzung wählt eine Teilmenge aus, wenn alle Prädikate im Grundbereich definiert sind:
 
 $$\forall x\in\mathbb R\;((x>5)\Rightarrow(x>2)).$$
 
-Gelesen: „Für jede reelle Zahl $x$ gilt: Wenn $x$ größer als fünf ist, ist $x$ größer als zwei.“ Der Quantor umfasst alle reellen Zahlen; die Voraussetzung wählt die über fünf aus. Außerhalb dieser ausgewählten Teilmenge ist die Implikation wegen falscher Voraussetzung wahr. Innerhalb folgt die Folgerung durch Transitivität der Ordnung. Beide Fälle erfassen den ganzen Grundbereich.
+Reelle Zahlen über fünf übersteigen zwei durch Transitivität. Sonst macht die falsche Voraussetzung die Implikation wahr. Beide Fälle erfassen alle reellen Zahlen, nicht nur die ausgewählte Teilmenge.
 
 
 <span id="from-universal-statements-and-domains-leere-mengen-und-veränderte-bereiche"></span>
 
 ### Leere Mengen und veränderte Bereiche
 
-„Jede Karte in dieser Schachtel ist rot“ ist für eine leere Schachtel wahr: Es gibt darin keine nichtrote Karte. Das liefert keine rote Karte. Ein nichtleerer Raum kann Schachtel und Tisch enthalten, obwohl die eingeschränkte Kartenmenge leer ist. Dazu muss man die formallogische Konvention eines nichtleeren Gesamtuniversums nicht ändern.
+„Jede Karte ist rot“ gilt in der leeren Schachtel: Keine nichtrote Karte existiert, aber auch kein roter Zeuge. Der Raum enthält trotzdem Schachtel und Tisch; ein leerer Teilbereich verlangt kein leeres Gesamtuniversum.
 
-Entfernt man Objekte aus einem Bereich, in dem alle bestehen, kann kein Fehler hinzukommen, auch wenn man alle entfernt. Eine Erweiterung kann scheitern: Null zerstörte die Aussage über positive Karten. Eine Einschränkung einer falschen Allaussage kann einen neuen wahren Satz ergeben, beweist aber nicht den ursprünglichen.
+Schränkt man den Grundbereich einer wahren Allaussage ein, bleibt sie wahr, auch bei Einschränkung auf die leere Menge. Erweitern kann Fehler hinzufügen, wie null. Einschränken einer falschen Allaussage kann einen neuen wahren Satz liefern, nicht den ursprünglichen beweisen.
 
 
 <span id="from-universal-statements-and-domains-was-beweist-einen-satz-über-unendlich-viele-eingaben"></span>
 
 ### Was beweist einen Satz über unendlich viele Eingaben?
 
-Bei einem endlichen Bereich beweist die Prüfung jedes Mitglieds eine Allaussage. Eine endliche Stichprobe genügt nicht für alle reellen Zahlen: Das Argument muss eine beliebige erlaubte Eingabe ohne zusätzliche Voraussetzungen erfassen. Der vollständige Beweis, dass die Addition von zwei jede reelle Zahl vergrößert, steht bei den [Beweismethoden](../beweissprache-und-methoden/#from-beweissprache-und-methoden). Eine Eingabe beliebig zu nennen und dann sieben zu wählen würde diese Allgemeinheit verlieren.
+Vollständige endliche Prüfungen beweisen Allaussagen; Stichproben erfassen nicht alle reellen Zahlen. Ein Argument muss jede erlaubte Eingabe ohne Zusatzannahmen erfassen, nicht „beliebig“ sagen und sieben wählen. Den vollständigen Additionsbeweis für zwei liefern die [Beweismethoden](../beweissprache-und-methoden/#from-beweissprache-und-methoden).
 
-Die Formel $\forall x\in\mathbb R\;(x+a>x)$ hat weiterhin den freien Parameter $a$: Der Quantor bindet $x$, nicht $a$. Für $a=2$ ist sie wahr, für $a=0$ falsch. Eine Wertzuweisung erlaubt die Auswertung, fügt aber keinen geschriebenen Quantor hinzu. Mehr dazu bei [gebundenen Variablen und Geltungsbereichen](../universal-statements-and-domains/#from-bound-variables-and-scope).
+In $\forall x\in\mathbb R\;(x+a>x)$ bleibt $a$ frei: $a=2$ macht wahr, $a=0$ falsch. Wertzuweisung erlaubt Auswertung, keine Bindung; siehe [Geltungsbereiche](../universal-statements-and-domains/#from-bound-variables-and-scope).
 
-Behaupte für eine möglicherweise leere Teilmenge nicht die Existenz eines Mitglieds. Man kann den leeren Fall direkt behandeln und den nichtleeren mit einem beliebigen Mitglied beweisen. Ein üblicher bedingter Beweis darf auch mit einem beliebigen Symbol unter der vorläufigen Annahme seiner Zugehörigkeit argumentieren und die Annahme anschließend aufheben. Das behauptet keine Existenz eines solchen Mitglieds.
+Bei möglicherweise leeren Mengen behandle leeren und nichtleeren Fall getrennt oder argumentiere mit beliebigem Symbol unter vorläufiger Zugehörigkeitsannahme und hebe diese auf. Beides behauptet keine Existenz eines Mitglieds.
 
-<Exercise question="Eine Schachtel enthält nachweislich genau $2$, $4$ und $6$. Warum beweist eine vollständige Prüfung die Positivität jeder Karte, während drei Prüfungen das nicht für alle reellen Zahlen beweisen? Was ändert null, und was bedeutet Nicht-alle-positiv?">
+<Exercise question="Eine Schachtel enthält genau $2$, $4$, $6$. Erkläre vollständige Prüfung gegenüber drei Prüfungen reeller Zahlen, Hinzufügen von null und Nicht-alle-positiv.">
 
-Die drei Karten erschöpfen die Schachtel, aber nicht die reellen Zahlen. Alle drei sind positiv; null fügt einen erlaubten Fehler hinzu und macht die erweiterte Allaussage falsch. Nicht alle positiv heißt, dass mindestens eine Karte nicht positiv ist, nicht dass keine positiv wäre: Die ursprünglichen drei bleiben es.
+Die drei positiven Karten erschöpfen die Schachtel, nicht die reellen Zahlen. Null widerlegt die Allaussage. Nicht alle positiv heißt mindestens ein Fehler, nicht keine positiven: Die ursprünglichen drei bleiben positiv.
 
 </Exercise>
 
-<Exercise question="Unterscheide diese Einwände: minus ein Halb gegen einen Satz über ganze Zahlen; null gegen Jede-reelle-Zahl-ist-positiv; null in einer Kehrwertformel über alle reellen Zahlen. Beweise dann, dass jede reelle Zahl über acht über drei liegt, einschließlich der Fälle mit falscher Voraussetzung.">
+<Exercise question="Ordne minus ein Halb gegen eine ganzzahlige Aussage, null gegen universelle reelle Positivität und null in einer allreellen Kehrwertformel ein. Beweise: Jeder reelle Wert über acht übersteigt drei, auch bei falscher Voraussetzung.">
 
-Minus ein Halb liegt außerhalb des ganzzahligen Bereichs. Null ist ein erlaubter, definierter Fehler der Positivität. Sein Kehrwert ist undefiniert, daher muss die Formel vor der Auswertung repariert werden. Für den letzten Satz sei $x$ beliebig reell. Ist $x>8$, folgt wegen $8>3$ und Transitivität $x>3$. Andernfalls ist die Voraussetzung falsch und die Implikation wahr. Alle reellen Zahlen sind erfasst; die Existenz einer passenden Eingabe wird nicht benötigt.
+Minus ein Halb liegt außerhalb; null widerlegt definierte Positivität, macht aber den Kehrwert undefiniert: Bereich reparieren. Für beliebiges reelles $x$ folgt aus $x>8$ wegen $8>3$ und Transitivität $x>3$. Sonst macht die falsche Voraussetzung die Implikation wahr. Alle reellen Zahlen sind erfasst, ohne Existenz passender Eingaben zu behaupten.
 
 </Exercise>
 
@@ -91,15 +91,15 @@ Minus ein Halb liegt außerhalb des ganzzahligen Bereichs. Null ist ein erlaubte
 
 ## Existenz und Zeugen
 
-Auf einem Tablett liegen Karten mit zwei, vier und sieben. Die Sieben macht „Es gibt eine Karte mit ungerader Zahl“ wahr. Zwei und vier stören nicht: Nicht jede Zahl muss ungerade sein. Ein zweiter Erfolg, neun, würde die Aussage wahr lassen.
+Unter den Karten zwei, vier und sieben bezeugt sieben eine ungerade Karte. Zwei und vier widerlegen Existenz nicht; ein weiterer Erfolg neun erhält sie.
 
 $$
 \exists x\in D\;P(x).
 $$
 
-$D$ ist der Bereich erlaubter Objekte; $P$ ist die geforderte Bedingung, das Prädikat. Der Existenzquantor $\exists$ bedeutet mindestens eines. Mehrere oder sogar alle Elemente dürfen passen, wenn der Bereich nicht leer ist. Weder genau eines noch das Scheitern anderer wird behauptet. Der Quantor bindet $x$ in seinem Geltungsbereich, keine andere Variable in $P$. Sind Bereich, Prädikat und übrige Parameter festgelegt, erhält man eine Aussage. Einen Parameter festzulegen bindet ihn nicht syntaktisch.
+$\exists$ bedeutet: Mindestens ein Mitglied von $D$ erfüllt $P$. Mehrere oder alle dürfen passen; Eindeutigkeit oder andere Fehler folgen nicht. Der Quantor bindet nur $x$ in seinem Bereich. Bereich, Prädikat und übrige Parameter festzulegen erlaubt Auswertung, bindet Parameter aber nicht.
 
-„Es gibt eine rote Marke“ behauptet etwas; „Finde eine rote Marke“ fordert eine Handlung. Existenz ist auch nicht Wissen. Ein verschlossener Beutel kann eine rote Marke enthalten, ohne dass wir es wissen. Unbekannt bedeutet nicht falsch. Ein sicher leerer Beutel liefert dagegen keinen möglichen Zeugen. Eingeschränkte Bereiche dürfen leer sein, obwohl die weitere Welt Objekte enthält.
+„Es gibt eine rote Marke“ behauptet; „Finde eine“ fordert auf. Ein verschlossener Beutel kann unbemerkt eine enthalten: unbekannt heißt nicht falsch. Ein leerer Beutel liefert keinen Zeugen, auch im nichtleeren Universum.
 
 
 <span id="from-existence-and-witnesses-laut-lesen"></span>
@@ -112,20 +112,20 @@ Es gibt mindestens ein x in D, für das P von x gilt.
 
 ## Gebundene Variablen und Geltungsbereiche
 
-Sei $D=\{1,2\}$ und $y$ ein reeller Vergleichswert. In
+Für $D=\{1,2\}$ und festen reellen Vergleichswert $y$ betrachten wir:
 
 $$\forall x\in D\;(x<y)$$
 
-liest man: „Für jedes $x$ in $D$ ist $x$ kleiner als $y$.“ Die Kartenzahl durchläuft $D$; der Vergleichswert bleibt fest. Die Formel ist für $y=3$ wahr, für $y=2$ falsch, weil der strikte Vergleich beim Mitglied zwei scheitert.
+Jedes Mitglied wird mit festem $y$ verglichen: wahr bei $y=3$, falsch bei $y=2$, wo zwei den strikten Vergleich verletzt.
 
 
 <span id="from-bound-variables-and-scope-vorkommen-statt-buchstaben-ein-für-alle-mal-einordnen"></span>
 
 ### Vorkommen statt Buchstaben ein für alle Mal einordnen
 
-Ein **Vorkommen** ist ein bestimmtes Auftreten einer Variablen. Ein Quantor **bindet** Vorkommen seiner benannten Variablen in seinem **Geltungsbereich**, der von ihm erfassten Teilformel. Ohne zuständigen Quantor ist ein Vorkommen **frei**. Benutzt ein innerer Quantor denselben Namen, übernimmt er dessen Vorkommen in seinem eigenen Bereich. Eine Formel ist **offen**, wenn sie ein freies Vorkommen hat, und **geschlossen**, wenn sie keines hat; geschlossen heißt nicht „ohne Buchstaben“.
+Ein Variablen**vorkommen** ist durch seinen benannten Quantor in dessen **Geltungsbereich** (erfasster Teilformel) **gebunden**, sonst **frei**. Ein gleichnamiger innerer Quantor übernimmt lokal. **Offene** Formeln haben freie Vorkommen, **geschlossene** keine, nicht etwa keine Buchstaben.
 
-Im ersten Vergleich ist $x$ gebunden, $y$ frei. Das $x$ unmittelbar nach $\forall$ legt den gebundenen Namen fest; es ist keine weitere externe Eingabe. Die geschriebene Formel ist wegen $y$ offen. Die Angabe $y=3$ erlaubt ihre Auswertung, fügt aber keinen Quantor ein; $y$ bleibt syntaktisch frei.
+Hier ist $x$ gebunden, $y$ frei; das $x$ nach $\forall$ deklariert einen Namen, keine externe Eingabe. $y=3$ wertet die offene Formel aus, ohne $y$ zu binden.
 
 
 <span id="from-bound-variables-and-scope-ein-sicherer-neuer-name-erhält-die-rollen"></span>
@@ -136,11 +136,11 @@ Ein frischer Name liefert
 
 $$\forall t\in D\;(t<y).$$
 
-Gelesen: „Für jedes $t$ in $D$ ist $t$ kleiner als $y$.“ Ändere die Deklaration und genau die von ihr gebundenen Vorkommen; lasse Bereich und freien Vergleichswert unverändert. Dieselben Zahlen werden mit demselben $y$ verglichen.
+Benenne Deklaration und genau ihre gebundenen Vorkommen um; Bereich und freies $y$ bleiben gleich. Dieselben Eingaben werden gleich verglichen.
 
-Die Umbenennung des Quantors in $y$ ergäbe hingegen $\forall y\in D\;(y<y)$. Gelesen: „Jedes $y$ in $D$ ist kleiner als es selbst.“ Das ist auf dem nichtleeren Bereich falsch, anders als das Original bei Vergleichswert drei. Das zuvor freie Vergleichsvorkommen wurde gebunden: **Variablenfang** hat die Aussage verändert.
+Mit $y$ entsteht $\forall y\in D\;(y<y)$: Jedes Mitglied kleiner als es selbst, hier falsch, anders als das Original bei drei. Dieser **Variablenfang** bindet den zuvor freien Vergleichswert.
 
-Nur die Deklaration zu ändern wäre ebenfalls falsch, weil die alten Vorkommen ihr nicht mehr zugeordnet wären. Globales Ersetzen ist unsicher, wenn andere Quantoren oder freie Vorkommen denselben Buchstaben benutzen.
+Nur die Deklaration zu ändern verliert ihre alten Vorkommen. Globales Ersetzen gefährdet andere Quantoren und freie Vorkommen.
 
 
 <span id="from-bound-variables-and-scope-klammern-bestimmen-die-reichweite"></span>
@@ -155,11 +155,11 @@ mit
 
 $$\forall x\in D\;((x<3)\land(x>0)).$$
 
-Die erste Formel liest man „Jedes $x$ in $D$ ist kleiner als drei, und das freie $x$ ist positiv“. Ihr äußerster Junktor ist die Konjunktion. Der Quantor endet vor dem rechten Vergleich. Bei freiem reellem $x=-1$ ist die Gesamtformel falsch, obwohl ihr universeller Teil wahr ist. Dieser freie reelle Wert muss nicht in $D$ liegen.
+Die erste ist eine Konjunktion: Der Quantor endet vor dem letzten freien $x$. Bei reellem $x=-1$ ist sie trotz wahrem Allteil falsch; der freie Wert muss nicht in $D$ liegen.
 
-Die zweite liest man „Jedes $x$ in $D$ ist kleiner als drei und positiv“. Außen steht der Quantor; beide Vergleiche liegen in seinem Bereich. Die Formel ist wahr, weil eins und zwei beide Anforderungen erfüllen. Kein freies $x$ bleibt, daher verändert eine externe Belegung von $x$ die Prüfung nicht.
+Die zweite quantifiziert beide Vergleiche: Eins und zwei sind kleiner als drei und positiv, also ist sie wahr. Kein freies $x$ bleibt für externe Belegungen.
 
-Innerhalb eines Bereichs zu liegen genügt noch nicht zum Gebundensein: In $\forall x\in D\;((x<y)\land(y<3))$ bleiben beide $y$ frei. Für $y=5/2$ ist die Formel wahr; für $y=3$ scheitert der zweite Vergleich. Der Quantor benennt nur $x$.
+In $\forall x\in D\;((x<y)\land(y<3))$ bleiben beide $y$ trotz ihrer Lage im Bereich frei. Bei $y=5/2$ gilt die Formel; bei $y=3$ scheitert der zweite Vergleich.
 
 
 <span id="from-bound-variables-and-scope-eine-feste-bedingung-verschieben-verlangt-eine-bereichsprüfung"></span>
@@ -174,23 +174,23 @@ und
 
 $$(\forall x\in D\;P(x))\land C.$$
 
-Die erste sagt „Für jedes Mitglied gelten $P$ und $C$“; die zweite behauptet getrennt „Jedes Mitglied erfüllt $P$, und $C$ gilt“. Für leeres $D$ und falsches $C$ ist die erste vakuos wahr, die zweite falsch. Die Umformung gilt also nicht allgemein.
+Die erste fordert $P$ und $C$ für jedes Mitglied, die zweite $C$ separat. Bei leerem $D$ und falschem $C$ ist nur die erste vakuos wahr: Die Umformung scheitert.
 
-Für nichtleeres $D$ sind sie äquivalent: Die erste liefert $P$ für jedes Mitglied und über irgendein Mitglied auch $C$. Umgekehrt liefern die getrennte Allaussage und $C$ beide Anforderungen für jedes Mitglied. Nichtleere ermöglicht genau den Schritt, der im leeren Fall scheitert.
+Für nichtleeres $D$ liefert die erste jedes $P$ und über ein Mitglied $C$. Umgekehrt liefern separate Allaussage und $C$ beides für jedes Mitglied. Damit ist die Äquivalenz bewiesen und der fehlende Schritt im leeren Fall benannt.
 
 ### Wenn ein innerer Quantor einen Namen wiederverwendet
 
-Für $D=\{1,2\}$ und $E=\{-1\}$ ist $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ wahr. Das äußere $x$ prüft Positivität in $D$; das innere Negativität in $E$. Es wird nicht dieselbe Eingabe zugleich positiv und negativ verlangt. Benenne nur den inneren Quantor und seinen Vergleich in $t$ um, um das sichtbar zu machen. Eine Umbenennung des äußeren Quantors muss diese inneren Vorkommen unverändert lassen.
+Für $D=\{1,2\}$, $E=\{-1\}$ gilt $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$: Äußere Eingaben sind positiv, innere negativ, nicht dieselbe beides. Benenne inneren Quantor und Vergleich in $t$ um; äußeres Umbenennen muss innere Vorkommen unverändert lassen.
 
-<Exercise question="Benenne für $D=\{1,2\}$ die gebundene Variable in $(\forall x\in D\;(x<3))\land(x>0)$ sicher in $t$ um. Werte dann bei freiem $x=-1$ aus. Ändert sich das letzte Vorkommen?">
+<Exercise question="Benenne für $D=\{1,2\}$ die gebundene Variable in $(\forall x\in D\;(x<3))\land(x>0)$ in $t$ um; werte bei freiem $x=-1$ aus. Ändert sich das letzte Vorkommen?">
 
-Das Ergebnis ist $(\forall t\in D\;(t<3))\land(x>0)$. Nur Deklaration und zugehöriger Vergleich ändern sich. Das letzte $x$ liegt außerhalb des Bereichs und bleibt frei. Bei $x=-1$ ist die Allaussage wahr, der letzte Vergleich falsch; die Konjunktion ist falsch.
+Es entsteht $(\forall t\in D\;(t<3))\land(x>0)$: Nur Deklaration und gebundener Vergleich ändern sich; das letzte $x$ bleibt frei. Bei $x=-1$ ergeben wahrer Allteil und falscher Vergleich eine falsche Konjunktion.
 
 </Exercise>
 
-<Exercise question="Jemand ersetzt $\forall x\in D\;(x\le y)$ durch $\forall y\in D\;(y\le y)$. Bei ursprünglich freiem $y=3$ sind beide wahr. Warum ist das dennoch unsicher? Gib eine unterscheidende Belegung an und erkläre, ob ein bekannter freier Wert dadurch gebunden wird.">
+<Exercise question="Der Ersatz von $\forall x\in D\;(x\le y)$ durch $\forall y\in D\;(y\le y)$ erhält Wahrheit bei freiem $y=3$. Warum ist er unsicher? Finde eine trennende Belegung; bindet Wissen um einen freien Wert diesen?">
 
-Die zweite Formel fängt den freien Vergleichswert ein und ist hier immer wahr, da jede Zahl höchstens sie selbst ist. Bei ursprünglich $y=0$ ist die erste falsch, weil eins und zwei größer als null sind. Die Übereinstimmung bei $y=3$ hat die Abhängigkeit von $y$ nicht erhalten. Ein bekannter Wert erlaubt die Auswertung; nur eine Änderung der geschriebenen Bindungsstruktur verändert, welche Vorkommen gebunden sind.
+Der Ersatz fängt $y$ und ist durch Reflexivität immer wahr. Bei ursprünglichem $y=0$ widerlegen eins und zwei das Original. Übereinstimmung bei drei erhält diese Abhängigkeit nicht; Wertkenntnis ermöglicht Auswertung, keine syntaktische Bindung.
 
 </Exercise>
 
@@ -202,14 +202,14 @@ Die zweite Formel fängt den freien Vergleichswert ein und ist hier immer wahr, 
 
 ### Freie Vorkommen, Geltungsbereiche und Zuweisungen
 
-$\mathbb Z$ bezeichnet ganze, $\mathbb R$ reelle Zahlen. $x\in\mathbb R$ drückt Zugehörigkeit aus, nicht Gleichheit. „Sei $x$ reell“ legt den Bereich fest und führt in Beweisen oft eine **beliebige, aber feste** Eingabe ein. „Sei $x=2$“ legt einen konkreten Wert fest. Keines setzt einen Quantor in die geschriebene Formel.
+$\mathbb Z$ bedeutet ganze, $\mathbb R$ reelle Zahlen; $x\in\mathbb R$ bedeutet Zugehörigkeit, nicht Gleichheit. „Sei $x$ reell“ führt oft eine **beliebige feste** Beweiseingabe ein; „sei $x=2$“ eine bestimmte. Keines fügt einen geschriebenen Quantor hinzu.
 
 $$\forall x\in\mathbb R\;(x+y=y+x)$$
 
-Beide Vorkommen von $x$ sind gebunden, $y$ bleibt frei. Das gilt auch dann, wenn Kommutativität die Bedingung für jede reelle Belegung von $y$ wahr macht. Wahrheit unter jeder Belegung ersetzt keinen Quantor. Mit $\forall y\in\mathbb R$ wird die Formel geschlossen:
+Beide $x$ sind gebunden; $y$ bleibt frei trotz Kommutativität bei jeder reellen Belegung. Wahrheit unter allen Belegungen fügt keinen Quantor ein; $\forall y\in\mathbb R$ schließt die Formel:
 
 $$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
 
-Die Zuweisung $y=0$ liefert einen Auswertungskontext, keine syntaktische Bindung. Null tatsächlich für $y$ einzusetzen erzeugt dagegen eine **andere geschriebene Formel** mit ersetzten Vorkommen. Diese Schritte sind zu unterscheiden.
+Die Zuweisung $y=0$ liefert Kontext ohne Bindung; Einsetzen von null ersetzt Vorkommen und erzeugt eine **andere geschriebene Formel**.
 
-Auch $\exists x\in\mathbb R\;(x=y)$ bleibt offen in $y$, obwohl jede reelle Belegung von $y$ einen passenden Zeugen liefert. Existenz bedeutet mindestens ein Objekt, nicht Eindeutigkeit. Bei $\forall x\in\mathbb R\;(x=y)$ lässt die Zuweisung $y=0$ das geschriebene $y$ frei, liefert aber eine falsche kontextuelle Behauptung, widerlegt durch $x=1$.
+$\exists x\in\mathbb R\;(x=y)$ bleibt ebenso offen in $y$, trotz Zeugen bei jeder Belegung; Existenz behauptet keine Eindeutigkeit. Bei $\forall x\in\mathbb R\;(x=y)$ lässt $y=0$ das $y$ frei, macht aber die Aussage durch $x=1$ falsch.

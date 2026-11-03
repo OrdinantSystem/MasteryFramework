@@ -21,20 +21,20 @@ additionalSources: []
 
 ## Negar enunciados anidados
 
-«Cada estudiante puede leer algún libro del estante» falla si uno no puede leer ninguno. «Hay un libro del estante que todos pueden leer» falla si cada libro propuesto tiene un estudiante que no puede leerlo. Ese estudiante puede variar con el libro. Los éxitos separados no proporcionan necesariamente un libro compartido.
+Lectura separada falla con un estudiante incapaz de leer ningún libro del estante; compartida, con uno quizá distinto por libro. Éxitos separados no garantizan libro compartido.
 
 
 <span id="from-negating-nested-statements-de-fuera-adentro-en-un-dominio-finito"></span>
 
 ### De fuera adentro en un dominio finito
 
-Sea $D=\{1,2\}$. La afirmación $\forall x\in D\;\exists y\in D\;(y>x)$ falla en $x=2$: ningún $y$ permitido es mayor. Deriva ese fallo conservando como bloque toda la existencia interior.
+Para $D=\{1,2\}$, $\forall x\in D\;\exists y\in D\;(y>x)$ falla en dos: ningún $y$ mayor. Niega existencia interior como unidad:
 
 $$
 \begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
 $$
 
-El primer paso niega todos los casos eligiendo una entrada fallida. El segundo dice que ningún testigo sirve para ella, así que falla cada candidato. El último incluye igualdad en no mayor. Elige dos una vez y mantenlo fijo al comprobar uno y dos.
+Elige entrada fallida; sin testigo válido, fallan todos los candidatos. No mayor incluye igualdad: fija dos, prueba uno y dos.
 
 
 <span id="from-negating-nested-statements-empezar-por-existencia"></span>
@@ -45,15 +45,15 @@ $$
 \neg(\exists x\in D\;\forall y\in D\;(y<x))\ \Longleftrightarrow\ \forall x\in D\;\exists y\in D\;(y\ge x).
 $$
 
-El original pide un $x$ estrictamente mayor que todo miembro, incluido él mismo; no es la condición habitual de máximo no estricto. Para cualquier candidato $x$, la prueba $y=x$ lo refuta. La negación es verdadera eligiendo ese mismo valor permitido como $y$. En dominio vacío, el original es falso y la negación verdadera por vacuidad; un universal exterior sin casos no requiere proporcionar testigos.
+Ser estrictamente mayor que todo miembro incluye superarse a sí mismo; no es un máximo no estricto. El permitido $y=x$ derrota cada $x$ y atestigua negación. Dominio vacío: original falso, negación vacua verdadera; sin casos universales exteriores no exige testigos.
 
-Cambiar el primer dominio finito por todos los reales vuelve verdadero el original de un miembro mayor, sumando uno, y falsa su negación correcta. El patrón lógico no cambia, pero la verdad depende del dominio. Una negación simbólica correcta no demuestra que el fallo ocurra.
+En reales, sumar uno hace primera verdadera, su negación falsa. Dominio cambia verdad, no patrón lógico; negación simbólica no prueba fallo.
 
 <span id="from-negating-nested-statements-práctica"></span>
 
 #### Práctica
 
-Niega: Cada estudiante de esta clase puede leer algún libro de este estante. Mantén ambas restricciones.
+Niega «Cada estudiante de esta clase puede leer un libro de este estante», conservando ambas restricciones.
 
 <details>
 <summary>Pista</summary>
@@ -64,11 +64,11 @@ Elige primero al estudiante que falla.
 
 <Exercise>
 
-Algún estudiante de esta clase no puede leer ningún libro de este estante. Un estudiante queda fijo mientras todos los libros del estante fallan para él.
+Un estudiante fijo de esta clase no puede leer ningún libro de este estante.
 
 </Exercise>
 
-Niega: Hay un libro del estante que todos los estudiantes de la clase pueden leer. ¿Debe fallar un mismo estudiante en todos los libros?
+Niega «Un libro del estante es legible por toda la clase». ¿Debe quedar fijo el estudiante que falla?
 
 <details>
 <summary>Pista</summary>
@@ -79,7 +79,7 @@ Primero libro, después estudiante que falla.
 
 <Exercise>
 
-Cada libro del estante tiene un estudiante de la clase que no puede leerlo. El estudiante puede depender del libro. Un modelo como rojo–azul puede dar a cada estudiante un libro legible sin ninguno compartido.
+Para cada libro del estante hay un estudiante de la clase que no puede leerlo, quizá distinto. Rojo–azul da libro legible por estudiante, ninguno compartido.
 
 </Exercise>
 
@@ -94,26 +94,26 @@ La propia entrada es un testigo permitido.
 
 <Exercise>
 
-$\exists x\in D\;\forall y\in D\;(y\ne x)$. Original verdadero con $y=x$; negación falsa porque cada candidato $x$ se prueba a sí mismo.
+$\exists x\in D\;\forall y\in D\;(y\ne x)$ es falsa: cada $x$ tiene el permitido $y=x$, haciendo verdadero el original.
 
 </Exercise>
 
-Corrige la supuesta negación de todo real tiene otro mayor: «Para todo real ye, existe un real equis al menos ye».
+Corrige «Para todo real ye existe un real equis al menos ye» como negación de «Todo real tiene otro mayor».
 
 <details>
 <summary>Pista</summary>
 
-La propuesta es verdadera, igual que el original.
+Ambas afirmaciones son verdaderas.
 
 </details>
 
 <Exercise>
 
-La negación real es $\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$, falsa porque $y=x+1$ derrota cualquier $x$ propuesto. La propuesta permite indebidamente que $x$ responda a $y$.
+$\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$ es la negación, falsa pues $y=x+1$ derrota cada $x$. La propuesta deja indebidamente responder $x$ a $y$.
 
 </Exercise>
 
-Niega: Cada estudiante tiene un estante y puede leer todos los libros de ese estante.
+Niega: Todo estudiante tiene un estante del que puede leer todos los libros.
 
 <details>
 <summary>Pista</summary>
@@ -124,11 +124,11 @@ Mantén el dominio de libros ligado al estante.
 
 <Exercise>
 
-Existe un estudiante tal que para todo estante hay un libro de ese estante que no puede leer. Fija al estudiante; se propone un estante; el libro fallido puede depender de él.
+Hay un mismo estudiante que, en cada estante, no puede leer algún libro de ese estante; el libro puede depender del estante.
 
 </Exercise>
 
-Más tarde, reconstruye ambos ejemplos finitos y explica después qué cambia en todos los reales.
+Después, reconstruye ambos ejemplos finitos y sus variantes reales.
 
 
 <span id="from-negating-nested-statements-lectura-en-voz-alta"></span>
@@ -141,46 +141,46 @@ Existe un equis en D tal que todo ye en D es como máximo equis.
 
 ## Negar enunciados cuantificados paso a paso
 
-«No todo solicitante tiene un documento que supere todas las comprobaciones» dice que algún solicitante carece de un documento que las supere todas. Para ese solicitante fijo, cada documento falla al menos una comprobación. Cambiar tres palabras cuantificadoras de golpe puede ocultar qué objeto queda fijo. Sigue los paréntesis de fuera adentro.
+Niega «Todo solicitante tiene documento que pasa toda comprobación» desde fuera: fija solicitante fallido; cada documento falla alguna. Cambiar palabras juntas puede ocultar objetos fijos.
 
-Sean $A$ los solicitantes, $B$ los documentos y $C$ las comprobaciones. $R(x,y,z)$ significa que el documento $y$ supera la comprobación $z$ para el solicitante $x$. Los tres dominios son fijos. Empieza por la negación completa, no por una afirmación positiva modificada:
+Fija $A$ solicitantes, $B$ documentos, $C$ comprobaciones; $R(x,y,z)$ significa $y$ supera $z$ para $x$. Empieza con negación completa:
 
 $$
 \begin{aligned}&\neg(\forall x\in A\;\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\neg(\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\neg(\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\exists z\in C\;\neg R(x,y,z).\end{aligned}
 $$
 
-La primera ley dual proporciona un solicitante que falla; la siguiente niega para él la existencia de un documento exitoso; la última proporciona una comprobación fallida para cada documento. El solicitante queda fijo. La comprobación puede depender del documento. No hace falta una sola comprobación que descarte todos los documentos.
+Primero fija solicitante fallido; excluye documentos exitosos; aporta comprobación fallida por documento. Pueden variar por documento, no se exige una para todos.
 
 
 <span id="from-negating-quantified-statements-step-by-step-por-qué-cada-sustitución-es-válida"></span>
 
 ### Por qué cada sustitución es válida
 
-Trata toda la afirmación interior como un predicado de la variable actual. La ley dual conserva su valor para cualquier asignación de variables exteriores ya fijadas. Por eso también se conserva el valor de los cuantificadores exteriores que quedan sin cambiar. Repetirlo da una cadena de equivalencias. Todas sus líneas pueden ser falsas: identifica el fallo sin demostrar que ocurra. Para refutar el original, establece por separado la fórmula final.
+La ley dual del predicado interior completo conserva verdad para **toda asignación exterior**. Cuantificadores envolventes intactos conservan equivalencia; repetir prueba la cadena. Todas las líneas pueden ser falsas: refutar exige además probar condición final de fallo.
 
 
 <span id="from-negating-quantified-statements-step-by-step-un-método-que-respeta-el-alcance"></span>
 
 ### Un método que respeta el alcance
 
-1. Delimita exactamente la afirmación negada; los cuantificadores fuera de ese alcance no cambian.
-2. Anota variables en orden, dominios y parámetros fijos. Las apariciones libres siguen libres.
-3. Cruza un cuantificador: cambia su tipo y niega todo el resto.
-4. Repite sin invertir el orden, intercambiar argumentos ni cambiar dominios. Los libros siguen asociados a su estante; los reales positivos siguen siendo positivos.
-5. Ante una conectiva, usa su regla de negación; niega también el predicado final.
-6. Lee el resultado y revisa la información anterior permitida para cada testigo.
+1. Delimita exactamente el alcance negado; cuantificadores exteriores intactos.
+2. Registra orden de variables, dominios y parámetros fijos; apariciones libres siguen libres.
+3. Cambia un cuantificador y niega todo su resto.
+4. Repite conservando orden, argumentos y dominios: libros dependientes del estante, reales positivos positivos.
+5. Aplica la regla de cada conectiva y niega el predicado final.
+6. Relee; revisa información anterior permitida para cada testigo.
 
 $$
 \neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
 $$
 
-Aplica la regla del condicional de la lección anterior: un documento refuta «si está firmado, entonces pasa» exactamente cuando está firmado y falla. Uno sin firmar no puede refutarlo.
+Firmado-y-fallido refuta «si firmado, pasa»; sin firma no.
 
 <span id="from-negating-quantified-statements-step-by-step-práctica"></span>
 
 #### Práctica
 
-Reconstruye la negación de solicitantes cuantificador por cuantificador.
+Reconstruye negación de solicitantes cuantificador a cuantificador.
 
 <details>
 <summary>Pista</summary>
@@ -191,11 +191,11 @@ Fija primero al solicitante.
 
 <Exercise>
 
-Hay un solicitante sin documento que supere todo; para ese solicitante, cada documento tiene una comprobación que falla. El orden es algún solicitante, todo documento, alguna comprobación fallida.
+Fija solicitante sin documento que pase todo: cada documento falla alguna. Así: algún solicitante, todo documento, alguna comprobación fallida.
 
 </Exercise>
 
-En una negación propuesta, los reales positivos pasan a no positivos. Diagnostica.
+Una negación cambia reales positivos a no positivos. Diagnostica.
 
 <details>
 <summary>Pista</summary>
@@ -206,26 +206,26 @@ Revisa el registro de dominios.
 
 <Exercise>
 
-Se ha complementado el dominio, lo que ninguna ley dual permite. Niega el predicado sobre la misma colección permitida.
+Leyes duales conservan dominios; niega predicados sobre la misma colección.
 
 </Exercise>
 
-Niega: Todo solicitante está admitido o certificado, con o inclusiva.
+Niega todos solicitantes admitidos o certificados (inclusiva).
 
 <details>
 <summary>Pista</summary>
 
-Una disyunción falla solo si fallan ambas partes.
+O falla si ambas fallan.
 
 </details>
 
 <Exercise>
 
-Algún solicitante no está ni admitido ni certificado. Cambiar solo todo por alguno deja el predicado sin negar y resulta incompleto.
+Algún solicitante no es admitido ni certificado. Cambiar solo cuantificador omite negar predicado.
 
 </Exercise>
 
-Niega: Todo documento pasa si está firmado. ¿Puede refutarlo uno sin firmar?
+Niega «Todo documento firmado pasa». ¿Refuta uno sin firma?
 
 <details>
 <summary>Pista</summary>
@@ -236,26 +236,26 @@ Exige una hipótesis verdadera.
 
 <Exercise>
 
-Algún documento está firmado y falla. Ninguno sin firmar refuta la promesa, cualquiera que sea su resultado.
+Algún documento está firmado y falla. Sin firma no refuta la promesa, cualquiera sea el resultado.
 
 </Exercise>
 
-Alguien dice que los pasos equivalentes solos demuestran falso el original. ¿Qué falta?
+¿Equivalencia sola refuta original? ¿Qué falta?
 
 <details>
 <summary>Pista</summary>
 
-Toda una cadena equivalente puede ser falsa.
+Todas las líneas podrían ser falsas.
 
 </details>
 
 <Exercise>
 
-Hay que demostrar la condición final de fallo: proporcionar sus testigos existenciales y cubrir todos sus casos universales.
+Prueba la condición final de fallo: aporta testigos existenciales y cubre cada caso universal.
 
 </Exercise>
 
-Más tarde, reconstruye los seis pasos y explica por qué sustituir dentro de cuantificadores exteriores conserva equivalencia.
+Después, reconstruye seis pasos y justifica equivalencia bajo cuantificadores exteriores.
 
 
 <span id="from-negating-quantified-statements-step-by-step-lectura-en-voz-alta"></span>

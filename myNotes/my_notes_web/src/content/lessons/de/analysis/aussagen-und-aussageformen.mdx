@@ -25,32 +25,32 @@ sourceLocations: []
 
 ### Eine Aussage darf falsch sein
 
-Eine Aussage hat einen bestimmten Wahrheitswert: wahr (1) oder falsch (0). Wir müssen ihn nicht kennen. Sowohl „$2 + 3 = 5$“ als auch „$2 + 3 = 6$“ sind Aussagen; nur die erste ist wahr.
+Eine Aussage hat genau einen Wahrheitswert, wahr (1) oder falsch (0), auch wenn wir ihn nicht kennen. $2+3=5$ und $2+3=6$ sind Aussagen; nur die erste ist wahr.
 
 
 <span id="from-aussagen-und-aussageformen-eine-freie-variable-lässt-eine-frage-offen"></span>
 
 ### Eine freie Variable lässt eine Frage offen
 
-$P(x): x + 3 = 10$ ist eine Aussageform. Ihr Wahrheitswert hängt von $x$ ab. Die Angabe $x \in  \mathbb{N}$ schränkt den Bereich ein, bindet $x$ aber nicht. Einsetzen von $x = 7$ ergibt eine wahre, $x = 2$ eine falsche Aussage. Stattdessen kann ein Quantor die Variable binden.
+$P(x):x+3=10$ ist eine von $x$ abhängige Aussageform. $x\in\mathbb N$ beschränkt den Bereich ohne Bindung. Einsetzen von $7$ ergibt wahr, von $2$ falsch. Alternativ bindet ein Quantor $x$.
 
 <Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
 
-Das dargestellte $P(2)$ ist die falsche Gleichheit $2+3=10$, keine Umdefinition von $P$ zu seiner Negation. Auch $x = 4$ macht $P(x)$ falsch. Einsetzen ergänzt eine Eingabe, ohne die Regel zu ändern.
+$P(2)$ ist die falsche Gleichheit $2+3=10$, keine negierte Umdefinition. Auch $x=4$ ergibt falsch. Die Eingabe wechselt, die Regel bleibt.
 
 
 <span id="from-aussagen-und-aussageformen-die-einordnung-prüfen"></span>
 
 ### Die Einordnung prüfen
 
-Eine Frage oder Aufforderung ist keine Aussage. Der Satz „Dieser Satz ist falsch“ erhält keinen konsistenten klassischen Wahrheitswert; er ist ein Paradox, kein gewöhnliches Beispiel einer falschen Aussage. Ordne eine Gleichung zuerst ein, bevor du sie beweist.
+Fragen und Aufforderungen sind keine Aussagen. „Dieser Satz ist falsch“ ist ein Paradox ohne konsistenten klassischen Wahrheitswert, keine gewöhnliche falsche Aussage. Erst einordnen, dann beweisen.
 
 
 <span id="from-aussagen-und-aussageformen-einsetzen-und-wahrheit"></span>
 
 ### Einsetzen und Wahrheit
 
-Quantifizierung macht eine andere Behauptung: „Es gibt ein natürliches $x$ mit $x + 3 = 10$“ ist vollständig, ohne vorab eine Eingabe zu wählen. Der Zeuge $x = 7$ belegt ihre Wahrheit. Eine noch freie Eingabe ist kein noch unbekannter Wahrheitswert.
+„Es gibt ein natürliches $x$ mit $x+3=10$“ ist ohne vorab gewählte Eingabe vollständig; $7$ bezeugt Wahrheit. Freie Eingabe und unbekannte Wahrheit sind verschieden.
 
 <Exercise question="Ist $x^2 = 4$ eine Aussage? Und $\exists x \in  \mathbb{N} : x^2 = 4$?">
 
@@ -63,82 +63,82 @@ Das Erste ist eine Aussageform mit freiem $x$. Das Zweite ist eine wahre Aussage
 
 ### Behauptungen, Ausdrücke und Aufforderungen
 
-„Die Summe zweier Zahlen“ ist eine Wortgruppe, die ein Objekt bezeichnet. $x+1$ ist ein Zahlenausdruck, keine Behauptung. $x+1=3$ ist eine Bedingung, deren Auswertung eine Eingabe braucht. $7$ allein bezeichnet eine Zahl; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten etwas über sie. Mathematik braucht nicht zwingend Symbole; Symbole allein ergeben noch keine Aussage.
+„Die Summe zweier Zahlen“, $x+1$ und $7$ benennen Objekte, keine Behauptungen. $x+1=3$ braucht eine Eingabe; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten etwas. Symbole sind weder nötig noch hinreichend für Aussagen.
 
-Ordne die **ganze Äußerung** ein. „Beweise, dass null gleich eins ist“ ist eine Aufforderung, obwohl sie eine falsche Aussage erwähnt. „Finde alle reellen Zahlen kleiner als eins“ ist eine Anweisung. „Jede reelle Zahl ist kleiner als eins“ ist eine falsche Aussage, widerlegt durch zwei. Eine Frage über eine Behauptung bleibt eine Frage.
+Entscheidend ist die **ganze Äußerung**: „Beweise null gleich eins“ fordert trotz falscher eingebetteter Behauptung eine Handlung. „Finde alle Reellen kleiner als eins“ fordert auf; „Jeder Reelle ist kleiner als eins“ behauptet falsch, widerlegt durch zwei. Eine erwähnte Behauptung macht eine Frage nicht zur Aussage.
 
-Bedeutung und Bezug kommen zuerst. „Diese Zahl ist klein“ wird bestimmt, wenn die Zahl sieben ist und „klein“ als kleiner als zehn definiert wird. Beide Angaben sind nötig. Eine bestimmte verschlossene Karte mit einer bereits feststehenden ganzen Zahl unterscheidet sich von einer künftigen Wahl ohne Wert oder Auswahlregel. Verborgene Information bedeutet nicht, dass kein Objekt feststeht.
+„Diese Zahl ist klein“ braucht Objekt, etwa sieben, und Schwelle, etwa kleiner als zehn. Eine verdeckte Karte mit einer festen ganzen Zahl unterscheidet sich von künftiger Wahl ohne Wert und Regel: Verborgen heißt nicht unbestimmt.
 
-In der üblichen reellen Arithmetik ist $1/0=2$ keine gewöhnliche falsche Gleichheit: Links steht kein reeller Wert. Ein Quotient müsste mit null multipliziert eins ergeben. Jedes solche Produkt ist aber null. Undefiniertheit ist unter diesen Konventionen ein Bedeutungsproblem, kein dritter Wahrheitswert.
+Reell ist $1/0=2$ undefiniert, nicht gewöhnlich falsch: Kein Reeller ergibt mit null multipliziert eins, denn jedes solche Produkt ist null. Dieses Bedeutungsproblem ist kein dritter Wahrheitswert.
 
 
 <span id="from-aussagen-und-aussageformen-wahrheit-wissen-und-gründe"></span>
 
 ### Wahrheit, Wissen und Gründe
 
-Unser klassischer Rahmen setzt **Zweiwertigkeit** voraus: Eine sinnvolle Aussage hat genau einen von zwei Wahrheitswerten. Das ist hier eine Grundlage, kein auf dieser Seite bewiesener Satz. $T/F$ und die hier verwendeten $1/0$ sind alternative Bezeichnungen, keine Zahlen zum Addieren oder Multiplizieren.
+Klassische **Zweiwertigkeit** wird vorausgesetzt, nicht bewiesen: Jede sinnvolle Aussage hat genau einen von zwei Wahrheitswerten. $T/F$ und $1$ und $0$ bezeichnen Wahrheit, keine Rechengrößen.
 
-Die Zahl einer festen Karte ist vor dem Öffnen entweder null oder nicht null. Fünf vorzufinden verändert unser Wissen, nicht den ursprünglichen Wahrheitswert. Ein Zimmer mit morgens drei und nachmittags vier Stühlen liefert entsprechend verschiedene **zeitlich bestimmte Aussagen**, nicht eine feste Aussage mit zwei Wahrheitswerten. Verschiedene Eingaben einer offenen Aussageform ergeben ebenfalls verschiedene vervollständigte Behauptungen.
+Eine feste Karte zeigt schon vor dem Öffnen null oder nicht null. Fünf zu finden ändert Wissen, nicht Wahrheit. Drei Stühle morgens und vier nachmittags ergeben verschiedene **zeitbezogene Aussagen**, keine doppelte Wahrheit einer Aussage. Verschiedene Prädikateingaben vervollständigen ebenfalls verschiedene Behauptungen.
 
-Ein Grund muss so weit reichen wie der Schluss. Ein Zeuge beweist eine Existenzaussage; ein Gegenbeispiel widerlegt eine Allaussage. Für eine wahre Allaussage kann ein Argument für eine beliebige Eingabe nötig sein. In einem endlichen Bereich genügt auch die Prüfung jedes Elements. Einige ausgesuchte Erfolge in einem unendlichen Bereich genügen nicht. Für beliebiges reelles $x<1$ liefern $1<2$ und Transitivität die Folgerung $x<2$. Nur die logische Struktur zu benennen würde diese Ordnungsbegründung nicht liefern.
+Ein Zeuge beweist Existenz, ein Gegenbeispiel widerlegt Universalität. Allbeweise brauchen gegebenenfalls beliebige Eingaben oder vollständige Prüfung endlicher Bereiche; ausgesuchte Erfolge im Unendlichen genügen nicht. Für beliebiges reelles $x<1$ liefert Transitivität mit $1<2$ den Schluss $x<2$: Logische Struktur allein begründet keine Ordnung.
 
 
 <span id="from-aussagen-und-aussageformen-selbst-prüfen"></span>
 
 ### Selbst prüfen
 
-Ordne „Eins ist gleich null“, „Erkläre, warum eins gleich eins ist“ und $7$ ein. Mache aus dem letzten Ausdruck zwei Behauptungen. Ergänze dann $x=0$ auf zwei Arten: durch Kontext und durch Quantifizierung.
+Ordne „Eins ist gleich null“, „Erkläre, warum eins gleich eins ist“ und $7$ ein; mache aus $7$ zwei Behauptungen. Ergänze $x=0$ durch Kontext und Quantifizierung.
 
 <details>
 <summary>Hinweis</summary>
 
-Trenne die verlangte Handlung von der darin erwähnten Behauptung. Unterscheide bei den Ergänzungen die Wahl einer Eingabe von einer Aussage über alle Eingaben.
+Trenne verlangte Handlung und eingebettete Behauptung; unterscheide Eingabewahl von Quantifizierung über alle Eingaben.
 
 </details>
 
 <details>
 <summary>Referenzlösung</summary>
 
-„Eins ist gleich null“ ist eine falsche Aussage. „Erkläre …“ fordert eine Handlung und erwähnt eine wahre Gleichheit. Sieben allein benennt eine Zahl; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ sind Behauptungen. Für $x=0$ kann der Kontext $x$ als bestimmte reelle Zahl festlegen, etwa null. So ist die Bedingung auswertbar, $x$ bleibt als geschrieben frei. Oder man schreibt „Jede reelle Zahl ist gleich null“, eine geschlossene falsche Aussage. Falschheit macht daraus keine Anweisung.
+„Eins ist gleich null“ ist falsch; „Erkläre …“ fordert zur wahren Gleichheit auf. $7$ benennt; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten. Legt der Kontext $x$ als reelle Zahl null fest, ist $x=0$ auswertbar, aber ungebunden. „Jeder Reelle ist null“ ist geschlossen und falsch, keine Anweisung.
 
 </details>
 
-<Exercise question="In $\forall x\in\mathbb R\;(x<y)$ sei auch y reell. Was ist gebunden? Was ändert die Zuweisung y gleich null? Vergleiche mit $\exists x\in\mathbb R\;(x=0)$ und ‘Jede ganze Zahl ist positiv’.">
+<Exercise question="Für reelles y in $\forall x\in\mathbb R\;(x<y)$: Was ist gebunden, was bewirkt $y=0$? Vergleiche $\exists x\in\mathbb R\;(x=0)$ und ‘Jede ganze Zahl ist positiv’.">
 
-Nur $x$ ist in der ersten Formel gebunden; $y$ bleibt frei. Die Zuweisung null ermöglicht eine falsche Auswertung mit Gegenbeispiel $x=1$, bindet $y$ aber nicht. Die Existenzformel ist geschlossen und mit Zeuge null wahr. „Jede ganze Zahl ist positiv“ ist auch ohne Buchstaben eine geschlossene quantifizierte Behauptung, widerlegt durch null.
-
-</Exercise>
-
-<Exercise question="Übersetze ‘Es gibt eine reelle Zahl, die mindestens null und kleiner als eins ist’. Gib einen Zeugen an. Ersetze ‘es gibt’ durch ‘jede’ und begründe den neuen Wahrheitswert. Was bleibt gleich?">
-
-$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ ist mit Zeuge null wahr. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ ist falsch, weil eins die strenge obere Grenze verletzt. Beide Formeln sind geschlossen; der reelle Bereich und beide Vergleiche bleiben gleich. Der Quantor ändert, ob eine oder jede Eingabe genügen muss.
+Nur $x$ ist gebunden; $y$ bleibt auch mit Zuweisung null frei. Dann ist die Formel falsch, widerlegt durch $x=1$. Die Existenzformel ist geschlossen und mit Zeuge null wahr. Die sprachliche Allaussage ist ohne Buchstaben geschlossen und durch null widerlegt.
 
 </Exercise>
 
-Erkläre den Unterschied zwischen unbekannt, undefiniert und unbegründet: Eine verdeckte Karte verbirgt einen Wahrheitswert; Division durch null besitzt keinen reellen Wert; eine zufällig richtige Antwort ohne ausreichenden Grund kann trotzdem richtig sein. [Mathematische Struktur lesen](../quantifier-order/#from-reading-mathematical-structure) verbindet diese Prüfungen.
+<Exercise question="Übersetze ‘Es gibt einen Reellen mindestens null und kleiner als eins’; nenne einen Zeugen. Ersetze ‘es gibt’ durch ‘jeder’, begründe den Wahrheitswert und benenne Unverändertes.">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ ist mit Zeuge null wahr. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ ist falsch: Eins verletzt die strenge Obergrenze. Beide sind geschlossen, mit gleichem Bereich und Vergleichen; nur die Anforderung eine/jede Eingabe wechselt.
+
+</Exercise>
+
+Unterscheide unbekannt (verdeckte feste Karte), undefiniert (reelle Division durch null) und unbegründet (möglicherweise richtig, aber unzureichend begründet). Erkläre warum; siehe [Mathematische Struktur lesen](../quantifier-order/#from-reading-mathematical-structure).
 
 <span id="from-definitions-assumptions-results"></span>
 
 ## Definitionen, Annahmen und Ergebnisse
 
-Eine Bibliothek nennt eine Ausleihe **kurz**, wenn sie weniger als sieben Tage dauert. Das legt eine Bedeutung fest. Eine dreitägige Ausleihe ist kurz; eine zehntägige nicht. Diese beiden Behauptungen verwenden die Definition. Eine falsche Anwendung widerlegt nicht die gewählte Bedeutung.
+Eine Bibliothek definiert **kurze** Ausleihen als kürzer als sieben Tage. Drei Tage genügen, zehn nicht. Anwendungen behaupten etwas; eine falsche Anwendung widerlegt nicht die gewählte Bedeutung.
 
-In der Mathematik gilt dieselbe Unterscheidung. Eine ganze Zahl heißt positiv, wenn sie größer als null ist. Die ganzen Zahlen, geschrieben $\mathbb Z$, umfassen auch negative ganze Zahlen und null. Für eine ganze Zahl $n$ lautet die Bedingung $n>0$. Drei erfüllt sie; null nicht, denn der Vergleich ist streng. „Null ist positiv“ ist eine falsche Aussage, keine widerlegte Definition.
+Eine ganze Zahl heißt positiv, wenn $n>0$. $\mathbb Z$ enthält negative ganze Zahlen und null; drei erfüllt die Bedingung, null scheitert am strengen Vergleich. „Null ist positiv“ ist falsch, keine widerlegte Definition.
 
 
 <span id="from-definitions-assumptions-results-welche-rolle-hat-der-satz"></span>
 
 ### Welche Rolle hat der Satz?
 
-Eine **Definition** legt eine Bedeutung fest. Eine **Annahme** oder **Hypothese** wird für ein bestimmtes Argument vorausgesetzt. Ein **Axiom** ist eine akzeptierte Ausgangsaussage einer Theorie. **Satz**, **Lemma** und **Proposition** bezeichnen bewiesene Ergebnisse; ein Lemma dient häufig dem Beweis eines weiteren Ergebnisses. Die Bezeichnungen ändern den Anspruch an den Beweis nicht.
+Eine **Definition** legt Bedeutung fest; eine **Annahme/Hypothese** gilt lokal; ein **Axiom** eröffnet eine Theorie. **Satz**, **Lemma** und lehrbuchsprachliche **Proposition** sind bewiesene Ergebnisse; Lemmata stützen meist weitere Beweise. Die Strenge bleibt gleich.
 
-In der Logik bedeutet *Proposition* auch eine bestimmte wahrheitsfähige Behauptung, die durchaus falsch sein kann. Als Lehrbuchüberschrift wird das Wort enger verwendet.
+Logisch umfasst *Proposition* auch falsche bestimmte Behauptungen; die Lehrbuchüberschrift ist enger.
 
-Angenommen, eine ganze Zahl ist größer als fünf. Das ist eine lokale Annahme, keine Behauptung über alle ganzen Zahlen. Weil fünf größer als null ist, folgt mit der Transitivität der üblichen Ordnung, dass unsere Zahl größer als null ist. Nach Definition ist sie positiv. Die Ordnungsregel begründet den Schluss; die Definition liefert die Bezeichnung.
+Lokal sei eine ganze Zahl größer als fünf, nicht jede ganze Zahl. Weil fünf größer als null ist, ist unsere Zahl durch Ordnungstransitivität größer als null; die Definition nennt sie positiv. Ordnung begründet, Definition benennt.
 
-Eine Gleichung oder „genau dann, wenn“ kann sowohl in einer Definition als auch in einer Behauptung stehen. Erst der Zusammenhang zeigt ihre Rolle.
+Gleichheit und „genau dann, wenn“ können definieren oder behaupten; der Kontext entscheidet.
 
-Eine **Vermutung** ist eine Aussage, deren Beweis noch aussteht. Ein **Korollar** folgt aus einem bereits bewiesenen Ergebnis. Die Bezeichnungen beschreiben die Rolle eines Ergebnisses, nicht verschiedene Grade der Wahrheit.
+Eine **Vermutung** wartet auf Beweis; ein **Korollar** folgt aus einem gesicherten Ergebnis. Das sind Rollen, keine Wahrheitsgrade.
 
 <span id="from-definitions-assumptions-results-einen-namen-einführen"></span>
 
@@ -146,7 +146,7 @@ Eine **Vermutung** ist eine Aussage, deren Beweis noch aussteht. Ein **Korollar*
 
 $$a:=0 \qquad a=0$$
 
-Der erste Ausdruck führt $a$ als Namen für null ein. Danach ist die zweite Gleichung wahr. „Definiere“, „angenommen“ und „also“ kennzeichnen verschiedene Verwendungen, auch wenn ähnliche Zeichen folgen.
+$a:=0$ benennt null; danach ist $a=0$ wahr. „Definiere“, „angenommen“ und „also“ unterscheiden trotz ähnlicher Zeichen die Verwendung.
 
 <Note title="Notation lesen">
 
@@ -159,33 +159,33 @@ $a:=0$: „a wird als null definiert“; $a=0$: „a ist gleich null“; $n>0$: 
 
 ### Eine Eigenschaft muss kein Beispiel haben
 
-Wir dürfen der Eigenschaft „größer als null und kleiner als null“ einen Namen geben, obwohl keine ganze Zahl sie besitzt. Dadurch entsteht aber keine Zahl mit dieser Eigenschaft. Ebenso kann die Beschreibung „das eindeutig bestimmte Objekt mit …“ Nachweise der **Existenz** (mindestens ein Objekt) und **Eindeutigkeit** (kein zweites Objekt) verlangen. Eine sprachliche Festlegung erledigt diese Aufgaben nicht. Übliche Arithmetik und Ordnung sind hier vorausgesetzte Grundlagen, keine aus dem Wortschatz abgeleiteten Ergebnisse.
+„Größer und kleiner als null“ benennt eine Eigenschaft ohne ganzzahliges Beispiel, kein Objekt mit dieser Eigenschaft. „Das eindeutige Objekt mit …“ kann **Existenz** (mindestens eines) und **Eindeutigkeit** (kein zweites) verlangen. Benennung ersetzt keinen Nachweis. Arithmetik und Ordnung bleiben vorausgesetzt.
 
 
 <span id="from-definitions-assumptions-results-rollen-und-definitionen-anwenden"></span>
 
 ### Rollen und Definitionen anwenden
 
-Ordne zu und begründe: „Eine ganze Zahl heißt nichtnegativ, wenn sie mindestens null ist“; „Null ist nichtnegativ“; „Angenommen, $x>0$“; „Definiere $b:=1$“; „Also gilt $b=1$“.
+Begründe die Rollen: „Eine ganze Zahl heißt nichtnegativ, wenn sie mindestens null ist“; „Null ist nichtnegativ“; „Angenommen $x>0$“; „Definiere $b:=1$“; „Also $b=1$“.
 
 <details>
 <summary>Hinweis</summary>
 
-Welcher Satz führt eine Bedeutung ein, welcher setzt etwas lokal voraus und welcher behauptet eine Folgerung?
+Was legt Bedeutung fest, setzt lokal voraus oder folgert?
 
 </details>
 
 <details>
 <summary>Referenzlösung</summary>
 
-Der erste Satz ist eine Definition. Der zweite ist eine wahre Anwendung, denn Gleichheit ist erlaubt. Der dritte ist eine Hypothese, keine Allaussage. Der vierte führt einen Namen ein. Der fünfte behauptet die daraus folgende Gleichheit. Eine Definition wird nicht wie ein Satz bewiesen; eine Objektbeschreibung kann trotzdem Existenz- und Eindeutigkeitsnachweise erfordern.
+Der Reihe nach: Definition; wahre Anwendung mit erlaubter Gleichheit; lokale Hypothese, keine Allaussage; Benennung; folgende Gleichheit. Definitionen brauchen keinen Satzbeweis; Objektbeschreibungen möglicherweise Existenz und Eindeutigkeit.
 
 </details>
 
-<Exercise question="Eine reelle Zahl heiße hier zulässig, wenn sie mindestens null und höchstens eins ist. Schreibe das Kriterium. Ist null zulässig? Was folgt aus der Zulässigkeit einer nicht näher bestimmten Zahl?">
+<Exercise question="Hier heiße eine reelle Zahl zulässig, wenn sie mindestens null und höchstens eins ist. Formuliere das Kriterium, prüfe null und folgere für eine unbestimmte zulässige Zahl.">
 
-Für $x\in\mathbb R$ lautet das Kriterium $(0\le x)\land(x\le1)$. Null erfüllt beide Vergleiche und ist zulässig. Aus der Bezeichnung folgen beide Grenzen, aber kein eindeutiger Wert: $0$, $1/2$ und $1$ erfüllen das Kriterium. Die Bezeichnung gilt nur in diesem Beispiel. Beide Grenzen erlauben Gleichheit; ein strenger Vergleich würde die Definition ändern.
+Für $x\in\mathbb R$ lautet das Kriterium $(0\le x)\land(x\le1)$. Null erfüllt beides. Zulässigkeit liefert beide Grenzen, keinen Einzelwert: $0$, $1/2$, $1$ passen. Diese lokale Definition erlaubt Gleichheit; strenge Vergleiche würden sie ändern.
 
 </Exercise>
 
-Erfinde eine weitere Eigenschaftsbezeichnung und formuliere eine wahre sowie eine falsche Anwendung. Trenne die Definition von ihren Anwendungen. [Mehrere gleichzeitige Bedingungen](../simultaneous-conditions/#from-simultaneous-conditions) behandelt ein längeres Kriterium.
+Erfinde eine Eigenschaft; trenne Definition, wahre und falsche Anwendung. Siehe [Mehrere gleichzeitige Bedingungen](../simultaneous-conditions/#from-simultaneous-conditions) für ein längeres Kriterium.

@@ -1,0 +1,386 @@
+---
+course: "analysis"
+chapter: "analysis-logic"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/01 Logical Negation.md", "A0.1.2 Negation/02 Negating Equality.md", "A0.1.2 Negation/03 Negating Inequalities.md", "A0.1.2 Negation/05 Double Negation.md", "A0.1.2 Negation/04 Negating Compound Statements.md", "A0.1.2 Negation/06 De Morgan Laws.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "es"
+title: "Negación, leyes de De Morgan y desigualdades"
+navTitle: "Negación, leyes de De Morgan y desigualdades"
+description: "Negación, leyes de De Morgan y desigualdades"
+order: 5
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen", "logische-verknuepfungen"]
+thumbnail: "logic"
+additionalSources: []
+---
+
+<span id="from-logical-negation"></span>
+
+## Negación lógica
+
+Una tarjeta lleva el número tres. «Su número es mayor que tres» es falso, pero «su número es menor que tres» también. No son negaciones entre sí. La negación correcta, «su número no es mayor que tres», incluye el caso de igualdad.
+
+
+<span id="from-logical-negation-definición-de-negación"></span>
+
+### Definición de negación
+
+Para una proposición clásica con sentido $P$, $\neg P$ es verdadera cuando $P$ es falsa, y falsa cuando $P$ es verdadera. Importan ambas direcciones. La tabla expresa la definición, no una regla inferida de observar tarjetas.
+
+| $P$ | $\neg P$ |
+|---|---|
+| 1 | 0 |
+| 0 | 1 |
+
+Los dígitos codifican verdadero y falso; no son instrucciones aritméticas. Una primera formulación segura es «No es cierto que [la afirmación original completa]». Abrevia solo después de identificar su alcance.
+
+$\neg P$: «no pe; no es cierto que pe se cumpla».
+
+«La tarjeta no lleva tres» no cambia la tarjeta. Si lleva dos o cuatro, la negación es verdadera en ambos casos. «La tarjeta lleva dos» no la reemplaza: con cuatro ambas igualdades serían falsas. Un caso permitido donde el original y la negación propuesta coincidan refuta la propuesta. Varias muestras favorables no la demuestran para toda entrada.
+
+
+<span id="from-logical-negation-la-igualdad-y-su-negación"></span>
+
+### La igualdad y su negación
+
+Para expresiones que designen objetos con sentido en el contexto indicado,
+
+$$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
+
+$\ne$ abrevia «distinto de». $\Leftrightarrow$ se lee «si y solo si» y aquí indica coincidencia en todos los casos. La segunda equivalencia se justifica directamente: si los valores son iguales, «distintos» es falso y su negación verdadera; si son distintos, «distintos» es verdadero y su negación falsa. Esos son todos los casos clásicos.
+
+$a\ne b$: «a es distinto de be».
+
+Para $x$ real, negar $x+2=5$ da $x+2\ne5$. Eso completa la negación; resolver es otra tarea. La entrada $2$ produce cuatro y la entrada $4$ produce seis: ambas satisfacen la negación. Reemplazar la igualdad por «mayor que» pierde la primera entrada. Ser distintos no fija un orden, y la igualdad puede usarse para objetos sin orden especificado.
+
+La negación lógica actúa sobre afirmaciones. La negación aritmética toma un número y produce su opuesto. Negar una ecuación no cambia los signos de sus términos. Expresiones distintas como $2+1$ y $3$ pueden designar valores iguales.
+
+
+<span id="from-logical-negation-conocimiento-sentido-y-dominio"></span>
+
+### Conocimiento, sentido y dominio
+
+Una tarjeta cerrada puede llevar cero aunque nadie lo haya establecido. «No se ha demostrado $P$» y «no se sabe $P$» hablan del conocimiento; ninguna establece $\neg P$. En este marco clásico, desconocido no es un tercer valor de verdad.
+
+Un interruptor con niveles bajo, medio y alto **no está alto** tanto en bajo como en medio. «Está bajo» omite un caso. Del mismo modo, «no completamente abierta» no significa necesariamente «cerrada» si una puerta puede estar entreabierta. Fija el significado antes de negar.
+
+La negación no convierte una orden en proposición ni repara una división indefinida. En la aritmética real habitual, $1/0$ no designa un real; cambiar $1/0=3$ por $1/0\ne3$ no produce una comparación verdadera bien definida.
+
+Para una condición abierta, la negación actúa **punto a punto** con la misma asignación permitida. No liga variables libres ni amplía el dominio.
+
+
+<span id="from-logical-negation-práctica"></span>
+
+### Práctica
+
+Solo se permiten $0,1,2$. Niega $x=1$, enumera las entradas que la satisfacen e indica si $x$ queda ligada. Después niega $x=2$ en el mismo dominio.
+
+<details>
+<summary>Pista</summary>
+
+Conserva la lista permitida. Una afirmación cuantificada sobre todas las entradas no es lo mismo que evaluar una condición abierta en cada entrada.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+$x\ne1$ se satisface en $0$ y $2$; $x\ne2$, en $0$ y $1$. No se añadió ningún cuantificador: $x$ sigue libre. Tres no es un ejemplo permitido. Agotar este dominio finito justifica las listas, pero no las extiende a todos los reales.
+
+</details>
+
+<Exercise question="Niega: La tarjeta fija lleva cero. ¿Por qué no basta ‘lleva uno’? ¿Puedes inferir la negación solo porque el sobre está cerrado?">
+
+La negación es «La tarjeta fija no lleva cero». Una tarjeta con dos hace falsas tanto «cero» como «uno», refutando la sustitución propuesta. El sobre cerrado no aporta pruebas de ninguno de los valores de verdad: oculta un entero fijo, no lo cambia.
+
+</Exercise>
+
+Compara «Escribe tres», «Tres es igual a tres» y «Uno dividido entre cero es igual a tres». Solo la segunda es una proposición con sentido a la que se aplica esta inversión de verdad. [Negar comparaciones de orden](../logical-negation/#from-negating-order-comparisons) trata por separado las reglas de los extremos.
+
+<span id="from-negating-order-comparisons"></span>
+
+## Negar comparaciones de orden
+
+«Al menos tres» incluye tres. Su negación debe excluirlo, así que «como máximo tres» no sirve: ambas se cumplirían en el extremo. La negación correcta es «estrictamente menor que tres».
+
+Sean $x$ y $c$ reales con su orden habitual. $c$ es la frontera. Las siguientes reglas son resultados deducidos, no cuatro sustituciones independientes que memorizar:
+
+$$\neg(x>c)\Leftrightarrow x\le c$$
+$$\neg(x\ge c)\Leftrightarrow x<c$$
+$$\neg(x<c)\Leftrightarrow x\ge c$$
+$$\neg(x\le c)\Leftrightarrow x>c$$
+
+En cada línea, $\Leftrightarrow$ indica que ambas condiciones coinciden para toda asignación permitida. Cambian tanto la dirección como la inclusión de la igualdad.
+
+<details>
+<summary>Lecturas de comparaciones de orden</summary>
+
+«No es cierto que equis sea mayor que ce» significa «equis es menor o igual que ce»; «No es cierto que equis sea mayor o igual que ce» significa «equis es estrictamente menor que ce»; «No es cierto que equis sea menor que ce» significa «equis es mayor o igual que ce»; «No es cierto que equis sea menor o igual que ce» significa «equis es estrictamente mayor que ce».
+
+</details>
+
+
+<span id="from-negating-order-comparisons-demostración-por-tricotomía"></span>
+
+### Demostración por tricotomía
+
+Fija una entrada real arbitraria $x$ y una frontera $c$. El orden real habitual coloca $x$ en exactamente una de tres posiciones: por debajo de $c$, igual a $c$ o por encima de $c$. Esta **tricotomía** se acepta como fundamento del orden.
+
+- «Por encima» es verdadero solo en esa posición. Su negación selecciona por debajo e igual: $x\le c$.
+- «Por encima o igual» selecciona dos posiciones. Su negación deja solo por debajo: $x<c$.
+- «Por debajo» selecciona una posición. Su negación deja igual y por encima: $x\ge c$.
+- «Por debajo o igual» selecciona dos posiciones. Su negación deja solo por encima: $x>c$.
+
+Todo real ocupa exactamente una de esas posiciones, y nada dependió de una elección numérica especial. Esto demuestra las cuatro leyes. Comprobar $2,3,4$ alrededor de tres las ilustra y permite detectar errores, pero tres muestras no demuestran una ley para infinitos reales. Las reglas no se trasladan sin cambios a órdenes parciales arbitrarios, donde puede haber objetos incomparables.
+
+
+<span id="from-negating-order-comparisons-leer-la-comparación-entera-y-conservar-el-dominio"></span>
+
+### Leer la comparación entera y conservar el dominio
+
+La negación de $0<x$ es $0\ge x$, equivalentemente $x\le0$. Lee una entrada a la derecha del signo con el mismo cuidado que una a la izquierda. Hay que incluir igualdad porque cero incumple la comparación estricta original.
+
+Si $x$ se restringe a los **reales no negativos**, negar $x>3$ da $x\le3$ en ese mismo dominio: exactamente las entradas de $[0,3]$. Menos uno no está permitido, aunque satisfaga la comparación en la recta real completa. No se añade ningún cuantificador y una $x$ libre sigue libre. Negar no es resolver una inecuación ni ampliar el universo de entradas.
+
+
+<span id="from-negating-order-comparisons-práctica-en-la-frontera"></span>
+
+### Práctica en la frontera
+
+Niega $x>3$, $x\ge3$, $x<3$ y $x\le3$. Da los valores de verdad de originales y negaciones para $x=3$.
+
+<details>
+<summary>Pista</summary>
+
+En la igualdad, los originales estrictos son falsos y los no estrictos verdaderos. Invierte esos valores.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+En orden: $x\le3$, $x<3$, $x\ge3$, $x>3$. En tres, los originales tienen valores $0,1,0,1$ y las negaciones $1,0,1,0$. Cambiar la dirección sin cambiar la inclusión de igualdad falla en esta comprobación.
+
+</details>
+
+<Exercise question="Escribe la negación de ‘x es como máximo cinco’. Explica por qué cinco la incumple. Después niega ‘cero es estrictamente menor que x’ para x real no negativo y describe todas las soluciones permitidas.">
+
+La primera respuesta es $x>5$. Cinco cumple el original y debe incumplir la negación. La segunda es $x\le0$ en el dominio no negativo; solo $x=0$ la satisface. Las entradas negativas no pasan a estar permitidas. Las respuestas mantienen las mismas entradas y fronteras que los originales.
+
+</Exercise>
+
+Reconstruye una regla usando posiciones arbitrarias por debajo, igual y por encima. Explica por qué ese argumento abarca más que cualquier lista finita de pruebas numéricas favorables.
+
+<span id="from-double-negation"></span>
+
+## Doble negación
+
+«No es cierto que el número sea distinto de tres» dice que el número es igual a tres. La afirmación interior niega la igualdad; la frase exterior niega esa negación completa. El número no cambia.
+
+
+<span id="from-double-negation-el-teorema-clásico"></span>
+
+### El teorema clásico
+
+Para cualquier proposición $P$,
+
+$$\neg(\neg P)\Leftrightarrow P.$$
+
+«no (no pe) si y solo si pe».
+
+Es una equivalencia de valores de verdad en todos los casos, no una afirmación de que $P$ sea verdadera. Se deduce de la bivalencia clásica y de la definición de negación como inversión de verdad. No afirma que todo sistema lógico siga esta ley.
+
+
+<span id="from-double-negation-demostración-los-dos-valores-iniciales"></span>
+
+### Demostración: los dos valores iniciales
+
+Toma una proposición arbitraria. Si $P$ es verdadera, $\neg P$ es falsa y $\neg(\neg P)$ es verdadera. El original y su doble negación coinciden.
+
+Si $P$ es falsa, $\neg P$ es verdadera y $\neg(\neg P)$ es falsa. Vuelven a coincidir. En particular, dos negaciones no han convertido una proposición falsa en verdadera.
+
+En este marco no hay un tercer valor inicial. Los dos casos agotan todas las posibilidades y demuestran el teorema sin presuponerlo. Comprobar una igualdad numérica verdadera ilustraría el primer caso y dejaría el segundo sin demostrar.
+
+
+<span id="from-double-negation-el-alcance-determina-qué-pareja-se-elimina"></span>
+
+### El alcance determina qué pareja se elimina
+
+Sustituir una igualdad completa da
+
+$$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
+
+Para $x=0$ ambos lados son verdaderos; para $x=2$, falsos. El teorema da la coincidencia para toda entrada permitida, con la evaluación punto a punto explicada arriba. «No distinto de cero» no toma el opuesto aritmético de $x$ ni significa «negativo».
+
+La proposición que ocupa el lugar de $P$ puede ser compuesta:
+
+$$\neg\bigl(\neg(P\land Q)\bigr)\Leftrightarrow(P\land Q).$$
+
+Trata la conjunción completa como una entrada. No hace falta llevar las negaciones a su interior.
+
+En cambio, $(\neg P)\land(\neg Q)$ tiene dos negaciones de **entradas diferentes**. Ninguna niega el resultado de la otra. Si $P=Q=1$, $P\land Q$ es verdadera y $(\neg P)\land(\neg Q)$ falsa. Borrar ambos signos cambia el valor de verdad.
+
+Con tres negaciones anidadas, elimina una pareja y queda $\neg P$. Con cuatro, elimina una pareja y luego la restante para obtener $P$. Esto usa repetidamente el teorema, no una regla de multiplicación de números negativos.
+
+
+<span id="from-double-negation-práctica-con-alcances"></span>
+
+### Práctica con alcances
+
+Supón $P$ falsa. Reconstruye los dos valores intermedios. Simplifica después tres y cuatro negaciones anidadas sin una regla mnemotécnica de signos.
+
+<details>
+<summary>Pista</summary>
+
+Cada negación invierte el valor de su entrada completa. Busca una pareja en la que una negación tenga la otra como entrada.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+La primera negación da verdadero; la segunda, falso, coincidiendo con $P$. En $\neg(\neg(\neg P))$, elimina la pareja exterior y queda $\neg P$. En $\neg(\neg(\neg(\neg P)))$, quitar la pareja exterior da $\neg(\neg P)$; quitar la restante da $P$.
+
+</details>
+
+<Exercise question="Simplifica $\neg(\neg(P\lor Q))$ sin cambiar el interior de la disyunción. ¿Por qué se aplica el teorema? ¿Se pueden borrar también los signos de $\neg P\land\neg Q$?">
+
+La simplificación es $P\lor Q$. La disyunción inclusiva completa tiene un valor clásico, que se invierte dos veces. Las negaciones separadas no se pueden borrar: para $P=Q=1$ el supuesto cambio convierte falso en verdadero. Contar dos signos no establece un alcance anidado.
+
+</Exercise>
+
+
+<span id="from-double-negation-palabras-negativas-en-el-habla-corriente"></span>
+
+### Palabras negativas en el habla corriente
+
+Varias palabras negativas no siempre expresan dos operadores lógicos anidados. «No vino nadie» tiene concordancia negativa: significa que no vino persona alguna, no que viniera alguien. Otras lenguas también tienen construcciones cuyo significado no se obtiene contando palabras negativas.
+
+«No he demostrado que $P$ sea falsa» habla de una demostración, no es una negación directa de $\neg P$. No establece $P$. Traduce primero el alcance pretendido. Una [demostración booleana posterior](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) obtiene la misma ley clásica mediante la unicidad del complemento bajo las reglas permitidas en esa hoja. Aquí se ha dado la demostración semántica elemental.
+
+<span id="from-negating-combined-conditions"></span>
+
+## Negar condiciones compuestas
+
+Una tarjeta cumple el requisito cuando es roja y cuadrada. Un triángulo rojo falla aunque tenga el color correcto. Decir «no roja y no cuadrada» lo omitiría. Un triángulo azul también falla: no tiene que faltar **exactamente una** propiedad.
+
+Sea $P$ roja y $Q$ cuadrada para la **misma tarjeta**. $\neg(P\land Q)$ niega el requisito entero. $(\neg P)\land Q$ exige, en cambio, un cuadrado no rojo. Un triángulo rojo satisface la primera y no la segunda. El alcance importa.
+
+
+<span id="from-negating-combined-conditions-negación-de-una-conjunción"></span>
+
+### Negación de una conjunción
+
+Un requisito unido por «y» falla cuando falla al menos una parte. Pueden fallar ambas. La ley clásica de De Morgan para la conjunción es:
+
+$$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
+
+| $P$ | $Q$ | $P\land Q$ | $\neg(P\land Q)$ | $\neg P$ | $\neg Q$ | $\neg P\lor\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Compara la cuarta columna con la última: coinciden en todas las filas. La tercera evalúa la conjunción original y la siguiente invierte su valor. A la derecha negamos las entradas antes de unirlas mediante «o» inclusiva.
+
+
+<span id="from-negating-combined-conditions-negación-de-una-disyunción-inclusiva"></span>
+
+### Negación de una disyunción inclusiva
+
+Si la regla es «roja o cuadrada», cumplen un triángulo rojo, un cuadrado azul y también un cuadrado rojo. Solo falla una tarjeta sin ninguna propiedad. Por tanto, deben fallar ambas alternativas:
+
+$$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
+
+| $P$ | $Q$ | $P\lor Q$ | $\neg(P\lor Q)$ | $\neg P$ | $\neg Q$ | $\neg P\land\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+La cuarta columna vuelve a coincidir con la última. En cada fila mixta, una entrada mantiene verdadera la disyunción original y su negación es falsa. Cuando ambas entradas son falsas, la negación y la conjunción de negaciones son verdaderas.
+
+Cada entrada tiene exactamente dos valores de verdad. Las cuatro parejas agotan todas las asignaciones y demuestran ambas leyes a partir de las definiciones de negación, conjunción y disyunción inclusiva. $1,0$ codifican verdadero y falso. Son demostraciones semánticas para proposiciones clásicas arbitrarias, incluidas entradas compuestas. Unos ejemplos aritméticos no aportarían este argumento exhaustivo.
+
+<Note title="Leer el alcance en voz alta">
+
+$\neg(P\land Q)$: «No se cumplen a la vez las proposiciones pe y cu». $\neg(P\lor Q)$: «No se cumple ni pe ni cu». $\Leftrightarrow$: «si y solo si».
+
+</Note>
+
+
+<span id="from-negating-combined-conditions-un-requisito-anidado"></span>
+
+### Un requisito anidado
+
+Ahora $P$ significa roja, $Q$ tener círculo y $R$ tener estrella. Se exige $P\land(Q\lor R)$. Hay dos requisitos exteriores: el color y la alternativa completa de marcas. Niega primero esa conjunción exterior:
+
+$$\neg\bigl(P\land(Q\lor R)\bigr)\Leftrightarrow\neg P\lor\neg(Q\lor R).$$
+
+Después niega solo la disyunción agrupada, dejando intacto el fragmento exterior:
+
+$$\neg P\lor\neg(Q\lor R)\Leftrightarrow\neg P\lor(\neg Q\land\neg R).$$
+
+Fallar significa no ser roja **o** carecer de ambas marcas. Si $P$ es falsa, el original falla cualesquiera que sean las marcas y $\neg P$ hace verdadera la respuesta. Si $P$ es verdadera, el original falla exactamente cuando faltan ambas marcas. Esos dos casos exhaustivos verifican el significado general.
+
+La reagrupación $(\neg P\lor\neg Q)\land\neg R$ es incorrecta: una tarjeta no roja con estrella falla el original, pero tampoco satisface esta supuesta negación. Exige indebidamente ausencia de estrella cuando el color ya basta. Según la convención usual, «y» agrupa antes que «o». Omitir paréntesis opcionales bajo esa convención no equivale a cambiar explícitamente la agrupación. Escríbelos mientras aprendes.
+
+
+<span id="from-negating-combined-conditions-práctica-independiente"></span>
+
+### Práctica independiente
+
+Reconstruye la comparación de $\neg(P\land Q)$ con $\neg P\land\neg Q$. Identifica **todas** las filas diferentes y explica qué exige cada condición.
+
+<details>
+<summary>Pista</summary>
+
+Incluye ambas asignaciones mixtas. Una conjunción puede fallar por una sola parte.
+
+</details>
+
+<details>
+<summary>Tabla y explicación de referencia</summary>
+
+
+| $P$ | $Q$ | $\neg(P\land Q)$ | $\neg P\land\neg Q$ |
+|---|---|---|---|
+| 1 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 |
+
+
+Las dos filas mixtas difieren. «No ambas» necesita al menos un fallo; «ambas no» exige dos. Para una tarjeta con nueve, se cumple positividad pero no paridad: realiza una fila mixta. Cualquiera de las diferencias basta para refutar la equivalencia.
+
+</details>
+
+<Exercise question="Una tarjeta cumple si tiene estrella o si tiene círculo y borde azul. Usa S, C, B y niega la regla en dos etapas. Comprueba una tarjeta sin estrella, con círculo y sin borde.">
+
+La regla es $S\lor(C\land B)$. Su negación es primero $\neg S\land\neg(C\land B)$ y después $\neg S\land(\neg C\lor\neg B)$. Deben fallar ambas alternativas; para que falle la conjunción interior basta una propiedad ausente. La tarjeta indicada satisface la negación por no tener estrella ni borde; sí puede tener círculo.
+
+</Exercise>
+
+
+<span id="from-negating-combined-conditions-extremos-numéricos"></span>
+
+### Extremos numéricos
+
+Para $x$ real,
+
+$$\neg\bigl((0<x)\land(x\le2)\bigr)\Leftrightarrow(x\le0)\lor(x>2).$$
+
+Cero satisface la negación porque incumple la comparación inferior estricta. Dos no la satisface porque cumple ambas comparaciones originales. Unir las comparaciones negadas con «y» exigiría estar simultáneamente por debajo y por encima del intervalo, lo cual es imposible.
+
+<Exercise question="Niega la condición exterior $x<0\lor x>2$. Explica ambos extremos y por qué conservar ‘o’ sería incorrecto.">
+
+La negación es $(x\ge0)\land(x\le2)$. Deben fallar ambas comparaciones exteriores estrictas, así que se incluyen cero y dos. Mantener «o» aceptaría una entrada negativa solo por ser como máximo dos, aunque el original exterior sea verdadero allí.
+
+</Exercise>
+
+Mantén fijos dominio y asignaciones. Estas leyes no atraviesan cuantificadores. La [hoja booleana posterior](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) da una demostración algebraica separada bajo sus leyes permitidas; esta prueba semántica no sustituye esas obligaciones.

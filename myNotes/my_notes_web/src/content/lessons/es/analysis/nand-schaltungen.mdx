@@ -25,7 +25,7 @@ additionalSources: []
 
 <Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
 
-NAND devuelve 0 solo cuando ambas entradas son 1. Se escribe | o ↑. Aquí | significa NAND; en el ejemplo aritmético $a | n$ significaba divisibilidad: importa el contexto. El pequeño círculo en la salida del circuito significa negación.
+NAND da $0$ solo con dos entradas $1$. Los símbolos | o ↑ significan aquí NAND, no divisibilidad como $a | n$. El círculo de salida significa negación.
 
 
 <span id="from-nand-schaltungen-cambia-las-entradas-y-sigue-los-cables"></span>
@@ -43,11 +43,11 @@ NAND devuelve 0 solo cuando ambas entradas son 1. Se escribe | o ↑. Aquí | si
 
 <Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
 
-NO conecta A a ambas entradas de una NAND. $Y$ reutiliza la salida de la primera NAND en ambas entradas de una segunda: dos puertas físicas, aunque la fórmula repita un término. O niega primero cada entrada y luego aplica NAND: tres puertas. Como pueden construirse NO, $Y$ y O, NAND es funcionalmente completa.
+NOT conecta $A$ a ambas entradas NAND. AND lleva una salida NAND a ambas entradas de otra: dos puertas físicas pese al término repetido. OR niega ambas entradas y aplica NAND: tres puertas. Construir NOT, AND y OR hace a NAND funcionalmente completa.
 
 
 <span id="from-nand-schaltungen-seguir-una-señal"></span>
 
 ## Seguir una señal
 
-Toma $A = 1$ y $B = 0$ en el circuito O. Las primeras puertas producen $\neg A = 0$ y $\neg B = 1$. La NAND final niega $0 \land  1$ y devuelve 1. Si $A = B = 0$, ambas primeras puertas dan 1 y la salida final es 0. Las trazas explican la construcción; la identidad general sigue de $\neg (\neg A \land  \neg B) = A \lor  B$ por De Morgan y doble negación. Una señal puede alimentar varias entradas sin reconstruir la puerta original.
+Para OR con $A=1$, $B=0$, las primeras puertas dan $\neg A=0$, $\neg B=1$; la NAND final niega $0\land1$, dando $1$. Con $A=B=0$, ambas primeras salidas son $1$ y la final $0$. De Morgan y doble negación prueban $\neg(\neg A\land\neg B)=A\lor B$ en general. Una señal puede alimentar varias entradas sin reconstruir su puerta.

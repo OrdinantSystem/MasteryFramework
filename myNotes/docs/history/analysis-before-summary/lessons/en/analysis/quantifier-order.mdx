@@ -1,0 +1,597 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-quantifiers"
+sourceId: "analysis-zero"
+title: "Quantifier order, dependence and translation"
+navTitle: "Quantifier order, dependence and translation"
+description: "Quantifier order, dependence and translation"
+order: 10
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["existence-and-uniqueness"]
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.8 Nested quantifiers/01 Quantifier Order.md#01 · Which choice comes first?", "Concepts/Nested Quantifiers and Dependence.md#Nested Quantifiers and Dependence", "A0.1.8 Nested quantifiers/02 Dependence between Variables.md#02 · What information may a witness use?", "A0.1.8 Nested quantifiers/03 Separate Witnesses versus One Shared Witness.md#03 · A key per person is not necessarily one key for all", "A0.1.8 Nested quantifiers/04 Translating into Formal Quantifiers.md#04 · Turn the sentence into a formula"]
+thumbnail: "quantifiers"
+additionalSources: []
+---
+
+<span id="from-reading-mathematical-structure"></span>
+
+## Reading mathematical structure
+
+“Find a real number less than two” is an instruction. “Every real number is less than two” makes a claim, and it is false. The first task in reading mathematics is to identify what the sentence does. A long string of symbols does not settle that question.
+
+
+<span id="from-reading-mathematical-structure-a-reading-procedure"></span>
+
+### A reading procedure
+
+Identify the sentence’s job: definition, assertion, local assumption, question or instruction. Then check domains and definedness (no real division by zero), free and bound occurrences, and any values fixed by context. Preserve quantifier order and scope: $\forall$ means every, $\exists$ at least one, not exactly one. Parse from the outermost connective inward, keeping each whole input together. In a conditional, identify the whole hypothesis and conclusion; do not invent a hypothesis for a simple equality. Parsing, evaluation and proof remain separate.
+
+Addition in $x+y=3$ combines numbers inside one condition, not two propositions. At the propositional level we may treat a whole quantified statement as one input letter, but that does not make it an atomic formula in first-order syntax.
+
+
+<span id="from-reading-mathematical-structure-a-universal-claim-with-a-conditional-inside"></span>
+
+### A universal claim with a conditional inside
+
+“Any real number strictly between zero and one is less than two” becomes
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+“For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.”
+
+The quantifier governs the entire conditional and binds every occurrence of $x$. The formula is closed. Inside its scope the main connective is $\Rightarrow$, also written $\to$. Its left input is the entire conjunction; its right input is $x<2$. The symbol $\land$ means “and,” not a second outer connective.
+
+Keep both $0<x$ and $x<1$ in the translation. A later proof may not need the lower bound, but removing it while translating changes the stated hypothesis. Nor does the conditional assert that every real number lies between zero and one.
+
+At $x=1/2$, both hypothesis and conclusion hold. At $x=3$, the hypothesis fails, so three is not a counterexample, even though the conclusion fails too. A counterexample to a universal conditional must satisfy its **entire hypothesis** and fail its conclusion.
+
+For a proof, take any real $x$ satisfying the hypothesis. From $x<1$ and $1<2$, transitivity of the usual real order gives $x<2$. This arbitrary-input reasoning proves the claim. The translation and numerical checks alone did not. Classical semantics and ordinary real order are the accepted foundations here.
+
+
+<span id="from-reading-mathematical-structure-practice-in-both-directions"></span>
+
+### Practice in both directions
+
+<Exercise question="Parse $x=0\lor((x>0)\land(x<1))$. Give the outer connective, its two whole inputs, and the free variables. Then translate ‘x equals zero and it is not the case that y equals zero’.">
+
+The outer connective is $\lor$. Its inputs are $x=0$ and the whole conjunction $(x>0)\land(x<1)$. All occurrences of $x$ remain free unless context adds a quantifier. The second translation is $(x=0)\land\neg(y=0)$; only the second equality is negated, and both variables remain free as written.
+
+</Exercise>
+
+Translate “Every real number greater than one is greater than zero.” Identify the hypothesis and prove the claim without a list of successful examples. Does it claim that every real is positive?
+
+<details>
+<summary>Hint</summary>
+
+“For every number with a property” contains a conditional. Keep the domain outside that conditional.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$. The hypothesis is $x>1$; the conclusion is $x>0$. For arbitrary real $x$ above one, $1>0$ and transitivity give $x>0$. The quantifier binds every occurrence of $x$. The claim does not assert positivity of all reals: zero fails the hypothesis and is not a counterexample.
+
+</details>
+
+When checking a translation, look for changes from “if” to “and,” “some” to “every,” or strict to non-strict bounds. If the original wording is genuinely ambiguous, state the ambiguity. Later reading: [universal statements and domains](../universal-statements-and-domains/#from-universal-statements-and-domains).
+
+<span id="from-quantifier-order"></span>
+
+## Quantifier order
+
+Ana can use only red; Ben can use only blue. These are all the people, keys and permissions. Each person has a key, but no key works for everyone. The same objects answer two different questions.
+
+| Person | Red | Blue |
+| --- | --- | --- |
+| Ana | yes | no |
+| Ben | no | yes |
+
+Let $P$ be people, $K$ keys and $H(p,k)$ mean that person $p$ can use key $k$. Read the whole remainder as a bracket after each quantifier.
+
+$$
+\forall p\in P\;\exists k\in K\;H(p,k).
+$$
+
+For each person, a usable key exists. Red witnesses Ana, blue witnesses Ben. The choices may differ, but need not.
+
+$$
+\exists k\in K\;\forall p\in P\;H(p,k).
+$$
+
+Here choose a key for which the whole every-person claim holds. Red fails for Ben and blue fails for Ana; all candidates are excluded. A nested quantifier lies within another quantifier’s scope. Two separately quantified statements joined by “and” need not be nested. In these formulas both variables are bound and the first scope contains the second quantifier. This is logical order, not physical time or a promised algorithm.
+
+
+<span id="from-quantifier-order-the-same-distinction-over-the-reals"></span>
+
+### The same distinction over the reals
+
+$$
+\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x).
+$$
+
+True: for arbitrary real $x$, choose $y=x+1$. Closure of addition gives a real output, and positivity of one gives $y>x$. These reasons cover every input, not just tested examples.
+
+$$
+\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y>x).
+$$
+
+False: for any proposed $y$, test the allowed value $x=y$. It would require $y>y$. The test defeats every proposed witness. The recipe $y=x+1$ cannot prove this order because it changes the supposedly fixed witness with the later input.
+
+
+<span id="from-quantifier-order-safe-swaps-have-conditions"></span>
+
+### Safe swaps have conditions
+
+For fixed independent domains $D,E$, adjacent universal quantifiers commute: either order tests every ordered pair. To prove either direction, take any pair and apply the original two requirements to its entries. If either domain is empty, both orders are true. Adjacent existential quantifiers also commute: a successful pair can be presented in either order. If either domain is empty, both orders are false. Keep $R(x,y)$ unchanged; swapping binders does not swap relation arguments. A domain $E(x)$ cannot simply be moved before $x$ is introduced.
+
+<span id="from-quantifier-order-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+Explain the complete red–blue model without symbols.
+
+<details>
+<summary>Hint</summary>
+
+Exclude each shared candidate.
+
+</details>
+
+<Exercise>
+
+Ana has red and Ben blue. Red fails for Ben and blue for Ana, so each has a key but none is shared.
+
+</Exercise>
+
+Compare $\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y=x)$ and the shared order.
+
+<details>
+<summary>Hint</summary>
+
+For shared equality test a different real.
+
+</details>
+
+<Exercise>
+
+The first is true with $y=x$. The shared claim is false: for any $y$, $x=y+1$ is real and different.
+
+</Exercise>
+
+Does swapping two universals prove everyone has every key?
+
+<details>
+<summary>Hint</summary>
+
+Equivalence is not truth.
+
+</details>
+
+<Exercise>
+
+No. Both orders test all pairs and are false in the workshop, for example at Ana–blue.
+
+</Exercise>
+
+Why does $y=x+1$ fail as a shared-witness proof?
+
+<details>
+<summary>Hint</summary>
+
+Which input is later?
+
+</details>
+
+<Exercise>
+
+It selects a new witness for each input; it proves universal-first, not one witness for all inputs.
+
+</Exercise>
+
+No people and no keys exist. Evaluate the two orders.
+
+<details>
+<summary>Hint</summary>
+
+Universal truth supplies no object.
+
+</details>
+
+<Exercise>
+
+Every person has a key is vacuously true. A shared key exists is false because there is no key.
+
+</Exercise>
+
+Later, reconstruct the arbitrary-real proof and disproof rather than testing large numbers.
+
+</details>
+
+<span id="from-quantifier-order-read-aloud"></span>
+
+### Read aloud
+
+For every x in D, there exists y in E such that R of x and y holds.
+
+<span id="from-witness-dependence"></span>
+
+## Witness dependence
+
+The larger-real example shows why $y=x+1$ needs the input first. With three quantifiers, track exactly which inputs each witness may use.
+
+
+<span id="from-witness-dependence-keep-an-information-ledger"></span>
+
+### Keep an information ledger
+
+At a witness choice, list fixed parameters, earlier arbitrary inputs in whose scope it lies and earlier chosen witnesses. These are available. Later universally tested inputs cannot change an earlier choice. Dependence is permitted, not required: choosing positive one may ignore an earlier input when only positivity is requested. An existential assertion does not promise a computable method.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+Both $x$ and $y$ are available. Choose $z=x+y$; closure of real addition supplies membership and the chosen equality supplies the predicate. The argument applies to any real pair.
+
+$$
+\forall x\in\mathbb R\;\exists z\in\mathbb R\;\forall y\in\mathbb R\;(z=x+y).
+$$
+
+Now $z$ may use $x$, but must remain fixed for every later $y$. At $y=0$ the condition forces $z=x$; at $y=1$ it forces $z=x+1$. The same value cannot satisfy both. This defeats every candidate using two incompatible requirements, not an inference from a sample.
+
+A later envelope choice may use a previously selected key: earlier existential choices can coordinate. Binding is a different matter. In a formula with fixed real $c$, the recipe $y=x+c$ may use $c$, although its occurrences remain syntactically free if no binder for $c$ is written. The context fixes its value. A bound witness may depend on an earlier input without becoming free.
+
+Legal information is not enough for success. The constant $y=1$ uses no forbidden input but fails $y>x$ at $x=1$. The rule $y=x/2$ uses only the earlier input, yet fails integer membership when $x=1$. Always check information, membership and the whole predicate separately.
+
+<span id="from-witness-dependence-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+For every real $x$, a positive real $y$ is needed. May you always choose one?
+
+<details>
+<summary>Hint</summary>
+
+Permission to use an input is not an obligation.
+
+</details>
+
+<Exercise>
+
+Yes: one is positive and real for every input. No variation is required.
+
+</Exercise>
+
+Which inputs may the sum witness use in each displayed formula?
+
+<details>
+<summary>Hint</summary>
+
+Stop where the witness is introduced.
+
+</details>
+
+<Exercise>
+
+Both inputs in the first; only the earlier input in the second. The later universal input cannot revise the witness.
+
+</Exercise>
+
+For $y>x$ over reals, is $y=1$ allowed and successful?
+
+<details>
+<summary>Hint</summary>
+
+Separate permission from truth.
+
+</details>
+
+<Exercise>
+
+It is allowed but fails at $x=1$ or larger. $y=x+1$ is allowed and succeeds for all real inputs.
+
+</Exercise>
+
+Fix real $c$. Supply $y=x+c$ and explain whether $c$ is bound.
+
+<details>
+<summary>Hint</summary>
+
+Context differs from a written binder.
+
+</details>
+
+<Exercise>
+
+The real sum uses available $x$ and fixed $c$ and satisfies the equality. Fixing $c$ does not bind its occurrences in the formula.
+
+</Exercise>
+
+A claim asks for integer $y$ with $2y=x$ for every integer $x$. Audit $y=x/2$.
+
+<details>
+<summary>Hint</summary>
+
+Try an odd input.
+
+</details>
+
+<Exercise>
+
+At input one the output is a half, not an integer. Indeed no integer doubles to one, so the claim itself is false.
+
+</Exercise>
+
+Later, recreate the information ledger for both sum formulas without looking.
+
+</details>
+
+<span id="from-witness-dependence-read-aloud"></span>
+
+### Read aloud
+
+For every pair of real inputs, there is a real sum; the sum witness may use both inputs.
+
+<span id="from-separate-and-shared-witnesses"></span>
+
+## Separate and shared witnesses
+
+Add a green key both may use: now both requirements hold. Add two master keys: either can witness the shared claim. A shared witness is held fixed, not necessarily unique.
+
+$$
+\underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
+$$
+
+Keep the people, keys and permissions from the red–blue model. To prove the implication, assume S and fix a key it supplies. Take any allowed person. The key works for that person because it works for all. Reuse it as that person’s witness. No distinctness of choices is required. Thus S implies T. The complete red–blue model refutes the converse.
+
+Stronger means that shared success implies separate success. It does not mean opposite truth values in every situation. With green both are true; if someone has no usable key both are false. A finite complete permission table can establish these finite claims; a sample from an infinite domain cannot settle every case.
+
+<span id="from-separate-and-shared-witnesses-all-empty-domain-cases"></span>
+
+### All empty-domain cases
+
+| People | Keys | Separate T | Shared S |
+| --- | --- | --- | --- |
+| empty | nonempty | true | true |
+| nonempty | empty | false | false |
+| empty | empty | true | false |
+
+With no people, the universal-first form has no failing person. The shared form still needs a key: any existing key works vacuously, but if no key exists the form is false. With people but no keys, each person lacks a witness. The implication S to T remains valid in every case. A true premise supplies a key to reuse; a false premise makes the implication true.
+
+For real comparisons, [quantifier order](../quantifier-order/#from-quantifier-order) proves separate $y>x$ true and shared $y>x$ false. For the non-strict variant $y\ge x$, separate success follows even with $y=x$. Shared success still fails, but testing $x=y$ no longer defeats it: test $x=y+1$ instead.
+
+<span id="from-separate-and-shared-witnesses-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+Everyone may use both red and blue. Evaluate both forms and uniqueness.
+
+<details>
+<summary>Hint</summary>
+
+Fix one, then consider the other.
+
+</details>
+
+<Exercise>
+
+Both forms are true. Either key is a shared witness; the shared form makes no uniqueness assertion.
+
+</Exercise>
+
+Construct a complete countermodel to separate implying shared.
+
+<details>
+<summary>Hint</summary>
+
+Specify every permission.
+
+</details>
+
+<Exercise>
+
+Exactly Ana and Ben, exactly red and blue: Ana only red, Ben only blue. Every row succeeds but no column succeeds for everyone. All shared candidates are excluded.
+
+</Exercise>
+
+Prove the valid implication without symbols.
+
+<details>
+<summary>Hint</summary>
+
+Reuse the supplied key.
+
+</details>
+
+<Exercise>
+
+Fix a key assumed to work for all. For any person use that key. It works for this arbitrary person, establishing separate success. The argument deliberately uses the same witness.
+
+</Exercise>
+
+No people, one key: evaluate, then remove the key.
+
+<details>
+<summary>Hint</summary>
+
+The leading existential still requires an object.
+
+</details>
+
+<Exercise>
+
+Initially both are true. After removal separate remains vacuously true and shared becomes false.
+
+</Exercise>
+
+Assess separate and shared $y\ge x$ over all reals.
+
+<details>
+<summary>Hint</summary>
+
+Equality changes the useful test.
+
+</details>
+
+<Exercise>
+
+Separate is true with $y=x$. Shared is false: any $y$ fails at real $x=y+1$.
+
+</Exercise>
+
+Later, recreate all three empty-domain rows and explain why none breaks the valid implication.
+
+</details>
+
+<span id="from-separate-and-shared-witnesses-read-aloud"></span>
+
+### Read aloud
+
+One fixed witness for all inputs implies a witness for each input, but not conversely.
+
+<span id="from-translating-quantified-statements"></span>
+
+## Translating quantified statements
+
+Transfer the key model to books: translate “Every student has read a book” and “There is a book every student has read”. The distinction is unchanged; the domains and relation are new.
+
+Let $S$ be students, $B$ books and $R(s,b)$ mean that $s$ has read $b$. Keep that relation unchanged; do not silently switch from reading to ownership.
+
+$$
+\forall s\in S\;\exists b\in B\;R(s,b).
+$$
+
+$$
+\exists b\in B\;\forall s\in S\;R(s,b).
+$$
+
+Read back the first as “for each student, a book they have read”; the second as “a book read by every student”. Neither requires exactly one book. The first does not assert that students exist. With no students it is true; the second still requires an actual book.
+
+
+<span id="from-translating-quantified-statements-write-then-read-back"></span>
+
+### Write, then read back
+
+Specify each domain and the final relation. Decide which requirement governs the rest, then write the binders and their scopes. Check every variable: bound here or fixed in context? Finally read the formula back and test a small situation where a tempting alternative differs. Translation and proof are separate tasks. Preserve a false assertion faithfully instead of changing its order to make it true.
+
+$$
+\forall x\in\mathbb R\;\forall y\in\mathbb R\;\exists z\in\mathbb R\;(z=x+y).
+$$
+
+This translates “Every pair of reals has a real sum”. Both inputs precede the witness. Its truth additionally uses closure of real addition; the quantifier symbols alone do not prove that arithmetic fact.
+
+
+<span id="from-translating-quantified-statements-a-conditional-limits-the-requirement"></span>
+
+### A conditional limits the requirement
+
+$$
+\forall s\in S\;\bigl(A(s)\Rightarrow\exists b\in B\;R(s,b)\bigr).
+$$
+
+Here $A(s)$ means attending the seminar. Only attending students must supply a read book. Moving $\exists b$ outside the conditional can demand a book for nonattenders too. Take one nonattending student and no books: the displayed conditional is true, but $\forall s\in S\;\exists b\in B\;(A(s)\Rightarrow R(s,b))$ is false. Parentheses and empty domains expose the difference. Restricting $S$ explicitly to attenders is another faithful translation.
+
+<span id="from-translating-quantified-statements-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+With people $P$, keys $K$ and usability $H$, translate “Each person can use a key”.
+
+<details>
+<summary>Hint</summary>
+
+Person first.
+
+</details>
+
+<Exercise>
+
+$\forall p\in P\;\exists k\in K\;H(p,k)$. The key may depend on the person; distinct choices are not required.
+
+</Exercise>
+
+Translate “A key can be used by every person” in the same language.
+
+<details>
+<summary>Hint</summary>
+
+Keep one key fixed.
+
+</details>
+
+<Exercise>
+
+$\exists k\in K\;\forall p\in P\;H(p,k)$. One fixed key must work for every person; it need not be unique.
+
+</Exercise>
+
+Translate and prove “Every real has a strictly larger real”.
+
+<details>
+<summary>Hint</summary>
+
+Introduce the input before the witness.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;(y>x)$. For arbitrary $x$, choose the real sum $y=x+1$; positivity of one makes it larger.
+
+</Exercise>
+
+Translate “A real number equals every real number”, then evaluate.
+
+<details>
+<summary>Hint</summary>
+
+Do not alter a false assertion.
+
+</details>
+
+<Exercise>
+
+$\exists y\in\mathbb R\;\forall x\in\mathbb R\;(y=x)$. False: any proposed $y$ fails at real $x=y+1$.
+
+</Exercise>
+
+Translate “For every real $x$ there is a real $y$ such that for every real $z$, $x+y=z$”.
+
+<details>
+<summary>Hint</summary>
+
+Preserve all three layers.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb R\;\exists y\in\mathbb R\;\forall z\in\mathbb R\;(x+y=z)$. The witness may use $x$, not later $z$. False: one fixed sum cannot equal both zero and one.
+
+</Exercise>
+
+Later, write both book translations from memory and read them back.
+
+</details>
+
+<span id="from-translating-quantified-statements-read-aloud"></span>
+
+### Read aloud
+
+Every student who attends has read a book; the book requirement lies inside the conditional.

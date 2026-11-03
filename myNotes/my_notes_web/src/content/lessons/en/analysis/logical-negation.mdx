@@ -21,104 +21,104 @@ additionalSources: []
 
 ## Logical negation
 
-A card bears three. “Its number is greater than three” is false, but “its number is less than three” is false too. These are not negations of each other. The correct denial, “its number is not greater than three,” includes the equality case.
+For a card bearing three, “greater than three” and “less than three” are both false, not negations. “Not greater than three” correctly includes equality.
 
 
 <span id="from-logical-negation-definition-of-negation"></span>
 
 ### Definition of negation
 
-For a meaningful classical proposition $P$, $\neg P$ is true when $P$ is false and false when $P$ is true. Both directions matter. The following is the definition, not a rule inferred from observing cards.
+For meaningful classical $P$, $\neg P$ reverses truth in both directions. The table defines negation; card observations do not:
 
 | $P$ | $\neg P$ |
 |---|---|
 | 1 | 0 |
 | 0 | 1 |
 
-The digits encode true and false; they are not arithmetic instructions. A safe first wording is “It is not the case that [the whole original claim].” Shorten it only after identifying its scope.
+Digits encode truth, not arithmetic. First say “It is not the case that [whole claim]”; shorten only once scope is clear.
 
 $\neg P$: “not P; it is not the case that P.”
 
-“The card is not three” does not change the card. If it bears two or four, the denial is true in either case. “The card is two” cannot replace that denial: at four both equalities would be false. One allowed case in which the original and a proposed negation agree disproves the proposal. Several successful samples do not prove it for every allowed input.
+“Not three” changes no card and holds at two and four. “Two” cannot replace it: at four, both original and proposed denial are false. One allowed agreement refutes a proposed negation; selected successes do not prove it universally.
 
 
 <span id="from-logical-negation-equality-and-its-denial"></span>
 
 ### Equality and its denial
 
-For expressions that denote meaningful objects in the stated setting,
+For expressions denoting meaningful objects in context:
 
 $$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
 
-$\ne$ is notation for “not equal.” $\Leftrightarrow$ reads “if and only if” and here records agreement in every case. To justify the second equivalence directly: if the values are equal, “unequal” is false and its denial true; if unequal, “unequal” is true and its denial false. Those exhaust the classical cases.
+$\ne$ means “not equal”; $\Leftrightarrow$ means “iff,” here agreement in every case. For the second law, equal values make “unequal” false and its denial true; unequal values reverse these. Both cases exhaust the possibilities.
 
 $a\ne b$: “a is not equal to b.”
 
-For real $x$, denying $x+2=5$ gives $x+2\ne5$. That completes the negation; solving is separate. The input $2$ produces four and the input $4$ produces six, so both satisfy the denial. Replacing equality with “greater than” loses the first input. Unequal does not select an order, and equality can be used even for objects with no specified order.
+For real $x$, deny $x+2=5$ as $x+2\ne5$; solving is separate. Inputs $2,4$ yield four and six, both accepted. “Greater than” loses the first. Unequal selects no direction; equality needs no order.
 
-Logical negation acts on claims. Arithmetic negation takes a number to its negative. Denying an equation does not change the signs of its terms. Different written expressions such as $2+1$ and $3$ can still denote equal values.
+Logical negation denies claims; arithmetic negation takes opposite numbers. Denying equations changes no term signs. Different expressions, like $2+1$ and $3$, may denote equal values.
 
 
 <span id="from-logical-negation-knowledge-meaningfulness-and-domain"></span>
 
 ### Knowledge, meaningfulness, and domain
 
-A sealed fixed card can bear zero even if nobody has established that it does. “Not proved $P$” and “not known $P$” concern knowledge; neither establishes $\neg P$. There is no third truth value called unknown in this classical setting.
+A fixed sealed card may bear zero without proof. “Not proved/known $P$” does not establish $\neg P$: unknown is no third classical truth value.
 
-A switch with low, medium, and high settings is **not high** in both low and medium mode. “Low” alone leaves a case out. Likewise, if a door can be partly open, “not fully open” need not mean “closed.” Fix the meaning before negating it.
+On a low/medium/high switch, **not high** includes low and medium, not low alone. A partly open door is not fully open without being closed. Fix meaning before negating.
 
-Negation does not turn an instruction into a proposition or repair undefined division. In ordinary real arithmetic, $1/0$ denotes no real value, so replacing $1/0=3$ by $1/0\ne3$ does not produce a well-defined true comparison.
+Negation neither makes instructions propositions nor repairs real division by zero: $1/0=3$ and $1/0\ne3$ both lack a defined comparison.
 
-For an open condition, negation works **pointwise** at the same allowed assignment. It does not bind free variables or enlarge the domain.
+Open conditions are negated **pointwise**, at the same allowed assignment, without binding or enlarging domains.
 
 
 <span id="from-logical-negation-practice"></span>
 
 ### Practice
 
-Only $0,1,2$ are allowed. Negate $x=1$, list the satisfying inputs, and say whether $x$ becomes bound. Then negate $x=2$ in the same domain.
+In domain $0,1,2$, negate $x=1$, list satisfying inputs, and assess binding. Repeat for $x=2$.
 
 <details>
 <summary>Hint</summary>
 
-Keep the allowed list fixed. A quantified statement about all inputs is different from checking an open condition at each input.
+Keep the domain fixed; pointwise evaluation is not universal quantification.
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-$x\ne1$ is satisfied by $0$ and $2$; $x\ne2$ by $0$ and $1$. No quantifier was added, so $x$ remains free. Three is not an allowed example. Exhausting this finite domain justifies these lists; it does not expand them to all reals.
+$x\ne1$ holds at $0,2$; $x\ne2$ at $0,1$. Exhaustion proves these finite lists, not real-domain extensions. Three is excluded; no quantifier binds $x$.
 
 </details>
 
-<Exercise question="Negate ‘the fixed card bears zero’. Why is ‘it bears one’ insufficient? May you infer the denial merely because the envelope is closed?">
+<Exercise question="Negate ‘the fixed card bears zero’. Why not ‘one’? Does a closed envelope imply the denial?">
 
-The denial is “the fixed card does not bear zero.” A card bearing two makes both “zero” and “one” false, disproving the proposed replacement. A closed envelope supplies no evidence for either truth value: it hides a fixed integer rather than changing it.
+“The fixed card does not bear zero.” At two, both “zero” and “one” are false, refuting substitution. Closure hides a fixed integer without changing it or establishing either truth value.
 
 </Exercise>
 
-Compare the inputs “Write three,” “Three equals three,” and “One divided by zero equals three.” Only the middle one is a meaningful proposition to which this truth-reversing definition applies. [Comparison negations](../logical-negation/#from-negating-order-comparisons) treats the boundary rules separately.
+Compare “Write three,” “Three equals three,” and “One divided by zero equals three”: only the middle is meaningful and propositional. See [comparison negations](../logical-negation/#from-negating-order-comparisons) for boundaries.
 
 <span id="from-negating-order-comparisons"></span>
 
 ## Negating order comparisons
 
-“At least three” includes three. Its negation must exclude three, so “at most three” cannot be right: both would hold at the boundary. The correct denial is “strictly less than three.”
+“At least three” includes three, so its denial excludes it: “strictly less than three,” not “at most three,” which would also hold there.
 
-Let $x$ and $c$ be real numbers in their usual order. Here $c$ is the boundary. The following are derived rules, not four unrelated replacements to memorize:
+For reals $x,c$ in usual order, with boundary $c$, we derive:
 
 $$\neg(x>c)\Leftrightarrow x\le c$$
 $$\neg(x\ge c)\Leftrightarrow x<c$$
 $$\neg(x<c)\Leftrightarrow x\ge c$$
 $$\neg(x\le c)\Leftrightarrow x>c$$
 
-In each line $\Leftrightarrow$ says that both conditions agree for every allowed assignment. Direction changes, and the inclusion of equality changes too.
+$\Leftrightarrow$ records agreement at every allowed assignment. Reverse direction **and** equality inclusion.
 
 <details>
 <summary>Order-comparison readings</summary>
 
-“not greater than” means “less than or equal to”; “not at least” means “strictly less than”; “not less than” means “greater than or equal to”; “not at most” means “strictly greater than.”
+“Not greater” means “at most”; “not at least,” “strictly less”; “not less,” “at least”; “not at most,” “strictly greater.”
 
 </details>
 
@@ -127,58 +127,58 @@ In each line $\Leftrightarrow$ says that both conditions agree for every allowed
 
 ### Proof from trichotomy
 
-Fix any real input $x$ and boundary $c$. The usual real order places $x$ in exactly one of three positions: below $c$, equal to $c$, or above $c$. This property, **trichotomy**, is accepted as foundational order background.
+For arbitrary real $x,c$, foundational **trichotomy** gives exactly one position: below, equal or above. Negating selects the remaining positions:
 
-- “Above” is true only in the above position. Its negation selects below and equal: $x\le c$.
-- “Above or equal” selects two positions. Its negation selects only below: $x<c$.
-- “Below” selects one position. Its negation selects equal and above: $x\ge c$.
-- “Below or equal” selects two positions. Its negation selects only above: $x>c$.
+- Above becomes below or equal: $x\le c$.
+- Above or equal becomes below: $x<c$.
+- Below becomes equal or above: $x\ge c$.
+- Below or equal becomes above: $x>c$.
 
-Every real input has exactly one of these positions, and nothing depended on a special numerical choice. This proves all four laws. Checking $2,3,4$ around the boundary three illustrates them and can expose errors, but three samples alone do not prove a law for infinitely many real inputs. These rules need not hold unchanged for arbitrary partial orders, where incomparable objects may occur.
+These exhaustive positions prove all four laws for arbitrary reals. Testing $2,3,4$ around three illustrates or finds errors, not an infinite-domain proof. Partial orders may have incomparable objects; the laws need not transfer unchanged.
 
 
 <span id="from-negating-order-comparisons-read-the-full-comparison-and-keep-the-domain"></span>
 
 ### Read the full comparison and keep the domain
 
-The negation of $0<x$ is $0\ge x$, equivalently $x\le0$. Read the input on the right as carefully as one on the left. Equality belongs in the answer because zero fails the original strict comparison.
+Deny $0<x$ as $0\ge x$, equivalently $x\le0$. Read right-hand inputs carefully: zero fails strictness, so equality belongs.
 
-If $x$ is restricted to **nonnegative reals**, denying $x>3$ gives $x\le3$ in that same domain: exactly the inputs in $[0,3]$. Negative one is not allowed, even though it satisfies the comparison on the larger real line. No quantifier is added, and a free $x$ stays free. Negating is not an inequality-solving operation or permission to change the universe of inputs.
+For **nonnegative real** $x$, denying $x>3$ gives $x\le3$ within that domain, exactly $[0,3]$. Negative one remains excluded. Negation neither solves inequalities, adds quantifiers, binds free $x$, nor changes domains.
 
 
 <span id="from-negating-order-comparisons-boundary-practice"></span>
 
 ### Boundary practice
 
-Negate $x>3$, $x\ge3$, $x<3$, and $x\le3$. Give the truth values of both originals and denials at $x=3$.
+Negate $x>3$, $x\ge3$, $x<3$, $x\le3$; evaluate originals and denials at $x=3$.
 
 <details>
 <summary>Hint</summary>
 
-At equality, the strict originals are false and the non-strict originals are true. Reverse those verdicts.
+Equality makes strict originals false, non-strict true. Reverse these.
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-In order: $x\le3$, $x<3$, $x\ge3$, $x>3$. At three the originals have values $0,1,0,1$ and the denials $1,0,1,0$. Changing direction without changing equality inclusion fails this check.
+In order: $x\le3$, $x<3$, $x\ge3$, $x>3$. At three: originals $0,1,0,1$, denials $1,0,1,0$. Direction change alone fails.
 
 </details>
 
-<Exercise question="Write the denial of ‘x is at most five’. Explain why five itself fails it. Then negate ‘zero is strictly less than x’ for nonnegative real x, describing every permitted solution.">
+<Exercise question="Deny ‘x is at most five’; explain five. Then deny ‘zero is strictly less than x’ for nonnegative real x; describe all solutions.">
 
-The first answer is $x>5$. Five satisfies the original, so it must fail the denial. The second is $x\le0$ in the nonnegative domain; only $x=0$ satisfies it. Negative inputs have not become permitted. These conclusions concern the same inputs and boundaries as their originals.
+$x>5$ excludes five because it satisfies the original. Next $x\le0$ in the nonnegative domain allows only zero, never negatives. Inputs and boundaries stay fixed.
 
 </Exercise>
 
-Reconstruct one rule using arbitrary below/equal/above positions. Explain why that argument covers more than any finite list of successful real-number tests.
+Reconstruct a rule from arbitrary below/equal/above positions; explain why this exceeds finite successful tests.
 
 <span id="from-double-negation"></span>
 
 ## Double negation
 
-“It is not the case that the number is unequal to three” says that the number equals three. The inner claim denies equality; the outer phrase denies that whole denial. The number itself does not change.
+“Not unequal to three” means equal to three: the outer denial negates the entire inner denial, without changing the number.
 
 
 <span id="from-double-negation-the-classical-theorem"></span>
@@ -191,64 +191,64 @@ $$\neg(\neg P)\Leftrightarrow P.$$
 
 “not (not P) if and only if P.”
 
-This is an equivalence of truth values in every case, not a claim that $P$ is true. It is derived from classical bivalence and the truth-reversing definition of negation. It is not a statement about every logical system.
+Truth values agree; this does not assert true $P$. Classical bivalence and truth reversal derive the law, not a claim about every logic.
 
 
 <span id="from-double-negation-proof-both-possible-starting-values"></span>
 
 ### Proof: both possible starting values
 
-Take an arbitrary proposition. If $P$ is true, $\neg P$ is false, so $\neg(\neg P)$ is true. The original and the double negation agree.
+For arbitrary true $P$, $\neg P$ is false, then $\neg(\neg P)$ true: agreement.
 
-If $P$ is false, $\neg P$ is true, so $\neg(\neg P)$ is false. They agree again. In particular, two negations have not made a false proposition true.
+For false $P$, $\neg P$ is true, then $\neg(\neg P)$ false: agreement again, not conversion to truth.
 
-There is no third starting truth value in this setting. These two cases exhaust all possibilities, proving the theorem without assuming it. A numerical check of one true equality would illustrate the first case and leave the second unproved.
+Bivalence makes these cases exhaustive, proving rather than assuming the theorem. Checking one true equality leaves the false starting case unproved.
 
 
 <span id="from-double-negation-scope-determines-whether-a-pair-can-be-removed"></span>
 
 ### Scope determines whether a pair can be removed
 
-Substituting a whole equality gives
+Substitute an entire equality:
 
 $$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
 
-For $x=0$ both sides are true; for $x=2$ both are false. The theorem gives agreement for every allowed input, under the pointwise convention above. “Not unequal to zero” does not take the arithmetic negative of $x$ or mean “negative.”
+At $x=0$ both sides are true; at $x=2$ both false. Pointwise, they agree on every allowed input. “Not unequal” means neither arithmetic negation nor “negative.”
 
-The proposition substituted for $P$ may itself be compound:
+Compound inputs also qualify:
 
 $$\neg\bigl(\neg(P\land Q)\bigr)\Leftrightarrow(P\land Q).$$
 
-Treat the whole conjunction as one input. There is no need to move either negation inside it.
+Treat the whole conjunction as one input; there is no need to move negations inside.
 
-By contrast, $(\neg P)\land(\neg Q)$ has two negations of **different inputs**. Neither negates the result of the other. If $P=Q=1$, then $P\land Q$ is true, while $(\neg P)\land(\neg Q)$ is false. Deleting both signs changes the truth value.
+In $(\neg P)\land(\neg Q)$, negations concern **different inputs**, not each other. At $P=Q=1$, this is false but $P\land Q$ true: deleting both fails.
 
-With three nested negations, remove one nested pair to leave $\neg P$. With four, remove a pair and then the remaining pair to leave $P$. This uses the theorem repeatedly, not a rule about multiplying negative numbers.
+Three nested negations reduce by one pair to $\neg P$; four reduce by two successive pairs to $P$. This repeats the theorem, not negative multiplication.
 
 
 <span id="from-double-negation-practice-with-nested-and-separate-denials"></span>
 
 ### Practice with nested and separate denials
 
-Assume $P$ is false. Reconstruct the two intermediate truth values. Then simplify three and four nested negations without using a sign mnemonic.
+For false $P$, reconstruct both intermediate values; simplify three and four nested negations without sign mnemonics.
 
 <details>
 <summary>Hint</summary>
 
-Each negation reverses the value of its entire input. Locate a pair where one denial takes the other denial as its input.
+Reverse each whole input; locate a pair with one denial inside the other.
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-The first negation gives true; the second gives false, agreeing with $P$. In $\neg(\neg(\neg P))$, remove the outer nested pair to leave $\neg P$. In $\neg(\neg(\neg(\neg P)))$, remove the outer pair, obtaining $\neg(\neg P)$, then remove that pair to obtain $P$.
+First true, then false, agreeing with $P$. Removing the outer pair from $\neg(\neg(\neg P))$ leaves $\neg P$. From $\neg(\neg(\neg(\neg P)))$ it leaves $\neg(\neg P)$, then $P$.
 
 </details>
 
-<Exercise question="Simplify $\neg(\neg(P\lor Q))$ without changing anything inside the disjunction. Why does the theorem apply? Can the two signs in $\neg P\land\neg Q$ also be deleted?">
+<Exercise question="Simplify $\neg(\neg(P\lor Q))$ without changing its interior; justify. May $\neg P\land\neg Q$ lose both signs too?">
 
-The simplification is $P\lor Q$. The whole inclusive disjunction has one classical truth value, which is reversed twice. The separate negations cannot be deleted: for $P=Q=1$ the proposed deletion changes false to true. Counting two negative marks does not establish nested scope.
+$P\lor Q$: its single classical value reverses twice. Separate negations cannot cancel: at $P=Q=1$, deletion changes false to true. Counting signs does not establish nesting.
 
 </Exercise>
 
@@ -257,24 +257,24 @@ The simplification is $P\lor Q$. The whole inclusive disjunction has one classic
 
 ### Negative words in ordinary speech
 
-Repeated negative words do not always express two nested logical operators. Spanish «No vino nadie» has negative concord: it says that nobody came, not that somebody did. Other languages also have constructions whose meaning cannot be read by counting negatives.
+Negative words need not be nested operators. Spanish «No vino nadie» means nobody came, not somebody: negative concord. Other languages likewise require interpretation, not counting.
 
-“I have not proved that $P$ is false” concerns a proof, not a direct denial of $\neg P$. It does not establish $P$. Translate the intended scope first. A later [Boolean-algebra proof](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) establishes the same classical law through complement uniqueness under that worksheet's permitted rules; the proof here is the elementary semantic one.
+“I have not proved $P$ false” concerns proof, not direct denial of $\neg P$; it establishes no $P$. Translate scope first. The later [Boolean proof](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) uses complement uniqueness and restricted rules; this proof is semantic.
 
 <span id="from-negating-combined-conditions"></span>
 
 ## Negating combined conditions
 
-A card qualifies when it is red and square. A red triangle fails, although its colour is correct. Saying “not red and not square” would miss it. A blue triangle fails too: failure need not mean **exactly one** missing property.
+For “red and square,” a red triangle fails despite correct colour: “not red and not square” misses it. A blue triangle also fails; **exactly one** missing property is unnecessary.
 
-Let $P$ mean red and $Q$ square for the **same card**. $\neg(P\land Q)$ denies the whole requirement. $(\neg P)\land Q$ instead demands a non-red square. A red triangle satisfies the first and fails the second, so their scopes matter.
+For the **same card**, let $P$ mean red, $Q$ square. $\neg(P\land Q)$ denies the whole conjunction; $(\neg P)\land Q$ demands a non-red square. A red triangle satisfies only the first.
 
 
 <span id="from-negating-combined-conditions-negation-of-conjunction"></span>
 
 ### Negation of conjunction
 
-An “and” requirement fails when at least one component fails. This includes both failing. The classical De Morgan law for conjunction is:
+AND fails if at least one component fails, including both. De Morgan gives:
 
 $$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
 
@@ -285,14 +285,14 @@ $$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
 | 0 | 1 | 0 | 1 | 1 | 0 | 1 |
 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
 
-Compare the fourth and last columns: they agree in every row. The third column evaluates the original conjunction; the next reverses it. On the right we negate the two inputs before joining them with inclusive “or.”
+Fourth and final columns agree: evaluate AND, then negate; alternatively negate each input, then apply inclusive OR.
 
 
 <span id="from-negating-combined-conditions-negation-of-inclusive-disjunction"></span>
 
 ### Negation of inclusive disjunction
 
-If the rule is instead “red or square,” a red triangle qualifies, a blue square qualifies, and a red square qualifies too. Only a card with neither property fails. Thus both alternatives must fail:
+“Red or square” admits red triangles, blue squares and red squares. Only cards with neither property fail: both alternatives must fail.
 
 $$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
 
@@ -303,9 +303,9 @@ $$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
 | 0 | 1 | 1 | 0 | 1 | 0 | 0 |
 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
 
-Again the fourth and last columns agree. In either mixed row, one input keeps the original disjunction true, so its denial is false. When both inputs are false, the denial and the conjunction of denials are true.
+Fourth and final columns agree. Mixed rows keep OR true and denial false; two false inputs make denial and AND of denials true.
 
-Each input has exactly two truth values. The four pairs exhaust every possible assignment, proving both laws from the definitions of negation, conjunction, and inclusive disjunction. The digits $1,0$ encode true and false. These are semantic proofs for arbitrary classical propositions, including compounds used as inputs. A few arithmetic examples would not supply this exhaustive argument.
+Two values per input give four exhaustive pairs, proving both laws from connective definitions. $1,0$ label truth. These semantic proofs cover arbitrary classical claims, including compounds; selected arithmetic examples would not exhaust them.
 
 <Note title="Read the scope aloud">
 
@@ -318,29 +318,29 @@ $\neg(P\land Q)$: “not both P and Q”; $\neg(P\lor Q)$: “neither P nor Q”
 
 ### A nested card requirement
 
-Now $P$ means red, $Q$ having a circle, and $R$ having a star. A card must satisfy $P\land(Q\lor R)$. There are two outer requirements: redness, and the entire marking alternative. Negate that outer conjunction first:
+Let $P$ mean red, $Q$ circle, $R$ star. For $P\land(Q\lor R)$, negate outer AND first: colour and the whole marking alternative are its inputs.
 
 $$\neg\bigl(P\land(Q\lor R)\bigr)\Leftrightarrow\neg P\lor\neg(Q\lor R).$$
 
-Next negate only the grouped disjunction, leaving the outer fragment untouched:
+Then negate only the grouped OR, preserving the outer part:
 
 $$\neg P\lor\neg(Q\lor R)\Leftrightarrow\neg P\lor(\neg Q\land\neg R).$$
 
-Failure means non-red **or** missing both markings. If $P$ is false, the original fails whatever the markings and the answer is true through $\neg P$. If $P$ is true, the original fails exactly when both markings are absent. These two exhaustive cases verify the meaning generally.
+Failure means non-red **or** neither marking. If $P$ is false, the original fails regardless of markings and $\neg P$ succeeds. If true, failure needs both markings absent. These cases exhaust possibilities.
 
-The regrouping $(\neg P\lor\neg Q)\land\neg R$ is wrong: a non-red card with a star fails the original but fails this proposed denial too. It wrongly requires absence of a star even when colour already defeats the original. Under the usual convention, “and” binds more tightly than “or”; omitting optional parentheses under that convention is not the same as explicitly changing their grouping. Use explicit grouping while learning.
+Wrong regrouping $(\neg P\lor\neg Q)\land\neg R$ also fails for a non-red starred card, wrongly demanding no star despite failed colour. Usual AND precedence permits omitting optional parentheses, not changing grouping. Keep explicit grouping while learning.
 
 
 <span id="from-negating-combined-conditions-independent-practice"></span>
 
 ### Independent practice
 
-Rebuild the comparison of $\neg(P\land Q)$ with $\neg P\land\neg Q$. Identify **every** disagreement row and explain what it requires.
+Compare $\neg(P\land Q)$ and $\neg P\land\neg Q$ exhaustively; explain **every** disagreement.
 
 <details>
 <summary>Hint</summary>
 
-Include both mixed assignments. A conjunction can fail through only one component.
+Include both mixed rows: one component can defeat AND.
 
 </details>
 
@@ -356,13 +356,13 @@ Include both mixed assignments. A conjunction can fail through only one componen
 | 0 | 0 | 1 | 1 |
 
 
-Both mixed rows disagree. “Not both” needs at least one failure; “both not” requires two. For a card bearing nine, positivity holds but evenness fails: this realizes one mixed row. Either disagreement alone refutes equivalence.
+Both mixed rows disagree: “not both” needs one failure; “both not” two. Card nine realizes positive but not even. Either disagreement alone refutes equivalence.
 
 </details>
 
-<Exercise question="A card qualifies through a star, or through both a circle and a blue border. With input letters S, C, B, negate the rule in two stages. Check a star-free card with a circle but no border.">
+<Exercise question="Negate star OR (circle AND blue border) in two stages using S, C, B. Test no star, circle, no border.">
 
-The rule is $S\lor(C\land B)$. Its denial is first $\neg S\land\neg(C\land B)$, then $\neg S\land(\neg C\lor\neg B)$. Both alternatives must fail; failure of the inner conjunction needs only one absent property. The suggested card satisfies the denial through no star and no border; its circle is allowed.
+Negating $S\lor(C\land B)$ gives $\neg S\land\neg(C\land B)$, then $\neg S\land(\neg C\lor\neg B)$. Both routes must fail; inner AND needs only one failure. No star and no border suffice; the circle is allowed.
 
 </Exercise>
 
@@ -375,12 +375,12 @@ For real $x$,
 
 $$\neg\bigl((0<x)\land(x\le2)\bigr)\Leftrightarrow(x\le0)\lor(x>2).$$
 
-Zero satisfies the denial because it fails the strict lower comparison. Two fails the denial because both original comparisons hold. Joining the failed comparisons with “and” would require an impossible simultaneous lower and upper outside position.
+Zero satisfies the denial by failing lower strictness. Two fails it because both original tests pass. AND between failed comparisons would demand impossible simultaneous positions outside both ends.
 
-<Exercise question="Negate the outside condition $x<0\lor x>2$. Explain both endpoints and why keeping ‘or’ would be wrong.">
+<Exercise question="Negate $x<0\lor x>2$. Explain endpoints and why retaining OR fails.">
 
-The denial is $(x\ge0)\land(x\le2)$. Both strict outside tests must fail, so zero and two are included. Keeping “or” would accept a negative input merely because it is at most two, even though the original outside condition is true there.
+$(x\ge0)\land(x\le2)$: both strict outside tests fail, including zero and two. OR would wrongly accept negative inputs merely for being at most two, where the original is true.
 
 </Exercise>
 
-Keep domains and assignments fixed. These laws do not move negation through quantifiers. The later [Boolean worksheet](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) gives a separate algebraic proof under its permitted laws; this semantic proof does not replace those proof obligations.
+Domains and assignments stay fixed; these laws do not cross quantifiers. The [Boolean worksheet](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) separately requires algebraic proofs under permitted laws; semantic proof does not replace them.

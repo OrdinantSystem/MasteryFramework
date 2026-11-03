@@ -1,0 +1,389 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-quantifiers"
+sourceId: "analysis-zero"
+title: "Quantifizierte Aussagen und Ungleichungen negieren"
+navTitle: "Quantifizierte Aussagen und Ungleichungen negieren"
+description: "Quantifizierte Aussagen und Ungleichungen negieren"
+order: 11
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["quantifier-order", "logical-negation"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/01 Negating Universal Claims.md#01 Negating Universal Claims", "Concepts/Negating Quantified Statements.md#Negating Quantified Statements", "A0.1.9 Negation of quantified statements/02 Negating Existential Claims.md#02 Negating Existential Claims", "A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "A0.1.6 Universal quantifier", "A0.1.7 Existential quantifier", "A0.1.8 Nested quantifiers", "A0.1.9 Negation of quantified statements"]
+thumbnail: "quantifiers"
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations": []}]
+---
+
+<span id="from-negating-universal-statements"></span>
+
+## All-Aussagen negieren
+
+Auf einem Tablett liegen eine rote und eine blaue Karte. „Jede Karte ist rot“ ist falsch: Die blaue genügt zur Widerlegung. „Jede Karte ist nicht rot“ ist ebenfalls falsch, weil eine rote bleibt. Zwei gemeinsam falsche Sätze können keine genauen Negationen sein.
+
+
+<span id="from-negating-universal-statements-nicht-jede-bedeutet-einen-fehlerfall"></span>
+
+### Nicht jede bedeutet einen Fehlerfall
+
+$$
+\neg(\forall x\in D\;P(x))\ \Longleftrightarrow\ \exists x\in D\;\neg P(x).
+$$
+
+Fixiere Bereich $D$, Prädikat $P$ und alle übrigen Parameter. In klassischer zweiwertiger Logik hat eine genaue Negation in jeder sinnvollen Situation den entgegengesetzten Wahrheitswert. Die Äquivalenz besagt: Nicht alle erlaubten Objekte bestehen genau dann, wenn mindestens eines scheitert. Mehrere Fehlerfälle und weiterhin erfolgreiche Objekte sind erlaubt.
+
+In einer Richtung macht ein scheiterndes Element die All-Aussage falsch, weil sie dieses Element einschließt. Umgekehrt würden ohne scheiterndes Element alle bestehen und die All-Aussage wäre wahr. Eine falsche All-Aussage hat daher einen Fehlerfall. Das folgt aus den Bedeutungen, erfasst unendliche Bereiche und verspricht keinen Suchalgorithmus. Ein endliches Modell illustriert die Regel, beweist aber nicht den allgemeinen Satz.
+
+
+<span id="from-negating-universal-statements-bereich-bewahren-und-ganzes-prädikat-negieren"></span>
+
+### Bereich bewahren und ganzes Prädikat negieren
+
+$$
+\neg(\forall x\in\mathbb Z\;(x>0))\ \Longleftrightarrow\ \exists x\in\mathbb Z\;(x\le0).
+$$
+
+Null bezeugt die Negation: Sie ist ganzzahlig und nicht positiv. Ein negatives Halb verletzt das ursprüngliche Prädikat, liegt aber außerhalb der ganzen Zahlen. Eine positive ganze Zahl ist erlaubt, scheitert jedoch nicht. Wäre der Bereich stattdessen positive ganze Zahlen, wäre das Original wahr und die richtige Negation falsch. Eine richtige Negation aufzuschreiben macht sie nicht wahr.
+
+Bei „rot und nummeriert“ bedeutet Scheitern nicht rot oder nicht nummeriert, mit einschließendem Oder. Eine rote unnummerierte Karte genügt. Auf einem leeren Bereich sind All-Aussagen wahr und ihre Existenznegationen falsch. Leere eingeschränkte Bereiche sind trotz nichtleerer weiterer Welt erlaubt. Eine All-Aussage liefert für sich kein Objekt.
+
+<span id="from-quantoren-und-negation-ein-zeuge-oder-alle-fälle"></span>
+
+### Ein Zeuge oder alle Fälle
+
+<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+Die linke Aussage ist wahr, weil $7$ zum Bereich gehört und die Gleichung erfüllt. Die Allaussage innerhalb der Negation ist falsch: Bei $x=1$ gilt zum Beispiel $1+3=4$, nicht $10$. Beide angezeigten Aussagen sind also wahr, aber aus verschiedenen Gründen. Ein passender Wert beweist Existenz; ein anderer, unpassender Wert widerlegt die Allaussage.
+
+
+<span id="from-negating-universal-statements-übung"></span>
+
+#### Übung
+
+Negiere „Jede Karte auf dem Tablett ist rot“. Warum nicht „Keine ist rot“?
+
+<details>
+<summary>Hinweis</summary>
+
+Lass die rote Karte liegen.
+
+</details>
+
+<Exercise>
+
+Eine Karte auf dem Tablett ist nicht rot, bezeugt durch blau. „Keine ist rot“ ist dort ebenfalls falsch, also zu stark.
+
+</Exercise>
+
+Negiere $\forall x\in\mathbb Z\;(x=0)$ und gib einen Zeugen.
+
+<details>
+<summary>Hinweis</summary>
+
+Bewahre den ganzzahligen Bereich.
+
+</details>
+
+<Exercise>
+
+$\exists x\in\mathbb Z\;(x\ne0)$. Eins ist ganzzahlig und ungleich null; Eindeutigkeit wird nicht behauptet.
+
+</Exercise>
+
+Bewerte bei leerem Bereich: Jedes Element besteht und die Negation davon.
+
+<details>
+<summary>Hinweis</summary>
+
+Es gibt weder Fehlerfall noch Zeugen.
+
+</details>
+
+<Exercise>
+
+Die All-Aussage ist wahr, weil kein Element scheitert; ein Element scheitert ist falsch, weil kein Element existiert.
+
+</Exercise>
+
+Negiere: Jede Karte ist rot und nummeriert. Was zeigt eine rote unnummerierte Karte?
+
+<details>
+<summary>Hinweis</summary>
+
+Negiere die ganze Konjunktion.
+
+</details>
+
+<Exercise>
+
+Eine Karte ist nicht rot oder nicht nummeriert. Die rote unnummerierte Karte verletzt die ganze Konjunktion und widerlegt das Original; nicht beide Eigenschaften müssen fehlen.
+
+</Exercise>
+
+Widerlegt minus eins „Jede positive reelle Zahl ist nichtnegativ“? Nenne die genaue Negation.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe zuerst Zugehörigkeit.
+
+</details>
+
+<Exercise>
+
+Nein, die Zahl liegt außerhalb. Die Negation lautet „Eine positive reelle Zahl ist negativ“ und ist in reeller Ordnung falsch.
+
+</Exercise>
+
+Erkläre später beide Richtungen des Gesetzes an einer gemischten und dann einer leeren Sammlung.
+
+
+<span id="from-negating-universal-statements-laut-lesen"></span>
+
+### Laut lesen
+
+Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
+
+<span id="from-negating-existential-statements"></span>
+
+## Existenz-Aussagen negieren
+
+In einer Schachtel liegen rote und blaue Karten. Eine blaue herauszunehmen widerlegt „Es gibt eine rote Karte“ nicht. Die rote bleibt ein Zeuge. „Eine Karte ist nicht rot“ und „Eine Karte ist rot“ können beide wahr sein und sind daher keine genauen Negationen.
+
+$$
+\neg(\exists x\in D\;P(x))\ \Longleftrightarrow\ \forall x\in D\;\neg P(x).
+$$
+
+Halte $D$, $P$ und weitere Parameter fest. Erfüllt kein erlaubtes Objekt $P$, nimm einen beliebigen erlaubten Kandidaten: Er kann $P$ nicht erfüllen und erfüllt daher $\neg P$. Weil er beliebig war, scheitern alle. Ist umgekehrt $P$ für jedes erlaubte Objekt falsch, kann kein Kandidat ein Zeuge sein. Beide Richtungen begründen das Existenz-Dualgesetz in klassischer Logik, auch für unendliche Bereiche.
+
+Eine vollständige endliche Prüfung kann Nichtexistenz zeigen. Bei einem unendlichen Bereich erfassen hundert Fehlversuche nicht alle Kandidaten; ein allgemeines Argument über einen beliebigen Kandidaten kann es. Zur Widerlegung einer All-Aussage genügt dagegen ein Fehlerfall. Die Negation gewöhnlicher Existenz schließt alle Zeugen aus, nicht nur genau einen: Zwei Erfolge machen gewöhnliche Existenz weiterhin wahr.
+
+
+<span id="from-negating-existential-statements-die-einschränkung-bleibt-positiv"></span>
+
+### Die Einschränkung bleibt positiv
+
+$$
+\neg(\exists x>0\;(x<0))\ \Longleftrightarrow\ \forall x>0\;(x\ge0).
+$$
+
+Die Kurzschreibweise $x>0$ am Quantor beschränkt den Bereich auf positive reelle Zahlen. Der Vergleich in Klammern ist das Prädikat. Negation verändert die Aussage über denselben Bereich, ersetzt ihn nicht durch nichtpositive Zahlen. Das Original ist falsch, weil keine positive reelle Zahl negativ ist; die Negation wahr, weil jede positive reelle Zahl nichtnegativ ist. Null ist kein erlaubter Kandidat.
+
+„Eine ganze Zahl hat Quadrat null“ ist mit Zeuge null wahr; die Negation, jedes ganzzahlige Quadrat sei ungleich null, ist bei derselben Zahl falsch. „Eine reelle Zahl hat negatives Quadrat“ ist falsch aufgrund der ausdrücklich vorausgesetzten arithmetischen Tatsache, dass reelle Quadrate nichtnegativ sind. Logik allein liefert diese Tatsache nicht. Im leeren eingeschränkten Bereich ist Existenz falsch und ihre All-Negation wahr: Kein Objekt widerspricht ihr, doch keines wird geliefert.
+
+<span id="from-negating-existential-statements-übung"></span>
+
+#### Übung
+
+Negiere die Existenz einer roten Karte. Beweist eine blaue Karte die Negation?
+
+<details>
+<summary>Hinweis</summary>
+
+Ein Erfolg könnte darunter liegen.
+
+</details>
+
+<Exercise>
+
+Jede Karte derselben Schachtel ist nicht rot. Eine blaue genügt nicht; jeder Kandidat muss ausgeschlossen werden.
+
+</Exercise>
+
+Negiere und bewerte $\exists x\in\mathbb Z\;(x=1)$.
+
+<details>
+<summary>Hinweis</summary>
+
+Umformung und Wahrheit sind verschieden.
+
+</details>
+
+<Exercise>
+
+$\forall x\in\mathbb Z\;(x\ne1)$. Das Original ist mit eins wahr; die richtige Negation ist falsch, weil eins eine ganze Zahl gleich eins ist.
+
+</Exercise>
+
+Negiere „Eine positive reelle Zahl ist negativ“. Wird der Bereich nichtpositiv?
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne Bereichseinschränkung und Prädikat.
+
+</details>
+
+<Exercise>
+
+Jede positive reelle Zahl ist nichtnegativ. Der positive Bereich bleibt unverändert; nur das Prädikat wird negiert.
+
+</Exercise>
+
+Bewerte „Eine Karte der leeren Schachtel ist nummeriert“ und „Jede ist unnummeriert“.
+
+<details>
+<summary>Hinweis</summary>
+
+Kein Existenzzeuge ist verfügbar.
+
+</details>
+
+<Exercise>
+
+Falsch und wahr. Die All-Aussage hat keine Ausnahme und behauptet nicht die Existenz einer unnummerierten Karte.
+
+</Exercise>
+
+Negiere „Eine Karte ist rot und nummeriert“. Widerlege „Jede Karte ist weder rot noch nummeriert“ als Negation.
+
+<details>
+<summary>Hinweis</summary>
+
+Ein fehlender Teil genügt.
+
+</details>
+
+<Exercise>
+
+Jede Karte ist nicht rot oder nicht nummeriert. Eine Schachtel mit nur einer roten unnummerierten Karte macht das Original falsch und die richtige Negation wahr, die stärkere vorgeschlagene aber falsch.
+
+</Exercise>
+
+Erkläre später, warum gegen alle ein Fehler genügt, gegen einige dagegen alle Kandidaten scheitern müssen.
+
+
+<span id="from-negating-existential-statements-laut-lesen"></span>
+
+### Laut lesen
+
+Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
+
+<span id="from-negating-quantified-inequalities"></span>
+
+## Quantifizierte Ungleichungen negieren
+
+Ein Versprechen verlangt einen Messwert strikt innerhalb einer Einheit vom Ziel. Ein Wert genau eine Einheit entfernt verletzt es. „Mehr als eine Einheit entfernt“ würde diesen Grenzfehler übersehen. Kläre vor den Quantoren, welche Seite die Gleichheit enthält.
+
+
+<span id="from-negating-quantified-inequalities-reelle-ordnung-zerlegt-alle-fälle"></span>
+
+### Reelle Ordnung zerlegt alle Fälle
+
+Zur Erinnerung die reellen Vergleichsnegationen: Die Trichotomie lässt genau die vom ursprünglichen Vergleich ausgeschlossenen Fälle übrig. Grundlage ist die übliche totale Ordnung, nicht nur Quantorensyntax.
+
+$$
+\begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
+$$
+
+Bei Gleichheit ist genau einer der ursprünglichen und negierten Vergleiche wahr. Aus der Negation von $x=c$ wird $x\ne c$, keine ausgewählte Richtung; die Negation von $x\ne c$ ist Gleichheit. Die [Lektion zu Vergleichsnegationen](../logical-negation/#from-negating-order-comparisons) behandelt diese Grenzen gesondert.
+
+
+<span id="from-negating-quantified-inequalities-ein-quantifiziertes-grenzbeispiel"></span>
+
+### Ein quantifiziertes Grenzbeispiel
+
+$$
+\neg(\forall x>0\;(x<1))\ \Longleftrightarrow\ \exists x>0\;(x\ge1).
+$$
+
+Dass jede positive reelle Zahl unter eins liegt, ist falsch. Eins ist ein erlaubtes Gegenbeispiel genau auf der Grenze. Null ist nicht erlaubt. Wir wechseln alle zu einige, bewahren positive reelle Zahlen und negieren den inneren Vergleich. Ein weiteres Beispiel wie zwei ist unnötig; eins beweist die Negation bereits.
+
+
+<span id="from-quantoren-und-negation-der-randfall-zählt"></span>
+
+### Der Randfall zählt
+
+Die Behauptung $n^2 > n$ für jede natürliche Zahl scheitert an $n = 1$. Wenn $\mathbb{N}$ bei 1 beginnt, gilt allgemein $n^2 \ge  n$; die strenge Ungleichung gilt für $n > 1$.
+
+
+<span id="from-negating-quantified-inequalities-wenn-das-prädikat-eine-implikation-ist"></span>
+
+### Wenn das Prädikat eine Implikation ist
+
+$$
+\neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
+$$
+
+| $A$ | $B$ | $A\Rightarrow B$ | $\neg(A\Rightarrow B)$ | $A\land\neg B$ |
+| --- | --- | --- | --- | --- |
+| wahr | wahr | wahr | falsch | falsch |
+| wahr | falsch | falsch | wahr | wahr |
+| falsch | wahr | wahr | falsch | falsch |
+| falsch | falsch | wahr | falsch | falsch |
+
+Die letzten beiden Spalten stimmen in allen vier möglichen Fällen überein und beweisen die Äquivalenz. Eine falsche Voraussetzung widerlegt nie die Implikation. In der Folgenanwendung sagt die Voraussetzung, dass ein Index im vorgeschlagenen Endstück liegt. Der Fehler muss darin liegen und die Abstandsforderung verletzen. Beides sind Prüfungen desselben Index.
+
+<span id="from-negating-quantified-inequalities-übung"></span>
+
+#### Übung
+
+Negiere $x\le3$ und prüfe beide Aussagen bei $x=3$.
+
+<details>
+<summary>Hinweis</summary>
+
+Das Original enthält Gleichheit.
+
+</details>
+
+<Exercise>
+
+Die Negation ist $x>3$. Bei drei ist das Original wahr und die Negation falsch; darunter bleibt das Original wahr, darüber nur die Negation.
+
+</Exercise>
+
+Warum widerlegt ein großer Fehler vor dem Startindex die Endstückbedingung nicht?
+
+<details>
+<summary>Hinweis</summary>
+
+Bestimme die Voraussetzung der Implikation.
+
+</details>
+
+<Exercise>
+
+Vor dem Startindex ist die Voraussetzung falsch, die Implikation also unabhängig vom Abstand wahr. Verlange einen Index mindestens am Start und das Scheitern der strengen Abstandsschranke.
+
+</Exercise>
+
+Rekonstruiere später die vier Vergleichsnegationen und alle vier Tabellenzeilen vor der vollständigen Konvergenzableitung.
+
+
+<span id="from-negating-quantified-inequalities-laut-lesen"></span>
+
+### Laut lesen
+
+Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
+
+<span id="from-quantoren-und-negation"></span>
+
+## Quantoren und Negation
+
+<span id="from-quantoren-und-negation-die-negation-nach-innen-ziehen"></span>
+
+### Die Negation nach innen ziehen
+
+<Math tex="\neg(\forall x\in D:P(x))\iff\exists x\in D:\neg P(x)" display />
+
+<Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
+
+Das sind die beiden oben begründeten Gesetze. Bei verschachtelten Quantoren wende sie in der vorhandenen Reihenfolge an und bewahre Bereiche und Geltungsbereiche:
+
+<Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
+
+
+<span id="from-quantoren-und-negation-reihenfolge-der-quantoren"></span>
+
+### Reihenfolge der Quantoren
+
+Über $\mathbb{N}$ ist „Zu jedem $x$ gibt es ein größeres $y$“ wahr: Nach Wahl von $x$ setze $y = x + 1$. „Es gibt ein $y$, das größer als jedes $x$ ist“ ist falsch: Für ein festes $y$ widerlegt $x = y$ die Behauptung. Im ersten Satz darf $y$ von $x$ abhängen, im zweiten muss dasselbe $y$ immer passen. Die Negation des ersten Satzes besagt, dass es ein $x$ ohne größeres natürliches $y$ gibt. Beide Quantoren ändern sich.
+
+<Exercise question="Negiere: Jede natürliche Zahl ist gerade.">
+
+Es gibt eine natürliche Zahl, die nicht gerade ist; 1 ist ein Zeuge. „Alle natürlichen Zahlen sind ungerade“ wäre stärker und falsch.
+
+</Exercise>

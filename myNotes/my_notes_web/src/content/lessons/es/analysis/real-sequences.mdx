@@ -21,7 +21,7 @@ additionalSources: []
 
 ## Sucesiones reales
 
-Un aparato informa nueve en las observaciones uno y dos, y tres en todas las posteriores. Cada lectura tiene un valor y una posición. «La tercera lectura es tres» distingue posición y valor, aunque sus números coincidan por casualidad.
+El aparato informa nueve dos veces, después siempre tres. En «tercera lectura igual a tres», posición y valor coinciden numéricamente, pero tienen funciones distintas.
 
 
 <span id="from-real-sequences-un-valor-en-cada-índice-positivo"></span>
@@ -32,13 +32,13 @@ $$
 \mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
 $$
 
-Una función es una asignación con exactamente una salida para cada entrada permitida. Una sucesión real es una función de los naturales positivos a los reales. Aquí cero no es índice; otras convenciones deben indicarse. $n$ es el índice, $a_n$ el término en esa posición y $a$ la asignación completa. El subíndice no significa multiplicación. La flecha indica dominios de entrada y salida, no convergencia.
+Una sucesión real asigna un término real a cada índice natural positivo. Aquí cero queda excluido; indica otras convenciones. Aquí $n$ es el índice, $a_n$ es el término en ese índice y $a$ es la función completa. Los subíndices no multiplican; la flecha indica dominios, no convergencia.
 
 $$
 (a_n)_{n=1}^{\infty}.
 $$
 
-Esto nombra toda la sucesión, con índices desde uno sin final. Infinito no es un índice y no existe un último término ni un término en el infinito. Cada índice individual es natural positivo; su salida puede ser negativa, cero o positiva.
+No hay último término ni índice infinito. Índices naturales positivos pueden dar valores negativos, cero o positivos.
 
 
 <span id="from-real-sequences-una-regla-debe-determinar-cada-posición"></span>
@@ -49,11 +49,11 @@ $$
 a_n=2n\quad(n\in\mathbb N).
 $$
 
-Así, $a_1=2$, $a_2=4$, $a_3=6$. Una sucesión constante tiene $a_n=c$ en cada índice para un real fijo $c$; por ejemplo, todas las salidas pueden ser $-3$. La regla del aparato también es completa: $a_1=a_2=9$ y $a_n=3$ para todo $n\ge3$. Escribir solo «nueve, nueve, tres, …» no determina la continuación: infinitas reglas comparten ese comienzo.
+Así, $a_1=2$, $a_2=4$, $a_3=6$. La constante $a_n=c$ fija un real, por ejemplo $-3$. El aparato tiene $a_1=a_2=9$, luego $a_n=3$ para todo $n\ge3$; su prefijo de tres términos permite infinitas continuaciones.
 
-Las sucesiones conservan orden y repeticiones. Alternar cero, uno para siempre y alternar uno, cero da sucesiones distintas: sus primeros términos difieren. Ambas tienen el conjunto de valores cero y uno. Un conjunto olvida posiciones y repeticiones. Dos sucesiones son iguales exactamente cuando coinciden en cada índice; un prefijo finito no demuestra igualdad.
+A diferencia de conjuntos, las sucesiones conservan posiciones y repeticiones. Alternar cero–uno y uno–cero comparte valores, pero difiere en índice uno. La igualdad exige coincidir siempre, no en un prefijo finito.
 
-Una cola comienza en un índice elegido $N$ e incluye ese término y todos los posteriores. Para el aparato, la cola desde $N=3$ contiene solo treses. La ene mayúscula $N$ marca el umbral; la ene minúscula $n$ marca la posición que se comprueba. Ambas son naturales. Una sucesión que empieza en cero y después siempre vale uno coincide desde el índice dos con la constante uno, pero no es igual a ella.
+Una cola incluye el término de índice $N$ y todos los posteriores: desde $N=3$, el aparato solo da treses. Tanto $N$ como $n$ son naturales: $N$ inicia la cola y $n$ es el índice que se comprueba. La sucesión que empieza con cero y sigue siempre con uno coincide desde el índice dos con la sucesión constante uno, pero las dos sucesiones no son iguales.
 
 <span id="from-real-sequences-práctica"></span>
 
@@ -70,7 +70,7 @@ Da los tres primeros términos de $a_n=2n$. ¿Puede una sucesión real tener sal
 
 <Exercise>
 
-Dos, cuatro, seis. Sí: a todos los índices positivos se les puede asignar menos tres. La salida no tiene que pertenecer al dominio de los índices.
+Dos, cuatro, seis. Sí: asigna menos tres a cada índice positivo; los dominios de valores e índices difieren.
 
 </Exercise>
 
@@ -85,7 +85,7 @@ Mira la primera posición.
 
 <Exercise>
 
-Son sucesiones distintas con el mismo conjunto de valores. Sus primeras salidas difieren; el conjunto solo registra qué valores aparecen, no dónde ni cuántas veces.
+Primeros términos distintos significan sucesiones distintas; su conjunto común olvida posiciones y repeticiones.
 
 </Exercise>
 
@@ -104,26 +104,26 @@ Difieren en el índice uno, pero coinciden en todos los índices desde dos.
 
 </Exercise>
 
-Más tarde, define dos continuaciones distintas de un mismo prefijo de tres términos para explicar por qué observar no basta para definir una sucesión.
+Construye después dos continuaciones distintas del mismo prefijo de tres términos: ¿por qué observar no define una sucesión?
 
 
 <span id="from-real-sequences-lectura-en-voz-alta"></span>
 
 ### Lectura en voz alta
 
-a asigna términos reales a índices naturales positivos; a sub ene es la salida en el índice ene.
+a sub ene significa la salida real de a en el índice natural positivo ene.
 
 <span id="from-absolute-value-and-distance"></span>
 
 ## Valor absoluto y distancia
 
-Menos tres y más tres están a lados opuestos de cero, pero ambos distan tres unidades. La distancia mide separación, no dirección. El valor absoluto convierte un real con signo en su distancia no negativa a cero.
+Menos tres y más tres distan tres de cero. El valor absoluto mide distancia no negativa, no dirección.
 
 $$
 |x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
 $$
 
-Esto es una definición. Todo real pertenece exactamente a una rama. Si $x<0$, su opuesto $-x$ es positivo: el signo menos no vuelve negativa la salida. Así, $|-3|=3$, $|3|=3$ y $|0|=0$. No negativo incluye cero; no significa estrictamente positivo. Usamos la aritmética y el orden reales habituales.
+Cada real pertenece a una rama. Para $x<0$, $-x$ es positivo: $|-3|=|3|=3$, $|0|=0$. No negativo incluye cero. Se presuponen aritmética y orden reales habituales.
 
 
 <span id="from-absolute-value-and-distance-desplazamiento-con-signo-y-distancia"></span>
@@ -134,9 +134,9 @@ $$
 d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
 $$
 
-La diferencia $x-y$ es el desplazamiento con signo de $y$ a $x$. Su valor absoluto da la longitud del segmento. Invertir la resta cambia el signo. Un número y su opuesto tienen el mismo valor absoluto: para una entrada positiva ambos dan esa entrada; para una negativa ambos dan su opuesto positivo; en cero ambos dan cero. Por ello $d(x,y)=d(y,x)$ para todos los reales, no solo en el ejemplo.
+$x-y$ es desplazamiento de $y$ a $x$; su valor absoluto da longitud. Invertir la resta lo niega. Un número y su opuesto tienen el mismo valor absoluto. Si la entrada es positiva, ambos valores absolutos son iguales a ella; si es negativa, ambos son iguales a su opuesto positivo; si es cero, ambos son cero. Así, $d(x,y)=d(y,x)$ universalmente.
 
-Además, $d(x,y)=0$ exactamente cuando $x=y$. Si la diferencia es no negativa, su valor absoluto es ella misma, así que distancia cero obliga a diferencia cero. Si es negativa, su valor absoluto es positivo y no puede ser cero. A la inversa, puntos iguales tienen diferencia y valor absoluto cero. No hace falta la desigualdad triangular.
+Distancia cero equivale a $x=y$: una diferencia no negativa es su propio valor absoluto; una negativa tiene valor absoluto positivo. Distancia cero obliga a diferencia cero y viceversa. No hace falta desigualdad triangular.
 
 
 <span id="from-absolute-value-and-distance-una-tolerancia-estricta-es-un-intervalo-abierto"></span>
@@ -147,9 +147,9 @@ $$
 \varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
 $$
 
-Fija el objetivo $L$ y una tolerancia real positiva $\varepsilon$. Pon $u=t-L$. Si $u\ge0$, entonces $|u|=u$: la prueba de distancia es $u<\varepsilon$, mientras que $-\varepsilon<u$ ya se sigue de la tolerancia positiva. Si $u<0$, entonces $|u|=-u$: $-u<\varepsilon$ equivale a $u>-\varepsilon$, mientras que $u<\varepsilon$ ya se cumple. En ambos casos resulta exactamente $-\varepsilon<u<\varepsilon$. Sumar $L$ da el intervalo mostrado. Cada paso es reversible, así que se demuestran ambas direcciones.
+Para $L$, $\varepsilon>0$ fijos, pon $u=t-L$. Si $u\ge0$, distancia menor que tolerancia significa $u<\varepsilon$; $-\varepsilon<u$ es automático. Si $u<0$, significa $-u<\varepsilon$, equivalente a $-\varepsilon<u$; la cota superior es automática. Así, $-\varepsilon<u<\varepsilon$; suma $L$. La reversibilidad prueba ambas direcciones.
 
-La comparación encadenada exige ambas cotas estrictas. Para objetivo tres y tolerancia $1/2$, los extremos $2.5$ y $3.5$ quedan excluidos: su distancia iguala la tolerancia. Épsilon es una tolerancia variable, no una constante diminuta especial.
+Ambas cotas son estrictas: con objetivo tres, tolerancia $1/2$, los extremos $2.5,3.5$ fallan por igualdad. Épsilon varía; no es una constante diminuta fija.
 
 <span id="from-absolute-value-and-distance-práctica"></span>
 
@@ -166,7 +166,7 @@ Calcula primero la distancia.
 
 <Exercise>
 
-Las distancias son $1/2$, $0$, $1/4$. El primero falla por igualdad; los otros pasan. El extremo no está estrictamente dentro del intervalo.
+Distancias $1/2$, $0$, $1/4$: el extremo falla por igualdad; los demás pasan.
 
 </Exercise>
 
@@ -185,7 +185,7 @@ No. Del objetivo cinco al punto dos, el desplazamiento es menos tres, pero la di
 
 </Exercise>
 
-Más tarde, reconstruye la prueba por signos de la equivalencia con el intervalo y la prueba de distancia cero.
+Reconstruye después ambos casos de signo para la equivalencia y la prueba de distancia cero.
 
 
 <span id="from-absolute-value-and-distance-lectura-en-voz-alta"></span>

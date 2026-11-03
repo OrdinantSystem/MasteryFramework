@@ -1,0 +1,104 @@
+---
+course: "analysis"
+chapter: "analysis-boolean-applications"
+sourceId: "analysis-sheet-1-2"
+sourcePages: [1]
+locale: "de"
+title: "Eindeutige Komplemente und algebraische Negationsgesetze"
+navTitle: "Eindeutige Komplemente und algebraische Negationsgesetze"
+description: "Eindeutige Komplemente und algebraische Negationsgesetze"
+order: 19
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["boolesche-grundgesetze", "existence-and-uniqueness"]
+thumbnail: "complement"
+sourceLocations: []
+additionalSources: []
+---
+
+<span id="from-eindeutiges-komplement"></span>
+
+## Blatt 1.2 · das Komplement ist eindeutig
+
+<span id="from-eindeutiges-komplement-beide-bedingungen-sind-nötig"></span>
+
+### Beide Bedingungen sind nötig
+
+<Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
+
+Angenommen, $B$ und $C$ seien beide Komplemente von $A$. Die ODER-Bedingung deckt alle Möglichkeiten ab; die UND-Bedingung schließt Überlappung aus. Nutze die Bedingungen des einen Kandidaten, um den anderen zu vereinfachen.
+
+
+<span id="from-eindeutiges-komplement-beide-auf-denselben-ausdruck-zurückführen"></span>
+
+### Beide auf denselben Ausdruck zurückführen
+
+<Math tex="\begin{aligned}\colB{B}&\overset{7b}=\colB{B}\land1=\colB{B}\land(\colA{A}\lor \colC{C})\\&\overset3=(\colB{B}\land \colA{A})\lor(\colB{B}\land \colC{C})\\&\overset2=0\lor(\colB{B}\land \colC{C})\overset{2,7a}=\colB{B}\land \colC{C}\end{aligned}" display />
+
+<Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
+
+Also gilt $B = C$. Die nicht nummerierten Einsetzungen verwenden die angenommenen Komplementbedingungen. Da $\neg A$ nach Gesetz 5 ein Komplement ist, muss jeder Ausdruck mit beiden Eigenschaften gleich $\neg A$ sein. Dieses Werkzeug trägt die nächsten Beweise.
+
+
+<span id="from-eindeutiges-komplement-warum-bbb-und-ccc-vergleichen"></span>
+
+### Warum $B$ und $C$ vergleichen?
+
+Wir kennen die Beziehungen von $B$ und $C$ zu A, aber noch nicht zueinander. Setze $1 = A \lor  C$ in $B \land  1$ ein, um beide Informationen zu verbinden. Distributivität trennt den verschwindenden Anteil $B \land  A$ vom Anteil $B \land  C$. Für $C$ ergibt dieselbe Überlegung, dass beide Kandidaten ihrem gemeinsamen Anteil gleichen. Ein Komplement ist deshalb eindeutig. $A \lor  B = 1$ allein reicht nicht: $B = 1$ erfüllt das immer.
+
+<span id="from-de-morgan-und-doppelte-negation"></span>
+
+## Blatt 1.2 · De Morgan und doppelte Negation
+
+<span id="from-de-morgan-und-doppelte-negation-9a--ein-komplement-von-aba-lor--bab"></span>
+
+### 9a · Ein Komplement von $A \lor  B$
+
+Setze $X = A \lor  B$ und $Y = \neg A \land  \neg B$. Zeige mit den bereits verfügbaren Gesetzen $X \land  Y = 0$ und $X \lor  Y = 1$.
+
+<Math tex="\begin{aligned}X\land Y&\overset{2,3}=(\colA{A}\land\neg \colA{A}\land\neg \colB{B})\lor(\colB{B}\land\neg \colA{A}\land\neg \colB{B})\\&\overset{1,2,5}=(0\land\neg \colB{B})\lor(0\land\neg \colA{A})\\&\overset{2,7d}=0\lor0\overset6=0\end{aligned}" display />
+
+<Math tex="\begin{aligned}X\lor Y&\overset3=[(\colA{A}\lor \colB{B})\lor\neg \colA{A}]\land[(\colA{A}\lor \colB{B})\lor\neg \colB{B}]\\&\overset{1,2}=[(\colA{A}\lor\neg \colA{A})\lor \colB{B}]\land[\colA{A}\lor(\colB{B}\lor\neg \colB{B})]\\&\overset5=(1\lor \colB{B})\land(\colA{A}\lor1)\\&\overset{2,7c}=1\land1\overset6=1\end{aligned}" display />
+
+<Math tex="\neg(\colA{A}\lor \colB{B})=\neg \colA{A}\land\neg \colB{B}" display />
+
+Die Eindeutigkeit identifiziert $Y$ mit $\neg X$. Damit ist die erste De-Morgan-Regel bewiesen; sie wurde nicht in ihrem eigenen Beweis verwendet.
+
+
+<span id="from-de-morgan-und-doppelte-negation-10--doppelte-negation-unabhängig-beweisen"></span>
+
+### 10 · Doppelte Negation unabhängig beweisen
+
+<Math tex="\neg \colA{A}\lor \colA{A}=1,\quad\neg \colA{A}\land \colA{A}=0,\qquad\neg \colA{A}\lor\neg\neg \colA{A}=1,\quad\neg \colA{A}\land\neg\neg \colA{A}=0" display />
+
+Nach Gesetzen 2 und 5 sind $A$ und $\neg\neg A$ beide Komplemente von $\neg A$. Eindeutigkeit ergibt $\neg \neg A = A$. Dafür wird De Morgan nicht benötigt.
+
+
+<span id="from-de-morgan-und-doppelte-negation-9b--das-zweite-gesetz-herleiten"></span>
+
+### 9b · Das zweite Gesetz herleiten
+
+<Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
+
+Im mittleren Schritt wird 9a rückwärts mit $\neg A$ und $\neg B$ angewendet. Die Beweisreihenfolge lautet Eindeutigkeit → 9a und 10 → 9b.
+
+
+<span id="from-de-morgan-und-doppelte-negation-die-komplementstrategie"></span>
+
+### Die Komplementstrategie
+
+Um $\neg (A \lor  B)$ zu bestimmen, wird nicht vorausgesetzt, dass Negation sich verteilt. Stattdessen prüfen wir für einen Kandidaten $Y$ die beiden Eigenschaften, die ein Komplement eindeutig bestimmen. Die erste Kette schließt gemeinsames Gelten aus, die zweite zeigt vollständige Abdeckung. Beide sind nötig. Für doppelte Negation vergleicht man direkt die beiden Komplemente von $\neg A$. Das zweite De-Morgan-Gesetz folgt dann aus bereits bewiesenen Ergebnissen ohne Zirkelschluss.
+
+
+<span id="from-de-morgan-und-doppelte-negation-eine-zusammengesetzte-aussage-negieren"></span>
+
+### Eine zusammengesetzte Aussage negieren
+
+Die bewiesenen Identitäten erlauben nun das Umformen einer negierten Aussage ohne Wahrheitstafel.
+
+<Exercise question="Negiere „A gilt und mindestens eines von B oder C gilt“.">
+
+Die Aussage ist $A \land  (B \lor  C)$. Ihre Negation ist $\neg A \lor  \neg (B \lor  C)$, also $\neg A \lor  (\neg B \land  \neg C)$. Das innere ODER wird beim Negieren zu UND. Nur alle Buchstaben zu negieren würde die Klammerung verfehlen.
+
+</Exercise>

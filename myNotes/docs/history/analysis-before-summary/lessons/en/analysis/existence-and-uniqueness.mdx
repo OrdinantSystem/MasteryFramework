@@ -1,0 +1,559 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-quantifiers"
+sourceId: "analysis-zero"
+title: "Witnesses, existence and uniqueness"
+navTitle: "Witnesses, existence and uniqueness"
+description: "Witnesses, existence and uniqueness"
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses", "A0.1.7 Existential quantifier/03 Constructive Existence.md#03 · Constructive existence: exhibit, then verify", "A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md#05 · More than one possible witness"]
+thumbnail: "quantifiers"
+additionalSources: []
+---
+
+<span id="from-existence-and-witnesses"></span>
+
+## Existence and witnesses
+
+<span id="from-existence-and-witnesses-candidate-membership-whole-condition"></span>
+
+### Candidate, membership, whole condition
+
+For $\exists n\in\mathbb Z\;(n+5=12)$, seven is a witness: it is an integer and $7+5=12$. The witness is the object; the verification is the argument about it. A candidate becomes a witness once both checks are justified. For $4<n<8$, five passes both strict bounds. Nine passes only the lower bound and three only the upper: they cannot be combined. The repeated variable means the same object throughout.
+
+A club needs a member available Tuesday and trained in first aid. Ada being available and Ben being trained do not suffice. Cora qualifies if she belongs to the club and has both qualities. Someone outside the club fails membership even with both qualities.
+
+One half solves $2x=1$ over the reals, not over the integers. No integer solves it: each integer is at most zero or at least one, so its double is at most zero or at least two. Similarly, $0<x<1$ has the real witness $1/2$ but no integer witness. These arguments exclude all integers. Failed samples alone exclude only those tried; a finite search disproves existence only when it exhausts the domain.
+
+<span id="from-existence-and-witnesses-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+A shelf contains one red and two blue books. Is “Some book is blue” true, and does it assert uniqueness?
+
+<details>
+<summary>Hint</summary>
+
+Ask for the minimum required.
+
+</details>
+
+<Exercise>
+
+True: either blue book witnesses it. Two successes are compatible with at least one, but not exactly one.
+
+</Exercise>
+
+Read $\exists n\in\mathbb Z\;(n+5=12)$ without solving: give its three parts.
+
+<details>
+<summary>Hint</summary>
+
+Amount, domain, condition.
+
+</details>
+
+<Exercise>
+
+At least one; integers; adding five gives twelve. Reading the requirement does not require finding the solution.
+
+</Exercise>
+
+Compare real and integer witnesses for $0<x<1$.
+
+<details>
+<summary>Hint</summary>
+
+Use a fraction, then integer spacing.
+
+</details>
+
+<Exercise>
+
+$1/2$ is real and passes both bounds. A positive integer is at least one, excluding every integer.
+
+</Exercise>
+
+Classify: “There is a red token”; “Find a red token”; “Exactly one token is red”.
+
+<details>
+<summary>Hint</summary>
+
+Which have truth values?
+
+</details>
+
+<Exercise>
+
+Existential assertion; request; existence plus exclusion of a distinct second success. The last says more than ordinary existence.
+
+</Exercise>
+
+Compare a known empty bag and a sealed bag of unknown contents.
+
+<details>
+<summary>Hint</summary>
+
+Objects and information are different.
+
+</details>
+
+<Exercise>
+
+Red-token existence is false for the empty bag. Information does not decide the sealed bag; its actual contents still determine the truth.
+
+</Exercise>
+
+</details>
+
+<span id="from-existence-and-witnesses-checking-witnesses"></span>
+
+#### Checking witnesses
+
+<details>
+<summary>Optional additional practice</summary>
+
+Which of $1,2,3,4$ satisfy $1<n<4$ over integers?
+
+<details>
+<summary>Hint</summary>
+
+Check strict endpoints.
+
+</details>
+
+<Exercise>
+
+Two and three pass. One fails the lower bound, four the upper bound.
+
+</Exercise>
+
+Repair the split witness $9>4$ and $3<8$.
+
+<details>
+<summary>Hint</summary>
+
+Use one object.
+
+</details>
+
+<Exercise>
+
+Neither satisfies both. Five is an integer and $4<5<8$.
+
+</Exercise>
+
+Audit $1/2$ as an integer witness for $2x=1$.
+
+<details>
+<summary>Hint</summary>
+
+Separate the checks.
+
+</details>
+
+<Exercise>
+
+The equation holds but membership fails. It is a witness for the real version, not the integer version.
+
+</Exercise>
+
+After trying $0,1,2$, someone denies that an integer square can equal $25$. Diagnose.
+
+<details>
+<summary>Hint</summary>
+
+Were all candidates tested?
+
+</details>
+
+<Exercise>
+
+The domain was not exhausted. Five is an integer and $5^2=25$; negative five also works. One verified success suffices.
+
+</Exercise>
+
+One box contains exactly two tokens in total, neither blue. Another has two inspected nonblue tokens and unexamined contents. Which refutes blue-token existence?
+
+<details>
+<summary>Hint</summary>
+
+Exhaustiveness matters.
+
+</details>
+
+<Exercise>
+
+Only the first excludes every possible witness. The second leaves candidates unchecked.
+
+</Exercise>
+
+Later, explain existence using two successes, then change the collection to have none.
+
+</details>
+
+<span id="from-constructing-a-witness"></span>
+
+## Constructing a witness
+
+Return to the checked witness seven. Subtracting five from twelve explains how to discover it; the direct proof below separates discovery from verification.
+
+<Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
+
+
+<span id="from-constructing-a-witness-a-complete-direct-proof"></span>
+
+### A complete direct proof
+
+Choose $n=7$. It belongs to $\mathbb Z$. It satisfies $7+5=12$. Therefore an allowed object meets the requirement and existence follows. These four moves are candidate, domain, full predicate and conclusion. A single test proves this existential claim because the claim asks only for one success. It says nothing about uniqueness.
+
+“Constructive” here means explicitly producing and checking an object. We remain in classical mathematics, where existence proofs need not always name a witness. “Choose an integer that works; therefore one exists” is circular: it assumes a successful choice is available. Choosing a known integer, then proving its property, avoids that assumption.
+
+
+<span id="from-constructing-a-witness-backward-work-and-domain-checks"></span>
+
+### Backward work and domain checks
+
+From $2x=1$, backward work forces $x=1/2$. This proves real existence after checking membership and substitution, but cannot supply an integer witness. Necessary-candidate reasoning alone is not existence. Fully reversible algebra can prove an equivalence and, with domain checks, be sufficient; backward reasoning is not inherently invalid. A false assertion has no valid proof merely because a task asks for one.
+
+In the interval example $4<n<8$, the checked witness five can be replaced by six or seven; four fails at the strict boundary. For an arbitrary real input $x$, the rule $x+1$ constructs a larger real: addition stays in the reals and adding positive one increases the input. Testing only at zero would not establish this general rule.
+
+<span id="from-constructing-a-witness-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+Prove $\exists n\in\mathbb Z\;(n+8=3)$.
+
+<details>
+<summary>Hint</summary>
+
+Negative integers are allowed.
+
+</details>
+
+<Exercise>
+
+Choose $-5\in\mathbb Z$. Since $-5+8=3$, it satisfies the original equation and proves existence.
+
+</Exercise>
+
+Complete “Take one half” for a real between zero and one.
+
+<details>
+<summary>Hint</summary>
+
+Check all three requirements.
+
+</details>
+
+<Exercise>
+
+$1/2\in\mathbb R$ and $0<1/2<1$, so it is an allowed witness. This does not assert uniqueness.
+
+</Exercise>
+
+Repair “Choose an integer with square $25$; therefore it exists”.
+
+<details>
+<summary>Hint</summary>
+
+Name a candidate without assuming success.
+
+</details>
+
+<Exercise>
+
+Choose five, an integer, and verify $5\cdot5=25$. The original assumed the conclusion by assuming the successful choice.
+
+</Exercise>
+
+Construct an integer satisfying $n>4$ and $n<8$. Is the answer unique?
+
+<details>
+<summary>Hint</summary>
+
+Avoid endpoints.
+
+</details>
+
+<Exercise>
+
+Six is an integer with $4<6<8$. Five and seven also pass. Explicit construction does not require uniqueness.
+
+</Exercise>
+
+Why does $x+1$ work for every real input? Why is testing zero insufficient?
+
+<details>
+<summary>Hint</summary>
+
+Use closure and positivity.
+
+</details>
+
+<Exercise>
+
+Real addition gives a real output, and positive one increases any input. A test at zero covers one input only.
+
+</Exercise>
+
+Later, write a new four-sentence proof and label the job of each sentence.
+
+</details>
+
+<span id="from-constructing-a-witness-read-aloud"></span>
+
+### Read aloud
+
+Exhibit a candidate, check membership and the full property, then conclude existence.
+
+<span id="from-existence-and-uniqueness"></span>
+
+## Existence and uniqueness
+
+Two different keys open a lock. Checking the first proves that an opening key exists; checking the second does not invalidate that proof. It refutes a different claim: exactly one key opens the lock. Fix the drawer of allowed keys before counting.
+
+
+<span id="from-existence-and-uniqueness-three-different-requirements"></span>
+
+### Three different requirements
+
+Existence means at least one allowed success. At most one means that no two distinct allowed objects succeed; zero is permitted. Unique existence means exactly one: existence together with at most one. In an empty drawer, existence is false, at most one is true and unique existence is false. Ruling out a second success does not supply a first.
+
+$$
+\exists! x\in D\;P(x).
+$$
+
+The exclamation mark adds the at-most-one obligation. It is not emphasis. First provide a witness in $D$ satisfying $P$. Then show that any object in $D$ satisfying $P$ equals that witness. Objects failing $P$ need not equal it. Equality concerns objects or values, not how expressions are spelled: $1/2$ and $2/4$ name the same real number.
+
+
+<span id="from-existence-and-uniqueness-a-proof-with-both-obligations"></span>
+
+### A proof with both obligations
+
+$$
+\exists! n\in\mathbb Z\;(n+5=12).
+$$
+
+The direct proof above supplies existence. For uniqueness, let $n$ be any integer satisfying $n+5=12$. Subtracting five from both sides gives $n=7$. Thus every possible solution equals the checked witness. We used an arbitrary solution, not an arbitrary integer assumed to be seven, and not a finite sample of failed alternatives.
+
+Now restrict the domain to integers greater than ten. The same subtraction forces any hypothetical solution to be seven, outside the domain. At most one still holds, but existence fails. By contrast, for $4<n<8$, five and six are distinct integer witnesses, so uniqueness fails without needing a complete list.
+
+<span id="from-existence-and-uniqueness-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+Prove exactly one integer satisfies $n+3=9$.
+
+<details>
+<summary>Hint</summary>
+
+Separate the two obligations.
+
+</details>
+
+<Exercise>
+
+Six is an integer and $6+3=9$. Any integer solution satisfies $n=9-3=6$. The first supplies a solution, the second excludes a distinct second one.
+
+</Exercise>
+
+Does checking $5^2=25$ prove exactly one integer has square $25$?
+
+<details>
+<summary>Hint</summary>
+
+Consider a negative value.
+
+</details>
+
+<Exercise>
+
+It proves existence only. $-5$ is a distinct integer and $(-5)^2=25$, so uniqueness is false while existence remains true.
+
+</Exercise>
+
+In an empty box, evaluate some blue token, at most one blue token, exactly one blue token.
+
+<details>
+<summary>Hint</summary>
+
+Zero is allowed by only one of these.
+
+</details>
+
+<Exercise>
+
+False, true, false. No token supplies existence; two distinct blue tokens cannot occur, so at most one holds.
+
+</Exercise>
+
+Repair “To prove seven unique, show every integer equals seven”.
+
+<details>
+<summary>Hint</summary>
+
+Restrict to solutions.
+
+</details>
+
+<Exercise>
+
+Show every integer satisfying the original equation equals seven. Nonsolutions impose no equality requirement.
+
+</Exercise>
+
+For the domain $n>10$, audit “$n+5=12$ forces seven, so exactly one”.
+
+<details>
+<summary>Hint</summary>
+
+A necessary candidate may be excluded.
+
+</details>
+
+<Exercise>
+
+Seven is excluded. The argument gives at most one and, together with the domain restriction, actually no solutions.
+
+</Exercise>
+
+Later, compare collections with zero, one and two successes and reconstruct both proof obligations.
+
+</details>
+
+<span id="from-existence-and-uniqueness-read-aloud"></span>
+
+### Read aloud
+
+There exists exactly one x in D satisfying P.
+
+<span id="from-counting-witnesses"></span>
+
+## Counting witnesses
+
+Cards labelled seven and nine both witness odd-card existence; choosing seven does not remove nine. For the interval example, we have already checked existence and refuted uniqueness; finding all witnesses adds an exclusion obligation.
+
+One checked object proves existence. Two distinct checked objects refute at most one, without asserting exactly two. A complete list needs both verification of each entry and an argument excluding every unlisted object. Domain size is not witness count: an infinite domain can have zero, one, finitely many or infinitely many successes.
+
+$$
+\{n\in\mathbb Z:4<n<8\}=\{5,6,7\}.
+$$
+
+Each listed number is an integer and passes both bounds. Conversely, an integer above four is at least five and one below eight is at most seven. Thus any witness is five, six or seven. This exclusion argument, using the spacing of integers, is what makes the list complete. Trying three successful numbers alone would not.
+
+
+<span id="from-counting-witnesses-changing-the-domain-changes-the-count"></span>
+
+### Changing the domain changes the count
+
+Over the reals, $5.5$ and $6.25$ also work. There are infinitely many witnesses. Start with five and six; insert their midpoint. Then repeatedly insert the midpoint between five and the last inserted value. Each result is real, above five and below the preceding result, hence still between four and eight. It is different from five and from every earlier inserted value. However many steps we take, another new witness can be added. This uses ordinary midpoint arithmetic and order, not a convergence theorem.
+
+Distinct expressions need not be distinct objects: $1/2=2/4$. But two physical cards carrying the same label seven are distinct cards, although there is only one distinct numerical label. State what you count. An empty tray has no candidates; an even-only tray has candidates but no odd successes. Both make odd-card existence false. A universal statement on an empty tray remains true without supplying any witness.
+
+<span id="from-counting-witnesses-practice"></span>
+
+#### Practice
+
+<details>
+<summary>Optional additional practice</summary>
+
+For integer $4<n<8$, prove one, two distinct, and all witnesses.
+
+<details>
+<summary>Hint</summary>
+
+Only the last task needs exclusion.
+
+</details>
+
+<Exercise>
+
+Five proves existence; five and six refute uniqueness. All are five, six, seven, because any allowed integer must be at least five and at most seven.
+
+</Exercise>
+
+Do $1/2$ and $2/4$ give two witnesses for $2x=1$ over reals?
+
+<details>
+<summary>Hint</summary>
+
+Count values, not spellings.
+
+</details>
+
+<Exercise>
+
+They establish existence after checking the equation but name one value, so they do not refute uniqueness. This alone is not a uniqueness proof either.
+
+</Exercise>
+
+Two separate cards both bear seven. Are there two odd cards and two distinct labels?
+
+<details>
+<summary>Hint</summary>
+
+Specify the objects.
+
+</details>
+
+<Exercise>
+
+There are two distinct odd-labelled cards but only one distinct integer label.
+
+</Exercise>
+
+Compare an empty tray with an even-only tray for odd-card existence.
+
+<details>
+<summary>Hint</summary>
+
+No candidates differs from no successes.
+
+</details>
+
+<Exercise>
+
+Both claims are false. The first lacks objects; in the second every available object fails the condition.
+
+</Exercise>
+
+A list claims five, six and seven are all real witnesses between four and eight. Audit it.
+
+<details>
+<summary>Hint</summary>
+
+Insert a midpoint.
+
+</details>
+
+<Exercise>
+
+Five and a half is a missing real witness, so completeness fails. Five already proves existence.
+
+</Exercise>
+
+Later, build examples with zero, one and multiple successes and give the appropriate amount of evidence for each.
+
+</details>
+
+<span id="from-counting-witnesses-read-aloud"></span>
+
+### Read aloud
+
+One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.

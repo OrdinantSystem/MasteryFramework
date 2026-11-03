@@ -32,16 +32,16 @@ sourceLocations: []
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
 
-La conjunción «y» exige ambas entradas. O inclusivo exige al menos una y admite ambas. NO invierte el valor de verdad. Una implicación solo falla con premisa verdadera y conclusión falsa. La equivalencia exige valores de verdad iguales, incluso si ambos son falsos.
+Y requiere ambas; O inclusiva, al menos una; NO invierte verdad. Implicación falla solo con premisa verdadera y conclusión falsa. Equivalencia exige valores iguales, incluidos ambos falsos.
 
 
 <span id="from-logische-verknuepfungen-una-tabla-de-verdad-con-tres-variables"></span>
 
 ### Una tabla de verdad con tres variables
 
-Añadir un enunciado $C$ no introduce un tercer valor de verdad: $A$, $B$ y $C$ siguen siendo, cada uno, falsos ($0$) o verdaderos ($1$). Con dos variables hay $2^2=4$ asignaciones; con tres hay $2^3=8$. Cada fila anterior se divide en dos casos: uno con $C=0$ y otro con $C=1$.
+Una tercera afirmación añade asignaciones, no valores de verdad: cada una sigue siendo $0$ o $1$. Dos entradas dan $2^2=4$ filas; tres, $2^3=8$, dividiendo cada fila anterior según $C=0,1$.
 
-En este ejemplo adicional, las columnas $A \land B$ y $B \lor C$ muestran resultados intermedios. Úsalos para leer las expresiones más largas paso a paso; los paréntesis indican qué enunciados se agrupan.
+Este ejemplo adicional usa $A\land B$ y $B\lor C$ como columnas intermedias; evalúa según los paréntesis.
 
 | $A$ | $B$ | $C$ | $A \land B$ | $(A \land B) \land C$ | $B \lor C$ | $A \lor (B \lor C)$ | $(A \land B) \Rightarrow C$ | $(A \land B) \Leftrightarrow C$ |
 |---|---|---|---|---|---|---|---|---|
@@ -54,48 +54,48 @@ En este ejemplo adicional, las columnas $A \land B$ y $B \lor C$ muestran result
 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
-Por ejemplo, en la fila $A=1$, $B=1$, $C=0$, el enunciado intermedio $A \land B$ es verdadero. Su conjunción con $C$ es falsa, y $(A \land B) \Rightarrow C$ es falsa porque su premisa es verdadera y su conclusión es falsa. La equivalencia final también es falsa porque $A \land B$ y $C$ tienen valores de verdad distintos.
+Con $A=B=1,C=0$, $A\land B$ es verdadera. La conjunción con $C$ es falsa. La implicación es falsa porque su premisa es verdadera y su conclusión falsa; la equivalencia es falsa porque los valores son distintos.
 
-El número de columnas no es fijo: añade una por cada expresión que quieras comparar.
+Añade columnas para las expresiones que compares; su número es libre.
 
 
 <span id="from-logische-verknuepfungen-siempre-nunca-o-a-veces"></span>
 
 ### Siempre, nunca o a veces
 
-Una tautología es verdadera en toda asignación, como $A \lor  \neg A$. Una contradicción es falsa en todas, como $A \land  \neg A$. Una contingencia varía según la asignación. $A \Rightarrow  B$ es contingente, aunque sus casos con premisa falsa sean verdaderos.
+Una **tautología**, como $A\lor\neg A$, es siempre verdadera; una **contradicción**, como $A\land\neg A$, siempre falsa. Una **contingencia** varía: $A\Rightarrow B$ sigue contingente pese a casos verdaderos con premisa falsa.
 
 <span id="from-building-truth-tables"></span>
 
 ## Construir tablas de verdad
 
-El entero de una tarjeta es positivo o par, y no es par. Nueve satisface esa descripción; seis no. Una **tabla de verdad** estudia la estructura lógica sin comprobar infinitos enteros: enumera toda asignación de valores de verdad a las proposiciones nombradas y evalúa la fórmula compuesta en cada fila.
+«Positivo o par, y no par» vale para tarjeta nueve, no seis. Una **tabla de verdad** estudia estructura sin infinitas pruebas enteras: enumera todas las asignaciones y evalúa la composición.
 
-Una fila recorre la tabla horizontalmente y fija una asignación. Una columna recorre verticalmente una entrada o expresión calculada. $1$ y $0$ codifican verdadero y falso, no cantidades de verdad. Las reglas proceden de las definiciones clásicas de las conectivas, no de observar tarjetas.
+Las filas fijan asignaciones horizontalmente; las columnas siguen entradas o expresiones verticalmente. $1$ y $0$ etiquetan verdad, no cantidades. Las definiciones clásicas fijan reglas, no observar tarjetas.
 
 
 <span id="from-building-truth-tables-entradas-y-exhaustividad"></span>
 
 ### Entradas y exhaustividad
 
-Para una entrada $P$, enumera sus dos valores. Con entradas distintas $P,Q$, mantén $P$ verdadera mientras $Q$ toma ambos valores y repite con $P$ falsa: $11,10,01,00$. Amplía la lista mediante la división de filas explicada arriba: una tercera entrada distinta $R$ da ocho filas sin omisiones ni repeticiones.
+Enumera ambos valores de $P$. Para distintas $P,Q$, varía $Q$ con $P$ verdadera y después falsa: $11,10,01,00$. Dividir según tercera entrada $R$ produce ocho filas, cada una una vez.
 
-Cada entrada **distinta** duplica las filas. Repetir $P$ diez veces sigue dando una entrada, no diez. Todas las apariciones de $P$ deben coincidir dentro de una fila. $\neg P$ se calcula a partir de $P$, no se elige independientemente.
+Cada entrada **distinta** duplica filas. Diez apariciones de $P$ siguen siendo una entrada, iguales dentro de cada fila. $\neg P$ se deriva, no es independiente.
 
-Para construir una tabla: nombra las entradas; encuentra la conectiva exterior y sus partes completas; enumera sistemáticamente las asignaciones; calcula primero las partes menores; aplica cada definición; verifica que la última columna evalúa la fórmula entera. Las columnas intermedias no añaden hipótesis. El primer valor intermedio incorrecto ayuda a localizar la regla mal aplicada.
+Nombra entradas; identifica conectiva externa y partes completas; enumera asignaciones; calcula partes menores antes que mayores; aplica definiciones; verifica que la columna final cubra toda la fórmula. Las intermedias no suponen nada; el primer error localiza la regla incorrecta.
 
 
 <span id="from-building-truth-tables-construcción-resuelta"></span>
 
 ### Construcción resuelta
 
-Sea $P$ positivo y $Q$ par para una tarjeta fija. La descripción inicial es
+Para una tarjeta, $P$ significa positivo, $Q$ par. Entonces:
 
 $$(P\lor Q)\land\neg Q.$$
 
-«se cumple al menos una de las proposiciones pe o cu, y cu no se cumple».
+«Pe o cu, y no cu».
 
-La «y» exterior une la disyunción completa con la negación completa. Calcula ambas antes de combinarlas:
+Y externa une disyunción y negación completas; calcula ambas primero:
 
 | $P$ | $Q$ | $P\lor Q$ | $\neg Q$ | $(P\lor Q)\land\neg Q$ |
 |---|---|---|---|---|
@@ -104,21 +104,21 @@ La «y» exterior une la disyunción completa con la negación completa. Calcula
 | 0 | 1 | 1 | 0 | 0 |
 | 0 | 0 | 0 | 1 | 0 |
 
-En la fila $10$, la disyunción es verdadera por $P$ y la negación es verdadera porque $Q$ es falsa. Ambas entradas exteriores son verdaderas, así que el resultado es verdadero. En $00$, $\neg Q$ es verdadera pero la disyunción falsa: el conjunto es falso. Mirar solo la última parte, $\neg Q$, ocultaría ese fallo.
+En $10$, $P$ hace O verdadera y $Q$ falsa hace NO verdadera: Y cumple. En $00$, $\neg Q$ es verdadera, pero O falsa: Y falla. Mirar solo la última parte lo ocultaría.
 
-La columna final es verdadera exactamente cuando $P$ es verdadera y $Q$ falsa. Las filas agotan todas las asignaciones booleanas: es un resultado veritativo-funcional para proposiciones arbitrarias, no una conjetura basada en nueve y seis.
+Verdadera exactamente con $P$ verdadera, $Q$ falsa. Agotar filas booleanas prueba esto para proposiciones arbitrarias, no solo tarjetas nueve y seis.
 
 
 <span id="from-building-truth-tables-construir-otras-tablas-de-forma-independiente"></span>
 
 ### Construir otras tablas de forma independiente
 
-Construye $(P\land Q)\lor\neg P$ con columnas para conjunción y negación. Explica un resultado verdadero y uno falso.
+Construye $(P\land Q)\lor\neg P$ con ambas columnas intermedias; explica un resultado verdadero y otro falso.
 
 <details>
 <summary>Pista</summary>
 
-La conectiva exterior es «o» inclusiva. Basta con que sea verdadera una parte intermedia.
+O inclusiva externa requiere una parte intermedia verdadera.
 
 </details>
 
@@ -134,16 +134,16 @@ La conectiva exterior es «o» inclusiva. Basta con que sea verdadera una parte 
 | 0 | 0 | 0 | 1 | 1 |
 
 
-La fila $10$ es falsa porque ambas entradas exteriores son falsas. Las dos últimas son verdaderas por $\neg P$, independientemente de $Q$. La fila $11$ es verdadera por la conjunción.
+$10$ falla por ambas partes falsas. $01,00$ pasan por $\neg P$ independientemente de $Q$; $11$ por Y.
 
 </details>
 
-Construye ahora $P\land(Q\lor R)$ desde una tabla vacía de ocho filas.
+Construye $P\land(Q\lor R)$ desde una tabla vacía de ocho filas.
 
 <details>
 <summary>Pista para la tercera entrada</summary>
 
-Enumera cada terna una vez. Evalúa $Q\lor R$ antes de la conjunción exterior; siempre hace falta $P$.
+Cada terna una vez; calcula primero $Q\lor R$. Siempre se requiere $P$.
 
 </details>
 
@@ -163,11 +163,11 @@ Enumera cada terna una vez. Evalúa $Q\lor R$ antes de la conjunción exterior; 
 | 0 | 0 | 0 | 0 | 0 |
 
 
-En las tres primeras filas, $P$ y al menos una de $Q,R$ son verdaderas. En $100$ falla la alternativa agrupada. En las últimas cuatro falla $P$, independientemente de la alternativa.
+Las tres primeras filas tienen $P$ y al menos una de $Q,R$ verdaderas. $100$ falla la alternativa; las últimas cuatro fallan $P$ independientemente de ella.
 
 </details>
 
-<Exercise question="¿Cuántas filas necesita $P\lor\neg P$? Construye la tabla y explica por qué la aparición negada no es otra entrada independiente.">
+<Exercise question="Construye $P\lor\neg P$. ¿Cuántas filas, y por qué la negación no es una entrada independiente?">
 
 
 | $P$ | $\neg P$ | $P\lor\neg P$ |
@@ -176,7 +176,7 @@ En las tres primeras filas, $P$ y al menos una de $Q,R$ son verdaderas. En $100$
 | 0 | 1 | 1 |
 
 
-Solo dos filas. Ambas apariciones se refieren a la misma proposición; su negación queda determinada por su valor. En cada fila una alternativa es verdadera, de modo que toda la disyunción es verdadera en cualquier asignación clásica.
+Dos filas: ambas apariciones conciernen a una proposición con negación determinada. Cada fila tiene una alternativa verdadera; la disyunción es clásicamente siempre verdadera.
 
 </Exercise>
 
@@ -185,12 +185,12 @@ Solo dos filas. Ambas apariciones se refieren a la misma proposición; su negaci
 
 ### Qué dicen las filas abstractas
 
-Si $P$ significa «un real fijo es mayor que uno» y $Q$ «ese real es positivo», el orden habitual hace imposible la fila $10$ para esa interpretación: $x>1$ implica $x>0$. Una **tabla proposicional completa sin restricciones** la mantiene. La fila es una asignación abstracta, no una afirmación de que exista tal real. La aritmética determina qué filas pueden realizar entradas numéricas. Si restringes el análisis a esas filas, indícalo expresamente.
+Para $P$ «un real fijo supera uno» y $Q$ «es positivo», $x>1$ implica $x>0$: $10$ es irrealizable. Una **tabla proposicional sin restricciones** aún incluye esa asignación abstracta, sin afirmar que exista tal real. La aritmética decide realizabilidad; explicita cualquier restricción a filas realizables.
 
-<Exercise question="Alguien prueba la fórmula inicial solo en 11 y 00, obtiene falso dos veces y concluye que siempre es falsa. ¿Qué filas faltan? ¿Cuál refuta la conclusión?">
+<Exercise question="La fórmula inicial es falsa en 11 y 00. ¿Qué filas faltan, y cuál refuta ‘siempre falsa’?">
 
-Faltan $10$ y $01$. La fila $10$ da verdadero porque tanto la disyunción como $\neg Q$ son verdaderas. Dos cálculos correctos en filas cómodas no constituyen una comprobación exhaustiva.
+Faltan $10,01$; $10$ refuta porque O y $\neg Q$ son verdaderas. Dos filas elegidas correctas no agotan las posibilidades.
 
 </Exercise>
 
-Para comparar fórmulas, alinea las **mismas asignaciones** y compara las columnas finales. Coincidir en todas demuestra una equivalencia veritativo-funcional; una discrepancia la refuta. La tabla no establece los significados aritméticos de sus entradas. La [tabla anterior de tres entradas](#from-logische-verknuepfungen) también compara implicación y equivalencia.
+Compara columnas finales con las **mismas asignaciones**: coincidencia total prueba equivalencia veritativo-funcional; una diferencia refuta. Las tablas no prueban significados aritméticos de entradas. La [tabla de tres entradas](#from-logische-verknuepfungen) compara también implicación y equivalencia.

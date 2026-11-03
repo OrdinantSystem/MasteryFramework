@@ -37,7 +37,7 @@ additionalSources: [{"sourceId": "analysis-sheet-1-1", "pages": [1], "locations"
 
 <Math tex="\tag{5}\colA{A}\lor\neg \colA{A}=1,\quad \colA{A}\land\neg \colA{A}=0" display />
 
-Die Nummern stehen für Assoziativität, Kommutativität, Distributivität, Absorption und Komplement. Beide dualen Formen sind erlaubt. = bedeutet logische Äquivalenz, nicht gleiche Schreibweise. Beim Anwenden dürfen ganze Ausdrücke für A, $B$ oder $C$ eingesetzt werden.
+Gesetze 1–5 heißen Assoziativität, Kommutativität, Distributivität, Absorption und Komplement. Beide dualen Formen sind erlaubt. Gleichheit bedeutet logische Äquivalenz, nicht gleiche Schreibweise. Ganze Ausdrücke dürfen $A$, $B$, $C$ ersetzen.
 
 
 <span id="from-boolesche-grundgesetze-die-klammerung-sehen"></span>
@@ -48,14 +48,14 @@ Die Nummern stehen für Assoziativität, Kommutativität, Distributivität, Abso
 
 <ExpressionTrees variant="distributivity" display />
 
-Assoziativität ändert die Klammerung derselben Operation. Distributivität ändert den Baum und wiederholt A. In den Übungsblättern sind Wahrheitstafeln nicht die Beweismethode: Die späteren Regeln werden aus diesen fünf Gesetzen hergeleitet.
+Assoziativität klammert eine Operation um; Distributivität ändert den Baum und wiederholt $A$. Blattbeweise müssen spätere Regeln aus Gesetzen 1–5 herleiten, nicht aus Wahrheitstafeln.
 
 
 <span id="from-boolesche-grundgesetze-die-form-eines-gesetzes-erkennen"></span>
 
 ### Die Form eines Gesetzes erkennen
 
-In $A \land  (B \lor  C)$ wird $A$ mit einer Wahl zwischen $B$ und $C$ verbunden. Distributivität trennt die zwei Möglichkeiten: $A$ mit $B$ oder $A$ mit $C$. Das wiederholte $A$ ist notwendig. Bei $A \lor  (A \land  B)$ sind bereits alle Fälle mit A enthalten; der Zusatz verlangt ohnehin $A$ und fügt nichts hinzu. Diese Lesart erklärt die Identitäten; die Herleitungen verwenden weiterhin die erlaubten Gesetze.
+Distribution von $A\land(B\lor C)$ erhält $A$ in beiden Möglichkeiten: mit $B$ oder $C$. Absorption fügt keine Fälle hinzu: $A\land B$ verlangt bereits $A$. Diese Lesarten erklären die Gesetze, ersetzen aber keine eingeschränkten Herleitungen.
 
 <span id="from-neutralitaet-und-idempotenz"></span>
 
@@ -65,7 +65,7 @@ In $A \land  (B \lor  C)$ wird $A$ mit einer Wahl zwischen $B$ und $C$ verbunden
 
 ### Zwei Hilfsidentitäten aus Absorption
 
-Nutze Absorption (4), dann Komplement (5). Damit stehen 7a und 7b fest, bevor sie für Idempotenz (6) benutzt werden. Eine andere Beweisreihenfolge als die Aufgabennummerierung ist erlaubt; das zu beweisende Ergebnis vorauszusetzen nicht.
+Absorption (4), dann Komplement (5), beweisen 7a und 7b als Hilfen für Idempotenz (6). Beweisreihenfolge darf von Aufgabennummern abweichen; Zirkelschlüsse sind verboten.
 
 <Math tex="\colA{A}\overset{4}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\overset{5}=\colA{A}\lor0\quad\Longrightarrow\quad \colA{A}\lor0=\colA{A}\quad(H_1)" display />
 
@@ -85,25 +85,25 @@ Nutze Absorption (4), dann Komplement (5). Damit stehen 7a und 7b fest, bevor si
 
 <Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
 
-Distributivität wird in beiden Ketten rückwärts angewendet. Dualität vertauscht $\land$ mit $\lor$ und 0 mit 1; die zweite Rechnung steht ausdrücklich da, damit jeder erlaubte Schritt geprüft werden kann.
+Beide Ketten nutzen Distributivität rückwärts. Dualität tauscht $\land,\lor$ und $0,1$; die zweite Kette zeigt jeden erlaubten Schritt.
 
 
 <span id="from-neutralitaet-und-idempotenz-wie-man-den-beweis-findet"></span>
 
 ### Wie man den Beweis findet
 
-Das Ziel $A \lor  A$ bietet den erlaubten Gesetzen zunächst wenig Ansatz. Verknüpfen mit $\land 1$ erhält den Wert und schafft Platz für $A \lor  \neg A$. Nun teilen beide Faktoren A; rückwärts gelesene Distributivität macht daraus $A \lor  (A \land  \neg A)$. Das Komplement beseitigt den zweiten Teil. Der Beweis erweitert gezielt und vereinfacht danach. Nicht jede Zeile muss kürzer werden. $H_1$ und $H_2$ erlauben die Erweiterung ohne vorausgesetzte Idempotenz.
+Erweitere $A\lor A$ mit $\land1$ durch $H_2$ und ersetze $1$ durch $A\lor\neg A$. Rückwärtsdistribution vereint das gemeinsame $A$; Komplement entfernt den Zusatz, $H_1$ schließt ab. Die Erweiterung schafft das passende Gesetzesmuster ohne vorausgesetzte Idempotenz.
 
 
 <span id="from-neutralitaet-und-idempotenz-mit-den-grundgesetzen-üben"></span>
 
 ### Mit den Grundgesetzen üben
 
-Benenne auch in dieser kurzen Herleitung die erlaubten Regeln.
+Benenne die erlaubten Regeln.
 
 <Exercise question="Vereinfache $(B \land  A) \lor  A$ nur mit Gesetzen 2 und 4.">
 
-Kommutativität ergibt $A \lor  (A \land  B)$. Absorption liefert A. Gesetz 2 wird für das äußere ODER und das innere UND genutzt; Idempotenz ist nicht nötig.
+Vertausche äußeres ODER und inneres UND zu $A\lor(A\land B)$; Absorption liefert $A$. Keine Idempotenz wird genutzt.
 
 </Exercise>
 
@@ -119,7 +119,7 @@ Kommutativität ergibt $A \lor  (A \land  B)$. Absorption liefert A. Gesetz 2 wi
 
 <Math tex="\colA{A}\land0\overset5=\colA{A}\land(\colA{A}\land\neg \colA{A})\overset1=(\colA{A}\land \colA{A})\land\neg \colA{A}\overset6=\colA{A}\land\neg \colA{A}\overset5=0" display />
 
-Idempotenz (6) steht durch den vorigen Beweis zur Verfügung. Der Unterschied zwischen neutral und absorbierend wird unten zusammengefasst.
+Die bereits bewiesene Idempotenz (6) ist jetzt verfügbar.
 
 
 <span id="from-nullgesetze-und-konstanten-8--konstanten-negieren"></span>
@@ -130,11 +130,11 @@ Idempotenz (6) steht durch den vorigen Beweis zur Verfügung. Der Unterschied zw
 
 <Math tex="0\overset5=1\land\neg1\overset2=\neg1\land1\overset{7b}=\neg1" display />
 
-Es folgen $\neg 0 = 1$ und $\neg 1 = 0$. Jede Gleichheit folgt aus einem nummerierten Gesetz; weder Wahrheitstafel noch De-Morgan-Regel werden vorausgesetzt.
+Also $\neg0=1$, $\neg1=0$, allein mit nummerierten Gesetzen, ohne Wahrheitstafeln oder De Morgan.
 
 
 <span id="from-nullgesetze-und-konstanten-neutrale-und-absorbierende-elemente"></span>
 
 ### Neutrale und absorbierende Elemente
 
-Betrachte A als unbekannten Wahrheitswert. $A \lor  0$ hängt weiter von $A$ ab, $A \lor  1$ steht unabhängig von $A$ fest. Bei $\land$ wechseln die Rollen: 1 lässt A unverändert und 0 bestimmt das Ergebnis. Im Beweis von $A \lor  1 = 1$ bringt die Ersetzung $1 = A \lor  \neg A$ ein doppeltes A zum Vorschein. Assoziativität stellt die Kopien nebeneinander, Idempotenz entfernt eine. Darum muss Gesetz 6 bereits bewiesen sein.
+Neutrales $0$ lässt $A\lor0$ von $A$ abhängen; absorbierendes $1$ legt $A\lor1$ fest. Beim UND wechseln die Rollen. Für $A\lor1=1$ zeigt Komplement zwei Kopien von $A$, Assoziativität gruppiert sie und bereits bewiesene Idempotenz entfernt eine.

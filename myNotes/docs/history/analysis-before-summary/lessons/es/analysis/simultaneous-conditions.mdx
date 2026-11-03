@@ -1,0 +1,190 @@
+---
+course: "analysis"
+chapter: "analysis-logic"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/05 Compound Propositions.md", "A0.1.3 Conjunction and disjunction/01 Conjunction - And.md", "A0.1.3 Conjunction and disjunction/02 Inclusive Or.md", "A0.1.3 Conjunction and disjunction/03 Multiple Simultaneous Conditions.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "es"
+title: "Conectivas lógicas y condiciones compuestas"
+navTitle: "Conectivas lógicas y condiciones compuestas"
+description: "Conectivas lógicas y condiciones compuestas"
+order: 3
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["aussagen-und-aussageformen"]
+thumbnail: "logic"
+additionalSources: [{"sourceId": "analysis-concepts-2", "pages": [1], "locations": []}]
+---
+
+<span id="from-logische-verknuepfungen"></span>
+
+## Conectivas lógicas
+
+<span id="from-logische-verknuepfungen-una-tarjeta-dos-propiedades"></span>
+
+### Una tarjeta, dos propiedades
+
+Fija una tarjeta con un entero. Sea $P$ «su entero es positivo» y $Q$ «su entero es par». Positivo significa mayor que cero; par significa divisible entre dos con resultado entero. Las letras nombran afirmaciones completas, no el entero. Usando la aritmética y el orden habituales como base obtenemos:
+
+| Entero | $P$ | $Q$ | $P\land Q$ | $P\lor Q$ |
+|---|---|---|---|---|
+| 6 | 1 | 1 | 1 | 1 |
+| 9 | 1 | 0 | 0 | 1 |
+| -2 | 0 | 1 | 0 | 1 |
+| -3 | 0 | 0 | 0 | 0 |
+| 0 | 0 | 1 | 0 | 1 |
+
+Seis cumple ambas propiedades. Nueve es positivo e impar; menos dos es par y no positivo; menos tres no cumple ninguna. Cero es par porque $0/2=0$, pero no positivo. Una parte falsa hace falsa la conjunción, no carente de sentido.
+
+Establecer una conjunción exige justificar **ambas** partes. Para seis, $6>0$ y $6/2=3$ es entero. Para refutarla basta una parte falsa: doce no es menor que diez, así que «positivo y menor que diez» es falso aunque doce sea positivo. De una conjunción verdadera recuperamos cada componente. Una conjunción falsa por sí sola no identifica cuál falló.
+
+Para establecer una disyunción inclusiva basta justificar **una** alternativa; la otra no tiene que ser falsa. Para refutarla hay que justificar que **ambas** son falsas. Menos tres falla positivo-o-par por las dos razones. Decir solo «no positivo» deja posible la paridad, como muestra menos dos.
+
+
+<span id="from-logische-verknuepfungen-o-inclusiva-y-exactamente-una"></span>
+
+### O inclusiva y exactamente una
+
+La «o» inclusiva permite solapamiento. Para $P=Q=1$, $P\lor Q$ es verdadera, pero **exactamente una** es falsa. En $10,01,00$ coinciden: dan respectivamente $1,1,0$. La fila con ambas verdaderas marca la diferencia.
+
+«Sopa o ensalada» en un menú puede exigir elegir solo una, pero esa restricción viene del contexto. «O bien» por sí solo no establece exclusividad en matemáticas. A veces los propios componentes no pueden coincidir: un real no puede ser estrictamente negativo y estrictamente positivo. Eso procede del orden habitual, no de otra regla de disyunción. Una tabla abstracta completa mantiene la asignación con ambas verdaderas.
+
+La satisfacción «simultánea» se refiere al contexto indicado, no necesariamente a un instante. «La puerta estaba abierta al mediodía y cerrada a la una» puede ser verdadero. La «y» lógica no afirma orden temporal ni causalidad. «Positivo, **pero** impar» tiene las condiciones de verdad de una conjunción: «pero» añade énfasis, no otra regla lógica.
+
+
+<span id="from-logische-verknuepfungen-agrupación-y-entradas-atómicas"></span>
+
+### Agrupación y entradas atómicas
+
+En este nivel proposicional, una proposición tratada como una sola unidad, sin descomponerla mediante conectivas lógicas, se llama **atómica**. Una proposición **compuesta** se construye a partir de una o más proposiciones mediante conectivas lógicas.
+
+$x+1=3$ contiene suma, pero es una sola condición en este nivel proposicional. La suma combina números, no afirmaciones. Una proposición cuantificada entera puede tratarse temporalmente como una entrada sin convertirse por ello en una fórmula atómica de primer orden. Unir condiciones abiertas como $(x>0)\land(x<10)$ no liga $x$; usa el mismo valor asignado en ambas partes.
+
+Sea $P$ tener entrada, $Q$ tener reserva y $R$ tener pase de invitado. Compara
+
+$$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
+
+La primera exige entrada además de reserva o pase. La segunda admite el pase solo. Con $P=0,Q=0,R=1$, la primera es falsa y la segunda verdadera. Esta asignación separadora demuestra que cambiar la agrupación cambia el significado general.
+
+Las cadenas formadas solo por «y» o solo por «o» inclusiva admiten reagrupar por las razones explicadas abajo; las conectivas mezcladas requieren una comprobación aparte.
+
+<details>
+<summary>Lecturas de notación</summary>
+
+$P\land Q$: «pe y cu». $P\lor Q$: «pe o cu, o ambas». $P\land(Q\lor R)$: «pe y, además, al menos una de cu o erre». Algunos libros escriben $\to$ por $\Rightarrow$ y $\leftrightarrow$ por $\Leftrightarrow$.
+
+</details>
+
+
+<span id="from-logische-verknuepfungen-práctica-con-razones"></span>
+
+### Práctica con razones
+
+Una tarjeta lleva nueve y otra menos dos. ¿Demuestra eso que una tarjeta oculta concreta es positiva y par? Identifica las dos lagunas.
+
+<details>
+<summary>Pista</summary>
+
+¿A qué objeto se refiere cada comprobación? ¿Un mismo entero superó ambas?
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+Ningún ejemplo aporta información sobre la tarjeta oculta. Además, positividad y paridad se comprobaron en enteros diferentes. Una conjunción sobre una tarjeta fija necesita ambas afirmaciones sobre esa misma tarjeta. Dos ejemplos separados no establecen ninguno de esos puntos.
+
+</details>
+
+<Exercise question="Una tarjeta cumple por tener estrella o por tener círculo y borde azul. Escribe el criterio con S, C, B. ¿Cumple una tarjeta con solo estrella? ¿Una con solo círculo?">
+
+$S\lor(C\land B)$. La tarjeta con solo estrella cumple por $S$, independientemente de la segunda vía. La de solo círculo no cumple ninguna: no tiene estrella y le falta el borde exigido junto al círculo. Una lista dentro de una alternativa se mantiene agrupada.
+
+</Exercise>
+
+<Exercise question="Sabes que $P\lor Q$ es verdadera. ¿P debe ser verdadera o falsa? ¿Qué deduces si además Q es falsa? Si solo sabes que $P\land Q$ es falsa, ¿Q debe ser falsa?">
+
+Inicialmente ambos valores de $P$ son posibles: $10$ y $01$ satisfacen el informe. Con $Q=0$, $P$ debe ser $1$ para mantener verdadera la disyunción. Una conjunción falsa no fuerza $Q=0$: $01$ la hace falsa mientras $Q$ es verdadera. En cambio, una conjunción verdadera sí obliga a que cada componente sea verdadera, incluida $Q$.
+
+</Exercise>
+
+[Construir tablas de verdad](../logische-verknuepfungen/#from-building-truth-tables) desarrolla la construcción desde una tabla vacía, las entradas repetidas y la realizabilidad numérica. [Negación lógica](../logical-negation/#from-logical-negation) trata la negación precisa; [leer la estructura matemática](../quantifier-order/#from-reading-mathematical-structure) aplica la lectura de fuera hacia dentro a afirmaciones completas.
+
+<span id="from-simultaneous-conditions"></span>
+
+## Varias condiciones simultáneas
+
+Solo en esta lección, un entero es **admisible** si y solo si es positivo, menor que diez y par. Es una etiqueta local de enseñanza, no una clase estándar de enteros. Seis supera todas las pruebas. Nueve falla la paridad; diez falla la cota superior estricta. Superar dos pruebas no compensa fallar la tercera.
+
+
+<span id="from-simultaneous-conditions-leer-un-criterio-estructurado"></span>
+
+### Leer un criterio estructurado
+
+Aplica la regla anterior del mismo objeto: todas las pruebas se refieren a **un entero**. Un no entero positivo menor que diez ya incumple el dominio exigido.
+
+Sea $A$ positivo, $B$ menor que diez y $C$ par. Tanto
+
+$$(A\land B)\land C\qquad\text{como}\qquad A\land(B\land C)$$
+
+exigen las tres afirmaciones. En la primera agrupación deben cumplirse $A$ y $B$, además de $C$. En la segunda deben cumplirse $B$ y $C$, además de $A$. Esto demuestra semánticamente la asociatividad para tres proposiciones arbitrarias, sin depender de comprobar cuatro enteros. Una cadena de «o» inclusivas también permite ambas agrupaciones: exige al menos una de tres entradas verdaderas. Las conectivas mezcladas requieren revisar la agrupación por separado.
+
+$A\land(B\land C)$: «Se cumple a, y se cumplen be y ce». La conjunción no liga una variable libre.
+
+Un método útil es fijar dominio y objeto; separar condiciones; comprobar si se exigen todas o al menos una; conservar las alternativas interiores; decidir si se está definiendo o solo afirmando. Las comas no determinan por sí solas la conectiva.
+
+
+<span id="from-simultaneous-conditions-establecer-una-etiqueta-y-descomponerla"></span>
+
+### Establecer una etiqueta y descomponerla
+
+«Si y solo si» da un criterio completo. Para demostrar que seis es admisible comprobamos $6>0$, $6<10$ y que $6/2=3$ es entero. A la inversa, saber que un entero es admisible permite recuperar **cada una** de esas propiedades. No fija un valor único.
+
+La lista completa es $2,4,6,8$. Las cotas dejan solo los enteros del $1$ al $9$; sus miembros pares son exactamente esos cuatro. Así agotamos los candidatos. Exhibir cuatro aciertos sin excluir los demás no probaría que la lista es completa. La definición fija el significado; el argumento de candidatos justifica la lista.
+
+
+<span id="from-simultaneous-conditions-una-regla-suficiente-es-distinta"></span>
+
+### Una regla suficiente es distinta
+
+Supón una regla corriente: «Un entero recibe una marca azul si es positivo, menor que diez y par». Expresamente, **no** es una definición completa del reparto de marcas. Cumplir la lista garantiza una marca, pero la regla no prohíbe marcas adicionales.
+
+Marcar todos los enteros de azul cumple la regla, pero nueve estaría marcado y sería impar. Por tanto, una marca no implica paridad. «Marcado **si y solo si** positivo, menor que diez y par» sí permitiría recuperar la lista.
+
+Algunas definiciones usan el «si» abreviado con intención de dar un criterio completo. Esa intención procede del contexto definitorio, no de que «si» y «si y solo si» sean intercambiables en general. Escribe «significa» o «si y solo si» si pretendes ambas direcciones. Señala la ambigüedad en vez de añadir la recíproca.
+
+
+<span id="from-simultaneous-conditions-practicar-alternativas-y-fallos"></span>
+
+### Practicar alternativas y fallos
+
+Un entero debe ser positivo y además ser par **o igual a tres**, manteniendo agrupada esa alternativa entera. Escribe el criterio y comprueba $3,6,-2,9$.
+
+<details>
+<summary>Pista</summary>
+
+Hay dos requisitos exteriores. El segundo puede satisfacerse de dos maneras.
+
+</details>
+
+<details>
+<summary>Respuesta de referencia</summary>
+
+$P\land(E\lor T)$, donde $P$ es positivo, $E$ par y $T$ igual a tres. Tres pasa por positividad y $T$; seis por positividad y $E$. Menos dos falla positividad; nueve falla ambas alternativas interiores. La alternativa es una sola entrada de la lista, no una exigencia de las tres letras.
+
+</details>
+
+<Exercise question="Un entero cumple si es cero o si es positivo y menor que diez. A, B, C nombran esas afirmaciones en orden. Escribe el criterio. ¿Cumplen cero y diez?">
+
+$A\lor(B\land C)$. Cero cumple por $A$ sin necesitar positividad. Diez falla $A$ y $C$, así que no cumple por ninguna vía. Exigir positividad de cero cambiaría la conectiva exterior.
+
+</Exercise>
+
+<Exercise question="Recupera todos los hechos de la admisibilidad original. ¿El entero debe ser seis? Describe la no admisibilidad y comprueba sus extremos con cero, nueve y diez.">
+
+Es positivo, menor que diez y par; no tiene que ser seis, pues dos también cumple. No ser admisible significa $n\le0$ **o** $n\ge10$ **o** $n$ no es par, manteniendo $n\in\mathbb Z$. Cero falla solo positividad; nueve solo paridad; diez solo la cota superior estricta. Ninguno obliga a que fallen todas las pruebas. [Negar condiciones compuestas](../logical-negation/#from-negating-combined-conditions) demuestra las leyes utilizadas.
+
+</Exercise>
+
+Inventa una definición de tres condiciones y un ejemplo que falle solo una. Cambia después «si y solo si» por un «si» corriente en una dirección e identifica qué deducción desde la etiqueta deja de justificarse.

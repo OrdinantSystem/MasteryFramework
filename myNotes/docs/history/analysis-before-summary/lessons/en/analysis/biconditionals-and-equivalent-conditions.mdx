@@ -1,0 +1,153 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-logic"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/01 If and Only If.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/03 Equivalent Conditions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/04 Chains of Equivalences.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Chains of Logical Equivalences.md"]
+title: "Equivalence and reversible transformations"
+navTitle: "Equivalence and reversible transformations"
+description: "Equivalence and reversible transformations"
+order: 7
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["implikation-und-kontraposition", "zahlenmengen"]
+thumbnail: "parity"
+additionalSources: []
+---
+
+<span id="from-biconditionals-and-equivalent-conditions"></span>
+
+## Biconditionals and equivalent conditions
+
+“Keep a card **if** its label is two” requires keeping every two-card, but allows keeping others. “Keep a card **only if** its label is two” forbids keeping other labels, but permits rejecting every card. Together they require keeping exactly the two-cards.
+
+
+<span id="from-biconditionals-and-equivalent-conditions-if-only-if-and-both"></span>
+
+### If, only if, and both
+
+For propositions $A$ and $B$:
+
+- “$A$ if $B$” means $B\Rightarrow A$. Read “if $B$, then $A$.” Here $B$ is **sufficient** for $A$: it guarantees $A$.
+- “$A$ only if $B$” means $A\Rightarrow B$. Read “if $A$, then $B$.” Here $B$ is **necessary** for $A$: $A$ cannot hold without it.
+
+A club's formal rule “admitted only if ticketed” makes a ticket necessary, not sufficient. It does not promise admission to ticket holders. Adding “ticketed implies admitted” would make the ticket sufficient too. These are stipulated rules, not claims about actual admission policies.
+
+The **biconditional** $A\Leftrightarrow B$ reads “$A$ if and only if $B$,” abbreviated **iff**. Its definition is matching truth values, including two false values:
+
+| $A$ | $B$ | $A\Rightarrow B$ | $B\Rightarrow A$ | $A\Leftrightarrow B$ |
+| --- | --- | --- | --- | --- |
+| $1$ | $1$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ |
+| $0$ | $1$ | $1$ | $0$ | $0$ |
+| $0$ | $0$ | $1$ | $1$ | $1$ |
+
+Here $1$ means true and $0$ false. The table proves that the biconditional agrees with $(A\Rightarrow B)\land(B\Rightarrow A)$ in every row. The forward arrow excludes true/false; the backward arrow excludes false/true. These exhaust the mismatches. Conversely, matching values make both arrows true. This is why a proof of equivalence requires both directions.
+
+In particular, $(0=1)\Leftrightarrow(2=3)$ is true, while the conjunction of those equations is false. Agreement does not assert either side.
+
+
+<span id="from-biconditionals-and-equivalent-conditions-start-afresh-for-the-reverse-direction"></span>
+
+### Start afresh for the reverse direction
+
+For every real $x$,
+
+$$(x+1=3)\Leftrightarrow(x=2).$$
+
+Read: “$x$ plus one equals three if and only if $x$ equals two.” Fix an arbitrary real $x$. **Forward:** assume $x+1=3$ and subtract one from both sides to obtain $x=2$. **Backward:** start instead from $x=2$ and add one to obtain $x+1=3$. Addition and subtraction preserve equality and undo each other, so the reasoning works for every real input.
+
+Assuming both equations at the start would skip both proof obligations. Logic explains which directions are needed; arithmetic establishes those directions for these equations. At zero both equations are false, which is fully consistent with their equivalence.
+
+
+<span id="from-biconditionals-and-equivalent-conditions-three-different-ranges-of-agreement"></span>
+
+### Three different ranges of agreement
+
+A true biconditional at one input gives **one-case agreement**. For $(x>5)\Leftrightarrow(x>2)$, six and zero give agreement, but three does not. The biconditional itself does not bind $x$ or silently claim “for every.”
+
+**Propositional logical equivalence**, written $F\equiv G$, means that formulas agree under every assignment to their atomic proposition letters. Repeated letters retain the same assigned value. For example, $(P\land Q)\equiv(Q\land P)$: both are true exactly when both letters are true, and false otherwise. Independent letters $P$ and $Q$ are not logically equivalent merely because one row assigns both true.
+
+**Equivalent conditions on a domain** agree at every allowed input and therefore have the same solution set. Our equation proof establishes this over the reals using arithmetic. It is not an unrestricted propositional law about two independent letters. The equals signs inside equations compare numbers; $\Leftrightarrow$ compares propositions' truth values. Some Boolean worksheets use $=$ for logical equivalence by convention; read their stated convention rather than changing numerical and logical equality into one meaning.
+
+Domains matter. Over all reals, $x>0$ and $x\ge0$ differ at zero. On nonzero reals they agree: positive implies nonnegative, and a nonnegative nonzero real must be positive. The restricted proof does not establish the all-real claim.
+
+<Exercise question="A sorting rule says a card is kept only if it is labelled two. Is a two-card necessarily kept? State the missing implication. Then prove $(x-2=3)\Leftrightarrow(x=5)$ for every real $x$, starting each direction from its own assumption.">
+
+A two-card may be rejected; the missing implication is labelled-two implies kept. For the equations, assume $x-2=3$ and add two to get $x=5$. Restart from $x=5$ and subtract two to get $x-2=3$. Both operations preserve equality for arbitrary real $x$, so neither mismatch is possible. This is an arithmetic proof, not merely a truth-table verdict.
+
+</Exercise>
+
+<Exercise question="Someone proves above-five implies above-two and calls the conditions equivalent. What survives the error? Also explain why equivalence of two equations does not make them true for every input.">
+
+The forward implication survives, by order. Three refutes only the missing reverse implication, hence the claimed equivalence. For $x+1=3$ and $x=2$, zero makes both false. Their solution sets agree, but neither solution set contains every real number.
+
+</Exercise>
+
+<span id="from-equivalence-chains"></span>
+
+## Chains of equivalences
+
+Solving an equation is not just finding a plausible final number. We want exactly the original solutions. A reversible step preserves them; a one-way step may introduce candidates or discard cases.
+
+
+<span id="from-equivalence-chains-what-the-chain-says"></span>
+
+### What the chain says
+
+For every real $x$, ordinary arithmetic gives
+
+$$(2x+2=6)\Leftrightarrow(2x=4)\Leftrightarrow(x=2).$$
+
+Read: “Twice $x$ plus two equals six iff twice $x$ equals four; twice $x$ equals four iff $x$ equals two.” Here $2x$ means multiplication; numerical equality and truth-value agreement keep their distinct roles described above.
+
+The chain abbreviates **two adjacent equivalence claims**. It is not a new three-input connective or an instruction to associate biconditionals arbitrarily. Every link uses the same input, domain, and assumptions.
+
+There are four short reasons here. Subtracting two gives the middle equation; adding two recovers the first. Dividing by the nonzero number two gives the last equation; multiplying by two recovers the middle. Both directions of each link are valid for every real $x$, not just for the eventual solution.
+
+
+<span id="from-equivalence-chains-why-the-endpoints-agree"></span>
+
+### Why the endpoints agree
+
+Equivalence is **transitive**. Fix any allowed input. If the first condition has the same truth value as the second, and the second as the third, the first and third agree. Since the input was arbitrary, they agree throughout the domain.
+
+In implication language, the first condition gives the second and then the third. Starting from the third, the reverse links give the second and then the first. This proves both endpoint directions. For a chain $F\equiv G\equiv H$ of propositional formulas, use an arbitrary truth assignment instead of a number and keep repeated letters' values fixed. This proves transitivity; it does not prove any unchecked adjacent link.
+
+
+<span id="from-equivalence-chains-squaring-can-add-a-candidate"></span>
+
+### Squaring can add a candidate
+
+Over all reals, $(x=2)\Rightarrow(x^2=4)$ is valid, but the reverse fails at $x=-2$: its square is four and it is not two. Read the single arrow as “if $x$ equals two, then its square equals four.” Replacing it with a biconditional would incorrectly erase the sign distinction.
+
+After a forward-only step, solutions of the new equation are **candidates**. Check each against the original. A nonnegative-domain restriction can repair some squaring equivalences, but it must be stated before the claim and its reverse justified there. Quietly discarding negative inputs changes an all-real problem.
+
+
+<span id="from-equivalence-chains-division-can-lose-an-original-solution"></span>
+
+### Division can lose an original solution
+
+The equation $x^2=x$ is true at zero. Dividing by $x$ and claiming $x=1$ loses that solution because division required $x\ne0$.
+
+Split cases instead. At $x=0$ the original equation holds. For $x\ne0$, divide by $x$ to obtain $x=1$; conversely, multiplying $x=1$ by $x$ recovers $x^2=x$. Check one in the original as well. Thus the real solutions are exactly zero and one. On the explicitly nonzero domain the divided equations are equivalent, but that restricted result alone does not solve the original problem.
+
+<Note title="Keep worksheet restrictions separate">
+
+Existing [Boolean derivations](../boolesche-grundgesetze/#from-boolesche-grundgesetze) may restrict which numbered laws a proof is allowed to use. These general reasoning principles do not remove those exercise-specific restrictions. A truth-table argument can establish a fact without satisfying a task that specifically asks for a derivation from designated laws.
+
+</Note>
+
+<Exercise question="Audit $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$ over the reals. Give the operation in both directions of each link. May you append $(x^2=4)$ with another equivalence arrow?">
+
+Subtract three and reverse by adding three. Divide by nonzero three and reverse by multiplying by three. Each link preserves the solution set, and transitivity connects the endpoints. Do not append the squared equation as an equivalence over all reals: $-2$ satisfies it but not $x=2$. A single forward arrow is justified; its extra candidate must be checked against the original equation.
+
+</Exercise>
+
+<Exercise question="Construct a fresh two-link linear-equation chain using subtraction and division by a nonzero constant. Explain how you know no solution was added or lost, rather than merely testing the final number.">
+
+One example is $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Subtract four or add four for the first link; divide by four or multiply by four for the second. Four is nonzero. Each operation and its inverse work on the unchanged real domain, so the same inputs satisfy every equation. Testing two alone would verify a solution, not exclude all others.
+
+</Exercise>

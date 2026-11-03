@@ -30,103 +30,103 @@ additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0
 
 <NumberDomains />
 
-The boxes show **membership**, not the size of a number. Every number in an inner box also belongs to every surrounding box. For example, $3$ is natural, integer, rational, real, and complex at the same time. When asked to classify a number, we usually name the smallest of these sets that contains it.
+The boxes show **membership**, not magnitude: $3$ belongs to all five sets. Inner membership implies membership in every surrounding box; classify by the smallest containing set.
 
 
 <span id="from-zahlenmengen-what-each-set-contains"></span>
 
 ### What each set contains
 
-- **Natural numbers** $\mathbb{N}=\{1,2,3,\ldots\}$ count whole objects. Some courses include $0$; this lesson starts at $1$.
-- **Integers** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ include zero and negative whole numbers. Thus $-3\in\mathbb{Z}$, but $-3\notin\mathbb{N}$.
-- **Rational numbers** $\mathbb{Q}$ are ratios of integers with nonzero denominator. The numerator may be negative or zero; the denominator cannot be zero.
+- **Naturals** $\mathbb{N}=\{1,2,3,\ldots\}$ count whole objects; here $0$ is excluded, unlike in some courses.
+- **Integers** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ include zero and negative whole numbers: $-3\in\mathbb{Z}$ but $-3\notin\mathbb{N}$.
+- **Rationals** $\mathbb{Q}$ are integer ratios: the numerator may be negative or zero, the denominator must be nonzero.
 
 <Math tex="\mathbb{Q}=\left\{\frac{p}{q}:p,q\in\mathbb{Z},\ q\ne0\right\}" display />
 
-- **Real numbers** $\mathbb{R}$ are the numbers on the number line. They include the rationals and the **irrationals**: real numbers that cannot be written as such a ratio. For example, $\sqrt{2}$ is real and irrational. The irrational numbers form $\mathbb{R}\setminus\mathbb{Q}$, a part of the real numbers rather than another surrounding box.
-- **Complex numbers** $\mathbb{C}$ have the form $a+bi$, where $a,b\in\mathbb{R}$ and $i^2=-1$. A real number has imaginary part $0$: for example, $3=3+0i$. The number $2+3i$ has nonzero imaginary part, so it is not real.
+- **Reals** $\mathbb{R}$ fill the number line. They include rationals and **irrationals**, which have no integer-ratio representation, such as $\sqrt{2}$. Irrationals form $\mathbb{R}\setminus\mathbb{Q}$, not another outer box.
+- **Complex numbers** have form $a+bi$, with $a,b\in\mathbb{R}$ and $i^2=-1$. Reals have imaginary part zero, as in $3=3+0i$; $2+3i$ is not real.
 
 
 <span id="from-zahlenmengen-why-the-inclusions-are-strict"></span>
 
 ### Why the inclusions are strict
 
-The symbol $\subsetneq$ means “contained in, but not equal to”. To justify it, we need both an inclusion and an example that prevents equality.
+$\subsetneq$ means contained in but not equal to. Justify it by showing that every element of the smaller set is in the larger set and giving an element of the larger set that is not in the smaller one.
 
-Every natural number is an integer. Every integer $n$ is rational because $n=n/1$. Every rational number is real, and every real number $a$ is complex because $a=a+0i$. The first and third inclusions are part of how these number systems are constructed; the fraction and complex forms make the other two explicit.
+Naturals are integers and rationals are real by construction. Integers are rational because $n=n/1$; reals are complex because $a=a+0i$.
 
 <Math tex="\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}" display />
 
-Here are witnesses that the sets are different: $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$, and $i\in\mathbb{C}\setminus\mathbb{R}$. We justify the less immediate examples below. In particular, being rational does not imply being an integer.
+Strictness witnesses are $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$ and $i\in\mathbb{C}\setminus\mathbb{R}$. Thus rational need not mean integer; the less immediate witnesses are justified below.
 
 
 <span id="from-zahlenmengen-proof-a-terminating-or-repeating-decimal-is-rational"></span>
 
 ### Proof: a terminating or repeating decimal is rational
 
-A terminating decimal can be written over a power of ten. For example,
+Terminating decimals are fractions over powers of ten:
 
 <Math tex="0.125=\frac{125}{1000}=\frac18" display />
 
-Both entries of the last fraction are integers and its denominator is nonzero, so $0.125\in\mathbb{Q}$. Since $0<0.125<1$, it is not an integer. Its smallest set in the diagram is therefore $\mathbb{Q}$.
+Integer entries and a nonzero denominator establish rationality. Since $0<0.125<1$, the smallest set is $\mathbb{Q}$, not $\mathbb{Z}$.
 
-For a repeating decimal, shift one full repeating block and subtract. Set $x=0.\overline{27}=0.272727\ldots$. Multiplication by $100$ shifts the two-digit block:
+For $x=0.\overline{27}=0.272727\ldots$, multiply by $100$ to shift one two-digit period, then subtract:
 
 <Math tex="\begin{aligned}100x&=27.272727\ldots\\x&=0.272727\ldots\\99x&=27\\x&=\frac{27}{99}=\frac3{11}.\end{aligned}" display />
 
-The infinite tails are identical, so they cancel exactly; this is not a rounded decimal calculation. The same method works for any eventually repeating decimal, first shifting past any nonrepeating beginning. Conversely, long division of a rational number either ends or repeats: only finitely many remainders are possible. Merely having infinitely many decimal places does **not** make a number irrational.
+Identical infinite tails cancel exactly, without rounding. For eventually periodic decimals, first shift past the nonrepeating beginning. Conversely, rational long division terminates or repeats because finitely many remainders are possible. Infinite decimals need **not** be irrational.
 
 
 <span id="from-zahlenmengen-proof-why-the-imaginary-unit-is-not-real"></span>
 
 ### Proof: why the imaginary unit is not real
 
-For every real number $t$, the square $t^2$ is nonnegative: squaring either a positive or a negative number gives a positive result, and $0^2=0$. No real number can therefore satisfy $t^2=-1$. Since $i^2=-1$, the number $i$ cannot be real.
+Real squares are nonnegative: positive and negative inputs square positively, and $0^2=0$. Hence no real satisfies $t^2=-1$, so $i$ is not real.
 
-This also explains why $2+3i$ is not real. If it were real, subtracting $2$ and dividing by $3$ would make $i=((2+3i)-2)/3$ real, a contradiction. Complex numbers extend the real numbers so that equations such as $z^2+1=0$ have solutions: $z=i$ and $z=-i$.
+If $2+3i$ were real, subtraction and division would make $i=((2+3i)-2)/3$ real, a contradiction. Complex numbers extend the reals to solve equations such as $z^2+1=0$, with solutions $z=i$ and $z=-i$.
 
 
 <span id="from-zahlenmengen-practice"></span>
 
 ### Practice
 
-For each answer, give a representation or an argument, then use the inclusions to identify the larger sets as well.
+Justify each classification; also name the larger containing sets.
 
-<Exercise question="What is the smallest set in the diagram containing each of $-5/2$, $\sqrt{9}$, $0$, and $0.\overline{6}$?">
+<Exercise question="Classify $-5/2$, $\sqrt{9}$, $0$, and $0.\overline{6}$ by their smallest sets.">
 
-$-5/2$ is a ratio of integers but lies strictly between $-3$ and $-2$, so its smallest set is $\mathbb{Q}$. The number $\sqrt{9}=3$ lies in $\mathbb{N}$. Under our convention, $0$ lies in $\mathbb{Z}$ but not in $\mathbb{N}$. Finally, $0.\overline{6}=2/3$ lies in $\mathbb{Q}$ but not in $\mathbb{Z}$. Each number also belongs to all the surrounding sets.
-
-</Exercise>
-
-<Exercise question="Is the sum of two irrational numbers always irrational? Test the claim with $\sqrt{2}$ and $-\sqrt{2}$.">
-
-No. Both numbers are irrational: if $-\sqrt{2}$ were rational, multiplying it by $-1$ would make $\sqrt{2}$ rational as well. But their sum is $0$, which is rational. Membership in a set does not automatically tell us that every arithmetic operation stays in that set.
+$-5/2$ is rational but between $-3$ and $-2$, hence not integer. $\sqrt{9}=3$ is natural; $0$ is integer but not natural here; $0.\overline{6}=2/3$ is rational, not integer. All belong to the surrounding sets.
 
 </Exercise>
 
-The complete irrationality proof is developed in [Contradiction and irrationality](../widerspruch-und-irrationalitaet/#from-widerspruch-und-irrationalitaet). Its result is used here to distinguish the real and rational number sets.
+<Exercise question="Must two irrationals have an irrational sum? Test $\sqrt{2}$ and $-\sqrt{2}$.">
 
-A radical sign alone is not a test for irrationality: $\sqrt{9}=3$ is natural. What matters is the number represented, not the way it is written.
+No: their sum is rational $0$. Both are irrational, since rationality of $-\sqrt{2}$ would imply rationality of $\sqrt{2}$ after multiplication by $-1$. Set membership alone does not guarantee closure under arithmetic.
+
+</Exercise>
+
+The [irrationality proof](../widerspruch-und-irrationalitaet/#from-widerspruch-und-irrationalitaet) justifies the real/rational distinction used here.
+
+A radical alone proves nothing: $\sqrt{9}=3$ is natural. Classify the value, not its notation.
 
 <span id="from-equality-and-equations"></span>
 
 ## Equality and equations
 
-$2+1$ and $3$ look different, but name the same number. The equality $2+1=3$ records that agreement. An equals sign does not mean “next, do this.” Every occurrence asserts that its two sides name the same object or value in the stated setting.
+$2+1=3$ equates different expressions for the same number. Each equals sign asserts the same object or value in context, never “do this next.”
 
 
 <span id="from-equality-and-equations-foundational-equality-rules"></span>
 
 ### Foundational equality rules
 
-We accept these rules as foundations rather than proving them from arithmetic here:
+We accept these foundational rules without arithmetic proofs:
 
 - **Reflexivity:** $a=a$.
 - **Symmetry:** if $a=b$, then $b=a$.
 - **Transitivity:** if $a=b$ and $b=c$, then $a=c$.
-- **Substitution:** equal objects can replace each other in well-defined mathematical expressions or properties without changing value or truth.
+- **Substitution:** exchange equal objects in well-defined expressions or properties, preserving value or truth.
 
-The last rule still requires meaningful expressions. If $a=b=0$, substitution does not make $1/a$ or $1/b$ defined in ordinary real arithmetic. Nor is substitution a rule for changing quoted words in arbitrary sentences.
+Definedness still matters: $a=b=0$ does not define $1/a$ or $1/b$ in real arithmetic. Substitution does not license arbitrary changes to quoted words.
 
 
 <span id="from-equality-and-equations-every-link-of-a-chain-makes-a-claim"></span>
@@ -135,13 +135,13 @@ The last rule still requires meaningful expressions. If $a=b=0$, substitution do
 
 $$a=b=c$$
 
-This abbreviates $a=b$ and $b=c$; transitivity then gives $a=c$. It asserts the equalities together, not a sequence of actions.
+This jointly asserts $a=b$ and $b=c$; transitivity gives $a=c$. It is not an action sequence.
 
-The line $2+1=3+4=7$ is wrong: its first equality compares three with seven. If the intended instruction is to add two and one, then add four, write $2+1=3$, followed by $3+4=7$. Alternatively keep the added four throughout:
+$2+1=3+4=7$ wrongly equates three and seven. Write $2+1=3$, then $3+4=7$, or retain the added four throughout:
 
 $$(2+1)+4=3+4=7.$$
 
-The first step substitutes three for $2+1$ inside a larger expression. The second evaluates the addition. Every expression in the corrected chain names seven.
+First substitute three for $2+1$, then add. Every expression now denotes seven.
 
 <Note title="Readings">
 
@@ -149,51 +149,51 @@ $a=b=c$: “a equals b and b equals c”; $=$: “equals”; $\approx$: “is ap
 
 </Note>
 
-Approximate equality needs a stated precision or tolerance. It does not permit replacing an exact equality in a chain without explaining the change.
+Approximation requires a precision or tolerance; explain any replacement of exact equality by approximate equality.
 
 
 <span id="from-equality-and-equations-an-equations-role-depends-on-context"></span>
 
 ### An equation's role depends on context
 
-“Define $a:=0$” introduces a name. “Suppose $a=0$” introduces a local hypothesis. “Solve $x+1=3$ over the reals” asks which allowed inputs make the equality true; here the answer is $x=2$. None of these roles is determined by the equals sign alone.
+“Define $a:=0$” names; “suppose $a=0$” assumes locally; “solve $x+1=3$ over the reals” seeks allowed inputs, here $x=2$. Context, not $=$ alone, determines the role.
 
-The identity $x+0=x$ holds for every real input, but is open as written: no quantifier binds $x$. Its explicit universal form is
+The identity $x+0=x$ holds for every real, but remains open until quantified:
 
 $$\forall x\in\mathbb R\;(x+0=x).$$
 
-An assignment supplies context for evaluating an open equation. It does not syntactically bind its variable; substitution replaces the occurrences and produces a different formula. A quantifier, by contrast, binds occurrences in its scope.
+Assignment evaluates without binding; substitution replaces occurrences, producing another formula. Quantifiers bind occurrences within their scope.
 
 
 <span id="from-equality-and-equations-practice"></span>
 
 ### Practice
 
-Repair $1+1=2+1=3$ while preserving the intended calculation. Explain the false link before correcting it.
+Explain and repair the false link in $1+1=2+1=3$, preserving the calculation.
 
 <details>
 <summary>Hint</summary>
 
-Evaluate the expressions on either side of the first equals sign. Keep the final addition in every expression of a single chain.
+Evaluate the first link; retain the final addition throughout a single chain.
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-The first link says two equals three. Write $1+1=2$, then $2+1=3$, or $(1+1)+1=2+1=3$. In the chain all expressions now name three; the first replacement uses substitution.
+The first link equates two and three. Use $1+1=2$, then $2+1=3$, or $(1+1)+1=2+1=3$. All chain entries equal three; the first step substitutes.
 
 </details>
 
-<Exercise question="For arbitrary real numbers a, b, c, suppose a equals b and b equals c. Identify assumptions, conclusion, and rule. Write the full universal claim.">
+<Exercise question="For arbitrary reals a, b, c with $a=b$ and $b=c$, identify assumptions, conclusion and rule; state the universal claim.">
 
-The assumptions are $a=b$ and $b=c$; the conclusion is $a=c$, justified by transitivity:
+Transitivity takes assumptions $a=b$, $b=c$ to conclusion $a=c$:
 
 $$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
 
-Every variable occurrence is bound. This does not assert that all reals are equal: it says that whenever the two assumptions hold, the conclusion holds. The equality rule applies to arbitrary objects satisfying them; checking one numerical triple is not the general justification.
+All occurrences are bound. This conditional does not equate all reals: both assumptions must hold. The rule covers arbitrary suitable objects, not merely one checked triple.
 
-Read the universal claim in full: “For every real a, b, and c, if a equals b and b equals c, then a equals c.”
+It reads: “For all real a, b, c, if a equals b and b equals c, then a equals c.”
 
 </Exercise>
 
@@ -201,7 +201,7 @@ Read the universal claim in full: “For every real a, b, and c, if a equals b a
 
 ## Order comparisons and endpoints
 
-“At most three books” permits exactly three. “Fewer than three books” does not. A boundary can change the truth of a comparison, even when all the smaller examples agree. Here we use the usual order of real numbers; no order on arbitrary objects or complex numbers is being introduced.
+“At most three books” includes three; “fewer than three” excludes it. Endpoints matter. We use real order, not an order on arbitrary objects or complex numbers.
 
 
 <span id="from-order-comparisons-comparisons-and-their-readings"></span>
@@ -216,9 +216,9 @@ Read the universal claim in full: “For every real a, b, and c, if a equals b a
 | $a\ge b$ | a is greater than or equal to b |
 | $a\ne b$ | a is not equal to b |
 
-The strict comparisons $<$ and $>$ exclude equality. The non-strict comparisons $\le$ and $\ge$ include it. Thus $0\le0$ is true, but $0<0$ is false. Writing $a>b$ says the same thing as $b<a$: reverse the two expressions as well as the sign.
+$<$ and $>$ exclude equality; $\le$ and $\ge$ include it: $0\le0$ is true, $0<0$ false. Reversing $a>b$ to $b<a$ reverses both sign and operands.
 
-The precise meaning of $a\le b$ is $(a<b)\lor(a=b)$, with inclusive “or.” For $a\ge b$, either $a>b$ or $a=b$. Unequal values need not have a particular direction: $0\ne1$ is true, but $0>1$ is false. Equality itself can be meaningful even where no order has been specified.
+$a\le b$ means $(a<b)\lor(a=b)$ inclusively; $a\ge b$ means $a>b$ or $a=b$. Inequality gives no direction: $0\ne1$, yet not $0>1$. Equality needs no order.
 
 
 <span id="from-order-comparisons-two-bounds-concern-one-input"></span>
@@ -227,39 +227,39 @@ The precise meaning of $a\le b$ is $(a<b)\lor(a=b)$, with inclusive “or.” Fo
 
 $$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
 
-The chain requires **both** comparisons for the same $x$. It excludes the lower endpoint and includes the upper endpoint, assuming $a<b$. Passing only one test does not suffice.
+Both tests concern the **same** $x$. For $a<b$, the lower endpoint is excluded and the upper included; one test alone is insufficient.
 
-“a is strictly less than x and x is less than or equal to b.”
+“a is less than x, and x is at most b.”
 
-“At least a” means $x\ge a$; “at most b” means $x\le b$. Both allow equality. “Strictly between a and b” means $a<x<b$, excluding both endpoints. “Between” without an endpoint convention can be ambiguous; ask which endpoints count rather than silently choosing.
+“At least a” is $x\ge a$; “at most b” is $x\le b$, both inclusive. “Strictly between” is $a<x<b$, excluding endpoints. Clarify ambiguous “between.”
 
-For example, $0\le x<1$ allows zero and excludes one. In interval notation the same condition is $x\in[0,1)$: a square bracket includes an endpoint and a round parenthesis excludes it. Likewise $0<x\le2$ describes $x\in(0,2]$. Some texts use outward-facing square brackets for excluded endpoints; check their convention. As written, these conditions remain open. A value supplied by context lets us evaluate them but leaves their variable occurrences free; a quantifier binds $x$ within its scope in the formula.
+$0\le x<1$ is $x\in[0,1)$; $0<x\le2$ is $x\in(0,2]$. Square brackets include endpoints, parentheses exclude them; some texts instead use outward square brackets. These conditions are open: contextual values allow evaluation without binding; quantifiers bind within scope.
 
 
 <span id="from-order-comparisons-endpoint-checks"></span>
 
 ### Endpoint checks
 
-Translate “a real number is at least zero and at most one,” and compare it with “strictly between zero and one.” Check $0$, $1/2$, and $1$.
+Translate “a real is at least zero and at most one” versus “strictly between zero and one”; test $0$, $1/2$, $1$.
 
 <details>
 <summary>Hint</summary>
 
-Write both comparisons separately. Decide whether each allows equality before joining them.
+Write both tests separately, checking equality before joining them.
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-The first is $0\le x\le1$, or $x\in[0,1]$. All three inputs pass. The second is $0<x<1$, or $x\in(0,1)$; only $1/2$ passes. Each endpoint fails one strict comparison. The domain is real numbers in both cases.
+$0\le x\le1$, or $x\in[0,1]$, admits all three. $0<x<1$, or $x\in(0,1)$, admits only $1/2$: each endpoint fails a strict test. Both domains are real.
 
 </details>
 
-<Exercise question="Expand $0\le x<1$ using a connective. Can the two comparisons be checked using different values of x? Does the chain bind x?">
+<Exercise question="Expand $0\le x<1$ with a connective. May the tests use different x values? Is x bound?">
 
-It is $(0\le x)\land(x<1)$. Both refer to the same input. Choosing $x=2$ for the first and $x=0$ for the second proves nothing about a single input satisfying the chain. The conjunction does not bind $x$; its occurrences remain free unless a quantifier governs them.
+It is $(0\le x)\land(x<1)$ for one input. $x=2$ passing the first and $x=0$ passing the second establish no common witness. Conjunction does not bind $x$; without a governing quantifier it remains free.
 
 </Exercise>
 
-These conventions explain what comparisons say, not how to solve inequalities. Ordinary order properties are background. For exact truth reversal at a boundary, continue with [negating order comparisons](../logical-negation/#from-negating-order-comparisons).
+These are reading conventions, not inequality-solving rules; ordinary order properties are assumed. See [negating order comparisons](../logical-negation/#from-negating-order-comparisons) for boundary-sensitive reversal.

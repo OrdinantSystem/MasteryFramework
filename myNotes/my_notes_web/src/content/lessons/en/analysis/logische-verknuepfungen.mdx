@@ -32,16 +32,16 @@ sourceLocations: []
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
 
-AND requires both inputs. Inclusive OR requires at least one, so it also accepts both. NOT reverses a truth value. An implication fails only when its premise is true and its conclusion is false. Equivalence requires matching truth values, including when both are false.
+AND needs both; inclusive OR at least one; NOT reverses truth. Implication fails only for true premise and false conclusion. Equivalence needs matching values, including both false.
 
 
 <span id="from-logische-verknuepfungen-a-truth-table-with-three-variables"></span>
 
 ### A truth table with three variables
 
-Adding a statement $C$ does not add a third truth value: each of $A$, $B$, and $C$ is still either false ($0$) or true ($1$). With two variables there are $2^2=4$ assignments; with three there are $2^3=8$. Each old row now splits into two cases, one with $C=0$ and one with $C=1$.
+A third statement adds assignments, not truth values: each remains $0$ or $1$. Two inputs give $2^2=4$ rows; three give $2^3=8$, splitting each old row by $C=0,1$.
 
-In this additional example, the columns $A \land B$ and $B \lor C$ show intermediate results. Use them to read the longer expressions step by step; parentheses specify which statements are grouped together.
+This additional example uses $A\land B$ and $B\lor C$ as intermediate columns; evaluate by the grouping parentheses.
 
 | $A$ | $B$ | $C$ | $A \land B$ | $(A \land B) \land C$ | $B \lor C$ | $A \lor (B \lor C)$ | $(A \land B) \Rightarrow C$ | $(A \land B) \Leftrightarrow C$ |
 |---|---|---|---|---|---|---|---|---|
@@ -54,48 +54,48 @@ In this additional example, the columns $A \land B$ and $B \lor C$ show intermed
 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
-For example, in the row $A=1$, $B=1$, $C=0$, the intermediate statement $A \land B$ is true. Combining it with $C$ using AND gives false, while $(A \land B) \Rightarrow C$ is false because its premise is true and its conclusion is false. The final equivalence is also false because $A \land B$ and $C$ have different truth values.
+At $A=B=1,C=0$, $A\land B$ is true. AND with $C$ is false; implication is false from true premise to false conclusion; equivalence is false because the values differ.
 
-The number of columns is not fixed: add one for each expression you want to compare.
+Add columns for expressions you wish to compare; their number is unrestricted.
 
 
 <span id="from-logische-verknuepfungen-always-never-or-sometimes"></span>
 
 ### Always, never, or sometimes
 
-A tautology is true for every assignment, as in $A \lor  \neg A$. A contradiction is false for every assignment, as in $A \land  \neg A$. A contingency varies with the assignment. $A \Rightarrow  B$ is a contingency, even though particular false-premise instances are true.
+A **tautology**, such as $A\lor\neg A$, is always true; a **contradiction**, such as $A\land\neg A$, always false. A **contingency** varies: $A\Rightarrow B$ remains contingent despite true false-premise instances.
 
 <span id="from-building-truth-tables"></span>
 
 ## Building truth tables
 
-A card's integer is positive or even, and it is not even. Nine satisfies this description; six does not. To study the logical structure without testing an endless list of integers, use a **truth table**: list every assignment of truth values to the named propositions, then evaluate the compound in each row.
+“Positive or even, and not even” holds for card nine, not six. A **truth table** studies structure without endless integer trials: enumerate all truth assignments, then evaluate the compound.
 
-A row runs across and fixes one assignment. A column runs down and tracks one input or calculated expression. The digits $1$ and $0$ encode true and false; they are not quantities of truth. The rules come from classical connective definitions, not observations of cards.
+Rows fix assignments horizontally; columns track inputs or expressions vertically. $1$ and $0$ label truth, not quantities. Classical definitions, not card observations, determine the rules.
 
 
 <span id="from-building-truth-tables-inputs-and-completeness"></span>
 
 ### Inputs and completeness
 
-For one input $P$, list its two values. For distinct inputs $P,Q$, hold $P$ true while $Q$ takes both values, then repeat with $P$ false: $11,10,01,00$. Extend this list by the row-splitting method above: a third distinct input $R$ gives eight rows without omissions or repetitions.
+List both values for $P$. For distinct $P,Q$, vary $Q$ with $P$ true, then false: $11,10,01,00$. Splitting by a third input $R$ gives eight rows, each exactly once.
 
-Each **distinct** input doubles the rows. Repeating $P$ ten times still gives one input, not ten. Every occurrence of $P$ must have the same value within a row. $\neg P$ is calculated from $P$, not chosen independently.
+Each **distinct** input doubles rows. Ten occurrences of $P$ still form one input, equal throughout each row. $\neg P$ is derived, not independent.
 
-To construct a table: name inputs; find the outermost connective and its complete parts; list assignments systematically; add columns for smaller parts before larger ones; apply each connective definition; check that the final column describes the whole formula. Intermediate columns add no assumptions. When an answer is wrong, the first wrong intermediate value helps locate the mistaken rule.
+Name inputs; parse outer connective and full parts; enumerate assignments; calculate smaller parts before larger; apply definitions; check the final column covers the whole formula. Intermediate columns assume nothing; the first wrong value locates the mistaken rule.
 
 
 <span id="from-building-truth-tables-worked-construction"></span>
 
 ### Worked construction
 
-Let $P$ mean positive and $Q$ even for one fixed card. The opening description is
+For one card, let $P$ mean positive, $Q$ even. Then:
 
 $$(P\lor Q)\land\neg Q.$$
 
-“at least one of P or Q holds, and Q does not hold.”
+“P or Q, and not Q.”
 
-The outer “and” joins the whole disjunction to the whole negation. Calculate each before combining them:
+Outer AND joins the complete disjunction and negation; calculate both first:
 
 | $P$ | $Q$ | $P\lor Q$ | $\neg Q$ | $(P\lor Q)\land\neg Q$ |
 |---|---|---|---|---|
@@ -104,21 +104,21 @@ The outer “and” joins the whole disjunction to the whole negation. Calculate
 | 0 | 1 | 1 | 0 | 0 |
 | 0 | 0 | 0 | 1 | 0 |
 
-In row $10$, the disjunction is true through $P$ and the negation is true because $Q$ is false. Both outer inputs are true, so the result is true. In row $00$, $\neg Q$ is true but the disjunction is false, so the result is false. Looking only at the last piece, $\neg Q$, would miss that failure.
+At $10$, $P$ makes OR true and false $Q$ makes NOT true: AND succeeds. At $00$, $\neg Q$ is true but OR false: AND fails. Checking only the last part misses this.
 
-The final column is true exactly when $P$ is true and $Q$ false. The rows exhaust all Boolean assignments, so this is a truth-functional result for arbitrary propositions, not just a guess from nine and six.
+Truth occurs exactly at true $P$, false $Q$. Exhaustive Boolean rows prove this for arbitrary propositions, not merely cards nine and six.
 
 
 <span id="from-building-truth-tables-build-the-next-tables-independently"></span>
 
 ### Build the next tables independently
 
-Construct $(P\land Q)\lor\neg P$, including the conjunction and negation columns. Explain one true and one false output.
+Build $(P\land Q)\lor\neg P$ with both intermediate columns; explain one true and one false output.
 
 <details>
 <summary>Hint</summary>
 
-The outer connective is inclusive “or.” Either intermediate part being true suffices.
+Outer inclusive OR needs either intermediate part true.
 
 </details>
 
@@ -134,16 +134,16 @@ The outer connective is inclusive “or.” Either intermediate part being true 
 | 0 | 0 | 0 | 1 | 1 |
 
 
-Row $10$ is false because both outer inputs are false. The last two rows are true through $\neg P$, regardless of $Q$. Row $11$ is true through the conjunction.
+$10$ fails because both parts are false. $01,00$ pass through $\neg P$ regardless of $Q$; $11$ passes through AND.
 
 </details>
 
-Now construct $P\land(Q\lor R)$ from a blank eight-row table.
+Build $P\land(Q\lor R)$ from a blank eight-row table.
 
 <details>
 <summary>Hint for the third input</summary>
 
-List each triple once. Evaluate $Q\lor R$ before the outer conjunction; $P$ is always required.
+List each triple once; calculate $Q\lor R$ first. $P$ is always required.
 
 </details>
 
@@ -163,11 +163,11 @@ List each triple once. Evaluate $Q\lor R$ before the outer conjunction; $P$ is a
 | 0 | 0 | 0 | 0 | 0 |
 
 
-In the first three rows, $P$ and at least one of $Q,R$ are true. In row $100$, the grouped alternative fails. In the last four rows, $P$ fails regardless of that alternative.
+The first three rows have $P$ and at least one of $Q,R$ true. $100$ fails the alternative; the last four fail $P$ regardless.
 
 </details>
 
-<Exercise question="How many rows does $P\lor\neg P$ need? Build the table and explain why the negated occurrence is not another independent input.">
+<Exercise question="Build $P\lor\neg P$. How many rows, and why is negation not an independent input?">
 
 
 | $P$ | $\neg P$ | $P\lor\neg P$ |
@@ -176,7 +176,7 @@ In the first three rows, $P$ and at least one of $Q,R$ are true. In row $100$, t
 | 0 | 1 | 1 |
 
 
-Only two rows. Both occurrences concern the same proposition; its denial is determined by its value. Each row has one true alternative, so the whole disjunction is true in every classical assignment.
+Two rows: both occurrences concern one proposition, whose negation is determined. Each row has a true alternative; the disjunction is classically always true.
 
 </Exercise>
 
@@ -185,12 +185,12 @@ Only two rows. Both occurrences concern the same proposition; its denial is dete
 
 ### What abstract rows do and do not say
 
-If $P$ means “a fixed real is greater than one” and $Q$ “that real is positive,” ordinary order makes row $10$ impossible for that interpretation: $x>1$ implies $x>0$. A **full unrestricted propositional table** still includes it. The row represents an abstract assignment, not an assertion that such a real exists. Arithmetic decides which rows can be realized by numerical inputs. If you restrict to realizable rows, state that restriction.
+For $P$ “a fixed real exceeds one” and $Q$ “it is positive,” $x>1$ implies $x>0$, so $10$ is unrealizable. An **unrestricted propositional table** still includes this abstract assignment, without claiming a real realizes it. Arithmetic determines realizability; state any restriction to realizable rows.
 
-<Exercise question="Someone tests the opening formula only at rows 11 and 00, finds false twice, and calls it always false. Which rows are missing? Which refutes the conclusion?">
+<Exercise question="The opening formula is false at 11 and 00. Which omitted rows matter, and which refutes ‘always false’?">
 
-Rows $10$ and $01$ are missing. Row $10$ gives true, because both the disjunction and $\neg Q$ are true. Correct calculations in two convenient rows are not an exhaustive check.
+Missing $10,01$; $10$ refutes, since OR and $\neg Q$ are true. Two correct selected rows are not exhaustive.
 
 </Exercise>
 
-To compare formulas, align the **same assignments** and compare final columns. Agreement in every row proves a truth-functional equivalence; one disagreement refutes it. A truth table does not establish the arithmetic meanings of its input claims. The broader [three-input table above](#from-logische-verknuepfungen) also compares implication and equivalence.
+Compare final columns at the **same assignments**: agreement everywhere proves truth-functional equivalence; one difference refutes it. Tables do not prove arithmetic input meanings. The [three-input table](#from-logische-verknuepfungen) also compares implication and equivalence.

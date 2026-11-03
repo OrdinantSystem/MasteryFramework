@@ -27,7 +27,7 @@ additionalSources: []
 
 <Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
 
-Assume $B$ and $C$ both complement A. The OR condition covers all possibilities; the AND condition excludes overlap. Use one candidate’s conditions to simplify the other.
+Let $B,C$ complement $A$. OR covers all cases; AND excludes overlap. Simplify each candidate with the other’s conditions.
 
 
 <span id="from-eindeutiges-komplement-reduce-both-to-the-same-expression"></span>
@@ -38,14 +38,14 @@ Assume $B$ and $C$ both complement A. The OR condition covers all possibilities;
 
 <Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
 
-Thus $B = C$. The unnumbered substitutions use the assumed complement conditions. Since $\neg A$ is a complement by law 5, any expression satisfying both conditions must equal $\neg A$. This is the tool for the next proofs.
+Both equal $B\land C$, so $B=C$. Unnumbered substitutions use the hypotheses. Law 5 supplies complement $\neg A$; uniqueness identifies any candidate satisfying both conditions with it.
 
 
 <span id="from-eindeutiges-komplement-why-compare-bbb-with-ccc"></span>
 
 ### Why compare $B$ with $C$?
 
-We know how $B$ relates to $A$ and how $C$ relates to $A$, but not yet how $B$ relates to $C$. Insert $1 = A \lor  C$ into $B \land  1$ to connect the two sets of information. Distribution separates the part $B$ shares with A—which vanishes—from $B \land  C$. Repeating the argument for $C$ shows that both candidates equal their overlap. Only one complement can therefore satisfy both requirements. Merely satisfying $A \lor  B = 1$ would not suffice: $B = 1$ always does that.
+Insert $1=A\lor C$ into $B\land1$ to connect the candidates. Distribution separates vanished $B\land A$ from overlap $B\land C$. Repeat for $C$. OR alone cannot identify a complement: $B=1$ always satisfies $A\lor B=1$.
 
 <span id="from-de-morgan-und-doppelte-negation"></span>
 
@@ -55,7 +55,7 @@ We know how $B$ relates to $A$ and how $C$ relates to $A$, but not yet how $B$ r
 
 ### 9a · A complement of $A \lor  B$
 
-Set $X = A \lor  B$ and $Y = \neg A \land  \neg B$. Show $X \land  Y = 0$ and $X \lor  Y = 1$ using only the previously available laws.
+For $X=A\lor B$, $Y=\neg A\land\neg B$, prove both complement conditions using only established laws:
 
 <Math tex="\begin{aligned}X\land Y&\overset{2,3}=(\colA{A}\land\neg \colA{A}\land\neg \colB{B})\lor(\colB{B}\land\neg \colA{A}\land\neg \colB{B})\\&\overset{1,2,5}=(0\land\neg \colB{B})\lor(0\land\neg \colA{A})\\&\overset{2,7d}=0\lor0\overset6=0\end{aligned}" display />
 
@@ -63,7 +63,7 @@ Set $X = A \lor  B$ and $Y = \neg A \land  \neg B$. Show $X \land  Y = 0$ and $X
 
 <Math tex="\neg(\colA{A}\lor \colB{B})=\neg \colA{A}\land\neg \colB{B}" display />
 
-Uniqueness identifies $Y$ with $\neg X$. That proves the first De Morgan law; it was not used inside its own proof.
+Uniqueness gives $Y=\neg X$, proving De Morgan without assuming it.
 
 
 <span id="from-de-morgan-und-doppelte-negation-10--double-negation-independently"></span>
@@ -72,7 +72,7 @@ Uniqueness identifies $Y$ with $\neg X$. That proves the first De Morgan law; it
 
 <Math tex="\neg \colA{A}\lor \colA{A}=1,\quad\neg \colA{A}\land \colA{A}=0,\qquad\neg \colA{A}\lor\neg\neg \colA{A}=1,\quad\neg \colA{A}\land\neg\neg \colA{A}=0" display />
 
-By laws 2 and 5, $A$ and $\neg\neg A$ are both complements of $\neg A$. Uniqueness gives $\neg \neg A = A$. This argument does not require De Morgan.
+Laws 2 and 5 make $A$ and $\neg\neg A$ complements of $\neg A$. Uniqueness yields $\neg\neg A=A$, independently of De Morgan.
 
 
 <span id="from-de-morgan-und-doppelte-negation-9b--derive-the-second-law"></span>
@@ -81,24 +81,24 @@ By laws 2 and 5, $A$ and $\neg\neg A$ are both complements of $\neg A$. Uniquene
 
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
-In the middle step apply 9a backward with the inputs $\neg A$ and $\neg B$. The proof order is uniqueness → 9a and 10 → 9b.
+Apply 9a backward to $\neg A,\neg B$. Proof order: uniqueness, then 9a and 10, then 9b.
 
 
 <span id="from-de-morgan-und-doppelte-negation-the-complement-strategy"></span>
 
 ### The complement strategy
 
-To identify $\neg (A \lor  B)$, we do not assume that negation distributes. Instead propose a candidate $Y$ and check the two properties that uniquely identify a complement. The first chain proves that $X$ and $Y$ never hold together; the second proves they cover every case. This is why both chains are needed. For double negation the same method is shorter: compare the two complements of $\neg A$ directly. The second De Morgan identity then follows from already established results, avoiding a circular argument.
+Propose a complement rather than assume negation distributes. Both chains matter: conjunction excludes overlap, disjunction covers every case. Double negation compares complements of $\neg A$ directly; established 9a and 10 then prove 9b without circularity.
 
 
 <span id="from-de-morgan-und-doppelte-negation-negating-a-compound-claim"></span>
 
 ### Negating a compound claim
 
-The proved identities now let us transform a negated statement without building a truth table.
+Apply the proved identities without a truth table.
 
 <Exercise question="Negate “A holds and at least one of B or C holds”.">
 
-The statement is $A \land  (B \lor  C)$. Its negation is $\neg A \lor  \neg (B \lor  C)$, hence $\neg A \lor  (\neg B \land  \neg C)$. The inner OR becomes AND when negated; merely negating all three letters would miss the grouping.
+For $A\land(B\lor C)$, De Morgan gives $\neg A\lor\neg(B\lor C)$, then $\neg A\lor(\neg B\land\neg C)$. Negation changes the inner OR to AND; negating letters alone loses grouping.
 
 </Exercise>

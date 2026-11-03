@@ -1,0 +1,191 @@
+---
+course: "analysis"
+chapter: "analysis-foundations"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md", "A0.1.1 Mathematical propositions/02 Propositions versus Definitions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md"]}, {"sourceId": "analysis-concepts-3", "pages": [1], "locations": []}]
+locale: "en"
+title: "Statements, predicates and definitions"
+navTitle: "Statements, predicates and definitions"
+description: "Statements, predicates and definitions"
+order: 2
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen"]
+thumbnail: "logic"
+sourceLocations: []
+---
+
+<span id="from-aussagen-und-aussageformen"></span>
+
+## Statements and predicates
+
+<span id="from-aussagen-und-aussageformen-a-statement-can-be-false"></span>
+
+### A statement can be false
+
+A statement has a definite truth value: true (1) or false (0). We do not have to know which one it is. Both “$2 + 3 = 5$” and “$2 + 3 = 6$” are statements; only the first is true.
+
+
+<span id="from-aussagen-und-aussageformen-an-open-variable-leaves-a-question"></span>
+
+### An open variable leaves a question
+
+$P(x): x + 3 = 10$ is a predicate. Its truth depends on $x$. Specifying $x \in  \mathbb{N}$ restricts the domain but does not bind $x$. Substitute $x = 7$ to obtain a true statement, or $x = 2$ to obtain a false one. A quantifier can bind the variable instead.
+
+<Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
+
+The displayed $P(2)$ is the false equality $2+3=10$, not a redefinition of $P$ as its negation. Likewise, $x = 4$ makes $P(x)$ false. Substitution supplies an input without changing the rule.
+
+
+<span id="from-aussagen-und-aussageformen-check-your-classification"></span>
+
+### Check your classification
+
+A question or command is not a statement. The sentence “This sentence is false” cannot receive a consistent classical truth value; it is a paradox, not an ordinary example of a false statement. Try classifying an equation before attempting to prove it.
+
+
+<span id="from-aussagen-und-aussageformen-substitution-and-truth"></span>
+
+### Substitution and truth
+
+Quantification makes a different claim: “there exists a natural $x$ with $x + 3 = 10$” is complete without choosing an input in advance. The witness $x = 7$ establishes its truth. An unchosen input is not the same as an unknown truth value.
+
+<Exercise question="Is $x^2 = 4$ a statement? What about $\exists x \in  \mathbb{N} : x^2 = 4$?">
+
+The first is a predicate with free $x$. The second is a true statement, witnessed by $x = 2$.
+
+</Exercise>
+
+
+<span id="from-aussagen-und-aussageformen-claims-expressions-and-requests"></span>
+
+### Claims, expressions, and requests
+
+“The sum of two numbers” is a phrase naming an object. $x+1$ is a numerical expression, not a claim. $x+1=3$ is a condition whose evaluation needs an input. The bare expression $7$ names a number; “Seven equals seven” and “Seven is greater than zero” make claims about it. A sentence need not contain symbols to be mathematical, and symbols alone need not form a proposition.
+
+Classify the **whole utterance**. “Prove that zero equals one” is a request, even though it mentions a false proposition. “Find all reals less than one” is an instruction; “Every real is less than one” is a false proposition, refuted by two. A question mentioning a claim remains a question.
+
+Meaning and referents come first. “This number is small” becomes definite if the number is seven and “small” is defined as less than ten. The repair must supply both the object and the threshold. A particular sealed card with a fixed integer already written on it differs from a future choice whose value and rule have not been specified. Hidden information does not mean an object has not been fixed.
+
+In ordinary real arithmetic, $1/0=2$ is not an ordinary false equality: its left side has no real value. A quotient would need a real number whose product with zero is one, but every such product is zero. Undefinedness is a failure of meaning under these arithmetic conventions, not a third truth value.
+
+
+<span id="from-aussagen-und-aussageformen-truth-knowledge-and-reasons"></span>
+
+### Truth, knowledge, and reasons
+
+Our classical setting accepts **bivalence**: a meaningful proposition has exactly one of two truth values. This is a foundation here, not a theorem proved on this page. $T/F$ and this site's $1/0$ are alternative labels, not numbers to add or multiply.
+
+A fixed card's number is either zero or not zero before the envelope opens. Finding five changes our knowledge, not the original truth value. Likewise, a room with three chairs in the morning and four in the afternoon gives different **time-indexed claims**, not one fixed proposition with two truth values. Assigning different inputs to an open predicate also evaluates different completed claims.
+
+A reason must reach as far as the conclusion. One witness proves an existential claim; one counterexample refutes a universal claim. To establish a universal claim, an arbitrary-input proof may be needed. For a finite domain, checking every member is also sufficient; a few selected successes in an infinite domain are not. For example, from any real $x<1$ and $1<2$, transitivity gives $x<2$ for that arbitrary input. Naming the logical structure alone would not give this order argument.
+
+
+<span id="from-aussagen-und-aussageformen-independent-checks"></span>
+
+### Independent checks
+
+Classify “One equals zero,” “Explain why one equals one,” and $7$. Repair the latter into two claims. Then repair $x=0$ in two different ways: by context and by quantification.
+
+<details>
+<summary>Hint</summary>
+
+Separate the action requested by a sentence from the claim mentioned inside it. For the repairs, distinguish choosing one input from talking about all inputs.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+“One equals zero” is a false proposition. “Explain …” is an instruction mentioning a true equality. Seven alone names a number; “Seven equals seven” and “Seven is greater than zero” are claims. For $x=0$, specify that $x$ names a particular real, for example zero, to evaluate it in context; $x$ remains free as written. Or write “Every real number equals zero,” a closed false proposition. Its falsity does not make it an instruction.
+
+</details>
+
+<Exercise question="In $\forall x\in\mathbb R\;(x<y)$, let y also be real. Which occurrences are bound? What changes if y is assigned zero? Compare with $\exists x\in\mathbb R\;(x=0)$ and with the words ‘Every integer is positive’.">
+
+Only $x$ is bound in the first formula; $y$ remains free. Assigning zero lets us evaluate it as false, with $x=1$ a counterexample, but does not bind $y$. The existential formula is closed and true with witness zero. “Every integer is positive” is a closed quantified claim even without a written letter; it is false with counterexample zero.
+
+</Exercise>
+
+<Exercise question="Translate ‘There is a real number at least zero and less than one’. Give a witness, then replace ‘there is’ by ‘every’ and give a verdict with a reason. What stays unchanged?">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ is true with witness zero. The universal version $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ is false because one fails the strict upper bound. Both are closed; the real domain and both comparisons stay unchanged. The quantifier changes whether one input or every input is required.
+
+</Exercise>
+
+Reconstruct the distinction between unknown, undefined, and unsupported: a sealed fixed card hides a truth value; division by zero has no real value; a lucky answer without an adequate reason may still be correct. [Reading mathematical structure](../quantifier-order/#from-reading-mathematical-structure) brings these checks together.
+
+<span id="from-definitions-assumptions-results"></span>
+
+## Definitions, assumptions, and results
+
+A library calls a loan **short** when it lasts fewer than seven days. That fixes a meaning. A three-day loan is short; a ten-day loan is not. These are claims made using the definition. A false application does not disprove the choice of meaning.
+
+The same distinction appears in mathematics. Call an integer positive when it is greater than zero. Integers, written $\mathbb Z$, include negative whole numbers and zero. For an integer $n$, the defining condition is $n>0$. Three meets it; zero does not, because the comparison is strict. “Zero is positive” is a false proposition, not a failed definition.
+
+
+<span id="from-definitions-assumptions-results-what-the-writer-is-doing"></span>
+
+### What the writer is doing
+
+A **definition** specifies meaning. An **assumption** or **hypothesis** is a claim accepted for a particular argument. An **axiom** is an accepted starting assertion of a theory. A **theorem**, **lemma**, or textbook **Proposition** presents a proved result; a lemma is usually used to prove something else. These labels do not change the standard of proof.
+
+In logic, *proposition* also means any definite true-or-false claim, including a false one. A textbook heading uses the word more narrowly.
+
+Suppose an integer is greater than five. This is a local assumption, not a claim about every integer. Since five is greater than zero, transitivity of ordinary order tells us that our integer is greater than zero. The definition then lets us call it positive. The order rule supplies the reason; the definition supplies the word.
+
+An equality or “if and only if” can appear in a definition or in a claim. Read the surrounding passage to decide its role.
+
+A **conjecture** is a claim awaiting proof. A **corollary** follows from an established result. These names describe the role a result plays, not different grades of truth.
+
+<span id="from-definitions-assumptions-results-introducing-a-name"></span>
+
+### Introducing a name
+
+$$a:=0 \qquad a=0$$
+
+The first introduces $a$ as a name for zero. Afterwards the second is a true equality. “Define,” “suppose,” and “therefore” describe different uses even when similar symbols follow them.
+
+<Note title="Notation readings">
+
+$a:=0$: “a is defined to be zero”; $a=0$: “a equals zero”; $n>0$: “n is greater than zero”.
+
+</Note>
+
+
+<span id="from-definitions-assumptions-results-a-property-need-not-have-an-instance"></span>
+
+### A property need not have an instance
+
+We can name the property “greater than zero and less than zero,” although no integer has it. We cannot thereby introduce an integer having that property. Similarly, “the unique object satisfying …” may require proofs of **existence** (at least one object) and **uniqueness** (no second object). A stipulation of vocabulary does not settle those obligations. Ordinary arithmetic and order are accepted background here, not results derived from this vocabulary.
+
+
+<span id="from-definitions-assumptions-results-practice-with-roles-and-definitions"></span>
+
+### Practice with roles and definitions
+
+Classify these uses: “Call an integer nonnegative when it is at least zero”; “Zero is nonnegative”; “Suppose $x>0$”; “Define $b:=1$”; “Therefore $b=1$.” Explain each role.
+
+<details>
+<summary>Hint</summary>
+
+Ask which sentence introduces meaning, which assumes something locally, and which claims a consequence.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+The first is a definition. The second is a true claim using it: equality is allowed. The third is a hypothesis, not a universal assertion. The fourth introduces a name. The fifth asserts a consequence of that naming definition. A definition itself is not proved like a theorem, but introducing an object by a description can require existence and uniqueness checks.
+
+</details>
+
+<Exercise question="Locally call a real number admissible when it is at least zero and at most one. Write the criterion. Is zero admissible? What follows from an unspecified admissible real number?">
+
+For $x\in\mathbb R$, the criterion is $(0\le x)\land(x\le1)$. Zero passes both comparisons, so it is admissible. From the label we recover both bounds, not a unique value: $0$, $1/2$, and $1$ all qualify. The word is local to this example. Both bounds allow equality; replacing either by a strict comparison would change the definition.
+
+</Exercise>
+
+Try inventing another property name, then write a true and a false claim using it. Keep the defining sentence separate from those applications. [Several simultaneous conditions](../simultaneous-conditions/#from-simultaneous-conditions) develops a longer criterion.

@@ -36,20 +36,20 @@ sourceLocations: []
 
 ### A small workflow
 
-Write the exact claim and domain. Unpack definitions. Choose a method. Justify each transition. State what has now been proved. For $\exists n \in  \mathbb{N} : n^2 = 9$, the witness $n = 3$ is enough. For $\forall n \in  \mathbb{N} : n^2 > n$, the counterexample $n = 1$ is enough. Neither task needs a long derivation. Avoid using the claim itself to justify an intermediate step: that would be circular.
+State the claim and domain, unpack definitions, choose a method and justify the steps and conclusion. For $\exists n \in  \mathbb{N} : n^2 = 9$, witness $n = 3$ suffices; $n = 1$ refutes $\forall n \in  \mathbb{N} : n^2 > n$. Never justify a step with the claim being proved: that is circular.
 
 
 <span id="from-beweissprache-und-methoden-arbitrary-does-not-mean-a-representative-sample"></span>
 
 ### Arbitrary does not mean a representative sample
 
-To prove $\forall x\in\mathbb R\;(x+2>x)$, read “for every real $x$, $x$ plus two exceeds $x$.” Fix an arbitrary real $x$. From $2>0$, add $x$ to both sides to obtain $x+2>x+0=x$. Addition preserves order; adding zero changes nothing. No step required positivity, integrality, or a special value of $x$, so the argument covers every real input.
+Fix an arbitrary real $x$. Adding $x$ to $2>0$ gives $x+2>x+0=x$: addition preserves order and zero changes nothing. This proves $\forall x\in\mathbb R\;(x+2>x)$ without restricting $x$.
 
-For a universal conditional, temporarily assume the whole hypothesis and derive the conclusion. Inputs with a false hypothesis already make the conditional true. This does not assert that every input meets the hypothesis or that an eligible input exists. For an empty restricted collection, no member can fail. One may also reason under a temporary membership assumption and discharge it without claiming the collection has a member. See [domains](../universal-statements-and-domains/#from-universal-statements-and-domains) and [counterexamples](../beweissprache-und-methoden/#from-counterexamples) for the full checks.
+For a universal conditional, assume the whole hypothesis and derive the conclusion. False hypotheses already satisfy the conditional; no eligible input need exist. An empty restricted collection has no failure. Temporary membership assumptions can be discharged without asserting existence. See [domains](../universal-statements-and-domains/#from-universal-statements-and-domains) and [counterexamples](../beweissprache-und-methoden/#from-counterexamples).
 
-<Exercise question="A proof about every real number starts with an arbitrary positive real, then checks seven. What has it established, and how should it handle a genuinely necessary positivity assumption?">
+<Exercise question="An all-real proof assumes positivity, then checks seven. What does this establish? How should a necessary positivity assumption be handled?">
 
-The numerical check covers seven only. An otherwise general argument under positivity covers at most positive reals, not zero or negatives. For the original all-real claim, avoid that assumption or add justified zero and negative cases. Alternatively state and prove an explicitly restricted theorem, but do not present it as the original. Calling a symbol arbitrary cannot undo a later restriction.
+The check covers only seven; a general positive-input argument covers at most positive reals. Prove the original claim without positivity or add justified zero and negative cases. Alternatively prove an explicitly restricted theorem, not the original. “Arbitrary” does not cancel restrictions.
 
 </Exercise>
 
@@ -58,26 +58,26 @@ The numerical check covers seven only. An otherwise general argument under posit
 
 ### From a definition to a proof
 
-To prove that the sum of two even integers is even, introduce separate witnesses: $a = 2r$ and $b = 2s$. Then $a + b = 2(r+s)$, with $r + s$ an integer. The final expression matches the definition of evenness. Writing $a = 2r$ and $b = 2r$ would accidentally assume the inputs equal; distinct variables prevent that extra assumption. A short proof still needs the domain and the reason its last line settles the claim.
+For even integers, choose separate integer witnesses $a = 2r$, $b = 2s$. Then $a + b = 2(r+s)$ is even because $r+s$ is an integer. Reusing $r$ would wrongly assume equal inputs.
 
 <span id="from-counterexamples"></span>
 
 ## Counterexamples
 
-Two and minus two have positive squares. Zero does not: $0^2=0$, and zero is not strictly positive. Thus “every real square is strictly positive” is false, however many nonzero examples pass. The claim included zero too.
+Two and minus two have positive squares, but $0^2=0$ refutes “every real square is strictly positive,” regardless of successful nonzero examples.
 
 
 <span id="from-counterexamples-why-one-failure-is-enough"></span>
 
 ### Why one failure is enough
 
-A **counterexample** to $\forall x\in D\;P(x)$ is one member of $D$ where the predicate is meaningful and false. Read the universal formula as “every $x$ in $D$ satisfies $P$.” If that statement were true, it would require $P$ at the proposed member as well; the verified failure contradicts that requirement. This is not a vote and does not say that every member fails.
+A **counterexample** to $\forall x\in D\;P(x)$ is a member of $D$ with a meaningful, false predicate. One verified failure contradicts “every”; it does not mean every member fails.
 
-For a universal conditional, check three things about the **same object**: membership in the domain, truth of the whole hypothesis, and falsity of the whole conclusion. The reason follows directly from
+For a universal conditional, check domain membership, the **whole** true hypothesis and false conclusion at the **same object**, since
 
 $$\neg(P\Rightarrow Q)\equiv(P\land\neg Q).$$
 
-Use the [conditional-negation rule](../implikation-und-kontraposition/#from-implikation-und-kontraposition): the hypothesis holds and the conclusion fails. The inverse $\neg P\Rightarrow\neg Q$ is not this negation.
+This [conditional negation](../implikation-und-kontraposition/#from-implikation-und-kontraposition) is not the inverse $\neg P\Rightarrow\neg Q$.
 
 
 <span id="from-counterexamples-find-the-full-failure-region"></span>
@@ -88,7 +88,7 @@ Consider
 
 $$\forall x\in\mathbb R\;((x>2)\Rightarrow(x>5)).$$
 
-Read: “For every real $x$, if $x$ exceeds two, then it exceeds five.” Failure requires $x>2$ and $x\le5$, so **all** counterexamples satisfy $2<x\le5$.
+Failure requires $x>2$ and $x\le5$: exactly $2<x\le5$.
 
 | Candidate | Hypothesis $x>2$ | Conclusion $x>5$ | Counterexample? |
 | --- | --- | --- | --- |
@@ -98,35 +98,35 @@ Read: “For every real $x$, if $x$ exceeds two, then it exceeds five.” Failur
 | $5$ | True | False | Yes: equality fails the conclusion |
 | $7$ | True | True | No: conclusion holds |
 
-Two is excluded; five is included. A failed conclusion alone is not enough. Nor can you take seven for a true hypothesis and zero for a false conclusion: that is two objects, not one failure. For the opposite rule, above-five implies above-two, three is not a counterexample; it refutes only the converse.
+Two is excluded; five included. A false conclusion alone cannot refute the claim, nor can combining seven’s true hypothesis with zero’s false conclusion. Three refutes this rule, not the opposite “above five implies above two.”
 
 
 <span id="from-counterexamples-do-not-drop-a-compound-requirement"></span>
 
 ### Do not drop a compound requirement
 
-For real inputs, the claim $((x>0)\land(x<2))\Rightarrow(x^2>1)$ fails at one. One is real, positive, and below two; its square equals one rather than exceeding it. Zero fails the positivity requirement. Three fails the upper requirement. Neither can refute this conditional, even if one focuses on a convenient part of its hypothesis.
+For real $x$, $((x>0)\land(x<2))\Rightarrow(x^2>1)$ fails at one: both hypotheses hold but $1^2=1$. Zero fails positivity; three fails the upper bound. Neither is a counterexample.
 
-The narrower interval example $0<x<1\Rightarrow x<1/2$ fails at $3/4$ and at $1/2$. Both satisfy the whole hypothesis; equality defeats the strict conclusion at the latter. Two fails the upper hypothesis and is not a counterexample.
+$0<x<1\Rightarrow x<1/2$ fails at $3/4$ and $1/2$; equality defeats the strict conclusion. Two fails the upper hypothesis.
 
 
 <span id="from-counterexamples-search-verification-and-repair"></span>
 
 ### Search, verification, and repair
 
-Trying zero, small integers, negatives, or endpoints can guide a search when the domain permits them. The argument is the subsequent verification, not the heuristic. A failed search over a finite sample does not prove an infinite-domain claim. An undefined expression is not the false predicate required for a counterexample; repair its domain or interpretation first. If free parameters occur, fix their values throughout the check.
+Try permitted zeros, small integers, negatives or endpoints, then verify. Finite unsuccessful searches do not prove infinite-domain claims. Undefined predicates require a repaired domain or interpretation, not refutation. Keep free parameters fixed throughout.
 
-Zero refutes strict positivity of all real squares. It does not prove a replacement. For the revised claim about **nonzero** reals, give a fresh proof: a positive input times itself is positive; a negative input times itself is positive by the sign rule. These cases exhaust nonzero reals. Nonnegativity of all real squares also follows by including the zero case. Neither theorem follows merely from finding zero.
+Zero refutes strict positivity but proves no replacement. For **nonzero** reals, positive times positive and negative times negative are positive by the sign rules; these cases exhaust the domain. Including zero proves nonnegativity of all real squares.
 
-<Exercise question="Someone proposes $-1/2$ against every-integer-has-square-at-least-one. Diagnose the candidate and refute the same claim correctly. Does an invalid candidate make the theorem true?">
+<Exercise question="Test $-1/2$ against ‘every integer has square at least one’, then refute the claim correctly. Does an invalid candidate prove it true?">
 
-The fraction is not an integer, so it is outside the domain. Zero is an integer and $0^2=0<1$, so it refutes the claim. An invalid proposed counterexample supplies no proof in either direction; the theorem can still be false.
+$-1/2$ is outside the integer domain. Zero is an integer with $0^2=0<1$, refuting the claim. An invalid candidate proves neither truth nor falsity.
 
 </Exercise>
 
-<Exercise question="Invent a universal conditional with two hypothesis requirements, a genuine counterexample, and a tempting invalid candidate. Check every requirement and explain why not-all does not mean none.">
+<Exercise question="Invent a universal conditional with two hypothesis requirements, a counterexample and a tempting invalid candidate. Check each requirement. Why does not-all differ from none?">
 
-For every real $x$, suppose $1<x<4\Rightarrow x>2$. The candidate $x=2$ is real, above one and below four, but not strictly above two. It refutes the statement. Zero fails the lower hypothesis; five fails the upper, so neither is a counterexample. Three satisfies the hypothesis and conclusion, showing that the refutation does not make every eligible instance fail.
+For real $x$, claim $1<x<4\Rightarrow x>2$. Two meets both hypotheses but fails the conclusion. Zero fails the lower bound; five the upper. Three satisfies both hypothesis and conclusion, so not all eligible instances fail.
 
 </Exercise>
 
@@ -140,9 +140,9 @@ For every real $x$, suppose $1<x<4\Rightarrow x>2$. The candidate $x=2$ is real,
 
 <Math tex="\forall n\in\mathbb Z:\quad 2\mid n\iff2\mid n^2" display />
 
-“Even” means $n = 2k$ for an integer $k$. “Odd” means $n = 2k + 1$. An equivalence requires both directions; proving only one implication leaves half the work undone.
+For integer $k$, even means $n = 2k$; odd means $n = 2k + 1$. The [equivalence](../biconditionals-and-equivalent-conditions/#from-biconditionals-and-equivalent-conditions) needs both implications.
 
-Read the claim: “For every integer $n$, two divides $n$ if and only if two divides its square.” The [biconditional foundation](../biconditionals-and-equivalent-conditions/#from-biconditionals-and-equivalent-conditions) explains why this requires two implications. We use the ordinary integer fact that every integer is exactly one of even or odd. Thus not even means odd, and not odd means even; this dichotomy justifies the negations in the reverse proof.
+We use the integer fact that every integer is exactly one of even or odd. Thus not even means odd and vice versa, justifying contraposition below.
 
 
 <span id="from-aequivalenz-und-paritaet-forward-use-the-definition"></span>
@@ -160,21 +160,21 @@ The term in parentheses is an integer, so the square is even.
 
 <Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
 
-An odd input has an odd square. This proves the contrapositive of “if the square is even, then the input is even”. The overall equivalence holds for negative integers and zero too; the odd-form calculation itself does not represent zero. Zero is even and has even square, so the forward argument covers it. Do not silently restrict the domain to positive numbers.
+Odd inputs have odd squares: the contrapositive of “even square implies even input.” Negative integers are included. Zero is not represented by the odd form; it is even with even square, covered by the forward proof.
 
 
 <span id="from-aequivalenz-und-paritaet-why-use-contraposition-here"></span>
 
 ### Why use contraposition here?
 
-Starting from $n^2 = 2k$ does not immediately write $n$ as twice an integer: taking a square root leaves the very question we need to settle. Oddness has a more useful form, $n = 2k + 1$. Squaring it produces an even part plus 1, so odd inputs cannot have even squares. This excludes the only obstruction to the reverse implication. Notice that $k$ may be negative; no positivity assumption was used.
+From $n^2=2k$, taking a square root does not show $n$ is twice an integer. Instead $n=2k+1$ squares to an even part plus one, excluding odd inputs. The witness $k$ may be negative.
 
 
 <span id="from-aequivalenz-und-paritaet-practice"></span>
 
 ### Practice
 
-Use a representation supplied by the definition, then identify the integer left inside the final parentheses.
+Use the definition and identify the integer in the final parentheses.
 
 <Exercise question="Prove that the product of two odd integers is odd.">
 

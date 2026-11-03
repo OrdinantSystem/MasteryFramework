@@ -37,7 +37,7 @@ additionalSources: [{"sourceId": "analysis-sheet-1-1", "pages": [1], "locations"
 
 <Math tex="\tag{5}\colA{A}\lor\neg \colA{A}=1,\quad \colA{A}\land\neg \colA{A}=0" display />
 
-Los números corresponden a asociatividad, conmutatividad, distributividad, absorción y complemento. Se permiten ambas formas duales. = expresa equivalencia lógica, no identidad de escritura. Al aplicar una ley puedes sustituir A, $B$ o $C$ por expresiones completas.
+Las leyes 1–5 son asociatividad, conmutatividad, distributividad, absorción y complemento. Ambas formas duales están permitidas. Igualdad significa equivalencia lógica, no escritura idéntica. Expresiones completas pueden sustituir $A$, $B$, $C$.
 
 
 <span id="from-boolesche-grundgesetze-visualiza-la-agrupación"></span>
@@ -48,14 +48,14 @@ Los números corresponden a asociatividad, conmutatividad, distributividad, abso
 
 <ExpressionTrees variant="distributivity" display />
 
-La asociatividad cambia la agrupación de una misma operación. La distributividad cambia el árbol y repite A. En las hojas, las tablas de verdad no son el método de demostración: las reglas posteriores se deducen de estas cinco leyes.
+La asociatividad reagrupa una operación; la distributividad modifica el árbol y repite $A$. Las pruebas de la hoja deben deducir reglas desde las leyes 1–5, no usar tablas de verdad.
 
 
 <span id="from-boolesche-grundgesetze-reconocer-la-forma-de-una-ley"></span>
 
 ### Reconocer la forma de una ley
 
-En $A \land  (B \lor  C)$, $A$ se combina con una elección entre $B$ y $C$. Distribuir distingue las dos posibilidades: $A$ con $B$, o $A$ con $C$. Repetir $A$ es esencial. En $A \lor  (A \land  B)$ ya se aceptan todos los casos con $A$; el caso añadido exige $A$ y no aporta otros. Esta lectura explica las identidades; las deducciones de la hoja siguen usando las leyes permitidas.
+Distribuir $A\land(B\lor C)$ conserva $A$ en ambas alternativas: con $B$ o con $C$. La absorción no añade casos: $A\land B$ ya exige $A$. Estas lecturas explican las leyes, pero no sustituyen deducciones restringidas.
 
 <span id="from-neutralitaet-und-idempotenz"></span>
 
@@ -65,7 +65,7 @@ En $A \land  (B \lor  C)$, $A$ se combina con una elección entre $B$ y $C$. Dis
 
 ### Dos identidades auxiliares por absorción
 
-Usa absorción (4) y después complemento (5). Así quedan establecidas 7a y 7b antes de usarlas en idempotencia (6). Puedes cambiar el orden de las tareas; no puedes asumir el resultado que intentas demostrar.
+Absorción (4), después complemento (5), prueban 7a y 7b como ayudas para idempotencia (6). El orden de prueba puede diferir de la numeración; las suposiciones circulares están prohibidas.
 
 <Math tex="\colA{A}\overset{4}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\overset{5}=\colA{A}\lor0\quad\Longrightarrow\quad \colA{A}\lor0=\colA{A}\quad(H_1)" display />
 
@@ -85,25 +85,25 @@ Usa absorción (4) y después complemento (5). Así quedan establecidas 7a y 7b 
 
 <Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
 
-En ambas cadenas se usa distributividad al revés. La dualidad intercambia $\land$ con $\lor$ y 0 con 1; el segundo cálculo se muestra explícitamente para comprobar cada paso permitido.
+Ambas cadenas invierten distributividad. La dualidad intercambia $\land,\lor$ y $0,1$; la segunda cadena explicita cada paso permitido.
 
 
 <span id="from-neutralitaet-und-idempotenz-cómo-se-encuentra-la-prueba"></span>
 
 ### Cómo se encuentra la prueba
 
-El objetivo $A \lor  A$ parece demasiado pequeño para aplicar las leyes. Combinarlo con $\land 1$ conserva su valor y permite sustituir 1 por $A \lor  \neg A$. Los factores comparten A; la distributividad inversa produce $A \lor  (A \land  \neg A)$. El complemento elimina la segunda parte. La estrategia es expandir para simplificar después, sin exigir que cada línea sea más corta. $H_1$ y $H_2$ justifican la expansión sin suponer idempotencia.
+Expande $A\lor A$ con $\land1$ por $H_2$ y sustituye $1$ por $A\lor\neg A$. La distributividad inversa reúne el $A$ común; complemento elimina la parte extra y $H_1$ termina. Expandir crea el patrón útil sin suponer idempotencia.
 
 
 <span id="from-neutralitaet-und-idempotenz-práctica-con-las-leyes-iniciales"></span>
 
 ### Práctica con las leyes iniciales
 
-Explicita las reglas permitidas en esta deducción breve.
+Nombra las reglas permitidas.
 
 <Exercise question="Reduce $(B \land  A) \lor  A$ usando solo las leyes 2 y 4.">
 
-La conmutatividad da $A \lor  (A \land  B)$. La absorción da A. Se usa conmutatividad tanto fuera como dentro; no hace falta idempotencia.
+Conmuta la disyunción exterior y la conjunción interior hasta $A\lor(A\land B)$; absorción da $A$. No se usa idempotencia.
 
 </Exercise>
 
@@ -119,7 +119,7 @@ La conmutatividad da $A \lor  (A \land  B)$. La absorción da A. Se usa conmutat
 
 <Math tex="\colA{A}\land0\overset5=\colA{A}\land(\colA{A}\land\neg \colA{A})\overset1=(\colA{A}\land \colA{A})\land\neg \colA{A}\overset6=\colA{A}\land\neg \colA{A}\overset5=0" display />
 
-La idempotencia (6) ya está disponible por la demostración anterior. La distinción entre neutro y absorbente se resume más abajo.
+La idempotencia (6) ya demostrada está ahora disponible.
 
 
 <span id="from-nullgesetze-und-konstanten-8--negar-constantes"></span>
@@ -130,11 +130,11 @@ La idempotencia (6) ya está disponible por la demostración anterior. La distin
 
 <Math tex="0\overset5=1\land\neg1\overset2=\neg1\land1\overset{7b}=\neg1" display />
 
-Se concluye $\neg 0 = 1$ y $\neg 1 = 0$. Cada igualdad sigue una ley numerada; no se ha supuesto ninguna tabla de verdad ni regla de De Morgan.
+Así, $\neg0=1$, $\neg1=0$, solo por leyes numeradas, sin tablas de verdad ni De Morgan.
 
 
 <span id="from-nullgesetze-und-konstanten-elementos-neutros-y-absorbentes"></span>
 
 ### Elementos neutros y absorbentes
 
-Piensa en A como un valor de verdad desconocido. $A \lor  0$ sigue dependiendo de A; $A \lor  1$ queda decidido sea cual sea A. Con $\land$ se invierten las funciones: 1 conserva $A$ y 0 determina el resultado. En la prueba de $A \lor  1 = 1$, sustituir 1 por $A \lor  \neg A$ revela dos copias de A. La asociatividad las reúne y la idempotencia elimina una. Por eso la ley 6 debe estar disponible.
+El neutro $0$ deja $A\lor0$ dependiendo de $A$; el absorbente $1$ fija $A\lor1$. En conjunción se invierten las funciones. Para $A\lor1=1$, complemento revela dos copias de $A$, asociatividad las agrupa e idempotencia ya demostrada elimina una.

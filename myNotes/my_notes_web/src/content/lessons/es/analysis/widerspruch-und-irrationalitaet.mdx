@@ -26,11 +26,11 @@ additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations
 
 ## Qué establece una demostración
 
-Como en la lección anterior, justifica cada paso con definiciones, hipótesis o resultados demostrados; los ejemplos por sí solos no prueban una afirmación universal.
+Justifica los pasos con definiciones, hipótesis o resultados demostrados; los ejemplos no prueban enunciados universales.
 
-Nuestra afirmación principal es que $\sqrt2$ es **irracional**: es un número real que no puede escribirse como cociente de dos enteros. Aquí $\sqrt2$ designa el número real positivo cuyo cuadrado es $2$. Una aproximación decimal como $1{,}4142$ no resuelve la cuestión: un cálculo finito no puede descartar todas las fracciones posibles.
+$\sqrt2$ es el real positivo con cuadrado $2$. **Irracional** significa no ser cociente de enteros. Una aproximación como $1{,}4142$ no excluye todas las fracciones.
 
-Usaremos una **demostración por contradicción**. Suponemos provisionalmente lo contrario, que existe tal fracción, y mostramos que esa hipótesis obliga a la misma fracción a tener dos propiedades incompatibles.
+Por **contradicción**, suponemos una fracción y deducimos propiedades incompatibles de esa misma fracción.
 
 
 <span id="from-widerspruch-und-irrationalitaet-una-primera-demostración-por-contradicción"></span>
@@ -39,19 +39,19 @@ Usaremos una **demostración por contradicción**. Suponemos provisionalmente lo
 
 Considera la afirmación: **no existe un número natural mayor que todos los demás**.
 
-1. **Suponer lo contrario.** Supongamos que existe un natural máximo y llamémoslo $m$. Esto significa que todo natural debe ser menor o igual que $m$.
-2. **Construir otro número permitido.** Su sucesor $m+1$ también es un número natural.
-3. **Compararlo con el supuesto máximo.** Como $m+1>m$, hemos encontrado un natural mayor que $m$. Esto contradice la propiedad con la que elegimos $m$.
-4. **Rechazar la hipótesis provisional.** Ningún natural puede ser el máximo. El argumento funciona tanto si los naturales incluyen el $0$ como si empiezan en $1$.
+1. Supón un natural máximo $m$: todo natural sería menor o igual que $m$.
+2. Su sucesor $m+1$ también es natural.
+3. Pero $m+1>m$ contradice la maximalidad.
+4. No existe máximo natural, tanto si los naturales empiezan en $0$ como en $1$.
 
-La contradicción es concreta: el mismo número $m+1$ tendría que ser a la vez menor o igual que $m$ y mayor que $m$. Una demostración por contradicción debe identificar una incompatibilidad de este tipo; obtener un resultado inesperado no basta.
+El mismo $m+1$ sería menor o igual y mayor que $m$. Una contradicción requiere incompatibilidad, no solo sorpresa.
 
 
 <span id="from-widerspruch-und-irrationalitaet-el-resultado-de-paridad-que-necesitamos"></span>
 
 ## El resultado de paridad que necesitamos
 
-[Métodos de demostración y paridad](../beweissprache-und-methoden/#from-beweissprache-und-methoden) demuestra ambas direcciones: un entero es par si y solo si su cuadrado es par. La vuelta usa contraposición y expresa un entero impar arbitrario como el doble de un entero más uno. Aplicaremos esa implicación ya demostrada dos veces. No suponemos que extraer una raíz conserve la divisibilidad.
+[La lección de paridad](../beweissprache-und-methoden/#from-beweissprache-und-methoden) prueba que un entero es par exactamente cuando su cuadrado es par. Su vuelta usa contraposición con forma impar. La aplicamos dos veces, no una supuesta regla de divisibilidad para raíces.
 
 <span id="from-widerspruch-und-irrationalitaet-por-qué-2sqrt22-no-puede-ser-una-fracción"></span>
 
@@ -61,60 +61,60 @@ La contradicción es concreta: el mismo número $m+1$ tendría que ser a la vez 
 
 ### 1. Suponer que existe una fracción y simplificarla
 
-Supongamos, para llegar a una contradicción, que $\sqrt2$ es racional. Por definición, se puede escribir como una fracción de enteros con denominador distinto de cero. Podemos elegir un denominador positivo y cancelar todos los factores comunes, obteniendo
+Supón $\sqrt2$ racional. Su fracción de enteros tiene denominador no nulo; elígelo positivo y cancela todos los factores comunes:
 
 <Math tex="\sqrt2=\frac pq,\qquad p,q\in\mathbb Z,\quad q>0,\quad\gcd(|p|,q)=1" display />
 
-Aquí $p$ es el numerador y $q$ el denominador. La notación $\gcd(|p|,q)=1$ dice que su máximo común divisor es $1$: ningún entero mayor que $1$ divide a ambos. Esto significa que la fracción es **irreducible**. Cancelar factores comunes cambia la representación, pero no el número, así que esta elección es posible para todo racional. Como $\sqrt2>0$ y $q>0$, también tenemos $p>0$.
+$p$ es numerador; $q$, denominador. **Irreducible** significa $\gcd(|p|,q)=1$: ningún divisor entero mayor que $1$ divide ambos. Cancelar conserva valor, permitiendo esta elección para todo racional. La positividad da $p>0$.
 
 <span id="from-widerspruch-und-irrationalitaet-2-convertir-la-igualdad-supuesta-en-una-ecuación-entre-enteros"></span>
 
 ### 2. Convertir la igualdad supuesta en una ecuación entre enteros
 
-Elevamos ambos lados al cuadrado. El cuadrado de $\sqrt2$ es $2$ y el de $p/q$ es $p^2/q^2$. Después multiplicamos ambos lados por $q^2$, que no es cero:
+Eleva al cuadrado y multiplica por $q^2\ne0$:
 
 <Math tex="2=\frac{p^2}{q^2},\qquad 2q^2=p^2" display />
 
-Ahora tenemos una ecuación entre enteros. Esto nos permite estudiar su divisibilidad entre $2$.
+Esta ecuación entera permite usar divisibilidad.
 
 <span id="from-widerspruch-und-irrationalitaet-3-mostrar-que-el-numerador-es-par"></span>
 
 ### 3. Mostrar que el numerador es par
 
-La ecuación $p^2=2q^2$ expresa $p^2$ como el doble del entero $q^2$. Por definición, $p^2$ es par. El resultado de paridad demostrado antes nos dice entonces que el propio $p$ es par.
+$p^2=2q^2$ hace par a $p^2$, pues $q^2$ es entero. El lema de paridad hace par a $p$.
 
-Por tanto, existe un entero $k$ tal que $p=2k$. Introducir $k$ solo expresa la definición de paridad; no añade una nueva hipótesis.
+Por definición, $p=2k$ para entero $k$, sin hipótesis adicional.
 
 <span id="from-widerspruch-und-irrationalitaet-4-sustituir-para-obtener-información-sobre-el-denominador"></span>
 
 ### 4. Sustituir para obtener información sobre el denominador
 
-Sustituimos $p$ por $2k$ en $p^2=2q^2$. Al elevar $2k$ al cuadrado obtenemos $4k^2$, de modo que
+Sustituye $p=2k$ en $p^2=2q^2$:
 
 <Math tex="(2k)^2=2q^2,\qquad 4k^2=2q^2,\qquad q^2=2k^2" display />
 
-La última igualdad se obtiene dividiendo ambos lados entre $2$ e intercambiando los lados. Expresa $q^2$ como el doble del entero $k^2$, así que $q^2$ es par. Al aplicar otra vez el mismo resultado de paridad, concluimos que $q$ también es par.
+Dividir entre $2$ da $q^2=2k^2$, así que $q^2$ es par. El mismo lema hace par a $q$.
 
 <span id="from-widerspruch-und-irrationalitaet-5-identificar-la-contradicción"></span>
 
 ### 5. Identificar la contradicción
 
-Hemos demostrado que $p$ y $q$ son pares. Por tanto, $2$ divide a ambos y su máximo común divisor es al menos $2$. Sin embargo, elegimos la fracción de modo que ese divisor fuera $1$.
+Por tanto, $2$ divide a $p$ y a $q$: su máximo común divisor es al menos $2$, contradiciendo el valor elegido $1$.
 
-Estas propiedades no pueden cumplirse a la vez. **La contradicción está entre la condición de fracción irreducible y el factor común $2$ que impone la ecuación.** Tener dos términos pares no es imposible por sí solo: $2/4$ es una fracción válida, pero no es irreducible.
+**La irreducibilidad es esencial.** Términos pares son posibles: $2/4$ es válido, pero reducible.
 
 <span id="from-widerspruch-und-irrationalitaet-6-expresar-la-conclusión"></span>
 
 ### 6. Expresar la conclusión
 
-La hipótesis de que $\sqrt2$ tiene una representación racional ha llevado a una contradicción. Todo racional admite una representación irreducible, así que no queda otra representación racional que pueda evitar el argumento. Por tanto, $\sqrt2$ es irracional.
+Todo racional tiene representación irreducible; ninguna alternativa evita la contradicción. Por tanto, $\sqrt2$ es irracional.
 
 
 <span id="from-widerspruch-und-irrationalitaet-cómo-se-combinan-los-métodos-de-demostración"></span>
 
 ## Cómo se combinan los métodos de demostración
 
-Una demostración puede tener una estrategia general y usar otro método para un resultado auxiliar. Aquí el argumento completo es por contradicción, mientras que el lema de paridad se demuestra por contraposición.
+La estrategia general es contradicción; el lema auxiliar de paridad usa contraposición.
 
 | Método | Qué se hace | Su papel en este ejemplo |
 | --- | --- | --- |
@@ -123,23 +123,23 @@ Una demostración puede tener una estrategia general y usar otro método para un
 | Contradicción | Suponer la negación del objetivo y deducir afirmaciones incompatibles. | La supuesta fracción irreducible para $\sqrt2$ también tendría el factor común $2$. |
 | Descenso infinito | Mostrar que toda supuesta solución en enteros positivos daría otra estrictamente menor. | El mismo argumento de paridad permitiría dividir ambos términos de una supuesta fracción entre dos una y otra vez. |
 
-Para la versión por descenso, partimos de cualquier supuesta fracción para $\sqrt2$, sin exigir que sea irreducible. El argumento anterior hace pares ambos términos. Dividirlos entre dos produce enteros que representan el mismo número, con un denominador positivo menor. El argumento se aplica de nuevo a esta fracción. Así obtendríamos una sucesión infinita estrictamente decreciente de denominadores enteros positivos. Esto es imposible: todo conjunto no vacío de enteros positivos tiene un elemento mínimo. La demostración con una fracción irreducible alcanza la contradicción al encontrar el primer factor común.
+Para **descenso**, parte de cualquier supuesta fracción para $\sqrt2$. La paridad hace pares ambos términos. Dividir entre dos conserva enteros y valor, pero reduce estrictamente el denominador positivo. Repetir daría enteros positivos decrecientes sin fin: imposible, pues todo conjunto no vacío de ellos tiene mínimo. La irreducibilidad da contradicción ya con el primer factor común.
 
-Un **contraejemplo** cumple otra función: refuta una afirmación universal. Por ejemplo, $\sqrt4=2$ refuta «la raíz cuadrada de todo entero positivo es irracional». No refuta la afirmación concreta sobre $\sqrt2$. La **inducción** demuestra una familia de afirmaciones indexadas por naturales mediante un caso inicial y un paso al sucesor; no hace falta para esta afirmación individual.
+$\sqrt4=2$ es **contraejemplo** a «todo entero positivo tiene raíz irracional», no al caso $\sqrt2$. La **inducción** usa caso inicial y paso al sucesor para familias indexadas por naturales; aquí no es necesaria.
 
 
 <span id="from-widerspruch-und-irrationalitaet-comprobar-el-razonamiento"></span>
 
 ## Comprobar el razonamiento
 
-<Exercise question="Una propuesta de demostración termina así: «p y q son pares, por tanto $\sqrt{2}$ es irracional». ¿Qué elección inicial debe indicar y por qué?">
+<Exercise question="«p y q son pares, luego $\sqrt{2}$ es irracional». ¿Qué elección inicial necesita y por qué?">
 
-Debe elegir la fracción en forma irreducible. Que ambos términos sean pares solo significa que se puede simplificar; eso no es imposible por sí solo. La contradicción aparece porque una fracción elegida sin divisor común mayor que $1$ resulta tener el divisor común $2$.
+Elige una fracción irreducible. Los términos pares solo permiten simplificar; contradicen la ausencia elegida de un divisor común mayor que $1$, pues ambos tienen divisor $2$.
 
 </Exercise>
 
 <Exercise question="Intenta el mismo argumento para $\sqrt{4}$. ¿En qué paso deja de funcionar el razonamiento para $\sqrt{2}$?">
 
-Elevar una supuesta fracción al cuadrado da $p^2=4q^2$. Esto hace par a $p$, así que escribimos $p=2k$. Sustituir da $4k^2=4q^2$ y, por tanto, $k^2=q^2$. Esto no obliga a que $q^2$ sea par. No hay contradicción: $\sqrt4=2/1$ ya es una fracción irreducible. El factor $2$ de la ecuación original es esencial para obligar a que ambos términos sean pares.
+De $p^2=4q^2$, la paridad da $p=2k$. Sustituir produce $4k^2=4q^2$, luego $k^2=q^2$, que no obliga a que $q^2$ sea par. De hecho, $\sqrt4=2/1$ es irreducible. El factor original $2$ es necesario para hacer pares ambos términos.
 
 </Exercise>

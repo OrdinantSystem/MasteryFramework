@@ -25,7 +25,7 @@ additionalSources: [{"sourceId": "analysis-concepts-2", "pages": [1], "locations
 
 ### One card, two properties
 
-Fix a card bearing one integer. Let $P$ mean “its integer is positive” and $Q$ “its integer is even.” Positive means greater than zero; even means divisible by two with an integer result. The letters name whole claims, not the integer. Using ordinary arithmetic and order as background gives:
+Fix one integer card. $P$ claims positivity (greater than zero); $Q$ claims evenness (integer quotient on division by two). Letters name claims, not numbers. Ordinary arithmetic and order give:
 
 | Integer | $P$ | $Q$ | $P\land Q$ | $P\lor Q$ |
 |---|---|---|---|---|
@@ -35,39 +35,39 @@ Fix a card bearing one integer. Let $P$ mean “its integer is positive” and $
 | -3 | 0 | 0 | 0 | 0 |
 | 0 | 0 | 1 | 0 | 1 |
 
-Six meets both requirements. Nine is positive but odd; negative two is even but not positive; negative three meets neither. Zero is even because $0/2=0$, but not positive. A false component makes a conjunction false, not meaningless.
+Six satisfies both; nine only positivity; negative two only evenness; negative three neither. Zero is even since $0/2=0$, not positive. A false component means false conjunction, not meaninglessness.
 
-To establish a conjunction, justify **both** components. For six, $6>0$ and $6/2=3$ is an integer. To refute it, one false component suffices: twelve is not below ten, so “positive and below ten” is false even though twelve is positive. From a true conjunction we may recover each component. A false conjunction alone does not identify which failed.
+Prove **both** conjuncts: $6>0$ and integer $6/2=3$. One failure refutes: twelve is positive but not below ten. A true conjunction yields each component; a false one does not say which failed.
 
-To establish an inclusive disjunction, justify **one** alternative; the other need not be false. To refute it, justify that **both** are false. Negative three fails positive-or-even for both reasons. Merely “not positive” leaves evenness possible, as negative two shows.
+Prove **one** disjunct, without requiring the other false; refutation needs **both** false. Negative three fails both. Nonpositivity alone leaves evenness possible, as negative two shows.
 
 
 <span id="from-logische-verknuepfungen-inclusive-or-and-exactly-one"></span>
 
 ### Inclusive or and exactly one
 
-Inclusive “or” allows overlap. For $P=Q=1$, $P\lor Q$ is true, whereas **exactly one** is false. In rows $10,01,00$ their outputs agree: respectively $1,1,0$. The both-true row is the essential difference.
+Inclusive $P\lor Q$ allows overlap; **exactly one** does not. Only $11$ differs: inclusive gives $1$, exclusive $0$. Both give $1,1,0$ on $10,01,00$.
 
-A menu's “soup or salad” may impose a one-choice restriction, but that comes from context. “Either” alone does not establish exclusivity in mathematics. Sometimes the inputs themselves cannot overlap: a real cannot be both strictly negative and strictly positive. That restriction comes from ordinary real order, not a different disjunction rule. A complete abstract truth table still contains the both-true assignment.
+A menu may restrict “soup or salad” to one choice; context, not “either” alone, establishes exclusivity. Strict negativity and positivity cannot overlap by real order, not by a different OR rule. Abstract tables still include the both-true assignment.
 
-Conjunction's “simultaneous” satisfaction concerns the specified context, not necessarily one instant. “The door was open at noon and closed at one” can be true. Logical “and” does not assert time order or causation. “Positive **but** odd” has conjunction's truth conditions; “but” adds emphasis rather than another logical rule.
+“Simultaneous” concerns context, not necessarily one instant: “The door was open at noon and closed at one” may be true. AND implies neither time order nor causation. “Positive **but** odd” is conjunction with emphasis, not a new rule.
 
 
 <span id="from-logische-verknuepfungen-grouping-and-atomic-inputs"></span>
 
 ### Grouping and atomic inputs
 
-At this propositional level, a claim treated as a single unit rather than split by logical connectives is called **atomic**. A **compound** claim is built from one or more claims using logical connectives.
+At this propositional level, an **atomic** claim is treated as one unsplit unit; a **compound** uses connectives on one or more claims.
 
-$x+1=3$ contains addition but is one condition at this propositional level. Arithmetic addition combines numbers, not claims. A whole quantified statement can temporarily be one propositional input without being a syntactically atomic first-order formula. Joining open conditions such as $(x>0)\land(x<10)$ does not bind $x$; use the same assigned value in both parts.
+$x+1=3$ is one condition: addition combines numbers, not claims. A quantified statement can serve as one input without being first-order atomic. $(x>0)\land(x<10)$ leaves $x$ free; assign the same value to both parts.
 
-Let $P$ mean a ticket, $Q$ a reservation, and $R$ a guest pass. Compare
+Let $P$ mean a ticket, $Q$ a reservation, $R$ a guest pass:
 
 $$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
 
-The first needs a ticket as well as a reservation or pass. The second accepts a pass alone. With $P=0,Q=0,R=1$, the first is false and the second true. This separating assignment proves that changing the grouping changes the general meaning.
+The first requires a ticket plus reservation or pass; the second accepts a pass alone. $P=0,Q=0,R=1$ gives false versus true, proving different general meanings.
 
-Chains of AND alone or inclusive OR alone permit regrouping for the reasons developed below; mixed connectives need a separate check.
+Pure AND or inclusive OR chains regroup, as justified below; mixed connectives require checking.
 
 <details>
 <summary>Notation readings</summary>
@@ -81,110 +81,110 @@ $P\land Q$: “P and Q”; $P\lor Q$: “P or Q, or both”; $P\land(Q\lor R)$: 
 
 ### Practice with reasons
 
-One card bears nine and another negative two. Does this prove that a particular hidden card is positive and even? Identify both gaps.
+Cards show nine and negative two. Does that prove a fixed hidden card positive and even? Identify two gaps.
 
 <details>
 <summary>Hint</summary>
 
-Which object did each check concern? Did one integer pass both?
+Which card was checked? Did one integer pass both?
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-Neither example gives information about the hidden card. Moreover, positivity and evenness were checked on different integers. A conjunction about one fixed card needs both claims about that same card. Two separate examples establish neither point.
+Neither example concerns the hidden card; positivity and evenness were also checked on different integers. Both claims must concern that same fixed card.
 
 </details>
 
-<Exercise question="A card qualifies through a star or through both a circle and a blue border. With letters S, C, B, write the criterion. Does a star-only card qualify? Does a circle-only card?">
+<Exercise question="A card qualifies by a star or by circle plus blue border. Write the S, C, B criterion; test star-only and circle-only cards.">
 
-$S\lor(C\land B)$. The star-only card qualifies through $S$, regardless of the second route. A circle-only card qualifies through neither route: it lacks a star and the border required with a circle. A checklist inside an alternative stays grouped.
-
-</Exercise>
-
-<Exercise question="You know $P\lor Q$ is true. Must P be true or false? What follows if Q is additionally false? If instead you know only $P\land Q$ is false, must Q be false?">
-
-Initially either value of $P$ is possible; both $10$ and $01$ satisfy the report. With $Q=0$, $P$ must be $1$ to keep the disjunction true. A false conjunction does not force $Q=0$: assignment $01$ makes the conjunction false while $Q$ is true. Conversely, a true conjunction does force each component true, including $Q$.
+$S\lor(C\land B)$. Star alone satisfies $S$, independently of the other route. Circle alone lacks both star and required border, so fails. Keep the inner checklist grouped.
 
 </Exercise>
 
-[Building truth tables](../logische-verknuepfungen/#from-building-truth-tables) develops construction from a blank table, including repeated inputs and numerical realizability. [Logical negation](../logical-negation/#from-logical-negation) treats precise denial; [reading mathematical structure](../quantifier-order/#from-reading-mathematical-structure) applies outside-in parsing to complete claims.
+<Exercise question="Given true $P\lor Q$, is P determined? What if Q is false? Given only false $P\land Q$, must Q be false?">
+
+Initially $P$ may be either value: $10$ and $01$ qualify. If $Q=0$, truth requires $P=1$. False conjunction does not force false $Q$: $01$ refutes that. True conjunction does force every component, including $Q$, true.
+
+</Exercise>
+
+See [truth tables](../logische-verknuepfungen/#from-building-truth-tables) for blank-table construction, repeated inputs and numerical realizability; [negation](../logical-negation/#from-logical-negation) for precise denial; [structure](../quantifier-order/#from-reading-mathematical-structure) for outside-in parsing.
 
 <span id="from-simultaneous-conditions"></span>
 
 ## Several simultaneous conditions
 
-For this lesson, call an integer **admissible** if and only if it is positive, less than ten, and even. This is a local teaching label, not a standard class of integers. Six passes every check. Nine fails evenness; ten fails the strict upper bound. Passing two checks does not compensate for failing the third.
+Locally define an **admissible** integer as positive, below ten, and even. This is not standard terminology. Six passes; nine fails evenness; ten fails strictness. Two successes cannot compensate for one failure.
 
 
 <span id="from-simultaneous-conditions-read-one-structured-criterion"></span>
 
 ### Read one structured criterion
 
-Apply the same-object rule above: every check concerns **one integer**. A positive noninteger below ten still fails the integer-domain requirement.
+All tests concern **one integer**; a positive noninteger below ten already fails the domain.
 
-Let $A$ mean positive, $B$ less than ten, and $C$ even. Both
+With $A$ positive, $B$ below ten, $C$ even, both
 
 $$(A\land B)\land C\qquad\text{and}\qquad A\land(B\land C)$$
 
-require all three claims. In the first grouping, $A$ and $B$ must hold, and $C$ must hold too. In the second, $B$ and $C$ must hold, as must $A$. This proves associativity semantically for any three propositions. It does not depend on checking four integers. Pure inclusive “or” also permits either grouping: each requires at least one of three inputs to be true. Mixed connectives need separate grouping checks.
+require all three: the first requires $A,B$ plus $C$; the second $B,C$ plus $A$. This proves associativity semantically for arbitrary claims, not by four integer checks. Either inclusive-OR grouping requires at least one true input. Mixed connectives still need checking.
 
-$A\land(B\land C)$: “A holds, and both B and C hold.” Conjunction does not bind a free variable.
+$A\land(B\land C)$ reads “A, and both B and C.” Conjunction binds no variable.
 
-A useful reading method is: fix domain and object; separate the conditions; check whether the list means all or at least one; preserve inner alternatives; decide whether the sentence is a definition or only a claim. Commas alone do not determine its connective.
+Fix domain and object; separate conditions; distinguish all from at least one; preserve inner alternatives; distinguish definition from claim. Commas do not choose connectives.
 
 
 <span id="from-simultaneous-conditions-establish-a-label-then-unpack-it"></span>
 
 ### Establish a label, then unpack it
 
-“If and only if” gives a full criterion. To prove that six is admissible, check $6>0$, $6<10$, and that $6/2=3$ is an integer. Conversely, knowing an integer is admissible gives **each** of those three properties. It does not give a unique value.
+Iff supplies both directions: $6>0$, $6<10$, integer $6/2=3$ prove admissibility; admissibility recovers **each** property, not a unique value.
 
-The complete list is $2,4,6,8$. The bounds leave only the integers $1$ through $9$; their even members are exactly the four listed. That exhausts the candidates. Exhibiting four successes without excluding others would not prove completeness. The definition fixes the meaning; the candidate argument justifies the list.
+Exactly $2,4,6,8$ qualify: bounds leave integers $1$–$9$, whose even members are those four. Exhaustion, not four successes alone, proves completeness. Definition fixes meaning; candidate reasoning proves the list.
 
 
 <span id="from-simultaneous-conditions-a-sufficient-rule-is-different"></span>
 
 ### A sufficient rule is different
 
-Suppose an ordinary rule says: “An integer receives a blue mark if it is positive, below ten, and even.” Assume this is **not** a full definition of the marking scheme. Passing the checklist guarantees a mark, but the rule does not forbid extra marks.
+Suppose the ordinary rule “An integer receives a blue mark if positive, below ten, and even” is **not** a full definition. The checklist guarantees marking, without forbidding extra marks.
 
-Marking every integer blue obeys that rule, yet nine is marked and odd. Thus a mark alone does not imply evenness. Replacing the rule by “marked **if and only if** positive, below ten, and even” would authorize unpacking the checklist.
+Marking every integer obeys it, yet marked nine is odd: a mark does not imply evenness. Replacing “if” by **iff** would license unpacking.
 
-A definition sometimes uses the shorter word “if” while intending a full criterion; that intention comes from the defining context, not from a general equivalence of “if” and “iff.” Write “means” or “if and only if” when both directions are intended. Flag ambiguous text rather than silently adding the converse.
+Defining contexts sometimes intend iff through abbreviated “if”; this does not make them generally equivalent. Write “means” or “iff” for both directions; flag ambiguity rather than add a converse.
 
 
 <span id="from-simultaneous-conditions-practice-with-alternatives-and-failures"></span>
 
 ### Practice with alternatives and failures
 
-An integer must be positive and must be even **or equal to three**, with that entire alternative grouped. Write the criterion and test $3,6,-2,9$.
+Require an integer to be positive and (even **or equal to three**). Write the criterion; test $3,6,-2,9$.
 
 <details>
 <summary>Hint</summary>
 
-There are two outer requirements. The second can succeed in either of two ways.
+Two outer requirements; the second has two routes.
 
 </details>
 
 <details>
 <summary>Reference answer</summary>
 
-$P\land(E\lor T)$, where $P$ is positive, $E$ even, and $T$ equal to three. Three passes through positivity and $T$; six through positivity and $E$. Negative two fails positivity; nine fails both inner alternatives. The alternative is one grouped checklist item, not a requirement to satisfy all three letters.
+$P\land(E\lor T)$, with positivity $P$, evenness $E$, equality to three $T$. Three passes via $P,T$; six via $P,E$. Negative two fails $P$; nine fails both inner alternatives. The grouped alternative does not demand all three.
 
 </details>
 
-<Exercise question="An integer qualifies when it is zero, or when it is positive and below ten. With A, B, C naming those claims in order, write the criterion. Do zero and ten qualify?">
+<Exercise question="An integer qualifies if zero, or if positive and below ten. Write the criterion using A, B, C in that order; test zero and ten.">
 
-$A\lor(B\land C)$. Zero qualifies through $A$ without needing positivity. Ten fails $A$ and $C$, so it qualifies through neither route. Requiring positivity of zero would change the outer connective.
-
-</Exercise>
-
-<Exercise question="For the original admissible integers, unpack every fact from the label. Must the integer equal six? Describe nonadmissibility, and use zero, nine, and ten to check its boundaries.">
-
-The integer is positive, below ten, and even; it need not be six, since two also qualifies. Nonadmissibility means $n\le0$ **or** $n\ge10$ **or** $n$ is not even, with $n\in\mathbb Z$ still required. Zero fails only positivity, nine only evenness, ten only the strict upper bound. None forces all checks to fail. [Negating combined conditions](../logical-negation/#from-negating-combined-conditions) proves the underlying laws.
+$A\lor(B\land C)$. Zero passes $A$ without positivity. Ten fails $A,C$, hence both routes. Requiring zero positive changes the outer connective.
 
 </Exercise>
 
-Invent a new three-condition definition and a near-miss failing only one check. Then replace its iff by an ordinary one-way if and identify which inference from the label is no longer justified.
+<Exercise question="Unpack original admissibility. Must the integer be six? Describe nonadmissibility; test zero, nine and ten at its boundaries.">
+
+It is positive, below ten and even, but may be two instead of six. Nonadmissibility is $n\le0$ **or** $n\ge10$ **or** not even, still with $n\in\mathbb Z$. Zero fails only positivity, nine only evenness, ten only strictness; not all tests must fail. See [combined negation](../logical-negation/#from-negating-combined-conditions) for proof.
+
+</Exercise>
+
+Invent a three-condition definition and a one-failure near-miss. Replace iff by ordinary one-way if; identify which inference from the label is lost.

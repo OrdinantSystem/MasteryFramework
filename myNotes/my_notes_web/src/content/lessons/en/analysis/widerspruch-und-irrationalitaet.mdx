@@ -26,11 +26,11 @@ additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations
 
 ## What a proof establishes
 
-As in the preceding lesson, justify each proof step from definitions, assumptions or established results; examples alone do not prove a universal claim.
+Justify proof steps from definitions, assumptions or established results; examples alone do not prove universal claims.
 
-Our main claim is that $\sqrt2$ is **irrational**: it is a real number that cannot be written as a ratio of two integers. Here $\sqrt2$ means the positive real number whose square is $2$. A decimal approximation such as $1.4142$ cannot settle the claim: a finite calculation cannot rule out every possible fraction.
+$\sqrt2$ is the positive real with square $2$. We prove it **irrational**: not a ratio of integers. A decimal approximation such as $1.4142$ cannot exclude every fraction.
 
-We will use **proof by contradiction**. We temporarily assume the opposite—that such a fraction exists—and show that this assumption forces two incompatible properties of the same fraction.
+For **contradiction**, assume a fraction exists and derive incompatible properties of that same fraction.
 
 
 <span id="from-widerspruch-und-irrationalitaet-a-first-proof-by-contradiction"></span>
@@ -39,19 +39,19 @@ We will use **proof by contradiction**. We temporarily assume the opposite—tha
 
 Consider the claim: **there is no greatest natural number**.
 
-1. **Assume the opposite.** Suppose there is a greatest natural number, and call it $m$. This means every natural number must be at most $m$.
-2. **Construct another permitted number.** The successor $m+1$ is also a natural number.
-3. **Compare it with the assumed greatest number.** Since $m+1>m$, we have found a natural number greater than $m$. This contradicts the property used to choose $m$.
-4. **Reject the temporary assumption.** No natural number can be greatest. The argument works whether the convention for natural numbers includes $0$ or starts at $1$.
+1. Suppose a greatest natural $m$ exists, so every natural is at most $m$.
+2. Its successor $m+1$ is natural.
+3. But $m+1>m$, contradicting maximality.
+4. Therefore no greatest natural exists, whether naturals start at $0$ or $1$.
 
-The contradiction is specific: the same number $m+1$ would have to be both at most $m$ and greater than $m$. A proof by contradiction must identify an incompatibility of this kind; reaching an unexpected result is not enough.
+The same $m+1$ would be both at most and greater than $m$. A contradiction needs incompatibility, not merely surprise.
 
 
 <span id="from-widerspruch-und-irrationalitaet-the-parity-fact-we-will-need"></span>
 
 ## The parity fact we will need
 
-[Proof methods and parity](../beweissprache-und-methoden/#from-beweissprache-und-methoden) proves both directions: an integer is even if and only if its square is even. Its reverse direction uses contraposition, expanding an arbitrary odd integer as twice an integer plus one. We will apply that established reverse implication twice below. We are not assuming that taking a square root preserves divisibility.
+[The parity lesson](../beweissprache-und-methoden/#from-beweissprache-und-methoden) proves that an integer is even exactly when its square is even, using the odd form for the reverse contrapositive. We apply that reverse implication twice, not an assumed divisibility rule for square roots.
 
 <span id="from-widerspruch-und-irrationalitaet-why-2sqrt22-cannot-be-a-fraction"></span>
 
@@ -61,60 +61,60 @@ The contradiction is specific: the same number $m+1$ would have to be both at mo
 
 ### 1. Assume a fraction exists and reduce it
 
-Suppose, for contradiction, that $\sqrt2$ is rational. By the definition of rationality, it can be written as a fraction of integers with nonzero denominator. We can choose a positive denominator and cancel every common factor, giving
+Assume $\sqrt2$ rational. Its integer fraction has nonzero denominator; choose the denominator positive and cancel all common factors:
 
 <Math tex="\sqrt2=\frac pq,\qquad p,q\in\mathbb Z,\quad q>0,\quad\gcd(|p|,q)=1" display />
 
-Here $p$ is the numerator and $q$ is the denominator. The notation $\gcd(|p|,q)=1$ says their greatest common divisor is $1$: no integer greater than $1$ divides both. This is what **in lowest terms** means. Cancelling common factors changes the representation, not the number, so this choice is allowed for every rational number. Since $\sqrt2>0$ and $q>0$, we also have $p>0$.
+$p$ is the numerator, $q$ the denominator. **Lowest terms** means $\gcd(|p|,q)=1$: no integer greater than $1$ divides both. Cancellation preserves value, so every rational permits this choice. Positivity gives $p>0$.
 
 <span id="from-widerspruch-und-irrationalitaet-2-turn-the-assumed-equality-into-an-integer-equation"></span>
 
 ### 2. Turn the assumed equality into an integer equation
 
-Square both sides. The square of $\sqrt2$ is $2$, and the square of $p/q$ is $p^2/q^2$. Then multiply both sides by $q^2$, which is nonzero:
+Square, then multiply by nonzero $q^2$:
 
 <Math tex="2=\frac{p^2}{q^2},\qquad 2q^2=p^2" display />
 
-We now have an equation between integers. This makes divisibility by $2$ available as a tool.
+This integer equation lets us use divisibility.
 
 <span id="from-widerspruch-und-irrationalitaet-3-show-that-the-numerator-is-even"></span>
 
 ### 3. Show that the numerator is even
 
-The equation $p^2=2q^2$ writes $p^2$ as twice the integer $q^2$. By definition, $p^2$ is even. The parity result from the preceding proof lesson then tells us that $p$ itself is even.
+$p^2=2q^2$ makes $p^2$ even because $q^2$ is an integer. The parity lemma makes $p$ even.
 
-Therefore there is an integer $k$ such that $p=2k$. Introducing $k$ simply expresses the definition of evenness; it adds no new assumption.
+Thus $p=2k$ for an integer $k$, by definition, not an extra assumption.
 
 <span id="from-widerspruch-und-irrationalitaet-4-substitute-to-learn-about-the-denominator"></span>
 
 ### 4. Substitute to learn about the denominator
 
-Replace $p$ by $2k$ in $p^2=2q^2$. Squaring $2k$ gives $4k^2$, so
+Substitute $p=2k$ into $p^2=2q^2$:
 
 <Math tex="(2k)^2=2q^2,\qquad 4k^2=2q^2,\qquad q^2=2k^2" display />
 
-The last equality follows by dividing both sides by $2$ and reversing the sides. It writes $q^2$ as twice the integer $k^2$. Hence $q^2$ is even. Applying the same parity fact again, $q$ must be even too.
+Dividing by $2$ gives $q^2=2k^2$, so $q^2$ is even. The parity lemma now makes $q$ even.
 
 <span id="from-widerspruch-und-irrationalitaet-5-identify-the-contradiction"></span>
 
 ### 5. Identify the contradiction
 
-We have proved that $p$ and $q$ are both even. Thus $2$ divides both, and their greatest common divisor is at least $2$. But we chose the fraction so that this divisor was $1$.
+Thus $2$ divides both $p$ and $q$: their greatest common divisor is at least $2$, contradicting its chosen value $1$.
 
-These properties cannot both hold. **The contradiction is between the reduced-fraction condition and the common factor $2$ forced by the equation.** Two even entries alone are not impossible: $2/4$ is a valid fraction, but it is not in lowest terms.
+**The contradiction requires lowest terms.** Two even entries alone are possible: $2/4$ is valid but reducible.
 
 <span id="from-widerspruch-und-irrationalitaet-6-state-what-follows"></span>
 
 ### 6. State what follows
 
-The assumption that $\sqrt2$ has a rational representation led to a contradiction. Every rational number has a representation in lowest terms, so there is no other rational representation left to try. Therefore $\sqrt2$ is irrational.
+Every rational has a lowest-terms representation, so no alternative representation escapes the contradiction. Hence $\sqrt2$ is irrational.
 
 
 <span id="from-widerspruch-und-irrationalitaet-how-the-proof-methods-fit-together"></span>
 
 ## How the proof methods fit together
 
-A proof can use one overall strategy and another method for a supporting result. Here the overall argument is by contradiction, while its parity lemma is proved by contraposition.
+The overall strategy is contradiction; its supporting parity lemma uses contraposition.
 
 | Method | What you do | Its role in this example |
 | --- | --- | --- |
@@ -123,23 +123,23 @@ A proof can use one overall strategy and another method for a supporting result.
 | Contradiction | Assume the negation of the goal and derive incompatible statements. | The assumed reduced fraction for $\sqrt2$ must also have a common factor $2$. |
 | Infinite descent | Show that any proposed positive-integer solution would yield a strictly smaller one. | The same parity argument would let us halve both entries of a proposed fraction again and again. |
 
-For the descent version, start with any supposed fraction for $\sqrt2$, without requiring lowest terms. The argument above makes both entries even, so halving them gives integers representing the same number, with a smaller positive denominator. The argument applies again to this new fraction. That would produce an endless strictly decreasing sequence of positive integer denominators, which is impossible: every nonempty set of positive integers has a least element. The reduced-fraction proof reaches the contradiction as soon as the first common factor is found.
+For **descent**, start with any supposed fraction for $\sqrt2$, not necessarily reduced. Parity makes both entries even. Halving preserves integer entries and value but strictly decreases the positive denominator. Repeating would give endlessly decreasing positive integers, impossible because every nonempty set of positive integers has a least member. Lowest terms instead gives an immediate contradiction at the first common factor.
 
-A **counterexample** serves a different task: it refutes a universal claim. For example, $\sqrt4=2$ refutes “the square root of every positive integer is irrational”. It does not refute the specific claim about $\sqrt2$. **Induction** proves a family of statements indexed by natural numbers using a starting case and a successor step; it is not needed for this single claim.
+A **counterexample** refutes a universal claim: $\sqrt4=2$ refutes “every positive integer has irrational square root,” not the specific $\sqrt2$ claim. **Induction** uses an initial case and successor step for a natural-indexed family; it is unnecessary here.
 
 
 <span id="from-widerspruch-und-irrationalitaet-check-the-reasoning"></span>
 
 ## Check the reasoning
 
-<Exercise question="A proposed proof ends with: ‘p and q are both even, so $\sqrt{2}$ is irrational.’ What earlier choice must it state, and why?">
+<Exercise question="‘Both p and q are even, so $\sqrt{2}$ is irrational.’ Which earlier choice is needed, and why?">
 
-It must choose the fraction in lowest terms. Both entries being even means that the fraction can be reduced; that alone is not impossible. The contradiction appears because a fraction chosen with no common divisor greater than $1$ has been shown to have the common divisor $2$.
+Choose lowest terms. Even entries merely allow reduction; they contradict the chosen absence of a common divisor greater than $1$, since both have divisor $2$.
 
 </Exercise>
 
 <Exercise question="Try the same argument for $\sqrt{4}$. At which step does the reasoning for $\sqrt{2}$ stop working?">
 
-Squaring a supposed fraction gives $p^2=4q^2$. This makes $p$ even, so write $p=2k$. Substitution gives $4k^2=4q^2$, hence $k^2=q^2$. This does not force $q^2$ to be even. There is no contradiction: $\sqrt4=2/1$ is already a reduced fraction. The factor $2$ in the original equation is essential to forcing both entries to be even.
+From $p^2=4q^2$, parity gives $p=2k$. Substitution yields $4k^2=4q^2$, hence $k^2=q^2$, which does not force $q^2$ even. Indeed $\sqrt4=2/1$ is reduced. The original factor $2$ is needed to force both entries even.
 
 </Exercise>

@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {historicalAnalysisInput,historicalAnalysisLabel} from './analysis-preservation-input.mjs';
 import organization from '../src/lib/analysis-organization.json' with {type:'json'};
 const coverage=JSON.parse(await readFile('../docs/analysis-organization-coverage.json','utf8'));
 const recap=JSON.parse(await readFile('../docs/analysis-recap-coverage.json','utf8'));
@@ -44,8 +45,8 @@ for(const locale of ['en','de','es']){
  const root=`src/content/lessons/${locale}/analysis`;
  assert.deepEqual((await readdir(root)).filter(n=>n.endsWith('.mdx')).map(n=>n.slice(0,-4)).sort(),[...canonical].sort());
  const aliases=organization.aliases[locale];assert.equal(Object.keys(aliases).length,53);
- const current=await Promise.all([...canonical].map(k=>readFile(`${root}/${k}.mdx`,'utf8')));
- current.push(await readFile(`src/content/course-guides/${locale}/analysis.mdx`,'utf8'));
+ const current=await Promise.all([...canonical].map(k=>historicalAnalysisInput(`${root}/${k}.mdx`)));
+ current.push(await historicalAnalysisInput(`src/content/course-guides/${locale}/analysis.mdx`));
  const archived=[],archivedRecords=[];
  for(const [key,alias] of Object.entries(aliases)){
   const raw=await readFile(`../docs/history/analysis-before-consolidation/${locale}/${key}.mdx`,'utf8');archived.push(raw);archivedRecords.push({key,raw});
@@ -71,4 +72,4 @@ for(const locale of ['en','de','es']){
  containsInventory(oldTables,current.flatMap(s=>blocks(s,/(?:^\|.*\|\r?\n?)+/gm)),`${locale} original tables`,editorialAllowances(locale,'tables'),corpus);totalTables+=oldTables.length;
  assert.ok(!current.some(s=>/\b(?:Jean|Isaac)\b|\/home\/ubuntu|obsidian:\/\//.test(s)),'No private learner/server output');
 }
-console.log(`Verified 20 canonical lessons / 6 sections, 159 archived originals, ${sectionCount} section dispositions, ${totalExercises} protected exercise blocks, ${totalTables} tables and ${paragraphsChecked} prose paragraphs with explicit duplicate dispositions, plus preserved hints/readings/answers. Compatibility anchors are checked against generated HTML.`);
+console.log(`Verified ${historicalAnalysisLabel}: 20 canonical lessons / 6 sections, 159 archived originals, ${sectionCount} section dispositions, ${totalExercises} protected exercise blocks, ${totalTables} tables and ${paragraphsChecked} prose paragraphs with explicit duplicate dispositions, plus preserved hints/readings/answers. Compatibility anchors are checked against generated HTML.`);

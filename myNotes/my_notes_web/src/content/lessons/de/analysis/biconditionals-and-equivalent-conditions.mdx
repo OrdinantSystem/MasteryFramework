@@ -21,7 +21,7 @@ additionalSources: []
 
 ## Äquivalenzen und gleichwertige Bedingungen
 
-„Behalte eine Karte, **wenn** ihre Zahl zwei ist“ verlangt, jede Zweierkarte zu behalten, erlaubt aber weitere Karten. „Behalte eine Karte **nur wenn** ihre Zahl zwei ist“ verbietet andere Zahlen, erlaubt aber, alle Karten abzulehnen. Zusammen verlangen die Regeln, genau die Zweierkarten zu behalten.
+„Behalte eine Karte, **wenn** ihre Zahl zwei ist“ verlangt jede Zweierkarte, erlaubt aber weitere. „Behalte sie **nur wenn** ihre Zahl zwei ist“ verbietet andere, erlaubt aber alle abzulehnen. Zusammen verlangen sie genau die Zweierkarten.
 
 
 <span id="from-biconditionals-and-equivalent-conditions-wenn-nur-wenn-und-beides"></span>
@@ -30,12 +30,12 @@ additionalSources: []
 
 Für Aussagen $A$ und $B$ gilt:
 
-- „$A$, wenn $B$“ bedeutet $B\Rightarrow A$: „Wenn $B$, dann $A$.“ $B$ ist **hinreichend** für $A$: Es garantiert $A$.
-- „$A$ nur wenn $B$“ bedeutet $A\Rightarrow B$: „Wenn $A$, dann $B$.“ $B$ ist **notwendig** für $A$: Ohne $B$ kann $A$ nicht gelten.
+- „$A$, wenn $B$“: $B\Rightarrow A$, „wenn B, dann A“. $B$ ist **hinreichend**: Es garantiert $A$.
+- „$A$ nur wenn $B$“: $A\Rightarrow B$, „wenn A, dann B“. $B$ ist **notwendig**: $A$ braucht es.
 
-Die formale Clubregel „Einlass nur mit Eintrittskarte“ macht die Karte notwendig, nicht hinreichend. Sie verspricht Karteninhabern keinen Einlass. Erst die zusätzliche Regel „Karte impliziert Einlass“ machte sie auch hinreichend. Das sind vereinbarte Regeln, keine Aussagen über tatsächliche Einlassbedingungen.
+Die vereinbarte Clubregel „Einlass nur mit Karte“ macht Karten notwendig, nicht hinreichend; Inhaber dürfen abgewiesen werden. Karte-impliziert-Einlass ergänzt Hinreichendheit. Keine echte Einlasspolitik wird behauptet.
 
-Die **Äquivalenzaussage** $A\Leftrightarrow B$ liest man „$A$ genau dann, wenn $B$“. Sie ist definitionsgemäß bei gleichen Wahrheitswerten wahr, auch wenn beide falsch sind:
+**Äquivalenz** $A\Leftrightarrow B$ liest sich „A genau dann, wenn B“. Sie gilt genau bei gleichen Werten, auch beide falsch:
 
 | $A$ | $B$ | $A\Rightarrow B$ | $B\Rightarrow A$ | $A\Leftrightarrow B$ |
 | --- | --- | --- | --- | --- |
@@ -44,9 +44,9 @@ Die **Äquivalenzaussage** $A\Leftrightarrow B$ liest man „$A$ genau dann, wen
 | $0$ | $1$ | $1$ | $0$ | $0$ |
 | $0$ | $0$ | $1$ | $1$ | $1$ |
 
-$1$ bedeutet wahr, $0$ falsch. Die Tabelle beweist die Übereinstimmung mit $(A\Rightarrow B)\land(B\Rightarrow A)$ in jeder Zeile. Die Hinrichtung schließt wahr/falsch aus, die Rückrichtung falsch/wahr. Das sind alle möglichen Unterschiede. Umgekehrt machen gleiche Werte beide Pfeile wahr. Deshalb braucht ein Äquivalenzbeweis beide Richtungen.
+$1$ und $0$ bedeuten wahr/falsch. Beide Pfeile zusammen entsprechen Äquivalenz: $A\Rightarrow B$ verbietet wahr/falsch, $B\Rightarrow A$ falsch/wahr, also alle Unterschiede. Gleiche Werte erfüllen beide. Daher braucht Äquivalenz beide Richtungen.
 
-Insbesondere ist $(0=1)\Leftrightarrow(2=3)$ wahr, während die Konjunktion dieser Gleichungen falsch ist. Übereinstimmung behauptet keine der beiden Seiten.
+$(0=1)\Leftrightarrow(2=3)$ ist wahr, ihre Konjunktion falsch: Übereinstimmung behauptet keine Seite.
 
 
 <span id="from-biconditionals-and-equivalent-conditions-die-rückrichtung-neu-beginnen"></span>
@@ -57,32 +57,32 @@ Für jedes reelle $x$ gilt
 
 $$(x+1=3)\Leftrightarrow(x=2).$$
 
-Gelesen: „$x$ plus eins ist gleich drei genau dann, wenn $x$ gleich zwei ist.“ Fixiere ein beliebiges reelles $x$. **Hinrichtung:** Nimm $x+1=3$ an und subtrahiere auf beiden Seiten eins; daraus folgt $x=2$. **Rückrichtung:** Beginne stattdessen mit $x=2$ und addiere eins; daraus folgt $x+1=3$. Addition und Subtraktion erhalten Gleichheit und machen einander rückgängig. Das Argument gilt daher für jede reelle Eingabe.
+„x plus eins gleich drei genau dann, wenn x gleich zwei.“ Für beliebiges reelles $x$: **hin**, nimm $x+1=3$ an, subtrahiere eins: $x=2$. **Zurück**, starte neu bei $x=2$, addiere eins: $x+1=3$. Inverse Operationen erhalten Gleichheit für alle Reellen.
 
-Beide Gleichungen schon am Anfang anzunehmen würde beide Beweisaufgaben überspringen. Die Logik bestimmt die nötigen Richtungen; die Arithmetik begründet sie für diese Gleichungen. Bei null sind beide Gleichungen falsch, was mit ihrer Äquivalenz völlig vereinbar ist.
+Beide Gleichungen vorauszusetzen überspringt die Pflichten. Logik bestimmt Richtungen, Arithmetik beweist sie. Bei null sind beide falsch, mit Äquivalenz vereinbar.
 
 
 <span id="from-biconditionals-and-equivalent-conditions-drei-verschiedene-geltungsbereiche"></span>
 
 ### Drei verschiedene Geltungsbereiche
 
-Eine wahre Äquivalenzaussage bei einer Eingabe liefert **Übereinstimmung im Einzelfall**. Bei $(x>5)\Leftrightarrow(x>2)$ stimmen die Seiten bei sechs und null überein, bei drei nicht. Der Doppelpfeil bindet $x$ nicht und behauptet nicht stillschweigend „für jedes“.
+**Einzelfallübereinstimmung**: $(x>5)\Leftrightarrow(x>2)$ gilt bei sechs und null, nicht drei. Äquivalenz bindet $x$ nicht und sagt nicht „jedes“.
 
-**Aussagenlogische Äquivalenz**, geschrieben $F\equiv G$, verlangt Übereinstimmung bei jeder Belegung der atomaren Aussagebuchstaben. Wiederholte Buchstaben behalten denselben Wert. Zum Beispiel gilt $(P\land Q)\equiv(Q\land P)$: Beide Seiten sind genau dann wahr, wenn beide Buchstaben wahr sind, sonst falsch. Unabhängige $P$ und $Q$ sind nicht schon logisch äquivalent, weil eine Zeile beide wahr setzt.
+**Aussagenlogische Äquivalenz** $F\equiv G$ verlangt gleiche Werte bei jeder Belegung atomarer Buchstaben; Wiederholungen behalten Werte. $(P\land Q)\equiv(Q\land P)$ gilt: beide wahr genau bei zwei wahren Eingaben, sonst falsch. Eine beide-wahr-Zeile macht unabhängige $P,Q$ nicht äquivalent.
 
-**Gleichwertige Bedingungen auf einem Bereich** stimmen bei jeder erlaubten Eingabe überein und haben damit dieselbe Lösungsmenge. Unser Gleichungsbeweis zeigt das mittels Arithmetik für die reellen Zahlen. Er ist kein uneingeschränktes aussagenlogisches Gesetz über zwei unabhängige Buchstaben. Die Gleichheitszeichen innerhalb der Gleichungen vergleichen Zahlen; $\Leftrightarrow$ vergleicht Wahrheitswerte von Aussagen. Manche booleschen Arbeitsblätter benutzen vereinbarungsgemäß $=$ für logische Äquivalenz. Beachte diese Konvention, statt numerische und logische Gleichheit gleichzusetzen.
+**Gleichwertige Bedingungen auf einem Bereich** stimmen bei allen erlaubten Eingaben überein, mit identischen Lösungsmengen. Unser reeller Gleichungsbeweis nutzt Arithmetik, keine frei unabhängigen Buchstaben. $=$ vergleicht Zahlenwerte, $\Leftrightarrow$ Wahrheit. Boolesche Blätter können $=$ für logische Äquivalenz vereinbaren; beachte die Konvention ohne Bedeutungsvermischung.
 
-Der Bereich zählt. Auf allen reellen Zahlen unterscheiden sich $x>0$ und $x\ge0$ bei null. Auf reellen Zahlen ohne null stimmen sie überein: Positiv impliziert nichtnegativ, und eine nichtnegative Zahl ungleich null ist positiv. Der eingeschränkte Beweis begründet nicht die Allaussage über alle reellen Zahlen.
+$x>0$ und $x\ge0$ unterscheiden sich reell bei null. Ohne null stimmen sie überein: positiv impliziert nichtnegativ; nichtnegativ und nicht null impliziert positiv. Der eingeschränkte Beweis gilt nicht allreell.
 
-<Exercise question="Eine Sortierregel erlaubt das Behalten einer Karte nur bei der Zahl zwei. Wird eine Zweierkarte zwingend behalten? Nenne die fehlende Implikation. Beweise dann $(x-2=3)\Leftrightarrow(x=5)$ für jedes reelle $x$, mit einem eigenen Anfang für jede Richtung.">
+<Exercise question="Behalten nur bei zwei: Muss eine Zweierkarte bleiben? Nenne die fehlende Implikation. Beweise $(x-2=3)\Leftrightarrow(x=5)$ für beliebiges reelles x mit Neustart je Richtung.">
 
-Eine Zweierkarte darf abgelehnt werden; es fehlt Zweierkarte impliziert behalten. Für die Gleichungen nimm $x-2=3$ an und addiere zwei; so erhältst du $x=5$. Beginne neu mit $x=5$ und subtrahiere zwei; so folgt $x-2=3$. Beide Operationen erhalten Gleichheit für beliebiges reelles $x$. Kein Unterschied der Wahrheitswerte ist möglich. Das ist ein arithmetischer Beweis, nicht bloß ein Urteil aus der Wahrheitstabelle.
+Sie darf abgewiesen werden; es fehlt Zweierkarte-impliziert-Behalten. Aus $x-2=3$ addiere zwei zu $x=5$; starte bei $x=5$, subtrahiere zwei zu $x-2=3$. Gleichheitserhaltung für beliebige Reelle schließt beide Unterschiede aus: arithmetischer Beweis, nicht bloße Tabelle.
 
 </Exercise>
 
-<Exercise question="Jemand beweist Über-fünf impliziert Über-zwei und nennt die Bedingungen äquivalent. Was bleibt trotz des Fehlers richtig? Warum macht außerdem die Äquivalenz zweier Gleichungen nicht beide für jede Eingabe wahr?">
+<Exercise question="Jemand beweist über-fünf-impliziert-über-zwei und behauptet Äquivalenz. Was bleibt gültig? Warum müssen äquivalente Gleichungen nicht bei jeder Eingabe gelten?">
 
-Die Hinrichtung bleibt durch die Ordnung richtig. Drei widerlegt nur die fehlende Rückrichtung und damit die behauptete Äquivalenz. Bei $x+1=3$ und $x=2$ macht null beide Seiten falsch. Ihre Lösungsmengen stimmen überein, umfassen aber nicht alle reellen Zahlen.
+Die Ordnungs-Hinrichtung bleibt; drei widerlegt fehlende Rückrichtung und Äquivalenz. Bei null sind $x+1=3$ und $x=2$ beide falsch: Gleiche Lösungsmengen brauchen nicht alle Reellen zu enthalten.
 
 </Exercise>
 
@@ -90,64 +90,64 @@ Die Hinrichtung bleibt durch die Ordnung richtig. Drei widerlegt nur die fehlend
 
 ## Äquivalenzketten
 
-Eine Gleichung zu lösen heißt nicht nur, eine plausible Endzahl zu finden. Gesucht sind genau die ursprünglichen Lösungen. Ein umkehrbarer Schritt erhält sie; ein einseitiger Schritt kann Kandidaten hinzufügen oder Fälle ausschließen.
+Lösen sucht genau ursprüngliche Lösungen, keine plausible Zahl. Umkehrbare Schritte erhalten sie; einseitige können Kandidaten ergänzen oder Fälle verlieren.
 
 
 <span id="from-equivalence-chains-was-die-kette-behauptet"></span>
 
 ### Was die Kette behauptet
 
-Für jedes reelle $x$ gilt nach gewöhnlicher Arithmetik
+Für jedes reelle $x$ liefert Arithmetik:
 
 $$(2x+2=6)\Leftrightarrow(2x=4)\Leftrightarrow(x=2).$$
 
-Gelesen: „Zweimal $x$ plus zwei ist gleich sechs genau dann, wenn zweimal $x$ gleich vier ist; zweimal $x$ ist gleich vier genau dann, wenn $x$ gleich zwei ist.“ $2x$ bedeutet Multiplikation; Zahlengleichheit und Übereinstimmung der Wahrheitswerte behalten ihre oben unterschiedenen Rollen.
+„Zweimal x plus zwei gleich sechs genau dann, wenn zweimal x gleich vier, genau dann, wenn x gleich zwei.“ $2x$ ist Multiplikation; Zahlengleichheit und Wahrheitsübereinstimmung bleiben verschieden.
 
-Die Kette kürzt **zwei benachbarte Äquivalenzaussagen** ab. Sie ist kein neuer dreistelliger Junktor und keine Erlaubnis, Äquivalenzpfeile beliebig zu klammern. Alle Glieder verwenden dieselbe Eingabe, denselben Bereich und dieselben Annahmen.
+Die Kette behauptet **zwei Nachbaräquivalenzen**, keinen neuen dreistelligen Junktor oder beliebige Klammerung. Eingabe, Bereich und Annahmen bleiben je Glied gleich.
 
-Hier gibt es vier kurze Begründungen. Subtraktion von zwei ergibt die mittlere Gleichung; Addition von zwei stellt die erste wieder her. Division durch die von null verschiedene Zahl zwei ergibt die letzte; Multiplikation mit zwei stellt die mittlere wieder her. Beide Richtungen gelten für jedes reelle $x$, nicht nur für die spätere Lösung.
+Vier Gründe: vorwärts zwei subtrahieren, rückwärts addieren; vorwärts durch die von null verschiedene zwei dividieren, rückwärts multiplizieren. Beide Richtungen gelten für alle Reellen, nicht nur die Endlösung.
 
 
 <span id="from-equivalence-chains-warum-die-enden-übereinstimmen"></span>
 
 ### Warum die Enden übereinstimmen
 
-Äquivalenz ist **transitiv**. Fixiere eine beliebige erlaubte Eingabe. Stimmen erster und zweiter Wahrheitswert überein und ebenso zweiter und dritter, dann stimmen erster und dritter überein. Da die Eingabe beliebig war, gilt das im ganzen Bereich.
+**Transitivität:** Für beliebige erlaubte Eingabe stimmen erster und zweiter Wert sowie zweiter und dritter überein, also erster und dritter. Beliebigkeit liefert bereichsweite Übereinstimmung.
 
-Als Implikationen gelesen liefert die erste Bedingung die zweite und dann die dritte. Von der dritten aus führen die Rückrichtungen zur zweiten und dann zur ersten. Das beweist beide Richtungen zwischen den Enden. Bei einer aussagenlogischen Kette $F\equiv G\equiv H$ nimmt man statt einer Zahl eine beliebige Wahrheitsbelegung; wiederholte Buchstaben behalten ihren Wert. Das beweist Transitivität, aber kein ungeprüftes Nachbarglied.
+Ebenso führen die Hinrichtungen von der ersten über die zweite zur dritten Bedingung und die Rückrichtungen von der dritten über die zweite zur ersten; damit gelten beide Implikationen zwischen den Endpunkten. Für aussagenlogisches $F\equiv G\equiv H$ verwende beliebige Wahrheitsbelegungen mit festen Wiederholungswerten. Transitivität beweist keine ungeprüften Glieder.
 
 
 <span id="from-equivalence-chains-quadrieren-kann-kandidaten-hinzufügen"></span>
 
 ### Quadrieren kann Kandidaten hinzufügen
 
-Auf allen reellen Zahlen gilt $(x=2)\Rightarrow(x^2=4)$, aber die Rückrichtung scheitert bei $x=-2$: Das Quadrat ist vier, die Zahl ist nicht zwei. Lies den einfachen Pfeil als „Wenn $x$ gleich zwei ist, ist sein Quadrat gleich vier“. Ein Äquivalenzpfeil würde den Vorzeichenunterschied fälschlich beseitigen.
+Reell gilt $(x=2)\Rightarrow(x^2=4)$: „Wenn x zwei ist, ist sein Quadrat vier.“ Rückwärts scheitert $-2$. Äquivalenz würde den Vorzeichenunterschied tilgen.
 
-Nach einem nur vorwärts gültigen Schritt sind Lösungen der neuen Gleichung **Kandidaten**. Prüfe sie am Original. Eine Beschränkung auf nichtnegative Zahlen kann manche Quadrieräquivalenzen ermöglichen, muss aber vor der Behauptung genannt und die Rückrichtung dort begründet werden. Negative Eingaben stillschweigend zu verwerfen verändert eine Aufgabe über alle reellen Zahlen.
+Einseitige Schritte liefern **Kandidaten**, am Original zu prüfen. Nichtnegative Einschränkungen reparieren Quadrieräquivalenz nur bei vorheriger Nennung und bewiesener Rückrichtung. Stillschweigender Ausschluss Negativer ändert die Aufgabe.
 
 
 <span id="from-equivalence-chains-division-kann-eine-lösung-verlieren"></span>
 
 ### Division kann eine Lösung verlieren
 
-Die Gleichung $x^2=x$ gilt bei null. Wer durch $x$ dividiert und $x=1$ behauptet, verliert diese Lösung: Die Division verlangte $x\ne0$.
+$x^2=x$ gilt bei null; Division durch $x$ verliert es wegen erforderlichem $x\ne0$.
 
-Unterscheide stattdessen Fälle. Bei $x=0$ gilt die ursprüngliche Gleichung. Für $x\ne0$ liefert Division durch $x$ die Gleichung $x=1$; umgekehrt ergibt Multiplikation von $x=1$ mit $x$ wieder $x^2=x$. Prüfe auch eins im Original. Die reellen Lösungen sind damit genau null und eins. Im ausdrücklich von null befreiten Bereich sind die dividierten Gleichungen äquivalent; dieses eingeschränkte Ergebnis allein löst aber nicht die ursprüngliche Aufgabe.
+Unterscheide Fälle: Null erfüllt das Original. Für $x\ne0$ ergibt Division $x=1$; Multiplikation mit $x$ kehrt zurück. Prüfe eins im Original. Genau null und eins lösen es. Äquivalenz im Bereich ohne null allein löst nicht die Gesamtaufgabe.
 
 <Note title="Arbeitsblattvorgaben gesondert beachten">
 
-Die vorhandenen [booleschen Herleitungen](../boolesche-grundgesetze/#from-boolesche-grundgesetze) können festlegen, welche nummerierten Gesetze ein Beweis verwenden darf. Diese allgemeinen Überlegungen heben solche Übungsvorgaben nicht auf. Eine Wahrheitstabelle kann eine Tatsache beweisen, ohne eine Aufgabe zu erfüllen, die ausdrücklich eine Herleitung aus bestimmten Gesetzen verlangt.
+[Boolesche Herleitungen](../boolesche-grundgesetze/#from-boolesche-grundgesetze) können nur bestimmte nummerierte Gesetze erlauben. Allgemeines Denken hebt Vorgaben nicht auf: Eine Wahrheitstabelle beweist möglicherweise die Tatsache, erfüllt aber nicht die verlangte Herleitung.
 
 </Note>
 
-<Exercise question="Prüfe $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$ auf den reellen Zahlen. Nenne beide Richtungen jedes Glieds. Darf $(x^2=4)$ mit einem weiteren Äquivalenzpfeil folgen?">
+<Exercise question="Prüfe reell $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$. Nenne beide Operationen je Glied. Darf $(x^2=4)$ äquivalent folgen?">
 
-Subtrahiere drei und mache das durch Addition von drei rückgängig. Dividiere durch die von null verschiedene drei und kehre durch Multiplikation mit drei zurück. Jedes Glied erhält die Lösungsmenge; Transitivität verbindet die Enden. Die quadrierte Gleichung darf auf allen reellen Zahlen nicht als Äquivalenz folgen: $-2$ erfüllt sie, aber nicht $x=2$. Ein einfacher Vorwärtspfeil ist erlaubt; der zusätzliche Kandidat muss im Original geprüft werden.
+Drei subtrahieren, rückwärts addieren; durch drei dividieren, rückwärts multiplizieren, da drei ungleich null ist. Jedes Glied erhält Lösungen; Transitivität verbindet Enden. Quadrieren erlaubt nur Hinpfeil: $-2$ erfüllt das Quadrat, nicht $x=2$. Prüfe den Zusatzkandidaten im Original.
 
 </Exercise>
 
-<Exercise question="Konstruiere eine neue lineare Gleichungskette mit zwei Gliedern, Subtraktion und Division durch eine Konstante ungleich null. Begründe ohne bloße Probe der Endzahl, warum keine Lösung hinzukam oder verloren ging.">
+<Exercise question="Erfinde eine lineare Kette mit zwei Gliedern, Subtraktion und Division durch eine Konstante ungleich null. Begründe Lösungserhaltung über bloßes Testen der Endzahl hinaus.">
 
-Ein Beispiel ist $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Subtrahiere oder addiere vier im ersten Glied; dividiere oder multipliziere mit vier im zweiten. Vier ist ungleich null. Jede Operation und ihre Umkehrung gelten im unveränderten reellen Bereich. Daher erfüllen genau dieselben Eingaben alle Gleichungen. Die Probe mit zwei allein bestätigt nur eine Lösung und schließt andere nicht aus.
+Beispiel: $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Subtrahiere vier, rückwärts addiere; dividiere durch vier, rückwärts multipliziere. Vier ist ungleich null. Operationen und Inversen gelten im unveränderten reellen Bereich und erhalten genau passende Eingaben. Zwei zu testen bestätigt eine Lösung, schließt andere nicht aus.
 
 </Exercise>

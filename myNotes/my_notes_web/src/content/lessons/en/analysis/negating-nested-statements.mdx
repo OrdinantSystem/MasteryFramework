@@ -21,20 +21,20 @@ additionalSources: []
 
 ## Negating nested statements
 
-“Every student can read a shelf book” fails when one student cannot read any shelf book. “A shelf book can be read by every student” fails when each proposed book has a student who cannot read it. That student may vary with the book. Separate reading successes need not supply a shared book.
+Separate readability fails at one student unable to read any shelf book; shared readability fails with a possibly different student per book. Separate successes need not yield a shared book.
 
 
 <span id="from-negating-nested-statements-work-outside-in-on-a-finite-domain"></span>
 
 ### Work outside in on a finite domain
 
-Let $D=\{1,2\}$. The claim $\forall x\in D\;\exists y\in D\;(y>x)$ fails at $x=2$: neither allowed $y$ is larger. Derive that failure, keeping the whole inner existence claim together.
+For $D=\{1,2\}$, $\forall x\in D\;\exists y\in D\;(y>x)$ fails at two: neither $y$ is larger. Negate the inner existence as a unit:
 
 $$
 \begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
 $$
 
-The first step denies every input by selecting one failing input. The second says no witness works for that input, so every candidate fails. The last includes equality in not greater. Choose two once and keep it fixed while testing one and two.
+Select a failing input; no witness works, so every candidate fails. Not greater includes equality: fix two, test one and two.
 
 
 <span id="from-negating-nested-statements-start-with-existence-instead"></span>
@@ -45,15 +45,15 @@ $$
 \neg(\exists x\in D\;\forall y\in D\;(y<x))\ \Longleftrightarrow\ \forall x\in D\;\exists y\in D\;(y\ge x).
 $$
 
-The original asks for an $x$ strictly exceeding every member, including itself; it is not the usual non-strict maximum condition. For any proposed $x$, the test $y=x$ defeats it. The denial is true with that same allowed value as $y$. On an empty domain the original is false and the denial vacuously true; no witness must be supplied for an outer universal with no cases.
+Strictly above every member includes itself, unlike a non-strict maximum. Allowed $y=x$ defeats every $x$ and witnesses denial. Empty domain: original false, denial vacuously true; no outer universal cases require witnesses.
 
-Changing the first finite domain to all reals makes the original larger-member claim true by adding one; its correct negation becomes false. The logical pattern is unchanged, but truth depends on the domain. Correct symbolic negation is not a proof that failure occurs.
+Over reals, adding one makes the first claim true, its negation false. Domain changes truth, not logical pattern; symbolic negation does not prove failure.
 
 <span id="from-negating-nested-statements-practice"></span>
 
 #### Practice
 
-Negate every class student can read a book on this shelf. Keep both restrictions.
+Negate “Every class student can read a book on this shelf”, retaining both restrictions.
 
 <details>
 <summary>Hint</summary>
@@ -64,11 +64,11 @@ Choose the failing student first.
 
 <Exercise>
 
-Some student in this class cannot read any book on this shelf. One student stays fixed while every shelf book fails for them.
+One fixed class student cannot read any book on this shelf.
 
 </Exercise>
 
-Negate a shelf book is readable by every class student. Must one student fail every book?
+Negate “A shelf book is readable by every class student”. Must the failing student be fixed?
 
 <details>
 <summary>Hint</summary>
@@ -79,7 +79,7 @@ Book first, then failing student.
 
 <Exercise>
 
-Every shelf book has a class student who cannot read it. The student may depend on the book. A red–blue style model can give each student a readable book but no shared one.
+Each shelf book has a failing class student, possibly different. Red–blue gives each student a readable book, none shared.
 
 </Exercise>
 
@@ -94,26 +94,26 @@ The input is itself an allowed witness.
 
 <Exercise>
 
-$\exists x\in D\;\forall y\in D\;(y\ne x)$. Original true with $y=x$; denial false because every proposed $x$ has itself as a test.
+$\exists x\in D\;\forall y\in D\;(y\ne x)$ is false: every $x$ has allowed $y=x$, making the original true.
 
 </Exercise>
 
-Repair the claimed denial of every real has a larger real: “For every real y, some real x is at least y”.
+Repair “Every real y has a real x at least y” as denial of every real having a larger real.
 
 <details>
 <summary>Hint</summary>
 
-The proposed claim is true, just like the original.
+Both claims are true.
 
 </details>
 
 <Exercise>
 
-The actual denial is $\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$, false since $y=x+1$ defeats any proposed $x$. The proposed answer wrongly lets $x$ respond to $y$.
+$\exists x\in\mathbb R\;\forall y\in\mathbb R\;(y\le x)$ is the denial, false since $y=x+1$ defeats every $x$. The proposal wrongly lets $x$ respond to $y$.
 
 </Exercise>
 
-Negate: Every student has a shelf on which every book is readable by that student.
+Negate: Every student has a shelf whose books they can all read.
 
 <details>
 <summary>Hint</summary>
@@ -124,11 +124,11 @@ Keep the book domain tied to the shelf.
 
 <Exercise>
 
-There is a student such that for every shelf there is a book on that shelf the student cannot read. Fix the student; a shelf is proposed; the bad book may depend on it.
+There is one fixed student who cannot read some book on each shelf; the book must be on that shelf and may depend on it.
 
 </Exercise>
 
-Later, reconstruct both finite examples and then explain what changes over all reals.
+Later, reconstruct both finite examples and their real-domain variants.
 
 
 <span id="from-negating-nested-statements-read-aloud"></span>
@@ -141,46 +141,46 @@ Some x in D has every y in D at most x.
 
 ## Negating quantified statements step by step
 
-“Not every applicant has a document passing every check” says that some applicant has no document passing them all. For that fixed applicant, every document fails at least one check. Changing three quantifier words together can hide which object stays fixed. Follow the parentheses from the outside inward.
+Deny “Every applicant has a document passing every check” outside inward: fix a failing applicant; each document fails some check. Simultaneous word swaps can obscure fixed objects.
 
-Let $A$ be applicants, $B$ documents, $C$ checks. Let $R(x,y,z)$ mean document $y$ passes check $z$ for applicant $x$. All three domains are fixed here. Begin with the full negation, not an edited unnegated claim:
+Fix $A$ applicants, $B$ documents, $C$ checks; $R(x,y,z)$ means $y$ passes $z$ for $x$. Start with full negation:
 
 $$
 \begin{aligned}&\neg(\forall x\in A\;\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\neg(\exists y\in B\;\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\neg(\forall z\in C\;R(x,y,z))\\\Longleftrightarrow\;&\exists x\in A\;\forall y\in B\;\exists z\in C\;\neg R(x,y,z).\end{aligned}
 $$
 
-The first dual law supplies a failing applicant; the next denies existence of a successful document for that applicant; the final law supplies a failing check for each document. The applicant stays fixed. The check may depend on the document. No one check needs to defeat all documents.
+First fix a failing applicant; then exclude successful documents; finally supply a failed check per document. Checks may vary by document, not one required for all.
 
 
 <span id="from-negating-quantified-statements-step-by-step-why-each-replacement-is-legitimate"></span>
 
 ### Why each replacement is legitimate
 
-Treat the whole inner claim as one predicate of the current variable. The dual law preserves its truth value for every assignment of already fixed outer variables. Therefore leaving the surrounding quantifiers unchanged preserves their truth values too. Repeating this gives an equivalence chain. All its lines can be false: it identifies failure without proving failure occurs. To prove the original false, establish the final formula separately.
+Each whole inner predicate’s dual law preserves truth for **every outer-variable assignment**. Unchanged surrounding quantifiers therefore preserve equivalence; repetition proves the chain. All lines may be false: refuting the original additionally requires proving the final failure condition.
 
 
 <span id="from-negating-quantified-statements-step-by-step-a-method-that-respects-scope"></span>
 
 ### A method that respects scope
 
-1. Parenthesize exactly the claim denied; quantifiers outside that scope stay unchanged.
-2. Record variables in order, domains and fixed parameters. Free occurrences remain free.
-3. Cross one quantifier: switch its type and negate the whole remainder.
-4. Repeat without reversing order, exchanging relation arguments or changing domains. A shelf-dependent book domain stays attached to its shelf; positive reals stay positive.
-5. At a connective, use its own negation rule; negate the final predicate too.
-6. Read back the result and audit each witness’s permitted earlier information.
+1. Bracket exactly the denied scope; outside quantifiers stay unchanged.
+2. Record variable order, domains and fixed parameters; free occurrences stay free.
+3. Switch one quantifier and negate its whole remainder.
+4. Repeat, preserving order, relation arguments and domains: books stay shelf-dependent, positive reals positive.
+5. Apply each connective’s negation rule and negate the final predicate.
+6. Read back; check each witness’s permitted earlier information.
 
 $$
 \neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
 $$
 
-Apply the conditional-negation rule from the preceding lesson: a document refutes “if signed, then passes” exactly when signed and failing. An unsigned document cannot refute it.
+Signed-and-failing refutes “if signed, passes”; unsigned cannot refute it.
 
 <span id="from-negating-quantified-statements-step-by-step-practice"></span>
 
 #### Practice
 
-Reconstruct the applicant denial one quantifier at a time.
+Rebuild applicant denial quantifier by quantifier.
 
 <details>
 <summary>Hint</summary>
@@ -191,11 +191,11 @@ Fix the applicant first.
 
 <Exercise>
 
-There is an applicant with no document passing all checks; for that applicant, every document has a check it fails. Thus the order is some applicant, every document, some failed check.
+Fix an applicant lacking any all-checks document: each document fails a check. Thus some applicant, every document, some failed check.
 
 </Exercise>
 
-A positive-real domain is changed to nonpositive reals in a proposed negation. Diagnose.
+A negation changes positive reals to nonpositive. Diagnose.
 
 <details>
 <summary>Hint</summary>
@@ -206,26 +206,26 @@ Track the domain ledger.
 
 <Exercise>
 
-The domain has been complemented, which neither dual law permits. Negate the predicate over the same allowed collection.
+Dual laws retain domains; negate predicates on the same collection.
 
 </Exercise>
 
-Negate every applicant is admitted or certified, with inclusive or.
+Negate all applicants admitted or certified (inclusive).
 
 <details>
 <summary>Hint</summary>
 
-A disjunction fails only if both parts fail.
+Or fails when both fail.
 
 </details>
 
 <Exercise>
 
-Some applicant is neither admitted nor certified. Switching only every to some leaves the predicate unnegated and is incomplete.
+Some applicant is neither admitted nor certified. Switching only the quantifier leaves predicate negation missing.
 
 </Exercise>
 
-Negate every document passes if signed. Can an unsigned document refute it?
+Negate “Every signed document passes”. Can unsigned refute it?
 
 <details>
 <summary>Hint</summary>
@@ -236,26 +236,26 @@ Require a true hypothesis.
 
 <Exercise>
 
-Some document is signed and fails. No unsigned document refutes the promise, regardless of its result.
+Some document is signed and fails. Unsigned documents cannot refute the promise, whatever their result.
 
 </Exercise>
 
-A colleague says equivalence steps alone prove the original false. What is missing?
+Does equivalence alone refute the original? What is missing?
 
 <details>
 <summary>Hint</summary>
 
-An entire equivalence chain may be false.
+All lines could be false.
 
 </details>
 
 <Exercise>
 
-One must prove the final failure condition: provide its existential witnesses and cover all universal cases.
+Prove the final failure condition: supply existential witnesses and cover every universal case.
 
 </Exercise>
 
-Later, reconstruct the six-step method and explain why substitution inside outer quantifiers preserves equivalence.
+Later, reconstruct six steps and justify equivalence under outer quantifiers.
 
 
 <span id="from-negating-quantified-statements-step-by-step-read-aloud"></span>

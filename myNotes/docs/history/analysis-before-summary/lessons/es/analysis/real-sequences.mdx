@@ -1,0 +1,195 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Sucesiones reales y distancia absoluta"
+navTitle: "Sucesiones reales y distancia absoluta"
+description: "Sucesiones reales y distancia absoluta"
+order: 15
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+additionalSources: []
+---
+
+<span id="from-real-sequences"></span>
+
+## Sucesiones reales
+
+Un aparato informa nueve en las observaciones uno y dos, y tres en todas las posteriores. Cada lectura tiene un valor y una posición. «La tercera lectura es tres» distingue posición y valor, aunque sus números coincidan por casualidad.
+
+
+<span id="from-real-sequences-un-valor-en-cada-índice-positivo"></span>
+
+### Un valor en cada índice positivo
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+Una función es una asignación con exactamente una salida para cada entrada permitida. Una sucesión real es una función de los naturales positivos a los reales. Aquí cero no es índice; otras convenciones deben indicarse. $n$ es el índice, $a_n$ el término en esa posición y $a$ la asignación completa. El subíndice no significa multiplicación. La flecha indica dominios de entrada y salida, no convergencia.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+Esto nombra toda la sucesión, con índices desde uno sin final. Infinito no es un índice y no existe un último término ni un término en el infinito. Cada índice individual es natural positivo; su salida puede ser negativa, cero o positiva.
+
+
+<span id="from-real-sequences-una-regla-debe-determinar-cada-posición"></span>
+
+### Una regla debe determinar cada posición
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+Así, $a_1=2$, $a_2=4$, $a_3=6$. Una sucesión constante tiene $a_n=c$ en cada índice para un real fijo $c$; por ejemplo, todas las salidas pueden ser $-3$. La regla del aparato también es completa: $a_1=a_2=9$ y $a_n=3$ para todo $n\ge3$. Escribir solo «nueve, nueve, tres, …» no determina la continuación: infinitas reglas comparten ese comienzo.
+
+Las sucesiones conservan orden y repeticiones. Alternar cero, uno para siempre y alternar uno, cero da sucesiones distintas: sus primeros términos difieren. Ambas tienen el conjunto de valores cero y uno. Un conjunto olvida posiciones y repeticiones. Dos sucesiones son iguales exactamente cuando coinciden en cada índice; un prefijo finito no demuestra igualdad.
+
+Una cola comienza en un índice elegido $N$ e incluye ese término y todos los posteriores. Para el aparato, la cola desde $N=3$ contiene solo treses. La ene mayúscula $N$ marca el umbral; la ene minúscula $n$ marca la posición que se comprueba. Ambas son naturales. Una sucesión que empieza en cero y después siempre vale uno coincide desde el índice dos con la constante uno, pero no es igual a ella.
+
+<span id="from-real-sequences-práctica"></span>
+
+#### Práctica
+
+Da los tres primeros términos de $a_n=2n$. ¿Puede una sucesión real tener salidas negativas?
+
+<details>
+<summary>Pista</summary>
+
+Índice y término tienen funciones distintas.
+
+</details>
+
+<Exercise>
+
+Dos, cuatro, seis. Sí: a todos los índices positivos se les puede asignar menos tres. La salida no tiene que pertenecer al dominio de los índices.
+
+</Exercise>
+
+Compara las dos sucesiones alternantes cero–uno y sus conjuntos de valores.
+
+<details>
+<summary>Pista</summary>
+
+Mira la primera posición.
+
+</details>
+
+<Exercise>
+
+Son sucesiones distintas con el mismo conjunto de valores. Sus primeras salidas difieren; el conjunto solo registra qué valores aparecen, no dónde ni cuántas veces.
+
+</Exercise>
+
+¿Cero y después siempre uno es igual a la constante uno? ¿Coinciden a partir de algún índice?
+
+<details>
+<summary>Pista</summary>
+
+La igualdad incluye el comienzo.
+
+</details>
+
+<Exercise>
+
+Difieren en el índice uno, pero coinciden en todos los índices desde dos.
+
+</Exercise>
+
+Más tarde, define dos continuaciones distintas de un mismo prefijo de tres términos para explicar por qué observar no basta para definir una sucesión.
+
+
+<span id="from-real-sequences-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+a asigna términos reales a índices naturales positivos; a sub ene es la salida en el índice ene.
+
+<span id="from-absolute-value-and-distance"></span>
+
+## Valor absoluto y distancia
+
+Menos tres y más tres están a lados opuestos de cero, pero ambos distan tres unidades. La distancia mide separación, no dirección. El valor absoluto convierte un real con signo en su distancia no negativa a cero.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+Esto es una definición. Todo real pertenece exactamente a una rama. Si $x<0$, su opuesto $-x$ es positivo: el signo menos no vuelve negativa la salida. Así, $|-3|=3$, $|3|=3$ y $|0|=0$. No negativo incluye cero; no significa estrictamente positivo. Usamos la aritmética y el orden reales habituales.
+
+
+<span id="from-absolute-value-and-distance-desplazamiento-con-signo-y-distancia"></span>
+
+### Desplazamiento con signo y distancia
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+La diferencia $x-y$ es el desplazamiento con signo de $y$ a $x$. Su valor absoluto da la longitud del segmento. Invertir la resta cambia el signo. Un número y su opuesto tienen el mismo valor absoluto: para una entrada positiva ambos dan esa entrada; para una negativa ambos dan su opuesto positivo; en cero ambos dan cero. Por ello $d(x,y)=d(y,x)$ para todos los reales, no solo en el ejemplo.
+
+Además, $d(x,y)=0$ exactamente cuando $x=y$. Si la diferencia es no negativa, su valor absoluto es ella misma, así que distancia cero obliga a diferencia cero. Si es negativa, su valor absoluto es positivo y no puede ser cero. A la inversa, puntos iguales tienen diferencia y valor absoluto cero. No hace falta la desigualdad triangular.
+
+
+<span id="from-absolute-value-and-distance-una-tolerancia-estricta-es-un-intervalo-abierto"></span>
+
+### Una tolerancia estricta es un intervalo abierto
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+Fija el objetivo $L$ y una tolerancia real positiva $\varepsilon$. Pon $u=t-L$. Si $u\ge0$, entonces $|u|=u$: la prueba de distancia es $u<\varepsilon$, mientras que $-\varepsilon<u$ ya se sigue de la tolerancia positiva. Si $u<0$, entonces $|u|=-u$: $-u<\varepsilon$ equivale a $u>-\varepsilon$, mientras que $u<\varepsilon$ ya se cumple. En ambos casos resulta exactamente $-\varepsilon<u<\varepsilon$. Sumar $L$ da el intervalo mostrado. Cada paso es reversible, así que se demuestran ambas direcciones.
+
+La comparación encadenada exige ambas cotas estrictas. Para objetivo tres y tolerancia $1/2$, los extremos $2.5$ y $3.5$ quedan excluidos: su distancia iguala la tolerancia. Épsilon es una tolerancia variable, no una constante diminuta especial.
+
+<span id="from-absolute-value-and-distance-práctica"></span>
+
+#### Práctica
+
+Con objetivo $3$ y tolerancia $1/2$, comprueba $2.5$, $3$ y $13/4$.
+
+<details>
+<summary>Pista</summary>
+
+Calcula primero la distancia.
+
+</details>
+
+<Exercise>
+
+Las distancias son $1/2$, $0$, $1/4$. El primero falla por igualdad; los otros pasan. El extremo no está estrictamente dentro del intervalo.
+
+</Exercise>
+
+Un punto está a la izquierda del objetivo. ¿El desplazamiento negativo lo sitúa dentro de cualquier tolerancia positiva?
+
+<details>
+<summary>Pista</summary>
+
+Usa dos y cinco.
+
+</details>
+
+<Exercise>
+
+No. Del objetivo cinco al punto dos, el desplazamiento es menos tres, pero la distancia es tres, que incumple tolerancia uno.
+
+</Exercise>
+
+Más tarde, reconstruye la prueba por signos de la equivalencia con el intervalo y la prueba de distancia cero.
+
+
+<span id="from-absolute-value-and-distance-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+El valor absoluto de te menos ele es menor que épsilon exactamente cuando te está estrictamente entre ele menos épsilon y ele más épsilon.

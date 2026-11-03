@@ -1,0 +1,153 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-logic"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/01 If and Only If.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/02 Two Directions of Implication.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/03 Equivalent Conditions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Logical Equivalence and Two Directions.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.5 Equivalence/04 Chains of Equivalences.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Chains of Logical Equivalences.md"]
+title: "Equivalencia y transformaciones reversibles"
+navTitle: "Equivalencia y transformaciones reversibles"
+description: "Equivalencia y transformaciones reversibles"
+order: 7
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["implikation-und-kontraposition", "zahlenmengen"]
+thumbnail: "parity"
+additionalSources: []
+---
+
+<span id="from-biconditionals-and-equivalent-conditions"></span>
+
+## Bicondicionales y condiciones equivalentes
+
+«Conserva una tarjeta **si** su etiqueta es dos» exige conservar todas las tarjetas con dos, pero permite conservar otras. «Conserva una tarjeta **solo si** su etiqueta es dos» prohíbe conservar otras etiquetas, pero permite rechazarlas todas. Juntas, las reglas exigen conservar exactamente las tarjetas con dos.
+
+
+<span id="from-biconditionals-and-equivalent-conditions-si-solo-si-y-ambas-direcciones"></span>
+
+### Si, solo si y ambas direcciones
+
+Para proposiciones $A$ y $B$:
+
+- «$A$ si $B$» significa $B\Rightarrow A$. Se lee «si be, entonces a». $B$ es **suficiente** para $A$: la garantiza.
+- «$A$ solo si $B$» significa $A\Rightarrow B$. Se lee «si a, entonces be». $B$ es **necesaria** para $A$: $A$ no puede cumplirse sin ella.
+
+La regla formal de un club «se admite solo a quien tenga entrada» hace la entrada necesaria, no suficiente. No promete admitir a todos los que la tengan. Añadir «tener entrada implica ser admitido» la haría también suficiente. Son reglas estipuladas, no afirmaciones sobre políticas reales de admisión.
+
+El **bicondicional** $A\Leftrightarrow B$ se lee «a si y solo si be». Su definición es la coincidencia de valores de verdad, incluidos dos valores falsos:
+
+| $A$ | $B$ | $A\Rightarrow B$ | $B\Rightarrow A$ | $A\Leftrightarrow B$ |
+| --- | --- | --- | --- | --- |
+| $1$ | $1$ | $1$ | $1$ | $1$ |
+| $1$ | $0$ | $0$ | $1$ | $0$ |
+| $0$ | $1$ | $1$ | $0$ | $0$ |
+| $0$ | $0$ | $1$ | $1$ | $1$ |
+
+$1$ significa verdadero y $0$ falso. La tabla demuestra que el bicondicional coincide con $(A\Rightarrow B)\land(B\Rightarrow A)$ en toda fila. La ida excluye verdadera/falsa; la vuelta excluye falsa/verdadera. Son todos los desacuerdos posibles. A la inversa, valores coincidentes hacen verdaderas ambas flechas. Por eso una prueba de equivalencia necesita las dos direcciones.
+
+En particular, $(0=1)\Leftrightarrow(2=3)$ es verdadero, mientras que la conjunción de esas igualdades es falsa. Coincidir no afirma ninguna de las partes.
+
+
+<span id="from-biconditionals-and-equivalent-conditions-empezar-de-nuevo-para-la-vuelta"></span>
+
+### Empezar de nuevo para la vuelta
+
+Para todo real $x$,
+
+$$(x+1=3)\Leftrightarrow(x=2).$$
+
+Se lee: «Equis más uno es igual a tres si y solo si equis es igual a dos». Fija un real arbitrario $x$. **Ida:** supón $x+1=3$ y resta uno en ambos lados para obtener $x=2$. **Vuelta:** parte ahora de $x=2$ y suma uno para obtener $x+1=3$. Sumar y restar conservan la igualdad y se deshacen mutuamente; el razonamiento vale para cualquier entrada real.
+
+Asumir las dos ecuaciones al principio eludiría ambas obligaciones. La lógica indica qué direcciones hacen falta; la aritmética demuestra esas direcciones para estas ecuaciones. En cero ambas son falsas, algo totalmente compatible con su equivalencia.
+
+
+<span id="from-biconditionals-and-equivalent-conditions-tres-ámbitos-de-coincidencia"></span>
+
+### Tres ámbitos de coincidencia
+
+Un bicondicional verdadero en una entrada da **coincidencia en un caso**. En $(x>5)\Leftrightarrow(x>2)$, seis y cero dan coincidencia, pero tres no. El bicondicional no liga $x$ ni afirma tácitamente «para todo».
+
+La **equivalencia lógica proposicional**, escrita $F\equiv G$, exige coincidencia bajo toda asignación a las letras proposicionales atómicas. Una letra repetida conserva el mismo valor asignado. Por ejemplo, $(P\land Q)\equiv(Q\land P)$: ambas son verdaderas exactamente cuando ambas letras lo son, y falsas en los demás casos. Letras independientes $P$ y $Q$ no son lógicamente equivalentes porque una fila las haga ambas verdaderas.
+
+Las **condiciones equivalentes en un dominio** coinciden en toda entrada permitida y tienen el mismo conjunto de soluciones. Nuestra prueba con ecuaciones establece esto en los reales usando aritmética. No es una ley proposicional irrestricta sobre dos letras independientes. Los signos iguales dentro de las ecuaciones comparan números; $\Leftrightarrow$ compara valores de verdad. Algunas hojas de álgebra de Boole usan $=$ para la equivalencia lógica por convenio; hay que leer ese convenio sin confundir igualdad numérica y lógica.
+
+El dominio importa. En todos los reales, $x>0$ y $x\ge0$ difieren en cero. En los reales no nulos coinciden: positivo implica no negativo, y un real no negativo distinto de cero debe ser positivo. La prueba restringida no establece la afirmación sobre todos los reales.
+
+<Exercise question="Una regla permite conservar una tarjeta solo si está etiquetada con dos. ¿Se conserva necesariamente una tarjeta con dos? Indica la implicación ausente. Después demuestra $(x-2=3)\Leftrightarrow(x=5)$ para todo real $x$, iniciando cada dirección con su propia hipótesis.">
+
+Se puede rechazar la tarjeta con dos; falta etiquetada-con-dos implica conservada. Para las ecuaciones, supón $x-2=3$ y suma dos para obtener $x=5$. Reinicia desde $x=5$ y resta dos para obtener $x-2=3$. Ambas operaciones conservan la igualdad para un real arbitrario $x$, así que ninguno de los desacuerdos es posible. Es una prueba aritmética, no solo un resultado de tabla.
+
+</Exercise>
+
+<Exercise question="Alguien demuestra superar-cinco implica superar-dos y llama equivalentes a las condiciones. ¿Qué se conserva del argumento? Explica también por qué la equivalencia de dos ecuaciones no las hace verdaderas para toda entrada.">
+
+La ida sigue siendo válida por el orden. Tres refuta solo la vuelta ausente y, por tanto, la equivalencia afirmada. Para $x+1=3$ y $x=2$, cero hace falsas ambas ecuaciones. Sus conjuntos de soluciones coinciden, pero ninguno contiene todos los reales.
+
+</Exercise>
+
+<span id="from-equivalence-chains"></span>
+
+## Cadenas de equivalencias
+
+Resolver una ecuación no es solo encontrar un número final plausible. Buscamos exactamente las soluciones originales. Un paso reversible las conserva; uno de una sola dirección puede introducir candidatos o descartar casos.
+
+
+<span id="from-equivalence-chains-qué-afirma-la-cadena"></span>
+
+### Qué afirma la cadena
+
+Para todo real $x$, la aritmética habitual da
+
+$$(2x+2=6)\Leftrightarrow(2x=4)\Leftrightarrow(x=2).$$
+
+Se lee: «Dos por equis más dos es igual a seis si y solo si dos por equis es igual a cuatro; dos por equis es igual a cuatro si y solo si equis es igual a dos». $2x$ significa multiplicación; la igualdad numérica y la coincidencia de valores de verdad conservan sus funciones distintas explicadas arriba.
+
+La cadena abrevia **dos afirmaciones de equivalencia entre vecinas**. No es un conectivo nuevo de tres entradas ni una instrucción para asociar bicondicionales arbitrariamente. Cada enlace usa la misma entrada, dominio e hipótesis.
+
+Hay cuatro razones breves. Restar dos da la ecuación intermedia; sumar dos recupera la primera. Dividir entre dos, que no es cero, da la última; multiplicar por dos recupera la intermedia. Las dos direcciones de cada enlace valen para todo real $x$, no solo para la solución final.
+
+
+<span id="from-equivalence-chains-por-qué-coinciden-los-extremos"></span>
+
+### Por qué coinciden los extremos
+
+La equivalencia es **transitiva**. Fija cualquier entrada permitida. Si la primera condición tiene el mismo valor de verdad que la segunda, y esta que la tercera, la primera y la tercera coinciden. Como la entrada era arbitraria, coinciden en todo el dominio.
+
+En lenguaje de implicaciones, la primera condición da la segunda y después la tercera. Desde la tercera, los enlaces inversos dan la segunda y luego la primera. Esto demuestra las dos direcciones entre los extremos. Para una cadena $F\equiv G\equiv H$ de fórmulas proposicionales, usa una asignación de verdad arbitraria en lugar de un número y conserva el valor de las letras repetidas. Esto demuestra la transitividad; no demuestra un enlace vecino que no se haya justificado.
+
+
+<span id="from-equivalence-chains-elevar-al-cuadrado-puede-añadir-un-candidato"></span>
+
+### Elevar al cuadrado puede añadir un candidato
+
+En todos los reales, $(x=2)\Rightarrow(x^2=4)$ es válido, pero la vuelta falla en $x=-2$: su cuadrado es cuatro y no es dos. Lee la flecha simple como «si equis es igual a dos, su cuadrado es igual a cuatro». Sustituirla por un bicondicional borraría indebidamente la distinción de signo.
+
+Tras un paso solo de ida, las soluciones de la nueva ecuación son **candidatos**. Compruébalos en la original. Restringir a no negativos puede reparar algunas equivalencias al cuadrar, pero hay que declarar la restricción antes del enunciado y justificar allí la vuelta. Descartar negativos tácitamente cambia un problema sobre todos los reales.
+
+
+<span id="from-equivalence-chains-dividir-puede-perder-una-solución-original"></span>
+
+### Dividir puede perder una solución original
+
+La ecuación $x^2=x$ es verdadera en cero. Dividir entre $x$ y afirmar $x=1$ pierde esa solución: la división requería $x\ne0$.
+
+Separa casos. En $x=0$, la ecuación original se cumple. Para $x\ne0$, divide entre $x$ y obtén $x=1$; a la inversa, multiplicar $x=1$ por $x$ recupera $x^2=x$. Comprueba también uno en la original. Así, las soluciones reales son exactamente cero y uno. En el dominio explícitamente no nulo las ecuaciones divididas son equivalentes, pero ese resultado restringido no resuelve por sí solo el problema original.
+
+<Note title="Conservar las restricciones de cada hoja">
+
+Las [deducciones booleanas](../boolesche-grundgesetze/#from-boolesche-grundgesetze) existentes pueden limitar qué leyes numeradas se permite usar. Estos principios generales no eliminan esas restricciones del ejercicio. Un argumento con tabla de verdad puede demostrar un hecho sin cumplir una tarea que pida expresamente deducirlo a partir de leyes concretas.
+
+</Note>
+
+<Exercise question="Revisa $(3x+3=9)\Leftrightarrow(3x=6)\Leftrightarrow(x=2)$ en los reales. Da la operación en ambas direcciones de cada enlace. ¿Puedes añadir $(x^2=4)$ con otra flecha de equivalencia?">
+
+Resta tres y revierte sumando tres. Divide entre tres no nulo y revierte multiplicando por tres. Cada enlace conserva el conjunto de soluciones; la transitividad conecta los extremos. No añadas la ecuación al cuadrado como equivalencia en todos los reales: $-2$ la cumple pero no cumple $x=2$. Se justifica una flecha de ida; su candidato extra debe comprobarse en la ecuación original.
+
+</Exercise>
+
+<Exercise question="Construye una cadena nueva de dos enlaces para una ecuación lineal usando resta y división entre una constante no nula. Explica por qué no se añade ni pierde ninguna solución, sin limitarte a probar el número final.">
+
+Un ejemplo es $(4x+4=12)\Leftrightarrow(4x=8)\Leftrightarrow(x=2)$. Resta cuatro o suma cuatro para el primer enlace; divide entre cuatro o multiplica por cuatro para el segundo. Cuatro no es cero. Cada operación y su inversa valen en el dominio real sin cambiarlo, así que las mismas entradas satisfacen todas las ecuaciones. Probar solo dos verificaría una solución, pero no excluiría las demás.
+
+</Exercise>

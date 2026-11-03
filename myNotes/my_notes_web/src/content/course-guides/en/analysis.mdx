@@ -17,18 +17,18 @@ import {lessonUrl} from "../../../lib/content";
 
 ### A compact route through the material
 
-Use the sections above as the main reading route through these foundations. Start with <a href={lessonUrl("aussagen-und-aussageformen","en","analysis")+"#from-aussagen-und-aussageformen"}>statements and predicates</a>, then <a href={lessonUrl("aussagen-und-aussageformen","en","analysis")+"#from-definitions-assumptions-results"}>definitions</a>, <a href={lessonUrl("zahlenmengen","en","analysis")+"#from-equality-and-equations"}>equality</a> and <a href={lessonUrl("zahlenmengen","en","analysis")+"#from-order-comparisons"}>order comparisons</a>. <a href={lessonUrl("logische-verknuepfungen","en","analysis")+"#from-logische-verknuepfungen"}>Logical connectives</a>, <a href={lessonUrl("logical-negation","en","analysis")+"#from-logical-negation"}>negation</a> and <a href={lessonUrl("logische-verknuepfungen","en","analysis")+"#from-building-truth-tables"}>building truth tables</a> prepare the <a href={lessonUrl("implikation-und-kontraposition","en","analysis")+"#from-material-implication-and-vacuity"}>conditional</a> and <a href={lessonUrl("biconditionals-and-equivalent-conditions","en","analysis")+"#from-biconditionals-and-equivalent-conditions"}>equivalence</a> lessons.
+Start with <a href={lessonUrl("aussagen-und-aussageformen","en","analysis")+"#from-aussagen-und-aussageformen"}>statements and predicates</a>, <a href={lessonUrl("aussagen-und-aussageformen","en","analysis")+"#from-definitions-assumptions-results"}>definitions</a>, <a href={lessonUrl("zahlenmengen","en","analysis")+"#from-equality-and-equations"}>equality</a>, <a href={lessonUrl("zahlenmengen","en","analysis")+"#from-order-comparisons"}>order comparisons</a>. Then connect <a href={lessonUrl("logische-verknuepfungen","en","analysis")+"#from-logische-verknuepfungen"}>Logical connectives</a>, <a href={lessonUrl("logical-negation","en","analysis")+"#from-logical-negation"}>negation</a>, <a href={lessonUrl("logische-verknuepfungen","en","analysis")+"#from-building-truth-tables"}>building truth tables</a> with <a href={lessonUrl("implikation-und-kontraposition","en","analysis")+"#from-material-implication-and-vacuity"}>conditional</a> and <a href={lessonUrl("biconditionals-and-equivalent-conditions","en","analysis")+"#from-biconditionals-and-equivalent-conditions"}>equivalence</a>.
 
-For quantifiers, read <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-universal-statements-and-domains"}>universal claims</a>, <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-bound-variables-and-scope"}>scope</a>, <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-existence-and-witnesses"}>existence</a>, <a href={lessonUrl("quantifier-order","en","analysis")+"#from-quantifier-order"}>order and dependence</a> and the <a href={lessonUrl("negating-nested-statements","en","analysis")+"#from-negating-quantified-statements-step-by-step"}>negation procedure</a>. The <a href={lessonUrl("reading-sequence-convergence","en","analysis")+"#from-reading-sequence-convergence"}>sequence-convergence application</a> uses those ideas after introducing <a href={lessonUrl("real-sequences","en","analysis")+"#from-real-sequences"}>sequences</a> and <a href={lessonUrl("real-sequences","en","analysis")+"#from-absolute-value-and-distance"}>absolute distance</a>. Its <a href={lessonUrl("negating-sequence-convergence","en","analysis")+"#from-negating-sequence-convergence"}>negation derivation</a> distinguishes failure at a specified target from <a href={lessonUrl("negating-sequence-convergence","en","analysis")+"#from-no-real-limit"}>having no real limit</a>.
+Read <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-universal-statements-and-domains"}>universal claims</a>, <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-bound-variables-and-scope"}>scope</a>, <a href={lessonUrl("universal-statements-and-domains","en","analysis")+"#from-existence-and-witnesses"}>existence</a>, <a href={lessonUrl("quantifier-order","en","analysis")+"#from-quantifier-order"}>order and dependence</a> and <a href={lessonUrl("negating-nested-statements","en","analysis")+"#from-negating-quantified-statements-step-by-step"}>negation procedure</a>. For the <a href={lessonUrl("reading-sequence-convergence","en","analysis")+"#from-reading-sequence-convergence"}>sequence-convergence application</a>, first study <a href={lessonUrl("real-sequences","en","analysis")+"#from-real-sequences"}>sequences</a> and <a href={lessonUrl("real-sequences","en","analysis")+"#from-absolute-value-and-distance"}>absolute distance</a>. Its <a href={lessonUrl("negating-sequence-convergence","en","analysis")+"#from-negating-sequence-convergence"}>negation derivation</a> separates fixed-target failure from <a href={lessonUrl("negating-sequence-convergence","en","analysis")+"#from-no-real-limit"}>having no real limit</a>.
 
-The original poster and worksheet lessons remain useful applications. In particular, the numbered-law Boolean exercises below require their stated algebraic proof route; an earlier truth-table explanation does not replace that task.
+Poster and worksheet applications remain. Numbered-law Boolean tasks require algebraic derivations, not truth-table substitutes.
 
-1. Decide whether the sentence is a statement or still contains free variables.
-2. Specify the domain and quantifiers.
-3. Identify the logical structure and direction of the claim.
-4. Choose a proof method and justify each step.
-5. For Boolean derivations, keep track of which rules have already been proved.
-6. For circuits, distinguish a written subexpression from a physical gate whose output can be reused.
+1. Distinguish statements from sentences with free variables.
+2. Specify domain and quantifiers.
+3. Identify structure and implication direction.
+4. Choose a proof method; justify steps.
+5. Use only already-proved Boolean rules.
+6. Distinguish repeated subexpressions from reusable physical gate outputs.
 
 
 <span id="from-analysis-grundlagen-ueberblick-the-dependency-chain"></span>
@@ -50,11 +50,11 @@ Here $U$ denotes the uniqueness of the complement.
 - Why must identity laws be derived before using them to prove idempotence?
 - Why does the NAND implementation of AND need two gates rather than three?
 
-Return to the corresponding lesson when an answer feels uncertain. These foundations support later Analysis topics; limits and differentiation are not covered by these six documents.
+For uncertain answers, revisit the lesson. These six source documents prepare later Analysis; they do not cover limits or differentiation.
 
 
 <span id="from-analysis-grundlagen-ueberblick-a-combined-problem"></span>
 
 ### A combined problem
 
-Consider “for every integer $n$, if $n^2$ is even then $n$ is divisible by 4”. First identify the domain and implication. The parity lemma gives only that $n$ is even, which is weaker than the claimed conclusion. At $n = 2$, $n^2 = 4$ is even but 4 does not divide $n$. This one case refutes the universal statement. A familiar theorem can be relevant without proving everything the problem asks.
+For integers $n$, test “even $n^2$ implies $4\mid n$.” Parity gives only even $n$, not divisibility by four. Counterexample $n=2$ has even square $4$ but is not divisible by $4$. A relevant theorem may prove less than the requested conclusion.

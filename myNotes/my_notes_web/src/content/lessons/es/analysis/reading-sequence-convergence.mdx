@@ -21,16 +21,16 @@ additionalSources: []
 
 ## Leer la convergencia de sucesiones
 
-Un aparato informa nueve dos veces y después tres en cada observación. La regla completa, no una conjetura a partir de tres observaciones, dice que desde la tercera posición todos los términos valen tres. La convergencia admite excepciones iniciales. Pregunta si todos los términos suficientemente tardíos permanecen tan cerca de un objetivo fijo como se pida.
+La regla completa del aparato da nueve dos veces, después siempre tres. La convergencia permite excepciones iniciales, pero exige que todos los términos suficientemente tardíos permanezcan arbitrariamente cerca de un objetivo fijo.
 
 
 <span id="from-reading-sequence-convergence-fija-los-objetos-antes-de-leer-los-cuantificadores"></span>
 
 ### Fija los objetos antes de leer los cuantificadores
 
-Fija una sucesión real $a:\mathbb N\to\mathbb R$ y un objetivo real $L$. Aquí $\mathbb N=\{1,2,3,\ldots\}$. El término $a_n$ es una salida, mientras que $n$ es su índice. Su distancia al objetivo es $|a_n-L|$. Sucesión y objetivo permanecen fijos; la fórmula no los vuelve a elegir. Fijarlos en el contexto no equivale a ligarlos con un cuantificador escrito.
+Fija sucesión real $a:\mathbb N\to\mathbb R$, $\mathbb N=\{1,2,3,\ldots\}$, y objetivo real $L$. El término $a_n$ en índice $n$ dista $|a_n-L|$. El contexto fija $a,L$; ningún cuantificador escrito abajo los liga.
 
-Épsilon, $\varepsilon$, es una tolerancia real positiva, no un índice ni un número diminuto fijo. La ene mayúscula $N$ es un umbral natural positivo que inicia una cola. La ene minúscula $n$ es cualquier índice natural positivo que se comprueba. Importan ambas comparaciones: $n\ge N$ incluye el umbral; $|a_n-L|<\varepsilon$ excluye la igualdad con la tolerancia.
+$\varepsilon$ es una tolerancia real positiva variable, no un índice. El natural positivo $N$ inicia la cola; el natural positivo $n$ la comprueba. $n\ge N$ incluye el umbral; $|a_n-L|<\varepsilon$ excluye igualdad.
 
 
 <span id="from-reading-sequence-convergence-la-definición-positiva"></span>
@@ -43,11 +43,11 @@ $$
 
 <Flow nodes={[{"label": "Tolerancia", "tex": "\\varepsilon>0", "detail": "Acepta cualquier tolerancia real positiva."}, {"label": "Umbral", "tex": "N\\in\\mathbb N", "detail": "Elige un umbral usando la tolerancia."}, {"label": "Prueba de cola", "tex": "n\\ge N", "detail": "Mantén fijo el umbral en cada comprobación."}]} caption="Primero la tolerancia, después el umbral y por último cada índice de la cola." />
 
-Esto define convergencia al objetivo indicado. La definición no es un teorema que haya que demostrar. Para sucesiones concretas demostramos que la satisfacen. Primero acepta cualquier tolerancia positiva. Después proporciona un umbral natural usando esa tolerancia y el contexto fijo. Por último, mantenlo fijo al comprobar todos los índices. El umbral puede depender de la tolerancia, pero no tiene que variar si sirve el mismo.
+Para probar convergencia, verifica la definición: acepta cualquier tolerancia; elige $N$ usando esta y el contexto fijo, después comprueba todos los índices con $N$ fijo. Depender de la tolerancia está permitido, no exigido.
 
-El condicional no exige cercanía en índices anteriores: allí su hipótesis es falsa. En el umbral y después, todos los términos deben pasar. Comprobar solo el término del umbral no basta. Si un umbral sirve, también sirve cualquier natural mayor porque su cola está contenida en la ya comprobada. No se exige el menor umbral.
+Los índices anteriores tienen hipótesis falsa, sin requisito de cercanía. Debe pasar toda la cola, no solo su primer término. Umbrales naturales mayores sirven por inclusión de colas; no se exige el menor.
 
-Para el aparato y objetivo tres, elige umbral tres para toda tolerancia positiva. Cada término de esa cola vale tres, así que su distancia es cero, estrictamente menor que la tolerancia. La regla completa cubre tolerancias arbitrarias y todos los índices posteriores, no observaciones finitas. Converger exige distancia pequeña, no alcanzar exactamente el objetivo.
+Para aparato y objetivo tres, el umbral tres da distancia cero en toda su cola para cualquier tolerancia. Converger no exige alcanzar exactamente el objetivo.
 
 <span id="from-reading-sequence-convergence-práctica"></span>
 
@@ -68,11 +68,11 @@ $$
 \forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
 $$
 
-Aquí $\varepsilon$ recorre las tolerancias reales positivas; $N$ y $n$ recorren $\mathbb N=\{1,2,3,\ldots\}$ como umbral e índice de prueba. La sucesión $a$ y el objetivo real $L$ permanecen fijos. Si $n\ge N$, la distancia del término $a_n$ a $L$ debe ser estrictamente menor que $\varepsilon$; los índices anteriores no imponen ninguna condición de cercanía. Elige $N$ antes de comprobar todos los índices y mantenlo fijo.
+El real positivo $\varepsilon$ es tolerancia; $N,n\in\mathbb N$ son umbral e índice de prueba. Fija $a,L$, después $N$ antes de probar. Todo $n\ge N$ exige distancia menor que $\varepsilon$; los anteriores quedan libres.
 
 </Exercise>
 
-Una sucesión vale cero en el primer índice y uno en todos los posteriores. ¿Su primer acierto demuestra convergencia a cero?
+Primero cero, después siempre uno: ¿el primer acierto prueba convergencia a cero?
 
 <details>
 <summary>Pista</summary>
@@ -83,50 +83,50 @@ Usa $\varepsilon=1/2$ y $n=\max(N,2)$.
 
 <Exercise>
 
-No. Para cualquier umbral $N$, el máximo de $N$ y dos pertenece a su cola y tiene término uno. Su distancia a cero es uno, no menor que $1/2$. Un acierto no sustituye a toda la cola exigida.
+No: para todo $N$, $n=\max(N,2)$ está en la cola con distancia uno, incumpliendo $1/2$. Un acierto no basta.
 
 </Exercise>
 
-Más tarde, explica por separado sucesión, índice, término, objetivo y distancia antes de reconstruir la fórmula.
+Distingue después sucesión, índice, término, objetivo y distancia; reconstruye la fórmula.
 
 
 <span id="from-reading-sequence-convergence-lectura-en-voz-alta"></span>
 
 ### Lectura en voz alta
 
-Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.
+Toda tolerancia positiva permite un umbral desde el cual cada término dista de ele estrictamente menos que esa tolerancia.
 
 <span id="from-proving-sequence-convergence"></span>
 
 ## Demostrar convergencia de sucesiones
 
-Una sucesión que ya vale tres en toda posición debe converger a tres. La prueba es breve, pero cada cuantificador tiene una función. Fija sucesión y objetivo antes de aceptar la tolerancia arbitraria; no elijas un objetivo nuevo para cada término.
+Fija sucesión y objetivo antes de la tolerancia arbitraria; cambiar objetivos para términos individuales cambiaría la afirmación.
 
 
 <span id="from-proving-sequence-convergence-la-prueba-completa-para-una-sucesión-constante"></span>
 
 ### La prueba completa para una sucesión constante
 
-Sea $a_n=3$ para todo $n\in\mathbb N$ y sea $L=3$. Toma un real positivo arbitrario $\varepsilon$. Elige $N=1$, que es natural positivo. Toma ahora cualquier natural $n\ge N$. La regla de la sucesión da $a_n=3$, por lo que:
+Sean $a_n=3$ siempre, $L=3$. Para $\varepsilon>0$ arbitrario, elige el natural $N=1$. Todo natural $n\ge N$ cumple:
 
 $$
 |a_n-3|=|3-3|=|0|=0<\varepsilon.
 $$
 
-La primera igualdad usa la regla de la sucesión; la siguiente, la resta de reales iguales; la siguiente, el valor absoluto en cero; la desigualdad estricta final, la positividad de la tolerancia arbitraria. Todo índice considerado pasa. Como la tolerancia era arbitraria, se cumple la definición. No se usaron ni la falta de cota superior de los naturales ni la desigualdad triangular.
+Regla, resta, valor absoluto de cero y $\varepsilon>0$ justifican la cadena. Toda la cola pasa para tolerancia arbitraria. No hacen falta naturales no acotados ni desigualdad triangular.
 
 
 <span id="from-proving-sequence-convergence-dependencia-de-elecciones-y-de-justificaciones"></span>
 
 ### Dependencia de elecciones y de justificaciones
 
-La dependencia de elección pregunta qué información puede usar $N$: tolerancia y contexto fijo, no el $n$ universal posterior. La dependencia de justificación pregunta qué hechos sostienen la estimación de distancia. Un orden correcto no repara una cuenta falsa, ni una cuenta correcta una elección tardía. El umbral constante puede ignorar la tolerancia porque sirve para todas.
+La dependencia de elección permite tolerancia y contexto fijo, no el $n$ posterior. La de justificación concierne a la estimación. El orden correcto de elección no corrige cuentas falsas, y las cuentas correctas no corrigen la elección de un testigo después del índice de prueba. Un $N$ constante puede ignorar la tolerancia.
 
 
 
 <Note title="Un umbral tardío cambia la afirmación">
 
-Elegir $N=n+1$ después de ver cada índice lo coloca antes de su nuevo umbral. El condicional se cumple por vacuidad en ese índice, pero no se ha proporcionado un umbral fijo para todos los posteriores. El error no es que el umbral sea grande, sino que cambia con una entrada posterior prohibida.
+Tras cada prueba, $N=n+1$ hace ese condicional verdadero por vacuidad, pero no da un único umbral de cola. Falla la dependencia prohibida del $n$ posterior, no el tamaño.
 
 </Note>
 
@@ -145,11 +145,11 @@ Importa la distancia, no el signo del término.
 
 <Exercise>
 
-Para $\varepsilon>0$ arbitrario, elige $N=1$. Para todo $n\ge1$, $|-4-(-4)|=0<\varepsilon$. Regla de la sucesión, resta, valor absoluto de cero y positividad justifican los pasos.
+Para $\varepsilon>0$ arbitrario, elige $N=1$. Todo $n\ge1$ cumple $|-4-(-4)|=0<\varepsilon$ por regla, resta, valor absoluto de cero y positividad.
 
 </Exercise>
 
-Primer término cien y todos los posteriores cero: demuestra convergencia a cero. ¿Debe variar el umbral con la tolerancia?
+Primero cien, después cero: prueba convergencia a cero. ¿Debe variar el umbral con la tolerancia?
 
 <details>
 <summary>Pista</summary>
@@ -160,7 +160,7 @@ Empieza después de la excepción.
 
 <Exercise>
 
-Para todo $\varepsilon>0$, elige $N=2$. Todo $n\ge2$ tiene término y distancia cero, menor que $\varepsilon$. El mismo umbral sirve siempre.
+Elige $N=2$ para cualquier $\varepsilon>0$. Todo $n\ge2$ da distancia $0<\varepsilon$; el umbral no necesita variar.
 
 </Exercise>
 
@@ -175,7 +175,7 @@ Mantén un testigo para todas las pruebas.
 
 <Exercise>
 
-Elige un umbral permitido antes del índice arbitrario y demuestra después la estimación para toda la cola. Sacar cada índice de la cola solo demuestra otro orden de cuantificadores.
+Elige un umbral permitido antes del índice de prueba y demuestra la estimación para toda su cola. Sacar cada prueba de la cola cambia el orden de cuantificadores.
 
 </Exercise>
 
@@ -190,7 +190,7 @@ Un natural mayor que cualquier cota real necesita justificación.
 
 <Exercise>
 
-La [ampliación opcional](../reading-sequence-convergence/#from-reciprocal-sequence-convergence) acepta explícitamente la propiedad arquimediana para obtener el umbral y el orden de recíprocos positivos para estimar la cola. La prueba constante elige el natural conocido uno y no necesita esa propiedad.
+La [prueba opcional](../reading-sequence-convergence/#from-reciprocal-sequence-convergence) acepta existencia arquimediana del umbral y orden de recíprocos positivos. La constante solo necesita el natural conocido uno.
 
 </Exercise>
 
@@ -205,7 +205,7 @@ Compara los mismos términos con objetivo cero.
 
 <Exercise>
 
-Todo término dista uno del objetivo uno, así que tolerancia $1/2$ falla en toda cola. Sin embargo, para objetivo cero sirve cualquier tolerancia positiva con $N=1$. Fallar en un objetivo no es fallar en todos.
+En objetivo uno, toda distancia es uno, incumpliendo $1/2$. En cero, toda tolerancia sirve con $N=1$. Un objetivo fallido no excluye todos los límites.
 
 </Exercise>
 
@@ -220,11 +220,11 @@ Comprueba con la definición anterior el orden: tolerancia, umbral, cada índice
 
 ## Convergencia de la sucesión recíproca
 
-Los términos uno, un medio, un tercio, etcétera sugieren acercarse a cero sin alcanzarlo. Una prueba completa necesita más que un dibujo: debe proporcionar un umbral natural para cada tolerancia real positiva y justificar todas las estimaciones posteriores.
+Los términos recíprocos se acercan a cero sin alcanzarlo. Proporciona un umbral para cada tolerancia y verifica su cola.
 
 <Note title="Ampliación opcional: hechos adicionales aceptados">
 
-Esta ampliación es opcional. La ruta principal hacia [negar convergencia](../negating-sequence-convergence/#from-negating-sequence-convergence) no depende de ella. Aceptamos sin demostrar aquí la propiedad arquimediana: toda cota real es superada por algún natural positivo. Usamos también el orden de los recíprocos positivos: aumentar un denominador positivo disminuye o mantiene su recíproco. Son requisitos matemáticos de este ejemplo, no consecuencias de escribir cuantificadores.
+Opcional, no necesaria para [negación lógica](../negating-sequence-convergence/#from-negating-sequence-convergence). Acepta sin prueba: **propiedad arquimediana**, toda cota real es superada por algún natural positivo; **orden de recíprocos positivos**, aumentar un denominador positivo disminuye o mantiene su recíproco. La notación de cuantificadores no demuestra estos hechos.
 
 </Note>
 
@@ -237,28 +237,28 @@ $$
 a_n=\frac1n\quad(n\in\mathbb N),\qquad L=0.
 $$
 
-Todos los índices son positivos, así que cada término está definido y es positivo. Toma cualquier real $\varepsilon>0$. Su recíproco $1/\varepsilon$ es real. La propiedad arquimediana aceptada proporciona un natural positivo $N>1/\varepsilon$. Fija ese umbral antes de comprobar índices. Para cualquier natural $n\ge N$:
+Todos los términos están definidos y son positivos. Para un real $\varepsilon>0$ arbitrario, $1/\varepsilon$ es real. La propiedad arquimediana da un natural positivo $N>1/\varepsilon$. Fíjalo; todo natural $n\ge N$ cumple:
 
 $$
 |a_n-0|=|1/n|=1/n\le1/N<\varepsilon.
 $$
 
-La primera igualdad usa la regla y restar cero. La positividad de $1/n$ elimina el valor absoluto. El orden de recíprocos da $1/n\le1/N$ a partir de $n\ge N$. La elección estricta $N>1/\varepsilon$ da $1/N<\varepsilon$: multiplicar por $\varepsilon$ positivo da $N\varepsilon>1$ y dividir por $N$ positivo da el resultado. Así, todo término de la cola cumple la tolerancia. Como era arbitraria, la sucesión converge a cero.
+Regla y restar cero dan la primera igualdad; la positividad elimina el valor absoluto. El orden de recíprocos da $1/n\le1/N$. Multiplica $N>1/\varepsilon$ por $\varepsilon$ positivo y divide entre $N$ positivo: $1/N<\varepsilon$. Toda la cola pasa para tolerancia arbitraria, demostrando convergencia.
 
-Cada término sigue siendo positivo, por lo que ninguno iguala al límite. La convergencia exige distancia pequeña en colas suficientemente tardías, no igualdad en alguna posición. Los dos hechos adicionales cubren infinitas tolerancias e índices; una lista finita larga no lo haría.
+Los términos positivos nunca igualan al límite. Los hechos aceptados cubren infinitas tolerancias e índices, a diferencia de cualquier lista finita.
 
 
 <span id="from-reciprocal-sequence-convergence-comprobar-la-frontera-estricta"></span>
 
 ### Comprobar la frontera estricta
 
-Con $\varepsilon=1/10$, sirve $N=11$ porque $1/11<1/10$ y los recíprocos posteriores no son mayores. $N=10$ falla en $n=10$, donde distancia y tolerancia coinciden. Estas comprobaciones racionales ilustran la frontera; el argumento general es la prueba para tolerancia arbitraria.
+Con $\varepsilon=1/10$, sirve $N=11$: las distancias posteriores son como máximo $1/11<1/10$. $N=10$ falla por igualdad en su propio término. Esto solo ilustra la frontera.
 
 <span id="from-reciprocal-sequence-convergence-práctica"></span>
 
 #### Práctica
 
-¿Por qué queda incompleto «Elige un umbral natural suficientemente grande» si no se justifica su existencia?
+¿Por qué debe justificarse existencia al «elegir un umbral natural suficientemente grande»?
 
 <details>
 <summary>Pista</summary>
@@ -269,7 +269,7 @@ Los cuantificadores expresan requisitos, no teoremas aritméticos.
 
 <Exercise>
 
-La propiedad arquimediana garantiza un natural permitido mayor que la cota real. Sin aceptarla o demostrarla, solo se ha pedido el testigo, no se ha proporcionado. La prueba constante solo necesita el natural conocido uno, no esta propiedad.
+La propiedad arquimediana da un natural mayor que la cota real; sin ella, solo se solicita el testigo. La convergencia constante solo necesita el natural uno.
 
 </Exercise>
 
@@ -288,11 +288,11 @@ En diez la distancia es $1/10$, no estrictamente menor. Desde once es como máxi
 
 </Exercise>
 
-Más tarde, reconstruye la prueba indicando dónde intervienen existencia del umbral y orden de recíprocos, sin convertir este resultado opcional en requisito para la negación lógica.
+Reconstruye después la prueba completa e indica dónde intervienen la existencia de un umbral natural y el orden de recíprocos positivos; la negación lógica no requiere esta prueba.
 
 
 <span id="from-reciprocal-sequence-convergence-lectura-en-voz-alta"></span>
 
 ### Lectura en voz alta
 
-Para ene al menos ene mayúscula mayor que uno entre épsilon, uno entre ene es como máximo uno entre ene mayúscula y estrictamente menor que épsilon.
+Desde ene mayúscula mayor que uno entre épsilon, cada recíproco es como máximo uno entre ene mayúscula, luego menor que épsilon.

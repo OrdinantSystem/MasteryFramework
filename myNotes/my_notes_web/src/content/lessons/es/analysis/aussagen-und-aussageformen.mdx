@@ -25,32 +25,32 @@ sourceLocations: []
 
 ### Un enunciado puede ser falso
 
-Un enunciado tiene un valor de verdad definido: verdadero (1) o falso (0). No hace falta que lo conozcamos. Tanto «$2 + 3 = 5$» como «$2 + 3 = 6$» son enunciados; solo el primero es verdadero.
+Un enunciado tiene un valor definido, verdadero (1) o falso (0), aunque lo desconozcamos. $2+3=5$ y $2+3=6$ son enunciados; solo el primero es verdadero.
 
 
 <span id="from-aussagen-und-aussageformen-una-variable-libre-deja-una-pregunta-abierta"></span>
 
 ### Una variable libre deja una pregunta abierta
 
-$P(x): x + 3 = 10$ es un predicado. Su verdad depende de $x$. Indicar $x \in  \mathbb{N}$ restringe el dominio, pero no liga $x$. Sustituir $x = 7$ produce un enunciado verdadero; $x = 2$, uno falso. También puede ligar la variable un cuantificador.
+$P(x):x+3=10$ es un predicado dependiente de $x$. $x\in\mathbb N$ restringe sin ligar. Sustituir $7$ lo hace verdadero; $2$, falso. Alternativamente, un cuantificador liga $x$.
 
 <Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
 
-El $P(2)$ mostrado es la igualdad falsa $2+3=10$, no una redefinición de $P$ como su negación. También $x = 4$ hace falso $P(x)$. Sustituir aporta una entrada sin cambiar la regla.
+$P(2)$ es la igualdad falsa $2+3=10$, no una redefinición negada. También $x=4$ la hace falsa. Cambia la entrada, no la regla.
 
 
 <span id="from-aussagen-und-aussageformen-comprueba-la-clasificación"></span>
 
 ### Comprueba la clasificación
 
-Una pregunta o una orden no es un enunciado. «Esta frase es falsa» no admite un valor de verdad clásico consistente: es una paradoja, no un ejemplo corriente de enunciado falso. Clasifica una ecuación antes de intentar demostrarla.
+Preguntas y órdenes no son enunciados. «Esta frase es falsa» es una paradoja sin valor clásico consistente, no un enunciado falso corriente. Clasifica antes de demostrar.
 
 
 <span id="from-aussagen-und-aussageformen-sustitución-y-verdad"></span>
 
 ### Sustitución y verdad
 
-Cuantificar formula otra afirmación: «existe un natural $x$ con $x + 3 = 10$» es completa sin elegir antes una entrada. El testigo $x = 7$ establece su verdad. Una entrada libre no es un valor de verdad desconocido.
+«Existe un natural $x$ con $x+3=10$» está completa sin elegir entrada previamente; $7$ atestigua su verdad. Entrada libre y verdad desconocida son distintas.
 
 <Exercise question="¿Es $x^2 = 4$ un enunciado? ¿Y $\exists x \in  \mathbb{N} : x^2 = 4$?">
 
@@ -63,82 +63,82 @@ La primera es un predicado con $x$ libre. La segunda es un enunciado verdadero c
 
 ### Afirmaciones, expresiones e instrucciones
 
-«La suma de dos números» es una frase que nombra un objeto. $x+1$ es una expresión numérica, no una afirmación. $x+1=3$ es una condición cuya evaluación necesita una entrada. $7$ por sí solo nombra un número; «Siete es igual a siete» y «Siete es mayor que cero» afirman algo sobre él. Una frase matemática no necesita símbolos, y los símbolos solos no forman necesariamente una proposición.
+«La suma de dos números», $x+1$ y $7$ nombran objetos, no afirman. $x+1=3$ requiere entrada; «Siete es igual a siete» y «Siete es mayor que cero» afirman. Los símbolos no son necesarios ni suficientes para formar proposiciones.
 
-Clasifica la **frase completa**. «Demuestra que cero es igual a uno» es una instrucción aunque mencione una proposición falsa. «Encuentra todos los reales menores que uno» es una orden; «Todo real es menor que uno» es una proposición falsa, refutada por dos. Una pregunta que menciona una afirmación sigue siendo pregunta.
+Clasifica la **frase completa**: «Demuestra cero igual a uno» pide actuar pese a su afirmación falsa interna. «Encuentra los reales menores que uno» instruye; «Todo real es menor que uno» afirma falsamente, refutado por dos. Mencionar una afirmación no transforma una pregunta en ella.
 
-Primero hay que fijar significado y referentes. «Este número es pequeño» queda definida si el número es siete y «pequeño» significa menor que diez. Hacen falta tanto el objeto como el umbral. Una tarjeta concreta cerrada, con un entero ya escrito, no es lo mismo que una elección futura sin valor ni regla especificados. Que la información esté oculta no significa que el objeto no esté fijado.
+«Este número es pequeño» necesita objeto, por ejemplo siete, y umbral, como menor que diez. Una tarjeta cerrada con entero fijo difiere de una elección futura sin valor ni regla: oculto no significa indeterminado.
 
-En la aritmética real habitual, $1/0=2$ no es una igualdad falsa corriente: el lado izquierdo carece de valor real. El cociente necesitaría un real cuyo producto por cero fuera uno, pero todo producto así es cero. La indefinición es un problema de significado bajo estas convenciones, no un tercer valor de verdad.
+En los reales $1/0=2$ es indefinida, no simplemente falsa: ningún real multiplicado por cero da uno, pues todo producto así es cero. Ese fallo de significado no es un tercer valor de verdad.
 
 
 <span id="from-aussagen-und-aussageformen-verdad-conocimiento-y-razones"></span>
 
 ### Verdad, conocimiento y razones
 
-Nuestro marco clásico acepta la **bivalencia**: una proposición con sentido tiene exactamente uno de dos valores de verdad. Es un fundamento aquí, no un teorema demostrado en esta página. $T/F$ y los $1/0$ del sitio son etiquetas alternativas, no números para sumar o multiplicar.
+La **bivalencia** clásica se acepta, no se demuestra: toda proposición con sentido tiene exactamente uno de dos valores de verdad. $T/F$ y $1$ y $0$ etiquetan verdad, no cantidades aritméticas.
 
-El número de una tarjeta fija es cero o no lo es antes de abrir el sobre. Encontrar cinco cambia nuestro conocimiento, no el valor de verdad original. Una habitación con tres sillas por la mañana y cuatro por la tarde da distintas **afirmaciones con un tiempo especificado**, no una proposición fija con dos valores. Asignar entradas diferentes a un predicado abierto también evalúa afirmaciones completadas distintas.
+La tarjeta fija es cero o no antes de abrirse; encontrar cinco cambia conocimiento, no verdad. Tres sillas por la mañana y cuatro por la tarde dan distintas **afirmaciones temporales**, no dos valores de una afirmación. Distintas entradas del predicado completan también afirmaciones distintas.
 
-La razón debe abarcar tanto como la conclusión. Un testigo demuestra una afirmación existencial; un contraejemplo refuta una universal. Para establecer una universal puede hacer falta un argumento con entrada arbitraria. En un dominio finito también basta comprobar todos los miembros. Unos aciertos seleccionados en un dominio infinito no bastan. Por ejemplo, para cualquier real $x<1$, de $1<2$ y la transitividad se obtiene $x<2$. Nombrar la estructura lógica no aportaría por sí solo ese argumento de orden.
+Un testigo prueba existencia; un contraejemplo refuta universalidad. Demostrar universales puede exigir entradas arbitrarias o comprobación exhaustiva en dominios finitos; aciertos seleccionados en dominios infinitos no bastan. Para cualquier real $x<1$, la transitividad con $1<2$ da $x<2$: nombrar la estructura lógica no justifica el orden.
 
 
 <span id="from-aussagen-und-aussageformen-comprobaciones-independientes"></span>
 
 ### Comprobaciones independientes
 
-Clasifica «Uno es igual a cero», «Explica por qué uno es igual a uno» y $7$. Convierte la última expresión en dos afirmaciones. Repara después $x=0$ de dos maneras: mediante contexto y mediante cuantificación.
+Clasifica «Uno es igual a cero», «Explica por qué uno es igual a uno» y $7$; convierte $7$ en dos afirmaciones. Completa $x=0$ mediante contexto y cuantificación.
 
 <details>
 <summary>Pista</summary>
 
-Separa la acción solicitada de la afirmación mencionada. Para las reparaciones, distingue elegir una entrada de hablar de todas las entradas.
+Separa acción solicitada y afirmación interna; distingue elegir una entrada de cuantificar sobre todas.
 
 </details>
 
 <details>
 <summary>Respuesta de referencia</summary>
 
-«Uno es igual a cero» es una proposición falsa. «Explica…» es una instrucción que menciona una igualdad verdadera. Siete solo nombra un número; «Siete es igual a siete» y «Siete es mayor que cero» son afirmaciones. Para $x=0$, especifica en el contexto que $x$ nombra un real concreto, por ejemplo cero; la condición puede evaluarse, pero $x$ sigue libre tal como se escribe. O escribe «Todo real es igual a cero», una proposición cerrada falsa. Su falsedad no la convierte en una orden.
+«Uno es igual a cero» es falsa; «Explica…» pide actuar sobre una igualdad verdadera. $7$ nombra; «Siete es igual a siete» y «Siete es mayor que cero» afirman. Fijar contextualmente $x$ como cero real permite evaluar $x=0$ sin ligarla. «Todo real es cero» es cerrada y falsa, no una orden.
 
 </details>
 
-<Exercise question="En $\forall x\in\mathbb R\;(x<y)$, sea y también real. ¿Qué apariciones están ligadas? ¿Qué cambia al asignar cero a y? Compara con $\exists x\in\mathbb R\;(x=0)$ y con ‘Todo entero es positivo’.">
+<Exercise question="Para y real en $\forall x\in\mathbb R\;(x<y)$, identifica apariciones ligadas y el efecto de asignar $y=0$. Compara $\exists x\in\mathbb R\;(x=0)$ y ‘Todo entero es positivo’.">
 
-Solo $x$ está ligada en la primera fórmula; $y$ sigue libre. Asignar cero permite evaluarla como falsa, con $x=1$ de contraejemplo, pero no liga $y$. La fórmula existencial es cerrada y verdadera con testigo cero. «Todo entero es positivo» es una afirmación cuantificada cerrada incluso sin letra escrita; es falsa con contraejemplo cero.
-
-</Exercise>
-
-<Exercise question="Traduce ‘Hay un real que es al menos cero y menor que uno’. Da un testigo; después cambia ‘hay’ por ‘todo’ y justifica el nuevo valor de verdad. ¿Qué permanece igual?">
-
-$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ es verdadera con testigo cero. La universal $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ es falsa porque uno incumple la cota superior estricta. Ambas son cerradas; el dominio real y las dos comparaciones permanecen iguales. El cuantificador cambia si se requiere una entrada o todas.
+Solo $x$ está ligada; $y$ queda libre incluso al asignarle cero. Entonces la fórmula es falsa, refutada por $x=1$. La existencial es cerrada y verdadera con testigo cero. La universal verbal es cerrada sin letras y falsa, refutada por cero.
 
 </Exercise>
 
-Reconstruye la distinción entre desconocido, indefinido y sin justificar: una tarjeta fija cerrada oculta un valor de verdad; dividir entre cero no produce un real; una respuesta afortunada sin razón adecuada puede ser correcta. [Leer la estructura matemática](../quantifier-order/#from-reading-mathematical-structure) reúne estas comprobaciones.
+<Exercise question="Traduce ‘Hay un real al menos cero y menor que uno’; da un testigo. Cambia ‘hay’ por ‘todo’, justifica el veredicto e identifica lo que no cambia.">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ es verdadera con testigo cero. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ es falsa: uno falla la cota superior estricta. Ambas son cerradas, con idéntico dominio y comparaciones; cambia exigir una entrada o todas.
+
+</Exercise>
+
+Distingue desconocido (tarjeta fija cerrada), indefinido (división real por cero) y sin justificar (posiblemente correcto, pero sin razón suficiente). Explica por qué; véase [Leer la estructura matemática](../quantifier-order/#from-reading-mathematical-structure).
 
 <span id="from-definitions-assumptions-results"></span>
 
 ## Definiciones, hipótesis y resultados
 
-Una biblioteca llama **breve** a un préstamo que dura menos de siete días. Así fija un significado. Un préstamo de tres días es breve; uno de diez días no lo es. Estas afirmaciones usan la definición. Una aplicación falsa no refuta el significado elegido.
+Una biblioteca define préstamos **breves** como menores de siete días. Tres días cumplen; diez no. Las aplicaciones afirman; una aplicación falsa no refuta el significado elegido.
 
-La misma distinción aparece en matemáticas. Llamamos positivo a un entero cuando es mayor que cero. Los enteros, escritos $\mathbb Z$, incluyen los enteros negativos y el cero. Para un entero $n$, la condición es $n>0$. Tres la cumple; cero no, porque la comparación es estricta. «Cero es positivo» es una proposición falsa, no una definición refutada.
+Análogamente, un entero es positivo cuando $n>0$. $\mathbb Z$ incluye negativos y cero; tres cumple, cero falla la comparación estricta. «Cero es positivo» es falsa, no una definición fallida.
 
 
 <span id="from-definitions-assumptions-results-la-función-de-cada-frase"></span>
 
 ### La función de cada frase
 
-Una **definición** fija un significado. Una **hipótesis** o **supuesto** se acepta para un argumento concreto. Un **axioma** es una afirmación inicial aceptada en una teoría. Un **teorema**, **lema** o **Proposición** de un libro presenta un resultado demostrado; un lema suele ayudar a demostrar otro resultado. Estas etiquetas no cambian el rigor exigido a la demostración.
+Una **definición** fija significado; una **hipótesis/supuesto** es local; un **axioma** inicia una teoría. **Teoremas**, **lemas** y **Proposiciones** de libros son resultados demostrados; los lemas suelen apoyar otras pruebas. Todos exigen igual rigor.
 
-En lógica, *proposición* también significa una afirmación definida que puede ser verdadera o falsa, incluidas las falsas. Como encabezado de un libro, el término suele tener un uso más restringido.
+En lógica, *proposición* incluye afirmaciones falsas definidas; el encabezado de libro tiene sentido más restringido.
 
-Supongamos que un entero es mayor que cinco. Es una hipótesis local, no una afirmación sobre todos los enteros. Como cinco es mayor que cero, la transitividad del orden habitual permite concluir que nuestro entero es mayor que cero. La definición permite llamarlo positivo. La regla de orden aporta la razón; la definición aporta el nombre.
+Supón localmente un entero mayor que cinco, no que todos lo sean. Como cinco supera cero, la transitividad lo hace mayor que cero; la definición lo llama positivo. El orden justifica; la definición nombra.
 
-Una igualdad o «si y solo si» puede aparecer tanto en una definición como en una afirmación. Hace falta leer el contexto para reconocer su función.
+Igualdad y «si y solo si» pueden definir o afirmar; decide el contexto.
 
-Una **conjetura** es una afirmación pendiente de demostración. Un **corolario** se sigue de un resultado establecido. Estos nombres describen la función de un resultado, no distintos grados de verdad.
+Una **conjetura** espera demostración; un **corolario** sigue de un resultado establecido. Son funciones, no grados de verdad.
 
 <span id="from-definitions-assumptions-results-introducir-un-nombre"></span>
 
@@ -146,7 +146,7 @@ Una **conjetura** es una afirmación pendiente de demostración. Un **corolario*
 
 $$a:=0 \qquad a=0$$
 
-La primera expresión introduce $a$ como nombre del cero. Después, la segunda igualdad es verdadera. «Define», «supón» y «por tanto» indican usos distintos aunque vayan seguidos de símbolos parecidos.
+$a:=0$ nombra cero; después $a=0$ es verdadera. «Define», «supón» y «por tanto» distinguen usos pese a símbolos similares.
 
 <Note title="Lecturas de la notación">
 
@@ -159,33 +159,33 @@ $a:=0$: «a se define como cero»; $a=0$: «a es igual a cero»; $n>0$: «ene es
 
 ### Una propiedad puede no tener ejemplos
 
-Podemos dar nombre a la propiedad «mayor que cero y menor que cero», aunque ningún entero la tenga. Eso no permite introducir un entero que la cumpla. Del mismo modo, «el único objeto que satisface…» puede exigir pruebas de **existencia** (al menos uno) y **unicidad** (ningún segundo objeto). Elegir palabras no resuelve esas obligaciones. La aritmética y el orden habituales son fundamentos aceptados aquí, no resultados deducidos de este vocabulario.
+«Mayor y menor que cero» nombra una propiedad sin entero que la cumpla, no un objeto con ella. «El único objeto que…» puede exigir **existencia** (al menos uno) y **unicidad** (ningún segundo). Nombrar no las prueba. Aritmética y orden siguen siendo fundamentos aceptados.
 
 
 <span id="from-definitions-assumptions-results-práctica-con-funciones-y-definiciones"></span>
 
 ### Práctica con funciones y definiciones
 
-Clasifica y justifica: «Llamamos no negativo a un entero cuando es al menos cero»; «Cero es no negativo»; «Supongamos $x>0$»; «Define $b:=1$»; «Por tanto, $b=1$».
+Justifica las funciones: «Un entero es no negativo cuando es al menos cero»; «Cero es no negativo»; «Supongamos $x>0$»; «Define $b:=1$»; «Por tanto $b=1$».
 
 <details>
 <summary>Pista</summary>
 
-Identifica qué frase introduce un significado, cuál supone algo localmente y cuál afirma una consecuencia.
+¿Qué fija significado, supone localmente o deduce?
 
 </details>
 
 <details>
 <summary>Respuesta de referencia</summary>
 
-La primera es una definición. La segunda es una aplicación verdadera: se permite la igualdad. La tercera es una hipótesis, no una afirmación universal. La cuarta introduce un nombre. La quinta afirma la igualdad que resulta de esa elección. Una definición no se demuestra como un teorema, pero una descripción que introduce un objeto puede exigir existencia y unicidad.
+En orden: definición; aplicación verdadera que admite igualdad; hipótesis local, no universal; nombre; igualdad consecuente. Las definiciones no requieren pruebas como teoremas; las descripciones de objetos pueden exigir existencia y unicidad.
 
 </details>
 
-<Exercise question="Llamemos admisible, solo aquí, a un real que sea al menos cero y como máximo uno. Escribe el criterio. ¿Es admisible cero? ¿Qué se deduce de un real admisible no especificado?">
+<Exercise question="Aquí un real es admisible cuando es al menos cero y como máximo uno. Formula el criterio, prueba cero y deduce lo permitido sobre un real admisible no especificado.">
 
-Para $x\in\mathbb R$, el criterio es $(0\le x)\land(x\le1)$. Cero satisface ambas comparaciones, luego es admisible. La etiqueta permite recuperar ambas cotas, no un valor único: $0$, $1/2$ y $1$ cumplen el criterio. El término es local a este ejemplo. Ambas cotas permiten igualdad; sustituirlas por comparaciones estrictas cambiaría la definición.
+Para $x\in\mathbb R$, el criterio es $(0\le x)\land(x\le1)$. Cero cumple ambas. Admisibilidad recupera cotas, no un valor único: $0$, $1/2$, $1$ sirven. Esta definición local admite igualdad; comparaciones estrictas la cambiarían.
 
 </Exercise>
 
-Inventa otra propiedad y escribe una aplicación verdadera y otra falsa. Separa la definición de sus aplicaciones. [Varias condiciones simultáneas](../simultaneous-conditions/#from-simultaneous-conditions) desarrolla un criterio más largo.
+Inventa una propiedad; separa definición, aplicación verdadera y falsa. Véase [Varias condiciones simultáneas](../simultaneous-conditions/#from-simultaneous-conditions) para un criterio más largo.

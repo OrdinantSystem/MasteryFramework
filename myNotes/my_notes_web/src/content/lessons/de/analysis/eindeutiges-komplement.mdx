@@ -27,7 +27,7 @@ additionalSources: []
 
 <Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
 
-Angenommen, $B$ und $C$ seien beide Komplemente von $A$. Die ODER-Bedingung deckt alle Möglichkeiten ab; die UND-Bedingung schließt Überlappung aus. Nutze die Bedingungen des einen Kandidaten, um den anderen zu vereinfachen.
+Seien $B,C$ Komplemente von $A$. ODER deckt alle Fälle ab, UND schließt Überlappung aus. Vereinfache jeden Kandidaten mit den Bedingungen des anderen.
 
 
 <span id="from-eindeutiges-komplement-beide-auf-denselben-ausdruck-zurückführen"></span>
@@ -38,14 +38,14 @@ Angenommen, $B$ und $C$ seien beide Komplemente von $A$. Die ODER-Bedingung deck
 
 <Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
 
-Also gilt $B = C$. Die nicht nummerierten Einsetzungen verwenden die angenommenen Komplementbedingungen. Da $\neg A$ nach Gesetz 5 ein Komplement ist, muss jeder Ausdruck mit beiden Eigenschaften gleich $\neg A$ sein. Dieses Werkzeug trägt die nächsten Beweise.
+Beide ergeben $B\land C$, also $B=C$. Unnummerierte Einsetzungen nutzen die Voraussetzungen. Gesetz 5 liefert Komplement $\neg A$; Eindeutigkeit identifiziert jeden Kandidaten mit beiden Bedingungen damit.
 
 
 <span id="from-eindeutiges-komplement-warum-bbb-und-ccc-vergleichen"></span>
 
 ### Warum $B$ und $C$ vergleichen?
 
-Wir kennen die Beziehungen von $B$ und $C$ zu A, aber noch nicht zueinander. Setze $1 = A \lor  C$ in $B \land  1$ ein, um beide Informationen zu verbinden. Distributivität trennt den verschwindenden Anteil $B \land  A$ vom Anteil $B \land  C$. Für $C$ ergibt dieselbe Überlegung, dass beide Kandidaten ihrem gemeinsamen Anteil gleichen. Ein Komplement ist deshalb eindeutig. $A \lor  B = 1$ allein reicht nicht: $B = 1$ erfüllt das immer.
+Setze $1=A\lor C$ in $B\land1$ ein und verbinde die Kandidaten. Distribution trennt verschwindendes $B\land A$ von Überlappung $B\land C$. Wiederhole für $C$. ODER allein bestimmt kein Komplement: $B=1$ erfüllt immer $A\lor B=1$.
 
 <span id="from-de-morgan-und-doppelte-negation"></span>
 
@@ -55,7 +55,7 @@ Wir kennen die Beziehungen von $B$ und $C$ zu A, aber noch nicht zueinander. Set
 
 ### 9a · Ein Komplement von $A \lor  B$
 
-Setze $X = A \lor  B$ und $Y = \neg A \land  \neg B$. Zeige mit den bereits verfügbaren Gesetzen $X \land  Y = 0$ und $X \lor  Y = 1$.
+Für $X=A\lor B$, $Y=\neg A\land\neg B$ beweise beide Komplementbedingungen nur mit verfügbaren Gesetzen:
 
 <Math tex="\begin{aligned}X\land Y&\overset{2,3}=(\colA{A}\land\neg \colA{A}\land\neg \colB{B})\lor(\colB{B}\land\neg \colA{A}\land\neg \colB{B})\\&\overset{1,2,5}=(0\land\neg \colB{B})\lor(0\land\neg \colA{A})\\&\overset{2,7d}=0\lor0\overset6=0\end{aligned}" display />
 
@@ -63,7 +63,7 @@ Setze $X = A \lor  B$ und $Y = \neg A \land  \neg B$. Zeige mit den bereits verf
 
 <Math tex="\neg(\colA{A}\lor \colB{B})=\neg \colA{A}\land\neg \colB{B}" display />
 
-Die Eindeutigkeit identifiziert $Y$ mit $\neg X$. Damit ist die erste De-Morgan-Regel bewiesen; sie wurde nicht in ihrem eigenen Beweis verwendet.
+Eindeutigkeit liefert $Y=\neg X$: De Morgan ist bewiesen, nicht vorausgesetzt.
 
 
 <span id="from-de-morgan-und-doppelte-negation-10--doppelte-negation-unabhängig-beweisen"></span>
@@ -72,7 +72,7 @@ Die Eindeutigkeit identifiziert $Y$ mit $\neg X$. Damit ist die erste De-Morgan-
 
 <Math tex="\neg \colA{A}\lor \colA{A}=1,\quad\neg \colA{A}\land \colA{A}=0,\qquad\neg \colA{A}\lor\neg\neg \colA{A}=1,\quad\neg \colA{A}\land\neg\neg \colA{A}=0" display />
 
-Nach Gesetzen 2 und 5 sind $A$ und $\neg\neg A$ beide Komplemente von $\neg A$. Eindeutigkeit ergibt $\neg \neg A = A$. Dafür wird De Morgan nicht benötigt.
+Gesetze 2 und 5 machen $A$ und $\neg\neg A$ zu Komplementen von $\neg A$. Eindeutigkeit liefert $\neg\neg A=A$, unabhängig von De Morgan.
 
 
 <span id="from-de-morgan-und-doppelte-negation-9b--das-zweite-gesetz-herleiten"></span>
@@ -81,24 +81,24 @@ Nach Gesetzen 2 und 5 sind $A$ und $\neg\neg A$ beide Komplemente von $\neg A$. 
 
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
-Im mittleren Schritt wird 9a rückwärts mit $\neg A$ und $\neg B$ angewendet. Die Beweisreihenfolge lautet Eindeutigkeit → 9a und 10 → 9b.
+Wende 9a rückwärts auf $\neg A,\neg B$ an. Beweisfolge: Eindeutigkeit, dann 9a und 10, dann 9b.
 
 
 <span id="from-de-morgan-und-doppelte-negation-die-komplementstrategie"></span>
 
 ### Die Komplementstrategie
 
-Um $\neg (A \lor  B)$ zu bestimmen, wird nicht vorausgesetzt, dass Negation sich verteilt. Stattdessen prüfen wir für einen Kandidaten $Y$ die beiden Eigenschaften, die ein Komplement eindeutig bestimmen. Die erste Kette schließt gemeinsames Gelten aus, die zweite zeigt vollständige Abdeckung. Beide sind nötig. Für doppelte Negation vergleicht man direkt die beiden Komplemente von $\neg A$. Das zweite De-Morgan-Gesetz folgt dann aus bereits bewiesenen Ergebnissen ohne Zirkelschluss.
+Schlage ein Komplement vor, statt verteilte Negation anzunehmen. Beide Ketten zählen: UND schließt Überlappung aus, ODER deckt alles ab. Doppelte Negation vergleicht Komplemente von $\neg A$ direkt; bewiesene 9a und 10 liefern dann 9b ohne Zirkelschluss.
 
 
 <span id="from-de-morgan-und-doppelte-negation-eine-zusammengesetzte-aussage-negieren"></span>
 
 ### Eine zusammengesetzte Aussage negieren
 
-Die bewiesenen Identitäten erlauben nun das Umformen einer negierten Aussage ohne Wahrheitstafel.
+Nutze die bewiesenen Identitäten ohne Wahrheitstafel.
 
 <Exercise question="Negiere „A gilt und mindestens eines von B oder C gilt“.">
 
-Die Aussage ist $A \land  (B \lor  C)$. Ihre Negation ist $\neg A \lor  \neg (B \lor  C)$, also $\neg A \lor  (\neg B \land  \neg C)$. Das innere ODER wird beim Negieren zu UND. Nur alle Buchstaben zu negieren würde die Klammerung verfehlen.
+Für $A\land(B\lor C)$ ergibt De Morgan $\neg A\lor\neg(B\lor C)$, dann $\neg A\lor(\neg B\land\neg C)$. Negation macht inneres ODER zu UND; nur Buchstaben zu negieren verliert die Klammerung.
 
 </Exercise>

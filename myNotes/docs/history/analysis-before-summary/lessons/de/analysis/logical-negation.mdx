@@ -1,0 +1,386 @@
+---
+course: "analysis"
+chapter: "analysis-logic"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.2 Negation/01 Logical Negation.md", "A0.1.2 Negation/02 Negating Equality.md", "A0.1.2 Negation/03 Negating Inequalities.md", "A0.1.2 Negation/05 Double Negation.md", "A0.1.2 Negation/04 Negating Compound Statements.md", "A0.1.2 Negation/06 De Morgan Laws.md", "A0.1.3 Conjunction and disjunction/05 Interaction with Negation.md"]
+locale: "de"
+title: "Negation, De-Morgan-Gesetze und Ungleichungen"
+navTitle: "Negation, De-Morgan-Gesetze und Ungleichungen"
+description: "Negation, De-Morgan-Gesetze und Ungleichungen"
+order: 5
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen", "logische-verknuepfungen"]
+thumbnail: "logic"
+additionalSources: []
+---
+
+<span id="from-logical-negation"></span>
+
+## Logische Negation
+
+Auf einer Karte steht drei. „Ihre Zahl ist größer als drei“ ist falsch, aber „ihre Zahl ist kleiner als drei“ ebenfalls. Diese Sätze sind keine Negationen voneinander. Die richtige Verneinung „Ihre Zahl ist nicht größer als drei“ umfasst auch Gleichheit.
+
+
+<span id="from-logical-negation-definition-der-negation"></span>
+
+### Definition der Negation
+
+Für eine sinnvolle klassische Aussage $P$ ist $\neg P$ wahr, wenn $P$ falsch ist, und falsch, wenn $P$ wahr ist. Beide Richtungen sind wichtig. Die Tabelle beschreibt die Definition, keine aus Kartenbeobachtungen gewonnene Regel.
+
+| $P$ | $\neg P$ |
+|---|---|
+| 1 | 0 |
+| 0 | 1 |
+
+Die Ziffern codieren wahr und falsch; sie sind keine Rechenanweisungen. Eine sichere erste Formulierung lautet „Es ist nicht der Fall, dass [die gesamte ursprüngliche Aussage gilt]“. Verkürze erst, nachdem der Geltungsbereich klar ist.
+
+$\neg P$: „nicht P; es ist nicht der Fall, dass P gilt“.
+
+„Auf der Karte steht nicht drei“ verändert die Karte nicht. Bei zwei und bei vier ist diese Verneinung wahr. „Auf der Karte steht zwei“ ersetzt sie nicht: Bei vier wären beide Gleichheitsbehauptungen falsch. Ein erlaubter Fall, in dem Original und vorgeschlagene Negation übereinstimmen, widerlegt den Vorschlag. Einige erfolgreiche Stichproben beweisen ihn aber nicht allgemein.
+
+
+<span id="from-logical-negation-gleichheit-verneinen"></span>
+
+### Gleichheit verneinen
+
+Für Ausdrücke, die im gegebenen Zusammenhang sinnvolle Objekte bezeichnen, gilt
+
+$$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
+
+$\ne$ schreibt „ungleich“ kurz. $\Leftrightarrow$ heißt „genau dann, wenn“ und hält hier Übereinstimmung in jedem Fall fest. Die zweite Äquivalenz lässt sich direkt begründen: Bei gleichen Werten ist „ungleich“ falsch und seine Verneinung wahr; bei ungleichen Werten ist „ungleich“ wahr und seine Verneinung falsch. Das sind alle klassischen Fälle.
+
+$a\ne b$: „a ist ungleich b“.
+
+Für reelles $x$ wird $x+2=5$ zu $x+2\ne5$ negiert. Damit ist die Negation fertig; das Lösen ist eine andere Aufgabe. Die Eingabe $2$ liefert vier, die Eingabe $4$ sechs. Beide erfüllen die Verneinung. „Größer als“ statt Gleichheit würde die erste Eingabe verlieren. Ungleichheit legt keine Richtung fest; Gleichheit ist auch bei Objekten ohne festgelegte Ordnung sinnvoll.
+
+Logische Negation wirkt auf Aussagen. Arithmetische Negation bildet eine Zahl auf ihre Gegenzahl ab. Eine Gleichung zu verneinen ändert nicht die Vorzeichen ihrer Terme. Verschiedene Schreibweisen wie $2+1$ und $3$ können gleiche Werte bezeichnen.
+
+
+<span id="from-logical-negation-wissen-sinn-und-bereich"></span>
+
+### Wissen, Sinn und Bereich
+
+Auf einer verschlossenen Karte kann null stehen, obwohl niemand das nachgewiesen hat. „$P$ ist nicht bewiesen“ und „$P$ ist nicht bekannt“ betreffen Wissen; daraus folgt nicht $\neg P$. „Unbekannt“ ist hier kein dritter Wahrheitswert.
+
+Ein Schalter mit den Stufen niedrig, mittel und hoch ist sowohl auf niedrig als auch auf mittel **nicht hoch**. „Niedrig“ allein lässt einen Fall aus. Ebenso bedeutet „nicht vollständig offen“ bei einer teilweise offenen Tür nicht zwingend „geschlossen“. Kläre die Bedeutung vor der Negation.
+
+Negation macht aus einer Aufforderung keine Aussage und repariert keine undefinierte Division. In der üblichen reellen Arithmetik bezeichnet $1/0$ keinen Wert. Aus $1/0=3$ durch Durchstreichen des Gleichheitszeichens $1/0\ne3$ zu machen ergibt daher keinen wohldefinierten wahren Vergleich.
+
+Bei einer offenen Bedingung wirkt Negation **punktweise** für dieselbe erlaubte Belegung. Sie bindet keine freie Variable und erweitert den Bereich nicht.
+
+
+<span id="from-logical-negation-aufgaben"></span>
+
+### Aufgaben
+
+Erlaubt sind nur $0,1,2$. Negiere $x=1$, nenne die erfüllenden Eingaben und sage, ob $x$ gebunden wird. Negiere danach $x=2$ im selben Bereich.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte die erlaubte Liste fest. Eine Allaussage über Eingaben ist etwas anderes als die Auswertung einer offenen Bedingung an jeder Eingabe.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$x\ne1$ erfüllen $0$ und $2$; $x\ne2$ erfüllen $0$ und $1$. Kein Quantor wurde ergänzt, also bleibt $x$ frei. Drei ist kein erlaubtes Beispiel. Die vollständige Prüfung dieses endlichen Bereichs begründet die Listen, erweitert sie aber nicht auf alle reellen Zahlen.
+
+</details>
+
+<Exercise question="Negiere: Auf der festgelegten Karte steht null. Warum genügt ‘Dort steht eins’ nicht? Folgt die Negation allein daraus, dass der Umschlag verschlossen ist?">
+
+Die Negation lautet „Auf der festgelegten Karte steht nicht null“. Bei einer Karte mit zwei sind sowohl „null“ als auch „eins“ falsch; das widerlegt den vorgeschlagenen Ersatz. Der verschlossene Umschlag begründet keinen der beiden Wahrheitswerte. Er verbirgt eine feste Zahl, statt sie zu verändern.
+
+</Exercise>
+
+Vergleiche „Schreibe drei“, „Drei ist gleich drei“ und „Eins geteilt durch null ist gleich drei“. Nur der mittlere Satz ist eine sinnvolle Aussage, auf die diese Wahrheitsumkehr anwendbar ist. [Ordnungsvergleiche negieren](../logical-negation/#from-negating-order-comparisons) behandelt die Randregeln gesondert.
+
+<span id="from-negating-order-comparisons"></span>
+
+## Ordnungsvergleiche negieren
+
+„Mindestens drei“ schließt drei ein. Die Negation muss drei ausschließen. „Höchstens drei“ ist daher falsch: Am Rand würden beide gelten. Richtig ist „kleiner als drei“.
+
+Seien $x$ und $c$ reelle Zahlen mit ihrer üblichen Ordnung. $c$ bezeichnet die Grenze. Die folgenden Regeln sind hergeleitete Ergebnisse, keine vier voneinander unabhängigen Zeichentricks:
+
+$$\neg(x>c)\Leftrightarrow x\le c$$
+$$\neg(x\ge c)\Leftrightarrow x<c$$
+$$\neg(x<c)\Leftrightarrow x\ge c$$
+$$\neg(x\le c)\Leftrightarrow x>c$$
+
+$\Leftrightarrow$ besagt jeweils, dass beide Bedingungen für jede erlaubte Belegung übereinstimmen. Sowohl die Richtung als auch der Einschluss der Gleichheit ändern sich.
+
+<details>
+<summary>Lesarten der Ordnungsvergleiche</summary>
+
+„Es ist nicht der Fall, dass x größer als c ist“ heißt „x ist kleiner oder gleich c“; „Es ist nicht der Fall, dass x mindestens c ist“ heißt „x ist streng kleiner als c“; „Es ist nicht der Fall, dass x kleiner als c ist“ heißt „x ist größer oder gleich c“; „Es ist nicht der Fall, dass x höchstens c ist“ heißt „x ist streng größer als c“.
+
+</details>
+
+
+<span id="from-negating-order-comparisons-beweis-mit-trichotomie"></span>
+
+### Beweis mit Trichotomie
+
+Fixiere eine beliebige reelle Eingabe $x$ und Grenze $c$. In der üblichen reellen Ordnung liegt $x$ genau in einer von drei Lagen: unter $c$, gleich $c$ oder über $c$. Diese **Trichotomie** wird als grundlegende Ordnungseigenschaft vorausgesetzt.
+
+- „Darüber“ gilt nur in einer Lage. Die Negation wählt darunter und gleich: $x\le c$.
+- „Darüber oder gleich“ wählt zwei Lagen. Die Negation wählt nur darunter: $x<c$.
+- „Darunter“ wählt eine Lage. Die Negation wählt gleich und darüber: $x\ge c$.
+- „Darunter oder gleich“ wählt zwei Lagen. Die Negation wählt nur darüber: $x>c$.
+
+Jede reelle Eingabe liegt in genau einer dieser Lagen. Keine bestimmte Zahl wurde benötigt. Damit sind alle vier Regeln bewiesen. $2,3,4$ an der Grenze drei zu prüfen veranschaulicht sie und kann Fehler aufdecken. Drei Stichproben allein beweisen aber keine Regel über unendlich viele reelle Eingaben. Für beliebige partielle Ordnungen gelten die Regeln nicht unverändert: Dort können Objekte unvergleichbar sein.
+
+
+<span id="from-negating-order-comparisons-den-ganzen-vergleich-und-den-bereich-erhalten"></span>
+
+### Den ganzen Vergleich und den Bereich erhalten
+
+Die Negation von $0<x$ lautet $0\ge x$, gleichbedeutend mit $x\le0$. Eine Eingabe rechts vom Zeichen verlangt dieselbe Sorgfalt wie eine links. Gleichheit gehört zur Antwort, weil null den ursprünglichen strengen Vergleich nicht erfüllt.
+
+Ist $x$ auf **nichtnegative reelle Zahlen** beschränkt, lautet die Negation von $x>3$ weiterhin $x\le3$ in demselben Bereich: genau die Eingaben in $[0,3]$. Minus eins bleibt unerlaubt, obwohl es den Vergleich auf der größeren Zahlengeraden erfüllt. Es kommt kein Quantor hinzu; freies $x$ bleibt frei. Negieren ist weder das Lösen einer Ungleichung noch eine Erlaubnis, den Eingabebereich zu ändern.
+
+
+<span id="from-negating-order-comparisons-am-rand-üben"></span>
+
+### Am Rand üben
+
+Negiere $x>3$, $x\ge3$, $x<3$ und $x\le3$. Gib für $x=3$ die Wahrheitswerte der Originale und ihrer Negationen an.
+
+<details>
+<summary>Hinweis</summary>
+
+Bei Gleichheit sind die strengen Originale falsch, die nichtstrengen wahr. Kehre diese Werte um.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+In derselben Reihenfolge: $x\le3$, $x<3$, $x\ge3$, $x>3$. Bei drei haben die Originale die Werte $0,1,0,1$, die Negationen $1,0,1,0$. Nur die Richtung zu wechseln und den Gleichheitseinschluss beizubehalten scheitert an diesem Test.
+
+</details>
+
+<Exercise question="Schreibe die Negation von ‘x ist höchstens fünf’. Warum erfüllt fünf sie nicht? Negiere danach ‘Null ist kleiner als x’ für nichtnegatives reelles x und beschreibe alle erlaubten Lösungen.">
+
+Die erste Antwort ist $x>5$. Fünf erfüllt das Original und muss deshalb die Negation verletzen. Die zweite Antwort ist $x\le0$ im nichtnegativen Bereich; nur $x=0$ erfüllt sie. Negative Eingaben werden nicht erlaubt. Die Antworten betreffen dieselben Eingaben und Grenzen wie ihre Originale.
+
+</Exercise>
+
+Rekonstruiere eine Regel anhand beliebiger Lagen darunter, gleich und darüber. Erkläre, weshalb dieses Argument mehr abdeckt als jede endliche Liste erfolgreicher Zahlenproben.
+
+<span id="from-double-negation"></span>
+
+## Doppelte Negation
+
+„Es ist nicht der Fall, dass die Zahl ungleich drei ist“ sagt, dass die Zahl gleich drei ist. Die innere Behauptung verneint Gleichheit; die äußere Formulierung verneint diese gesamte Verneinung. Die Zahl selbst verändert sich nicht.
+
+
+<span id="from-double-negation-der-klassische-satz"></span>
+
+### Der klassische Satz
+
+Für jede Aussage $P$ gilt
+
+$$\neg(\neg P)\Leftrightarrow P.$$
+
+„nicht (nicht P) genau dann, wenn P gilt“.
+
+Das ist eine Übereinstimmung der Wahrheitswerte in jedem Fall, keine Behauptung, $P$ sei wahr. Sie folgt aus klassischer Zweiwertigkeit und der Definition der Negation als Wahrheitsumkehr. Sie gilt nicht als Behauptung über jedes logische System.
+
+
+<span id="from-double-negation-beweis-beide-möglichen-ausgangswerte"></span>
+
+### Beweis: beide möglichen Ausgangswerte
+
+Betrachte eine beliebige Aussage. Ist $P$ wahr, so ist $\neg P$ falsch und $\neg(\neg P)$ wahr. Original und doppelte Negation stimmen überein.
+
+Ist $P$ falsch, so ist $\neg P$ wahr und $\neg(\neg P)$ falsch. Wieder stimmen sie überein. Insbesondere machen zwei Negationen aus einer falschen Aussage keine wahre.
+
+In diesem Rahmen gibt es keinen dritten Ausgangswert. Die beiden Fälle erschöpfen alle Möglichkeiten und beweisen den Satz, ohne ihn vorauszusetzen. Eine einzelne wahre Zahlengleichheit würde nur den ersten Fall veranschaulichen und den zweiten unbewiesen lassen.
+
+
+<span id="from-double-negation-der-geltungsbereich-entscheidet"></span>
+
+### Der Geltungsbereich entscheidet
+
+Setzt man eine ganze Gleichheit ein, erhält man
+
+$$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
+
+Für $x=0$ sind beide Seiten wahr, für $x=2$ falsch. Der Satz liefert die Übereinstimmung für jede erlaubte Eingabe unter der oben erklärten punktweisen Auswertung. „Nicht ungleich null“ bildet keine Gegenzahl von $x$ und bedeutet nicht „negativ“.
+
+Auch eine zusammengesetzte Aussage darf für $P$ eingesetzt werden:
+
+$$\neg\bigl(\neg(P\land Q)\bigr)\Leftrightarrow(P\land Q).$$
+
+Die ganze Konjunktion ist eine Eingabe. Es ist nicht nötig, die Negationen in sie hineinzuschieben.
+
+Dagegen enthält $(\neg P)\land(\neg Q)$ zwei Negationen **verschiedener Eingaben**. Keine verneint das Ergebnis der anderen. Für $P=Q=1$ ist $P\land Q$ wahr, aber $(\neg P)\land(\neg Q)$ falsch. Beide Zeichen zu löschen verändert den Wahrheitswert.
+
+Bei drei verschachtelten Negationen lässt das Entfernen eines Paares $\neg P$ übrig. Bei vier entfernt man erst ein Paar und dann das verbleibende Paar und erhält $P$. Das verwendet wiederholt den Satz, keine Regel über die Multiplikation negativer Zahlen.
+
+
+<span id="from-double-negation-verschachtelt-und-getrennt-üben"></span>
+
+### Verschachtelt und getrennt üben
+
+Sei $P$ falsch. Rekonstruiere beide Zwischenwerte. Vereinfache dann drei und vier verschachtelte Negationen ohne Vorzeichenmerksatz.
+
+<details>
+<summary>Hinweis</summary>
+
+Jede Negation kehrt den Wert ihrer gesamten Eingabe um. Suche ein Paar, bei dem eine Verneinung die andere als Eingabe hat.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Die erste Negation ist wahr, die zweite falsch und stimmt mit $P$ überein. In $\neg(\neg(\neg P))$ kann das äußere Paar entfernt werden; übrig bleibt $\neg P$. Bei $\neg(\neg(\neg(\neg P)))$ bleibt nach dem äußeren Paar $\neg(\neg P)$ und nach dem zweiten Paar $P$.
+
+</details>
+
+<Exercise question="Vereinfache $\neg(\neg(P\lor Q))$, ohne im Inneren der Disjunktion etwas zu verändern. Warum gilt der Satz? Dürfen auch die Zeichen in $\neg P\land\neg Q$ gelöscht werden?">
+
+Das Ergebnis lautet $P\lor Q$. Die ganze einschließende Disjunktion hat einen klassischen Wahrheitswert, der zweimal umgekehrt wird. Die getrennten Negationen dürfen nicht gelöscht werden: Für $P=Q=1$ würde aus falsch wahr. Zwei Zeichen zu zählen weist keine verschachtelten Geltungsbereiche nach.
+
+</Exercise>
+
+
+<span id="from-double-negation-negative-wörter-in-der-alltagssprache"></span>
+
+### Negative Wörter in der Alltagssprache
+
+Mehrere negative Wörter drücken nicht immer zwei verschachtelte logische Operatoren aus. Das spanische „No vino nadie“ verwendet negative Kongruenz: Niemand kam, nicht etwa jemand. Auch andere Sprachen besitzen Konstruktionen, deren Bedeutung sich nicht durch Zählen negativer Wörter ergibt.
+
+„Ich habe nicht bewiesen, dass $P$ falsch ist“ betrifft einen Beweis und ist keine direkte Verneinung von $\neg P$. Daraus folgt $P$ nicht. Übersetze zuerst die beabsichtigten Geltungsbereiche. Ein späterer [boolescher Beweis](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) leitet dasselbe klassische Gesetz mit der Eindeutigkeit des Komplements innerhalb der dort erlaubten Regeln her. Hier steht der elementare semantische Beweis.
+
+<span id="from-negating-combined-conditions"></span>
+
+## Zusammengesetzte Bedingungen negieren
+
+Eine Karte qualifiziert sich, wenn sie rot und quadratisch ist. Ein rotes Dreieck scheitert trotz passender Farbe. „Nicht rot und nicht quadratisch“ würde diese Karte übersehen. Ein blaues Dreieck scheitert ebenfalls: Es muss nicht **genau eine** Eigenschaft fehlen.
+
+$P$ bedeute rot und $Q$ quadratisch für **dieselbe Karte**. $\neg(P\land Q)$ verneint das ganze Kriterium. $(\neg P)\land Q$ verlangt dagegen ein nichtrotes Quadrat. Ein rotes Dreieck erfüllt die erste und verletzt die zweite Bedingung. Der Geltungsbereich entscheidet.
+
+
+<span id="from-negating-combined-conditions-negation-einer-konjunktion"></span>
+
+### Negation einer Konjunktion
+
+Eine Und-Bedingung scheitert, sobald mindestens ein Teil scheitert. Auch beide dürfen scheitern. Das klassische De-Morgan-Gesetz für die Konjunktion lautet:
+
+$$\neg(P\land Q)\Leftrightarrow(\neg P\lor\neg Q)$$
+
+| $P$ | $Q$ | $P\land Q$ | $\neg(P\land Q)$ | $\neg P$ | $\neg Q$ | $\neg P\lor\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 0 | 1 | 0 | 1 | 1 |
+| 0 | 1 | 0 | 1 | 1 | 0 | 1 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Die vierte und letzte Spalte stimmen in jeder Zeile überein. Die dritte wertet die ursprüngliche Konjunktion aus, die nächste kehrt ihren Wert um. Rechts werden zuerst die Eingaben negiert und dann mit einschließendem Oder verbunden.
+
+
+<span id="from-negating-combined-conditions-negation-einer-einschließenden-disjunktion"></span>
+
+### Negation einer einschließenden Disjunktion
+
+Lautet die Regel „rot oder quadratisch“, qualifizieren sich ein rotes Dreieck, ein blaues Quadrat und auch ein rotes Quadrat. Nur eine Karte ohne beide Eigenschaften scheitert. Deshalb müssen beide Alternativen scheitern:
+
+$$\neg(P\lor Q)\Leftrightarrow(\neg P\land\neg Q)$$
+
+| $P$ | $Q$ | $P\lor Q$ | $\neg(P\lor Q)$ | $\neg P$ | $\neg Q$ | $\neg P\land\neg Q$ |
+|---|---|---|---|---|---|---|
+| 1 | 1 | 1 | 0 | 0 | 0 | 0 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 | 1 | 0 | 0 |
+| 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+
+Wieder stimmen die vierte und letzte Spalte überein. In jeder gemischten Zeile hält ein wahrer Teil die ursprüngliche Disjunktion wahr; ihre Negation ist falsch. Sind beide Eingaben falsch, sind die Negation und die Konjunktion der Negationen wahr.
+
+Jede Eingabe hat genau zwei Wahrheitswerte. Die vier Paare erschöpfen alle Belegungen und beweisen beide Gesetze aus den Definitionen von Negation, Konjunktion und einschließender Disjunktion. $1,0$ codieren wahr und falsch. Dies sind semantische Beweise für beliebige klassische Aussagen, auch zusammengesetzte Eingaben. Einige Zahlenbeispiele wären kein vollständiger Beweis.
+
+<Note title="Geltungsbereiche vorlesen">
+
+$\neg(P\land Q)$: „Es gelten nicht beide Aussagen P und Q“; $\neg(P\lor Q)$: „Weder P noch Q gilt“; $\Leftrightarrow$: „genau dann, wenn“.
+
+</Note>
+
+
+<span id="from-negating-combined-conditions-ein-verschachteltes-kartenkriterium"></span>
+
+### Ein verschachteltes Kartenkriterium
+
+Nun bedeute $P$ rot, $Q$ ein Kreis und $R$ ein Stern. Die Karte soll $P\land(Q\lor R)$ erfüllen. Außen gibt es zwei Anforderungen: die Farbe und die gesamte Alternative der Markierungen. Negiere zuerst diese äußere Konjunktion:
+
+$$\neg\bigl(P\land(Q\lor R)\bigr)\Leftrightarrow\neg P\lor\neg(Q\lor R).$$
+
+Negiere danach nur die gruppierte Disjunktion; der äußere Teil bleibt unverändert:
+
+$$\neg P\lor\neg(Q\lor R)\Leftrightarrow\neg P\lor(\neg Q\land\neg R).$$
+
+Scheitern heißt: nichtrot **oder** beide Markierungen fehlen. Ist $P$ falsch, scheitert das Original unabhängig von den Markierungen und $\neg P$ macht die Antwort wahr. Ist $P$ wahr, scheitert das Original genau dann, wenn beide Markierungen fehlen. Diese zwei vollständigen Fälle prüfen die Bedeutung allgemein.
+
+Die Umgruppierung $(\neg P\lor\neg Q)\land\neg R$ ist falsch: Eine nichtrote Karte mit Stern scheitert am Original, erfüllt aber auch diese vermeintliche Negation nicht. Sie verlangt fälschlich Sternlosigkeit, obwohl schon die Farbe genügt. Üblicherweise bindet Und stärker als Oder. Optionale Klammern nach dieser Konvention wegzulassen ist nicht dasselbe, wie die Gruppierung ausdrücklich zu verändern. Schreibe sie beim Lernen aus.
+
+
+<span id="from-negating-combined-conditions-selbstständige-aufgaben"></span>
+
+### Selbstständige Aufgaben
+
+Erstelle den vollständigen Vergleich von $\neg(P\land Q)$ und $\neg P\land\neg Q$. Benenne **alle** abweichenden Zeilen und ihre Bedeutung.
+
+<details>
+<summary>Hinweis</summary>
+
+Berücksichtige beide gemischten Belegungen. Eine Konjunktion kann an nur einem Teil scheitern.
+
+</details>
+
+<details>
+<summary>Referenztabelle und Erklärung</summary>
+
+
+| $P$ | $Q$ | $\neg(P\land Q)$ | $\neg P\land\neg Q$ |
+|---|---|---|---|
+| 1 | 1 | 0 | 0 |
+| 1 | 0 | 1 | 0 |
+| 0 | 1 | 1 | 0 |
+| 0 | 0 | 1 | 1 |
+
+
+Beide gemischten Zeilen weichen ab. „Nicht beide“ verlangt mindestens einen Fehler, „beide nicht“ zwei. Bei einer Karte mit neun gilt Positivität, aber Geradheit nicht: Das verwirklicht eine gemischte Zeile. Jede einzelne Abweichung widerlegt bereits Äquivalenz.
+
+</details>
+
+<Exercise question="Eine Karte qualifiziert sich durch einen Stern oder durch Kreis und blauen Rand zusammen. Verwende S, C, B und negiere in zwei Schritten. Prüfe eine sternlose Karte mit Kreis, aber ohne Rand.">
+
+Das Kriterium ist $S\lor(C\land B)$. Zuerst erhält man $\neg S\land\neg(C\land B)$, dann $\neg S\land(\neg C\lor\neg B)$. Beide Alternativen müssen scheitern; innen genügt eine fehlende Eigenschaft. Die beschriebene Karte erfüllt die Negation wegen des fehlenden Sterns und Randes. Der Kreis darf vorhanden sein.
+
+</Exercise>
+
+
+<span id="from-negating-combined-conditions-zahlen-und-randpunkte"></span>
+
+### Zahlen und Randpunkte
+
+Für reelles $x$ gilt
+
+$$\neg\bigl((0<x)\land(x\le2)\bigr)\Leftrightarrow(x\le0)\lor(x>2).$$
+
+Null erfüllt die Negation, weil der strenge untere Vergleich scheitert. Zwei erfüllt sie nicht, denn beide ursprünglichen Vergleiche gelten. Mit Und würden die fehlgeschlagenen Vergleiche eine unmögliche gleichzeitige Lage unterhalb und oberhalb des Intervalls verlangen.
+
+<Exercise question="Negiere die Außenbedingung $x<0\lor x>2$. Erkläre beide Randpunkte und weshalb Oder in der Antwort falsch wäre.">
+
+Die Negation lautet $(x\ge0)\land(x\le2)$. Beide strengen Außentests müssen scheitern; null und zwei gehören dazu. Oder würde eine negative Eingabe allein deshalb akzeptieren, weil sie höchstens zwei ist, obwohl das Original dort wahr ist.
+
+</Exercise>
+
+Bereich und Belegung bleiben fest. Diese Gesetze verschieben keine Negation durch Quantoren. Das spätere [boolesche Arbeitsblatt](../eindeutiges-komplement/#from-de-morgan-und-doppelte-negation) verlangt einen eigenen algebraischen Beweis mit seinen zugelassenen Gesetzen; dieser semantische Beweis ersetzt ihn nicht.

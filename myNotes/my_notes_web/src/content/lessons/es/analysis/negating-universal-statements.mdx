@@ -21,7 +21,7 @@ additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations
 
 ## Negar enunciados universales
 
-Una bandeja tiene una tarjeta roja y otra azul. «Todas son rojas» es falso: basta la azul para refutarlo. «Todas son no rojas» también es falso porque queda una roja. Dos frases falsas a la vez no pueden ser negaciones exactas.
+Tarjetas roja y azul refutan «todas rojas» (falla azul) y «todas no rojas» (falla roja). Negaciones exactas no pueden ser ambas falsas.
 
 
 <span id="from-negating-universal-statements-no-todos-significa-algún-fallo"></span>
@@ -32,9 +32,9 @@ $$
 \neg(\forall x\in D\;P(x))\ \Longleftrightarrow\ \exists x\in D\;\neg P(x).
 $$
 
-Fija dominio $D$, predicado $P$ y los demás parámetros. En lógica clásica bivalente, una negación exacta tiene el valor opuesto en toda situación donde tenga sentido. La equivalencia dice que no todos los objetos permitidos cumplen la condición exactamente cuando al menos uno falla. Permite varios fallos y también que queden éxitos.
+Fija $D$, $P$, parámetros. Negación clásica invierte verdad en toda situación significativa: no todos cumplen si y solo si algunos fallan, quizá varios junto a éxitos.
 
-En una dirección, un elemento que falla hace falso el universal porque ese elemento está incluido. A la inversa, si no hubiera ninguno que fallase, todos cumplirían y el universal sería verdadero. Por tanto, un universal falso tiene un caso fallido. El argumento usa significados, cubre dominios infinitos y no promete un algoritmo para localizar el fallo. Un modelo finito ilustra la ley, pero no demuestra el teorema general.
+Un miembro fallido refuta universalidad; recíprocamente, sin fallos todos cumplen y vale universalidad. La prueba semántica abarca infinitos sin prometer algoritmo; modelos finitos solo ilustran.
 
 
 <span id="from-negating-universal-statements-conserva-el-dominio-y-niega-todo-el-predicado"></span>
@@ -45,9 +45,9 @@ $$
 \neg(\forall x\in\mathbb Z\;(x>0))\ \Longleftrightarrow\ \exists x\in\mathbb Z\;(x\le0).
 $$
 
-Cero testimonia la negación: es entero y no es positivo. Un medio negativo incumple el predicado original, pero está fuera de los enteros. Un entero positivo está permitido, pero no falla. Si el dominio fueran los enteros positivos, el original sería verdadero y su negación correcta falsa. Escribir una negación correcta no la vuelve verdadera.
+Cero entero atestigua no positividad; menos un medio queda fuera, enteros positivos no fallan. En enteros positivos: original verdadero, negación falsa; negar correctamente no implica verdad.
 
-Para «roja y numerada», fallar significa no roja o no numerada, con o inclusiva. Basta una tarjeta roja sin número. En un dominio vacío, los universales son verdaderos y sus negaciones existenciales falsas. Se admiten dominios restringidos vacíos aunque el universo más amplio no lo sea. Un universal no proporciona por sí mismo un objeto.
+«Roja y numerada» falla por no roja o no numerada (inclusiva); roja sin número basta. Dominios restringidos vacíos, incluso en universos no vacíos, hacen universales verdaderos y negaciones existenciales falsas, sin aportar objetos.
 
 <span id="from-quantoren-und-negation-un-testigo-frente-a-todos-los-casos"></span>
 
@@ -55,14 +55,14 @@ Para «roja y numerada», fallar significa no roja o no numerada, con o inclusiv
 
 <Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
 
-La afirmación de la izquierda es verdadera porque $7$ pertenece al dominio y satisface la ecuación. El enunciado universal que aparece dentro de la negación es falso: por ejemplo, $x=1$ da $1+3=4$, no $10$. Las dos afirmaciones mostradas son verdaderas, pero por razones distintas. Un valor que satisface la condición demuestra existencia; otro que no la satisface refuta la universalidad.
+Siete permitido cumple la ecuación; uno permitido da $1+3=4$, no $10$. Ambas afirmaciones mostradas valen: éxito prueba existencia, fallo refuta universalidad.
 
 
 <span id="from-negating-universal-statements-práctica"></span>
 
 #### Práctica
 
-Niega «Todas las tarjetas de la bandeja son rojas». ¿Por qué no «Ninguna es roja»?
+Niega «Toda tarjeta es roja». ¿Por qué no «Ninguna roja» en esta bandeja mixta?
 
 <details>
 <summary>Pista</summary>
@@ -73,7 +73,7 @@ Conserva la tarjeta roja.
 
 <Exercise>
 
-Alguna tarjeta de la bandeja no es roja, como la azul. «Ninguna es roja» también es falsa en la bandeja mixta, así que exige demasiado.
+Alguna no es roja: azul lo atestigua. «Ninguna roja» también falla aquí: demasiado fuerte.
 
 </Exercise>
 
@@ -88,37 +88,37 @@ Conserva el dominio entero.
 
 <Exercise>
 
-$\exists x\in\mathbb Z\;(x\ne0)$. Uno es entero y distinto de cero; no se afirma unicidad.
+$\exists x\in\mathbb Z\;(x\ne0)$: uno entero difiere de cero; sin unicidad.
 
 </Exercise>
 
-Si el dominio permitido es vacío, evalúa todos cumplen y su negación.
+Dominio vacío: evalúa todos cumplen y su negación.
 
 <details>
 <summary>Pista</summary>
 
-No hay ni fallo ni testigo.
+Sin fallos ni testigos.
 
 </details>
 
 <Exercise>
 
-El universal es verdadero porque ningún elemento falla; algún elemento falla es falso porque no existe ningún elemento.
+Universal verdadero (sin fallos), negación falsa (sin miembros que atestigüen fallo).
 
 </Exercise>
 
-Niega: Toda tarjeta es roja y numerada. ¿Qué muestra una roja sin número?
+Niega todas rojas-y-numeradas; interpreta una roja sin número.
 
 <details>
 <summary>Pista</summary>
 
-Niega toda la conjunción.
+Niega la conjunción completa.
 
 </details>
 
 <Exercise>
 
-Alguna tarjeta no es roja o no está numerada. La roja sin número incumple la conjunción y refuta el original; no tienen que fallar ambas propiedades.
+Alguna no es roja o no numerada. Roja sin número refuta la conjunción; no necesitan fallar ambas propiedades.
 
 </Exercise>
 
@@ -133,11 +133,11 @@ Comprueba primero pertenencia.
 
 <Exercise>
 
-No: está fuera del dominio. La negación es «Algún real positivo es negativo», falsa en el orden real.
+No: fuera del dominio. «Algún real positivo es negativo» es la negación exacta, falsa.
 
 </Exercise>
 
-Más tarde, explica ambas direcciones de la ley con una colección mixta y después una vacía.
+Después, justifica ambas direcciones en colecciones mixtas y vacías.
 
 
 <span id="from-negating-universal-statements-lectura-en-voz-alta"></span>
@@ -150,15 +150,15 @@ No todo equis en D cumple P si y solo si algún equis en D no cumple P.
 
 ## Negar enunciados existenciales
 
-Una caja contiene tarjetas rojas y azules. Sacar una azul no refuta «Hay una tarjeta roja». La roja sigue siendo testigo. «Alguna no es roja» y «Alguna es roja» pueden ser verdaderas a la vez y no son negaciones exactas.
+Sacar azul de caja roja–azul deja testigo rojo. Alguna roja y alguna no roja coexisten: no son negaciones.
 
 $$
 \neg(\exists x\in D\;P(x))\ \Longleftrightarrow\ \forall x\in D\;\neg P(x).
 $$
 
-Mantén fijos $D$, $P$ y los demás parámetros. Si ningún objeto permitido cumple $P$, toma cualquier candidato permitido: no puede cumplir $P$, así que cumple $\neg P$. Como era arbitrario, todos fallan. A la inversa, si $P$ es falso para todo objeto permitido, ningún candidato puede ser testigo. Ambas direcciones establecen la ley dual existencial en lógica clásica, también para dominios infinitos.
+Fija $D$, $P$, parámetros. Sin testigos, cualquier candidato cumple $\neg P$, luego todos; recíprocamente, si todos fallan, ninguno atestigua $P$. Ambas direcciones probadas clásicamente, incluso en infinitos.
 
-Una inspección finita completa puede demostrar inexistencia. En un dominio infinito, cien fallos no cubren todos los candidatos; un argumento general sobre un candidato arbitrario sí puede hacerlo. En cambio, para refutar un universal basta un fallo. Negar existencia ordinaria excluye todos los testigos, no solo exactamente uno: dos éxitos siguen haciendo verdadera la existencia.
+Inexistencia requiere inspección exhaustiva o argumento para cualquier candidato, no cien fallos en infinitos. Un fallo refuta universalidad. Existencia no prohíbe multiplicidad: dos testigos también la prueban; su negación excluye todos.
 
 
 <span id="from-negating-existential-statements-la-restricción-sigue-siendo-positiva"></span>
@@ -169,26 +169,26 @@ $$
 \neg(\exists x>0\;(x<0))\ \Longleftrightarrow\ \forall x>0\;(x\ge0).
 $$
 
-La abreviatura $x>0$ junto al cuantificador restringe el dominio a reales positivos. La comparación entre paréntesis es el predicado. Negar cambia lo afirmado sobre ese mismo dominio, no lo sustituye por los no positivos. El original es falso porque ningún real positivo es negativo; la negación es verdadera porque todo real positivo es no negativo. Cero no es candidato permitido.
+El $x>0$ del cuantificador conserva reales positivos sin cero; solo cambia predicado entre paréntesis. Ningún positivo es negativo: original falso, negación verdadera.
 
-«Algún entero tiene cuadrado cero» es verdadero con testigo cero; su negación, todo entero tiene cuadrado distinto de cero, falla en ese mismo entero. «Algún real tiene cuadrado negativo» es falso usando el hecho aritmético explícitamente supuesto de que todo cuadrado real es no negativo. La lógica sola no proporciona ese hecho. En un dominio restringido vacío, existencia es falsa y su negación universal verdadera: ningún objeto la contradice, pero tampoco se proporciona ninguno.
+Cero atestigua cuadrado entero cero y refuta su negación. Cuadrados reales no son negativos por aritmética supuesta, no lógica sola. Existencia vacía falsa, negación universal verdadera, sin aportar objetos.
 
 <span id="from-negating-existential-statements-práctica"></span>
 
 #### Práctica
 
-Niega la existencia de una tarjeta roja. ¿Una azul establece la negación?
+Niega existencia roja; ¿basta una azul?
 
 <details>
 <summary>Pista</summary>
 
-Puede quedar un éxito debajo.
+¿Podría quedar roja?
 
 </details>
 
 <Exercise>
 
-Toda tarjeta de la misma caja es no roja. Una azul no basta; hay que excluir todos los candidatos.
+Toda tarjeta de esa caja es no roja. Una azul solo se excluye a sí misma, no a todos los candidatos.
 
 </Exercise>
 
@@ -197,17 +197,17 @@ Niega y evalúa $\exists x\in\mathbb Z\;(x=1)$.
 <details>
 <summary>Pista</summary>
 
-Transformación y verdad son distintas.
+Separa transformación y verdad.
 
 </details>
 
 <Exercise>
 
-$\forall x\in\mathbb Z\;(x\ne1)$. El original es verdadero con uno; la negación correcta es falsa porque uno es un entero igual a uno.
+$\forall x\in\mathbb Z\;(x\ne1)$: original verdadero por uno entero, negación falsa en uno.
 
 </Exercise>
 
-Niega «Algún real positivo es negativo». ¿Pasa el dominio a ser no positivo?
+Niega «Algún real positivo es negativo». ¿Cambia dominio?
 
 <details>
 <summary>Pista</summary>
@@ -218,22 +218,22 @@ Separa restricción y predicado.
 
 <Exercise>
 
-Todo real positivo es no negativo. El dominio positivo no cambia; solo se complementa el predicado.
+Todo real positivo es no negativo: mismo dominio positivo, predicado complementado.
 
 </Exercise>
 
-Evalúa «Alguna tarjeta de la caja vacía está numerada» y «Todas están sin numerar».
+Caja vacía: ¿alguna numerada, todas sin numerar?
 
 <details>
 <summary>Pista</summary>
 
-No hay testigo existencial disponible.
+Sin testigos.
 
 </details>
 
 <Exercise>
 
-Falsa y verdadera. El universal no tiene excepción y no afirma que exista una tarjeta sin numerar.
+Falsa, verdadera: sin testigos ni excepciones; verdad universal no afirma existencia de tarjetas.
 
 </Exercise>
 
@@ -248,11 +248,11 @@ Basta fallar un componente.
 
 <Exercise>
 
-Cada tarjeta cumple al menos una de estas condiciones: no es roja o no está numerada. Una caja con solo una roja sin número hace falso el original y verdadera la negación correcta, pero falsa la propuesta más fuerte.
+Toda tarjeta es no roja o no numerada. Una sola roja sin número hace original falso, esta negación verdadera y propuesta más fuerte falsa.
 
 </Exercise>
 
-Más tarde, explica por qué un fallo basta contra todos, mientras que contra alguno deben fallar todos los candidatos.
+Después, explica un fallo contra todos frente a todos los fallos contra alguno.
 
 
 <span id="from-negating-existential-statements-lectura-en-voz-alta"></span>
@@ -265,20 +265,20 @@ No existe equis en D que cumpla P si y solo si todo equis en D incumple P.
 
 ## Negar desigualdades cuantificadas
 
-Una promesa exige que una lectura esté estrictamente a menos de una unidad del objetivo. Una lectura exactamente a una unidad la incumple. Decir «a más de una unidad» omitiría ese fallo en la frontera. Antes de trabajar con cuantificadores, identifica qué lado incluye la igualdad.
+Exactamente una unidad incumple «estrictamente dentro de una unidad»; «más de una» omite igualdad. Revisa frontera antes de cuantificadores.
 
 
 <span id="from-negating-quantified-inequalities-el-orden-real-separa-todos-los-casos"></span>
 
 ### El orden real separa todos los casos
 
-Recordemos los complementos del orden real: la tricotomía deja exactamente los casos excluidos por la comparación original. Se usa el orden total habitual de los reales, no solo la sintaxis de cuantificadores.
+La tricotomía da estos complementos en el orden total real habitual, no la sintaxis sola.
 
 $$
 \begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
 $$
 
-En igualdad, exactamente una de la comparación original y su negación es verdadera. Negar $x=c$ da $x\ne c$, no una dirección elegida; negar $x\ne c$ da igualdad. La [lección sobre negar comparaciones](../logical-negation/#from-negating-order-comparisons) desarrolla estas fronteras por separado.
+En igualdad vale una sola comparación. Negar $x=c$ da $x\ne c$, no una dirección; negar $x\ne c$ da igualdad. Véase [complementos](../logical-negation/#from-negating-order-comparisons).
 
 
 <span id="from-negating-quantified-inequalities-un-ejemplo-cuantificado-de-frontera"></span>
@@ -289,7 +289,7 @@ $$
 \neg(\forall x>0\;(x<1))\ \Longleftrightarrow\ \exists x>0\;(x\ge1).
 $$
 
-Que todo real positivo sea menor que uno es falso. Uno es un contraejemplo permitido situado exactamente en la frontera. Cero no está permitido. Cambiamos todo por alguno, conservamos reales positivos y complementamos la comparación interior. Otro ejemplo como dos es innecesario: uno ya demuestra la negación.
+Uno positivo es contraejemplo fronterizo; cero queda fuera. Cambia todo por alguno, conserva dominio, complementa comparación. Dos también sirve; basta un testigo.
 
 
 <span id="from-quantoren-und-negation-el-caso-límite-importa"></span>
@@ -314,7 +314,7 @@ $$
 | falsa | verdadera | verdadera | falsa | falsa |
 | falsa | falsa | verdadera | falsa | falsa |
 
-Las dos últimas columnas coinciden en los cuatro casos posibles, demostrando la equivalencia. Una hipótesis falsa nunca refuta el condicional. En la aplicación a sucesiones, la hipótesis dirá que un índice está en una cola propuesta. El fallo debe estar dentro de esa cola e incumplir la conclusión de distancia. Ambas son comprobaciones del mismo índice.
+Últimas columnas iguales prueban equivalencia en los cuatro casos; hipótesis falsas no refutan implicación. El fallo de sucesión exige **mismo índice** dentro de cola y fuera de cota de distancia.
 
 <span id="from-negating-quantified-inequalities-práctica"></span>
 
@@ -331,11 +331,11 @@ El original incluye igualdad.
 
 <Exercise>
 
-La negación es $x>3$. En tres el original es verdadero y la negación falsa; por debajo sigue siendo verdadero el original y por encima solo la negación.
+La negación $x>3$ es falsa en tres, donde $x\le3$ es verdadera; debajo solo vale original, encima solo negación.
 
 </Exercise>
 
-¿Por qué un error grande anterior al umbral propuesto no refuta esa condición de cola?
+¿Por qué un error grande anterior al umbral no refuta la cola?
 
 <details>
 <summary>Pista</summary>
@@ -346,11 +346,11 @@ Identifica la hipótesis del condicional.
 
 <Exercise>
 
-Antes del umbral la hipótesis es falsa y el condicional verdadero cualquiera que sea la distancia. Exige un índice al menos igual al umbral y el fallo de la cota estricta.
+Antes del umbral la hipótesis falsa hace verdadera la implicación pese al error. Refutar exige índice al menos umbral y cota estricta incumplida.
 
 </Exercise>
 
-Más tarde, reproduce los cuatro complementos y las cuatro filas del condicional antes de derivar la negación de convergencia completa.
+Después, reproduce los cuatro complementos y las cuatro filas del condicional antes de derivar la negación de la convergencia.
 
 
 <span id="from-negating-quantified-inequalities-lectura-en-voz-alta"></span>
@@ -371,7 +371,7 @@ No menor significa mayor o igual; un condicional falso tiene hipótesis verdader
 
 <Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
 
-Son las dos leyes demostradas arriba. Para cuantificadores anidados, aplícalas en el orden existente, conservando dominios y alcances:
+Aplica estas leyes probadas hacia dentro en el orden existente, conservando dominios y alcances:
 
 <Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
 
@@ -380,10 +380,10 @@ Son las dos leyes demostradas arriba. Para cuantificadores anidados, aplícalas 
 
 ### Orden de los cuantificadores
 
-En $\mathbb{N}$, «para todo $x$ existe un $y$ mayor que $x$» es verdadero: dado $x$, elige $y = x + 1$. «Existe un $y$ mayor que todo $x$» es falso: fijado $y$, tomar $x = y$ refuta la afirmación. En el primero, $y$ puede depender de $x$; en el segundo debe servir un mismo $y$. Negar el primero significa que existe un $x$ sin ningún natural $y$ mayor. Cambian ambos cuantificadores, no solo la desigualdad.
+En $\mathbb N$, $y=x+1$ aporta natural mayor para cada $x$; ningún $y$ fijo supera todos los $x$, pues $x=y$ lo derrota. Negar la primera: algún $x$ carece de natural mayor; cambia ambos cuantificadores, no solo desigualdad.
 
 <Exercise question="Niega: todo número natural es par.">
 
-Existe un natural que no es par; 1 es un testigo. Decir que todos los naturales son impares sería más fuerte y falso.
+Algún natural no es par: testigo 1. «Todos impares» es más fuerte y falso.
 
 </Exercise>

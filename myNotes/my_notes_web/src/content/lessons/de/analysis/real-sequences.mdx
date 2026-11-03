@@ -21,7 +21,7 @@ additionalSources: []
 
 ## Reelle Folgen
 
-Ein Gerät meldet bei Beobachtung eins und zwei neun, danach bei jeder Beobachtung drei. Jede Meldung hat einen Wert und eine Position. „Die dritte Meldung ist drei“ unterscheidet Position und Messwert, auch wenn die Zahlen zufällig gleich sind.
+Das Gerät meldet zweimal neun, danach immer drei. Bei „Dritte Meldung gleich drei“ stimmen Position und Wert zahlenmäßig überein, haben aber verschiedene Rollen.
 
 
 <span id="from-real-sequences-ein-wert-an-jeder-positiven-indexstelle"></span>
@@ -32,13 +32,13 @@ $$
 \mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
 $$
 
-Eine Funktion ordnet jeder erlaubten Eingabe genau einen Wert zu. Eine reelle Folge ist eine solche Zuordnung von den positiven natürlichen Zahlen in die reellen Zahlen. Null ist hier kein Index; andere Konventionen müssen genannt werden. $n$ ist der Index, $a_n$ das Folgenglied dort und $a$ die ganze Zuordnung. Ein Index ist keine Multiplikation. Der Pfeil nennt Eingabe- und Ausgabebereich, keine Konvergenz.
+Eine reelle Folge ordnet jedem positiven natürlichen Index genau ein reelles Glied zu. Null ist hier ausgeschlossen; andere Konventionen sind anzugeben. Dabei ist $n$ der Index, $a_n$ das Glied an diesem Index und $a$ die ganze Funktion. Indizes multiplizieren nicht; der Pfeil nennt Bereiche, nicht Konvergenz.
 
 $$
 (a_n)_{n=1}^{\infty}.
 $$
 
-Dies bezeichnet die ganze Folge mit Indizes ab eins ohne Ende. Unendlich ist selbst kein Index; es gibt kein letztes Glied und kein Glied bei unendlich. Jeder einzelne Index ist eine positive natürliche Zahl; der Wert dort darf negativ, null oder positiv sein.
+Es gibt kein letztes Glied und keinen Index unendlich. Positive natürliche Indizes dürfen negative, null oder positive Werte liefern.
 
 
 <span id="from-real-sequences-eine-regel-muss-jede-stelle-bestimmen"></span>
@@ -49,11 +49,11 @@ $$
 a_n=2n\quad(n\in\mathbb N).
 $$
 
-Damit ist $a_1=2$, $a_2=4$, $a_3=6$. Eine konstante Folge hat dagegen für ein festes reelles $c$ an jeder Stelle $a_n=c$; etwa überall $-3$. Auch die Geräteregel ist vollständig: $a_1=a_2=9$ und $a_n=3$ für jedes $n\ge3$. Nur „neun, neun, drei, …“ bestimmt die Fortsetzung nicht: Unendlich viele Regeln teilen diesen Anfang.
+Also $a_1=2$, $a_2=4$, $a_3=6$. Konstant $a_n=c$ fixiert einen reellen Wert, etwa $-3$. Das Gerät hat $a_1=a_2=9$, dann $a_n=3$ für alle $n\ge3$; sein Drei-Glieder-Anfang allein erlaubt unendlich viele Fortsetzungen.
 
-Folgen bewahren Reihenfolge und Wiederholungen. Die abwechselnden Folgen null, eins und eins, null sind verschieden: Schon ihre ersten Glieder unterscheiden sich. Beide haben die Wertemenge null und eins. Eine Menge vergisst Positionen und Wiederholungen. Zwei Folgen sind genau dann gleich, wenn ihre Werte an jeder Stelle übereinstimmen; ein endlicher Anfang beweist Gleichheit nicht.
+Anders als Mengen bewahren Folgen Positionen und Wiederholungen. Abwechselnd null–eins und eins–null teilen die Werte, unterscheiden sich aber am Index eins. Gleichheit verlangt Übereinstimmung überall, nicht nur am endlichen Anfang.
 
-Ein Endstück beginnt an einem gewählten Index $N$ und enthält dieses sowie alle späteren Glieder. Beim Gerät enthält das Endstück ab $N=3$ nur Dreien. Großes $N$ markiert den Startindex, kleines $n$ eine geprüfte Stelle. Beide sind natürlich. Eine Folge mit zuerst null und danach immer eins stimmt ab Index zwei mit der konstanten Einsfolge überein, ist aber nicht dieselbe Folge.
+Ein Endstück enthält das Glied am Index $N$ und alle späteren Glieder: Beim Gerät sind ab $N=3$ alle Glieder drei. Beide Indizes sind natürliche Zahlen: $N$ beginnt das Endstück, und $n$ ist der zu prüfende Index. Die Folge mit null am Anfang und danach immer eins stimmt ab Index zwei mit der konstanten Einsfolge überein; die beiden Folgen sind aber nicht gleich.
 
 <span id="from-real-sequences-übung"></span>
 
@@ -70,7 +70,7 @@ Index und Glied haben verschiedene Rollen.
 
 <Exercise>
 
-Zwei, vier, sechs. Ja: Allen positiven Indizes darf minus drei zugeordnet werden. Werte müssen nicht im Indexbereich liegen.
+Zwei, vier, sechs. Ja: Ordne jedem positiven Index minus drei zu; Werte- und Indexbereich unterscheiden sich.
 
 </Exercise>
 
@@ -85,7 +85,7 @@ Prüfe die erste Stelle.
 
 <Exercise>
 
-Verschiedene Folgen, gleiche Wertemenge. Die ersten Werte unterscheiden sich; die Menge merkt nur, welche Werte auftreten, nicht wo oder wie oft.
+Verschiedene erste Glieder bedeuten verschiedene Folgen; ihre gemeinsame Wertemenge vergisst Positionen und Wiederholungen.
 
 </Exercise>
 
@@ -104,26 +104,26 @@ Sie unterscheiden sich bei Index eins, stimmen aber ab zwei überall überein.
 
 </Exercise>
 
-Definiere später zwei verschiedene Fortsetzungen desselben Anfangs aus drei Gliedern und erkläre, warum Beobachtungen allein keine Folge definieren.
+Konstruiere später zwei verschiedene Fortsetzungen desselben Drei-Glieder-Anfangs: Warum definieren Beobachtungen keine Folge?
 
 
 <span id="from-real-sequences-laut-lesen"></span>
 
 ### Laut lesen
 
-a ordnet positiven natürlichen Indizes reelle Folgenglieder zu; a Index n ist der Wert an Stelle n.
+a Index n bedeutet den reellen Wert von a am positiven natürlichen Index n.
 
 <span id="from-absolute-value-and-distance"></span>
 
 ## Betrag und Abstand
 
-Minus drei und plus drei liegen auf verschiedenen Seiten der Null, sind aber beide drei Einheiten entfernt. Abstand beschreibt die Entfernung, nicht die Richtung. Der Betrag macht aus einer vorzeichenbehafteten reellen Zahl ihren nichtnegativen Abstand von null.
+Minus drei und plus drei haben beide Abstand drei von null. Der Betrag misst nichtnegative Entfernung, nicht Richtung.
 
 $$
 |x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
 $$
 
-Dies ist eine Definition. Jede reelle Zahl fällt in genau einen Fall. Bei $x<0$ ist die Gegenzahl $-x$ positiv: Das Minuszeichen macht den Wert nicht negativ. Also gilt $|-3|=3$, $|3|=3$ und $|0|=0$. Nichtnegativ schließt null ein und bedeutet nicht strikt positiv. Gewöhnliche reelle Arithmetik und Ordnung werden vorausgesetzt.
+Jede reelle Zahl gehört zu einem Fall. Bei $x<0$ ist $-x$ positiv: $|-3|=|3|=3$, $|0|=0$. Nichtnegativ schließt null ein. Gewöhnliche reelle Arithmetik und Ordnung werden vorausgesetzt.
 
 
 <span id="from-absolute-value-and-distance-gerichtete-differenz-und-abstand"></span>
@@ -134,9 +134,9 @@ $$
 d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
 $$
 
-Die Differenz $x-y$ ist die gerichtete Verschiebung von $y$ zu $x$. Ihr Betrag gibt die Streckenlänge. Umgekehrte Subtraktion negiert die Differenz. Eine Zahl und ihre Gegenzahl haben denselben Betrag: Bei positiver Eingabe ergeben beide den positiven Wert, bei negativer dessen positive Gegenzahl und bei null beide null. Also gilt $d(x,y)=d(y,x)$ allgemein, nicht nur im Beispiel.
+$x-y$ ist Verschiebung von $y$ zu $x$; ihr Betrag gibt die Länge. Umgekehrte Subtraktion negiert sie. Eine Zahl und ihre Gegenzahl haben gleiche Beträge. Bei positiver Eingabe sind beide Beträge gleich dem Eingabewert; bei negativer Eingabe sind beide gleich seiner positiven Gegenzahl; bei null sind beide null. Somit gilt $d(x,y)=d(y,x)$ allgemein.
 
-Außerdem gilt $d(x,y)=0$ genau dann, wenn $x=y$. Ist die Differenz nichtnegativ, bleibt sie unter dem Betrag unverändert; Abstand null erzwingt Differenz null. Ist sie negativ, ist ihr Betrag positiv und nicht null. Umgekehrt haben gleiche Punkte Differenz und Betrag null. Die Dreiecksungleichung wird nicht gebraucht.
+Abstand null ist äquivalent zu $x=y$: Eine nichtnegative Differenz ist ihr eigener Betrag; eine negative hat positiven Betrag. Abstand null erzwingt also Differenz null und umgekehrt. Keine Dreiecksungleichung ist nötig.
 
 
 <span id="from-absolute-value-and-distance-eine-strenge-toleranz-ist-ein-offenes-intervall"></span>
@@ -147,9 +147,9 @@ $$
 \varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
 $$
 
-Fixiere Ziel $L$ und positive reelle Toleranz $\varepsilon$. Setze $u=t-L$. Bei $u\ge0$ gilt $|u|=u$: Der Abstandstest lautet $u<\varepsilon$, während $-\varepsilon<u$ bereits aus der positiven Toleranz folgt. Bei $u<0$ gilt $|u|=-u$: Der Test $-u<\varepsilon$ ist äquivalent zu $u>-\varepsilon$, während $u<\varepsilon$ schon gilt. Beide Fälle ergeben genau $-\varepsilon<u<\varepsilon$. Addition von $L$ liefert das angezeigte Intervall. Jeder Schritt ist umkehrbar, also gelten beide Richtungen.
+Für feste $L$, $\varepsilon>0$ setze $u=t-L$. Bei $u\ge0$ bedeutet Abstand unter Toleranz $u<\varepsilon$; $-\varepsilon<u$ gilt automatisch. Bei $u<0$ bedeutet es $-u<\varepsilon$, also $-\varepsilon<u$; die obere Schranke gilt automatisch. Damit $-\varepsilon<u<\varepsilon$; addiere $L$. Umkehrbarkeit beweist beide Richtungen.
 
-Die Kettenungleichung verlangt beide strengen Schranken. Bei Ziel drei und Toleranz $1/2$ sind die Endpunkte $2.5$ und $3.5$ ausgeschlossen: Ihr Abstand ist gleich der Toleranz. Epsilon ist eine veränderliche Toleranz, keine besondere winzige Konstante.
+Beide Schranken sind strikt: Bei Ziel drei, Toleranz $1/2$ scheitern Endpunkte $2.5,3.5$ an Gleichheit. Epsilon ist veränderlich, keine feste winzige Konstante.
 
 <span id="from-absolute-value-and-distance-übung"></span>
 
@@ -166,7 +166,7 @@ Berechne zuerst den Abstand.
 
 <Exercise>
 
-Die Abstände sind $1/2$, $0$, $1/4$. Der erste scheitert an Gleichheit, die anderen passen. Der Endpunkt liegt nicht strikt im Intervall.
+Abstände $1/2$, $0$, $1/4$: Der Endpunkt scheitert an Gleichheit, die anderen passen.
 
 </Exercise>
 
@@ -185,7 +185,7 @@ Nein. Von Ziel fünf zu Punkt zwei ist die Differenz minus drei, der Abstand abe
 
 </Exercise>
 
-Rekonstruiere später den Zweifallbeweis der Intervalläquivalenz und den Beweis zu Abstand null.
+Rekonstruiere später beide Vorzeichenfälle der Intervalläquivalenz und den Beweis zu Abstand null.
 
 
 <span id="from-absolute-value-and-distance-laut-lesen"></span>

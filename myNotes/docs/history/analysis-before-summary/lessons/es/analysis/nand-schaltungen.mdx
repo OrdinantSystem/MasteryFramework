@@ -1,0 +1,53 @@
+---
+course: "analysis"
+chapter: "analysis-boolean-applications"
+sourceId: "analysis-concepts-4"
+sourcePages: [1]
+locale: "es"
+title: "NAND y circuitos lógicos"
+navTitle: "NAND y circuitos lógicos"
+description: "NAND y circuitos lógicos"
+order: 20
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["eindeutiges-komplement"]
+thumbnail: "nand"
+sourceLocations: []
+additionalSources: []
+---
+
+<span id="from-nand-schaltungen"></span>
+
+<span id="from-nand-schaltungen-una-operación"></span>
+
+## Una operación
+
+<Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
+
+NAND devuelve 0 solo cuando ambas entradas son 1. Se escribe | o ↑. Aquí | significa NAND; en el ejemplo aritmético $a | n$ significaba divisibilidad: importa el contexto. El pequeño círculo en la salida del circuito significa negación.
+
+
+<span id="from-nand-schaltungen-cambia-las-entradas-y-sigue-los-cables"></span>
+
+## Cambia las entradas y sigue los cables
+
+<Interactive kind="logic" preset="nand" id="nand-lab" display />
+
+
+<span id="from-nand-schaltungen-tres-construcciones"></span>
+
+## Tres construcciones
+
+<Math tex="\neg \colA{A}=\colA{A}\mid \colA{A}\qquad \colA{A}\land \colB{B}=(\colA{A}\mid \colB{B})\mid(\colA{A}\mid \colB{B})" display />
+
+<Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
+
+NO conecta A a ambas entradas de una NAND. $Y$ reutiliza la salida de la primera NAND en ambas entradas de una segunda: dos puertas físicas, aunque la fórmula repita un término. O niega primero cada entrada y luego aplica NAND: tres puertas. Como pueden construirse NO, $Y$ y O, NAND es funcionalmente completa.
+
+
+<span id="from-nand-schaltungen-seguir-una-señal"></span>
+
+## Seguir una señal
+
+Toma $A = 1$ y $B = 0$ en el circuito O. Las primeras puertas producen $\neg A = 0$ y $\neg B = 1$. La NAND final niega $0 \land  1$ y devuelve 1. Si $A = B = 0$, ambas primeras puertas dan 1 y la salida final es 0. Las trazas explican la construcción; la identidad general sigue de $\neg (\neg A \land  \neg B) = A \lor  B$ por De Morgan y doble negación. Una señal puede alimentar varias entradas sin reconstruir la puerta original.

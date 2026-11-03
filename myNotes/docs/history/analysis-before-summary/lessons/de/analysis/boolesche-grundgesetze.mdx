@@ -1,0 +1,140 @@
+---
+course: "analysis"
+chapter: "analysis-boolean-applications"
+sourceId: "analysis-concepts-2"
+sourcePages: [1]
+locale: "de"
+title: "Boolesche Gesetze und elementare Herleitungen"
+navTitle: "Boolesche Gesetze und elementare Herleitungen"
+description: "Boolesche Gesetze und elementare Herleitungen"
+order: 18
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["logical-negation", "biconditionals-and-equivalent-conditions", "beweissprache-und-methoden"]
+thumbnail: "boolean-laws"
+sourceLocations: []
+additionalSources: [{"sourceId": "analysis-sheet-1-1", "pages": [1], "locations": []}]
+---
+
+<span id="from-boolesche-grundgesetze"></span>
+
+## Fünf Grundgesetze der booleschen Algebra
+
+<span id="from-boolesche-grundgesetze-gesetze-15"></span>
+
+### Gesetze 1–5
+
+<Math tex="\tag{1}(\colA{A}\lor \colB{B})\lor \colC{C}=\colA{A}\lor(\colB{B}\lor \colC{C}),\quad(\colA{A}\land \colB{B})\land \colC{C}=\colA{A}\land(\colB{B}\land \colC{C})" display />
+
+<Math tex="\tag{2}\colA{A}\lor \colB{B}=\colB{B}\lor \colA{A},\quad \colA{A}\land \colB{B}=\colB{B}\land \colA{A}" display />
+
+<Math tex="\tag{3}\colA{A}\land(\colB{B}\lor \colC{C})=(\colA{A}\land \colB{B})\lor(\colA{A}\land \colC{C})" display />
+
+<Math tex="\colA{A}\lor(\colB{B}\land \colC{C})=(\colA{A}\lor \colB{B})\land(\colA{A}\lor \colC{C})" display />
+
+<Math tex="\tag{4}\colA{A}\lor(\colA{A}\land \colB{B})=\colA{A},\quad \colA{A}\land(\colA{A}\lor \colB{B})=\colA{A}" display />
+
+<Math tex="\tag{5}\colA{A}\lor\neg \colA{A}=1,\quad \colA{A}\land\neg \colA{A}=0" display />
+
+Die Nummern stehen für Assoziativität, Kommutativität, Distributivität, Absorption und Komplement. Beide dualen Formen sind erlaubt. = bedeutet logische Äquivalenz, nicht gleiche Schreibweise. Beim Anwenden dürfen ganze Ausdrücke für A, $B$ oder $C$ eingesetzt werden.
+
+
+<span id="from-boolesche-grundgesetze-die-klammerung-sehen"></span>
+
+### Die Klammerung sehen
+
+<ExpressionTrees />
+
+<ExpressionTrees variant="distributivity" display />
+
+Assoziativität ändert die Klammerung derselben Operation. Distributivität ändert den Baum und wiederholt A. In den Übungsblättern sind Wahrheitstafeln nicht die Beweismethode: Die späteren Regeln werden aus diesen fünf Gesetzen hergeleitet.
+
+
+<span id="from-boolesche-grundgesetze-die-form-eines-gesetzes-erkennen"></span>
+
+### Die Form eines Gesetzes erkennen
+
+In $A \land  (B \lor  C)$ wird $A$ mit einer Wahl zwischen $B$ und $C$ verbunden. Distributivität trennt die zwei Möglichkeiten: $A$ mit $B$ oder $A$ mit $C$. Das wiederholte $A$ ist notwendig. Bei $A \lor  (A \land  B)$ sind bereits alle Fälle mit A enthalten; der Zusatz verlangt ohnehin $A$ und fügt nichts hinzu. Diese Lesart erklärt die Identitäten; die Herleitungen verwenden weiterhin die erlaubten Gesetze.
+
+<span id="from-neutralitaet-und-idempotenz"></span>
+
+## Blatt 1.1 · Neutralität und Idempotenz
+
+<span id="from-neutralitaet-und-idempotenz-zwei-hilfsidentitäten-aus-absorption"></span>
+
+### Zwei Hilfsidentitäten aus Absorption
+
+Nutze Absorption (4), dann Komplement (5). Damit stehen 7a und 7b fest, bevor sie für Idempotenz (6) benutzt werden. Eine andere Beweisreihenfolge als die Aufgabennummerierung ist erlaubt; das zu beweisende Ergebnis vorauszusetzen nicht.
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\overset{5}=\colA{A}\lor0\quad\Longrightarrow\quad \colA{A}\lor0=\colA{A}\quad(H_1)" display />
+
+<Math tex="\colA{A}\overset{4}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\overset{5}=\colA{A}\land1\quad\Longrightarrow\quad \colA{A}\land1=\colA{A}\quad(H_2)" display />
+
+
+<span id="from-neutralitaet-und-idempotenz-6a--wiederholtes-oder-ändert-nichts"></span>
+
+### 6a · Wiederholtes ODER ändert nichts
+
+<Math tex="\begin{aligned}\colA{A}\lor \colA{A}&\overset{H_2}=(\colA{A}\lor \colA{A})\land1\\&\overset{5}=(\colA{A}\lor \colA{A})\land(\colA{A}\lor\neg \colA{A})\\&\overset{3}=\colA{A}\lor(\colA{A}\land\neg \colA{A})\\&\overset{5}=\colA{A}\lor0\\&\overset{H_1}=\colA{A}\end{aligned}" display />
+
+
+<span id="from-neutralitaet-und-idempotenz-6b--die-duale-rechnung"></span>
+
+### 6b · Die duale Rechnung
+
+<Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
+
+Distributivität wird in beiden Ketten rückwärts angewendet. Dualität vertauscht $\land$ mit $\lor$ und 0 mit 1; die zweite Rechnung steht ausdrücklich da, damit jeder erlaubte Schritt geprüft werden kann.
+
+
+<span id="from-neutralitaet-und-idempotenz-wie-man-den-beweis-findet"></span>
+
+### Wie man den Beweis findet
+
+Das Ziel $A \lor  A$ bietet den erlaubten Gesetzen zunächst wenig Ansatz. Verknüpfen mit $\land 1$ erhält den Wert und schafft Platz für $A \lor  \neg A$. Nun teilen beide Faktoren A; rückwärts gelesene Distributivität macht daraus $A \lor  (A \land  \neg A)$. Das Komplement beseitigt den zweiten Teil. Der Beweis erweitert gezielt und vereinfacht danach. Nicht jede Zeile muss kürzer werden. $H_1$ und $H_2$ erlauben die Erweiterung ohne vorausgesetzte Idempotenz.
+
+
+<span id="from-neutralitaet-und-idempotenz-mit-den-grundgesetzen-üben"></span>
+
+### Mit den Grundgesetzen üben
+
+Benenne auch in dieser kurzen Herleitung die erlaubten Regeln.
+
+<Exercise question="Vereinfache $(B \land  A) \lor  A$ nur mit Gesetzen 2 und 4.">
+
+Kommutativität ergibt $A \lor  (A \land  B)$. Absorption liefert A. Gesetz 2 wird für das äußere ODER und das innere UND genutzt; Idempotenz ist nicht nötig.
+
+</Exercise>
+
+<span id="from-nullgesetze-und-konstanten"></span>
+
+## Blatt 1.1 · absorbierende Elemente und Konstanten
+
+<span id="from-nullgesetze-und-konstanten-7c-und-7d--die-absorbierenden-werte"></span>
+
+### 7c und 7d · Die absorbierenden Werte
+
+<Math tex="\colA{A}\lor1\overset5=\colA{A}\lor(\colA{A}\lor\neg \colA{A})\overset1=(\colA{A}\lor \colA{A})\lor\neg \colA{A}\overset6=\colA{A}\lor\neg \colA{A}\overset5=1" display />
+
+<Math tex="\colA{A}\land0\overset5=\colA{A}\land(\colA{A}\land\neg \colA{A})\overset1=(\colA{A}\land \colA{A})\land\neg \colA{A}\overset6=\colA{A}\land\neg \colA{A}\overset5=0" display />
+
+Idempotenz (6) steht durch den vorigen Beweis zur Verfügung. Der Unterschied zwischen neutral und absorbierend wird unten zusammengefasst.
+
+
+<span id="from-nullgesetze-und-konstanten-8--konstanten-negieren"></span>
+
+### 8 · Konstanten negieren
+
+<Math tex="1\overset5=0\lor\neg0\overset2=\neg0\lor0\overset{7a}=\neg0" display />
+
+<Math tex="0\overset5=1\land\neg1\overset2=\neg1\land1\overset{7b}=\neg1" display />
+
+Es folgen $\neg 0 = 1$ und $\neg 1 = 0$. Jede Gleichheit folgt aus einem nummerierten Gesetz; weder Wahrheitstafel noch De-Morgan-Regel werden vorausgesetzt.
+
+
+<span id="from-nullgesetze-und-konstanten-neutrale-und-absorbierende-elemente"></span>
+
+### Neutrale und absorbierende Elemente
+
+Betrachte A als unbekannten Wahrheitswert. $A \lor  0$ hängt weiter von $A$ ab, $A \lor  1$ steht unabhängig von $A$ fest. Bei $\land$ wechseln die Rollen: 1 lässt A unverändert und 0 bestimmt das Ergebnis. Im Beweis von $A \lor  1 = 1$ bringt die Ersetzung $1 = A \lor  \neg A$ ein doppeltes A zum Vorschein. Assoziativität stellt die Kopien nebeneinander, Idempotenz entfernt eine. Darum muss Gesetz 6 bereits bewiesen sein.

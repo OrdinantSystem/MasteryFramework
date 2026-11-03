@@ -36,20 +36,20 @@ sourceLocations: []
 
 ### Un pequeño proceso
 
-Escribe la afirmación exacta y el dominio. Desarrolla las definiciones. Elige un método. Justifica cada transición. Indica qué se ha demostrado. Para $\exists n \in  \mathbb{N} : n^2 = 9$ basta el testigo $n = 3$. Para $\forall n \in  \mathbb{N} : n^2 > n$ basta el contraejemplo $n = 1$. Ninguna tarea requiere una deducción larga. No uses la propia afirmación para justificar un paso intermedio: sería circular.
+Precisa afirmación y dominio, usa definiciones, elige método y justifica pasos. El testigo $n=3$ prueba $\exists n \in  \mathbb{N} : n^2 = 9$; $n=1$ refuta $\forall n \in  \mathbb{N} : n^2 > n$. Justificar con la propia afirmación sería circular.
 
 
 <span id="from-beweissprache-und-methoden-arbitrario-no-significa-muestra-representativa"></span>
 
 ### Arbitrario no significa muestra representativa
 
-Para probar $\forall x\in\mathbb R\;(x+2>x)$, lee «para todo real equis, equis más dos supera equis». Fija un real arbitrario $x$. A partir de $2>0$, suma $x$ en ambos lados y obtén $x+2>x+0=x$. La suma conserva el orden; sumar cero no cambia nada. Ningún paso exige positividad, ser entero o un valor particular de $x$, así que el argumento cubre toda entrada real.
+Fija un real arbitrario $x$. Sumar $x$ a $2>0$ da $x+2>x+0=x$: la suma conserva el orden y cero no cambia nada. Así se prueba $\forall x\in\mathbb R\;(x+2>x)$ sin restringir $x$.
 
-Para un condicional universal, supón temporalmente toda la hipótesis y deduce la conclusión. Las entradas con hipótesis falsa ya hacen verdadero el condicional. Esto no afirma que toda entrada cumpla la hipótesis ni que exista una entrada que la cumpla. En una colección restringida vacía no puede fallar ningún miembro. También se puede razonar bajo una hipótesis temporal de pertenencia y descargarla sin afirmar que la colección tenga un miembro. Véanse [dominios](../universal-statements-and-domains/#from-universal-statements-and-domains) y [contraejemplos](../beweissprache-und-methoden/#from-counterexamples) para las comprobaciones completas.
+Para condicionales universales, supón toda la hipótesis y deduce el objetivo. Hipótesis falsas satisfacen el condicional; no se exige que existan entradas admisibles. Una colección vacía no tiene fallos. Las hipótesis temporales de pertenencia se descargan sin afirmar existencia. Véanse [dominios](../universal-statements-and-domains/#from-universal-statements-and-domains) y [contraejemplos](../beweissprache-und-methoden/#from-counterexamples).
 
-<Exercise question="Una prueba sobre todo real empieza con un real positivo arbitrario y después comprueba siete. ¿Qué ha establecido y cómo debe tratar una hipótesis de positividad que sea realmente necesaria?">
+<Exercise question="Una prueba sobre todos los reales supone positividad y comprueba siete. ¿Qué demuestra? ¿Cómo tratar una hipótesis de positividad necesaria?">
 
-La comprobación numérica cubre solo siete. Un argumento por lo demás general bajo positividad cubre a lo sumo los reales positivos, no cero ni negativos. Para el enunciado original sobre todos los reales, evita esa hipótesis o añade casos justificados para cero y negativos. Otra opción es enunciar y probar un teorema explícitamente restringido, sin presentarlo como el original. Llamar arbitrario a un símbolo no deshace una restricción posterior.
+La comprobación cubre siete; un argumento general positivo, como máximo reales positivos. Evita la restricción o prueba además cero y negativos. Alternativamente prueba explícitamente un teorema restringido, no el original. «Arbitrario» no elimina restricciones.
 
 </Exercise>
 
@@ -58,26 +58,26 @@ La comprobación numérica cubre solo siete. Un argumento por lo demás general 
 
 ### De una definición a una prueba
 
-Para probar que la suma de dos enteros pares es par, introduce testigos distintos: $a = 2r$ y $b = 2s$. Entonces $a + b = 2(r+s)$, con $r + s$ entero. La expresión final coincide con la definición de par. Escribir $a = 2r$ y $b = 2r$ supondría por accidente entradas iguales. Hasta una prueba breve necesita el dominio y explicar por qué la última línea resuelve la afirmación.
+Para enteros pares, elige testigos enteros separados $a = 2r$, $b = 2s$. Entonces $a + b = 2(r+s)$ es par porque $r+s$ es entero. Reutilizar $r$ supondría erróneamente entradas iguales.
 
 <span id="from-counterexamples"></span>
 
 ## Contraejemplos
 
-Dos y menos dos tienen cuadrados positivos. Cero no: $0^2=0$, y cero no es estrictamente positivo. Así, «todo cuadrado real es estrictamente positivo» es falso, por muchos ejemplos no nulos que pasen. El enunciado también incluía cero.
+Dos y menos dos tienen cuadrados positivos, pero $0^2=0$ refuta «todo cuadrado real es estrictamente positivo», por muchos ejemplos no nulos que funcionen.
 
 
 <span id="from-counterexamples-por-qué-basta-un-fallo"></span>
 
 ### Por qué basta un fallo
 
-Un **contraejemplo** a $\forall x\in D\;P(x)$ es un miembro de $D$ cuyo predicado tiene significado y es falso. Lee la fórmula como «todo equis en de satisface pe». Si fuera verdadera, exigiría $P$ también en el miembro propuesto; su fallo comprobado contradice ese requisito. No es una votación ni dice que todos los miembros fallen.
+Un **contraejemplo** a $\forall x\in D\;P(x)$ pertenece a $D$ y tiene predicado definido y falso. Un fallo refuta «todo», pero no significa «ninguno».
 
-Para un condicional universal, comprueba tres cosas del **mismo objeto**: pertenencia al dominio, verdad de toda la hipótesis y falsedad de toda la conclusión. La razón se deduce de
+Para un condicional universal, verifica dominio, **toda** la hipótesis verdadera y la conclusión falsa en el **mismo objeto**, pues
 
 $$\neg(P\Rightarrow Q)\equiv(P\land\neg Q).$$
 
-Aplica la [regla de negación del condicional](../implikation-und-kontraposition/#from-implikation-und-kontraposition): la hipótesis se cumple y la conclusión falla. La inversa $\neg P\Rightarrow\neg Q$ no es esta negación.
+Esta [negación del condicional](../implikation-und-kontraposition/#from-implikation-und-kontraposition) no es la inversa $\neg P\Rightarrow\neg Q$.
 
 
 <span id="from-counterexamples-encontrar-toda-la-región-de-fallo"></span>
@@ -88,7 +88,7 @@ Considera
 
 $$\forall x\in\mathbb R\;((x>2)\Rightarrow(x>5)).$$
 
-Se lee: «Para todo real equis, si equis supera dos, entonces supera cinco». Fallar exige $x>2$ y $x\le5$, así que **todos** los contraejemplos cumplen $2<x\le5$.
+Fallar exige $x>2$ y $x\le5$: exactamente $2<x\le5$.
 
 | Candidato | Hipótesis $x>2$ | Conclusión $x>5$ | ¿Contraejemplo? |
 | --- | --- | --- | --- |
@@ -98,35 +98,35 @@ Se lee: «Para todo real equis, si equis supera dos, entonces supera cinco». Fa
 | $5$ | Verdadera | Falsa | Sí: la igualdad falla la conclusión |
 | $7$ | Verdadera | Verdadera | No: se cumple la conclusión |
 
-Dos queda excluido; cinco incluido. Una conclusión falsa no basta. Tampoco se puede tomar siete para una hipótesis verdadera y cero para una conclusión falsa: son dos objetos, no un fallo común. Para la regla opuesta, superar-cinco implica superar-dos, tres no es un contraejemplo; refuta solo la recíproca.
+Dos queda excluido; cinco incluido. No basta una conclusión falsa, ni combinar siete y cero para hipótesis y conclusión. Tres refuta esta regla, no «superar cinco implica superar dos».
 
 
 <span id="from-counterexamples-no-omitir-un-requisito-compuesto"></span>
 
 ### No omitir un requisito compuesto
 
-Para entradas reales, $((x>0)\land(x<2))\Rightarrow(x^2>1)$ falla en uno. Uno es real, positivo y menor que dos; su cuadrado es igual a uno, no mayor. Cero falla la positividad. Tres falla la cota superior. Ninguno refuta el condicional, aunque se atienda solo a una parte conveniente de la hipótesis.
+Para reales $x$, $((x>0)\land(x<2))\Rightarrow(x^2>1)$ falla en uno: ambas hipótesis se cumplen, pero $1^2=1$. Cero falla la positividad; tres la cota superior. Ninguno es contraejemplo.
 
-El ejemplo de intervalo más estrecho $0<x<1\Rightarrow x<1/2$ falla en $3/4$ y en $1/2$. Ambos cumplen toda la hipótesis; la igualdad derrota la conclusión estricta en el segundo. Dos falla la hipótesis superior y no es un contraejemplo.
+$0<x<1\Rightarrow x<1/2$ falla en $3/4$ y $1/2$; la igualdad derrota la conclusión estricta. Dos falla la hipótesis superior.
 
 
 <span id="from-counterexamples-búsqueda-verificación-y-reparación"></span>
 
 ### Búsqueda, verificación y reparación
 
-Probar cero, enteros pequeños, negativos o extremos puede orientar una búsqueda cuando el dominio lo permita. El argumento es la verificación posterior, no la heurística. Una búsqueda fallida en una muestra finita no demuestra una afirmación sobre un dominio infinito. Una expresión indefinida no es el predicado falso que requiere un contraejemplo: repara primero su dominio o interpretación. Si hay parámetros libres, fija sus valores durante toda la comprobación.
+Busca con ceros, enteros pequeños, negativos o extremos permitidos; después verifica. Búsquedas finitas fallidas no prueban enunciados universales infinitos. Predicados indefinidos requieren reparar dominio o interpretación. Mantén fijos los parámetros libres.
 
-Cero refuta la positividad estricta de todos los cuadrados reales, pero no demuestra un sustituto. Para la versión sobre reales **no nulos**, da una prueba nueva: un positivo por sí mismo es positivo; un negativo por sí mismo es positivo por la regla de signos. Los casos agotan los reales no nulos. Incluir el caso cero también demuestra que todos los cuadrados reales son no negativos. Ninguno de estos teoremas se deduce solo de encontrar cero.
+Cero refuta positividad estricta, no prueba un sustituto. Para reales **no nulos**, positivo por positivo y negativo por negativo dan cuadrados positivos; estos casos de signos agotan el dominio. Añadir cero prueba no negatividad de todo cuadrado real.
 
-<Exercise question="Se propone $-1/2$ contra todo-entero-tiene-cuadrado-al-menos-uno. Diagnostica el candidato y refuta correctamente la misma afirmación. ¿Un candidato inválido hace verdadero el teorema?">
+<Exercise question="Prueba $-1/2$ contra «todo entero tiene cuadrado al menos uno» y refuta correctamente la afirmación. ¿Un candidato inválido demuestra que es verdadera?">
 
-La fracción no es entera, así que queda fuera del dominio. Cero es entero y $0^2=0<1$, por lo que refuta el enunciado. Un contraejemplo propuesto inválido no demuestra nada en ninguna dirección; el teorema puede seguir siendo falso.
+$-1/2$ queda fuera del dominio entero. Cero es entero y $0^2=0<1$ refuta el enunciado. Un candidato inválido no demuestra verdad ni falsedad.
 
 </Exercise>
 
-<Exercise question="Inventa un condicional universal con dos requisitos en la hipótesis, un contraejemplo genuino y un candidato inválido tentador. Comprueba cada requisito y explica por qué no-todos no significa ninguno.">
+<Exercise question="Inventa un condicional universal con dos requisitos, un contraejemplo y un candidato inválido tentador. Verifica cada requisito. ¿Por qué no-todos difiere de ninguno?">
 
-Para todo real $x$, supón la afirmación $1<x<4\Rightarrow x>2$. El candidato $x=2$ es real, mayor que uno y menor que cuatro, pero no estrictamente mayor que dos. Refuta el enunciado. Cero falla la hipótesis inferior y cinco la superior; ninguno es un contraejemplo. Tres cumple la hipótesis y la conclusión, así que la refutación no hace fallar toda instancia admisible.
+Afirma para reales $x$: $1<x<4\Rightarrow x>2$. Dos cumple ambas hipótesis, pero falla la conclusión. Cero falla la cota inferior; cinco la superior. Tres cumple hipótesis y conclusión: no todas las instancias admisibles fallan.
 
 </Exercise>
 
@@ -140,9 +140,9 @@ Para todo real $x$, supón la afirmación $1<x<4\Rightarrow x>2$. El candidato $
 
 <Math tex="\forall n\in\mathbb Z:\quad 2\mid n\iff2\mid n^2" display />
 
-«Par» significa $n = 2k$ para un entero $k$. «Impar» significa $n = 2k + 1$. Una equivalencia exige ambas direcciones; una sola implicación deja la mitad sin demostrar.
+Para un entero $k$, par significa $n = 2k$; impar, $n = 2k + 1$. La [equivalencia](../biconditionals-and-equivalent-conditions/#from-biconditionals-and-equivalent-conditions) requiere ambas implicaciones.
 
-Lee la afirmación: «Para todo entero ene, dos divide a ene si y solo si dos divide a su cuadrado». La [base del bicondicional](../biconditionals-and-equivalent-conditions/#from-biconditionals-and-equivalent-conditions) explica las dos implicaciones necesarias. Usamos el hecho entero habitual de que todo entero es exactamente par o impar. Por tanto, no par significa impar y no impar significa par; esta dicotomía justifica las negaciones de la prueba de vuelta.
+Todo entero es exactamente par o impar. Así, no par significa impar y viceversa, justificando la contraposición.
 
 
 <span id="from-aequivalenz-und-paritaet-ida-usa-la-definición"></span>
@@ -160,21 +160,21 @@ El término entre paréntesis es entero, por lo que el cuadrado es par.
 
 <Math tex="n=2k+1\quad\Longrightarrow\quad n^2=4k^2+4k+1=2(2k^2+2k)+1" display />
 
-Un entero impar tiene cuadrado impar. Esto demuestra la contraposición de «si el cuadrado es par, el entero es par». La equivalencia completa vale también para enteros negativos y cero; el cálculo con la forma impar no representa al propio cero. Cero es par y tiene cuadrado par, así que la ida lo cubre. No restrinjas tácitamente el dominio a los positivos.
+Los impares tienen cuadrados impares: contraposición de «cuadrado par implica entrada par», también para negativos. Cero no tiene forma impar; como par con cuadrado par queda cubierto por la ida.
 
 
 <span id="from-aequivalenz-und-paritaet-por-qué-usar-contraposición-aquí"></span>
 
 ### ¿Por qué usar contraposición aquí?
 
-Partir de $n^2 = 2k$ no escribe inmediatamente $n$ como el doble de un entero: extraer la raíz deja abierta la pregunta que debemos resolver. La imparidad tiene una forma más útil, $n = 2k + 1$. Al elevar al cuadrado obtenemos una parte par más 1; un impar no puede tener cuadrado par. Así se excluye el obstáculo a la vuelta. $k$ puede ser negativo; no se usó positividad.
+Desde $n^2=2k$, extraer la raíz no expresa $n$ como doble de un entero. En cambio, $n=2k+1$ al cuadrado da una parte par más uno, excluyendo entradas impares. El testigo $k$ puede ser negativo.
 
 
 <span id="from-aequivalenz-und-paritaet-práctica"></span>
 
 ### Práctica
 
-Usa una representación de la definición e identifica el entero que queda entre paréntesis.
+Usa la definición e identifica el entero del último paréntesis.
 
 <Exercise question="Demuestra que el producto de dos enteros impares es impar.">
 

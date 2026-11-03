@@ -32,16 +32,16 @@ sourceLocations: []
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
 
-UND verlangt beide Eingaben. Das inklusive ODER verlangt mindestens eine und erlaubt auch beide. NICHT kehrt den Wahrheitswert um. Eine Implikation ist nur bei wahrer Voraussetzung und falscher Folgerung falsch. Äquivalenz verlangt gleiche Wahrheitswerte, auch wenn beide falsch sind.
+UND braucht beide, einschließendes ODER mindestens eine Eingabe; NICHT kehrt Wahrheit um. Implikation scheitert nur bei wahrer Voraussetzung und falscher Folgerung. Äquivalenz verlangt gleiche Werte, auch beide falsch.
 
 
 <span id="from-logische-verknuepfungen-eine-wahrheitstabelle-mit-drei-variablen"></span>
 
 ### Eine Wahrheitstabelle mit drei Variablen
 
-Eine zusätzliche Aussage $C$ führt keinen dritten Wahrheitswert ein: $A$, $B$ und $C$ sind weiterhin jeweils entweder falsch ($0$) oder wahr ($1$). Bei zwei Variablen gibt es $2^2=4$ Belegungen, bei drei Variablen $2^3=8$. Jede bisherige Zeile teilt sich in zwei Fälle auf: einen mit $C=0$ und einen mit $C=1$.
+Eine dritte Aussage ergänzt Belegungen, keine Wahrheitswerte: Jede bleibt $0$ oder $1$. Zwei Eingaben ergeben $2^2=4$ Zeilen, drei $2^3=8$: Jede alte Zeile zerfällt nach $C=0,1$.
 
-In diesem zusätzlichen Beispiel zeigen die Spalten $A \land B$ und $B \lor C$ Zwischenergebnisse. Mit ihnen lassen sich die längeren Ausdrücke Schritt für Schritt lesen; die Klammern legen fest, welche Aussagen zusammengehören.
+Dieses zusätzliche Beispiel nutzt $A\land B$ und $B\lor C$ als Zwischenspalten; werte nach der Klammergruppierung aus.
 
 | $A$ | $B$ | $C$ | $A \land B$ | $(A \land B) \land C$ | $B \lor C$ | $A \lor (B \lor C)$ | $(A \land B) \Rightarrow C$ | $(A \land B) \Leftrightarrow C$ |
 |---|---|---|---|---|---|---|---|---|
@@ -54,48 +54,48 @@ In diesem zusätzlichen Beispiel zeigen die Spalten $A \land B$ und $B \lor C$ Z
 | 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 |
 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
 
-In der Zeile $A=1$, $B=1$, $C=0$ ist zum Beispiel die Zwischenaussage $A \land B$ wahr. Ihre Verknüpfung mit $C$ durch UND ist falsch. Auch $(A \land B) \Rightarrow C$ ist falsch, denn die Voraussetzung ist wahr und die Folgerung falsch. Die abschließende Äquivalenz ist ebenfalls falsch, weil $A \land B$ und $C$ verschiedene Wahrheitswerte haben.
+Bei $A=B=1,C=0$ ist $A\land B$ wahr. UND mit $C$ ist falsch; Implikation scheitert an wahrer Voraussetzung und falscher Folgerung; Äquivalenz an verschiedenen Werten.
 
-Die Spaltenzahl ist nicht festgelegt: Für jeden zu vergleichenden Ausdruck kommt eine Spalte hinzu.
+Ergänze Spalten für gewünschte Vergleichsausdrücke; ihre Anzahl ist frei.
 
 
 <span id="from-logische-verknuepfungen-immer-nie-oder-manchmal"></span>
 
 ### Immer, nie oder manchmal
 
-Eine Tautologie gilt bei jeder Belegung, etwa $A \lor  \neg A$. Eine Kontradiktion ist bei jeder Belegung falsch, etwa $A \land  \neg A$. Eine Kontingenz hängt von der Belegung ab. $A \Rightarrow  B$ ist kontingent, auch wenn einzelne Fälle mit falscher Voraussetzung wahr sind.
+Eine **Tautologie**, etwa $A\lor\neg A$, ist immer wahr; eine **Kontradiktion**, etwa $A\land\neg A$, immer falsch. Eine **Kontingenz** wechselt: $A\Rightarrow B$ bleibt trotz wahrer Fälle mit falscher Voraussetzung kontingent.
 
 <span id="from-building-truth-tables"></span>
 
 ## Wahrheitstabellen aufbauen
 
-Die ganze Zahl einer Karte ist positiv oder gerade und ist nicht gerade. Neun erfüllt diese Beschreibung, sechs nicht. Eine **Wahrheitstabelle** untersucht die logische Struktur ohne endlos viele Zahlenproben: Sie listet jede Belegung der benannten Aussagen mit Wahrheitswerten auf und wertet die zusammengesetzte Aussage zeilenweise aus.
+„Positiv oder gerade, und nicht gerade“ gilt für Karte neun, nicht sechs. Eine **Wahrheitstabelle** untersucht Struktur ohne endlose Zahlenproben: alle Wahrheitsbelegungen auflisten, dann die zusammengesetzte Aussage auswerten.
 
-Eine Zeile verläuft waagerecht und legt eine Belegung fest. Eine Spalte verläuft senkrecht und verfolgt eine Eingabe oder einen berechneten Ausdruck. $1$ und $0$ codieren wahr und falsch, keine Wahrheitsmengen. Die Regeln stammen aus klassischen Verknüpfungsdefinitionen, nicht aus Kartenbeobachtungen.
+Zeilen fixieren waagerecht Belegungen; Spalten verfolgen senkrecht Eingaben oder Ausdrücke. $1$ und $0$ bezeichnen Wahrheit, keine Mengen. Klassische Definitionen bestimmen Regeln, nicht Kartenbeobachtungen.
 
 
 <span id="from-building-truth-tables-eingaben-und-vollständigkeit"></span>
 
 ### Eingaben und Vollständigkeit
 
-Für eine Eingabe $P$ liste beide Werte auf. Bei verschiedenen Eingaben $P,Q$ halte $P$ zunächst wahr, während $Q$ beide Werte annimmt, und wiederhole dies mit falschem $P$: $11,10,01,00$. Erweitere die Liste durch die oben erklärte Zeilenteilung: Eine dritte verschiedene Eingabe $R$ ergibt acht Zeilen ohne Auslassungen oder Wiederholungen.
+Liste beide Werte für $P$. Bei verschiedenen $P,Q$ variiere $Q$ erst mit wahrem, dann falschem $P$: $11,10,01,00$. Teilung nach dritter Eingabe $R$ ergibt acht Zeilen, jede genau einmal.
 
-Jede **verschiedene** Eingabe verdoppelt die Zeilenzahl. Zehn Vorkommen von $P$ sind weiterhin nur eine Eingabe. Innerhalb einer Zeile müssen alle Vorkommen von $P$ denselben Wert haben. $\neg P$ wird aus $P$ berechnet, nicht unabhängig gewählt.
+Jede **verschiedene** Eingabe verdoppelt Zeilen. Zehn Vorkommen von $P$ bleiben eine Eingabe mit gleichem Wert innerhalb jeder Zeile. $\neg P$ ist abgeleitet, nicht unabhängig.
 
-Zum Aufbau: Eingaben benennen; äußere Verknüpfung und vollständige Teile bestimmen; Belegungen systematisch auflisten; kleine Teile vor größeren in Spalten berechnen; Definitionen anwenden; prüfen, ob die letzte Spalte die ganze Formel auswertet. Zwischenspalten ergänzen keine Annahmen. Der erste falsche Zwischenwert hilft, eine falsch angewandte Regel zu finden.
+Benenne Eingaben; zerlege äußere Verknüpfung und ganze Teile; liste Belegungen; berechne kleinere vor größeren Teilen; wende Definitionen an; prüfe die Endspalte auf die ganze Formel. Zwischenspalten setzen nichts voraus; der erste falsche Wert lokalisiert die falsche Regel.
 
 
 <span id="from-building-truth-tables-durchgerechneter-aufbau"></span>
 
 ### Durchgerechneter Aufbau
 
-$P$ bedeute positiv und $Q$ gerade für dieselbe Karte. Die einleitende Beschreibung lautet
+Für eine Karte bedeute $P$ positiv, $Q$ gerade. Dann:
 
 $$(P\lor Q)\land\neg Q.$$
 
-„mindestens eine der Aussagen P oder Q gilt, und Q gilt nicht“.
+„P oder Q, und nicht Q.“
 
-Das äußere Und verbindet die ganze Disjunktion mit der ganzen Negation. Berechne beide, bevor du sie verknüpfst:
+Das äußere UND verbindet ganze Disjunktion und Negation; berechne beide zuerst:
 
 | $P$ | $Q$ | $P\lor Q$ | $\neg Q$ | $(P\lor Q)\land\neg Q$ |
 |---|---|---|---|---|
@@ -104,21 +104,21 @@ Das äußere Und verbindet die ganze Disjunktion mit der ganzen Negation. Berech
 | 0 | 1 | 1 | 0 | 0 |
 | 0 | 0 | 0 | 1 | 0 |
 
-In Zeile $10$ ist die Disjunktion durch $P$ wahr; die Negation ist wahr, weil $Q$ falsch ist. Beide äußeren Eingaben sind wahr, also auch das Ergebnis. In Zeile $00$ ist $\neg Q$ wahr, aber die Disjunktion falsch; deshalb ist das Ergebnis falsch. Nur auf den letzten Teil $\neg Q$ zu schauen würde diesen Fehler übersehen.
+Bei $10$ macht $P$ ODER wahr und falsches $Q$ NICHT wahr: UND gelingt. Bei $00$ ist $\neg Q$ wahr, ODER falsch: UND scheitert. Nur der letzte Teil würde das übersehen.
 
-Die letzte Spalte ist genau dann wahr, wenn $P$ wahr und $Q$ falsch ist. Alle booleschen Belegungen sind erfasst. Das ist ein wahrheitsfunktionales Ergebnis für beliebige Aussagen, keine Vermutung aus neun und sechs.
+Wahrheit gilt genau für wahres $P$, falsches $Q$. Vollständige boolesche Zeilen beweisen das für beliebige Aussagen, nicht nur Karten neun und sechs.
 
 
 <span id="from-building-truth-tables-weitere-tabellen-selbst-aufbauen"></span>
 
 ### Weitere Tabellen selbst aufbauen
 
-Erstelle $(P\land Q)\lor\neg P$ mit Zwischenwerten für Konjunktion und Negation. Erkläre ein wahres und ein falsches Ergebnis.
+Erstelle $(P\land Q)\lor\neg P$ mit beiden Zwischenspalten; erkläre ein wahres und ein falsches Ergebnis.
 
 <details>
 <summary>Hinweis</summary>
 
-Außen steht einschließendes Oder. Ein wahrer Zwischenteil reicht aus.
+Das äußere einschließende ODER braucht einen wahren Zwischenteil.
 
 </details>
 
@@ -134,16 +134,16 @@ Außen steht einschließendes Oder. Ein wahrer Zwischenteil reicht aus.
 | 0 | 0 | 0 | 1 | 1 |
 
 
-Zeile $10$ ist falsch, weil beide äußeren Eingaben falsch sind. Die letzten beiden Zeilen sind unabhängig von $Q$ durch $\neg P$ wahr. Zeile $11$ ist durch die Konjunktion wahr.
+$10$ scheitert an zwei falschen Teilen. $01,00$ gelingen über $\neg P$ unabhängig von $Q$; $11$ über UND.
 
 </details>
 
-Erstelle nun $P\land(Q\lor R)$ auf einem leeren Blatt mit acht Zeilen.
+Erstelle $P\land(Q\lor R)$ aus einer leeren Acht-Zeilen-Tabelle.
 
 <details>
 <summary>Hinweis zur dritten Eingabe</summary>
 
-Liste jedes Tripel genau einmal auf. Berechne $Q\lor R$ vor der äußeren Konjunktion; $P$ wird immer benötigt.
+Jedes Tripel einmal; berechne zuerst $Q\lor R$. $P$ bleibt nötig.
 
 </details>
 
@@ -163,11 +163,11 @@ Liste jedes Tripel genau einmal auf. Berechne $Q\lor R$ vor der äußeren Konjun
 | 0 | 0 | 0 | 0 | 0 |
 
 
-In den ersten drei Zeilen sind $P$ und mindestens eine der Aussagen $Q,R$ wahr. In Zeile $100$ scheitert die gruppierte Alternative. In den letzten vier Zeilen scheitert $P$ unabhängig von der Alternative.
+Die ersten drei Zeilen haben $P$ und mindestens eines von $Q,R$ wahr. $100$ verfehlt die Alternative; die letzten vier verfehlen unabhängig davon $P$.
 
 </details>
 
-<Exercise question="Wie viele Zeilen braucht $P\lor\neg P$? Erstelle die Tabelle und erkläre, weshalb das negierte Vorkommen keine unabhängige Eingabe ist.">
+<Exercise question="Erstelle $P\lor\neg P$. Wie viele Zeilen, und warum ist Negation keine unabhängige Eingabe?">
 
 
 | $P$ | $\neg P$ | $P\lor\neg P$ |
@@ -176,7 +176,7 @@ In den ersten drei Zeilen sind $P$ und mindestens eine der Aussagen $Q,R$ wahr. 
 | 0 | 1 | 1 |
 
 
-Es sind nur zwei Zeilen. Beide Vorkommen betreffen dieselbe Aussage; ihre Negation wird durch ihren Wert bestimmt. In jeder Zeile ist eine Alternative wahr. Die ganze Disjunktion gilt daher bei jeder klassischen Belegung.
+Zwei Zeilen: Beide Vorkommen betreffen eine Aussage mit festgelegter Negation. Jede Zeile hat eine wahre Alternative; die Disjunktion ist klassisch immer wahr.
 
 </Exercise>
 
@@ -185,12 +185,12 @@ Es sind nur zwei Zeilen. Beide Vorkommen betreffen dieselbe Aussage; ihre Negati
 
 ### Was abstrakte Zeilen aussagen
 
-Bedeutet $P$ „Eine feste reelle Zahl ist größer als eins“ und $Q$ „Diese Zahl ist positiv“, ist Zeile $10$ für diese Interpretation unmöglich: Aus $x>1$ folgt $x>0$. Eine **vollständige uneingeschränkte aussagenlogische Tabelle** enthält die Zeile trotzdem. Sie beschreibt eine abstrakte Belegung und behauptet nicht die Existenz einer solchen Zahl. Arithmetik bestimmt, welche Zeilen Zahlen verwirklichen können. Eine Einschränkung auf solche Zeilen muss ausdrücklich genannt werden.
+Für $P$ „Ein fester Reeller übersteigt eins“ und $Q$ „Er ist positiv“ impliziert $x>1$ stets $x>0$: $10$ ist nicht realisierbar. Eine **uneingeschränkte aussagenlogische Tabelle** enthält diese abstrakte Belegung dennoch, ohne einen solchen Reellen zu behaupten. Arithmetik bestimmt Realisierbarkeit; nenne jede Einschränkung auf realisierbare Zeilen.
 
-<Exercise question="Jemand prüft die einleitende Formel nur in 11 und 00, erhält zweimal falsch und nennt sie immer falsch. Welche Zeilen fehlen? Welche widerlegt den Schluss?">
+<Exercise question="Die Anfangsformel ist bei 11 und 00 falsch. Welche Zeilen fehlen, und welche widerlegt ‘immer falsch’?">
 
-$10$ und $01$ fehlen. Zeile $10$ liefert wahr, denn Disjunktion und $\neg Q$ sind wahr. Richtige Rechnungen in zwei bequemen Zeilen sind keine vollständige Prüfung.
+$10,01$ fehlen; $10$ widerlegt, weil ODER und $\neg Q$ wahr sind. Zwei korrekte ausgewählte Zeilen sind nicht vollständig.
 
 </Exercise>
 
-Vergleiche Formeln bei **denselben Belegungen**. Gleiche Endspalten in allen Zeilen beweisen wahrheitsfunktionale Äquivalenz; eine Abweichung widerlegt sie. Eine Wahrheitstabelle beweist nicht die arithmetische Bedeutung ihrer Eingaben. Die umfassendere [Tabelle mit drei Eingaben oben](#from-logische-verknuepfungen) vergleicht auch Implikation und Äquivalenz.
+Vergleiche Endspalten bei **denselben Belegungen**: Überall gleich beweist wahrheitsfunktionale Äquivalenz; ein Unterschied widerlegt. Tabellen beweisen keine arithmetische Eingabebedeutung. Die [Drei-Eingaben-Tabelle](#from-logische-verknuepfungen) vergleicht auch Implikation und Äquivalenz.

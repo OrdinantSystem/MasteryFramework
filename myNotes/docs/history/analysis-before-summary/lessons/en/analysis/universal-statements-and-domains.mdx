@@ -1,0 +1,215 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-quantifiers"
+sourceId: "analysis-zero"
+sourcePages: []
+sourceLocations: ["A0.1.1 Mathematical propositions/01 What Counts as a Proposition.md", "A0.1.1 Mathematical propositions/03 Open Sentences and Free Variables.md", "A0.1.1 Mathematical propositions/04 Truth Values.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/01 Meaning of For Every.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/02 Domain of Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/05 Universal Statements.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Universal Quantification.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/03 Bound Variables.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/📚 Subjects/Analysis/Analysis 0/A0.1.6 Universal quantifier/04 Quantifier Scope.md", "🎓 Learning/🧮 Mathematics/🎓 University Maths/🧩 Concepts/Quantifiers and Scope - First Reading.md", "A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses"]
+title: "For every and there exists: domains and scope"
+navTitle: "For every and there exists: domains and scope"
+description: "For every and there exists: domains and scope"
+order: 8
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["biconditionals-and-equivalent-conditions", "aussagen-und-aussageformen"]
+thumbnail: "quantifiers"
+additionalSources: [{"sourceId": "analysis-concepts-1", "pages": [1], "locations": []}]
+---
+
+<span id="from-universal-statements-and-domains"></span>
+
+## Universal statements and domains
+
+A box contains exactly the cards two, four, and six. “Every card is positive” is true: each of its three members passes. Add zero and the claim becomes false. Most cards still pass, but “every” permits no exception. A zero card outside the box would not matter.
+
+
+<span id="from-universal-statements-and-domains-domain-predicate-quantifier"></span>
+
+### Domain, predicate, quantifier
+
+The **domain** $D$ is the specified collection of allowed objects. A **predicate** $P$ is a condition meaningful at each member. With any other parameters fixed, write
+
+$$\forall x\in D\;P(x).$$
+
+Read: “For every $x$ in $D$, $P$ of $x$ holds.” $\forall$ means for every, $\in$ means belongs to, and the parentheses in $P(x)$ name its input, not multiplication. The formula is true exactly when every member of $D$ satisfies the predicate; one permitted failure makes it false. This defines universal truth, not a promise that every universal statement is true.
+
+For example, $\forall x\in\mathbb R\;(x>0)$ says “every real number is positive” and is false at zero. Here $\mathbb R$ denotes real numbers, including zero, negatives, and fractions. The same positivity condition is true on the positive integers but false on all integers $\mathbb Z$. Minus one half cannot refute an integer claim because it is not an integer.
+
+
+<span id="from-universal-statements-and-domains-defined-false-or-outside-the-claim"></span>
+
+### Defined, false, or outside the claim?
+
+These are different diagnoses. A noninteger input is outside an integer domain. At zero, $x>0$ is meaningful and false. In a proposed reciprocal claim over all reals, $1/x$ is undefined at zero: it is not an ordinary false equality or a third truth value.
+
+Use an explicit domain repair:
+
+$$\forall x\in\mathbb R\setminus\{0\}\;(x\cdot(1/x)=1).$$
+
+Read: “For every nonzero real $x$, $x$ times its reciprocal equals one.” The set difference removes zero; the reciprocal property now applies to every input. Under our explicit-domain convention, a false hypothesis is not a programming guard that gives an undefined expression a value. Informal guarded notation needs its own agreed interpretation.
+
+When all predicates are defined on the ambient domain, a hypothesis can select a subset:
+
+$$\forall x\in\mathbb R\;((x>5)\Rightarrow(x>2)).$$
+
+Read: “For every real $x$, if $x$ exceeds five, then it exceeds two.” The quantifier covers all reals; the hypothesis selects those above five. A real outside that selected subset gives a true conditional through a false hypothesis. An eligible real exceeds two by transitivity of order. Both cases account for the whole ambient domain.
+
+
+<span id="from-universal-statements-and-domains-empty-collections-and-changed-domains"></span>
+
+### Empty collections and changed domains
+
+“Every card in this box is red” is true for an empty box: there is no nonred card inside. It does not provide a red card. A nonempty room may contain the box and table while the restricted collection of cards is empty. This does not require changing the convention in formal logic that an overall universe is nonempty.
+
+Removing objects from a domain where every member passes cannot introduce a failure, even if all members are removed. Enlarging it can: adding zero spoiled the positive-card claim. Restricting a false all-real claim may give a true new statement, but it does not prove the original.
+
+
+<span id="from-universal-statements-and-domains-what-proves-an-infinite-domain-claim"></span>
+
+### What proves an infinite-domain claim?
+
+For a finite domain, checking every member proves a universal claim. A finite sample cannot do that for all real numbers: the argument must cover an arbitrary permitted input without extra assumptions. The complete proof that adding two to any real number makes it larger is developed in [Proof methods](../beweissprache-und-methoden/#from-beweissprache-und-methoden). Calling an input arbitrary and then selecting seven would lose that generality.
+
+The formula $\forall x\in\mathbb R\;(x+a>x)$ still has a free parameter $a$: the quantifier binds $x$, not $a$. It is true with $a=2$ and false with $a=0$. Assigning a value permits evaluation but does not add a written binder. See [bound variables and scope](../universal-statements-and-domains/#from-bound-variables-and-scope) for this distinction.
+
+For a possibly empty restricted collection, do not assert that a member exists. One can handle the empty case directly and then prove the nonempty case with an arbitrary member. A standard conditional proof may also reason from an arbitrary symbol under the temporary assumption that it belongs to the collection, then discharge that assumption. This does not claim there is such a member.
+
+<Exercise question="A box is known to contain exactly $2$, $4$, and $6$. Why can a complete check prove that every card is positive, while three checks cannot prove this about all reals? What changes after adding zero, and what does not-all-positive mean?">
+
+The three cards exhaust the box, but not the real numbers. All three pass; adding zero creates a permitted failure, so the enlarged universal claim is false. Not all positive means at least one card is not positive, not that no card is positive: the original three still are.
+
+</Exercise>
+
+<Exercise question="Distinguish these objections: minus one half against an integer claim; zero against every-real-is-positive; zero in a proposed all-real reciprocal formula. Then prove that every real above eight is above three, including the false-hypothesis cases.">
+
+Minus one half is outside the integer domain. Zero is an allowed, defined failure of positivity. Its reciprocal is undefined, so that formula needs repair before evaluation. For the final theorem, take any real $x$. If $x>8$, then $x>3$ because $8>3$ and order is transitive. Otherwise the hypothesis is false and the conditional true. Every real is covered; no claim of an eligible input's existence is needed.
+
+</Exercise>
+
+<span id="from-existence-and-witnesses"></span>
+
+## Existence and witnesses
+
+A tray holds cards labelled two, four and seven. Seven makes “There is an odd-labelled card” true. Two and four do not spoil it: the claim did not require every card to be odd. A second success, nine, would leave it true.
+
+$$
+\exists x\in D\;P(x).
+$$
+
+$D$ is the domain of allowed objects; $P$ is their required condition, or predicate. The existential quantifier $\exists$ means at least one. It permits several successes, even all members when the domain is nonempty. It does not assert exactly one or suggest that others fail. The quantifier binds $x$ within its scope, not any other variable in $P$. A proposition results once the domain, predicate and remaining parameters are specified. Fixing a parameter does not syntactically bind it.
+
+“There is a red token” asserts something; “Find a red token” requests an action. Existence also differs from knowledge. A sealed bag can contain a red token before we know it does. Unknown is not false. A known empty bag, however, supplies no possible witness. Restricted domains may be empty even when the wider universe is not.
+
+
+<span id="from-existence-and-witnesses-read-aloud"></span>
+
+### Read aloud
+
+There exists at least one x in D such that P of x holds.
+
+<span id="from-bound-variables-and-scope"></span>
+
+## Bound variables and scope
+
+Let $D=\{1,2\}$ and let $y$ be a real comparison value. In
+
+$$\forall x\in D\;(x<y),$$
+
+read “for every $x$ in $D$, $x$ is less than $y$.” The card number varies across $D$; the comparison value stays fixed. The formula is true at $y=3$ and false at $y=2$, because strict comparison fails for the member two.
+
+
+<span id="from-bound-variables-and-scope-classify-occurrences-not-letters-forever"></span>
+
+### Classify occurrences, not letters forever
+
+An **occurrence** is a particular appearance of a variable. A quantifier **binds** occurrences of its named variable inside its **scope**, the subformula it governs. An occurrence with no governing binder is **free**. If an inner quantifier uses the same name, it governs that name within its own scope. A formula is **open** if it has a free occurrence and **closed** if it has none; closed does not mean “no letters.”
+
+In the opening comparison, $x$ is bound and $y$ is free. The $x$ immediately after $\forall$ declares the bound name; it is not another external input. The written formula is open because $y$ is free. Supplying $y=3$ lets us evaluate it without inserting a quantifier, so $y$ remains free in its syntax.
+
+
+<span id="from-bound-variables-and-scope-a-safe-new-name-keeps-the-roles"></span>
+
+### A safe new name keeps the roles
+
+A fresh label gives
+
+$$\forall t\in D\;(t<y).$$
+
+Read: “For every $t$ in $D$, $t$ is less than $y$.” Rename the declaration and exactly the occurrences it binds; leave the domain and the free comparison value untouched. This checks the same numbers against the same $y$.
+
+Changing the binder to $y$ instead would produce $\forall y\in D\;(y<y)$. Read: “Every $y$ in $D$ is less than itself.” It is false on this nonempty domain, unlike the original at comparison value three. The formerly free comparison occurrence has become bound: **variable capture** changed the claim.
+
+Changing only the declaration would also be wrong, because its old occurrences would no longer belong to it. Global text replacement is unsafe when other binders or free occurrences use the same letter.
+
+
+<span id="from-bound-variables-and-scope-parentheses-determine-the-reach"></span>
+
+### Parentheses determine the reach
+
+Compare
+
+$$(\forall x\in D\;(x<3))\land(x>0)$$
+
+with
+
+$$\forall x\in D\;((x<3)\land(x>0)).$$
+
+The first reads “every $x$ in $D$ is below three, and the free $x$ is positive.” Its outermost connective is conjunction. The quantifier stops before the right comparison. With the free real $x=-1$, the whole formula is false, though its universal part is true. That free real need not belong to $D$.
+
+The second reads “every $x$ in $D$ is below three and positive.” Its outermost operation is the quantifier, and both comparisons lie in its scope. It is true because both one and two meet both requirements. No free $x$ remains, so an external assignment to $x$ does not alter its test.
+
+Being inside a scope is not enough to be bound: in $\forall x\in D\;((x<y)\land(y<3))$, both occurrences of $y$ remain free. With $y=5/2$ the formula is true; with $y=3$ the second comparison fails. The quantifier names only $x$.
+
+
+<span id="from-bound-variables-and-scope-moving-a-fixed-condition-needs-a-domain-check"></span>
+
+### Moving a fixed condition needs a domain check
+
+Let $C$ be a proposition independent of $x$. Compare
+
+$$\forall x\in D\;(P(x)\land C)$$
+
+and
+
+$$(\forall x\in D\;P(x))\land C.$$
+
+Read the first as “for every member, both $P$ and $C$ hold”; the second asserts “every member satisfies $P$, and $C$ holds separately.” If $D$ is empty and $C$ false, the first is vacuously true and the second false. Thus the rewrite is not universally valid.
+
+For nonempty $D$ they are equivalent: the first gives $P$ for every member and gives $C$ by any one member; conversely, the separate universal statement and $C$ provide both requirements at each member. Nonemptiness supplies the step that fails in the empty case.
+
+### When an inner quantifier reuses a name
+
+For $D=\{1,2\}$ and $E=\{-1\}$, $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ is true. The outer $x$ tests positivity in $D$; the inner $x$ tests negativity in $E$. They are not the same input required to be both positive and negative. Rename only the inner binder and its comparison to $t$ to make the distinction visible. Renaming the outer binder must leave those inner occurrences alone.
+
+<Exercise question="With $D=\{1,2\}$, safely rename the bound variable in $(\forall x\in D\;(x<3))\land(x>0)$ to $t$. Then evaluate it at free $x=-1$. Does the final occurrence change?">
+
+The result is $(\forall t\in D\;(t<3))\land(x>0)$. Only the declaration and its governed comparison change. The final $x$ is outside the scope and stays free. At $x=-1$ the universal part is true but the final comparison false, so the conjunction is false.
+
+</Exercise>
+
+<Exercise question="Someone changes $\forall x\in D\;(x\le y)$ to $\forall y\in D\;(y\le y)$. Both are true when the original free $y=3$. Why is this still unsafe? Give a separating assignment and explain whether knowing a free value makes it bound.">
+
+The second formula captures the free comparison value and is always true here, since each number is at most itself. At original $y=0$, the first is false because one and two exceed zero. Agreement for $y=3$ did not preserve the dependence on $y$. Knowing that value permits evaluation; only changing the written binding structure changes which occurrences are bound.
+
+</Exercise>
+
+<span id="from-aussagen-und-aussageformen"></span>
+
+## Assignments and closed formulas
+
+<span id="from-aussagen-und-aussageformen-free-occurrences-scope-and-assignments"></span>
+
+### Free occurrences, scope, and assignments
+
+$\mathbb Z$ denotes integers and $\mathbb R$ real numbers. $x\in\mathbb R$ states membership, not equality. “Let $x$ be real” gives a domain and often introduces an **arbitrary but fixed** input in a proof. “Let $x=2$” supplies a specific value. Neither inserts a quantifier into the written formula.
+
+$$\forall x\in\mathbb R\;(x+y=y+x)$$
+
+Here both $x$ occurrences are bound, but $y$ remains free, even though ordinary commutativity makes the condition true for every real assignment to $y$. Truth for every assignment does not create a missing quantifier. Adding $\forall y\in\mathbb R$ closes it:
+
+$$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
+
+An assignment $y=0$ supplies an evaluation context, not syntactic binding. Actually substituting zero for $y$ produces a **different written formula**, with those occurrences replaced. Keep these operations separate.
+
+Similarly $\exists x\in\mathbb R\;(x=y)$ remains open in $y$, although every real assignment to $y$ supplies a matching witness. Existential quantification means at least one, not uniqueness. In $\forall x\in\mathbb R\;(x=y)$, assigning $y=0$ leaves the displayed $y$ free but gives a false contextual claim, refuted by $x=1$.

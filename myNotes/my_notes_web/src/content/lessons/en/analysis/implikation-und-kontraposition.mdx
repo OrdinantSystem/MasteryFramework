@@ -21,14 +21,14 @@ sourceLocations: []
 
 ## Material implication and vacuity
 
-For a real number $x$, try the rule “if $x$ exceeds two, then $x$ exceeds five.” Seven meets both comparisons; three meets the first but fails the second. Zero meets neither. Classical logic assigns a truth value to the whole conditional in that last case too.
+For real $x$, test “above two implies above five”: seven satisfies both, three only the premise, zero neither. Classical logic evaluates even that last conditional.
 
 
 <span id="from-material-implication-and-vacuity-the-definition-includes-four-cases"></span>
 
 ### The definition includes four cases
 
-For meaningful propositions $P$ and $Q$, **material implication** $P\Rightarrow Q$ means “if $P$, then $Q$.” By definition it is false exactly when $P$ is true and $Q$ is false. Write $1$ for true and $0$ for false:
+For meaningful $P,Q$, **material implication** $P\Rightarrow Q$ (“if P, then Q”) is false exactly at true $P$, false $Q$. Here $1$ and $0$ mean true/false:
 
 | $P$ | $Q$ | $P\Rightarrow Q$ |
 | --- | --- | --- |
@@ -37,50 +37,50 @@ For meaningful propositions $P$ and $Q$, **material implication** $P\Rightarrow 
 | $0$ | $1$ | $1$ |
 | $0$ | $0$ | $1$ |
 
-This table defines the connective in classical two-valued logic. “Unknown to us” is not a fifth case: a fixed hidden card still has a number. The arrow does not mean “and,” describe a causal process, or assert that either part holds.
+This defines the classical connective. Unknown is no fifth case: hidden cards have fixed numbers. The arrow asserts neither component, conjunction nor causation.
 
-The definition gives a useful result:
+From the definition:
 
 $$(P\Rightarrow Q)\equiv(\neg P\lor Q).$$
 
-Read: “If $P$, then $Q$, is logically equivalent to not $P$ or $Q$.” The sign $\equiv$ means agreement under every truth assignment; $\lor$ is inclusive or. If $P$ is false, $\neg P$ is true, so the disjunction is true whatever $Q$ is. If $P$ is true, $\neg P$ is false, and the disjunction takes $Q$'s value. These two cases cover all rows and prove the result from the definition.
+“If P then Q” equals “not P or Q,” inclusively. $\equiv$ means agreement under every assignment: false $P$ makes $\neg P$ and OR true regardless of $Q$; true $P$ makes OR take $Q$’s value. Both cases prove the result.
 
 
 <span id="from-material-implication-and-vacuity-what-vacuous-truth-does-and-does-not-say"></span>
 
 ### What vacuous truth does and does not say
 
-A conditional with false hypothesis is **vacuously true**. Both false-hypothesis rows matter. For the above-five-to-above-two rule, zero gives a false conclusion while three gives a true conclusion. Both whole conditionals are true. A false hypothesis therefore leaves the conclusion undetermined.
+False-premise conditionals are **vacuously true**. For above-five-to-above-two, zero has false conclusion and three true conclusion; both conditionals hold. The conclusion is undetermined.
 
-Imagine a box containing exactly zero and three, with the rule “every card above five is above two.” Neither card meets the hypothesis, so neither breaks the rule. The domain is nonempty but the eligible subset is empty. In an empty box, the domain itself is empty. Neither situation supplies a card above five. The rule alone proves neither that a card above five exists nor that a card above two exists. In the box containing zero and three, we know that a card above two exists from its stated contents, not from the rule. Truth, existence, and usefulness are separate questions.
+A box containing exactly zero and three obeys “every card above five exceeds two”: its domain is nonempty, its eligible subset empty. An empty box has empty domain. Neither supplies a card above five. The rule implies existence neither above five nor above two; contents, not the rule, establish the latter here. Truth, existence and usefulness differ.
 
-For the **different** rule above-two-to-above-five, the instance at zero is true but the instance at three is false. Restrict the domain explicitly to reals at most two and the rule becomes true throughout that domain: every hypothesis is false. This proves a changed statement, not the original all-real claim.
+For **above-two-to-above-five**, zero gives true, three false. Restricting to reals at most two makes every premise false and the rule universally true there, but changes the all-real claim.
 
 
 <span id="from-material-implication-and-vacuity-one-assignment-is-not-logical-consequence"></span>
 
 ### One assignment is not logical consequence
 
-For the opening comparisons $P(x):x>2$ and $Q(x):x>5$, the missing pair $P$ false, $Q$ true is impossible: above five entails above two by real order. The general table still needs that row for other propositions, for example $P:(0=1)$ and $Q:(2=2)$.
+For $P(x):x>2$, $Q(x):x>5$, real order prevents false/true. Other propositions realize it, such as $P:(0=1)$, $Q:(2=2)$, so the general table needs that row.
 
-**Logical consequence** requires that no permitted assignment or model make all premises true and the conclusion false. A conditional true in one assignment does not establish that relationship between independent $P$ and $Q$. Nor is one true numerical instance a proof that a conditional holds for every domain input. A domain-wide arithmetic proof also uses its arithmetic assumptions, not just unrestricted propositional letters.
+**Logical consequence** excludes every permitted assignment/model with true premises and false conclusion. One true conditional assignment proves neither unrestricted consequence nor universality over numerical inputs. Domain-wide arithmetic proofs also use arithmetic assumptions.
 
 
 <span id="from-material-implication-and-vacuity-meaning-comes-before-the-table"></span>
 
 ### Meaning comes before the table
 
-An ordinary real reciprocal is undefined at zero. Placing $1/0=2$ after a false hypothesis does not make it a meaningful real equality. We use explicit nonzero domains when reciprocals occur. Some informal guarded notation has an agreed interpretation; without such an agreement, implication is not a programming short-circuit instruction that repairs partial arithmetic.
+A false premise cannot make $1/0=2$ meaningful in real arithmetic. Explicitly exclude zero for reciprocals. Guarded informal notation needs an agreed interpretation; implication alone is not programming short-circuit evaluation that repairs partial operations.
 
-<Exercise question="Evaluate $(x>2)\Rightarrow(x>5)$ at $7$, $3$, and $0$. Does the true instance at zero prove a theorem about all reals? Reconstruct the missing false/true row using other propositions.">
+<Exercise question="Evaluate $(x>2)\Rightarrow(x>5)$ at $7,3,0$. Does zero prove an all-real theorem? Realize false/true with other propositions.">
 
-The pairs are true/true, true/false, and false/false, so the conditional values are $1,0,1$. Three disproves the all-real claim despite the true zero instance. These comparisons cannot produce false/true, but “zero equals one” and “two equals two” do. The connective's definition must cover those propositions too.
+Pairs true/true, true/false, false/false give $1,0,1$. Three refutes universality despite zero. These comparisons cannot realize false/true, but “zero equals one” and “two equals two” do; the definition covers them too.
 
 </Exercise>
 
-<Exercise question="A box obeys every-card-above-five-is-above-two and contains no card above five. Must its cards be at most two? Contrast an empty box, a box containing only zero, and a box containing only three.">
+<Exercise question="A box obeys above-five-implies-above-two with no card above five. Must all cards be at most two? Compare empty, zero-only and three-only boxes.">
 
-No. All three boxes obey the rule. The empty box has no cards; zero is at most two; three exceeds two. None contains a card above five. Thus the rule and the absence of qualifying cards do not determine whether any card exceeds two, and they imply no existence claim.
+No: all obey the rule, with no above-five card. Empty has no cards; zero is at most two; three exceeds two. Neither the rule nor absence of eligible cards establishes existence or decides whether any exceed two.
 
 </Exercise>
 
@@ -88,63 +88,63 @@ No. All three boxes obey the rule. The empty box has no cards; zero is at most t
 
 ## Reading conditionals
 
-Read the box rule in reversed sentence order: “A card is above two if it is above five.” **If** still introduces the hypothesis, even at the end; the rule runs from above five to above two.
+“A card exceeds two **if** it exceeds five” still runs above-five to above-two: if introduces the premise even when last.
 
 
 <span id="from-reading-conditionals-hypothesis-and-conclusion"></span>
 
 ### Hypothesis and conclusion
 
-In $P\Rightarrow Q$, read “if $P$, then $Q$.” The whole proposition $P$ is the **hypothesis**, or antecedent; the whole proposition $Q$ is the **conclusion**, or consequent. These names describe their roles. They do not announce that either proposition is true. Even the false statement “if three exceeds two, then three exceeds five” has an identifiable conclusion.
+In $P\Rightarrow Q$, the whole $P$ is **hypothesis/antecedent**, the whole $Q$ **conclusion/consequent**. Roles assert no truth: even false “if three exceeds two, then three exceeds five” has an identifiable conclusion.
 
-For a fixed real number $x$, consider
+For fixed real $x$:
 
 $$((x>0)\land(x<1))\Rightarrow(x<2).$$
 
-Read: “If $x$ is positive and less than one, then $x$ is less than two.” The outermost connective is the arrow. Its complete left block requires **both** comparisons. The domain is the real numbers; the hypothesis selects the numbers between zero and one. The domain and the hypothesis do different jobs.
+“If x is positive and below one, it is below two.” The outer arrow joins the whole **two-bound** hypothesis to the conclusion. Reals form the domain; the hypothesis selects inputs between zero and one.
 
-One half meets both requirements. Negative one meets only the upper bound; two meets only the lower bound. Neither satisfies the whole hypothesis. The arrow itself neither binds $x$ nor supplies “for every”; the surrounding sentence must specify whether we discuss a fixed input or all real inputs.
+One half passes both; negative one only the upper bound, two only the lower. Neither latter input is eligible. The arrow binds no $x$ and adds no universal quantifier; context fixes one-versus-all inputs.
 
 
 <span id="from-reading-conditionals-keep-the-stated-assumptions"></span>
 
 ### Keep the stated assumptions
 
-To prove the displayed conditional for every real input, take an arbitrary real number satisfying both bounds. Since $x<1$ and $1<2$, transitivity of order gives $x<2$. This uses ordinary real order as background.
+For arbitrary eligible real $x$, $x<1$ and $1<2$ give $x<2$ by ordinary order transitivity.
 
-The lower bound $x>0$ was unused. It still belongs to the theorem as stated. Removing it would produce a stronger claim: the same conclusion would now be required for more inputs. That stronger claim is true here by the same order argument, but identifying an unused assumption is not permission to erase it while quoting the original theorem. Adding assumptions generally makes a conditional theorem easier to satisfy; removing them increases its reach.
+Unused $x>0$ still belongs to the stated theorem. Removing it strengthens the claim to more inputs, true here by the same proof, but not the original quotation. Adding assumptions generally eases conditional validity; removing them broadens its reach.
 
 
 <span id="from-reading-conditionals-prove-the-whole-target"></span>
 
 ### Prove the whole target
 
-Now let the conclusion have two parts:
+A two-part conclusion:
 
 $$(x>5)\Rightarrow((x>2)\land(x>0)).$$
 
-Read: “If $x$ exceeds five, then it exceeds two and it exceeds zero.” Starting from $x>5$, order gives $x>2$; since $2>0$, it also gives $x>0$. Both are required. For an inclusive-or target, one proved alternative would suffice instead.
+“Above five implies above two and above zero.” Order gives $x>2$, then $x>0$ since $2>0$. Prove both; inclusive OR would need one alternative.
 
-The exact bound matters too. If the target is $x<2$, proving $x\le2$ leaves equality unresolved. Proving $x<1$ is stronger and does finish the task, because $x<1<2$.
+For target $x<2$, $x\le2$ leaves equality unresolved; stronger $x<1$ suffices by $x<1<2$.
 
 
 <span id="from-reading-conditionals-applying-a-rule-needs-two-premises"></span>
 
 ### Applying a rule needs two premises
 
-Suppose the card rule is known true and a hidden card is known to exceed five. It follows that the card exceeds two, even without knowing its exact number. This is **modus ponens**: use both $P\Rightarrow Q$ and $P$ to infer $Q$.
+Knowing the rule and that a hidden card exceeds five gives above two without knowing its exact value. **Modus ponens** uses both $P\Rightarrow Q$ and $P$ to infer $Q$.
 
-Why are both enough? If $Q$ were false while $P$ was true, the conditional would be false, contrary to the first premise. The rule alone does not suffice: a card numbered zero satisfies the above-five rule without exceeding two. Knowing only that a card exceeds two does not suffice either: three need not exceed five.
+Otherwise true $P$ and false $Q$ would falsify the assumed rule. Rule alone fails at card zero; conclusion alone cannot recover the premise, as three exceeds two but not five.
 
-<Exercise question="For real $x$, read $((x>1)\land(x<4))\Rightarrow(x>0)$. State the full hypothesis and conclusion; test $0$, $2$, and $4$ for eligibility; then give a proof without choosing a special input.">
+<Exercise question="For real x, parse $((x>1)\land(x<4))\Rightarrow(x>0)$. Name complete hypothesis/conclusion; test eligibility of $0,2,4$; prove for arbitrary input.">
 
-The hypothesis is $x>1$ **and** $x<4$; the conclusion is $x>0$. Only $2$ is eligible. Zero fails the lower bound; $4$ fails the strict upper bound, although its conclusion is true. For any eligible real $x$, the lower bound and $1>0$ give $x>0$ by transitivity. The upper bound is unused but remains part of the stated hypothesis.
+Hypothesis: $x>1$ **and** $x<4$; conclusion: $x>0$. Only two is eligible: zero fails the lower bound, four the strict upper bound despite true conclusion. Arbitrary eligible $x$ satisfies $x>1>0$ by transitivity. The unused upper bound remains stated.
 
 </Exercise>
 
-<Exercise question="A proof of a conditional with target $x<2$ stops at $x\le2$. What is missing? Then write your own two-part hypothesis with an unused assumption and explain what removing it changes.">
+<Exercise question="A proof targeting $x<2$ stops at $x\le2$. What remains? Invent a two-part hypothesis with one unused assumption; explain its removal.">
 
-The proof must exclude $x=2$; the weaker bound alone allows it. This does not assert that $2$ meets the original hypotheses. For a new example, $1<x<4$ implies $x<5$: the upper bound alone proves the conclusion. Removing $x>1$ extends the claim to all reals below $4$, including negative ones, so it is a stronger theorem. Transitivity proves that revised theorem as well.
+Exclude $x=2$, allowed by the weaker bound; this does not say it meets the original hypotheses. Example: $1<x<4$ implies $x<5$ by upper bound and transitivity. Removing $x>1$ includes negative reals below four: a stronger theorem, also proved by transitivity.
 
 </Exercise>
 
@@ -158,12 +158,12 @@ The proof must exclude $x=2$; the weaker bound alone allows it. This does not as
 
 <Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
 
-The negation selects exactly the false row of the conditional: $A$ true and $B$ false. To refute “if I pass, I buy dinner”, I must pass and not buy dinner. Negating both parts instead would select a different case.
+Denial selects true $A$, false $B$: refuting “if I pass, I buy dinner” requires passing without buying. Negating both selects another case.
 
 
 <span id="from-logische-verknuepfungen-reading-an-implication"></span>
 
-Requiring **both** directions gives $A \Leftrightarrow B$, not the one-way $A \Rightarrow B$. The divisibility proof below illustrates why an odd input cannot refute the forward rule.
+**Both** directions require $A\Leftrightarrow B$, not just $A\Rightarrow B$. Below, odd inputs cannot refute the divisibility rule’s forward direction.
 
 <span id="from-implikation-und-kontraposition"></span>
 
@@ -173,7 +173,7 @@ Requiring **both** directions gives $A \Leftrightarrow B$, not the one-way $A \R
 
 ### Change the statement, then test all cases
 
-For an original $A\Rightarrow B$, read “if $A$, then $B$.” Treat $A$ and $B$ as complete propositions, even when they contain several conditions. Keep the domain unchanged when forming the following statements:
+Read $A\Rightarrow B$ as “if A then B.” Transform complete blocks, even compound ones, without changing domain:
 
 | Form | Formula | Reading and construction |
 | --- | --- | --- |
@@ -182,15 +182,15 @@ For an original $A\Rightarrow B$, read “if $A$, then $B$.” Treat $A$ and $B$
 | Inverse | $\neg A\Rightarrow\neg B$ | If not $A$, then not $B$: negate without exchanging |
 | Contrapositive | $\neg B\Rightarrow\neg A$ | If not $B$, then not $A$: exchange and negate |
 
-These are definitions of transformations, not proofs that a transformed statement is true. The inverse is also not the negation of the original: $\neg(A\Rightarrow B)$ means $A\land\neg B$, a true hypothesis together with a false conclusion.
+These transformations define statements, not prove them. Inverse is not denial: $\neg(A\Rightarrow B)$ is $A\land\neg B$.
 
-For real numbers, above five implies above two by transitivity of order. Its converse, above two implies above five, fails at three. Its inverse, at most five implies at most two, fails at three and five. Negating a strict bound includes equality. Its contrapositive, at most two implies at most five, is true by order. Some converses and inverses really are true: $x+1=3$ implies $x=2$ by subtraction, its converse by addition, and its inverse follows because $x=2$ would force $x+1=3$. “Not generally equivalent” does not mean “always different.”
+Reals above five exceed two by transitivity. Converse fails at three; inverse (at most five implies at most two) at three and five, retaining equality. Contrapositive (at most two implies at most five) holds by order. Some converses/inverses hold: $x+1=3$ implies $x=2$ by subtraction, converse by addition, inverse because $x=2$ would force the equality. Not generally equivalent does not mean always different.
 
-Now change the truth values in the activity and compare entire columns, not just a selected row.
+Vary the activity; compare complete columns, not one row.
 
 <Interactive kind="logic" preset="implication" id="implication-lab" display />
 
-Agreement on the selected row is not enough for equivalence. Compare all four rows. The contrapositive always agrees with the original; the converse and inverse agree with each other but need not agree with the original.
+All four rows matter: original agrees with contrapositive; converse agrees with inverse, not necessarily original.
 
 <Math tex="(\colA{A}\Rightarrow \colB{B})\iff(\neg \colB{B}\Rightarrow\neg \colA{A})\qquad(\colB{B}\Rightarrow \colA{A})\iff(\neg \colA{A}\Rightarrow\neg \colB{B})" display />
 
@@ -199,19 +199,19 @@ Agreement on the selected row is not enough for equivalence. Compare all four ro
 
 ### Why the paired forms agree
 
-The original is false exactly when $A$ is true and $B$ false. The contrapositive is false exactly when $\neg B$ is true and $\neg A$ false: the very same case. Both are true in every other row. This proves their logical equivalence from the conditional definition, including when the original itself is false. Likewise, both converse and inverse are false exactly when $A$ is false and $B$ true, so they agree with each other. These are derived results, not extra definitions.
+Original fails only at true $A$, false $B$. Contrapositive fails at true $\neg B$, false $\neg A$: the same row. Both hold elsewhere, deriving equivalence even for false originals. Converse and inverse both fail only at false $A$, true $B$, deriving their agreement too.
 
-To prove a conditional throughout a domain, one may therefore prove its contrapositive throughout that same domain. For instance, to prove $x^2\ne0\Rightarrow x\ne0$ over the reals, prove its contrapositive $x=0\Rightarrow x^2=0$ by substitution and zero multiplication. Merely writing that transformed statement would not prove it.
+Thus prove a domain-wide conditional by proving its contrapositive in the same domain. For real $x^2\ne0\Rightarrow x\ne0$, prove $x=0\Rightarrow x^2=0$ by substitution and zero multiplication, not merely by writing it.
 
-With whole blocks, $(0<x<1)\Rightarrow x<2$ has converse $x<2\Rightarrow(0<x<1)$, inverse $((x\le0)\lor(x\ge1))\Rightarrow x\ge2$, and contrapositive $x\ge2\Rightarrow((x\le0)\lor(x\ge1))$. Negating the whole interval requires at least one failed bound, not both. If the original conclusion were a conjunction, its negation in the new hypothesis would likewise be a disjunction of failures.
+For $(0<x<1)\Rightarrow x<2$: converse $x<2\Rightarrow(0<x<1)$; inverse $((x\le0)\lor(x\ge1))\Rightarrow x\ge2$; contrapositive $x\ge2\Rightarrow((x\le0)\lor(x\ge1))$. Deny entire intervals by at least one failed bound, not both. Negating a conjunctive conclusion likewise produces an OR of failures.
 
-For a compound conclusion, the contrapositive of $(x>5)\Rightarrow((x>2)\land(x>0))$ is $((x\le2)\lor(x\le0))\Rightarrow(x\le5)$. Read: “If $x$ is at most two or at most zero, then it is at most five.” A failed part suffices to deny the old conjunction; requiring both failures would change the hypothesis. In either alternative, order gives $x\le5$, proving the transformed statement for all real inputs.
+For $(x>5)\Rightarrow((x>2)\land(x>0))$, contraposition gives $((x\le2)\lor(x\le0))\Rightarrow(x\le5)$: “at most two or at most zero implies at most five.” Either alternative proves the target by order for every real. Requiring both failures changes the hypothesis.
 
-Knowing $B$ and the forward rule does not establish $A$; this error is **affirming the consequent**. Knowing $\neg A$ does not establish $\neg B$; that is **denying the antecedent**. For the above-five rule, three separates the first inference, while zero and three show that a false hypothesis permits either conclusion value.
+Inferring $A$ from $B$ and the rule **affirms the consequent**; inferring $\neg B$ from $\neg A$ **denies the antecedent**. Three defeats the first; zero and three show false premises allow either conclusion.
 
-<Exercise question="Form the converse, inverse, and contrapositive of $((x>1)\land(x<4))\Rightarrow(x>0)$ over the reals. Test the converse at one and prove the contrapositive. Which truth row makes the original and its contrapositive false together?">
+<Exercise question="Over reals, transform $((x>1)\land(x<4))\Rightarrow(x>0)$ into converse, inverse and contrapositive. Test converse at one; prove contrapositive. Identify the common abstract false row.">
 
-The converse is $x>0\Rightarrow((x>1)\land(x<4))$; it fails at one because $1>1$ is false. The inverse is $((x\le1)\lor(x\ge4))\Rightarrow x\le0$. The contrapositive is $x\le0\Rightarrow((x\le1)\lor(x\ge4))$: any real at most zero is at most one, so the first alternative holds. In general, the common false row is $A$ true, $B$ false; then $\neg B$ is true and $\neg A$ false. This identifies the only failure case for both forms, proving agreement over all rows.
+Converse: $x>0\Rightarrow((x>1)\land(x<4))$, false at one since $1>1$ fails. Inverse: $((x\le1)\lor(x\ge4))\Rightarrow x\le0$. Contrapositive: $x\le0\Rightarrow((x\le1)\lor(x\ge4))$, proved by $x\le0\le1$. Common abstract failure is true $A$, false $B$, hence true $\neg B$, false $\neg A$; the only failure for either form proves agreement.
 
 </Exercise>
 
@@ -220,18 +220,18 @@ The converse is $x>0\Rightarrow((x>1)\land(x<4))$; it fails at one because $1>1$
 
 ### Divisibility gives a concrete example
 
-Write $a | n$ when $n=ak$ for some integer $k$. This is divisibility, not division. We will prove that $4 | n$ implies $2 | n$, then compare its contrapositive and converse.
+$a | n$ means $n=ak$ for integer $k$: divisibility, not division. Prove $4 | n$ implies $2 | n$; compare contrapositive and converse.
 
 
 <span id="from-implikation-und-kontraposition-a-proof-and-its-converse"></span>
 
 ### A proof and its converse
 
-Suppose 4 divides $n$. By definition $n = 4k$ for an integer $k$. Rewrite this as $n = 2(2k)$; because 2k is an integer, 2 divides $n$. That proves the forward direction for every integer $n$, rather than checking a few examples. The contrapositive describes the same exclusion: an odd $n$ cannot be a multiple of 4. The converse asks a different question: does evenness guarantee divisibility by 4? At $n = 6$ the answer is no. $A$ is false and $B$ true, so the original implication is true while its converse is false.
+If $n=4k$ for integer $k$, then $n=2(2k)$ with integer $2k$: two divides $n$ for every integer input. Contraposition says odd $n$ cannot be a multiple of four. Evenness need not imply divisibility by four: six gives false $A$, true $B$, true original but false converse.
 
 <Exercise question="Does $3 | n$ imply $6 | n$? Give a counterexample and state the contrapositive.">
 
-No: $n = 3$. The contrapositive is “if 6 does not divide $n$, then 3 does not divide $n$”; it is false at the same $n$. Contraposition preserves truth value, including for a false claim.
+No: $n=3$. Contrapositive: “if six does not divide n, three does not divide n,” also false at three. Contraposition preserves falsity too.
 
 </Exercise>
 
@@ -239,20 +239,20 @@ No: $n = 3$. The contrapositive is “if 6 does not divide $n$, then 3 does not 
 
 ## Implication and model assumptions
 
-Seven exceeding five and exceeding two are properties of one unchanged number, not effects caused by comparing it with five.
+Seven exceeds five and two without changing; comparisons describe properties, not causes.
 
-Material implication is **truth-functional**: the truth values of its two parts determine its value. There is no additional truth-table column for “happens earlier,” “explains,” or “causes.” In ordinary arithmetic,
+Material implication is **truth-functional**, determined by component values, with no extra column for time, explanation or cause. In ordinary arithmetic,
 
 $$(0=1)\Rightarrow(2=3)$$
 
-is true because its hypothesis is false. Read: “If zero equals one, then two equals three.” Both parts remain false; the arrow proves neither one and supplies no causal mechanism.
+is true from false premise: “If zero equals one, two equals three.” Both parts remain false; the arrow proves neither and supplies no cause.
 
 
 <span id="from-implication-and-model-assumptions-an-exact-rule-inside-a-hypothetical-model"></span>
 
 ### An exact rule inside a hypothetical model
 
-Imagine a device model with this stipulated rule for every state under discussion: **if the switch is closed, the lamp is lit**. This is an assumption for the example, not a verified claim about real equipment. Let $S$ mean “the switch is closed” and $L$ mean “the lamp is lit.”
+Stipulate a hypothetical device rule for every considered state: **closed switch implies lit lamp**. This assumption is not verified real equipment behavior. $S$ means switch closed; $L$, lamp lit.
 
 | Given within the model | Licensed conclusion | Reason |
 | --- | --- | --- |
@@ -261,21 +261,21 @@ Imagine a device model with this stipulated rule for every state under discussio
 | $S\Rightarrow L$ and $L$ | No conclusion about $S$ | The converse was not supplied |
 | $S\Rightarrow L$ and $\neg S$ | No conclusion about $L$ | The inverse was not supplied |
 
-Read $\neg L\Rightarrow\neg S$ as “if the lamp is not lit, then the switch is not closed.” This identifies states consistent with the assumed rule. It does not say that darkness opens the switch or reverses a physical cause.
+$\neg L\Rightarrow\neg S$ reads “unlit lamp implies switch not closed”: states consistent with the rule, not darkness opening switches or reversing causes.
 
-The state $S$ false, $L$ true satisfies the forward rule. Thus an observed lit lamp does not logically force a closed switch from that rule alone. Our familiarity with lamps cannot supply a missing model assumption.
+False $S$, true $L$ obeys the rule: light alone cannot force a closed switch. Familiarity supplies no missing model assumption.
 
 
 <span id="from-implication-and-model-assumptions-deduction-and-observation-answer-different-questions"></span>
 
 ### Deduction and observation answer different questions
 
-Evaluating one conditional asks whether its two truth values form the forbidden true/false pair. Proving a mathematical theorem asks why no allowed input forms that pair: above five implies above two for all real numbers by transitivity of order. Supporting an empirical model asks whether its assumptions fit the intended system and evidence. A correct deduction within a model does not establish the model's accuracy.
+Evaluation checks one pair for true/false failure; theorem proof excludes that pair for every allowed input (above five entails above two by order transitivity). Empirical support checks assumptions against system and evidence. Correct model deductions do not validate the model.
 
-If an accurate observation in the intended setting reports a closed switch and an unlit lamp, it contradicts the exact rule. The observation and that rule cannot both be correct there. Logic alone does not identify a broken component, a missing condition, or the physical cause. Those require further investigation.
+Accurate closed-switch/unlit-lamp observation contradicts the exact rule in its intended setting. They cannot both hold. Logic alone diagnoses neither broken components, missing conditions nor causes; investigate further.
 
-<Exercise question="Assume only the model rule $S\Rightarrow L$. A report says the lamp is lit. Give a state satisfying the rule and report but falsifying the conclusion that the switch is closed. What changes if a report instead says the switch is closed and the lamp is unlit?">
+<Exercise question="Given only $S\Rightarrow L$ and reported light, refute ‘switch closed’ with a consistent state. What changes with reported closed switch and unlit lamp?">
 
-Take $S$ false and $L$ true. The implication and report are true, but $S$ is false, so the backward inference is invalid. A closed switch with an unlit lamp instead makes $S$ true and $L$ false: it refutes the exact rule for that setting, assuming accurate descriptions. It does not diagnose the device. Adding a converse would justify a new inference, but would also add a new model assumption needing support.
+False $S$, true $L$ satisfies rule and report but defeats backward inference. True $S$, false $L$ refutes the exact rule if descriptions are accurate, without diagnosing equipment. Adding converse licenses new inference but adds an assumption needing support.
 
 </Exercise>

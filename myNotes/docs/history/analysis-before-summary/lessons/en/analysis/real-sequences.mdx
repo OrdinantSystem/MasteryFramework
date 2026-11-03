@@ -1,0 +1,195 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Real sequences and absolute distance"
+navTitle: "Real sequences and absolute distance"
+description: "Real sequences and absolute distance"
+order: 15
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+additionalSources: []
+---
+
+<span id="from-real-sequences"></span>
+
+## Real sequences
+
+A device reports nine at observations one and two, then three at every observation thereafter. Each report has a value and a position. “The third report is three” distinguishes the position three from the measured value three, even though their numbers happen to agree.
+
+
+<span id="from-real-sequences-one-output-at-every-positive-index"></span>
+
+### One output at every positive index
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+A function is an assignment giving exactly one output for each permitted input. A real sequence is such a function from the positive natural numbers to the reals. Here zero is not an index; other conventions must be stated. $n$ is the index, $a_n$ the term at that position, and $a$ the entire assignment. A subscript is not multiplication. The arrow gives input and output domains, not convergence.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+This names the whole sequence, indexed from one onward without end. Infinity is not itself an index, and there is no last term or term at infinity. Each individual index is a positive natural number; its output may be negative, zero or positive.
+
+
+<span id="from-real-sequences-a-rule-must-specify-every-position"></span>
+
+### A rule must specify every position
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+This gives $a_1=2$, $a_2=4$, $a_3=6$. A constant sequence instead has $a_n=c$ at every index for one fixed real $c$; for instance every output can be $-3$. The device rule is also complete: $a_1=a_2=9$ and $a_n=3$ for every $n\ge3$. Merely writing “nine, nine, three, …” does not determine the continuation: infinitely many rules share that prefix.
+
+Sequences retain order and repetitions. Alternating zero, one forever and alternating one, zero forever are different sequences: their first terms differ. Their sets of values are both zero and one. A set forgets positions and repetitions. Two sequences are equal exactly when their outputs agree at every index; a finite prefix cannot establish equality.
+
+A tail starts at a chosen index $N$ and includes that term and all later terms. For the device, the tail from $N=3$ contains only threes. Capital $N$ marks the threshold; lowercase $n$ marks whichever position we test. Both are natural numbers. A sequence beginning with zero and then always one eventually agrees with the constant-one sequence from index two, but is not equal to it.
+
+<span id="from-real-sequences-practice"></span>
+
+#### Practice
+
+Give the first three terms of $a_n=2n$. May a real sequence have negative outputs?
+
+<details>
+<summary>Hint</summary>
+
+Index and term have different roles.
+
+</details>
+
+<Exercise>
+
+Two, four, six. Yes: positive indices can all be assigned negative three. The output need not share the index domain.
+
+</Exercise>
+
+Compare the two alternating zero–one sequences and their value sets.
+
+<details>
+<summary>Hint</summary>
+
+Inspect the first position.
+
+</details>
+
+<Exercise>
+
+Different sequences, same value set. Their first outputs differ; the set records only which values occur, not where or how often.
+
+</Exercise>
+
+Does zero then always one equal constant one? Do they eventually agree?
+
+<details>
+<summary>Hint</summary>
+
+Equality checks the beginning too.
+
+</details>
+
+<Exercise>
+
+They are unequal at index one, but agree at every index from two onward.
+
+</Exercise>
+
+Later, define two different continuations of the same three-term prefix to explain why observations alone do not define a sequence.
+
+
+<span id="from-real-sequences-read-aloud"></span>
+
+### Read aloud
+
+a maps positive natural indices to real terms; a sub n is the output at index n.
+
+<span id="from-absolute-value-and-distance"></span>
+
+## Absolute value and distance
+
+Minus three and positive three lie on opposite sides of zero, but each is three units away. Distance records how far apart points are, not the direction of travel. Absolute value converts a signed real number to its nonnegative distance from zero.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+This is a definition. Every real falls into exactly one branch. If $x<0$, its opposite $-x$ is positive: the minus sign does not make the output negative. Thus $|-3|=3$, $|3|=3$ and $|0|=0$. Nonnegative includes zero; it does not mean strictly positive. We use familiar real arithmetic and order here.
+
+
+<span id="from-absolute-value-and-distance-signed-displacement-and-distance"></span>
+
+### Signed displacement and distance
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+The difference $x-y$ is signed displacement from $y$ to $x$. Taking its absolute value gives the segment length. Reversing the subtraction negates the displacement. A number and its opposite have equal absolute values: for positive input both give the positive input; for negative input both give its positive opposite; at zero both give zero. Hence $d(x,y)=d(y,x)$ for all reals, not just the displayed example.
+
+Also, $d(x,y)=0$ exactly when $x=y$. If the difference is nonnegative, its absolute value is itself, so zero distance forces zero difference. If the difference is negative its absolute value is positive, so it cannot give zero. Conversely, equal points have difference zero and absolute value zero. No triangle inequality is needed.
+
+
+<span id="from-absolute-value-and-distance-a-strict-tolerance-is-an-open-interval"></span>
+
+### A strict tolerance is an open interval
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+Fix target $L$ and positive real tolerance $\varepsilon$. Put $u=t-L$. If $u\ge0$, then $|u|=u$: the distance test is $u<\varepsilon$, while $-\varepsilon<u$ already follows from positivity of the tolerance. If $u<0$, then $|u|=-u$: the test $-u<\varepsilon$ is equivalent to $u>-\varepsilon$, while $u<\varepsilon$ already holds. Both cases therefore give exactly $-\varepsilon<u<\varepsilon$. Adding $L$ gives the displayed interval. Every step is reversible, proving both directions.
+
+The chained comparison requires both strict bounds. At target three and tolerance $1/2$, the endpoints $2.5$ and $3.5$ are excluded: their distance equals the tolerance. Epsilon is a variable tolerance, not a special tiny constant.
+
+<span id="from-absolute-value-and-distance-practice"></span>
+
+#### Practice
+
+At target $3$ and tolerance $1/2$, test $2.5$, $3$ and $13/4$.
+
+<details>
+<summary>Hint</summary>
+
+Compute distance before comparing.
+
+</details>
+
+<Exercise>
+
+Distances are $1/2$, $0$, $1/4$. The first fails at equality; the other two pass. The endpoint is not strictly inside the interval.
+
+</Exercise>
+
+A point lies left of its target. Does negative displacement put it inside every positive tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Use two and five.
+
+</details>
+
+<Exercise>
+
+No. From target five to point two, displacement is negative three but distance is three, failing tolerance one.
+
+</Exercise>
+
+Later, reconstruct the two-sign proof of the interval equivalence and the zero-distance proof.
+
+
+<span id="from-absolute-value-and-distance-read-aloud"></span>
+
+### Read aloud
+
+The absolute value of t minus L is less than epsilon exactly when t lies strictly between L minus epsilon and L plus epsilon.

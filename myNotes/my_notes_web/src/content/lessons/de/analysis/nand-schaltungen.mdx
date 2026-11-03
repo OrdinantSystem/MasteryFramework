@@ -25,7 +25,7 @@ additionalSources: []
 
 <Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
 
-NAND liefert nur dann 0, wenn beide Eingaben 1 sind. Die Schreibweisen | und ↑ sind üblich. Hier bezeichnet | NAND, während $a | n$ im früheren zahlentheoretischen Beispiel Teilbarkeit bezeichnete: Der Kontext zählt. Der kleine Kreis am Gatterausgang bedeutet Negation.
+NAND liefert $0$ nur bei zwei $1$-Eingaben. | oder ↑ bedeuten hier NAND, anders als Teilbarkeit $a | n$. Der Ausgangskreis eines Gatters bedeutet Negation.
 
 
 <span id="from-nand-schaltungen-eingaben-ändern-und-den-leitungen-folgen"></span>
@@ -43,11 +43,11 @@ NAND liefert nur dann 0, wenn beide Eingaben 1 sind. Die Schreibweisen | und ↑
 
 <Math tex="\colA{A}\lor \colB{B}=(\colA{A}\mid \colA{A})\mid(\colB{B}\mid \colB{B})" display />
 
-Für NICHT wird $A$ mit beiden Eingängen eines NAND verbunden. UND nutzt den Ausgang des ersten NAND für beide Eingänge eines zweiten: zwei physische Gatter, obwohl der Term mehrfach geschrieben wird. ODER negiert zuerst beide Eingaben und verbindet sie dann mit NAND: drei Gatter. Weil NICHT, UND und ODER konstruierbar sind, ist NAND funktional vollständig.
+NICHT verbindet $A$ mit beiden NAND-Eingängen. UND speist einen NAND-Ausgang in beide Eingänge eines zweiten: zwei physische Gatter trotz wiederholtem Term. ODER negiert beide Eingaben und verknüpft sie per NAND: drei Gatter. Konstruierbare NICHT, UND und ODER machen NAND funktional vollständig.
 
 
 <span id="from-nand-schaltungen-einem-signal-folgen"></span>
 
 ## Einem Signal folgen
 
-Setze im ODER-Netz $A = 1$ und $B = 0$. Die ersten Gatter liefern $\neg A = 0$ und $\neg B = 1$. Das letzte NAND negiert $0 \land  1$ und liefert 1. Bei $A = B = 0$ liefern die ersten Gatter beide 1; der Ausgang wird 0. Die Spuren erklären die Konstruktion; allgemein folgt $\neg (\neg A \land  \neg B) = A \lor  B$ aus De Morgan und doppelter Negation. Ein Signal darf mehrere Eingänge speisen, ohne das ursprüngliche Gatter erneut zu bauen.
+Für ODER mit $A=1$, $B=0$ liefern die ersten Gatter $\neg A=0$, $\neg B=1$; das letzte NAND negiert $0\land1$ zu $1$. Bei $A=B=0$ sind beide ersten Ausgänge $1$, der letzte $0$. De Morgan und doppelte Negation beweisen allgemein $\neg(\neg A\land\neg B)=A\lor B$. Ein Signal darf mehrere Eingänge speisen, ohne sein Gatter neu zu bauen.

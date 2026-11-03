@@ -1,0 +1,559 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-quantifiers"
+sourceId: "analysis-zero"
+title: "Zeugen, Existenz und Eindeutigkeit"
+navTitle: "Zeugen, Existenz und Eindeutigkeit"
+description: "Zeugen, Existenz und Eindeutigkeit"
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["universal-statements-and-domains"]
+sourcePages: []
+sourceLocations: ["A0.1.7 Existential quantifier/01 Meaning of There Exists.md#01 · Meaning of “there exists”", "A0.1.7 Existential quantifier/02 Witnesses.md#02 · What qualifies as a witness?", "Concepts/Existential Quantification and Witnesses.md#Existential Quantification and Witnesses", "A0.1.7 Existential quantifier/03 Constructive Existence.md#03 · Constructive existence: exhibit, then verify", "A0.1.7 Existential quantifier/04 Uniqueness versus Existence.md#04 · Existence is not uniqueness", "Concepts/Existence and Uniqueness.md#Existence and Uniqueness", "A0.1.7 Existential quantifier/05 Multiple Possible Witnesses.md#05 · More than one possible witness"]
+thumbnail: "quantifiers"
+additionalSources: []
+---
+
+<span id="from-existence-and-witnesses"></span>
+
+## Existenz und Zeugen
+
+<span id="from-existence-and-witnesses-kandidat-zugehörigkeit-ganze-bedingung"></span>
+
+### Kandidat, Zugehörigkeit, ganze Bedingung
+
+Für $\exists n\in\mathbb Z\;(n+5=12)$ ist sieben ein Zeuge: Die Zahl ist ganzzahlig und $7+5=12$. Der Zeuge ist das Objekt, die Prüfung das Argument darüber. Ein Kandidat wird zum Zeugen, sobald beide Prüfungen begründet sind. Bei $4<n<8$ erfüllt die Zahl fünf beide strengen Ungleichungen. Neun erfüllt nur die untere, drei nur die obere: Zusammen ergeben sie keinen Zeugen. Die wiederholte Variable meint durchgehend dasselbe Objekt.
+
+Ein Verein braucht ein Mitglied mit Zeit am Dienstag und Erste-Hilfe-Ausbildung. Adas Zeit und Bens Ausbildung genügen nicht. Cora passt, wenn sie Mitglied ist und beides hat. Eine Person außerhalb des Vereins scheitert trotz beider Eigenschaften an der Zugehörigkeit.
+
+Ein Halb löst $2x=1$ über den reellen, nicht über den ganzen Zahlen. Jede ganze Zahl ist höchstens null oder mindestens eins; ihr Doppeltes ist höchstens null oder mindestens zwei. Ebenso hat $0<x<1$ den reellen Zeugen $1/2$, aber keinen ganzzahligen. Diese Argumente schließen alle ganzen Zahlen aus. Fehlversuche allein betreffen nur die getesteten Kandidaten; eine endliche Suche widerlegt Existenz nur, wenn sie den ganzen Bereich erfasst.
+
+<span id="from-existence-and-witnesses-übung"></span>
+
+#### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
+Ein Regal enthält ein rotes und zwei blaue Bücher. Ist die Aussage „Ein Buch ist blau“ wahr? Behauptet sie, dass genau ein Buch blau ist?
+
+<details>
+<summary>Hinweis</summary>
+
+Frage nach der Mindestanzahl.
+
+</details>
+
+<Exercise>
+
+Wahr: Jedes blaue Buch ist ein Zeuge. Zwei Erfolge passen zu mindestens einem, aber nicht zu genau einem.
+
+</Exercise>
+
+Lies $\exists n\in\mathbb Z\;(n+5=12)$ ohne zu lösen: Nenne die drei Teile.
+
+<details>
+<summary>Hinweis</summary>
+
+Anzahl, Bereich, Bedingung.
+
+</details>
+
+<Exercise>
+
+Mindestens eine; ganze Zahlen; plus fünf ergibt zwölf. Zum Lesen der Anforderung braucht man die Lösung nicht.
+
+</Exercise>
+
+Vergleiche reelle und ganzzahlige Zeugen für $0<x<1$.
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze einen Bruch, dann den Abstand ganzer Zahlen.
+
+</details>
+
+<Exercise>
+
+$1/2$ ist reell und erfüllt beide Schranken. Eine positive ganze Zahl ist mindestens eins, also scheiden alle ganzen Zahlen aus.
+
+</Exercise>
+
+Ordne ein: „Es gibt eine rote Marke“; „Finde eine rote Marke“; „Genau eine Marke ist rot“.
+
+<details>
+<summary>Hinweis</summary>
+
+Welche haben Wahrheitswerte?
+
+</details>
+
+<Exercise>
+
+Existenzbehauptung; Aufforderung; Existenz mit Ausschluss eines zweiten verschiedenen Erfolgs. Der letzte Satz sagt mehr als bloße Existenz.
+
+</Exercise>
+
+Vergleiche einen sicher leeren Beutel und einen verschlossenen Beutel, dessen Inhalt unbekannt ist.
+
+<details>
+<summary>Hinweis</summary>
+
+Objekte und Information sind verschieden.
+
+</details>
+
+<Exercise>
+
+Im leeren Beutel ist die Existenz einer roten Marke falsch. Beim verschlossenen reicht die Information nicht; sein tatsächlicher Inhalt bestimmt dennoch die Wahrheit.
+
+</Exercise>
+
+</details>
+
+<span id="from-existence-and-witnesses-zeugen-prüfen"></span>
+
+#### Zeugen prüfen
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
+Welche Zahlen aus $1,2,3,4$ erfüllen $1<n<4$ ganzzahlig?
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe die strengen Grenzen.
+
+</details>
+
+<Exercise>
+
+Zwei und drei passen. Eins verletzt die untere, vier die obere Schranke.
+
+</Exercise>
+
+Repariere den aufgeteilten Zeugen $9>4$ und $3<8$.
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze ein Objekt.
+
+</details>
+
+<Exercise>
+
+Keine der Zahlen erfüllt beides. Fünf ist ganzzahlig und $4<5<8$.
+
+</Exercise>
+
+Prüfe $1/2$ als ganzzahligen Zeugen für $2x=1$.
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne die Prüfungen.
+
+</details>
+
+<Exercise>
+
+Die Gleichung stimmt, die Zugehörigkeit nicht. Es ist ein reeller, kein ganzzahliger Zeuge.
+
+</Exercise>
+
+Nach Tests mit $0,1,2$ wird bestritten, dass ein ganzzahliges Quadrat $25$ sein kann. Diagnose?
+
+<details>
+<summary>Hinweis</summary>
+
+Wurden alle Kandidaten geprüft?
+
+</details>
+
+<Exercise>
+
+Der Bereich wurde nicht ausgeschöpft. Fünf ist ganzzahlig und $5^2=25$; minus fünf passt auch. Ein geprüfter Erfolg genügt.
+
+</Exercise>
+
+Eine Schachtel enthält insgesamt genau zwei Marken; keine davon ist blau. In einer anderen wurden zwei nichtblaue Marken geprüft; ihr übriger Inhalt ist noch ungeprüft. Welche widerlegt die Existenz einer blauen Marke?
+
+<details>
+<summary>Hinweis</summary>
+
+Vollständigkeit ist entscheidend.
+
+</details>
+
+<Exercise>
+
+Nur die erste schließt jeden möglichen Zeugen aus. In der zweiten bleiben Kandidaten ungeprüft.
+
+</Exercise>
+
+Erkläre später Existenz an zwei Erfolgen und ändere dann die Sammlung so, dass keiner bleibt.
+
+</details>
+
+<span id="from-constructing-a-witness"></span>
+
+## Einen Zeugen konstruieren
+
+Kehren wir zum geprüften Zeugen sieben zurück. Zwölf minus fünf erklärt, wie man ihn findet; der folgende direkte Beweis trennt Suche und Prüfung.
+
+<Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
+
+
+<span id="from-constructing-a-witness-ein-vollständiger-direkter-beweis"></span>
+
+### Ein vollständiger direkter Beweis
+
+Wähle $n=7$. Die Zahl gehört zu $\mathbb Z$. Sie erfüllt $7+5=12$. Damit erfüllt ein erlaubtes Objekt die Bedingung, also folgt Existenz. Die vier Schritte sind Kandidat, Bereich, vollständiges Prädikat und Schluss. Ein einzelner Test beweist diese Existenzbehauptung, weil sie nur einen Erfolg verlangt. Eindeutigkeit folgt nicht.
+
+„Konstruktiv“ bedeutet hier, ein Objekt ausdrücklich anzugeben und zu prüfen. Wir bleiben in klassischer Mathematik, in der Existenzbeweise nicht immer Zeugen nennen müssen. „Wähle eine passende ganze Zahl; also existiert eine“ ist zirkulär: Die Verfügbarkeit einer passenden Wahl wird vorausgesetzt. Eine bekannte ganze Zahl zu wählen und dann ihre Eignung zu beweisen vermeidet das.
+
+
+<span id="from-constructing-a-witness-rückwärtsrechnen-und-bereichsprüfung"></span>
+
+### Rückwärtsrechnen und Bereichsprüfung
+
+Aus $2x=1$ folgt rückwärts $x=1/2$. Nach Zugehörigkeitsprüfung und Einsetzen ist reelle Existenz bewiesen, aber kein ganzzahliger Zeuge geliefert. Ein notwendiger Kandidat allein beweist keine Existenz. Vollständig umkehrbare Algebra kann mit Bereichsprüfung eine ausreichende Äquivalenz begründen; Rückwärtsrechnen ist nicht grundsätzlich falsch. Eine falsche Behauptung erhält keinen gültigen Beweis dadurch, dass eine Aufgabe ihn verlangt.
+
+Beim Intervallbeispiel $4<n<8$ kann der geprüfte Zeuge fünf durch sechs oder sieben ersetzt werden; vier scheitert an der strengen Grenze. Für beliebiges reelles $x$ konstruiert $x+1$ eine größere reelle Zahl: Die Summe ist wieder reell, und das Addieren der positiven Zahl eins erhöht die Eingabe. Ein Test nur bei null würde diese allgemeine Regel nicht beweisen.
+
+<span id="from-constructing-a-witness-übung"></span>
+
+#### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
+Beweise $\exists n\in\mathbb Z\;(n+8=3)$.
+
+<details>
+<summary>Hinweis</summary>
+
+Negative ganze Zahlen sind erlaubt.
+
+</details>
+
+<Exercise>
+
+Wähle $-5\in\mathbb Z$. Wegen $-5+8=3$ erfüllt die Zahl die ursprüngliche Gleichung und beweist Existenz.
+
+</Exercise>
+
+Vervollständige „Nimm ein Halb“ für eine reelle Zahl zwischen null und eins.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe alle drei Anforderungen.
+
+</details>
+
+<Exercise>
+
+$1/2\in\mathbb R$ und $0<1/2<1$, also ist es ein erlaubter Zeuge. Eindeutigkeit wird nicht behauptet.
+
+</Exercise>
+
+Repariere „Wähle eine ganze Zahl mit Quadrat $25$; also existiert sie“.
+
+<details>
+<summary>Hinweis</summary>
+
+Nenne einen Kandidaten ohne Erfolg vorauszusetzen.
+
+</details>
+
+<Exercise>
+
+Wähle fünf, eine ganze Zahl, und prüfe $5\cdot5=25$. Der ursprüngliche Satz setzte mit der passenden Wahl das Ziel voraus.
+
+</Exercise>
+
+Konstruiere eine ganze Zahl mit $n>4$ und $n<8$. Ist die Antwort eindeutig?
+
+<details>
+<summary>Hinweis</summary>
+
+Meide Endpunkte.
+
+</details>
+
+<Exercise>
+
+Sechs ist ganzzahlig und $4<6<8$. Fünf und sieben passen ebenfalls. Explizite Konstruktion verlangt keine Eindeutigkeit.
+
+</Exercise>
+
+Warum passt $x+1$ für jede reelle Eingabe? Warum genügt ein Test bei null nicht?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze Abgeschlossenheit und Positivität.
+
+</details>
+
+<Exercise>
+
+Reelle Addition liefert ein reelles Ergebnis, und das Addieren der positiven Zahl eins erhöht jede Eingabe. Der Test bei null erfasst nur eine Eingabe.
+
+</Exercise>
+
+Schreibe später einen neuen Beweis in vier Sätzen und benenne ihre Aufgaben.
+
+</details>
+
+<span id="from-constructing-a-witness-laut-lesen"></span>
+
+### Laut lesen
+
+Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
+
+<span id="from-existence-and-uniqueness"></span>
+
+## Existenz und Eindeutigkeit
+
+Zwei verschiedene Schlüssel öffnen ein Schloss. Die Prüfung des ersten beweist, dass ein passender Schlüssel existiert; der zweite macht den Beweis nicht falsch. Er widerlegt eine andere Aussage: Genau ein Schlüssel öffnet das Schloss. Lege zuerst fest, welche Schublade die erlaubten Schlüssel enthält.
+
+
+<span id="from-existence-and-uniqueness-drei-verschiedene-anforderungen"></span>
+
+### Drei verschiedene Anforderungen
+
+Existenz bedeutet mindestens einen erlaubten Erfolg. Höchstens einer bedeutet, dass keine zwei verschiedenen erlaubten Objekte passen; null ist zulässig. Eindeutige Existenz bedeutet genau einen: Existenz zusammen mit höchstens einem. In einer leeren Schublade ist Existenz falsch, höchstens einer wahr und eindeutige Existenz falsch. Einen zweiten Erfolg auszuschließen liefert keinen ersten.
+
+$$
+\exists! x\in D\;P(x).
+$$
+
+Das Ausrufezeichen fügt die Höchstens-eins-Forderung hinzu; es ist keine Betonung. Gib zunächst einen Zeugen in $D$ mit Eigenschaft $P$. Zeige dann, dass jedes Objekt aus $D$, das $P$ erfüllt, diesem Zeugen gleicht. Objekte ohne $P$ müssen ihm nicht gleichen. Gleichheit betrifft Objekte oder Werte, nicht Schreibweisen: $1/2$ und $2/4$ bezeichnen dieselbe reelle Zahl.
+
+
+<span id="from-existence-and-uniqueness-ein-beweis-mit-beiden-aufgaben"></span>
+
+### Ein Beweis mit beiden Aufgaben
+
+$$
+\exists! n\in\mathbb Z\;(n+5=12).
+$$
+
+Der direkte Beweis oben liefert Existenz. Für die Eindeutigkeit sei $n$ eine beliebige ganze Zahl mit $n+5=12$. Subtraktion von fünf auf beiden Seiten ergibt $n=7$. Jede mögliche Lösung gleicht also dem geprüften Zeugen. Wir betrachten eine beliebige Lösung, nicht jede ganze Zahl als angebliche Sieben und auch keine endliche Stichprobe gescheiterter Alternativen.
+
+Beschränke den Bereich nun auf ganze Zahlen größer als zehn. Dieselbe Subtraktion zwingt jede hypothetische Lösung auf sieben, außerhalb des Bereichs. Höchstens eine gilt weiterhin, Existenz aber nicht. Bei $4<n<8$ sind dagegen fünf und sechs verschiedene ganzzahlige Zeugen; das widerlegt Eindeutigkeit ohne vollständige Liste.
+
+<span id="from-existence-and-uniqueness-übung"></span>
+
+#### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
+Beweise, dass genau eine ganze Zahl $n+3=9$ erfüllt.
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne die beiden Aufgaben.
+
+</details>
+
+<Exercise>
+
+Sechs ist ganzzahlig und $6+3=9$. Jede ganzzahlige Lösung erfüllt $n=9-3=6$. Der erste Teil liefert eine Lösung, der zweite schließt eine verschiedene zweite aus.
+
+</Exercise>
+
+Beweist $5^2=25$, dass genau eine ganze Zahl Quadrat $25$ hat?
+
+<details>
+<summary>Hinweis</summary>
+
+Betrachte eine negative Zahl.
+
+</details>
+
+<Exercise>
+
+Es beweist nur Existenz. $-5$ ist eine verschiedene ganze Zahl und $(-5)^2=25$, also ist Eindeutigkeit falsch, Existenz aber weiterhin wahr.
+
+</Exercise>
+
+Bewerte in einer leeren Schachtel: eine blaue Marke, höchstens eine blaue Marke, genau eine blaue Marke.
+
+<details>
+<summary>Hinweis</summary>
+
+Nur eine Aussage lässt null zu.
+
+</details>
+
+<Exercise>
+
+Falsch, wahr, falsch. Keine Marke liefert Existenz; zwei verschiedene blaue Marken können nicht vorkommen, also gilt höchstens eine.
+
+</Exercise>
+
+Repariere „Um Eindeutigkeit von sieben zu zeigen, muss jede ganze Zahl sieben sein“.
+
+<details>
+<summary>Hinweis</summary>
+
+Beschränke dich auf Lösungen.
+
+</details>
+
+<Exercise>
+
+Zeige, dass jede ganze Zahl, die die ursprüngliche Gleichung erfüllt, sieben ist. Nichtlösungen müssen nicht sieben sein.
+
+</Exercise>
+
+Prüfe im Bereich $n>10$: „$n+5=12$ erzwingt sieben, also genau eine Lösung“.
+
+<details>
+<summary>Hinweis</summary>
+
+Ein notwendiger Kandidat kann ausgeschlossen sein.
+
+</details>
+
+<Exercise>
+
+Sieben ist ausgeschlossen. Das Argument ergibt höchstens eine und mit der Bereichsbeschränkung tatsächlich keine Lösung.
+
+</Exercise>
+
+Vergleiche später Sammlungen mit null, einem und zwei Erfolgen und rekonstruiere beide Beweisaufgaben.
+
+</details>
+
+<span id="from-existence-and-uniqueness-laut-lesen"></span>
+
+### Laut lesen
+
+Es gibt genau ein x in D, das P erfüllt.
+
+<span id="from-counting-witnesses"></span>
+
+## Zeugen zählen
+
+Karten mit sieben und neun bezeugen beide die Existenz einer ungeraden Karte; die Wahl von sieben entfernt neun nicht. Beim Intervallbeispiel sind Existenz bereits geprüft und Eindeutigkeit widerlegt; alle Zeugen anzugeben verlangt zusätzlich den Ausschluss weiterer Möglichkeiten.
+
+Ein geprüftes Objekt beweist Existenz. Zwei verschiedene geprüfte Objekte widerlegen höchstens eines, ohne genau zwei zu behaupten. Eine vollständige Liste verlangt Prüfung jedes Eintrags und Ausschluss aller nicht aufgeführten Objekte. Bereichsgröße ist nicht Zeugenanzahl: Ein unendlicher Bereich kann null, einen, endlich oder unendlich viele Erfolge enthalten.
+
+$$
+\{n\in\mathbb Z:4<n<8\}=\{5,6,7\}.
+$$
+
+Jede aufgeführte Zahl ist ganzzahlig und erfüllt beide Schranken. Umgekehrt ist eine ganze Zahl über vier mindestens fünf und unter acht höchstens sieben. Jeder Zeuge ist also fünf, sechs oder sieben. Erst dieses Ausschlussargument mit dem Abstand ganzer Zahlen macht die Liste vollständig. Drei Erfolge allein würden nicht genügen.
+
+
+<span id="from-counting-witnesses-ein-anderer-bereich-verändert-die-anzahl"></span>
+
+### Ein anderer Bereich verändert die Anzahl
+
+Über den reellen Zahlen passen auch $5.5$ und $6.25$. Es gibt unendlich viele Zeugen. Beginne mit fünf und sechs und füge ihren Mittelpunkt ein. Füge danach wiederholt den Mittelpunkt zwischen fünf und dem zuletzt eingefügten Wert ein. Jeder neue Wert ist reell, über fünf und unter seinem Vorgänger, also weiterhin zwischen vier und acht. Er unterscheidet sich von fünf und allen früher eingefügten Werten. Nach beliebig vielen Schritten kann ein weiterer neuer Zeuge folgen. Das nutzt gewöhnliche Mittelpunktrechnung und Ordnung, keinen Konvergenzsatz.
+
+Verschiedene Ausdrücke müssen keine verschiedenen Objekte sein: $1/2=2/4$. Zwei physische Karten mit derselben Sieben sind dagegen verschiedene Karten, aber nur ein verschiedener Zahlenwert. Sage, was du zählst. Ein leeres Tablett hat keine Kandidaten; ein Tablett nur mit geraden Zahlen hat Kandidaten, aber keinen ungeraden Erfolg. In beiden Fällen ist Existenz einer ungeraden Karte falsch. Eine All-Aussage über das leere Tablett bleibt wahr, ohne einen Zeugen zu liefern.
+
+<span id="from-counting-witnesses-übung"></span>
+
+#### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
+Begründe für ganzzahliges $4<n<8$ einen, zwei verschiedene und alle Zeugen.
+
+<details>
+<summary>Hinweis</summary>
+
+Nur die letzte Aufgabe braucht Ausschluss.
+
+</details>
+
+<Exercise>
+
+Fünf beweist Existenz; fünf und sechs widerlegen Eindeutigkeit. Alle sind fünf, sechs, sieben, weil jede passende ganze Zahl mindestens fünf und höchstens sieben ist.
+
+</Exercise>
+
+Liefern $1/2$ und $2/4$ zwei Zeugen für $2x=1$ über den reellen Zahlen?
+
+<details>
+<summary>Hinweis</summary>
+
+Zähle Werte, nicht Schreibweisen.
+
+</details>
+
+<Exercise>
+
+Nach Prüfung der Gleichung belegen sie Existenz, benennen aber einen Wert und widerlegen daher keine Eindeutigkeit. Allein daraus folgt auch kein Eindeutigkeitsbeweis.
+
+</Exercise>
+
+Zwei getrennte Karten tragen sieben. Gibt es zwei ungerade Karten und zwei verschiedene Zahlenwerte?
+
+<details>
+<summary>Hinweis</summary>
+
+Lege die Objekte fest.
+
+</details>
+
+<Exercise>
+
+Es gibt zwei verschiedene Karten mit ungerader Zahl, aber nur einen verschiedenen ganzzahligen Wert.
+
+</Exercise>
+
+Vergleiche ein leeres und ein rein gerades Tablett hinsichtlich einer ungeraden Karte.
+
+<details>
+<summary>Hinweis</summary>
+
+Keine Kandidaten ist nicht keine Erfolge.
+
+</details>
+
+<Exercise>
+
+Beide Behauptungen sind falsch. Im ersten Fall fehlen Objekte; im zweiten scheitert jedes vorhandene Objekt an der Bedingung.
+
+</Exercise>
+
+Eine Liste nennt fünf, sechs und sieben als alle reellen Zeugen zwischen vier und acht. Prüfe sie.
+
+<details>
+<summary>Hinweis</summary>
+
+Füge einen Mittelpunkt ein.
+
+</details>
+
+<Exercise>
+
+Fünfeinhalb ist ein fehlender reeller Zeuge, also fehlt Vollständigkeit. Fünf beweist bereits Existenz.
+
+</Exercise>
+
+Konstruiere später Beispiele mit null, einem und mehreren Erfolgen und begründe jeweils die passende Anzahl.
+
+</details>
+
+<span id="from-counting-witnesses-laut-lesen"></span>
+
+### Laut lesen
+
+Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.

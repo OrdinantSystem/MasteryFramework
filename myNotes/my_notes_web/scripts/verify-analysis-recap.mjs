@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
+import {historicalAnalysisInput,historicalAnalysisLabel} from './analysis-preservation-input.mjs';
 
 // This contract complements the historical paragraph ledger. A reviewed prose
 // change is not permission to lose diagrams, proof displays or practice blocks.
@@ -26,7 +27,7 @@ assert.equal(coverage.lessons.length,60);
 assert.equal(new Set(coverage.lessons.map(r=>r.path)).size,60);
 let exercises=0,graphics=0,tables=0,displayCount=0,anchorCount=0;
 for(const row of coverage.lessons){
- const source=await readFile(row.path,'utf8');
+ const source=await historicalAnalysisInput(row.path);
  const label=`${row.locale}/${row.key}`;
  assert.equal(sha(source),row.after_sha256,`${label}: update the editorial review receipt after changes`);
  assert.match(row.before_sha256,/^[a-f0-9]{64}$/);
@@ -77,4 +78,4 @@ for(const row of coverage.lessons){
   })),`${label}: retain both the comparison and its native-language reading`);
  }
 }
-console.log(`Verified recap preservation in 60 locale files: ${exercises} exact/localization-only exercises, ${graphics} unchanged graphical invocations, ${tables} mathematical tables, ${displayCount} distinct per-file displays, ${anchorCount} stable anchors, and protected hints/reference answers. Editorial review is separate from mathematical certification.`);
+console.log(`Verified recap preservation against ${historicalAnalysisLabel} in 60 locale files: ${exercises} exact/localization-only exercises, ${graphics} unchanged graphical invocations, ${tables} mathematical tables, ${displayCount} distinct per-file displays, ${anchorCount} stable anchors, and protected hints/reference answers. Editorial review is separate from mathematical certification.`);
