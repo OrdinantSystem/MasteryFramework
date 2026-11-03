@@ -1,3 +1,11 @@
+# Repository rename to MyNotes · 3 November 2026
+
+- Renamed the GitHub repository from OrdinantSystem/MasteryFramework to OrdinantSystem/MyNotes, preserving repository identity and history, and updated the local origin URL. The local workspace is /Users/jean/Documents/OrdinantSystems/MyNotes. Updated the project title, local instructions, and current Pages links; historical records retain their original paths.
+- The existing workflow derives BASE_PATH from github.event.repository.name, so the new public site uses https://ordinantsystem.github.io/MyNotes/. Added an explicit comment documenting rename support. GitHub Pages retains its workflow publishing source. This commit triggers the first build at the new prefix.
+- Node 24.22.1 production builds passed with SITE_URL=https://ordinantsystem.github.io and BASE_PATH=/MyNotes, then again at the root to restore local preview output: 173 static pages, 147 indexed lessons, 12,156 local links/assets, contrast checks, and 3,051 TeX annotations. Root and localized generated pages reference /MyNotes/ navigation and assets, with no old /MasteryFramework/ URLs in those pages. Remote deployment outcome is reported in the rename chat and GitHub Actions run. No lesson or interaction changes.
+
+---
+
 # GitHub Pages activation · 3 November 2026
 
 - Activated repository-root .github/workflows/mynotes-pages.yml at Jean's request. Relevant main pushes run Node 24, npm ci and the full production build, upload only the static dist artifact, and deploy through the github-pages environment with scoped Pages/OIDC permissions. Pull requests run checks without deploying. Manual workflow dispatch is available.

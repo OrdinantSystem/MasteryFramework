@@ -6,7 +6,7 @@ Run the following commands in Terminal.
 ## First-time setup
 
 ```sh
-cd /Users/jean/Documents/OrdinantSystems/MasteryFramework/myNotes/my_notes_web
+cd /Users/jean/Documents/OrdinantSystems/MyNotes/myNotes/my_notes_web
 nvm install
 nvm use
 node --version
@@ -23,7 +23,7 @@ subfolder. If `nvm` is unavailable in your terminal, load it first with
 ## View the complete website, including search
 
 ```sh
-cd /Users/jean/Documents/OrdinantSystems/MasteryFramework/myNotes/my_notes_web
+cd /Users/jean/Documents/OrdinantSystems/MyNotes/myNotes/my_notes_web
 nvm use
 npm run build && npm run preview
 ```
@@ -37,7 +37,7 @@ preview, build again, and start the preview again to see the updated version.
 ## Edit with automatic browser updates
 
 ```sh
-cd /Users/jean/Documents/OrdinantSystems/MasteryFramework/myNotes/my_notes_web
+cd /Users/jean/Documents/OrdinantSystems/MyNotes/myNotes/my_notes_web
 nvm use
 npm run dev
 ```
@@ -54,7 +54,7 @@ If the server started in the background, or the Terminal has already returned
 to its prompt, run the command matching the server you started:
 
 ```sh
-cd /Users/jean/Documents/OrdinantSystems/MasteryFramework/myNotes/my_notes_web
+cd /Users/jean/Documents/OrdinantSystems/MyNotes/myNotes/my_notes_web
 nvm use
 npm exec -- astro preview stop
 ```
@@ -62,7 +62,7 @@ npm exec -- astro preview stop
 For the development server:
 
 ```sh
-cd /Users/jean/Documents/OrdinantSystems/MasteryFramework/myNotes/my_notes_web
+cd /Users/jean/Documents/OrdinantSystems/MyNotes/myNotes/my_notes_web
 nvm use
 npm exec -- astro dev stop
 ```

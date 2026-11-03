@@ -1,4 +1,4 @@
-# MasteryFramework
+# MyNotes
 
 University learning resources, study methods, and static learning websites.
 

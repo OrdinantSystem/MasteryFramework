@@ -53,6 +53,6 @@ SITE_URL=https://OWNER.github.io BASE_PATH=/REPOSITORY npm run build
 BASE_PATH=/REPOSITORY npm run preview
 ```
 
-Use the same prefix for build and preview. Build output is dist/. Serve through HTTP, not file URLs. The active workflow is ../../.github/workflows/mynotes-pages.yml. It builds and validates relevant pushes to main, then publishes dist/ to https://ordinantsystem.github.io/MasteryFramework/. Pull requests run build checks without deploying. GitHub Pages uses GitHub Actions as its publishing source. deployment/github-pages.yml remains a reference template.
+Use the same prefix for build and preview. Build output is dist/. Serve through HTTP, not file URLs. The active workflow is ../../.github/workflows/mynotes-pages.yml. It builds and validates relevant pushes to main, then publishes dist/ to https://ordinantsystem.github.io/MyNotes/. Pull requests run build checks without deploying. GitHub Pages uses GitHub Actions as its publishing source. deployment/github-pages.yml remains a reference template.
 
 No accounts, analytics, database, remote answers, or runtime AI. Browser theme/tree preferences are stored locally when storage is available. Private reference PDFs remain ignored in references/source/ and excluded from dist/.
