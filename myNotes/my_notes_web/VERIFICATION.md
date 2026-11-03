@@ -1,3 +1,13 @@
+# Three-variable truth table · 3 November 2026
+
+- Added a separate three-variable section to the Logical connectives lesson in EN/DE/ES, retaining the original two-variable table. The new table lists all eight assignments of A, B, C and six intermediate/compound-expression columns, including conjunction, inclusive disjunction, implication and equivalence. Explains that the variables remain two-valued and that a new variable doubles rows without prescribing a fixed number of expression columns. This is an additional teaching example, not a new source quotation; reviewStatus remains unreviewed.
+- Extended scripts/verify-analysis.mjs to check the authored headers and every cell of all eight rows against independently computed Boolean expressions in each language. Uses the existing table renderer and tokens without component, route, dependency or sibling-site changes.
+- npm ci and npm run build passed on Node 24.22.1: 173 static pages, 147 indexed lesson pages across three languages, 12,159 local links/assets and 3,138 generated TeX annotations. Astro reported zero errors/warnings and the pre-existing unused formula import hint in LogicLab.astro.
+- Browser checked all three localized lessons at 1440 and 390 px in light/dark themes (12 states): original table retained; new table has eight data rows and nine columns; no page-wide overflow or KaTeX errors. Desktop shows the complete table; compact widths use the shared labeled, keyboard-focusable scrolling region. Confirmed ArrowRight scrolls the focused table horizontally. Visually inspected desktop light and compact dark layouts.
+- Build and browser checks were completed before the authorized Gitmoji commit and main push. GitHub Pages deployment is verified separately after pushing; this local record does not assert a remote deployment outcome.
+
+---
+
 # Repository rename to MyNotes · 3 November 2026
 
 - Renamed the GitHub repository from OrdinantSystem/MasteryFramework to OrdinantSystem/MyNotes, preserving repository identity and history, and updated the local origin URL. The local workspace is /Users/jean/Documents/OrdinantSystems/MyNotes. Updated the project title, local instructions, and current Pages links; historical records retain their original paths.

@@ -26,6 +26,27 @@ thumbnail: "logic"
 
 $Y$ exige ambas entradas. O inclusivo exige al menos una y admite ambas. NO invierte el valor de verdad. Una implicación solo falla con premisa verdadera y conclusión falsa. La equivalencia exige valores de verdad iguales, incluso si ambos son falsos.
 
+## Una tabla de verdad con tres variables
+
+Añadir un enunciado $C$ no introduce un tercer valor de verdad: $A$, $B$ y $C$ siguen siendo, cada uno, falsos ($0$) o verdaderos ($1$). Con dos variables hay $2^2=4$ asignaciones; con tres hay $2^3=8$. Cada fila anterior se divide en dos casos: uno con $C=0$ y otro con $C=1$.
+
+En este ejemplo adicional, las columnas $A \land B$ y $B \lor C$ muestran resultados intermedios. Úsalos para leer las expresiones más largas paso a paso; los paréntesis indican qué enunciados se agrupan.
+
+| $A$ | $B$ | $C$ | $A \land B$ | $(A \land B) \land C$ | $B \lor C$ | $A \lor (B \lor C)$ | $(A \land B) \Rightarrow C$ | $(A \land B) \Leftrightarrow C$ |
+|---|---|---|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+Por ejemplo, en la fila $A=1$, $B=1$, $C=0$, el enunciado intermedio $A \land B$ es verdadero. Su conjunción con $C$ es falsa, y $(A \land B) \Rightarrow C$ es falsa porque su premisa es verdadera y su conclusión es falsa. La equivalencia final también es falsa porque $A \land B$ y $C$ tienen valores de verdad distintos.
+
+La variable adicional duplica el número de filas. Permite formar más enunciados compuestos, pero no exige un número fijo de columnas: añade una por cada expresión que quieras comparar.
+
 ## Siempre, nunca o a veces
 
 Una tautología es verdadera en toda asignación, como $A \lor  \neg A$. Una contradicción es falsa en todas, como $A \land  \neg A$. Una contingencia varía según la asignación. $A \Rightarrow  B$ es contingente, aunque sus casos con premisa falsa sean verdaderos.

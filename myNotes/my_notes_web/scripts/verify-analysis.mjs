@@ -14,6 +14,16 @@ assert.equal(1*1>1,false);
 for(const locale of ['en','de','es']){
  const dir=`src/content/lessons/${locale}/analysis`,names=await readdir(dir);assert.equal(names.length,15);
  for(const filename of names){const source=await readFile(`${dir}/${filename}`,'utf8');assert.ok(!/[\u0000-\u0008\u000b\u000c\u000e-\u001f]/.test(source),'No escaped TeX control characters');assert.match(source,/course: "analysis"/);}
+ const connectives=await readFile(`${dir}/logische-verknuepfungen.mdx`,'utf8');
+ const tables=connectives.match(/(?:^\|.*\|\r?\n?)+/gm);
+ assert.equal(tables?.length,2,`${locale}: retain both truth tables`);
+ const rows=tables[1].trim().split(/\r?\n/).map(line=>line.split('|').slice(1,-1).map(cell=>cell.trim()));
+ assert.deepEqual(rows[0],[String.raw`$A$`,String.raw`$B$`,String.raw`$C$`,String.raw`$A \land B$`,String.raw`$(A \land B) \land C$`,String.raw`$B \lor C$`,String.raw`$A \lor (B \lor C)$`,String.raw`$(A \land B) \Rightarrow C$`,String.raw`$(A \land B) \Leftrightarrow C$`]);
+ const expected=[];
+ for(const a of [false,true])for(const b of [false,true])for(const c of [false,true]){
+  expected.push([a,b,c,a&&b,a&&b&&c,b||c,a||b||c,!(a&&b)||c,(a&&b)===c].map(value=>String(Number(value))));
+ }
+ assert.deepEqual(rows.slice(2),expected,`${locale}: all eight assignments and six derived columns are correct`);
  for(const file of ['neutralitaet-und-idempotenz','nullgesetze-und-konstanten','eindeutiges-komplement','de-morgan-und-doppelte-negation']){const source=await readFile(`${dir}/${file}.mdx`,'utf8');assert.ok(!source.includes('<Interactive'),'Formal worksheet proofs must not substitute an activity for derivation');assert.ok(source.includes('\\overset'),'Proofs retain rule annotations');}
 }
 console.log('Verified Boolean models, NAND networks, complement uniqueness, parity boundaries, and 45 localized Analysis lessons.');

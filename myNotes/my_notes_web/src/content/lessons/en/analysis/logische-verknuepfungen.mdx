@@ -26,6 +26,27 @@ thumbnail: "logic"
 
 AND requires both inputs. Inclusive OR requires at least one, so it also accepts both. NOT reverses a truth value. An implication fails only when its premise is true and its conclusion is false. Equivalence requires matching truth values, including when both are false.
 
+## A truth table with three variables
+
+Adding a statement $C$ does not add a third truth value: each of $A$, $B$, and $C$ is still either false ($0$) or true ($1$). With two variables there are $2^2=4$ assignments; with three there are $2^3=8$. Each old row now splits into two cases, one with $C=0$ and one with $C=1$.
+
+In this additional example, the columns $A \land B$ and $B \lor C$ show intermediate results. Use them to read the longer expressions step by step; parentheses specify which statements are grouped together.
+
+| $A$ | $B$ | $C$ | $A \land B$ | $(A \land B) \land C$ | $B \lor C$ | $A \lor (B \lor C)$ | $(A \land B) \Rightarrow C$ | $(A \land B) \Leftrightarrow C$ |
+|---|---|---|---|---|---|---|---|---|
+| 0 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+| 0 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 0 | 1 | 0 | 0 | 0 | 1 | 1 | 1 | 1 |
+| 0 | 1 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 0 | 0 | 0 | 0 | 0 | 1 | 1 | 1 |
+| 1 | 0 | 1 | 0 | 0 | 1 | 1 | 1 | 0 |
+| 1 | 1 | 0 | 1 | 0 | 1 | 1 | 0 | 0 |
+| 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 | 1 |
+
+For example, in the row $A=1$, $B=1$, $C=0$, the intermediate statement $A \land B$ is true. Combining it with $C$ using AND gives false, while $(A \land B) \Rightarrow C$ is false because its premise is true and its conclusion is false. The final equivalence is also false because $A \land B$ and $C$ have different truth values.
+
+The extra variable doubles the number of rows. It allows more compound statements, but does not require a fixed number of columns: add one for each expression you want to compare.
+
 ## Always, never, or sometimes
 
 A tautology is true for every assignment, as in $A \lor  \neg A$. A contradiction is false for every assignment, as in $A \land  \neg A$. A contingency varies with the assignment. $A \Rightarrow  B$ is a contingency, even though particular false-premise instances are true.
