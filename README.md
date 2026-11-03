@@ -2,6 +2,9 @@
 
 University learning resources, study methods, and static learning websites.
 
+For commands to start, stop, and preview the website locally, see
+[LOCAL-DEVELOPMENT.md](LOCAL-DEVELOPMENT.md).
+
 ## Canonical website
 
 The current myNotes application is in [myNotes/my_notes_web](myNotes/my_notes_web/).
@@ -13,6 +16,8 @@ Using Node 24:
 
 ```sh
 cd myNotes/my_notes_web
+nvm install
+nvm use
 npm ci
 npm run build
 npm run preview
