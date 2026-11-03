@@ -56,7 +56,7 @@ In diesem zusätzlichen Beispiel zeigen die Spalten $A \land B$ und $B \lor C$ Z
 
 In der Zeile $A=1$, $B=1$, $C=0$ ist zum Beispiel die Zwischenaussage $A \land B$ wahr. Ihre Verknüpfung mit $C$ durch UND ist falsch. Auch $(A \land B) \Rightarrow C$ ist falsch, denn die Voraussetzung ist wahr und die Folgerung falsch. Die abschließende Äquivalenz ist ebenfalls falsch, weil $A \land B$ und $C$ verschiedene Wahrheitswerte haben.
 
-Die zusätzliche Variable verdoppelt die Zeilenzahl. Sie ermöglicht weitere zusammengesetzte Aussagen, schreibt aber keine feste Spaltenzahl vor: Für jeden Ausdruck, den du vergleichen möchtest, kommt eine Spalte hinzu.
+Die Spaltenzahl ist nicht festgelegt: Für jeden zu vergleichenden Ausdruck kommt eine Spalte hinzu.
 
 
 <span id="from-logische-verknuepfungen-immer-nie-oder-manchmal"></span>
@@ -78,7 +78,7 @@ Eine Zeile verläuft waagerecht und legt eine Belegung fest. Eine Spalte verläu
 
 ### Eingaben und Vollständigkeit
 
-Für eine Eingabe $P$ gibt es zwei Werte. Bei zwei verschiedenen Eingaben $P,Q$ halte zuerst $P$ wahr und lasse $Q$ beide Werte annehmen, danach halte $P$ falsch und wiederhole dies. Es entstehen $11,10,01,00$. Eine dritte verschiedene Eingabe teilt jede bisherige Zeile in zwei auf: einmal $R=1$, einmal $R=0$. So entstehen acht Zeilen ohne ausgelassene oder doppelte Fälle.
+Für eine Eingabe $P$ liste beide Werte auf. Bei verschiedenen Eingaben $P,Q$ halte $P$ zunächst wahr, während $Q$ beide Werte annimmt, und wiederhole dies mit falschem $P$: $11,10,01,00$. Erweitere die Liste durch die oben erklärte Zeilenteilung: Eine dritte verschiedene Eingabe $R$ ergibt acht Zeilen ohne Auslassungen oder Wiederholungen.
 
 Jede **verschiedene** Eingabe verdoppelt die Zeilenzahl. Zehn Vorkommen von $P$ sind weiterhin nur eine Eingabe. Innerhalb einer Zeile müssen alle Vorkommen von $P$ denselben Wert haben. $\neg P$ wird aus $P$ berechnet, nicht unabhängig gewählt.
 
@@ -93,7 +93,7 @@ $P$ bedeute positiv und $Q$ gerade für dieselbe Karte. Die einleitende Beschrei
 
 $$(P\lor Q)\land\neg Q.$$
 
-**EN:** “at least one of P or Q holds, and Q does not hold.” **DE:** „mindestens eine der Aussagen P oder Q gilt, und Q gilt nicht“. **ES:** «se cumple al menos una de las proposiciones pe o cu, y cu no se cumple».
+„mindestens eine der Aussagen P oder Q gilt, und Q gilt nicht“.
 
 Das äußere Und verbindet die ganze Disjunktion mit der ganzen Negation. Berechne beide, bevor du sie verknüpfst:
 
@@ -193,4 +193,4 @@ $10$ und $01$ fehlen. Zeile $10$ liefert wahr, denn Disjunktion und $\neg Q$ sin
 
 </Exercise>
 
-Vergleiche Formeln bei **denselben Belegungen**. Gleiche Endspalten in allen Zeilen beweisen wahrheitsfunktionale Äquivalenz; eine Abweichung widerlegt sie. Eine Wahrheitstabelle beweist nicht die arithmetische Bedeutung ihrer Eingaben. [Logische Verknüpfungen](../logische-verknuepfungen/#from-logische-verknuepfungen) enthält weiterhin den umfassenderen Vergleich mit drei Eingaben, Implikation und Äquivalenz.
+Vergleiche Formeln bei **denselben Belegungen**. Gleiche Endspalten in allen Zeilen beweisen wahrheitsfunktionale Äquivalenz; eine Abweichung widerlegt sie. Eine Wahrheitstabelle beweist nicht die arithmetische Bedeutung ihrer Eingaben. Die umfassendere [Tabelle mit drei Eingaben oben](#from-logische-verknuepfungen) vergleicht auch Implikation und Äquivalenz.

@@ -34,7 +34,7 @@ $$
 \begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
 $$
 
-El primer paso niega todos los casos eligiendo una entrada fallida. El segundo dice que ningún testigo sirve para ella, así que falla cada candidato. El último incluye igualdad en no mayor. Elige dos una vez y mantenlo fijo al comprobar uno y dos. Cambiar tipos de cuantificador en su lugar no invierte el orden ni intercambia argumentos.
+El primer paso niega todos los casos eligiendo una entrada fallida. El segundo dice que ningún testigo sirve para ella, así que falla cada candidato. El último incluye igualdad en no mayor. Elige dos una vez y mantenlo fijo al comprobar uno y dos.
 
 
 <span id="from-negating-nested-statements-empezar-por-existencia"></span>
@@ -135,11 +135,7 @@ Más tarde, reconstruye ambos ejemplos finitos y explica después qué cambia en
 
 ### Lectura en voz alta
 
-**EN:** Some x in D has every y in D at most x.
-
-**DE:** Es gibt ein x in D, sodass jedes y in D höchstens x ist.
-
-**ES:** Existe un equis en D tal que todo ye en D es como máximo equis.
+Existe un equis en D tal que todo ye en D es como máximo equis.
 
 <span id="from-negating-quantified-statements-step-by-step"></span>
 
@@ -167,20 +163,18 @@ Trata toda la afirmación interior como un predicado de la variable actual. La l
 
 ### Un método que respeta el alcance
 
-1. Pon entre paréntesis la afirmación exacta que se niega.
-2. Anota las variables en orden, sus dominios y los parámetros fijos.
-3. Cruza solo el siguiente cuantificador: cambia su tipo y niega todo el resto.
-4. Repite conservando posiciones y dominios.
-5. Ante una conectiva, aplica primero su regla y continúa en las partes afectadas. Niega también el predicado final.
-6. Lee el resultado y revisa qué información anterior puede usar cada testigo.
-
-No cambies cuantificadores fuera del alcance real de la negación. Una variable libre sigue libre. Un dominio de libros dependiente del estante sigue asociado a ese estante. «Real positivo» sigue siendo real positivo. Estas comprobaciones evitan que un truco memorizado para prefijos cambie silenciosamente la pregunta.
+1. Delimita exactamente la afirmación negada; los cuantificadores fuera de ese alcance no cambian.
+2. Anota variables en orden, dominios y parámetros fijos. Las apariciones libres siguen libres.
+3. Cruza un cuantificador: cambia su tipo y niega todo el resto.
+4. Repite sin invertir el orden, intercambiar argumentos ni cambiar dominios. Los libros siguen asociados a su estante; los reales positivos siguen siendo positivos.
+5. Ante una conectiva, usa su regla de negación; niega también el predicado final.
+6. Lee el resultado y revisa la información anterior permitida para cada testigo.
 
 $$
 \neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
 $$
 
-Un documento incumple «si está firmado, entonces pasa» exactamente cuando está firmado y no pasa. Uno sin firmar no puede refutar el condicional. Por eso la hipótesis original se mantiene verdadera en un contraejemplo.
+Aplica la regla del condicional de la lección anterior: un documento refuta «si está firmado, entonces pasa» exactamente cuando está firmado y falla. Uno sin firmar no puede refutarlo.
 
 <span id="from-negating-quantified-statements-step-by-step-práctica"></span>
 
@@ -268,8 +262,4 @@ Más tarde, reconstruye los seis pasos y explica por qué sustituir dentro de cu
 
 ### Lectura en voz alta
 
-**EN:** There is an applicant such that every document has a check it fails.
-
-**DE:** Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.
-
-**ES:** Existe un solicitante tal que todo documento tiene una comprobación que falla.
+Existe un solicitante tal que todo documento tiene una comprobación que falla.

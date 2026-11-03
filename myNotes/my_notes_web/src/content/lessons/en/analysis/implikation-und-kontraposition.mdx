@@ -61,7 +61,7 @@ For the **different** rule above-two-to-above-five, the instance at zero is true
 
 ### One assignment is not logical consequence
 
-At $x=7$, $P(x):x>2$ and $Q(x):x>5$ are true. At $x=3$ the implication is false; at $x=0$ it is true again. The pair $P$ false, $Q$ true is impossible for these linked comparisons, since above five entails above two by real order. The general table still needs that row for other propositions, for example $P:(0=1)$ and $Q:(2=2)$.
+For the opening comparisons $P(x):x>2$ and $Q(x):x>5$, the missing pair $P$ false, $Q$ true is impossible: above five entails above two by real order. The general table still needs that row for other propositions, for example $P:(0=1)$ and $Q:(2=2)$.
 
 **Logical consequence** requires that no permitted assignment or model make all premises true and the conclusion false. A conditional true in one assignment does not establish that relationship between independent $P$ and $Q$. Nor is one true numerical instance a proof that a conditional holds for every domain input. A domain-wide arithmetic proof also uses its arithmetic assumptions, not just unrestricted propositional letters.
 
@@ -88,7 +88,7 @@ No. All three boxes obey the rule. The empty box has no cards; zero is at most t
 
 ## Reading conditionals
 
-A box contains cards with real numbers. Its rule says: “A card is above two if it is above five.” The word **if** introduces the starting condition, even though that condition comes last in the sentence. The rule runs from above five to above two.
+Read the box rule in reversed sentence order: “A card is above two if it is above five.” **If** still introduces the hypothesis, even at the end; the rule runs from above five to above two.
 
 
 <span id="from-reading-conditionals-hypothesis-and-conclusion"></span>
@@ -158,14 +158,12 @@ The proof must exclude $x=2$; the weaker bound alone allows it. This does not as
 
 <Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
 
-To refute “if I pass, I buy dinner”, I must pass and not buy dinner. Negating both parts is a different operation.
+The negation selects exactly the false row of the conditional: $A$ true and $B$ false. To refute “if I pass, I buy dinner”, I must pass and not buy dinner. Negating both parts instead would select a different case.
 
 
 <span id="from-logische-verknuepfungen-reading-an-implication"></span>
 
-### Reading an implication
-
-$A \Rightarrow  B$ rules out just one situation: $A$ happens and $B$ does not. Consider “if a number is divisible by 4, it is even”. An odd number does not meet the premise, so it cannot contradict the claim. This is why a false premise gives a true implication in the table. It does not prove a causal connection or establish that $B$ is true on its own. For $A \Leftrightarrow  B$, both directions must hold.
+Requiring **both** directions gives $A \Leftrightarrow B$, not the one-way $A \Rightarrow B$. The divisibility proof below illustrates why an odd input cannot refute the forward rule.
 
 <span id="from-implikation-und-kontraposition"></span>
 
@@ -222,7 +220,7 @@ The converse is $x>0\Rightarrow((x>1)\land(x<4))$; it fails at one because $1>1$
 
 ### Divisibility gives a concrete example
 
-Write $a | n$ when $n=ak$ for some integer $k$. This is a statement of divisibility, not division. If 4 divides $n$, then 2 divides $n$. Contraposition says: if 2 does not divide $n$, then 4 does not divide $n$. The converse fails at $n = 6$: 2 divides 6 but 4 does not.
+Write $a | n$ when $n=ak$ for some integer $k$. This is divisibility, not division. We will prove that $4 | n$ implies $2 | n$, then compare its contrapositive and converse.
 
 
 <span id="from-implikation-und-kontraposition-a-proof-and-its-converse"></span>
@@ -241,7 +239,7 @@ No: $n = 3$. The contrapositive is “if 6 does not divide $n$, then 3 does not 
 
 ## Implication and model assumptions
 
-Seven exceeds five and exceeds two. Comparing seven with five does not cause the number to change. The implication relates two properties of the same unchanged number.
+Seven exceeding five and exceeding two are properties of one unchanged number, not effects caused by comparing it with five.
 
 Material implication is **truth-functional**: the truth values of its two parts determine its value. There is no additional truth-table column for “happens earlier,” “explains,” or “causes.” In ordinary arithmetic,
 

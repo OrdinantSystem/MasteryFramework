@@ -35,6 +35,9 @@ Ein Halb löst $2x=1$ über den reellen, nicht über den ganzen Zahlen. Jede gan
 
 #### Übung
 
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
 Ein Regal enthält ein rotes und zwei blaue Bücher. Ist die Aussage „Ein Buch ist blau“ wahr? Behauptet sie, dass genau ein Buch blau ist?
 
 <details>
@@ -110,9 +113,14 @@ Im leeren Beutel ist die Existenz einer roten Marke falsch. Beim verschlossenen 
 
 </Exercise>
 
+</details>
+
 <span id="from-existence-and-witnesses-zeugen-prüfen"></span>
 
 #### Zeugen prüfen
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Welche Zahlen aus $1,2,3,4$ erfüllen $1<n<4$ ganzzahlig?
 
@@ -191,11 +199,13 @@ Nur die erste schließt jeden möglichen Zeugen aus. In der zweiten bleiben Kand
 
 Erkläre später Existenz an zwei Erfolgen und ändere dann die Sammlung so, dass keiner bleibt.
 
+</details>
+
 <span id="from-constructing-a-witness"></span>
 
 ## Einen Zeugen konstruieren
 
-Zwölf minus fünf legt sieben nahe. Zum Abschluss prüfe die ursprüngliche Aufgabe: Sieben ist ganzzahlig und sieben plus fünf ist zwölf. Die Suche findet einen Kandidaten; die Prüfung zeigt, dass er passt.
+Kehren wir zum geprüften Zeugen sieben zurück. Zwölf minus fünf erklärt, wie man ihn findet; der folgende direkte Beweis trennt Suche und Prüfung.
 
 <Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
 
@@ -215,11 +225,14 @@ Wähle $n=7$. Die Zahl gehört zu $\mathbb Z$. Sie erfüllt $7+5=12$. Damit erf�
 
 Aus $2x=1$ folgt rückwärts $x=1/2$. Nach Zugehörigkeitsprüfung und Einsetzen ist reelle Existenz bewiesen, aber kein ganzzahliger Zeuge geliefert. Ein notwendiger Kandidat allein beweist keine Existenz. Vollständig umkehrbare Algebra kann mit Bereichsprüfung eine ausreichende Äquivalenz begründen; Rückwärtsrechnen ist nicht grundsätzlich falsch. Eine falsche Behauptung erhält keinen gültigen Beweis dadurch, dass eine Aufgabe ihn verlangt.
 
-Für $4<n<8$ wähle fünf und prüfe Ganzzahligkeit sowie beide strengen Ungleichungen. Vier scheitert an der Grenze. Sechs oder sieben wären ebenso gültig. Für beliebiges reelles $x$ konstruiert $x+1$ eine größere reelle Zahl: Die Summe ist wieder reell, und das Addieren der positiven Zahl eins erhöht die Eingabe. Ein Test nur bei null würde diese allgemeine Regel nicht beweisen.
+Beim Intervallbeispiel $4<n<8$ kann der geprüfte Zeuge fünf durch sechs oder sieben ersetzt werden; vier scheitert an der strengen Grenze. Für beliebiges reelles $x$ konstruiert $x+1$ eine größere reelle Zahl: Die Summe ist wieder reell, und das Addieren der positiven Zahl eins erhöht die Eingabe. Ein Test nur bei null würde diese allgemeine Regel nicht beweisen.
 
 <span id="from-constructing-a-witness-übung"></span>
 
 #### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Beweise $\exists n\in\mathbb Z\;(n+8=3)$.
 
@@ -298,16 +311,13 @@ Reelle Addition liefert ein reelles Ergebnis, und das Addieren der positiven Zah
 
 Schreibe später einen neuen Beweis in vier Sätzen und benenne ihre Aufgaben.
 
+</details>
 
 <span id="from-constructing-a-witness-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** Exhibit a candidate, check membership and the full property, then conclude existence.
-
-**DE:** Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
-
-**ES:** Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.
+Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
 
 <span id="from-existence-and-uniqueness"></span>
 
@@ -337,13 +347,16 @@ $$
 \exists! n\in\mathbb Z\;(n+5=12).
 $$
 
-Existenz: $7\in\mathbb Z$ und $7+5=12$. Eindeutigkeit: Sei $n$ eine beliebige ganze Zahl mit $n+5=12$. Subtraktion von fünf auf beiden Seiten ergibt $n=7$. Jede mögliche Lösung gleicht also dem geprüften Zeugen. Wir betrachten eine beliebige Lösung, nicht jede ganze Zahl als angebliche Sieben und auch keine endliche Stichprobe gescheiterter Alternativen.
+Der direkte Beweis oben liefert Existenz. Für die Eindeutigkeit sei $n$ eine beliebige ganze Zahl mit $n+5=12$. Subtraktion von fünf auf beiden Seiten ergibt $n=7$. Jede mögliche Lösung gleicht also dem geprüften Zeugen. Wir betrachten eine beliebige Lösung, nicht jede ganze Zahl als angebliche Sieben und auch keine endliche Stichprobe gescheiterter Alternativen.
 
 Beschränke den Bereich nun auf ganze Zahlen größer als zehn. Dieselbe Subtraktion zwingt jede hypothetische Lösung auf sieben, außerhalb des Bereichs. Höchstens eine gilt weiterhin, Existenz aber nicht. Bei $4<n<8$ sind dagegen fünf und sechs verschiedene ganzzahlige Zeugen; das widerlegt Eindeutigkeit ohne vollständige Liste.
 
 <span id="from-existence-and-uniqueness-übung"></span>
 
 #### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Beweise, dass genau eine ganze Zahl $n+3=9$ erfüllt.
 
@@ -422,22 +435,19 @@ Sieben ist ausgeschlossen. Das Argument ergibt höchstens eine und mit der Berei
 
 Vergleiche später Sammlungen mit null, einem und zwei Erfolgen und rekonstruiere beide Beweisaufgaben.
 
+</details>
 
 <span id="from-existence-and-uniqueness-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** There exists exactly one x in D satisfying P.
-
-**DE:** Es gibt genau ein x in D, das P erfüllt.
-
-**ES:** Existe exactamente un equis en D que cumple P.
+Es gibt genau ein x in D, das P erfüllt.
 
 <span id="from-counting-witnesses"></span>
 
 ## Zeugen zählen
 
-Karten mit sieben und neun bezeugen beide die Existenz einer Karte mit ungerader Zahl. Sieben für einen Beweis zu wählen entfernt neun nicht. Wie viel Begründung nötig ist, hängt von der Aufgabe ab: einen, zwei verschiedene oder alle Zeugen angeben.
+Karten mit sieben und neun bezeugen beide die Existenz einer ungeraden Karte; die Wahl von sieben entfernt neun nicht. Beim Intervallbeispiel sind Existenz bereits geprüft und Eindeutigkeit widerlegt; alle Zeugen anzugeben verlangt zusätzlich den Ausschluss weiterer Möglichkeiten.
 
 Ein geprüftes Objekt beweist Existenz. Zwei verschiedene geprüfte Objekte widerlegen höchstens eines, ohne genau zwei zu behaupten. Eine vollständige Liste verlangt Prüfung jedes Eintrags und Ausschluss aller nicht aufgeführten Objekte. Bereichsgröße ist nicht Zeugenanzahl: Ein unendlicher Bereich kann null, einen, endlich oder unendlich viele Erfolge enthalten.
 
@@ -459,6 +469,9 @@ Verschiedene Ausdrücke müssen keine verschiedenen Objekte sein: $1/2=2/4$. Zwe
 <span id="from-counting-witnesses-übung"></span>
 
 #### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Begründe für ganzzahliges $4<n<8$ einen, zwei verschiedene und alle Zeugen.
 
@@ -537,13 +550,10 @@ Fünfeinhalb ist ein fehlender reeller Zeuge, also fehlt Vollständigkeit. Fünf
 
 Konstruiere später Beispiele mit null, einem und mehreren Erfolgen und begründe jeweils die passende Anzahl.
 
+</details>
 
 <span id="from-counting-witnesses-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.
-
-**DE:** Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.
-
-**ES:** Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.
+Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.

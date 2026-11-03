@@ -49,6 +49,15 @@ Cero testimonia la negación: es entero y no es positivo. Un medio negativo incu
 
 Para «roja y numerada», fallar significa no roja o no numerada, con o inclusiva. Basta una tarjeta roja sin número. En un dominio vacío, los universales son verdaderos y sus negaciones existenciales falsas. Se admiten dominios restringidos vacíos aunque el universo más amplio no lo sea. Un universal no proporciona por sí mismo un objeto.
 
+<span id="from-quantoren-und-negation-un-testigo-frente-a-todos-los-casos"></span>
+
+### Un testigo frente a todos los casos
+
+<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+La afirmación de la izquierda es verdadera porque $7$ pertenece al dominio y satisface la ecuación. El enunciado universal que aparece dentro de la negación es falso: por ejemplo, $x=1$ da $1+3=4$, no $10$. Las dos afirmaciones mostradas son verdaderas, pero por razones distintas. Un valor que satisface la condición demuestra existencia; otro que no la satisface refuta la universalidad.
+
+
 <span id="from-negating-universal-statements-práctica"></span>
 
 #### Práctica
@@ -135,11 +144,7 @@ Más tarde, explica ambas direcciones de la ley con una colección mixta y despu
 
 ### Lectura en voz alta
 
-**EN:** Not every x in D satisfies P if and only if some x in D fails P.
-
-**DE:** Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
-
-**ES:** No todo equis en D cumple P si y solo si algún equis en D no cumple P.
+No todo equis en D cumple P si y solo si algún equis en D no cumple P.
 
 <span id="from-negating-existential-statements"></span>
 
@@ -254,11 +259,7 @@ Más tarde, explica por qué un fallo basta contra todos, mientras que contra al
 
 ### Lectura en voz alta
 
-**EN:** There is no x in D satisfying P if and only if every x in D fails P.
-
-**DE:** Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
-
-**ES:** No existe equis en D que cumpla P si y solo si todo equis en D incumple P.
+No existe equis en D que cumpla P si y solo si todo equis en D incumple P.
 
 <span id="from-negating-quantified-inequalities"></span>
 
@@ -271,7 +272,7 @@ Una promesa exige que una lectura esté estrictamente a menos de una unidad del 
 
 ### El orden real separa todos los casos
 
-Para reales $x,c$, se cumple exactamente uno de menor, igual y mayor. Negar conserva precisamente los casos excluidos por la comparación original. Quitar menor deja igual o mayor; quitar menor-o-igual deja solo mayor. Intercambiar mayor y menor da las otras dos reglas. Esto usa el orden total habitual de los reales, no solo la sintaxis de cuantificadores.
+Recordemos los complementos del orden real: la tricotomía deja exactamente los casos excluidos por la comparación original. Se usa el orden total habitual de los reales, no solo la sintaxis de cuantificadores.
 
 $$
 \begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
@@ -289,6 +290,13 @@ $$
 $$
 
 Que todo real positivo sea menor que uno es falso. Uno es un contraejemplo permitido situado exactamente en la frontera. Cero no está permitido. Cambiamos todo por alguno, conservamos reales positivos y complementamos la comparación interior. Otro ejemplo como dos es innecesario: uno ya demuestra la negación.
+
+
+<span id="from-quantoren-und-negation-el-caso-límite-importa"></span>
+
+### El caso límite importa
+
+La afirmación $n^2 > n$ para todo natural falla en $n = 1$. Si $\mathbb{N}$ empieza en 1, la afirmación universal correcta es $n^2 \ge  n$; la desigualdad estricta vale para $n > 1$.
 
 
 <span id="from-negating-quantified-inequalities-cuando-el-predicado-es-condicional"></span>
@@ -349,28 +357,11 @@ Más tarde, reproduce los cuatro complementos y las cuatro filas del condicional
 
 ### Lectura en voz alta
 
-**EN:** Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
-
-**DE:** Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
-
-**ES:** No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.
+No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.
 
 <span id="from-quantoren-und-negation"></span>
 
 ## Cuantificadores y negación
-
-<span id="from-quantoren-und-negation-un-testigo-frente-a-todos-los-casos"></span>
-
-### Un testigo frente a todos los casos
-
-Esta página sirve como referencia breve. Para una primera explicación, empieza por [los enunciados universales y sus dominios](../universal-statements-and-domains/#from-universal-statements-and-domains) y [la existencia y los testigos](../universal-statements-and-domains/#from-existence-and-witnesses). Después, estudia [las variables ligadas y el alcance](../universal-statements-and-domains/#from-bound-variables-and-scope), [el orden de los cuantificadores](../quantifier-order/#from-quantifier-order) y [la negación de los enunciados universales](../negating-universal-statements/#from-negating-universal-statements). Esas lecciones desarrollan los ejemplos y las demostraciones de las fórmulas reunidas aquí.
-
-La existencia necesita un testigo. Una afirmación universal abarca cada elemento de su dominio; un contraejemplo la refuta. $\exists!$ significa exactamente uno: existencia y unicidad juntas.
-
-<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
-
-La afirmación de la izquierda es verdadera porque $7$ pertenece al dominio y satisface la ecuación. El enunciado universal que aparece dentro de la negación es falso: por ejemplo, $x=1$ da $1+3=4$, no $10$. Las dos afirmaciones mostradas son verdaderas, pero por razones distintas. Un valor que satisface la condición demuestra existencia; otro que no la satisface refuta la universalidad.
-
 
 <span id="from-quantoren-und-negation-lleva-la-negación-hacia-dentro"></span>
 
@@ -380,16 +371,9 @@ La afirmación de la izquierda es verdadera porque $7$ pertenece al dominio y sa
 
 <Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
 
-La negación cambia el cuantificador y el predicado, manteniendo el dominio. Con cuantificadores anidados, cambia cada uno por orden. El orden importa: un mismo $y$ que sirva para todos los $x$ exige más que un $y$ posiblemente distinto para cada $x$. Que sea el mismo testigo no significa que sea el único posible.
+Son las dos leyes demostradas arriba. Para cuantificadores anidados, aplícalas en el orden existente, conservando dominios y alcances:
 
 <Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
-
-
-<span id="from-quantoren-und-negation-el-caso-límite-importa"></span>
-
-### El caso límite importa
-
-La afirmación $n^2 > n$ para todo natural falla en $n = 1$. Si $\mathbb{N}$ empieza en 1, la afirmación universal correcta es $n^2 \ge  n$; la desigualdad estricta vale para $n > 1$.
 
 
 <span id="from-quantoren-und-negation-orden-de-los-cuantificadores"></span>

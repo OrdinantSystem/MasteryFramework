@@ -28,15 +28,7 @@ additionalSources: []
 
 ### Ein Verfahren zum Lesen
 
-Diese Fragen helfen beim Zerlegen eines Satzes. Sie ordnen das Lesen, ersetzen aber keinen Beweis.
-
-1. Definiert der Text einen Begriff, behauptet er etwas, setzt er etwas lokal voraus, fragt er oder fordert er zu etwas auf?
-2. Welche Objekte und welcher Bereich sind gemeint? Sind alle Ausdrücke sinnvoll? In der üblichen reellen Arithmetik ist Division durch null nicht erlaubt.
-3. Welche Variablenvorkommen sind frei oder gebunden? Legt der umgebende Text unabhängig davon einen Wert fest?
-4. Welche Quantoren stehen in Worten oder Symbolen da? Erhalte Bereich und Geltungsbereich. $\forall$ heißt „für alle“, $\exists$ heißt „es gibt mindestens eines“, nicht „genau eines“.
-5. Suche die Verknüpfung der größten Teile und untersuche dann deren Struktur. Klammern halten vollständige Eingaben zusammen.
-6. Bestimme bei einer Implikation die **ganze Voraussetzung** und die **ganze Folgerung**. Eine einfache Gleichheit braucht keine erfundene Voraussetzung.
-7. Trenne Zerlegung, Auswertung und Begründung. Zu verstehen, was ein Satz sagt, beweist ihn nicht.
+Bestimme die Aufgabe des Satzes: Definition, Behauptung, lokale Annahme, Frage oder Aufforderung. Prüfe Bereiche und Definiertheit (keine reelle Division durch null), freie und gebundene Vorkommen sowie im Kontext festgelegte Werte. Erhalte Quantorenreihenfolge und Geltungsbereiche: $\forall$ heißt alle, $\exists$ mindestens eines, nicht genau eines. Zerlege von der äußersten Verknüpfung nach innen und halte ihre Eingaben vollständig. Bestimme bei einer Implikation die ganze Voraussetzung und Folgerung; erfinde für eine einfache Gleichheit keine Voraussetzung. Zerlegung, Auswertung und Beweis bleiben getrennt.
 
 Addition in $x+y=3$ verbindet Zahlen innerhalb einer Bedingung, keine Aussagen. Auf aussagenlogischer Ebene dürfen wir eine ganze quantifizierte Aussage als einen Buchstaben behandeln. Dadurch wird sie aber nicht zu einer atomaren Formel der Prädikatenlogik.
 
@@ -49,7 +41,7 @@ Addition in $x+y=3$ verbindet Zahlen innerhalb einer Bedingung, keine Aussagen. 
 
 $$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
 
-**EN:** “For every real x, if zero is strictly less than x and x is strictly less than one, then x is strictly less than two.” **DE:** „Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“ **ES:** «Para todo real equis, si cero es estrictamente menor que equis y equis es estrictamente menor que uno, entonces equis es estrictamente menor que dos».
+„Für jede reelle Zahl x gilt: Wenn null kleiner als x und x kleiner als eins ist, dann ist x kleiner als zwei.“
 
 Der Quantor umfasst die gesamte Implikation und bindet jedes Vorkommen von $x$. Die Formel ist geschlossen. Innerhalb seines Geltungsbereichs ist $\Rightarrow$, auch $\to$ geschrieben, die Hauptverknüpfung. Links steht die ganze Konjunktion, rechts $x<2$. $\land$ bedeutet „und“ und ist keine zweite äußere Verknüpfung.
 
@@ -141,6 +133,9 @@ Bei festen unabhängigen Bereichen $D,E$ dürfen benachbarte Allquantoren vertau
 
 #### Übung
 
+<details>
+<summary>Optionale Zusatzübungen</summary>
+
 Erkläre das vollständige Rot-Blau-Modell ohne Symbole.
 
 <details>
@@ -218,22 +213,19 @@ Jede Person hat einen Schlüssel ist leer wahr. Ein gemeinsamer Schlüssel exist
 
 Rekonstruiere später den Beweis und die Widerlegung für beliebige reelle Zahlen statt große Zahlen zu testen.
 
+</details>
 
 <span id="from-quantifier-order-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** For every x in D, there exists y in E such that R of x and y holds.
-
-**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
-
-**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
 
 <span id="from-witness-dependence"></span>
 
 ## Abhängigkeit von Zeugen
 
-Nennt eine Freundin eine reelle Zahl vor deiner Antwort, liefert „plus eins“ eine größere reelle Zahl. Muss die Antwort für jede erst danach genannte Zahl passen, nutzt dieselbe Regel Information, die die Anforderung nicht erlaubt.
+Das Beispiel der größeren reellen Zahl zeigt, warum $y=x+1$ die Eingabe zuerst benötigt. Bei drei Quantoren ist genau festzuhalten, welche Eingaben jeder Zeuge nutzen darf.
 
 
 <span id="from-witness-dependence-verfügbare-information-festhalten"></span>
@@ -261,6 +253,9 @@ Erlaubte Information reicht nicht für Erfolg. Die Konstante $y=1$ nutzt keine v
 <span id="from-witness-dependence-übung"></span>
 
 #### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Für jedes reelle $x$ wird ein positives reelles $y$ verlangt. Darfst du stets eins wählen?
 
@@ -339,16 +334,13 @@ Bei Eingabe eins entsteht ein Halb, keine ganze Zahl. Tatsächlich verdoppelt si
 
 Rekonstruiere später ohne Vorlage die verfügbare Information für beide Summenformeln.
 
+</details>
 
 <span id="from-witness-dependence-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** For every x in D, there exists y in E such that R of x and y holds.
-
-**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
-
-**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+Für jedes Paar reeller Eingaben gibt es eine reelle Summe; der Summenzeuge darf beide Eingaben nutzen.
 
 <span id="from-separate-and-shared-witnesses"></span>
 
@@ -360,7 +352,7 @@ $$
 \underbrace{\exists k\in K\;\forall p\in P\;H(p,k)}_{\text{S}}\ \Rightarrow\ \underbrace{\forall p\in P\;\exists k\in K\;H(p,k)}_{\text{T}}.
 $$
 
-$P,K$ sind feste Personen- und Schlüsselbereiche; $H(p,k)$ bedeutet, dass $p$ den Schlüssel $k$ nutzen darf. Zum Beweis nehme S an und halte einen dadurch gelieferten Schlüssel fest. Nimm eine beliebige erlaubte Person. Der Schlüssel passt für sie, weil er für alle passt. Nutze ihn als ihren Zeugen. Verschiedene Wahlen werden nicht verlangt. Also impliziert S die Aussage T. Das vollständige Rot-Blau-Modell widerlegt die Umkehrung.
+Behalte Personen, Schlüssel und Berechtigungen des Rot-Blau-Modells bei. Zum Beweis nehme S an und halte einen dadurch gelieferten Schlüssel fest. Nimm eine beliebige erlaubte Person. Der Schlüssel passt für sie, weil er für alle passt. Nutze ihn als ihren Zeugen. Verschiedene Wahlen werden nicht verlangt. Also impliziert S die Aussage T. Das vollständige Rot-Blau-Modell widerlegt die Umkehrung.
 
 Stärker bedeutet, dass gemeinsamer Erfolg getrennten Erfolg impliziert. Es bedeutet nicht überall entgegengesetzte Wahrheitswerte. Mit grün sind beide wahr; hat eine Person keinen nutzbaren Schlüssel, sind beide falsch. Eine vollständige endliche Berechtigungstabelle kann diese endlichen Aussagen klären; eine Stichprobe aus einem unendlichen Bereich nicht jeden Fall.
 
@@ -381,6 +373,9 @@ Für reelle Vergleiche zeigt die [Quantorenreihenfolge](../quantifier-order/#fro
 <span id="from-separate-and-shared-witnesses-übung"></span>
 
 #### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Alle dürfen rot und blau nutzen. Bewerte beide Formen und Eindeutigkeit.
 
@@ -459,22 +454,19 @@ Getrennt gilt mit $y=x$. Gemeinsam ist falsch: Jedes $y$ scheitert bei reellem $
 
 Rekonstruiere später alle drei Zeilen mit leeren Bereichen und erkläre, warum keine die gültige Implikation verletzt.
 
+</details>
 
 <span id="from-separate-and-shared-witnesses-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** One fixed witness for all inputs implies a witness for each input, but not conversely.
-
-**DE:** Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
-
-**ES:** Un testigo fijo para todas las entradas implica un testigo para cada entrada, pero no al revés.
+Ein fester Zeuge für alle Eingaben liefert einen Zeugen je Eingabe, nicht umgekehrt.
 
 <span id="from-translating-quantified-statements"></span>
 
 ## Quantifizierte Aussagen übersetzen
 
-„Alle Studierenden haben ein Buch gelesen“ lässt die Buchwahl je Person offen. „Es gibt ein Buch, das alle gelesen haben“ verlangt ein gemeinsames Buch. Lege für eine formale Beschreibung zuerst Objekte und Beziehung fest.
+Übertrage das Schlüsselmodell auf Bücher: Übersetze „Alle Studierenden haben ein Buch gelesen“ und „Es gibt ein Buch, das alle gelesen haben“. Die Unterscheidung bleibt gleich; Bereiche und Beziehung sind neu.
 
 Seien $S$ die Studierenden und $B$ die Bücher; $R(s,b)$ bedeute, dass $s$ das Buch $b$ gelesen hat. Halte diese Beziehung unverändert; wechsle nicht unbemerkt von Lesen zu Besitzen.
 
@@ -515,6 +507,9 @@ $A(s)$ bedeutet Teilnahme am Seminar. Nur Teilnehmende müssen ein gelesenes Buc
 <span id="from-translating-quantified-statements-übung"></span>
 
 #### Übung
+
+<details>
+<summary>Optionale Zusatzübungen</summary>
 
 Mit Personen $P$, Schlüsseln $K$ und Nutzbarkeit $H$: Übersetze „Jede Person kann einen Schlüssel nutzen“.
 
@@ -593,13 +588,10 @@ $\forall x\in\mathbb R\;\exists y\in\mathbb R\;\forall z\in\mathbb R\;(x+y=z)$. 
 
 Schreibe später beide Buchübersetzungen aus dem Gedächtnis und lies sie zurück.
 
+</details>
 
 <span id="from-translating-quantified-statements-laut-lesen"></span>
 
 ### Laut lesen
 
-**EN:** For every x in D, there exists y in E such that R of x and y holds.
-
-**DE:** Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
-
-**ES:** Para todo equis en D existe un ye en E tal que se cumple R de equis, ye.
+Jede teilnehmende Person hat ein Buch gelesen; die Buchforderung steht innerhalb der Implikation.

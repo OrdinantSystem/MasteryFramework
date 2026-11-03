@@ -34,7 +34,7 @@ $$
 \begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
 $$
 
-The first step denies every input by selecting one failing input. The second says no witness works for that input, so every candidate fails. The last includes equality in not greater. Choose two once and keep it fixed while testing one and two. Switching the binder types in place does not reverse their order or exchange relation arguments.
+The first step denies every input by selecting one failing input. The second says no witness works for that input, so every candidate fails. The last includes equality in not greater. Choose two once and keep it fixed while testing one and two.
 
 
 <span id="from-negating-nested-statements-start-with-existence-instead"></span>
@@ -135,11 +135,7 @@ Later, reconstruct both finite examples and then explain what changes over all r
 
 ### Read aloud
 
-**EN:** Some x in D has every y in D at most x.
-
-**DE:** Es gibt ein x in D, sodass jedes y in D höchstens x ist.
-
-**ES:** Existe un equis en D tal que todo ye en D es como máximo equis.
+Some x in D has every y in D at most x.
 
 <span id="from-negating-quantified-statements-step-by-step"></span>
 
@@ -167,20 +163,18 @@ Treat the whole inner claim as one predicate of the current variable. The dual l
 
 ### A method that respects scope
 
-1. Parenthesize the exact claim being denied.
-2. Record the ordered variables, their domains and the fixed parameters.
-3. Cross the next quantifier only: switch its type and negate the whole remainder.
-4. Repeat, preserving positions and domains.
-5. At a connective, apply its own rule before proceeding into the affected parts. Negate the final predicate too.
-6. Read back the result and audit which witnesses may use which earlier information.
-
-Do not flip quantifiers outside the negation’s actual scope. A free variable remains free. A shelf-dependent book domain stays attached to its shelf. “Positive real” remains positive real. These checks prevent a memorized prefix trick from silently changing the question.
+1. Parenthesize exactly the claim denied; quantifiers outside that scope stay unchanged.
+2. Record variables in order, domains and fixed parameters. Free occurrences remain free.
+3. Cross one quantifier: switch its type and negate the whole remainder.
+4. Repeat without reversing order, exchanging relation arguments or changing domains. A shelf-dependent book domain stays attached to its shelf; positive reals stay positive.
+5. At a connective, use its own negation rule; negate the final predicate too.
+6. Read back the result and audit each witness’s permitted earlier information.
 
 $$
 \neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
 $$
 
-A signed document fails the promise “if signed, then passes” exactly when it is signed and does not pass. An unsigned document cannot refute the implication. This is why the original hypothesis remains true in a counterexample.
+Apply the conditional-negation rule from the preceding lesson: a document refutes “if signed, then passes” exactly when signed and failing. An unsigned document cannot refute it.
 
 <span id="from-negating-quantified-statements-step-by-step-practice"></span>
 
@@ -268,8 +262,4 @@ Later, reconstruct the six-step method and explain why substitution inside outer
 
 ### Read aloud
 
-**EN:** There is an applicant such that every document has a check it fails.
-
-**DE:** Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.
-
-**ES:** Existe un solicitante tal que todo documento tiene una comprobación que falla.
+There is an applicant such that every document has a check it fails.

@@ -35,6 +35,9 @@ Un medio resuelve $2x=1$ en los reales, no en los enteros. Todo entero es como m
 
 #### Práctica
 
+<details>
+<summary>Práctica adicional opcional</summary>
+
 Un estante contiene un libro rojo y dos azules. ¿Es verdadera «Algún libro es azul»? ¿Afirma unicidad?
 
 <details>
@@ -110,9 +113,14 @@ La existencia de una ficha roja es falsa en la vacía. La información no decide
 
 </Exercise>
 
+</details>
+
 <span id="from-existence-and-witnesses-comprobar-testigos"></span>
 
 #### Comprobar testigos
+
+<details>
+<summary>Práctica adicional opcional</summary>
 
 ¿Cuáles de $1,2,3,4$ cumplen $1<n<4$ en los enteros?
 
@@ -191,11 +199,13 @@ Solo la primera excluye todos los posibles testigos. La segunda deja candidatos 
 
 Más tarde, explica existencia con dos éxitos y cambia después la colección para que no haya ninguno.
 
+</details>
+
 <span id="from-constructing-a-witness"></span>
 
 ## Construir un testigo
 
-Restar cinco de doce sugiere siete. Para terminar, comprueba la petición original: siete es entero y siete más cinco es doce. Explorar encuentra un candidato; verificar establece que sirve.
+Volvamos al testigo siete ya verificado. Restar cinco de doce explica cómo descubrirlo; la prueba directa siguiente separa descubrimiento y verificación.
 
 <Math tex="\exists n\in\mathbb Z\;(n+5=12)." display />
 
@@ -215,11 +225,14 @@ Elige $n=7$. Pertenece a $\mathbb Z$. Cumple $7+5=12$. Por tanto, un objeto perm
 
 De $2x=1$ se deduce necesariamente $x=1/2$. Tras comprobar pertenencia y sustitución se demuestra existencia real, pero no se obtiene un testigo entero. Un candidato necesario por sí solo no demuestra existencia. El álgebra reversible puede dar una equivalencia suficiente si se comprueba el dominio; razonar hacia atrás no es inválido en sí. Una afirmación falsa no admite una prueba válida porque un ejercicio la pida.
 
-Para $4<n<8$, elige cinco y comprueba que es entero y cumple ambas desigualdades estrictas. Cuatro falla en el extremo. Seis o siete servirían igual. Para cualquier real $x$, la regla $x+1$ construye un real mayor: la suma sigue siendo real y sumar uno positivo aumenta la entrada. Probar solo en cero no demostraría esta regla general.
+En el ejemplo del intervalo $4<n<8$, el testigo cinco ya verificado puede sustituirse por seis o siete; cuatro falla en el extremo estricto. Para cualquier real $x$, la regla $x+1$ construye un real mayor: la suma sigue siendo real y sumar uno positivo aumenta la entrada. Probar solo en cero no demostraría esta regla general.
 
 <span id="from-constructing-a-witness-práctica"></span>
 
 #### Práctica
+
+<details>
+<summary>Práctica adicional opcional</summary>
 
 Demuestra $\exists n\in\mathbb Z\;(n+8=3)$.
 
@@ -298,16 +311,13 @@ La suma real da un resultado real y sumar uno positivo aumenta cualquier entrada
 
 Más tarde, escribe otra prueba de cuatro frases e identifica la función de cada una.
 
+</details>
 
 <span id="from-constructing-a-witness-lectura-en-voz-alta"></span>
 
 ### Lectura en voz alta
 
-**EN:** Exhibit a candidate, check membership and the full property, then conclude existence.
-
-**DE:** Gib einen Kandidaten an, prüfe Zugehörigkeit und ganze Eigenschaft und folgere Existenz.
-
-**ES:** Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.
+Propón un candidato, comprueba pertenencia y propiedad completa y concluye existencia.
 
 <span id="from-existence-and-uniqueness"></span>
 
@@ -337,13 +347,16 @@ $$
 \exists! n\in\mathbb Z\;(n+5=12).
 $$
 
-Existencia: $7\in\mathbb Z$ y $7+5=12$. Unicidad: sea $n$ cualquier entero que cumpla $n+5=12$. Restar cinco a ambos lados da $n=7$. Toda solución posible coincide con el testigo verificado. Consideramos una solución arbitraria, no un entero cualquiera que supongamos igual a siete ni una muestra finita de alternativas fallidas.
+La prueba directa anterior establece existencia. Para la unicidad, sea $n$ cualquier entero que cumpla $n+5=12$. Restar cinco a ambos lados da $n=7$. Toda solución posible coincide con el testigo verificado. Consideramos una solución arbitraria, no un entero cualquiera que supongamos igual a siete ni una muestra finita de alternativas fallidas.
 
 Restringe ahora el dominio a enteros mayores que diez. La misma resta fuerza cualquier solución hipotética a ser siete, fuera del dominio. Sigue habiendo a lo sumo una, pero falla existencia. En cambio, para $4<n<8$, cinco y seis son testigos enteros distintos, de modo que falla unicidad sin necesidad de enumerarlos todos.
 
 <span id="from-existence-and-uniqueness-práctica"></span>
 
 #### Práctica
+
+<details>
+<summary>Práctica adicional opcional</summary>
 
 Demuestra que exactamente un entero cumple $n+3=9$.
 
@@ -422,22 +435,19 @@ Siete está excluido. El argumento da a lo sumo una solución y, con la restricc
 
 Más tarde, compara colecciones con cero, uno y dos éxitos y reconstruye ambas obligaciones.
 
+</details>
 
 <span id="from-existence-and-uniqueness-lectura-en-voz-alta"></span>
 
 ### Lectura en voz alta
 
-**EN:** There exists exactly one x in D satisfying P.
-
-**DE:** Es gibt genau ein x in D, das P erfüllt.
-
-**ES:** Existe exactamente un equis en D que cumple P.
+Existe exactamente un equis en D que cumple P.
 
 <span id="from-counting-witnesses"></span>
 
 ## Contar testigos
 
-Las tarjetas con siete y nueve demuestran ambas que hay una tarjeta con número impar. Elegir siete para una prueba no elimina nueve. La evidencia necesaria depende de la pregunta: dar uno, dar dos distintos o encontrar todos.
+Las tarjetas con siete y nueve testimonian la existencia de una tarjeta impar; elegir siete no elimina nueve. En el ejemplo del intervalo ya comprobamos existencia y refutamos unicidad; encontrar todos los testigos añade la obligación de excluir cualquier otro.
 
 Un objeto verificado demuestra existencia. Dos objetos distintos verificados refutan a lo sumo uno, sin afirmar exactamente dos. Una lista completa exige verificar cada entrada y excluir todo objeto no incluido. El tamaño del dominio no es el número de testigos: un dominio infinito puede tener cero, uno, finitos o infinitos éxitos.
 
@@ -459,6 +469,9 @@ Expresiones distintas no tienen por qué ser objetos distintos: $1/2=2/4$. Dos t
 <span id="from-counting-witnesses-práctica"></span>
 
 #### Práctica
+
+<details>
+<summary>Práctica adicional opcional</summary>
 
 Para $4<n<8$ en los enteros, justifica uno, dos distintos y todos los testigos.
 
@@ -537,13 +550,10 @@ Cinco y medio es un testigo real omitido, así que falla la exhaustividad. Cinco
 
 Más tarde, construye ejemplos con cero, uno y varios éxitos y aporta la evidencia adecuada para cada caso.
 
+</details>
 
 <span id="from-counting-witnesses-lectura-en-voz-alta"></span>
 
 ### Lectura en voz alta
 
-**EN:** One witness proves existence; two distinct witnesses refute uniqueness; all requires exclusion.
-
-**DE:** Ein Zeuge beweist Existenz; zwei verschiedene widerlegen Eindeutigkeit. Wer alle Zeugen angeben will, muss weitere Möglichkeiten ausschließen.
-
-**ES:** Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.
+Un testigo demuestra existencia; dos distintos refutan la unicidad. Para afirmar que son todos, hay que excluir cualquier otro candidato.

@@ -61,7 +61,7 @@ Para la regla **diferente** de superar dos a superar cinco, la instancia en cero
 
 ### Una asignación no es consecuencia lógica
 
-En $x=7$, $P(x):x>2$ y $Q(x):x>5$ son verdaderas. En $x=3$ la implicación es falsa; en $x=0$ vuelve a ser verdadera. El par $P$ falsa, $Q$ verdadera es imposible para estas comparaciones vinculadas: superar cinco implica superar dos por el orden real. La tabla general sigue necesitando esa fila para otras proposiciones, por ejemplo $P:(0=1)$ y $Q:(2=2)$.
+Para las comparaciones iniciales $P(x):x>2$ y $Q(x):x>5$, el par ausente $P$ falsa, $Q$ verdadera es imposible: superar cinco implica superar dos por el orden real. La tabla general necesita esa fila para otras proposiciones, por ejemplo $P:(0=1)$ y $Q:(2=2)$.
 
 La **consecuencia lógica** exige que ninguna asignación o modelo permitido haga verdaderas todas las premisas y falsa la conclusión. Una implicación verdadera en una sola asignación no demuestra esa relación entre $P$ y $Q$ independientes. Tampoco una instancia numérica verdadera prueba que una implicación valga para toda entrada del dominio. Una prueba aritmética general utiliza además sus hipótesis aritméticas, no solo letras proposicionales de libre asignación.
 
@@ -88,7 +88,7 @@ No. Las tres cumplen la regla. La vacía no tiene tarjetas; cero es a lo sumo do
 
 ## Leer enunciados condicionales
 
-Una caja contiene tarjetas con números reales. Su regla dice: «Una tarjeta supera dos si supera cinco». **Si** introduce la condición de partida, aunque aparezca al final de la frase. La regla va de superar cinco a superar dos.
+Lee la regla de la caja con la frase reordenada: «Una tarjeta supera dos si supera cinco». **Si** sigue introduciendo la hipótesis, aunque vaya al final; la regla va de superar cinco a superar dos.
 
 
 <span id="from-reading-conditionals-hipótesis-y-conclusión"></span>
@@ -158,14 +158,12 @@ Hay que excluir $x=2$, permitido por la cota más débil. Esto no afirma que $2$
 
 <Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
 
-Para refutar «si apruebo, invito a cenar», debo aprobar y no invitar. Negar ambas partes es una operación distinta.
+La negación selecciona exactamente la fila falsa del condicional: $A$ verdadera y $B$ falsa. Para refutar «si apruebo, invito a cenar», debo aprobar y no invitar. Negar ambas partes seleccionaría otro caso.
 
 
 <span id="from-logische-verknuepfungen-leer-una-implicación"></span>
 
-### Leer una implicación
-
-$A \Rightarrow  B$ excluye una sola situación: ocurre $A$ y no $B$. Considera «si un número es divisible por 4, es par». Un impar no cumple la premisa y no contradice la afirmación. Por eso una premisa falsa da una implicación verdadera en la tabla. No demuestra causalidad ni que $B$ sea verdadero por sí solo. $A \Leftrightarrow  B$ exige ambas direcciones.
+Exigir **ambas** direcciones da $A \Leftrightarrow B$, no solo $A \Rightarrow B$. La prueba de divisibilidad de abajo muestra por qué una entrada impar no refuta la regla directa.
 
 <span id="from-implikation-und-kontraposition"></span>
 
@@ -222,7 +220,7 @@ La recíproca es $x>0\Rightarrow((x>1)\land(x<4))$; falla en uno porque $1>1$ es
 
 ### Un ejemplo concreto con divisibilidad
 
-Escribe $a | n$ si $n=ak$ para algún entero $k$. Es divisibilidad, no división. Si 4 divide a $n$, entonces 2 divide a $n$. La contraposición dice: si 2 no divide a $n$, entonces 4 tampoco. La recíproca falla con $n = 6$: 2 divide a 6, pero 4 no.
+Escribe $a | n$ si $n=ak$ para algún entero $k$. Es divisibilidad, no división. Demostraremos que $4 | n$ implica $2 | n$ y compararemos después la contraposición y la recíproca.
 
 
 <span id="from-implikation-und-kontraposition-una-prueba-y-su-recíproca"></span>
@@ -241,7 +239,7 @@ No: $n = 3$. La contraposición es «si 6 no divide a $n$, entonces 3 no divide 
 
 ## Implicación e hipótesis del modelo
 
-Siete supera cinco y supera dos. Compararlo con cinco no hace que cambie el número. La implicación relaciona dos propiedades del mismo número sin modificarlo.
+Siete es mayor que cinco y que dos. Son dos propiedades del mismo número; compararlo con cinco no lo modifica ni causa esas propiedades.
 
 La implicación material es **veritativo-funcional**: los valores de verdad de sus partes determinan su valor. La tabla no tiene una columna adicional para «ocurre antes», «explica» o «causa». En aritmética habitual,
 

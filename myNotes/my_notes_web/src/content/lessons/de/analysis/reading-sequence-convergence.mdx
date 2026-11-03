@@ -94,21 +94,13 @@ Erkläre später Folge, Index, Glied, Ziel und Abstand getrennt und rekonstruier
 
 ### Laut lesen
 
-**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
-
-**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
-
-**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.
+Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
 
 <span id="from-proving-sequence-convergence"></span>
 
 ## Folgenkonvergenz beweisen
 
 Eine Folge, die überall drei ist, sollte gegen drei konvergieren. Der Beweis ist kurz, doch jeder Quantor hat eine Aufgabe. Fixiere Folge und Ziel vor der beliebigen Toleranz; wähle nicht für jedes Glied ein neues Ziel.
-
-$$
-\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
-$$
 
 
 <span id="from-proving-sequence-convergence-der-vollständige-beweis-für-eine-konstante-folge"></span>
@@ -130,7 +122,7 @@ Die erste Gleichheit nutzt die Folgenregel, die nächste Subtraktion gleicher re
 
 Wahlabhängigkeit fragt, welche Information $N$ nutzen darf: Toleranz und festen Kontext, nicht das spätere universelle $n$. Beweisabhängigkeit fragt, welche Tatsachen die Abstandsschätzung begründen. Richtige Reihenfolge repariert keine falsche Rechnung, richtige Rechnung keine zu späte Zeugenwahl. Der konstante Startindex darf die Toleranz ignorieren, weil er für alle passt.
 
-Für die ersten beiden Glieder neun und danach immer drei wähle für jede positive Toleranz $N=3$. Jedes $n\ge3$ hat Glied drei und Abstand null. Frühe Ausnahmen liegen außerhalb des geforderten Endstücks. Passt $N$ und ist $M\ge N$ natürlich, dann gilt für jedes $n\ge M$ auch $n\ge N$, also passt $M$ ebenfalls. Minimalität ist unnötig.
+
 
 <Note title="Ein später Startindex ändert die Aussage">
 
@@ -222,13 +214,7 @@ Rekonstruiere später den ganzen Beweis und begründe jede Gleichheit.
 
 <span id="from-proving-sequence-convergence-laut-lesen"></span>
 
-### Laut lesen
-
-**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
-
-**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
-
-**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.
+Prüfe mit der obigen Definition die Reihenfolge: Toleranz, Startindex, jeder Index im Endstück.
 
 <span id="from-reciprocal-sequence-convergence"></span>
 
@@ -238,7 +224,7 @@ Die Glieder eins, ein Halb, ein Drittel und so weiter legen eine Annäherung an 
 
 <Note title="Optionale Erweiterung: zusätzlich vorausgesetztes Wissen">
 
-Diese Seite ist optional. Der Hauptweg zur [Negation der Konvergenz](../negating-sequence-convergence/#from-negating-sequence-convergence) hängt nicht von ihr ab. Wir akzeptieren hier ohne Beweis die archimedische Eigenschaft: Jede reelle Schranke wird von einer positiven natürlichen Zahl übertroffen. Außerdem nutzen wir die Ordnung positiver Kehrwerte: Ein größerer positiver Nenner hat einen kleineren oder gleichen Kehrwert. Das sind mathematische Voraussetzungen dieses Beispiels, keine Folgen der Quantorenschreibweise.
+Diese Erweiterung ist optional. Der Hauptweg zur [Negation der Konvergenz](../negating-sequence-convergence/#from-negating-sequence-convergence) hängt nicht von ihr ab. Wir akzeptieren hier ohne Beweis die archimedische Eigenschaft: Jede reelle Schranke wird von einer positiven natürlichen Zahl übertroffen. Außerdem nutzen wir die Ordnung positiver Kehrwerte: Ein größerer positiver Nenner hat einen kleineren oder gleichen Kehrwert. Das sind mathematische Voraussetzungen dieses Beispiels, keine Folgen der Quantorenschreibweise.
 
 </Note>
 
@@ -266,7 +252,7 @@ Jedes Glied bleibt positiv, erreicht den Grenzwert also nicht. Konvergenz verlan
 
 ### Die strenge Grenze prüfen
 
-Bei $\varepsilon=1/10$ passt $N=11$, weil $1/11<1/10$ und spätere Kehrwerte nicht größer sind. $N=10$ scheitert bei $n=10$, wo Abstand und Toleranz gleich sind. Diese rationalen Prüfungen illustrieren die Strenge; der allgemeine Beweis steht oben für beliebige Toleranz. Jeder größere natürliche Startindex als ein erfolgreicher passt ebenfalls.
+Bei $\varepsilon=1/10$ passt $N=11$, weil $1/11<1/10$ und spätere Kehrwerte nicht größer sind. $N=10$ scheitert bei $n=10$, wo Abstand und Toleranz gleich sind. Diese rationalen Prüfungen illustrieren die Strenge; der allgemeine Beweis steht oben für beliebige Toleranz.
 
 <span id="from-reciprocal-sequence-convergence-übung"></span>
 
@@ -309,8 +295,4 @@ Rekonstruiere später den Beweis und benenne die Stellen für Startindexexistenz
 
 ### Laut lesen
 
-**EN:** For n at least capital N greater than one over epsilon, one over n is at most one over capital N and strictly less than epsilon.
-
-**DE:** Für n mindestens großes N größer als eins durch Epsilon ist eins durch n höchstens eins durch großes N und strikt kleiner als Epsilon.
-
-**ES:** Para ene al menos ene mayúscula mayor que uno entre épsilon, uno entre ene es como máximo uno entre ene mayúscula y estrictamente menor que épsilon.
+Für n mindestens großes N größer als eins durch Epsilon ist eins durch n höchstens eins durch großes N und strikt kleiner als Epsilon.

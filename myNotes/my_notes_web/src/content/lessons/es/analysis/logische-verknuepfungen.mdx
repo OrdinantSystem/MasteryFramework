@@ -56,7 +56,7 @@ En este ejemplo adicional, las columnas $A \land B$ y $B \lor C$ muestran result
 
 Por ejemplo, en la fila $A=1$, $B=1$, $C=0$, el enunciado intermedio $A \land B$ es verdadero. Su conjunción con $C$ es falsa, y $(A \land B) \Rightarrow C$ es falsa porque su premisa es verdadera y su conclusión es falsa. La equivalencia final también es falsa porque $A \land B$ y $C$ tienen valores de verdad distintos.
 
-La variable adicional duplica el número de filas. Permite formar más enunciados compuestos, pero no exige un número fijo de columnas: añade una por cada expresión que quieras comparar.
+El número de columnas no es fijo: añade una por cada expresión que quieras comparar.
 
 
 <span id="from-logische-verknuepfungen-siempre-nunca-o-a-veces"></span>
@@ -78,7 +78,7 @@ Una fila recorre la tabla horizontalmente y fija una asignación. Una columna re
 
 ### Entradas y exhaustividad
 
-Para una entrada $P$ hay dos valores. Con dos entradas distintas $P,Q$, mantén $P$ verdadera mientras $Q$ toma ambos valores, y después mantén $P$ falsa mientras repites ambas opciones. Las filas son $11,10,01,00$. Una tercera entrada distinta divide cada fila en dos: una con $R=1$ y otra con $R=0$. Así aparecen ocho filas, sin omisiones ni repeticiones.
+Para una entrada $P$, enumera sus dos valores. Con entradas distintas $P,Q$, mantén $P$ verdadera mientras $Q$ toma ambos valores y repite con $P$ falsa: $11,10,01,00$. Amplía la lista mediante la división de filas explicada arriba: una tercera entrada distinta $R$ da ocho filas sin omisiones ni repeticiones.
 
 Cada entrada **distinta** duplica las filas. Repetir $P$ diez veces sigue dando una entrada, no diez. Todas las apariciones de $P$ deben coincidir dentro de una fila. $\neg P$ se calcula a partir de $P$, no se elige independientemente.
 
@@ -93,7 +93,7 @@ Sea $P$ positivo y $Q$ par para una tarjeta fija. La descripción inicial es
 
 $$(P\lor Q)\land\neg Q.$$
 
-**EN:** “at least one of P or Q holds, and Q does not hold.” **DE:** „mindestens eine der Aussagen P oder Q gilt, und Q gilt nicht“. **ES:** «se cumple al menos una de las proposiciones pe o cu, y cu no se cumple».
+«se cumple al menos una de las proposiciones pe o cu, y cu no se cumple».
 
 La «y» exterior une la disyunción completa con la negación completa. Calcula ambas antes de combinarlas:
 
@@ -193,4 +193,4 @@ Faltan $10$ y $01$. La fila $10$ da verdadero porque tanto la disyunción como $
 
 </Exercise>
 
-Para comparar fórmulas, alinea las **mismas asignaciones** y compara las columnas finales. Coincidir en todas demuestra una equivalencia veritativo-funcional; una discrepancia la refuta. La tabla no establece los significados aritméticos de sus entradas. [Conectivas lógicas](../logische-verknuepfungen/#from-logische-verknuepfungen) conserva una comparación más amplia de tres entradas con implicación y equivalencia.
+Para comparar fórmulas, alinea las **mismas asignaciones** y compara las columnas finales. Coincidir en todas demuestra una equivalencia veritativo-funcional; una discrepancia la refuta. La tabla no establece los significados aritméticos de sus entradas. La [tabla anterior de tres entradas](#from-logische-verknuepfungen) también compara implicación y equivalencia.

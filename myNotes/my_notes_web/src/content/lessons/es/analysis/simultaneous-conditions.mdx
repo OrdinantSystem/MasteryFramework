@@ -67,12 +67,12 @@ $$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
 
 La primera exige entrada además de reserva o pase. La segunda admite el pase solo. Con $P=0,Q=0,R=1$, la primera es falsa y la segunda verdadera. Esta asignación separadora demuestra que cambiar la agrupación cambia el significado general.
 
-Las conjunciones puras admiten ambas agrupaciones porque exigen las tres entradas. Las disyunciones inclusivas puras también: requieren al menos una de las tres. Este razonamiento no autoriza reagrupaciones arbitrarias con conectivas mezcladas.
+Las cadenas formadas solo por «y» o solo por «o» inclusiva admiten reagrupar por las razones explicadas abajo; las conectivas mezcladas requieren una comprobación aparte.
 
 <details>
-<summary>Lecturas de notación: EN / DE / ES</summary>
+<summary>Lecturas de notación</summary>
 
-$P\land Q$: **EN** “P and Q”; **DE** „P und Q“; **ES** «pe y cu». $P\lor Q$: **EN** “P or Q, or both”; **DE** „P oder Q oder beides“; **ES** «pe o cu, o ambas». $P\land(Q\lor R)$: **EN** “P and, in addition, at least one of Q or R”; **DE** „P und zusätzlich mindestens eine der Aussagen Q oder R“; **ES** «pe y, además, al menos una de cu o erre». Algunos libros escriben $\to$ por $\Rightarrow$ y $\leftrightarrow$ por $\Leftrightarrow$.
+$P\land Q$: «pe y cu». $P\lor Q$: «pe o cu, o ambas». $P\land(Q\lor R)$: «pe y, además, al menos una de cu o erre». Algunos libros escriben $\to$ por $\Rightarrow$ y $\leftrightarrow$ por $\Leftrightarrow$.
 
 </details>
 
@@ -117,14 +117,12 @@ Inicialmente ambos valores de $P$ son posibles: $10$ y $01$ satisfacen el inform
 
 Solo en esta lección, un entero es **admisible** si y solo si es positivo, menor que diez y par. Es una etiqueta local de enseñanza, no una clase estándar de enteros. Seis supera todas las pruebas. Nueve falla la paridad; diez falla la cota superior estricta. Superar dos pruebas no compensa fallar la tercera.
 
-Aceptamos como base la aritmética y el orden habituales de los enteros. Un entero es par cuando dividirlo entre dos produce un entero. Cero es par, pero no positivo.
-
 
 <span id="from-simultaneous-conditions-leer-un-criterio-estructurado"></span>
 
 ### Leer un criterio estructurado
 
-Fija primero el dominio y el objeto. Cada condición se refiere al **mismo entero**. Un no entero positivo menor que diez no es un entero admisible. Comprobar positividad en nueve y paridad en menos dos no establece una conjunción sobre un solo entero, y menos aún sobre una tarjeta oculta concreta.
+Aplica la regla anterior del mismo objeto: todas las pruebas se refieren a **un entero**. Un no entero positivo menor que diez ya incumple el dominio exigido.
 
 Sea $A$ positivo, $B$ menor que diez y $C$ par. Tanto
 
@@ -132,7 +130,7 @@ $$(A\land B)\land C\qquad\text{como}\qquad A\land(B\land C)$$
 
 exigen las tres afirmaciones. En la primera agrupación deben cumplirse $A$ y $B$, además de $C$. En la segunda deben cumplirse $B$ y $C$, además de $A$. Esto demuestra semánticamente la asociatividad para tres proposiciones arbitrarias, sin depender de comprobar cuatro enteros. Una cadena de «o» inclusivas también permite ambas agrupaciones: exige al menos una de tres entradas verdaderas. Las conectivas mezcladas requieren revisar la agrupación por separado.
 
-**EN:** $A\land(B\land C)$: “A holds, and both B and C hold.” **DE:** „A gilt, und B und C gelten beide“. **ES:** «se cumple a, y se cumplen be y ce». «Simultáneas» significa satisfacción en el contexto indicado, no necesariamente sucesos en el mismo instante. La conjunción no liga una variable libre.
+$A\land(B\land C)$: «Se cumple a, y se cumplen be y ce». La conjunción no liga una variable libre.
 
 Un método útil es fijar dominio y objeto; separar condiciones; comprobar si se exigen todas o al menos una; conservar las alternativas interiores; decidir si se está definiendo o solo afirmando. Las comas no determinan por sí solas la conectiva.
 
@@ -143,7 +141,7 @@ Un método útil es fijar dominio y objeto; separar condiciones; comprobar si se
 
 «Si y solo si» da un criterio completo. Para demostrar que seis es admisible comprobamos $6>0$, $6<10$ y que $6/2=3$ es entero. A la inversa, saber que un entero es admisible permite recuperar **cada una** de esas propiedades. No fija un valor único.
 
-La lista completa es $2,4,6,8$. Las cotas dejan solo los enteros del $1$ al $9$; sus miembros pares son exactamente esos cuatro. Así agotamos los candidatos. Exhibir cuatro aciertos sin excluir los demás no probaría que la lista es completa. Cero falla positividad y diez la cota estricta. La definición fija el significado; el argumento de candidatos justifica la lista.
+La lista completa es $2,4,6,8$. Las cotas dejan solo los enteros del $1$ al $9$; sus miembros pares son exactamente esos cuatro. Así agotamos los candidatos. Exhibir cuatro aciertos sin excluir los demás no probaría que la lista es completa. La definición fija el significado; el argumento de candidatos justifica la lista.
 
 
 <span id="from-simultaneous-conditions-una-regla-suficiente-es-distinta"></span>

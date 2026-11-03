@@ -71,6 +71,14 @@ Publishing status in content controls local/static output; it does not authorize
 
 Read [analysis-organization.md](analysis-organization.md). Its twenty canonical pages and six sections are course units, not a mirror of original note folders. Keep distinct content and the historical archive; update section/paragraph dispositions and compatibility anchors when a topic moves. Use course-guides for overview review content rather than creating another recap lesson. Do not reintroduce retired source files into the content loader or index compatibility routes in search.
 
+## Recap-focused Analysis prose
+
+Analysis I is a reference for recalling studied material, not a mandatory restart from zero. Keep one coherent explanation of each definition or rule, then use concise reminders and links at applications. Preserve distinctions, domains, boundary cases, complete worked reasoning and useful graphics. Do not add the same recap template to every page or remove a proof merely because its conclusion appears elsewhere.
+
+Write notation readings only in the page language, without EN/DE/ES labels. Keep a reading where it explains a new or dense formula; omit it when adjacent prose already says the same thing. Tables and disclosure headings follow the same localization rule. Keep primary explanations visible. Extra practice may be grouped behind a clearly labelled native disclosure without changing its questions, hints, answers or stable anchors.
+
+Read [analysis-recap-plan.md](analysis-recap-plan.md) before another editorial pass. The recap coverage contract protects graphical invocations, distinct displays, mathematical tables, exercises and reference blocks independently of the historical paragraph ledger. An approved wording change needs an explicit disposition and renewed review hashes; never disable the gate to accommodate shorter prose. Editorial agent review does not change mathematical/translation reviewStatus.
+
 ## Correcting an existing lesson
 
 Preserve its stable key. Update all affected languages and linked examples. A source correction may require correcting a preset, explanation, feedback, or recap as well. Review equivalent equations, then build and inspect the affected flow. Do not mark reviewed solely because generated equations or arithmetic tests pass.

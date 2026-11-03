@@ -106,11 +106,7 @@ $D$ es el dominio de objetos permitidos; $P$ es la condición exigida, o predica
 
 ### Lectura en voz alta
 
-**EN:** There exists at least one x in D such that P of x holds.
-
-**DE:** Es gibt mindestens ein x in D, für das P von x gilt.
-
-**ES:** Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.
+Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.
 
 <span id="from-bound-variables-and-scope"></span>
 
@@ -127,7 +123,7 @@ lee «para todo equis en de, equis es menor que ye». El número de tarjeta reco
 
 ### Clasificar apariciones, no letras para siempre
 
-Una **aparición** es una presencia concreta de una variable. Un cuantificador **liga** las apariciones de la variable que nombra dentro de su **alcance**, la subfórmula que gobierna. Una aparición sin ligador que la gobierne es **libre**. Si un cuantificador interior usa el mismo nombre, gobierna ese nombre dentro de su propio alcance.
+Una **aparición** es una presencia concreta de una variable. Un cuantificador **liga** las apariciones de la variable que nombra dentro de su **alcance**, la subfórmula que gobierna. Una aparición sin ligador que la gobierne es **libre**. Si un cuantificador interior usa el mismo nombre, gobierna ese nombre dentro de su propio alcance. Una fórmula es **abierta** si tiene alguna aparición libre y **cerrada** si no tiene ninguna; cerrada no significa «sin letras».
 
 En la comparación inicial, $x$ está ligada y $y$ es libre. La $x$ inmediatamente después de $\forall$ declara el nombre ligado; no es otra entrada externa. La fórmula escrita es abierta porque $y$ es libre. Dar $y=3$ permite evaluarla sin insertar un cuantificador, por lo que $y$ sigue libre en su sintaxis.
 
@@ -182,12 +178,9 @@ La primera dice «para cada miembro, se cumplen $P$ y $C$»; la segunda afirma �
 
 Para $D$ no vacío son equivalentes: la primera da $P$ para cada miembro y proporciona $C$ usando cualquiera de ellos. A la inversa, la afirmación universal separada y $C$ proporcionan ambos requisitos en cada miembro. La no vaciedad permite el paso que falla en el caso vacío.
 
-<details>
-<summary>Cuando un cuantificador interior reutiliza un nombre</summary>
+### Cuando un cuantificador interior reutiliza un nombre
 
 Para $D=\{1,2\}$ y $E=\{-1\}$, $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ es verdadero. La $x$ exterior comprueba positividad en $D$; la interior comprueba negatividad en $E$. No se exige que la misma entrada sea positiva y negativa. Renombra solo el ligador interior y su comparación a $t$ para mostrarlo. Al renombrar el exterior hay que dejar intactas esas apariciones interiores.
-
-</details>
 
 <Exercise question="Con $D=\{1,2\}$, renombra de forma segura la variable ligada de $(\forall x\in D\;(x<3))\land(x>0)$ a $t$. Después evalúa en $x=-1$ libre. ¿Cambia la última aparición?">
 
@@ -211,8 +204,6 @@ La segunda captura el valor libre de comparación y aquí siempre es verdadera, 
 
 $\mathbb Z$ designa enteros y $\mathbb R$ reales. $x\in\mathbb R$ expresa pertenencia, no igualdad. «Sea $x$ real» fija un dominio y a menudo introduce una entrada **arbitraria pero fija** en una demostración. «Sea $x=2$» aporta un valor concreto. Ninguna frase inserta un cuantificador en la fórmula escrita.
 
-Una **aparición** es un lugar donde figura una variable. Un cuantificador liga las apariciones de la variable que nombra dentro de su **alcance**, salvo donde un cuantificador interior liga esa misma variable. Una aparición sin cuantificador que la ligue es libre. «Abierta» significa al menos una aparición libre; «cerrada» significa ninguna, no «sin letras».
-
 $$\forall x\in\mathbb R\;(x+y=y+x)$$
 
 Ambas apariciones de $x$ están ligadas, pero $y$ sigue libre, aunque la conmutatividad haga verdadera la condición para toda asignación real de $y$. Ser verdadera bajo toda asignación no crea un cuantificador ausente. Añadir $\forall y\in\mathbb R$ la cierra:
@@ -222,10 +213,3 @@ $$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
 Una asignación $y=0$ aporta contexto de evaluación, no ligadura sintáctica. Sustituir realmente cero por $y$ produce una **fórmula escrita diferente**, reemplazando esas apariciones. Son operaciones distintas.
 
 Asimismo, $\exists x\in\mathbb R\;(x=y)$ sigue abierta en $y$, aunque toda asignación real de $y$ aporte un testigo coincidente. Existencia significa al menos uno, no unicidad. En $\forall x\in\mathbb R\;(x=y)$, asignar $y=0$ deja libre la $y$ escrita, pero produce una afirmación contextual falsa, refutada por $x=1$.
-
-<details>
-<summary>Lecturas de notación: EN / DE / ES</summary>
-
-$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
-
-</details>

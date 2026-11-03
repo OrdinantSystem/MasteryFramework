@@ -34,7 +34,7 @@ $$
 \begin{aligned}\neg(\forall x\in D\;\exists y\in D\;(y>x))&\Longleftrightarrow\exists x\in D\;\neg(\exists y\in D\;(y>x))\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;\neg(y>x)\\&\Longleftrightarrow\exists x\in D\;\forall y\in D\;(y\le x).\end{aligned}
 $$
 
-Der erste Schritt wählt zur Negation aller Eingaben eine scheiternde Eingabe. Der zweite sagt, dass dafür kein Zeuge passt, also jeder Kandidat scheitert. Der letzte schließt bei nicht größer die Gleichheit ein. Wähle zwei einmal und halte sie beim Prüfen von eins und zwei fest. Quantortypen an Ort und Stelle zu wechseln kehrt ihre Reihenfolge nicht um und tauscht keine Argumente.
+Der erste Schritt wählt zur Negation aller Eingaben eine scheiternde Eingabe. Der zweite sagt, dass dafür kein Zeuge passt, also jeder Kandidat scheitert. Der letzte schließt bei nicht größer die Gleichheit ein. Wähle zwei einmal und halte sie beim Prüfen von eins und zwei fest.
 
 
 <span id="from-negating-nested-statements-mit-existenz-beginnen"></span>
@@ -135,11 +135,7 @@ Rekonstruiere später beide endlichen Beispiele und erkläre dann die Änderung 
 
 ### Laut lesen
 
-**EN:** Some x in D has every y in D at most x.
-
-**DE:** Es gibt ein x in D, sodass jedes y in D höchstens x ist.
-
-**ES:** Existe un equis en D tal que todo ye en D es como máximo equis.
+Es gibt ein x in D, sodass jedes y in D höchstens x ist.
 
 <span id="from-negating-quantified-statements-step-by-step"></span>
 
@@ -167,20 +163,18 @@ Behandle die ganze innere Aussage als ein Prädikat der aktuellen Variablen. Das
 
 ### Eine Methode mit Geltungsbereich
 
-1. Klammere genau die zu negierende Aussage ein.
-2. Notiere Variablen in ihrer Reihenfolge, ihre Bereiche und feste Parameter.
-3. Gehe nur über den nächsten Quantor: Wechsle seinen Typ und negiere den ganzen Rest.
-4. Wiederhole dies mit unveränderten Positionen und Bereichen.
-5. Wende an einem Junktor zuerst dessen Regel an und fahre in den betroffenen Teilen fort. Negiere auch das letzte Prädikat.
-6. Lies zurück und prüfe, welche frühere Information jeder Zeuge nutzen darf.
-
-Wechsle keine Quantoren außerhalb des tatsächlichen Negationsbereichs. Eine freie Variable bleibt frei. Ein vom Regal abhängiger Buchbereich bleibt an dieses Regal gebunden. „Positive reelle Zahl“ bleibt positiv reell. Diese Prüfungen verhindern, dass ein auswendig gelernter Vorsilbentrick unbemerkt die Frage verändert.
+1. Klammere genau die negierte Aussage ein; Quantoren außerhalb dieses Bereichs bleiben unverändert.
+2. Notiere Variablen in ihrer Reihenfolge, Bereiche und feste Parameter. Freie Vorkommen bleiben frei.
+3. Gehe über einen Quantor: Wechsle seinen Typ und negiere den ganzen Rest.
+4. Wiederhole dies ohne Umkehrung der Reihenfolge, Tausch von Relationsargumenten oder Änderung der Bereiche. Der Buchbereich bleibt an sein Regal gebunden; positive reelle Zahlen bleiben positiv.
+5. Nutze an einem Junktor dessen Negationsregel; negiere auch das letzte Prädikat.
+6. Lies zurück und prüfe die erlaubte frühere Information jedes Zeugen.
 
 $$
 \neg(A\Rightarrow B)\ \Longleftrightarrow\ A\land\neg B.
 $$
 
-Ein Dokument verletzt „wenn unterschrieben, dann bestanden“ genau dann, wenn es unterschrieben ist und nicht besteht. Ein nicht unterschriebenes Dokument widerlegt die Implikation nicht. Deshalb bleibt die ursprüngliche Voraussetzung im Gegenbeispiel wahr.
+Wende die Implikationsnegation der vorigen Lektion an: Ein Dokument widerlegt „wenn unterschrieben, dann bestanden“ genau dann, wenn es unterschrieben ist und nicht besteht. Ein nicht unterschriebenes Dokument widerlegt sie nicht.
 
 <span id="from-negating-quantified-statements-step-by-step-übung"></span>
 
@@ -268,8 +262,4 @@ Rekonstruiere später die sechs Schritte und erkläre, warum Ersatz innerhalb ä
 
 ### Laut lesen
 
-**EN:** There is an applicant such that every document has a check it fails.
-
-**DE:** Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.
-
-**ES:** Existe un solicitante tal que todo documento tiene una comprobación que falla.
+Es gibt eine bewerbende Person, für die jedes Dokument an einer Prüfung scheitert.

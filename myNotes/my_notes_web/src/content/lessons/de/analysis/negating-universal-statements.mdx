@@ -49,6 +49,15 @@ Null bezeugt die Negation: Sie ist ganzzahlig und nicht positiv. Ein negatives H
 
 Bei „rot und nummeriert“ bedeutet Scheitern nicht rot oder nicht nummeriert, mit einschließendem Oder. Eine rote unnummerierte Karte genügt. Auf einem leeren Bereich sind All-Aussagen wahr und ihre Existenznegationen falsch. Leere eingeschränkte Bereiche sind trotz nichtleerer weiterer Welt erlaubt. Eine All-Aussage liefert für sich kein Objekt.
 
+<span id="from-quantoren-und-negation-ein-zeuge-oder-alle-fälle"></span>
+
+### Ein Zeuge oder alle Fälle
+
+<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+Die linke Aussage ist wahr, weil $7$ zum Bereich gehört und die Gleichung erfüllt. Die Allaussage innerhalb der Negation ist falsch: Bei $x=1$ gilt zum Beispiel $1+3=4$, nicht $10$. Beide angezeigten Aussagen sind also wahr, aber aus verschiedenen Gründen. Ein passender Wert beweist Existenz; ein anderer, unpassender Wert widerlegt die Allaussage.
+
+
 <span id="from-negating-universal-statements-übung"></span>
 
 #### Übung
@@ -135,11 +144,7 @@ Erkläre später beide Richtungen des Gesetzes an einer gemischten und dann eine
 
 ### Laut lesen
 
-**EN:** Not every x in D satisfies P if and only if some x in D fails P.
-
-**DE:** Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
-
-**ES:** No todo equis en D cumple P si y solo si algún equis en D no cumple P.
+Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
 
 <span id="from-negating-existential-statements"></span>
 
@@ -254,11 +259,7 @@ Erkläre später, warum gegen alle ein Fehler genügt, gegen einige dagegen alle
 
 ### Laut lesen
 
-**EN:** There is no x in D satisfying P if and only if every x in D fails P.
-
-**DE:** Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
-
-**ES:** No existe equis en D que cumpla P si y solo si todo equis en D incumple P.
+Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
 
 <span id="from-negating-quantified-inequalities"></span>
 
@@ -271,7 +272,7 @@ Ein Versprechen verlangt einen Messwert strikt innerhalb einer Einheit vom Ziel.
 
 ### Reelle Ordnung zerlegt alle Fälle
 
-Für reelle $x,c$ gilt genau einer der Fälle kleiner, gleich, größer. Negation behält genau die vom ursprünglichen Vergleich ausgeschlossenen Fälle. Ohne kleiner bleiben gleich oder größer; ohne kleiner-oder-gleich bleibt nur größer. Vertauschen von größer und kleiner liefert die anderen beiden Regeln. Das nutzt die übliche totale Ordnung der reellen Zahlen, nicht nur Quantorensyntax.
+Zur Erinnerung die reellen Vergleichsnegationen: Die Trichotomie lässt genau die vom ursprünglichen Vergleich ausgeschlossenen Fälle übrig. Grundlage ist die übliche totale Ordnung, nicht nur Quantorensyntax.
 
 $$
 \begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
@@ -289,6 +290,13 @@ $$
 $$
 
 Dass jede positive reelle Zahl unter eins liegt, ist falsch. Eins ist ein erlaubtes Gegenbeispiel genau auf der Grenze. Null ist nicht erlaubt. Wir wechseln alle zu einige, bewahren positive reelle Zahlen und negieren den inneren Vergleich. Ein weiteres Beispiel wie zwei ist unnötig; eins beweist die Negation bereits.
+
+
+<span id="from-quantoren-und-negation-der-randfall-zählt"></span>
+
+### Der Randfall zählt
+
+Die Behauptung $n^2 > n$ für jede natürliche Zahl scheitert an $n = 1$. Wenn $\mathbb{N}$ bei 1 beginnt, gilt allgemein $n^2 \ge  n$; die strenge Ungleichung gilt für $n > 1$.
 
 
 <span id="from-negating-quantified-inequalities-wenn-das-prädikat-eine-implikation-ist"></span>
@@ -349,28 +357,11 @@ Rekonstruiere später die vier Vergleichsnegationen und alle vier Tabellenzeilen
 
 ### Laut lesen
 
-**EN:** Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
-
-**DE:** Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
-
-**ES:** No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.
+Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
 
 <span id="from-quantoren-und-negation"></span>
 
 ## Quantoren und Negation
-
-<span id="from-quantoren-und-negation-ein-zeuge-oder-alle-fälle"></span>
-
-### Ein Zeuge oder alle Fälle
-
-Diese Seite ist eine kurze Übersicht. Für einen ersten Zugang beginne mit [Allaussagen und ihren Bereichen](../universal-statements-and-domains/#from-universal-statements-and-domains) sowie [Existenz und Zeugen](../universal-statements-and-domains/#from-existence-and-witnesses). Danach folgen [gebundene Variablen und Geltungsbereiche](../universal-statements-and-domains/#from-bound-variables-and-scope), die [Reihenfolge der Quantoren](../quantifier-order/#from-quantifier-order) und das [Negieren von Allaussagen](../negating-universal-statements/#from-negating-universal-statements). Dort werden die Beispiele und Beweise hinter den hier gesammelten Formeln entwickelt.
-
-Eine Existenzaussage braucht einen Zeugen. Eine Allaussage umfasst jedes Element ihres angegebenen Bereichs; ein Gegenbeispiel widerlegt sie. $\exists!$ bedeutet, dass es genau ein passendes Element gibt: Existenz und Eindeutigkeit zusammen.
-
-<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
-
-Die linke Aussage ist wahr, weil $7$ zum Bereich gehört und die Gleichung erfüllt. Die Allaussage innerhalb der Negation ist falsch: Bei $x=1$ gilt zum Beispiel $1+3=4$, nicht $10$. Beide angezeigten Aussagen sind also wahr, aber aus verschiedenen Gründen. Ein passender Wert beweist Existenz; ein anderer, unpassender Wert widerlegt die Allaussage.
-
 
 <span id="from-quantoren-und-negation-die-negation-nach-innen-ziehen"></span>
 
@@ -380,16 +371,9 @@ Die linke Aussage ist wahr, weil $7$ zum Bereich gehört und die Gleichung erfü
 
 <Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
 
-Die Negation ändert Quantor und Aussageform, nicht den Bereich. Bei verschachtelten Quantoren wird jeder der Reihe nach geändert. Ihre Reihenfolge zählt: Ein gemeinsames $y$ für alle $x$ ist stärker als ein möglicherweise anderes $y$ zu jedem $x$.
+Das sind die beiden oben begründeten Gesetze. Bei verschachtelten Quantoren wende sie in der vorhandenen Reihenfolge an und bewahre Bereiche und Geltungsbereiche:
 
 <Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
-
-
-<span id="from-quantoren-und-negation-der-randfall-zählt"></span>
-
-### Der Randfall zählt
-
-Die Behauptung $n^2 > n$ für jede natürliche Zahl scheitert an $n = 1$. Wenn $\mathbb{N}$ bei 1 beginnt, gilt allgemein $n^2 \ge  n$; die strenge Ungleichung gilt für $n > 1$.
 
 
 <span id="from-quantoren-und-negation-reihenfolge-der-quantoren"></span>

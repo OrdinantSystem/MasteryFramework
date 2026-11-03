@@ -94,21 +94,13 @@ Later, explain sequence, index, term, target and distance separately before reco
 
 ### Read aloud
 
-**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
-
-**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
-
-**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.
+For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
 
 <span id="from-proving-sequence-convergence"></span>
 
 ## Proving sequence convergence
 
 A sequence already equal to three at every position should converge to three. The proof is short, but each quantifier still has a job. Fix the sequence and target before accepting the arbitrary tolerance; do not choose a target separately for each term.
-
-$$
-\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
-$$
 
 
 <span id="from-proving-sequence-convergence-the-full-constant-sequence-proof"></span>
@@ -130,7 +122,7 @@ The first equality uses the sequence rule; the next uses subtraction of equal re
 
 Choice dependence asks which information $N$ may use: the tolerance and fixed context, but not the later universal $n$. Proof dependence asks which facts justify the distance estimate. Correct order cannot repair false arithmetic, and correct arithmetic cannot repair a late witness choice. The constant threshold may ignore the tolerance because it works for all of them.
 
-For first two terms nine and every later term three, choose $N=3$ for every positive tolerance. Any $n\ge3$ has term three and distance zero. Early exceptions are outside the demanded tail. If $N$ works and $M\ge N$ is natural, every $n\ge M$ also satisfies $n\ge N$, so $M$ works too. Minimality is unnecessary.
+
 
 <Note title="A late threshold changes the claim">
 
@@ -222,13 +214,7 @@ Later, reconstruct the full proof and justify each equality.
 
 <span id="from-proving-sequence-convergence-read-aloud"></span>
 
-### Read aloud
-
-**EN:** For every positive real epsilon there is a natural threshold capital N such that, for every natural index lowercase n at least N, the term a sub n has distance from L strictly less than epsilon.
-
-**DE:** Für jede positive reelle Zahl Epsilon gibt es einen natürlichen Startindex N, großes N, sodass für jeden natürlichen Index n, kleines n, der mindestens N ist, das Folgenglied a Index n einen Abstand von L strikt kleiner als Epsilon hat.
-
-**ES:** Para todo épsilon real positivo existe un umbral natural N, ene mayúscula, tal que, para todo índice natural n, ene minúscula, mayor o igual que N, el término a sub ene tiene distancia a ele estrictamente menor que épsilon.
+Use the definition above to check the order: tolerance, threshold, every tail index.
 
 <span id="from-reciprocal-sequence-convergence"></span>
 
@@ -238,7 +224,7 @@ The terms one, one half, one third and so on suggest approaching zero without ev
 
 <Note title="Optional extension: additional accepted background">
 
-This page is optional. The main route to [negating convergence](../negating-sequence-convergence/#from-negating-sequence-convergence) does not depend on it. We accept, without proving here, the Archimedean property: every real bound is exceeded by some positive natural number. We also use positive reciprocal order: increasing a positive denominator decreases or preserves its reciprocal. These are mathematical prerequisites for this example, not consequences of writing quantifiers.
+This extension is optional. The main route to [negating convergence](../negating-sequence-convergence/#from-negating-sequence-convergence) does not depend on it. We accept, without proving here, the Archimedean property: every real bound is exceeded by some positive natural number. We also use positive reciprocal order: increasing a positive denominator decreases or preserves its reciprocal. These are mathematical prerequisites for this example, not consequences of writing quantifiers.
 
 </Note>
 
@@ -266,7 +252,7 @@ Every term remains positive, so no term equals the limit. Convergence requires s
 
 ### A strict boundary check
 
-At $\varepsilon=1/10$, $N=11$ works since $1/11<1/10$ and later reciprocals are no larger. $N=10$ fails at $n=10$, where the distance equals the tolerance. These rational checks illustrate strictness; the arbitrary-tolerance proof above is the general argument. Any larger natural threshold than a successful one also works.
+At $\varepsilon=1/10$, $N=11$ works since $1/11<1/10$ and later reciprocals are no larger. $N=10$ fails at $n=10$, where the distance equals the tolerance. These rational checks illustrate strictness; the arbitrary-tolerance proof above is the general argument.
 
 <span id="from-reciprocal-sequence-convergence-practice"></span>
 
@@ -309,8 +295,4 @@ Later, reconstruct the proof naming where natural-threshold existence and recipr
 
 ### Read aloud
 
-**EN:** For n at least capital N greater than one over epsilon, one over n is at most one over capital N and strictly less than epsilon.
-
-**DE:** Für n mindestens großes N größer als eins durch Epsilon ist eins durch n höchstens eins durch großes N und strikt kleiner als Epsilon.
-
-**ES:** Para ene al menos ene mayúscula mayor que uno entre épsilon, uno entre ene es como máximo uno entre ene mayúscula y estrictamente menor que épsilon.
+For n at least capital N greater than one over epsilon, one over n is at most one over capital N and strictly less than epsilon.

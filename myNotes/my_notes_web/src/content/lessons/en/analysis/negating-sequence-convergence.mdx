@@ -21,9 +21,9 @@ additionalSources: []
 
 ## Negating sequence convergence
 
-The constant-zero sequence stays at distance zero from target zero, but distance one from target one. We first derive failure at one specified target, not the absence of every possible real limit. Keep the entire sequence and target fixed throughout the derivation.
+We first derive failure at one specified target, not the absence of every possible real limit. Keep the sequence and target fixed throughout.
 
-A real sequence assigns one real term $a_n$ to each $n\in\mathbb N=\{1,2,3,\ldots\}$. Its distance from fixed real $L$ is $|a_n-L|$. Positive real $\varepsilon$ is tolerance; natural $N$ starts the tail, and natural $n$ tests a position. Recall the positive definition:
+Use the notation from the preceding lesson: $\varepsilon>0$ is tolerance, $N$ the tail threshold and $n$ the test index. Recall convergence to the fixed real target $L$:
 
 $$
 \forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
@@ -160,17 +160,13 @@ The violating index may use the threshold; the tolerance is fixed before all thr
 
 ### Read aloud
 
-**EN:** There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
-
-**DE:** Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
-
-**ES:** Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.
+There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
 
 <span id="from-no-real-limit"></span>
 
 ## No real limit
 
-Constant zero does not converge to one, but does converge to zero. A failed target is therefore not enough to show that a sequence has no real limit. The missing requirement is failure for every candidate real target. Keep the sequence fixed as targets vary.
+The example above shows why one failed target is not enough. No real limit requires failure for every candidate real target, with the sequence fixed as targets vary.
 
 Write $C(L)$ for the complete positive convergence definition for this fixed sequence and target $L$. This is an abbreviation, not a new definition. Having a real limit means $\exists L\in\mathbb R\;C(L)$. Negate this outer existence claim:
 
@@ -247,8 +243,4 @@ Later, derive the six stages without copying and use constant zero to distinguis
 
 ### Read aloud
 
-**EN:** For every real target L there is a positive tolerance such that every natural threshold has a later or equal term at least that far from L.
-
-**DE:** Für jedes reelle Ziel L gibt es eine positive Toleranz, sodass ab jedem natürlichen Startindex ein Glied mindestens so weit von L entfernt ist.
-
-**ES:** Para todo objetivo real ele existe una tolerancia positiva tal que todo umbral natural tiene un término en él o después al menos así de lejos de ele.
+For every real target L there is a positive tolerance such that every natural threshold has a later or equal term at least that far from L.

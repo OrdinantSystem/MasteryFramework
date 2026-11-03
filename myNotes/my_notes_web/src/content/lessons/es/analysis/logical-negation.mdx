@@ -37,7 +37,7 @@ Para una proposición clásica con sentido $P$, $\neg P$ es verdadera cuando $P$
 
 Los dígitos codifican verdadero y falso; no son instrucciones aritméticas. Una primera formulación segura es «No es cierto que [la afirmación original completa]». Abrevia solo después de identificar su alcance.
 
-**EN:** $\neg P$: “not P; it is not the case that P.” **DE:** „nicht P; es ist nicht der Fall, dass P gilt“. **ES:** «no pe; no es cierto que pe se cumpla».
+$\neg P$: «no pe; no es cierto que pe se cumpla».
 
 «La tarjeta no lleva tres» no cambia la tarjeta. Si lleva dos o cuatro, la negación es verdadera en ambos casos. «La tarjeta lleva dos» no la reemplaza: con cuatro ambas igualdades serían falsas. Un caso permitido donde el original y la negación propuesta coincidan refuta la propuesta. Varias muestras favorables no la demuestran para toda entrada.
 
@@ -52,7 +52,7 @@ $$\neg(a=b)\Leftrightarrow a\ne b,\qquad \neg(a\ne b)\Leftrightarrow a=b.$$
 
 $\ne$ abrevia «distinto de». $\Leftrightarrow$ se lee «si y solo si» y aquí indica coincidencia en todos los casos. La segunda equivalencia se justifica directamente: si los valores son iguales, «distintos» es falso y su negación verdadera; si son distintos, «distintos» es verdadero y su negación falsa. Esos son todos los casos clásicos.
 
-**EN:** $a\ne b$: “a is not equal to b.” **DE:** „a ist ungleich b“. **ES:** «a es distinto de be».
+$a\ne b$: «a es distinto de be».
 
 Para $x$ real, negar $x+2=5$ da $x+2\ne5$. Eso completa la negación; resolver es otra tarea. La entrada $2$ produce cuatro y la entrada $4$ produce seis: ambas satisfacen la negación. Reemplazar la igualdad por «mayor que» pierde la primera entrada. Ser distintos no fija un orden, y la igualdad puede usarse para objetos sin orden especificado.
 
@@ -116,9 +116,9 @@ $$\neg(x\le c)\Leftrightarrow x>c$$
 En cada línea, $\Leftrightarrow$ indica que ambas condiciones coinciden para toda asignación permitida. Cambian tanto la dirección como la inclusión de la igualdad.
 
 <details>
-<summary>Lecturas EN / DE / ES</summary>
+<summary>Lecturas de comparaciones de orden</summary>
 
-**EN:** “not greater than” means “less than or equal to”; “not at least” means “strictly less than”; “not less than” means “greater than or equal to”; “not at most” means “strictly greater than.” **DE:** „Es ist nicht der Fall, dass x größer als c ist“ heißt „x ist kleiner oder gleich c“; „Es ist nicht der Fall, dass x mindestens c ist“ heißt „x ist streng kleiner als c“; „Es ist nicht der Fall, dass x kleiner als c ist“ heißt „x ist größer oder gleich c“; „Es ist nicht der Fall, dass x höchstens c ist“ heißt „x ist streng größer als c“. **ES:** «No es cierto que equis sea mayor que ce» significa «equis es menor o igual que ce»; «No es cierto que equis sea mayor o igual que ce» significa «equis es estrictamente menor que ce»; «No es cierto que equis sea menor que ce» significa «equis es mayor o igual que ce»; «No es cierto que equis sea menor o igual que ce» significa «equis es estrictamente mayor que ce».
+«No es cierto que equis sea mayor que ce» significa «equis es menor o igual que ce»; «No es cierto que equis sea mayor o igual que ce» significa «equis es estrictamente menor que ce»; «No es cierto que equis sea menor que ce» significa «equis es mayor o igual que ce»; «No es cierto que equis sea menor o igual que ce» significa «equis es estrictamente mayor que ce».
 
 </details>
 
@@ -189,7 +189,7 @@ Para cualquier proposición $P$,
 
 $$\neg(\neg P)\Leftrightarrow P.$$
 
-**EN:** “not (not P) if and only if P.” **DE:** „nicht (nicht P) genau dann, wenn P gilt“. **ES:** «no (no pe) si y solo si pe».
+«no (no pe) si y solo si pe».
 
 Es una equivalencia de valores de verdad en todos los casos, no una afirmación de que $P$ sea verdadera. Se deduce de la bivalencia clásica y de la definición de negación como inversión de verdad. No afirma que todo sistema lógico siga esta ley.
 
@@ -213,7 +213,7 @@ Sustituir una igualdad completa da
 
 $$\neg\bigl(\neg(x=0)\bigr)\Leftrightarrow x=0.$$
 
-Para $x=0$ ambos lados son verdaderos; para $x=2$, falsos. El teorema explica la coincidencia para toda entrada permitida. Una $x$ libre sigue libre, el dominio se conserva y ninguna operación toma el opuesto aritmético de $x$. «No distinto de cero» no significa «negativo».
+Para $x=0$ ambos lados son verdaderos; para $x=2$, falsos. El teorema da la coincidencia para toda entrada permitida, con la evaluación punto a punto explicada arriba. «No distinto de cero» no toma el opuesto aritmético de $x$ ni significa «negativo».
 
 La proposición que ocupa el lugar de $P$ puede ser compuesta:
 
@@ -309,7 +309,7 @@ Cada entrada tiene exactamente dos valores de verdad. Las cuatro parejas agotan 
 
 <Note title="Leer el alcance en voz alta">
 
-$\neg(P\land Q)$: **EN** “not both P and Q”; **DE** „Es gelten nicht beide Aussagen P und Q“; **ES** «No se cumplen a la vez las proposiciones pe y cu». $\neg(P\lor Q)$: **EN** “neither P nor Q”; **DE** „Weder P noch Q gilt“; **ES** «No se cumple ni pe ni cu». $\Leftrightarrow$: **EN** “if and only if”; **DE** „genau dann, wenn“; **ES** «si y solo si».
+$\neg(P\land Q)$: «No se cumplen a la vez las proposiciones pe y cu». $\neg(P\lor Q)$: «No se cumple ni pe ni cu». $\Leftrightarrow$: «si y solo si».
 
 </Note>
 

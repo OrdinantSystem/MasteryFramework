@@ -56,7 +56,7 @@ In this additional example, the columns $A \land B$ and $B \lor C$ show intermed
 
 For example, in the row $A=1$, $B=1$, $C=0$, the intermediate statement $A \land B$ is true. Combining it with $C$ using AND gives false, while $(A \land B) \Rightarrow C$ is false because its premise is true and its conclusion is false. The final equivalence is also false because $A \land B$ and $C$ have different truth values.
 
-The extra variable doubles the number of rows. It allows more compound statements, but does not require a fixed number of columns: add one for each expression you want to compare.
+The number of columns is not fixed: add one for each expression you want to compare.
 
 
 <span id="from-logische-verknuepfungen-always-never-or-sometimes"></span>
@@ -78,7 +78,7 @@ A row runs across and fixes one assignment. A column runs down and tracks one in
 
 ### Inputs and completeness
 
-For one input $P$, list its two possible values. For two distinct inputs $P,Q$, hold $P$ true while $Q$ takes both values, then hold $P$ false while $Q$ takes both. The four rows are $11,10,01,00$. For a third distinct input, split each old row into two, one with $R=1$ and one with $R=0$. This gives eight rows, with no case omitted or repeated.
+For one input $P$, list its two values. For distinct inputs $P,Q$, hold $P$ true while $Q$ takes both values, then repeat with $P$ false: $11,10,01,00$. Extend this list by the row-splitting method above: a third distinct input $R$ gives eight rows without omissions or repetitions.
 
 Each **distinct** input doubles the rows. Repeating $P$ ten times still gives one input, not ten. Every occurrence of $P$ must have the same value within a row. $\neg P$ is calculated from $P$, not chosen independently.
 
@@ -93,7 +93,7 @@ Let $P$ mean positive and $Q$ even for one fixed card. The opening description i
 
 $$(P\lor Q)\land\neg Q.$$
 
-**EN:** “at least one of P or Q holds, and Q does not hold.” **DE:** „mindestens eine der Aussagen P oder Q gilt, und Q gilt nicht“. **ES:** «se cumple al menos una de las proposiciones pe o cu, y cu no se cumple».
+“at least one of P or Q holds, and Q does not hold.”
 
 The outer “and” joins the whole disjunction to the whole negation. Calculate each before combining them:
 
@@ -193,4 +193,4 @@ Rows $10$ and $01$ are missing. Row $10$ gives true, because both the disjunctio
 
 </Exercise>
 
-To compare formulas, align the **same assignments** and compare final columns. Agreement in every row proves a truth-functional equivalence; one disagreement refutes it. A truth table does not establish the arithmetic meanings of its input claims. [Logical connectives](../logische-verknuepfungen/#from-logische-verknuepfungen) retains a broader three-input comparison with implication and equivalence.
+To compare formulas, align the **same assignments** and compare final columns. Agreement in every row proves a truth-functional equivalence; one disagreement refutes it. A truth table does not establish the arithmetic meanings of its input claims. The broader [three-input table above](#from-logische-verknuepfungen) also compares implication and equivalence.

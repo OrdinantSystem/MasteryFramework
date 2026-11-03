@@ -21,9 +21,9 @@ additionalSources: []
 
 ## Folgenkonvergenz negieren
 
-Die konstante Nullfolge hat Abstand null zu Ziel null, aber Abstand eins zu Ziel eins. Zunächst leiten wir das Scheitern an einem angegebenen Ziel her, nicht das Fehlen jedes möglichen reellen Grenzwerts. Halte die ganze Folge und das Ziel während der Ableitung fest.
+Zunächst leiten wir das Scheitern an einem angegebenen Ziel her, nicht das Fehlen jedes möglichen reellen Grenzwerts. Halte Folge und Ziel während der Ableitung fest.
 
-Eine reelle Folge ordnet jedem $n\in\mathbb N=\{1,2,3,\ldots\}$ ein reelles Glied $a_n$ zu. Sein Abstand zum festen reellen $L$ ist $|a_n-L|$. Positives reelles $\varepsilon$ ist die Toleranz, natürliches $N$ der Beginn des Endstücks und natürliches $n$ eine geprüfte Position. Die positive Definition lautet:
+Nutze die Schreibweise der vorigen Lektion: $\varepsilon>0$ ist die Toleranz, $N$ der Startindex des Endstücks und $n$ der Prüfindex. Für das feste reelle Ziel $L$ lautet Konvergenz:
 
 $$
 \forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
@@ -160,17 +160,13 @@ Der Fehlerindex darf den Startindex nutzen; die Toleranz steht vor allen Startin
 
 ### Laut lesen
 
-**EN:** There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
-
-**DE:** Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
-
-**ES:** Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.
+Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
 
 <span id="from-no-real-limit"></span>
 
 ## Kein reeller Grenzwert
 
-Die Nullfolge konvergiert nicht gegen eins, aber gegen null. Ein gescheitertes Ziel genügt daher nicht für das Fehlen eines reellen Grenzwerts. Es fehlt das Scheitern bei jedem möglichen reellen Ziel. Halte die Folge fest, während die Ziele variieren.
+Das obige Beispiel zeigt, warum ein gescheitertes Ziel nicht genügt. Kein reeller Grenzwert verlangt Scheitern bei jedem möglichen reellen Ziel; die Folge bleibt dabei fest.
 
 Schreibe $C(L)$ für die vollständige positive Konvergenzdefinition dieser festen Folge bei Ziel $L$. Das ist eine Abkürzung, keine neue Definition. Einen reellen Grenzwert zu haben bedeutet $\exists L\in\mathbb R\;C(L)$. Negiere diese äußere Existenzbehauptung:
 
@@ -247,8 +243,4 @@ Leite später die sechs Stufen ohne Abschreiben her und unterscheide an der Null
 
 ### Laut lesen
 
-**EN:** For every real target L there is a positive tolerance such that every natural threshold has a later or equal term at least that far from L.
-
-**DE:** Für jedes reelle Ziel L gibt es eine positive Toleranz, sodass ab jedem natürlichen Startindex ein Glied mindestens so weit von L entfernt ist.
-
-**ES:** Para todo objetivo real ele existe una tolerancia positiva tal que todo umbral natural tiene un término en él o después al menos así de lejos de ele.
+Für jedes reelle Ziel L gibt es eine positive Toleranz, sodass ab jedem natürlichen Startindex ein Glied mindestens so weit von L entfernt ist.

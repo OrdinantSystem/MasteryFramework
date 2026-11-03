@@ -49,6 +49,15 @@ Zero witnesses the denial: it is an integer and is not positive. A negative half
 
 For “red and numbered”, failure means not red or not numbered, with inclusive or. One red unnumbered card is enough. On an empty domain every-object claims are true and their existential negations false. Empty restricted domains are allowed even when the wider universe is nonempty. A universal claim supplies no object by itself.
 
+<span id="from-quantoren-und-negation-a-witness-versus-every-case"></span>
+
+### A witness versus every case
+
+<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
+
+The left-hand claim is true because $7$ belongs to the domain and satisfies the equation. The universal claim inside the negation is false: for example, $x=1$ gives $1+3=4$, not $10$. Thus both displayed claims are true, but for different reasons. One successful input establishes existence; a different, unsuccessful input refutes universality.
+
+
 <span id="from-negating-universal-statements-practice"></span>
 
 #### Practice
@@ -135,11 +144,7 @@ Later, explain both directions of the dual law using a mixed collection and then
 
 ### Read aloud
 
-**EN:** Not every x in D satisfies P if and only if some x in D fails P.
-
-**DE:** Nicht jedes x in D erfüllt P genau dann, wenn ein x in D die Bedingung P nicht erfüllt.
-
-**ES:** No todo equis en D cumple P si y solo si algún equis en D no cumple P.
+Not every x in D satisfies P if and only if some x in D fails P.
 
 <span id="from-negating-existential-statements"></span>
 
@@ -254,11 +259,7 @@ Later, explain why some failure suffices against every, while every failure is n
 
 ### Read aloud
 
-**EN:** There is no x in D satisfying P if and only if every x in D fails P.
-
-**DE:** Es gibt kein x in D mit P genau dann, wenn jedes x in D die Bedingung P nicht erfüllt.
-
-**ES:** No existe equis en D que cumpla P si y solo si todo equis en D incumple P.
+There is no x in D satisfying P if and only if every x in D fails P.
 
 <span id="from-negating-quantified-inequalities"></span>
 
@@ -271,7 +272,7 @@ A promise says a reading lies strictly within one unit of a target. A reading ex
 
 ### Real order partitions every case
 
-For real $x,c$, exactly one of below, equal and above holds. Negation keeps precisely the cases excluded by the original comparison. Removing below leaves equal or above; removing below-or-equal leaves only above. Exchanging above and below gives the other two rules. This uses the ordinary total order of the reals, not quantifier syntax alone.
+Recall the real-order complements: trichotomy leaves exactly the cases excluded by the original comparison. These use the ordinary total order of the reals, not quantifier syntax alone.
 
 $$
 \begin{aligned}\neg(x<c)&\Longleftrightarrow x\ge c,\\\neg(x\le c)&\Longleftrightarrow x>c,\\\neg(x>c)&\Longleftrightarrow x\le c,\\\neg(x\ge c)&\Longleftrightarrow x<c.\end{aligned}
@@ -289,6 +290,13 @@ $$
 $$
 
 Every positive real being below one is false. One is an allowed counterexample and lies exactly on the boundary. Zero is not allowed. We changed every to some, retained positive reals and complemented the inner comparison. A second true example such as two is unnecessary; one already proves the negation.
+
+
+<span id="from-quantoren-und-negation-the-boundary-case-matters"></span>
+
+### The boundary case matters
+
+The claim $n^2 > n$ for every natural number fails at $n = 1$. With $\mathbb{N}$ starting at 1, the correct universal statement is $n^2 \ge  n$; strict inequality holds for $n > 1$.
 
 
 <span id="from-negating-quantified-inequalities-when-the-predicate-is-conditional"></span>
@@ -349,28 +357,11 @@ Later, reproduce the four complements and all four conditional truth-table rows 
 
 ### Read aloud
 
-**EN:** Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
-
-**DE:** Nicht kleiner bedeutet größer oder gleich; eine falsche Implikation hat wahre Voraussetzung und falsche Folgerung.
-
-**ES:** No menor significa mayor o igual; un condicional falso tiene hipótesis verdadera y conclusión falsa.
+Not less than is greater than or equal to; a false implication has a true hypothesis and false conclusion.
 
 <span id="from-quantoren-und-negation"></span>
 
 ## Quantifiers and negation
-
-<span id="from-quantoren-und-negation-a-witness-versus-every-case"></span>
-
-### A witness versus every case
-
-This page is a compact reference. For a first explanation, begin with [universal statements and their domains](../universal-statements-and-domains/#from-universal-statements-and-domains) and [existence and witnesses](../universal-statements-and-domains/#from-existence-and-witnesses). Then work through [bound variables and scope](../universal-statements-and-domains/#from-bound-variables-and-scope), [quantifier order](../quantifier-order/#from-quantifier-order) and [negating universal claims](../negating-universal-statements/#from-negating-universal-statements). Those lessons develop the examples and proofs behind the formulas collected here.
-
-Existence needs one witness. A universal claim covers every element of its stated domain; one counterexample refutes it. $\exists!$ means exactly one, combining existence and uniqueness.
-
-<Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
-
-The left-hand claim is true because $7$ belongs to the domain and satisfies the equation. The universal claim inside the negation is false: for example, $x=1$ gives $1+3=4$, not $10$. Thus both displayed claims are true, but for different reasons. One successful input establishes existence; a different, unsuccessful input refutes universality.
-
 
 <span id="from-quantoren-und-negation-push-the-negation-inward"></span>
 
@@ -380,16 +371,9 @@ The left-hand claim is true because $7$ belongs to the domain and satisfies the 
 
 <Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
 
-Negation changes the quantifier and the predicate, while keeping the domain. With nested quantifiers, change each one in order. Their order matters: one common $y$ for every $x$ is stronger than a possibly different $y$ for each $x$.
+These are the two laws proved above. For nested quantifiers, apply them in the existing order while preserving domains and scope:
 
 <Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
-
-
-<span id="from-quantoren-und-negation-the-boundary-case-matters"></span>
-
-### The boundary case matters
-
-The claim $n^2 > n$ for every natural number fails at $n = 1$. With $\mathbb{N}$ starting at 1, the correct universal statement is $n^2 \ge  n$; strict inequality holds for $n > 1$.
 
 
 <span id="from-quantoren-und-negation-order-of-quantifiers"></span>

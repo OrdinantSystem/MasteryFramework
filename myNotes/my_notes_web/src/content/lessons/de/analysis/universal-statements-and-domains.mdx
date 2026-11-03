@@ -106,11 +106,7 @@ $D$ ist der Bereich erlaubter Objekte; $P$ ist die geforderte Bedingung, das Pr�
 
 ### Laut lesen
 
-**EN:** There exists at least one x in D such that P of x holds.
-
-**DE:** Es gibt mindestens ein x in D, für das P von x gilt.
-
-**ES:** Existe al menos un equis en D, tal que se cumple P de equis; D se lee de mayúscula.
+Es gibt mindestens ein x in D, für das P von x gilt.
 
 <span id="from-bound-variables-and-scope"></span>
 
@@ -127,7 +123,7 @@ liest man: „Für jedes $x$ in $D$ ist $x$ kleiner als $y$.“ Die Kartenzahl d
 
 ### Vorkommen statt Buchstaben ein für alle Mal einordnen
 
-Ein **Vorkommen** ist ein bestimmtes Auftreten einer Variablen. Ein Quantor **bindet** Vorkommen seiner benannten Variablen in seinem **Geltungsbereich**, der von ihm erfassten Teilformel. Ohne zuständigen Quantor ist ein Vorkommen **frei**. Benutzt ein innerer Quantor denselben Namen, übernimmt er dessen Vorkommen in seinem eigenen Bereich.
+Ein **Vorkommen** ist ein bestimmtes Auftreten einer Variablen. Ein Quantor **bindet** Vorkommen seiner benannten Variablen in seinem **Geltungsbereich**, der von ihm erfassten Teilformel. Ohne zuständigen Quantor ist ein Vorkommen **frei**. Benutzt ein innerer Quantor denselben Namen, übernimmt er dessen Vorkommen in seinem eigenen Bereich. Eine Formel ist **offen**, wenn sie ein freies Vorkommen hat, und **geschlossen**, wenn sie keines hat; geschlossen heißt nicht „ohne Buchstaben“.
 
 Im ersten Vergleich ist $x$ gebunden, $y$ frei. Das $x$ unmittelbar nach $\forall$ legt den gebundenen Namen fest; es ist keine weitere externe Eingabe. Die geschriebene Formel ist wegen $y$ offen. Die Angabe $y=3$ erlaubt ihre Auswertung, fügt aber keinen Quantor ein; $y$ bleibt syntaktisch frei.
 
@@ -182,12 +178,9 @@ Die erste sagt „Für jedes Mitglied gelten $P$ und $C$“; die zweite behaupte
 
 Für nichtleeres $D$ sind sie äquivalent: Die erste liefert $P$ für jedes Mitglied und über irgendein Mitglied auch $C$. Umgekehrt liefern die getrennte Allaussage und $C$ beide Anforderungen für jedes Mitglied. Nichtleere ermöglicht genau den Schritt, der im leeren Fall scheitert.
 
-<details>
-<summary>Wenn ein innerer Quantor einen Namen wiederverwendet</summary>
+### Wenn ein innerer Quantor einen Namen wiederverwendet
 
 Für $D=\{1,2\}$ und $E=\{-1\}$ ist $\forall x\in D\;((x>0)\land(\forall x\in E\;(x<0)))$ wahr. Das äußere $x$ prüft Positivität in $D$; das innere Negativität in $E$. Es wird nicht dieselbe Eingabe zugleich positiv und negativ verlangt. Benenne nur den inneren Quantor und seinen Vergleich in $t$ um, um das sichtbar zu machen. Eine Umbenennung des äußeren Quantors muss diese inneren Vorkommen unverändert lassen.
-
-</details>
 
 <Exercise question="Benenne für $D=\{1,2\}$ die gebundene Variable in $(\forall x\in D\;(x<3))\land(x>0)$ sicher in $t$ um. Werte dann bei freiem $x=-1$ aus. Ändert sich das letzte Vorkommen?">
 
@@ -211,8 +204,6 @@ Die zweite Formel fängt den freien Vergleichswert ein und ist hier immer wahr, 
 
 $\mathbb Z$ bezeichnet ganze, $\mathbb R$ reelle Zahlen. $x\in\mathbb R$ drückt Zugehörigkeit aus, nicht Gleichheit. „Sei $x$ reell“ legt den Bereich fest und führt in Beweisen oft eine **beliebige, aber feste** Eingabe ein. „Sei $x=2$“ legt einen konkreten Wert fest. Keines setzt einen Quantor in die geschriebene Formel.
 
-Ein **Vorkommen** ist eine Stelle, an der eine Variable steht. Ein Quantor bindet Vorkommen der benannten Variable in seinem **Geltungsbereich**, außer wo ein innerer Quantor dieselbe Variable bindet. Ohne bindenden Quantor ist ein Vorkommen frei. „Offen“ heißt mindestens ein freies Vorkommen; „geschlossen“ heißt keines, nicht „ohne Buchstaben“.
-
 $$\forall x\in\mathbb R\;(x+y=y+x)$$
 
 Beide Vorkommen von $x$ sind gebunden, $y$ bleibt frei. Das gilt auch dann, wenn Kommutativität die Bedingung für jede reelle Belegung von $y$ wahr macht. Wahrheit unter jeder Belegung ersetzt keinen Quantor. Mit $\forall y\in\mathbb R$ wird die Formel geschlossen:
@@ -222,10 +213,3 @@ $$\forall x\in\mathbb R\;\forall y\in\mathbb R\;(x+y=y+x).$$
 Die Zuweisung $y=0$ liefert einen Auswertungskontext, keine syntaktische Bindung. Null tatsächlich für $y$ einzusetzen erzeugt dagegen eine **andere geschriebene Formel** mit ersetzten Vorkommen. Diese Schritte sind zu unterscheiden.
 
 Auch $\exists x\in\mathbb R\;(x=y)$ bleibt offen in $y$, obwohl jede reelle Belegung von $y$ einen passenden Zeugen liefert. Existenz bedeutet mindestens ein Objekt, nicht Eindeutigkeit. Bei $\forall x\in\mathbb R\;(x=y)$ lässt die Zuweisung $y=0$ das geschriebene $y$ frei, liefert aber eine falsche kontextuelle Behauptung, widerlegt durch $x=1$.
-
-<details>
-<summary>Notation lesen: EN / DE / ES</summary>
-
-$P(x)$: **EN** “P of x”; **DE** „P von x“; **ES** «pe de equis». $x\in\mathbb R$: **EN** “x belongs to the reals”; **DE** „x gehört zu den reellen Zahlen“; **ES** «equis pertenece a los reales». $\forall x$: **EN** “for every x”; **DE** „für jedes x“; **ES** «para todo equis». $\exists x$: **EN** “there exists at least one x”; **DE** „es gibt mindestens ein x“; **ES** «existe al menos un equis». $T/F$: **EN** “true/false”; **DE** „wahr/falsch“; **ES** «verdadero/falso».
-
-</details>

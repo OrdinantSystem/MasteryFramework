@@ -67,12 +67,12 @@ $$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
 
 The first needs a ticket as well as a reservation or pass. The second accepts a pass alone. With $P=0,Q=0,R=1$, the first is false and the second true. This separating assignment proves that changing the grouping changes the general meaning.
 
-Pure conjunctions allow either grouping because both require all three inputs. Pure inclusive disjunctions allow either grouping because both require at least one of the three. This reasoning does not authorize arbitrary regrouping when the connectives are mixed.
+Chains of AND alone or inclusive OR alone permit regrouping for the reasons developed below; mixed connectives need a separate check.
 
 <details>
-<summary>Notation readings: EN / DE / ES</summary>
+<summary>Notation readings</summary>
 
-$P\land Q$: **EN** “P and Q”; **DE** „P und Q“; **ES** «pe y cu». $P\lor Q$: **EN** “P or Q, or both”; **DE** „P oder Q oder beides“; **ES** «pe o cu, o ambas». $P\land(Q\lor R)$: **EN** “P and, in addition, at least one of Q or R”; **DE** „P und zusätzlich mindestens eine der Aussagen Q oder R“; **ES** «pe y, además, al menos una de cu o erre». Some books write $\to$ for $\Rightarrow$ and $\leftrightarrow$ for $\Leftrightarrow$.
+$P\land Q$: “P and Q”; $P\lor Q$: “P or Q, or both”; $P\land(Q\lor R)$: “P and, in addition, at least one of Q or R”. Some books write $\to$ for $\Rightarrow$ and $\leftrightarrow$ for $\Leftrightarrow$.
 
 </details>
 
@@ -117,14 +117,12 @@ Initially either value of $P$ is possible; both $10$ and $01$ satisfy the report
 
 For this lesson, call an integer **admissible** if and only if it is positive, less than ten, and even. This is a local teaching label, not a standard class of integers. Six passes every check. Nine fails evenness; ten fails the strict upper bound. Passing two checks does not compensate for failing the third.
 
-We use ordinary integer arithmetic and order as background. An even integer is one divisible by two with an integer result; zero is even but not positive.
-
 
 <span id="from-simultaneous-conditions-read-one-structured-criterion"></span>
 
 ### Read one structured criterion
 
-Start by fixing the domain and the object. Each condition concerns the **same integer**. A positive noninteger below ten is not an admissible integer. Checking positivity on nine and evenness on negative two does not establish a conjunction about one integer, much less about a particular hidden card.
+Apply the same-object rule above: every check concerns **one integer**. A positive noninteger below ten still fails the integer-domain requirement.
 
 Let $A$ mean positive, $B$ less than ten, and $C$ even. Both
 
@@ -132,7 +130,7 @@ $$(A\land B)\land C\qquad\text{and}\qquad A\land(B\land C)$$
 
 require all three claims. In the first grouping, $A$ and $B$ must hold, and $C$ must hold too. In the second, $B$ and $C$ must hold, as must $A$. This proves associativity semantically for any three propositions. It does not depend on checking four integers. Pure inclusive “or” also permits either grouping: each requires at least one of three inputs to be true. Mixed connectives need separate grouping checks.
 
-**EN:** $A\land(B\land C)$: “A holds, and both B and C hold.” **DE:** „A gilt, und B und C gelten beide“. **ES:** «se cumple a, y se cumplen be y ce». “Simultaneous” here means satisfaction in the specified context, not necessarily events occurring at one moment. Conjunction does not bind a free variable.
+$A\land(B\land C)$: “A holds, and both B and C hold.” Conjunction does not bind a free variable.
 
 A useful reading method is: fix domain and object; separate the conditions; check whether the list means all or at least one; preserve inner alternatives; decide whether the sentence is a definition or only a claim. Commas alone do not determine its connective.
 
@@ -143,7 +141,7 @@ A useful reading method is: fix domain and object; separate the conditions; chec
 
 “If and only if” gives a full criterion. To prove that six is admissible, check $6>0$, $6<10$, and that $6/2=3$ is an integer. Conversely, knowing an integer is admissible gives **each** of those three properties. It does not give a unique value.
 
-The complete list is $2,4,6,8$. The bounds leave only the integers $1$ through $9$; their even members are exactly the four listed. That exhausts the candidates. Exhibiting four successes without excluding others would not prove completeness. Zero fails positivity; ten fails the strict bound. The definition fixes the meaning; the candidate argument justifies the list.
+The complete list is $2,4,6,8$. The bounds leave only the integers $1$ through $9$; their even members are exactly the four listed. That exhausts the candidates. Exhibiting four successes without excluding others would not prove completeness. The definition fixes the meaning; the candidate argument justifies the list.
 
 
 <span id="from-simultaneous-conditions-a-sufficient-rule-is-different"></span>

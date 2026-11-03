@@ -61,7 +61,7 @@ Für die **andere** Regel von über zwei zu über fünf ist der Einzelfall bei n
 
 ### Eine Belegung ist keine logische Folgerungsbeziehung
 
-Bei $x=7$ sind $P(x):x>2$ und $Q(x):x>5$ wahr. Bei $x=3$ ist die Implikation falsch, bei $x=0$ wieder wahr. Die Kombination $P$ falsch und $Q$ wahr kann bei diesen verknüpften Vergleichen nicht auftreten: Aus über fünf folgt nach der reellen Ordnung über zwei. Die allgemeine Tabelle braucht diese Zeile trotzdem für andere Aussagen, etwa $P:(0=1)$ und $Q:(2=2)$.
+Für die einleitenden Vergleiche $P(x):x>2$ und $Q(x):x>5$ ist das fehlende Paar $P$ falsch, $Q$ wahr unmöglich: Aus über fünf folgt nach der reellen Ordnung über zwei. Die allgemeine Tabelle braucht diese Zeile trotzdem für andere Aussagen, etwa $P:(0=1)$ und $Q:(2=2)$.
 
 Eine **logische Folgerungsbeziehung** verlangt, dass keine erlaubte Belegung oder kein erlaubtes Modell alle Prämissen wahr und die Folgerung falsch macht. Eine in einer Belegung wahre Implikation beweist diese Beziehung zwischen unabhängigen $P$ und $Q$ nicht. Ebenso beweist ein wahrer Zahlenfall keine Aussage für alle Eingaben. Ein arithmetischer Beweis für einen ganzen Bereich benutzt auch seine arithmetischen Annahmen, nicht nur frei belegbare Aussagebuchstaben.
 
@@ -88,7 +88,7 @@ Nein. Alle drei Schachteln erfüllen die Regel. Die leere hat keine Karten; null
 
 ## Bedingte Aussagen lesen
 
-Eine Schachtel enthält Karten mit reellen Zahlen. Ihre Regel lautet: „Eine Karte liegt über zwei, wenn sie über fünf liegt.“ **Wenn** kennzeichnet die Voraussetzung, auch wenn sie am Satzende steht. Die Regel führt von über fünf zu über zwei.
+Lies die Schachtelregel mit umgestellter Satzfolge: „Eine Karte liegt über zwei, wenn sie über fünf liegt.“ **Wenn** kennzeichnet auch am Satzende die Voraussetzung; die Regel führt von über fünf zu über zwei.
 
 
 <span id="from-reading-conditionals-voraussetzung-und-folgerung"></span>
@@ -158,14 +158,12 @@ Der Beweis muss $x=2$ ausschließen; die schwächere Schranke lässt diesen Wert
 
 <Math tex="\neg(\colA{A}\Rightarrow \colB{B})\iff \colA{A}\land\neg \colB{B}" display />
 
-Um „Wenn ich bestehe, lade ich zum Essen ein“ zu widerlegen, muss ich bestehen und nicht einladen. Beide Teile zu negieren ist etwas anderes.
+Die Negation wählt genau die falsche Zeile der Implikation: $A$ wahr und $B$ falsch. Um „Wenn ich bestehe, lade ich zum Essen ein“ zu widerlegen, muss ich bestehen und nicht einladen. Beide Teile zu negieren würde einen anderen Fall auswählen.
 
 
 <span id="from-logische-verknuepfungen-eine-implikation-lesen"></span>
 
-### Eine Implikation lesen
-
-$A \Rightarrow  B$ schließt genau einen Fall aus: A gilt, $B$ aber nicht. Betrachte „Wenn eine Zahl durch 4 teilbar ist, ist sie gerade“. Eine ungerade Zahl erfüllt die Voraussetzung nicht und widerlegt die Aussage deshalb nicht. Darum ist die Implikation bei falscher Voraussetzung wahr. Das beweist weder eine Ursache noch $B$ für sich allein. Bei $A \Leftrightarrow  B$ müssen beide Richtungen gelten.
+Wer **beide** Richtungen verlangt, schreibt $A \Leftrightarrow B$, nicht nur $A \Rightarrow B$. Der Teilbarkeitsbeweis unten zeigt, warum eine ungerade Eingabe die Hinrichtung nicht widerlegt.
 
 <span id="from-implikation-und-kontraposition"></span>
 
@@ -222,7 +220,7 @@ Die Umkehrung ist $x>0\Rightarrow((x>1)\land(x<4))$; sie scheitert bei eins, wei
 
 ### Teilbarkeit liefert ein konkretes Beispiel
 
-Schreibe $a | n$, wenn $n=ak$ für eine ganze Zahl $k$ gilt. Das ist eine Teilbarkeitsaussage, keine Division. Aus $4 | n$ folgt $2 | n$. Die Kontraposition lautet: Aus $2\nmid n$ folgt $4\nmid n$. Die Umkehrung scheitert an $n = 6$: 2 teilt 6, aber 4 nicht.
+Schreibe $a | n$, wenn $n=ak$ für eine ganze Zahl $k$ gilt. Das bezeichnet Teilbarkeit, keine Division. Wir beweisen, dass aus $4 | n$ auch $2 | n$ folgt, und vergleichen dann Kontraposition und Umkehrung.
 
 
 <span id="from-implikation-und-kontraposition-ein-beweis-und-seine-umkehrung"></span>
@@ -241,7 +239,7 @@ Nein: $n = 3$. Die Kontraposition lautet: „Wenn 6 $n$ nicht teilt, dann teilt 
 
 ## Implikation und Modellannahmen
 
-Sieben ist größer als fünf und größer als zwei. Der Vergleich mit fünf verändert die Zahl nicht. Die Implikation verknüpft zwei Eigenschaften derselben unveränderten Zahl.
+Sieben liegt über fünf und über zwei. Das sind Eigenschaften derselben unveränderten Zahl, keine Wirkungen des Vergleichs mit fünf.
 
 Materiale Implikation ist **wahrheitsfunktional**: Die Wahrheitswerte ihrer Teile bestimmen ihren Wert. Die Wahrheitstabelle hat keine zusätzliche Spalte für „geschieht früher“, „erklärt“ oder „verursacht“. In gewöhnlicher Arithmetik ist
 

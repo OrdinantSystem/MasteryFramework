@@ -67,12 +67,12 @@ $$P\land(Q\lor R)\qquad (P\land Q)\lor R.$$
 
 Das erste verlangt eine Eintrittskarte und zusätzlich Reservierung oder Pass. Das zweite erlaubt den Pass allein. Für $P=0,Q=0,R=1$ ist das erste falsch und das zweite wahr. Diese trennende Belegung zeigt, dass die Umgruppierung die allgemeine Bedeutung verändert.
 
-Reine Konjunktionen erlauben beide Gruppierungen, weil beide alle drei Eingaben verlangen. Reine einschließende Disjunktionen erlauben beide, weil mindestens eine von drei Eingaben genügt. Bei gemischten Verknüpfungen darf deshalb nicht beliebig umgruppiert werden.
+Reine Und-Ketten und reine Ketten mit einschließendem Oder dürfen aus den unten erläuterten Gründen umgruppiert werden; gemischte Verknüpfungen müssen gesondert geprüft werden.
 
 <details>
-<summary>Notation lesen: EN / DE / ES</summary>
+<summary>Notation lesen</summary>
 
-$P\land Q$: **EN** “P and Q”; **DE** „P und Q“; **ES** «pe y cu». $P\lor Q$: **EN** “P or Q, or both”; **DE** „P oder Q oder beides“; **ES** «pe o cu, o ambas». $P\land(Q\lor R)$: **EN** “P and, in addition, at least one of Q or R”; **DE** „P und zusätzlich mindestens eine der Aussagen Q oder R“; **ES** «pe y, además, al menos una de cu o erre». Manche Bücher schreiben $\to$ statt $\Rightarrow$ und $\leftrightarrow$ statt $\Leftrightarrow$.
+$P\land Q$: „P und Q“; $P\lor Q$: „P oder Q oder beides“; $P\land(Q\lor R)$: „P und zusätzlich mindestens eine der Aussagen Q oder R“. Manche Bücher schreiben $\to$ statt $\Rightarrow$ und $\leftrightarrow$ statt $\Leftrightarrow$.
 
 </details>
 
@@ -117,14 +117,12 @@ Zunächst ist jeder Wert für $P$ möglich; $10$ und $01$ passen zum Bericht. Mi
 
 Für diese Lektion heiße eine ganze Zahl **zulässig** genau dann, wenn sie positiv, kleiner als zehn und gerade ist. Das ist eine lokale Übungsbezeichnung, keine übliche Zahlenklasse. Sechs erfüllt alles. Neun scheitert an der Geradheit, zehn an der strengen oberen Grenze. Zwei erfüllte Bedingungen gleichen die dritte nicht aus.
 
-Übliche ganzzahlige Arithmetik und Ordnung werden vorausgesetzt. Eine ganze Zahl ist gerade, wenn Division durch zwei eine ganze Zahl ergibt. Null ist gerade, aber nicht positiv.
-
 
 <span id="from-simultaneous-conditions-ein-strukturiertes-kriterium-lesen"></span>
 
 ### Ein strukturiertes Kriterium lesen
 
-Lege zunächst Bereich und Objekt fest. Jede Bedingung betrifft **dieselbe ganze Zahl**. Eine positive nichtganze Zahl unter zehn ist keine zulässige ganze Zahl. Positivität an neun und Geradheit an minus zwei zu prüfen zeigt keine Konjunktion über eine einzelne Zahl, erst recht nicht über eine bestimmte verdeckte Karte.
+Wende die Regel für dasselbe Objekt von oben an: Alle Prüfungen betreffen **eine ganze Zahl**. Eine positive nichtganze Zahl unter zehn scheitert schon am ganzzahligen Bereich.
 
 $A$ bedeute positiv, $B$ kleiner als zehn, $C$ gerade. Sowohl
 
@@ -132,7 +130,7 @@ $$(A\land B)\land C\qquad\text{und}\qquad A\land(B\land C)$$
 
 verlangen alle drei Aussagen. In der ersten Gruppierung müssen $A$ und $B$ gelten und zusätzlich $C$. In der zweiten müssen $B$ und $C$ gelten und zusätzlich $A$. Das beweist Assoziativität semantisch für beliebige Aussagen, unabhängig von vier Zahlenbeispielen. Auch reines einschließendes Oder erlaubt beide Gruppierungen: Jeweils muss mindestens eine von drei Eingaben wahr sein. Bei gemischten Verknüpfungen muss die Gruppierung gesondert geprüft werden.
 
-**EN:** $A\land(B\land C)$: “A holds, and both B and C hold.” **DE:** „A gilt, und B und C gelten beide“. **ES:** «se cumple a, y se cumplen be y ce». „Gleichzeitig“ bedeutet hier Erfüllung im angegebenen Zusammenhang, nicht zwingend Ereignisse im selben Augenblick. Konjunktion bindet keine freie Variable.
+$A\land(B\land C)$: „A gilt, und B und C gelten beide“. Konjunktion bindet keine freie Variable.
 
 Ein brauchbares Leseverfahren lautet: Bereich und Objekt festlegen; Bedingungen trennen; alle oder mindestens eine unterscheiden; innere Alternativen erhalten; Definition oder bloße Behauptung erkennen. Kommas allein bestimmen keine Verknüpfung.
 
@@ -143,7 +141,7 @@ Ein brauchbares Leseverfahren lautet: Bereich und Objekt festlegen; Bedingungen 
 
 „Genau dann, wenn“ gibt ein vollständiges Kriterium. Für sechs prüfen wir $6>0$, $6<10$ und dass $6/2=3$ ganzzahlig ist. Umgekehrt liefert die Zulässigkeit einer ganzen Zahl **jede** dieser drei Eigenschaften, aber keinen eindeutigen Wert.
 
-Die vollständige Liste lautet $2,4,6,8$. Die Grenzen lassen nur die ganzen Zahlen $1$ bis $9$ zu; davon sind genau diese vier gerade. Damit sind alle Kandidaten erfasst. Vier passende Beispiele allein würden Vollständigkeit nicht beweisen. Null scheitert an Positivität, zehn an der strengen Grenze. Die Definition legt die Bedeutung fest; das Kandidatenargument begründet die Liste.
+Die vollständige Liste lautet $2,4,6,8$. Die Grenzen lassen nur die ganzen Zahlen $1$ bis $9$ zu; davon sind genau diese vier gerade. Damit sind alle Kandidaten erfasst. Vier passende Beispiele allein würden Vollständigkeit nicht beweisen. Die Definition legt die Bedeutung fest; das Kandidatenargument begründet die Liste.
 
 
 <span id="from-simultaneous-conditions-eine-hinreichende-regel-ist-etwas-anderes"></span>

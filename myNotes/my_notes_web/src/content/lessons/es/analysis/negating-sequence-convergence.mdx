@@ -21,9 +21,9 @@ additionalSources: []
 
 ## Negar la convergencia de sucesiones
 
-La sucesión constante cero dista cero del objetivo cero, pero uno del objetivo uno. Primero derivamos el fallo en un objetivo especificado, no la ausencia de todo límite real posible. Mantén fijos toda la sucesión y el objetivo durante la derivación.
+Primero derivamos el fallo en un objetivo especificado, no la ausencia de todo límite real posible. Mantén fijos sucesión y objetivo durante la derivación.
 
-Una sucesión real asigna un término real $a_n$ a cada $n\in\mathbb N=\{1,2,3,\ldots\}$. Su distancia al real fijo $L$ es $|a_n-L|$. El real positivo $\varepsilon$ es la tolerancia; el natural $N$ inicia la cola y el natural $n$ comprueba una posición. Recordemos la definición positiva:
+Usa la notación de la lección anterior: $\varepsilon>0$ es la tolerancia, $N$ el umbral de la cola y $n$ el índice de prueba. Recordemos la convergencia al objetivo real fijo $L$:
 
 $$
 \forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
@@ -160,17 +160,13 @@ El índice fallido puede usar el umbral; la tolerancia queda fija antes de todos
 
 ### Lectura en voz alta
 
-**EN:** There is a positive real epsilon such that for every natural threshold capital N there is a natural index lowercase n at least N for which the term a sub n has distance from L at least epsilon.
-
-**DE:** Es gibt ein positives reelles Epsilon, sodass es zu jedem natürlichen Startindex N, großes N, einen natürlichen Index n, kleines n, gibt, der mindestens N ist und für den das Folgenglied a Index n einen Abstand von L mindestens Epsilon hat.
-
-**ES:** Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.
+Existe un épsilon real positivo tal que para todo umbral natural N, ene mayúscula, hay un índice natural n, ene minúscula, mayor o igual que N, para el cual el término a sub ene tiene distancia a ele al menos épsilon.
 
 <span id="from-no-real-limit"></span>
 
 ## Sin límite real
 
-La constante cero no converge a uno, pero sí a cero. Fallar en un objetivo no basta para demostrar que una sucesión carece de límite real. Falta exigir fallo para todo candidato real. Mantén fija la sucesión mientras varían los objetivos.
+El ejemplo anterior muestra por qué no basta un objetivo fallido. No tener límite real exige fallar para todo candidato real, manteniendo fija la sucesión al variar los objetivos.
 
 Escribe $C(L)$ para la definición positiva completa de convergencia de esta sucesión fija al objetivo $L$. Es una abreviatura, no otra definición. Tener límite real significa $\exists L\in\mathbb R\;C(L)$. Niega esa existencia exterior:
 
@@ -247,8 +243,4 @@ Más tarde, deriva las seis etapas sin copiar y usa la constante cero para disti
 
 ### Lectura en voz alta
 
-**EN:** For every real target L there is a positive tolerance such that every natural threshold has a later or equal term at least that far from L.
-
-**DE:** Für jedes reelle Ziel L gibt es eine positive Toleranz, sodass ab jedem natürlichen Startindex ein Glied mindestens so weit von L entfernt ist.
-
-**ES:** Para todo objetivo real ele existe una tolerancia positiva tal que todo umbral natural tiene un término en él o después al menos así de lejos de ele.
+Para todo objetivo real ele existe una tolerancia positiva tal que todo umbral natural tiene un término en él o después al menos así de lejos de ele.
