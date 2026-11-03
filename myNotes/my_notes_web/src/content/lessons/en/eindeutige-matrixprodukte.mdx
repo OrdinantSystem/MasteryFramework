@@ -21,7 +21,7 @@ A product representation is unique relative to a specified set of allowed matric
 
 <Math tex="S=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad T=\begin{pmatrix}1&2\\0&1\end{pmatrix},\quad S^2=T." display />
 
-With allowed factors $\{S,T\}$, the words SS and T give the same matrix. With only S allowed, $S^k$ has upper-right entry $k$, so the length is uniquely determined. Allowing inverses would introduce further relations such as $SS^{-1}=I_2$.
+With allowed factors $\{S,T\}$, the words $SS$ and T give the same matrix. With only S allowed, $S^k$ has upper-right entry $k$, so the length is uniquely determined. Allowing inverses would introduce further relations such as $SS^{-1}=I_2$.
 
 ## Read the last letter from the matrix
 
@@ -34,7 +34,7 @@ Now allow only the letters R and L, with nonnegative word length and no inverse 
 <Math tex="\cdots R:\ m_{11}\le m_{12},\qquad\cdots L:\ m_{11}>m_{12}." display />
 
 <Note title={"Include the equality case"}>
-The matrix R has first row (1,1). A strict inequality would miss it. For a product ending in R, the new second entry is $a+b\ge a$. For a product ending in L, the new first entry is $a+b>b$ because $a\ge1$. Check the full matrix for the identity before applying this rule.
+The matrix R has first row $(1,1)$. A strict inequality would miss it. For a product ending in R, the new second entry is $a+b\ge a$. For a product ending in L, the new first entry is $a+b>b$ because $a\ge1$. Check the full matrix for the identity before applying this rule.
 </Note>
 
 ## Cancel on the side where the factor sits
@@ -43,7 +43,7 @@ The matrix R has first row (1,1). A strict inequality would miss it. For a produ
 
 <Math tex="PA=PB\ \Longrightarrow\ P^{-1}PA=P^{-1}PB\ \Longrightarrow\ A=B." display />
 
-For invertible P and Q, the proposed equality below forces P = Q. If those factors are distinct, the original equality is impossible.
+For invertible P and Q, the proposed equality below forces $P = Q$. If those factors are distinct, the original equality is impossible.
 
 <Math tex="PQP=PQQ\quad\Longrightarrow\quad QP=QQ\quad\Longrightarrow\quad P=Q." display />
 
@@ -55,8 +55,8 @@ A nonempty word cannot equal the identity: its first letter creates a positive o
 
 <Math tex="RLR=\begin{pmatrix}2&3\\1&2\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }\begin{pmatrix}2&1\\1&1\end{pmatrix}\xrightarrow{\ \cdot L^{-1}\ }\begin{pmatrix}1&1\\0&1\end{pmatrix}\xrightarrow{\ \cdot R^{-1}\ }I_2." display />
 
-The inequalities are $2\le3$, then $2>1$, then $1\le1$. Read the removed letters in reverse to recover RLR. This is a proof for the specific alphabet $\{R,L\}$, not for arbitrary invertible matrices.
+The inequalities are $2\le3$, then $2>1$, then $1\le1$. Read the removed letters in reverse to recover $RLR$. This is a proof for the specific alphabet $\{R,L\}$, not for arbitrary invertible matrices.
 
-<Exercise question={"Why is the first row (1,0) insufficient to identify the empty word?"}>
+<Exercise question="Why is the first row $(1,0)$ insufficient to identify the empty word?">
 Both $I_2$ and L have that first row. Test the full matrix for $I_2$ before decoding the last letter.
 </Exercise>

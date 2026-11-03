@@ -1,0 +1,6 @@
+---
+import { renderMathText } from '../lib/math-text';
+interface Props { text: string; }
+const { text } = Astro.props;
+---
+<Fragment set:html={renderMathText(text)} />

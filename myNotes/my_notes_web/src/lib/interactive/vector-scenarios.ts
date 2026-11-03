@@ -55,27 +55,27 @@ export const vectorPresets = {
         prompt:
           "Keep u fixed and move v. Compare positive, negative, and zero determinants. Can you collapse the area without making v zero?",
         explanation:
-          "The columns are u = (1, 0) and v = (x, y), so det A = y. Horizontal movement changes the shear, not the area. Moving v below the x-axis reverses orientation; y = 0 collapses the image to a line.",
+          "The columns are $u = (1,0)$ and $v = (x,y)$, so $\\det A = y$. Horizontal movement changes the shear, not the area. Moving v below the x-axis reverses orientation; $y = 0$ collapses the image to a line.",
         caption:
-          "The filled parallelogram is the image of the unit square. Its area is |det A|; the sign records orientation.",
+          "The filled parallelogram is the image of the unit square. Its area is $|\\det A|$; the sign records orientation.",
       },
       de: {
         title: "Fläche, Zusammenfallen und Orientierung",
         prompt:
           "Halte u fest und bewege v. Vergleiche positive, negative und verschwindende Determinanten. Kannst du die Fläche auf null bringen, ohne v zum Nullvektor zu machen?",
         explanation:
-          "Die Spalten sind u = (1, 0) und v = (x, y), also det A = y. Eine horizontale Bewegung verändert die Scherung, nicht die Fläche. Unterhalb der x-Achse kehrt sich die Orientierung um; bei y = 0 fällt das Bild auf eine Gerade zusammen.",
+          "Die Spalten sind $u = (1,0)$ und $v = (x,y)$, also $\\det A = y$. Eine horizontale Bewegung verändert die Scherung, nicht die Fläche. Unterhalb der x-Achse kehrt sich die Orientierung um; bei $y = 0$ fällt das Bild auf eine Gerade zusammen.",
         caption:
-          "Das ausgefüllte Parallelogramm ist das Bild des Einheitsquadrats. Seine Fläche ist |det A|; das Vorzeichen beschreibt die Orientierung.",
+          "Das ausgefüllte Parallelogramm ist das Bild des Einheitsquadrats. Seine Fläche ist $|\\det A|$; das Vorzeichen beschreibt die Orientierung.",
       },
       es: {
         title: "Área, colapso y orientación",
         prompt:
           "Mantén u fijo y mueve v. Compara determinantes positivos, negativos y nulos. ¿Puedes anular el área sin convertir v en cero?",
         explanation:
-          "Las columnas son u = (1, 0) y v = (x, y), así que det A = y. El movimiento horizontal cambia el cizallamiento, pero no el área. Al bajar v del eje x se invierte la orientación; con y = 0 la imagen se reduce a una recta.",
+          "Las columnas son $u = (1,0)$ y $v = (x,y)$, así que $\\det A = y$. El movimiento horizontal cambia el cizallamiento, pero no el área. Al bajar v del eje x se invierte la orientación; con $y = 0$ la imagen se reduce a una recta.",
         caption:
-          "El paralelogramo coloreado es la imagen del cuadrado unidad. Su área es |det A|; el signo indica la orientación.",
+          "El paralelogramo coloreado es la imagen del cuadrado unidad. Su área es $|\\det A|$; el signo indica la orientación.",
       },
     },
   },

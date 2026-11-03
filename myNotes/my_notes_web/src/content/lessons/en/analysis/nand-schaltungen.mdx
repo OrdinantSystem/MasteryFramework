@@ -19,7 +19,7 @@ thumbnail: "nand"
 
 <Math tex="\colA{A}\mid \colB{B}:=\neg(\colA{A}\land \colB{B})" display />
 
-NAND outputs 0 only when both inputs are 1. Its symbol may be written | or ↑. Here | denotes NAND, while a | n in the earlier number-theory example denoted divisibility: context matters. In a circuit, the small circle on the output means negation.
+NAND outputs 0 only when both inputs are 1. Its symbol may be written | or ↑. Here | denotes NAND, while $a | n$ in the earlier number-theory example denoted divisibility: context matters. In a circuit, the small circle on the output means negation.
 
 ## Change inputs and follow the wires
 
@@ -35,4 +35,4 @@ NOT connects A to both inputs of one NAND. AND reuses the first NAND output at b
 
 ## Following one signal
 
-Take A = 1 and B = 0 in the OR circuit. The first two gates produce ¬A = 0 and ¬B = 1. The final NAND negates 0 ∧ 1, so its output is 1. With A = B = 0, the first gates both output 1 and the final output is 0. These traces explain the construction; the identity follows because ¬(¬A ∧ ¬B) = A ∨ B by De Morgan and double negation. One signal may feed several gate inputs without requiring the original gate to be rebuilt.
+Take $A = 1$ and $B = 0$ in the OR circuit. The first two gates produce $\neg A = 0$ and $\neg B = 1$. The final NAND negates $0 \land  1$, so its output is 1. With $A = B = 0$, the first gates both output 1 and the final output is 0. These traces explain the construction; the identity follows because $\neg (\neg A \land  \neg B) = A \lor  B$ by De Morgan and double negation. One signal may feed several gate inputs without requiring the original gate to be rebuilt.

@@ -17,7 +17,7 @@ thumbnail: "logic"
 
 ## Read one row at a time
 
-| A | B | ¬A | A ∧ B | A ∨ B | A ⇒ B | A ⇔ B |
+| $A$ | $B$ | $\neg A$ | $A \land  B$ | $A \lor  B$ | $A \Rightarrow  B$ | $A \Leftrightarrow  B$ |
 |---|---|---|---|---|---|---|
 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |
 | 0 | 1 | 1 | 0 | 1 | 1 | 0 |
@@ -28,7 +28,7 @@ AND requires both inputs. Inclusive OR requires at least one, so it also accepts
 
 ## Always, never, or sometimes
 
-A tautology is true for every assignment, as in A ∨ ¬A. A contradiction is false for every assignment, as in A ∧ ¬A. A contingency varies with the assignment. A ⇒ B is a contingency, even though particular false-premise instances are true.
+A tautology is true for every assignment, as in $A \lor  \neg A$. A contradiction is false for every assignment, as in $A \land  \neg A$. A contingency varies with the assignment. $A \Rightarrow  B$ is a contingency, even though particular false-premise instances are true.
 
 ## Negating an implication
 
@@ -38,4 +38,4 @@ To refute “if I pass, I buy dinner”, I must pass and not buy dinner. Negatin
 
 ## Reading an implication
 
-A ⇒ B rules out just one situation: A happens and B does not. Consider “if a number is divisible by 4, it is even”. An odd number does not meet the premise, so it cannot contradict the claim. This is why a false premise gives a true implication in the table. It does not prove a causal connection or establish that B is true on its own. For A ⇔ B, both directions must hold.
+$A \Rightarrow  B$ rules out just one situation: $A$ happens and $B$ does not. Consider “if a number is divisible by 4, it is even”. An odd number does not meet the premise, so it cannot contradict the claim. This is why a false premise gives a true implication in the table. It does not prove a causal connection or establish that $B$ is true on its own. For $A \Leftrightarrow  B$, both directions must hold.

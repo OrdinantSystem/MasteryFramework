@@ -1,10 +1,11 @@
 /** Developer catalog. Keep examples executable in pages/library.astro. */
 export const assets = [
+ {id:'mind-map',name:'Interactive mind map',purpose:'Compare concepts, branches, and named cross-links; inspect the reasons and limits of each relationship.',example:'<Interactive kind="mind-map" preset="study-session" id="example-study-map" />'},
  {id:'relation-map',name:'Labeled concept relationships',purpose:'Distinguish definition, consequence, and a failed converse in a source-checked map.',example:'<RelationMap />'},
  {id:'learning-cycle',name:'Learning process graph',purpose:'Localized branching process with explicit repair and delayed-review loops; compact screens use the same node/edge data as a readable list.',example:'<ProcessDiagram preset="cycle" id="example-cycle" />'},
- {id:'learning-mapping',name:'Relational map comparison',purpose:'Compare related words with justified, named relationships.',example:'<LearningFigure kind="mapping" />'},
+ {id:'learning-mapping',name:'Relational map comparison',purpose:'Compare study-method terms with an explicit relationship.',example:'<LearningFigure kind="mapping" />'},
  {id:'learning-methods',name:'Four method roles',purpose:'Give each method a job without presenting opinion tiers as scientific scores.',example:'<LearningFigure kind="methods" />'},
- {id:'learning-practice',name:'Blocked and mixed practice',purpose:'Show problem-type selection and distinguish interleaving from changing question angles.',example:'<LearningFigure kind="interleaving" />'},
+ {id:'learning-practice',name:'Blocked and mixed practice',purpose:'Define three integer-reasoning methods, compare blocked/mixed schedules, and reveal justified strategy choices.',example:'<LearningFigure kind="interleaving" />'},
  {id:'learning-spacing',name:'Review timeline',purpose:'Illustrative day labels with explicit adaptive-timing caveat.',example:'<LearningFigure kind="spacing" />'},
  {id:'learning-bloom',name:'Question lens',purpose:'Change the cognitive demand for one topic; readable complete initial content without JavaScript.',example:'<QuestionLens />'},
  {id:'learning-template',name:'Study template',purpose:'Show and download a blank localized Markdown template; no learner data is saved.',example:'<StudyTemplate kind="session" />'},
@@ -65,7 +66,7 @@ export const assets = [
   {
     id: "rotation",
     name: "Quarter-turn powers",
-    purpose: "Compare repeated quarter-turns of the fixed example vector.",
+    purpose: "Drag a rotation, inspect its matrix, and snap to quarter-turn powers of J.",
     example: '<Interactive kind="rotation" />',
   },
   {

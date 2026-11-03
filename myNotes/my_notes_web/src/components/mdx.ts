@@ -15,8 +15,10 @@ import LearningFigure from './LearningFigure.astro';
 import QuestionLens from './QuestionLens.astro';
 import StudyTemplate from './StudyTemplate.astro';
 import RelationMap from './RelationMap.astro';
+import MindMap from './interactive/MindMap.astro';
 export const learningComponents = {
   Math,
+  MindMap,
   RelationMap,
   StudyTemplate,
   ProcessDiagram,

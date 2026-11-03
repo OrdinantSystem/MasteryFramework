@@ -6,3 +6,6 @@ export const nand=(a:boolean,b:boolean)=>!(a&&b);
 export const formula:Record<Operation,string>={implication:'A ⇒ B',contrapositive:'¬B ⇒ ¬A',converse:'B ⇒ A',inverse:'¬A ⇒ ¬B',not:'A | A',and:'(A | B) | (A | B)',or:'(A | A) | (B | B)'};
 export const assignments=[[false,false],[false,true],[true,false],[true,true]] as const;
 export const equivalent=(x:Operation,y:Operation)=>assignments.every(([a,b])=>evaluate(x,a,b)===evaluate(y,a,b));
+
+/** TeX counterparts for visible equations; plain formulas remain useful for SVG descriptions. */
+export const formulaTex:Record<Operation,string>={implication:'A \\Rightarrow B',contrapositive:'\\neg B \\Rightarrow \\neg A',converse:'B \\Rightarrow A',inverse:'\\neg A \\Rightarrow \\neg B',not:'A \\mid A',and:'(A \\mid B) \\mid (A \\mid B)',or:'(A \\mid A) \\mid (B \\mid B)'};

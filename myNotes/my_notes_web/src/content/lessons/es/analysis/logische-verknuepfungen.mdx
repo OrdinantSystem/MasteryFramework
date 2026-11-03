@@ -17,18 +17,18 @@ thumbnail: "logic"
 
 ## Lee una fila cada vez
 
-| A | B | ¬A | A ∧ B | A ∨ B | A ⇒ B | A ⇔ B |
+| $A$ | $B$ | $\neg A$ | $A \land  B$ | $A \lor  B$ | $A \Rightarrow  B$ | $A \Leftrightarrow  B$ |
 |---|---|---|---|---|---|---|
 | 0 | 0 | 1 | 0 | 0 | 1 | 1 |
 | 0 | 1 | 1 | 0 | 1 | 1 | 0 |
 | 1 | 0 | 0 | 0 | 1 | 0 | 0 |
 | 1 | 1 | 0 | 1 | 1 | 1 | 1 |
 
-Y exige ambas entradas. O inclusivo exige al menos una y admite ambas. NO invierte el valor de verdad. Una implicación solo falla con premisa verdadera y conclusión falsa. La equivalencia exige valores de verdad iguales, incluso si ambos son falsos.
+$Y$ exige ambas entradas. O inclusivo exige al menos una y admite ambas. NO invierte el valor de verdad. Una implicación solo falla con premisa verdadera y conclusión falsa. La equivalencia exige valores de verdad iguales, incluso si ambos son falsos.
 
 ## Siempre, nunca o a veces
 
-Una tautología es verdadera en toda asignación, como A ∨ ¬A. Una contradicción es falsa en todas, como A ∧ ¬A. Una contingencia varía según la asignación. A ⇒ B es contingente, aunque sus casos con premisa falsa sean verdaderos.
+Una tautología es verdadera en toda asignación, como $A \lor  \neg A$. Una contradicción es falsa en todas, como $A \land  \neg A$. Una contingencia varía según la asignación. $A \Rightarrow  B$ es contingente, aunque sus casos con premisa falsa sean verdaderos.
 
 ## Negar una implicación
 
@@ -38,4 +38,4 @@ Para refutar «si apruebo, invito a cenar», debo aprobar y no invitar. Negar am
 
 ## Leer una implicación
 
-A ⇒ B excluye una sola situación: ocurre A y no B. Considera «si un número es divisible por 4, es par». Un impar no cumple la premisa y no contradice la afirmación. Por eso una premisa falsa da una implicación verdadera en la tabla. No demuestra causalidad ni que B sea verdadero por sí solo. A ⇔ B exige ambas direcciones.
+$A \Rightarrow  B$ excluye una sola situación: ocurre $A$ y no $B$. Considera «si un número es divisible por 4, es par». Un impar no cumple la premisa y no contradice la afirmación. Por eso una premisa falsa da una implicación verdadera en la tabla. No demuestra causalidad ni que $B$ sea verdadero por sí solo. $A \Leftrightarrow  B$ exige ambas direcciones.

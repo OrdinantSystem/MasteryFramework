@@ -31,18 +31,18 @@ Usa absorción (4) y después complemento (5). Así quedan establecidas 7a y 7b 
 
 <Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
 
-En ambas cadenas se usa distributividad al revés. La dualidad intercambia ∧ con ∨ y 0 con 1; el segundo cálculo se muestra explícitamente para comprobar cada paso permitido.
+En ambas cadenas se usa distributividad al revés. La dualidad intercambia $\land$ con $\lor$ y 0 con 1; el segundo cálculo se muestra explícitamente para comprobar cada paso permitido.
 
 ## Cómo se encuentra la prueba
 
-El objetivo A ∨ A parece demasiado pequeño para aplicar las leyes. Combinarlo con ∧1 conserva su valor y permite sustituir 1 por A ∨ ¬A. Los factores comparten A; la distributividad inversa produce A ∨ (A ∧ ¬A). El complemento elimina la segunda parte. La estrategia es expandir para simplificar después, sin exigir que cada línea sea más corta. H₁ y H₂ justifican la expansión sin suponer idempotencia.
+El objetivo $A \lor  A$ parece demasiado pequeño para aplicar las leyes. Combinarlo con $\land 1$ conserva su valor y permite sustituir 1 por $A \lor  \neg A$. Los factores comparten A; la distributividad inversa produce $A \lor  (A \land  \neg A)$. El complemento elimina la segunda parte. La estrategia es expandir para simplificar después, sin exigir que cada línea sea más corta. $H_1$ y $H_2$ justifican la expansión sin suponer idempotencia.
 
 ## Práctica con las leyes iniciales
 
 Explicita las reglas permitidas en esta deducción breve.
 
-<Exercise question="Reduce (B ∧ A) ∨ A usando solo las leyes 2 y 4.">
+<Exercise question="Reduce $(B \land  A) \lor  A$ usando solo las leyes 2 y 4.">
 
-La conmutatividad da A ∨ (A ∧ B). La absorción da A. Se usa conmutatividad tanto fuera como dentro; no hace falta idempotencia.
+La conmutatividad da $A \lor  (A \land  B)$. La absorción da A. Se usa conmutatividad tanto fuera como dentro; no hace falta idempotencia.
 
 </Exercise>

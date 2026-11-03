@@ -33,16 +33,16 @@ Ein Diagonaleintrag null verliert die betreffende Eingabekoordinate; eine Umkehr
 
 <Math tex="A^{-1}=A\iff A^2=I_n." display />
 
-Bei einer Vorzeichenmatrix ist jeder Diagonaleintrag +1 oder −1. Zweimaliges Anwenden stellt jede Koordinate wieder her, weil jedes Vorzeichen quadriert wird.
+Bei einer Vorzeichenmatrix ist jeder Diagonaleintrag $+1$ oder $-1$. Zweimaliges Anwenden stellt jede Koordinate wieder her, weil jedes Vorzeichen quadriert wird.
 
 <Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\quad d_i\in\{-1,1\}\quad\Longrightarrow\quad D^2=\operatorname{diag}(1,\ldots,1)=I_n." display />
 
-<Flow nodes={[{"label": "Eingabe", "tex": "\\binom{x}{y}", "detail": "Ursprünglicher Vektor"}, {"label": "Eine Anwendung", "tex": "\\binom{x}{-y}", "detail": "Eine Koordinate spiegeln"}, {"label": "Zweite Anwendung", "tex": "\\binom{x}{y}", "detail": "Eingabe wiederherstellen"}]} caption={"D = diag(1, −1): Zwei Spiegelungen stellen den Vektor wieder her."} />
+<Flow nodes={[{"label": "Eingabe", "tex": "\\binom{x}{y}", "detail": "Ursprünglicher Vektor"}, {"label": "Eine Anwendung", "tex": "\\binom{x}{-y}", "detail": "Eine Koordinate spiegeln"}, {"label": "Zweite Anwendung", "tex": "\\binom{x}{y}", "detail": "Eingabe wiederherstellen"}]} caption={"$D = \\operatorname{diag}(1,-1)$: Zwei Spiegelungen stellen den Vektor wieder her."} />
 
 <Note title={"Invertierbar heißt nicht durch Kippungen erzeugbar"}>
 Jede Vorzeichenmatrix ist invertierbar. Ob sie ein Produkt der zugelassenen Kippungen ist, ist eine andere Frage; sie wird im nächsten Abschnitt durch die Parität beantwortet.
 </Note>
 
-<Exercise question={"Ist diag(1,0) eine Involution?"}>
+<Exercise question="Ist $\operatorname{diag}(1,0)$ eine Involution?">
 Nein. Ihr Quadrat ist zwar dieselbe Matrix, aber nicht die Einheitsmatrix. Die Nullkoordinate verhindert außerdem die Invertierbarkeit.
 </Exercise>

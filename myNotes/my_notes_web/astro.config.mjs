@@ -32,7 +32,23 @@ function centeredTables() {
     const visit = (node) => {
       if (!node.children) return;
       node.children = node.children.map((child) => {
-        if (child.type === "element" && child.tagName === "table")
+        if (child.type === "element" && child.tagName === "table") {
+          // Analysis truth tables contain only binary values in their body.
+          // Leave numerical and explanatory tables in other contexts untouched.
+          if (String(file.path || "").includes("/analysis/")) {
+            const cells = [];
+            const collect = (node) => {
+              if (node.type === "element" && node.tagName === "td") cells.push(node);
+              else node.children?.forEach(collect);
+            };
+            collect(child);
+            const value = (cell) => cell.children?.every((node) => node.type === "text")
+              ? cell.children.map((node) => node.value).join("").trim()
+              : "";
+            if (cells.length && cells.every((cell) => /^[01]$/.test(value(cell)))) {
+              for (const cell of cells) cell.properties["data-truth-value"] = value(cell);
+            }
+          }
           return {
             type: "element",
             tagName: "div",
@@ -44,6 +60,7 @@ function centeredTables() {
             },
             children: [child],
           };
+        }
         visit(child);
         return child;
       });

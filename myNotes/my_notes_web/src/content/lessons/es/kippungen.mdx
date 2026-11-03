@@ -32,7 +32,7 @@ Para la matriz de ejemplo $B$:
 
 <Math tex="\colB{B}=\begin{pmatrix}1&2&3\\4&5&6\\7&8&9\end{pmatrix},\qquad \colA{A}\colB{B}=\begin{pmatrix}1&2&3\\11&13&15\\7&8&9\end{pmatrix}." display />
 
-La tercera fila se suma a la segunda: $Z_2\leftarrow Z_2+Z_3$. Aquí $Z_i$ designa la fila $i$, conservando la notación de los apuntes. Cada columna de $B$ se transforma mediante $A$ y cambia la misma coordenada en todas ellas.
+La tercera fila se suma a la segunda: $Z_2\leftarrow Z_2+Z_3$. Aquí $Z_i$ designa la fila $i$, conservando la notación de los apuntes. Cada columna de $B$ se transforma mediante $A$ $y$ cambia la misma coordenada en todas ellas.
 
 ## Multiplicar por la derecha cambia columnas
 
@@ -40,7 +40,7 @@ En cambio, $BA$ da:
 
 <Math tex="\colB{B}\colA{A}=\begin{pmatrix}1&2&5\\4&5&11\\7&8&17\end{pmatrix}." display />
 
-La segunda columna se suma a la tercera: $S_3\leftarrow S_3+S_2$, donde $S_j$ designa la columna $j$. Las posiciones $2$ y $3$ desempeñan papeles distintos en las operaciones por filas y por columnas.
+La segunda columna se suma a la tercera: $S_3\leftarrow S_3+S_2$, donde $S_j$ designa la columna $j$. Las posiciones $2$ $y$ $3$ desempeñan papeles distintos en las operaciones por filas $y$ por columnas.
 
 | Producto | Qué cambia | Operación |
 | --- | --- | --- |
@@ -49,7 +49,7 @@ La segunda columna se suma a la tercera: $S_3\leftarrow S_3+S_2$, donde $S_j$ de
 
 ## La regla general
 
-Sea $A_t=I_n+tE_{ij}$ con $i\ne j$. La matriz $E_{ij}$ tiene un $1$ en $(i,j)$ y ceros en el resto. Para dimensiones compatibles:
+Sea $A_t=I_n+tE_{ij}$ con $i\ne j$. La matriz $E_{ij}$ tiene un $1$ en $(i,j)$ $y$ ceros en el resto. Para dimensiones compatibles:
 
 <Math tex="\colA{A}_tB:\quad Z_i\leftarrow Z_i+tZ_j\qquad \colB{B}\colA{A}_t:\quad S_j\leftarrow S_j+tS_i." display />
 
@@ -61,6 +61,6 @@ Como $i\ne j$, tenemos $E_{ij}^2=0$. La inversa es $A_t^{-1}=I_n-tE_{ij}$: resta
 
 <Math tex="(I_n+tE_{ij})(I_n-tE_{ij})=I_n-t^2E_{ij}^2=I_n." display />
 
-<Exercise question="¿Qué hace la multiplicación por la izquierda mediante I₃ − 2E₂₃? ¿Cómo la deshaces?">
+<Exercise question="¿Qué hace la multiplicación por la izquierda mediante $I_3 - 2E_{23}$? ¿Cómo la deshaces?">
 Sustituye $Z_2$ por $Z_2-2Z_3$. La inversa vuelve a sumar $2Z_3$ a la segunda fila. Su matriz es $I_3+2E_{23}$.
 </Exercise>

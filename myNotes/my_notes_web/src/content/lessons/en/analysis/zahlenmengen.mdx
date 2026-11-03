@@ -15,28 +15,87 @@ prerequisites: []
 thumbnail: "number-sets"
 ---
 
+{/* The definitions, worked classifications, and proofs below are authored teaching additions. */}
+
 ## An inclusion picture
 
 <NumberDomains />
 
-Each inner set is contained in the next outer set. The examples placed outside an inner box belong to the surrounding set but not that inner set. Irrational real numbers lie inside ℝ and outside ℚ. Non-real complex numbers lie outside ℝ.
+The boxes show **membership**, not the size of a number. Every number in an inner box also belongs to every surrounding box. For example, $3$ is natural, integer, rational, real, and complex at the same time. When asked to classify a number, we usually name the smallest of these sets that contains it.
 
-## What makes a number rational?
+## What each set contains
 
-<Math tex="\mathbb Q=\left\{\frac pq:p\in\mathbb Z,\ q\in\mathbb Z\setminus\{0\}\right\}" display />
+- **Natural numbers** $\mathbb{N}=\{1,2,3,\ldots\}$ count whole objects. Some courses include $0$; this lesson starts at $1$.
+- **Integers** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ include zero and negative whole numbers. Thus $-3\in\mathbb{Z}$, but $-3\notin\mathbb{N}$.
+- **Rational numbers** $\mathbb{Q}$ are ratios of integers with nonzero denominator. The numerator may be negative or zero; the denominator cannot be zero.
 
-A rational number has an integer numerator and a nonzero integer denominator. Its decimal expansion terminates or eventually repeats. √2, √3, and π are irrational. The imaginary unit satisfies i² = −1. The convention about whether 0 belongs to ℕ varies between courses; here it does not.
+<Math tex="\mathbb{Q}=\left\{\frac{p}{q}:p,q\in\mathbb{Z},\ q\ne0\right\}" display />
 
-## Classifying a number
+- **Real numbers** $\mathbb{R}$ are the numbers on the number line. They include the rationals and the **irrationals**: real numbers that cannot be written as such a ratio. For example, $\sqrt{2}$ is real and irrational. The irrational numbers form $\mathbb{R}\setminus\mathbb{Q}$, a part of the real numbers rather than another surrounding box.
+- **Complex numbers** $\mathbb{C}$ have the form $a+bi$, where $a,b\in\mathbb{R}$ and $i^2=-1$. A real number has imaginary part $0$: for example, $3=3+0i$. The number $2+3i$ has nonzero imaginary part, so it is not real.
 
-Start with the smallest set that contains the number. −3 belongs to ℤ, hence also to ℚ, ℝ, and ℂ; write −3/1 to see why it is rational. The number 0.125 equals 1/8, so it lies in ℚ but not ℤ. √2 lies in ℝ outside ℚ. Inclusion is one-way: every integer is rational, but 1/2 shows that not every rational is an integer. The boxes describe membership, not how large a number is.
+## Why the inclusions are strict
+
+The symbol $\subsetneq$ means “contained in, but not equal to”. To justify it, we need both an inclusion and an example that prevents equality.
+
+Every natural number is an integer. Every integer $n$ is rational because $n=n/1$. Every rational number is real, and every real number $a$ is complex because $a=a+0i$. The first and third inclusions are part of how these number systems are constructed; the fraction and complex forms make the other two explicit.
+
+<Math tex="\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}" display />
+
+Here are witnesses that the sets are different: $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$, and $i\in\mathbb{C}\setminus\mathbb{R}$. We justify the less immediate examples below. In particular, being rational does not imply being an integer.
+
+## Proof: a terminating or repeating decimal is rational
+
+A terminating decimal can be written over a power of ten. For example,
+
+<Math tex="0.125=\frac{125}{1000}=\frac18" display />
+
+Both entries of the last fraction are integers and its denominator is nonzero, so $0.125\in\mathbb{Q}$. Since $0<0.125<1$, it is not an integer. Its smallest set in the diagram is therefore $\mathbb{Q}$.
+
+For a repeating decimal, shift one full repeating block and subtract. Set $x=0.\overline{27}=0.272727\ldots$. Multiplication by $100$ shifts the two-digit block:
+
+<Math tex="\begin{aligned}100x&=27.272727\ldots\\x&=0.272727\ldots\\99x&=27\\x&=\frac{27}{99}=\frac3{11}.\end{aligned}" display />
+
+The infinite tails are identical, so they cancel exactly; this is not a rounded decimal calculation. The same method works for any eventually repeating decimal, first shifting past any nonrepeating beginning. Conversely, long division of a rational number either ends or repeats: only finitely many remainders are possible. Merely having infinitely many decimal places does **not** make a number irrational.
+
+## Proof: a real number need not be rational
+
+The number $\sqrt{2}$ is the positive real number whose square is $2$. Suppose it were rational. Choose a fraction $\sqrt{2}=p/q$ in lowest terms, with integers $p,q$ and $q>0$. Squaring gives
+
+<Math tex="p^2=2q^2." display />
+
+Thus $p^2$ is even, which forces $p$ to be even. To see why, an odd integer has the form $2k+1$, and
+
+<Math tex="(2k+1)^2=2(2k^2+2k)+1," display />
+
+which is odd. An even square cannot therefore come from an odd integer.
+
+Write $p=2k$ and substitute into the assumed equation:
+
+<Math tex="4k^2=2q^2\quad\Longrightarrow\quad q^2=2k^2." display />
+
+The same argument makes $q$ even. Now $p$ and $q$ share the factor $2$, contradicting our choice of a fraction in lowest terms. Therefore $\sqrt{2}\notin\mathbb{Q}$, although $\sqrt{2}\in\mathbb{R}$. See [the expanded contradiction proof](../widerspruch-und-irrationalitaet/) for a closer explanation of that strategy.
+
+A radical sign alone is not a test for irrationality: $\sqrt{9}=3$ is natural. What matters is the number represented, not the way it is written.
+
+## Proof: why the imaginary unit is not real
+
+For every real number $t$, the square $t^2$ is nonnegative: squaring either a positive or a negative number gives a positive result, and $0^2=0$. No real number can therefore satisfy $t^2=-1$. Since $i^2=-1$, the number $i$ cannot be real.
+
+This also explains why $2+3i$ is not real. If it were real, subtracting $2$ and dividing by $3$ would make $i=((2+3i)-2)/3$ real, a contradiction. Complex numbers extend the real numbers so that equations such as $z^2+1=0$ have solutions: $z=i$ and $z=-i$.
 
 ## Practice
 
-Use the inclusion picture to justify the smallest applicable set, rather than listing memberships from memory.
+For each answer, give a representation or an argument, then use the inclusions to identify the larger sets as well.
 
-<Exercise question="Where do −5/2 and √9 belong?">
+<Exercise question="What is the smallest set in the diagram containing each of $-5/2$, $\sqrt{9}$, $0$, and $0.\overline{6}$?">
 
-−5/2 is rational but not an integer. √9 = 3 is natural under the convention used here, so it also belongs to all the larger sets. A radical symbol alone does not mean a number is irrational.
+$-5/2$ is a ratio of integers but lies strictly between $-3$ and $-2$, so its smallest set is $\mathbb{Q}$. The number $\sqrt{9}=3$ lies in $\mathbb{N}$. Under our convention, $0$ lies in $\mathbb{Z}$ but not in $\mathbb{N}$. Finally, $0.\overline{6}=2/3$ lies in $\mathbb{Q}$ but not in $\mathbb{Z}$. Each number also belongs to all the surrounding sets.
+
+</Exercise>
+
+<Exercise question="Is the sum of two irrational numbers always irrational? Test the claim with $\sqrt{2}$ and $-\sqrt{2}$.">
+
+No. Both numbers are irrational: if $-\sqrt{2}$ were rational, multiplying it by $-1$ would make $\sqrt{2}$ rational as well. But their sum is $0$, which is rational. Membership in a set does not automatically tell us that every arithmetic operation stays in that set.
 
 </Exercise>

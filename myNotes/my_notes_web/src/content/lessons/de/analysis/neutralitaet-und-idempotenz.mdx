@@ -31,18 +31,18 @@ Nutze Absorption (4), dann Komplement (5). Damit stehen 7a und 7b fest, bevor si
 
 <Math tex="\begin{aligned}\colA{A}\land \colA{A}&\overset{H_1}=(\colA{A}\land \colA{A})\lor0\\&\overset{5}=(\colA{A}\land \colA{A})\lor(\colA{A}\land\neg \colA{A})\\&\overset{3}=\colA{A}\land(\colA{A}\lor\neg \colA{A})\\&\overset{5}=\colA{A}\land1\\&\overset{H_2}=\colA{A}\end{aligned}" display />
 
-Distributivität wird in beiden Ketten rückwärts angewendet. Dualität vertauscht ∧ mit ∨ und 0 mit 1; die zweite Rechnung steht ausdrücklich da, damit jeder erlaubte Schritt geprüft werden kann.
+Distributivität wird in beiden Ketten rückwärts angewendet. Dualität vertauscht $\land$ mit $\lor$ und 0 mit 1; die zweite Rechnung steht ausdrücklich da, damit jeder erlaubte Schritt geprüft werden kann.
 
 ## Wie man den Beweis findet
 
-Das Ziel A ∨ A bietet den erlaubten Gesetzen zunächst wenig Ansatz. Verknüpfen mit ∧1 erhält den Wert und schafft Platz für A ∨ ¬A. Nun teilen beide Faktoren A; rückwärts gelesene Distributivität macht daraus A ∨ (A ∧ ¬A). Das Komplement beseitigt den zweiten Teil. Der Beweis erweitert gezielt und vereinfacht danach. Nicht jede Zeile muss kürzer werden. H₁ und H₂ erlauben die Erweiterung ohne vorausgesetzte Idempotenz.
+Das Ziel $A \lor  A$ bietet den erlaubten Gesetzen zunächst wenig Ansatz. Verknüpfen mit $\land 1$ erhält den Wert und schafft Platz für $A \lor  \neg A$. Nun teilen beide Faktoren A; rückwärts gelesene Distributivität macht daraus $A \lor  (A \land  \neg A)$. Das Komplement beseitigt den zweiten Teil. Der Beweis erweitert gezielt und vereinfacht danach. Nicht jede Zeile muss kürzer werden. $H_1$ und $H_2$ erlauben die Erweiterung ohne vorausgesetzte Idempotenz.
 
 ## Mit den Grundgesetzen üben
 
 Benenne auch in dieser kurzen Herleitung die erlaubten Regeln.
 
-<Exercise question="Vereinfache (B ∧ A) ∨ A nur mit Gesetzen 2 und 4.">
+<Exercise question="Vereinfache $(B \land  A) \lor  A$ nur mit Gesetzen 2 und 4.">
 
-Kommutativität ergibt A ∨ (A ∧ B). Absorption liefert A. Gesetz 2 wird für das äußere ODER und das innere UND genutzt; Idempotenz ist nicht nötig.
+Kommutativität ergibt $A \lor  (A \land  B)$. Absorption liefert A. Gesetz 2 wird für das äußere ODER und das innere UND genutzt; Idempotenz ist nicht nötig.
 
 </Exercise>

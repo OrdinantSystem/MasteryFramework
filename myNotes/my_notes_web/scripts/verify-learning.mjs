@@ -22,3 +22,26 @@ for(const locale of ['en','de','es']){
  for(const source of sources){assert.match(source,/sourcePages: \[\]/);assert.match(source,/sourceLocations:/);assert.match(source,/reviewStatus: "unreviewed"/);}
 }
 console.log('Verified three process graphs and branches, six question lenses, nine localized template downloads, and 51 learning lessons with section/timestamp provenance.');
+
+// Directed mapping has different structural risks from the process diagrams.
+const {validateMindMap,connectedEdges}=await import('../src/lib/learning/mind-map.ts');
+const {studyMap,teachingMap}=await import('../src/lib/learning/mind-map-presets.ts');
+validateMindMap(studyMap);
+validateMindMap(teachingMap);
+assert.equal(studyMap.nodes.length,7);
+assert.equal(studyMap.edges.filter(e=>e.kind==='cross').length,2);
+assert.ok(connectedEdges(studyMap,'retrieve').some(e=>e.from==='map'&&e.to==='retrieve'));
+assert.ok(!studyMap.edges.some(e=>e.from==='feedback'&&e.to==='retrieve'),'Feedback and retrieval are not interchangeable');
+for(const mutate of [
+ d=>d.nodes.push({...d.nodes[0]}),
+ d=>d.nodes[0].x=Infinity,
+ d=>d.height=NaN,
+ d=>d.height=250,
+ d=>d.edges[0].to='missing',
+ d=>d.edges[0].to=d.edges[0].from,
+ d=>d.edges.push({...d.edges[0]}),
+ d=>d.edges=d.edges.filter(e=>e.to!=='repair'),
+ d=>d.edges[0].label.de='',
+ d=>d.edges[0].path='javascript:alert(1)',
+]) {const bad=structuredClone(studyMap);mutate(bad);assert.throws(()=>validateMindMap(bad));}
+console.log('Verified directed mind-map links, cross-branch relationships, reachability, localization, invalid endpoints, duplicate/self links, finite bounds, and route validation.');

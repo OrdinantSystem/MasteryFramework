@@ -15,9 +15,9 @@ prerequisites: ["eindeutiges-komplement"]
 thumbnail: "de-morgan"
 ---
 
-## 9a · Ein Komplement von A ∨ B
+## 9a · Ein Komplement von $A \lor  B$
 
-Setze X = A ∨ B und Y = ¬A ∧ ¬B. Zeige mit den bereits verfügbaren Gesetzen X ∧ Y = 0 und X ∨ Y = 1.
+Setze $X = A \lor  B$ und $Y = \neg A \land  \neg B$. Zeige mit den bereits verfügbaren Gesetzen $X \land  Y = 0$ und $X \lor  Y = 1$.
 
 <Math tex="\begin{aligned}X\land Y&\overset{2,3}=(\colA{A}\land\neg \colA{A}\land\neg \colB{B})\lor(\colB{B}\land\neg \colA{A}\land\neg \colB{B})\\&\overset{1,2,5}=(0\land\neg \colB{B})\lor(0\land\neg \colA{A})\\&\overset{2,7d}=0\lor0\overset6=0\end{aligned}" display />
 
@@ -25,23 +25,23 @@ Setze X = A ∨ B und Y = ¬A ∧ ¬B. Zeige mit den bereits verfügbaren Gesetz
 
 <Math tex="\neg(\colA{A}\lor \colB{B})=\neg \colA{A}\land\neg \colB{B}" display />
 
-Die Eindeutigkeit identifiziert Y mit ¬X. Damit ist die erste De-Morgan-Regel bewiesen; sie wurde nicht in ihrem eigenen Beweis verwendet.
+Die Eindeutigkeit identifiziert $Y$ mit $\neg X$. Damit ist die erste De-Morgan-Regel bewiesen; sie wurde nicht in ihrem eigenen Beweis verwendet.
 
 ## 10 · Doppelte Negation unabhängig beweisen
 
 <Math tex="\neg \colA{A}\lor \colA{A}=1,\quad\neg \colA{A}\land \colA{A}=0,\qquad\neg \colA{A}\lor\neg\neg \colA{A}=1,\quad\neg \colA{A}\land\neg\neg \colA{A}=0" display />
 
-Nach Gesetzen 2 und 5 sind A und ¬¬A beide Komplemente von ¬A. Eindeutigkeit ergibt ¬¬A = A. Dafür wird De Morgan nicht benötigt.
+Nach Gesetzen 2 und 5 sind $A$ und $\neg\neg A$ beide Komplemente von $\neg A$. Eindeutigkeit ergibt $\neg \neg A = A$. Dafür wird De Morgan nicht benötigt.
 
 ## 9b · Das zweite Gesetz herleiten
 
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
-Im mittleren Schritt wird 9a rückwärts mit ¬A und ¬B angewendet. Die Beweisreihenfolge lautet Eindeutigkeit → 9a und 10 → 9b.
+Im mittleren Schritt wird 9a rückwärts mit $\neg A$ und $\neg B$ angewendet. Die Beweisreihenfolge lautet Eindeutigkeit → 9a und 10 → 9b.
 
 ## Die Komplementstrategie
 
-Um ¬(A ∨ B) zu bestimmen, wird nicht vorausgesetzt, dass Negation sich verteilt. Stattdessen prüfen wir für einen Kandidaten Y die beiden Eigenschaften, die ein Komplement eindeutig bestimmen. Die erste Kette schließt gemeinsames Gelten aus, die zweite zeigt vollständige Abdeckung. Beide sind nötig. Für doppelte Negation vergleicht man direkt die beiden Komplemente von ¬A. Das zweite De-Morgan-Gesetz folgt dann aus bereits bewiesenen Ergebnissen ohne Zirkelschluss.
+Um $\neg (A \lor  B)$ zu bestimmen, wird nicht vorausgesetzt, dass Negation sich verteilt. Stattdessen prüfen wir für einen Kandidaten $Y$ die beiden Eigenschaften, die ein Komplement eindeutig bestimmen. Die erste Kette schließt gemeinsames Gelten aus, die zweite zeigt vollständige Abdeckung. Beide sind nötig. Für doppelte Negation vergleicht man direkt die beiden Komplemente von $\neg A$. Das zweite De-Morgan-Gesetz folgt dann aus bereits bewiesenen Ergebnissen ohne Zirkelschluss.
 
 ## Eine zusammengesetzte Aussage negieren
 
@@ -49,6 +49,6 @@ Die bewiesenen Identitäten erlauben nun das Umformen einer negierten Aussage oh
 
 <Exercise question="Negiere „A gilt und mindestens eines von B oder C gilt“.">
 
-Die Aussage ist A ∧ (B ∨ C). Ihre Negation ist ¬A ∨ ¬(B ∨ C), also ¬A ∨ (¬B ∧ ¬C). Das innere ODER wird beim Negieren zu UND. Nur alle Buchstaben zu negieren würde die Klammerung verfehlen.
+Die Aussage ist $A \land  (B \lor  C)$. Ihre Negation ist $\neg A \lor  \neg (B \lor  C)$, also $\neg A \lor  (\neg B \land  \neg C)$. Das innere ODER wird beim Negieren zu UND. Nur alle Buchstaben zu negieren würde die Klammerung verfehlen.
 
 </Exercise>

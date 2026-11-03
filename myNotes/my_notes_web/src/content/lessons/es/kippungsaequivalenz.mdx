@@ -21,17 +21,17 @@ Aquí dos matrices del mismo tamaño son equivalentes si una sucesión finita de
 
 <Math tex="A\sim B\iff B=PAQ." display />
 
-P y Q son productos de cizallamientos de tamaños adecuados. Los productos vacíos dan reflexividad; invertir las operaciones da simetría y concatenar sucesiones da transitividad.
+P $y$ Q son productos de cizallamientos de tamaños adecuados. Los productos vacíos dan reflexividad; invertir las operaciones da simetría $y$ concatenar sucesiones da transitividad.
 
 <Math tex="B=P_1AQ_1,\quad C=P_2BQ_2\quad\Longrightarrow\quad C=(P_2P_1)A(Q_1Q_2)." display />
 
 <Note title={"Qué permanece invariante"}>
-En matrices cuadradas, los cizallamientos conservan exactamente el determinante. En matrices 1×1 no hay cizallamientos no triviales; por eso $(a)\sim(b)$ se cumple exactamente cuando $a=b$.
+En matrices cuadradas, los cizallamientos conservan exactamente el determinante. En matrices $1\times 1$ no hay cizallamientos no triviales; por eso $(a)\sim(b)$ se cumple exactamente cuando $a=b$.
 </Note>
 
 ## Ejercicio 8: obtener una forma diagonal con cizallamientos
 
-Cada fila de la tabla muestra la matriz después de la operación indicada. Z representa una fila y S una columna. Los valores intermedios dan una demostración constructiva completa; no basta con comparar determinantes.
+Cada fila de la tabla muestra la matriz después de la operación indicada. Z representa una fila $y$ S una columna. Los valores intermedios dan una demostración constructiva completa; no basta con comparar determinantes.
 
 | Operación | Matriz |
 | --- | --- |
@@ -63,6 +63,6 @@ Si el curso solo permite coeficientes ±1, repite el cizallamiento unitario corr
 
 <Interactive kind="matrix-product" left={[[1,0],[3,1]]} right={[[1,2],[0,1]]} />
 
-<Exercise question={"¿Puede diag(2,3) ser equivalente a la identidad mediante cizallamientos?"}>
-No. Su determinante es 6 y el de la identidad es 1. Los cizallamientos no pueden cambiar ese valor.
+<Exercise question="¿Puede $\operatorname{diag}(2,3)$ ser equivalente a la identidad mediante cizallamientos?">
+No. Su determinante es 6 $y$ el de la identidad es 1. Los cizallamientos no pueden cambiar ese valor.
 </Exercise>

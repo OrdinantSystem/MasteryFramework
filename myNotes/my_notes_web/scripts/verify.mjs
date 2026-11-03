@@ -181,6 +181,7 @@ for (const block of tokens.split("}")) {
   pairs.push(
     ["accent", "tint"],
     ["blue", "blue-tint"],
+    ["blue", "tint"],
     ["purple", "purple-tint"],
     ["coral", "coral-tint"],
     ["cyan", "cyan-tint"],
@@ -198,7 +199,7 @@ for (const block of tokens.split("}")) {
 }
 assert.equal(
   contrastPairs,
-  58,
+  60,
   "Both themes must be checked even after CSS formatting changes",
 );
 for (const state of [
@@ -296,6 +297,8 @@ for (const locale of ["en", "de", "es"]) {
     );
     const normalize = (s) =>
       s
+        // German and Spanish use a decimal comma; the value is unchanged.
+        .replace(/(\d)\{,\}(?=\d)/g, "$1.")
         .replace(/\\text\{(?:aber|but|pero)\}/g, "TEXT")
         .replace(/\\operatorname\{(?:Bild|im)\}/g, "IMAGE")
         .replace(/\\operatorname\{(?:rang|rank|rango)\}/g, "RANK");

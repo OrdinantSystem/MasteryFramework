@@ -52,17 +52,39 @@ Thus the full substitution is $p=33a-7b+41c$ and $q=171a-129b+231c$.
 
 ## Dimensions before calculation
 
-In the third exercise, products are checked by size alone. For $A:2\times1$, $B:1\times1$, $C:1\times3$, $D:2\times2$, and $E:3\times1$:
+In the third exercise, products are checked by size alone. The matrices are:
 
-| left × right | A | B | C | D | E |
+$$
+\begin{aligned}
+A &\in \mathbb{R}^{2\times 1} \\
+B &\in \mathbb{R}^{1\times 1} \\
+C &\in \mathbb{R}^{1\times 3} \\
+D &\in \mathbb{R}^{2\times 2} \\
+E &\in \mathbb{R}^{3\times 1}
+\end{aligned}
+$$
+
+A green tick (✓) means the product is defined; a dash (—) means it is undefined.
+
+| left × right | $A$ | $B$ | $C$ | $D$ | $E$ |
 | --- | --- | --- | --- | --- | --- |
-| A | — | yes | yes | — | — |
-| B | — | yes | yes | — | — |
-| C | — | — | — | — | yes |
-| D | yes | — | — | yes | — |
-| E | — | yes | yes | — | — |
+| $A$ | — | <span className="math-a" role="img" aria-label="defined">✓</span> | <span className="math-a" role="img" aria-label="defined">✓</span> | — | — |
+| $B$ | — | <span className="math-a" role="img" aria-label="defined">✓</span> | <span className="math-a" role="img" aria-label="defined">✓</span> | — | — |
+| $C$ | — | — | — | — | <span className="math-a" role="img" aria-label="defined">✓</span> |
+| $D$ | <span className="math-a" role="img" aria-label="defined">✓</span> | — | — | <span className="math-a" role="img" aria-label="defined">✓</span> | — |
+| $E$ | — | <span className="math-a" role="img" aria-label="defined">✓</span> | <span className="math-a" role="img" aria-label="defined">✓</span> | — | — |
 
-The next part reuses the letters with new sizes: $A:3\times2$, $B:1\times3$, $C:2\times2$. Of the six orders using each matrix once, only $BAC$ is defined. Its chain is $\mathbb R^2\xrightarrow{C}\mathbb R^2\xrightarrow{A}\mathbb R^3\xrightarrow{B}\mathbb R$.
+The next part reuses the letters with new sizes:
+
+$$
+\begin{aligned}
+A &\in \mathbb{R}^{3\times 2} \\
+B &\in \mathbb{R}^{1\times 3} \\
+C &\in \mathbb{R}^{2\times 2}
+\end{aligned}
+$$
+
+Of the six orders using each matrix once, only $BAC$ is defined. Its chain is $\mathbb R^2\xrightarrow{C}\mathbb R^2\xrightarrow{A}\mathbb R^3\xrightarrow{B}\mathbb R$.
 
 <Math tex="\colA{A}\colC{C}=\begin{pmatrix}3&1\\0&2\\9&7\end{pmatrix},\qquad \colB{B}\colA{A}\colC{C}=\begin{pmatrix}-1&2&1\end{pmatrix}\begin{pmatrix}3&1\\0&2\\9&7\end{pmatrix}=\begin{pmatrix}6&10\end{pmatrix}." display />
 

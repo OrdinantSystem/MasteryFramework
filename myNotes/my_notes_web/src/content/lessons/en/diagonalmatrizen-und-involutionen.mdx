@@ -33,16 +33,16 @@ A zero diagonal entry loses that input coordinate, so no inverse can recover it.
 
 <Math tex="A^{-1}=A\iff A^2=I_n." display />
 
-For a sign matrix, every diagonal entry is +1 or −1. Applying it twice restores every coordinate because each sign is squared.
+For a sign matrix, every diagonal entry is $+1$ or $-1$. Applying it twice restores every coordinate because each sign is squared.
 
 <Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\quad d_i\in\{-1,1\}\quad\Longrightarrow\quad D^2=\operatorname{diag}(1,\ldots,1)=I_n." display />
 
-<Flow nodes={[{"label": "Input", "tex": "\\binom{x}{y}", "detail": "Original vector"}, {"label": "One application", "tex": "\\binom{x}{-y}", "detail": "Reflect one coordinate"}, {"label": "Second application", "tex": "\\binom{x}{y}", "detail": "Restore the input"}]} caption={"D = diag(1, −1): two reflections restore the vector."} />
+<Flow nodes={[{"label": "Input", "tex": "\\binom{x}{y}", "detail": "Original vector"}, {"label": "One application", "tex": "\\binom{x}{-y}", "detail": "Reflect one coordinate"}, {"label": "Second application", "tex": "\\binom{x}{y}", "detail": "Restore the input"}]} caption={"$D = \\operatorname{diag}(1,-1)$: two reflections restore the vector."} />
 
 <Note title={"Invertible does not mean shear-generated"}>
 Every sign matrix is invertible. Whether it is a product of the permitted shears is a separate question, answered by the parity argument in the next lesson.
 </Note>
 
-<Exercise question={"Is diag(1,0) an involution?"}>
+<Exercise question="Is $\operatorname{diag}(1,0)$ an involution?">
 No. Its square is itself, but not the identity. The zero coordinate also makes it noninvertible.
 </Exercise>

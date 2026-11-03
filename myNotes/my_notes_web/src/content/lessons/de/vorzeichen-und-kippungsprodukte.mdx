@@ -19,13 +19,13 @@ thumbnail: signs
 
 <Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\quad d_i\in\{-1,1\},\qquad\det D=\prod_{i=1}^{n}d_i=(-1)^k." display />
 
-Dabei zählt $n$ alle Diagonaleinträge, $k$ hingegen nur die negativen. Das Produktzeichen bedeutet $d_1d_2\cdots d_n$. Eine gerade Anzahl von Minuszeichen ergibt +1, eine ungerade Anzahl −1.
+Dabei zählt $n$ alle Diagonaleinträge, $k$ hingegen nur die negativen. Das Produktzeichen bedeutet $d_1d_2\cdots d_n$. Eine gerade Anzahl von Minuszeichen ergibt $+1$, eine ungerade Anzahl $-1$.
 
 <Math tex="\operatorname{diag}(-1,1,-1,1):\quad n=4,\quad k=2,\quad\det D=(-1)\cdot1\cdot(-1)\cdot1=1." display />
 
 ## Warum eine ungerade Anzahl unmöglich ist
 
-Jede elementare Kippung hat Determinante 1, ebenso jedes endliche Kippungsprodukt. Eine Vorzeichenmatrix mit Determinante −1 kann daher kein solches Produkt sein. Das ist ein Ausschlussargument, noch keine Konstruktion.
+Jede elementare Kippung hat Determinante 1, ebenso jedes endliche Kippungsprodukt. Eine Vorzeichenmatrix mit Determinante $-1$ kann daher kein solches Produkt sein. Das ist ein Ausschlussargument, noch keine Konstruktion.
 
 <Math tex="\det(T_1\cdots T_r)=\prod_{j=1}^{r}\det T_j=1\ne-1." display />
 
@@ -49,6 +49,6 @@ In diesen Notizen bedeutet „unimodular“: durch die zugelassenen Kippungen er
 
 <Math tex="U=\colA{\begin{pmatrix}1&2\\0&1\end{pmatrix}}\colB{\begin{pmatrix}1&0\\3&1\end{pmatrix}}=\colResult{\begin{pmatrix}7&2\\3&1\end{pmatrix}},\qquad\det U=1." display />
 
-<Exercise question={"Kann diag(−1,−1,−1,1) ein Kippungsprodukt sein?"}>
-Nein. Drei negative Einträge ergeben Determinante −1. Die Matrix ist trotzdem eine invertierbare Involution.
+<Exercise question="Kann diag($-1$,$-1$,$-1$,1) ein Kippungsprodukt sein?">
+Nein. Drei negative Einträge ergeben Determinante $-1$. Die Matrix ist trotzdem eine invertierbare Involution.
 </Exercise>

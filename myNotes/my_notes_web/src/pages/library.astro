@@ -1,4 +1,5 @@
 ---
+import {teachingMap} from '../lib/learning/mind-map-presets';
 import NumberDomains from '../components/NumberDomains.astro';
 import ExpressionTrees from '../components/ExpressionTrees.astro';
 import ProcessDiagram from '../components/ProcessDiagram.astro';
@@ -15,12 +16,14 @@ Astro.locals.locale='en';
 ---
 <SiteLayout title="Representation library" description="Reusable teaching assets and authoring examples." locale="en" current="library">
   <meta slot="head" name="robots" content="noindex"/>
-  <header class="article-header"><span class="section-label">AUTHORING REFERENCE</span><h1>Representation library</h1><p class="lead">Choose an existing representation, configure its data, and reuse the same visual language.</p></header>
+  <header class="article-header"><span class="section-label">AUTHORING REFERENCE</span><h1>Representation library</h1></header>
   <div class="prose">
     <p>This English authoring reference is outside lesson search and the learner navigation. The examples below are working components. Use the same snippets inside MDX lessons, with localized prose and a unique id for each vector activity.</p>
     <ul>{assets.map(asset=><li><a href={`#${asset.id}`}>{asset.name}</a> — {asset.purpose}</li>)}</ul>
     {assets.map(asset=><section id={asset.id}>
       <h2>{asset.name}</h2><p>{asset.purpose}</p><pre><code>{asset.example}</code></pre>
+      {asset.id==='mind-map'&&<Interactive kind="mind-map" preset="study-session" id="library-study-map"/>}
+      {asset.id==='mind-map'&&<><p>A different graph supplied through the typed data API:</p><pre><code>{'<Interactive kind="mind-map" data={teachingMap} id="library-teaching-map" />'}</code></pre><Interactive kind="mind-map" data={teachingMap} id="library-teaching-map"/></>}
       {asset.id==='relation-map'&&<RelationMap/>}
       {asset.id==='learning-cycle'&&<ProcessDiagram preset="cycle" id="library-learning-cycle"/>}
       {asset.id==='learning-mapping'&&<LearningFigure kind="mapping"/>}

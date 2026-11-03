@@ -1,0 +1,119 @@
+---
+import MathText from '../MathText.astro';
+import MathFormula from '../Math.astro';
+import {strings} from '../../lib/i18n';
+import {rotationCopy} from '../../lib/interactive/rotation-copy';
+import {rotationScene, rotationEquation, rotationTip, rotationPlane} from '../../lib/interactive/rotation';
+import {gridMarkup} from '../../lib/interactive/plane';
+interface Props {id?:string}
+const {id}=Astro.props, locale=Astro.locals.locale, t=strings(locale), c=rotationCopy(locale);
+const labels=['I','J','J^2','J^3','J^4 = I'];
+---
+<figure class="explorer rotation-explorer" id={id}>
+  <div class="figure-heading"><span class="section-label">{t.try}</span><span class="live-dot">{t.interactive}</span></div>
+  <h3>{t.rotationTitle}</h3>
+  <rotation-explorer data-locale={locale}>
+    <p class="rotation-prompt">{c.prompt}</p>
+    <p class="rotation-help">{c.help}</p>
+    <div class="graph">
+      <svg viewBox="100 0 440 410" role="group" aria-label={t.rotationTitle}>
+        <g set:html={gridMarkup(rotationPlane)}/>
+        <circle cx="320" cy="202" r={Math.sqrt(5)*rotationPlane.unit} fill="none" stroke="var(--muted)" stroke-dasharray="4 6"/>
+        {[0,90,180,270].map((angle,i)=>{const [x,y]=rotationTip(angle);return <g><circle cx={x} cy={y} r="5" fill="var(--panel)" stroke="var(--muted)"/><text x={x+(x<320?-14:14)} y={y+(y<202?-16:26)} text-anchor={x<320?'end':'start'} fill="var(--secondary)" font-size="12">{['I = J⁴','J','J²','J³'][i]}</text></g>})}
+        <g data-scene set:html={rotationScene(90)}/>
+        <g data-tip tabindex="0" role="slider" aria-label={c.handle} aria-description={c.help} aria-valuemin="0" aria-valuemax="360" aria-valuenow="90" aria-valuetext="90° · J" transform={`translate(${rotationTip(90).join(',')})`}>
+          <circle data-hit r="24" fill="transparent"/>
+          <circle class="rotation-halo" r="12" fill="var(--accent)" fill-opacity=".12" stroke="var(--accent)"/>
+          <circle r="5" fill="var(--accent)"/>
+        </g>
+      </svg>
+    </div>
+    <div class="explorer-controls">
+      <div class="rotation-powers" role="group" aria-label={t.power}>{labels.map((label,n)=><button type="button" data-power={n} aria-pressed={n===1}><span><MathFormula tex={label} /></span><small>{n*90}°</small></button>)}</div>
+      <label class="rotation-angle">{c.angle}<input data-angle type="number" min="0" max="360" step="1" value="90" inputmode="decimal"/></label>
+      <p class="explorer-result" data-result aria-live="polite">{c.snapped}</p>
+      <button class="reset" data-reset type="button">{t.reset} ↺</button>
+    </div>
+    <div class="explorer-equation" data-equation><MathFormula tex={rotationEquation(90)} display/></div>
+  </rotation-explorer>
+  <figcaption><MathText text={c.caption} /></figcaption><noscript><p class="noscript-note">{t.noScript}</p></noscript>
+</figure>
+<script>
+import katex from 'katex';
+import {mathOptions} from '../../lib/math-options.mjs';
+import {rotation, rotationScene, rotationEquation, rotationTip, boundAngle, snapAngle, draggedAngle} from '../../lib/interactive/rotation';
+import {rotationCopy} from '../../lib/interactive/rotation-copy';
+import type {Locale} from '../../lib/i18n';
+class RotationExplorer extends HTMLElement {
+  private resize?: ResizeObserver;
+  disconnectedCallback(){this.resize?.disconnect()}
+  connectedCallback(){
+    if(this.dataset.ready){this.resize?.observe(this.querySelector('svg')!);return} this.dataset.ready='true';
+    const c=rotationCopy(this.dataset.locale as Locale), svg=this.querySelector('svg')!, tip=this.querySelector<SVGGElement>('[data-tip]')!, input=this.querySelector<HTMLInputElement>('[data-angle]')!;
+    let angle=90, pointer:number|null=null, previous=0, start=90;
+    const update=(syncInput=true)=>{
+      const r=rotation(angle);
+      this.querySelector('[data-scene]')!.innerHTML=rotationScene(angle);
+      tip.setAttribute('transform',`translate(${rotationTip(angle).join(',')})`);
+      tip.setAttribute('aria-valuenow',String(angle));
+      tip.setAttribute('aria-valuetext',`${Math.round(angle)}° · (${r.point.map(n=>Number(n.toFixed(2))).join(', ')})${r.power===null?' · R(θ)':` · J^${r.power}`}`);
+      if(syncInput)input.value=String(Math.round(angle*100)/100);
+      this.querySelectorAll<HTMLButtonElement>('[data-power]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.power)===r.power)));
+      this.querySelector('[data-result]')!.textContent=r.power===null?c.free:r.power===4?c.identity:r.power===0?c.start:c.snapped;
+      this.querySelector('[data-equation]')!.innerHTML=katex.renderToString(rotationEquation(angle),{...mathOptions,displayMode:true});
+    };
+    const pointerAngle=(e:PointerEvent)=>{
+      const matrix=svg.getScreenCTM();if(!matrix)return null;
+      const p=new DOMPoint(e.clientX,e.clientY).matrixTransform(matrix.inverse());
+      if(Math.hypot(p.x-320,p.y-202)<8)return null;
+      return Math.atan2(202-p.y,p.x-320)*180/Math.PI;
+    };
+    tip.addEventListener('pointerdown',e=>{
+      if(pointer!==null || e.button!==0)return;
+      const p=pointerAngle(e);if(p===null)return;
+      e.preventDefault();tip.focus();pointer=e.pointerId;previous=p;start=angle;svg.setPointerCapture(pointer);
+    });
+    svg.addEventListener('pointermove',e=>{
+      if(e.pointerId!==pointer)return;const p=pointerAngle(e);if(p===null)return;
+      angle=draggedAngle(angle,previous,p);previous=p;update();
+    });
+    const end=(e:PointerEvent)=>{
+      if(e.pointerId!==pointer)return;
+      angle=e.type==='pointercancel'?start:snapAngle(angle);pointer=null;
+      if(svg.hasPointerCapture(e.pointerId))svg.releasePointerCapture(e.pointerId);update();
+    };
+    svg.addEventListener('pointerup',end);svg.addEventListener('pointercancel',end);
+    svg.addEventListener('lostpointercapture',()=>{if(pointer!==null){pointer=null;angle=snapAngle(angle);update()}});
+    tip.addEventListener('keydown',e=>{
+      const step=e.shiftKey?90:5;
+      if(['ArrowRight','ArrowUp','ArrowLeft','ArrowDown','Home','End'].includes(e.key)){
+        e.preventDefault();angle=e.key==='Home'?0:e.key==='End'?360:boundAngle(angle+(['ArrowUp','ArrowRight'].includes(e.key)?step:-step));update();
+      }
+    });
+    input.addEventListener('input',()=>{if(input.value!==''&&Number.isFinite(input.valueAsNumber)){angle=boundAngle(input.valueAsNumber);update(false)}});
+    const commitAngle=()=>{angle=snapAngle(angle);update()};
+    input.addEventListener('change',commitAngle);
+    input.addEventListener('blur',commitAngle);
+    this.querySelectorAll<HTMLButtonElement>('[data-power]').forEach(button=>button.addEventListener('click',()=>{angle=Number(button.dataset.power)*90;update()}));
+    this.querySelector('[data-reset]')!.addEventListener('click',()=>{angle=90;update()});
+    this.resize=new ResizeObserver(()=>{const width=svg.getBoundingClientRect().width;if(width)this.querySelector('[data-hit]')!.setAttribute('r',String(Math.max(24,22*440/width)))});this.resize.observe(svg);
+  }
+}
+if(!customElements.get('rotation-explorer'))customElements.define('rotation-explorer',RotationExplorer);
+</script>
+<style>
+rotation-explorer {display:block}
+.rotation-prompt {margin:16px 25px 4px;font-size:14px;color:var(--text)}
+.rotation-help {margin:0 25px 8px;font-size:12px;color:var(--secondary)}
+.rotation-explorer .graph {max-width:460px}
+[data-tip] {cursor:grab;touch-action:none;outline:none}
+[data-tip]:active {cursor:grabbing}
+[data-tip]:focus-visible .rotation-halo {stroke-width:3;fill-opacity:.25}
+.rotation-powers {display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.rotation-powers button {flex:1;min-width:48px;min-height:48px;display:grid;gap:2px;justify-items:center;padding:8px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--secondary);cursor:pointer}
+.rotation-powers button[aria-pressed="true"] {border-color:var(--accent);background:var(--tint);color:var(--accent)}
+.rotation-powers small {font-size:10px}
+.rotation-angle {display:flex;align-items:center;gap:16px;font-size:12px;color:var(--secondary)}
+.rotation-angle input {width:88px;padding:8px;border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--text);font:inherit}
+.rotation-explorer .explorer-result {font-size:12px;min-height:48px}
+</style>

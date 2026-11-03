@@ -1,4 +1,5 @@
 ---
+import MathText from '../MathText.astro';
 import Math from '../Math.astro';
 import {initialLab,gridMarkup,sceneMarkup,toScreen,points,equation,det,sum,number,type LabKind} from '../../lib/interactive/vector-model';
 import {labCopy} from '../../lib/interactive/vector-copy';
@@ -20,7 +21,7 @@ const colors:Record<string,string>={a:'accent',b:'blue',result:'purple',column:'
 <figure class="vector-lab explorer" id={id}>
   <div class="figure-heading"><span class="section-label">{t.try}</span><span class="live-dot">{t.interactive}</span></div>
   <h3>{title}</h3>
-  <p class="lab-prompt" id={`${id}-prompt`}>{prompt}</p>
+  <p class="lab-prompt" id={`${id}-prompt`}><MathText text={prompt} /></p>
   <vector-lab data-kind={kind} data-locale={locale} data-scenario={JSON.stringify(state.scenario)}>
     <div class="lab-toolbar">
       <fieldset class="segmented"><legend>{c.context}</legend><button type="button" data-context="independent" aria-pressed="true">{c.independent}</button><button type="button" data-context="dependent" aria-pressed="false">{c.dependent}</button></fieldset>
@@ -40,13 +41,14 @@ const colors:Record<string,string>={a:'accent',b:'blue',result:'purple',column:'
     <div class="lab-equation" data-lab-equation><Math tex={equation(state)} display/></div>
     <div class="lab-actions"><button class="lab-check" data-check type="button">{c.check}</button><button data-lab-reset type="button">{c.reset} ↺</button></div>
     <p class="lab-feedback" data-feedback role="status" hidden></p>
-    <details class="lab-explanation"><summary>{c.explain}</summary><p>{text?.explanation??(kind==='combination'?c.combinationExplanation:c.rankExplanation)}</p></details>
+    <details class="lab-explanation"><summary>{c.explain}</summary><p><MathText text={text?.explanation??(kind==='combination'?c.combinationExplanation:c.rankExplanation)} /></p></details>
   </vector-lab>
-  <figcaption>{text?.caption??c.caption}</figcaption>
+  <figcaption><MathText text={text?.caption??c.caption} /></figcaption>
   <noscript><p class="noscript-note">{c.noScript}</p></noscript>
 </figure>
 <script>
   import katex from 'katex';
+  import {renderMathText} from '../../lib/math-text';
   import {mathOptions} from '../../lib/math-options.mjs';
   import {initialLab,points,toScreen,fromScreen,sceneMarkup,equation,sum,det,moveHandle,setContext,clampCoefficient,clampColumn,targetInSpan,labPlane,equal,number,type Vec2} from '../../lib/interactive/vector-model';
   import {labCopy} from '../../lib/interactive/vector-copy';
@@ -140,7 +142,7 @@ const colors:Record<string,string>={a:'accent',b:'blue',result:'purple',column:'
       this.querySelector('[data-check]')!.addEventListener('click',()=>{
         feedback.hidden=false;
         const c=labCopy(locale,state);
-        feedback.textContent=kind==='combination'?(equal(sum(state),state.scenario.target)?c.reached:!targetInSpan(state)?c.unreachable:c.tryTarget):(Math.abs(det(state.u,state.v))>1e-10?c.rankTry:equal(state.v,[0,0])?c.rankZero:c.rankSuccess);
+        feedback.innerHTML=renderMathText(kind==='combination'?(equal(sum(state),state.scenario.target)?c.reached:!targetInSpan(state)?c.unreachable:c.tryTarget):(Math.abs(det(state.u,state.v))>1e-10?c.rankTry:equal(state.v,[0,0])?c.rankZero:c.rankSuccess));
       });
       this.querySelector('[data-lab-reset]')!.addEventListener('click',()=>{state=initialLab(scenario);clearFeedback();render()});
       this.resize=new ResizeObserver(()=>render());this.resize.observe(svg);render();

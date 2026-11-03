@@ -15,28 +15,87 @@ prerequisites: []
 thumbnail: "number-sets"
 ---
 
+{/* Las definiciones, clasificaciones y demostraciones siguientes son ampliaciones didácticas propias. */}
+
 ## Un mapa de inclusiones
 
 <NumberDomains />
 
-Cada conjunto interior está contenido en el siguiente. Los ejemplos fuera de una caja interior pertenecen al conjunto que la rodea, pero no al interior. Los irracionales reales están en ℝ fuera de ℚ. Los complejos no reales están fuera de ℝ.
+Las cajas muestran **pertenencia**, no el tamaño de un número. Todo número de una caja interior pertenece también a cada caja que la rodea. Por ejemplo, $3$ es natural, entero, racional, real y complejo al mismo tiempo. Al clasificar un número, solemos indicar el menor de estos conjuntos que lo contiene.
 
-## ¿Qué hace racional a un número?
+## Qué contiene cada conjunto
 
-<Math tex="\mathbb Q=\left\{\frac pq:p\in\mathbb Z,\ q\in\mathbb Z\setminus\{0\}\right\}" display />
+- Los **naturales** $\mathbb{N}=\{1,2,3,\ldots\}$ sirven para contar objetos completos. Algunos cursos incluyen el $0$; aquí empezamos en $1$.
+- Los **enteros** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ incluyen el cero y los enteros negativos. Así, $-3\in\mathbb{Z}$, pero $-3\notin\mathbb{N}$.
+- Los **racionales** $\mathbb{Q}$ son cocientes de enteros con denominador distinto de cero. El numerador puede ser negativo o cero; el denominador no puede ser cero.
 
-Un racional tiene numerador entero y denominador entero distinto de cero. Su expansión decimal termina o acaba siendo periódica. √2, √3 y π son irracionales. La unidad imaginaria cumple i² = −1. Incluir el 0 en ℕ es una convención que cambia entre cursos; aquí no se incluye.
+<Math tex="\mathbb{Q}=\left\{\frac{p}{q}:p,q\in\mathbb{Z},\ q\ne0\right\}" display />
 
-## Clasificar un número
+- Los **reales** $\mathbb{R}$ son los números de la recta numérica. Incluyen los racionales y los **irracionales**: reales que no admiten esa representación como cociente. Por ejemplo, $\sqrt{2}$ es real e irracional. Los irracionales forman $\mathbb{R}\setminus\mathbb{Q}$, una parte de los reales y no otra caja exterior.
+- Los **complejos** $\mathbb{C}$ tienen la forma $a+bi$, con $a,b\in\mathbb{R}$ e $i^2=-1$. Un real tiene parte imaginaria $0$: por ejemplo, $3=3+0i$. El número $2+3i$ tiene parte imaginaria distinta de cero, por lo que no es real.
 
-Empieza por el conjunto más pequeño que contiene al número. −3 pertenece a ℤ y por tanto a ℚ, ℝ y ℂ; escribir −3/1 muestra por qué es racional. 0,125 = 1/8 está en ℚ pero no en ℤ. √2 está en ℝ fuera de ℚ. La inclusión va en un sentido: todo entero es racional, pero 1/2 refuta la recíproca. Las cajas describen pertenencia, no el tamaño de los números.
+## Por qué las inclusiones son estrictas
+
+El símbolo $\subsetneq$ significa «contenido, pero no igual». Para justificarlo, necesitamos tanto la inclusión como un ejemplo que descarte la igualdad.
+
+Todo natural es entero. Todo entero $n$ es racional porque $n=n/1$. Todo racional es real, y todo real $a$ es complejo porque $a=a+0i$. La primera y la tercera inclusión forman parte de la construcción de estos sistemas numéricos; las representaciones como fracción y como complejo hacen explícitas las otras dos.
+
+<Math tex="\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}" display />
+
+Los siguientes ejemplos muestran que los conjuntos son diferentes: $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$ e $i\in\mathbb{C}\setminus\mathbb{R}$. Abajo justificamos los ejemplos menos inmediatos. En particular, ser racional no implica ser entero.
+
+## Demostración: un decimal finito o periódico es racional
+
+Un decimal finito se puede escribir con una potencia de diez en el denominador. Por ejemplo,
+
+<Math tex="0{,}125=\frac{125}{1000}=\frac18" display />
+
+El numerador y el denominador de la última fracción son enteros y el denominador no es cero. Por tanto, $0{,}125\in\mathbb{Q}$. Como $0<0{,}125<1$, no es entero. Su menor conjunto en el esquema es $\mathbb{Q}$.
+
+Para un decimal periódico, desplazamos un bloque completo del período y restamos. Sea $x=0{,}\overline{27}=0{,}272727\ldots$. Multiplicar por $100$ desplaza el bloque de dos cifras:
+
+<Math tex="\begin{aligned}100x&=27{,}272727\ldots\\x&=0{,}272727\ldots\\99x&=27\\x&=\frac{27}{99}=\frac3{11}.\end{aligned}" display />
+
+Las colas infinitas coinciden y se cancelan exactamente; no estamos restando aproximaciones redondeadas. El mismo método funciona con decimales que se vuelven periódicos después de un comienzo no periódico, desplazando primero ese comienzo. A la inversa, la división de un racional termina o repite: solo hay un número finito de restos posibles. Tener infinitas cifras decimales **no** basta para ser irracional.
+
+## Demostración: un real no tiene por qué ser racional
+
+El número $\sqrt{2}$ es el real positivo cuyo cuadrado es $2$. Supongamos que fuera racional. Elijamos una fracción irreducible $\sqrt{2}=p/q$, con enteros $p,q$ y $q>0$. Al elevar al cuadrado obtenemos
+
+<Math tex="p^2=2q^2." display />
+
+Así, $p^2$ es par, lo que obliga a que $p$ sea par. Para justificarlo, un entero impar tiene la forma $2k+1$, y
+
+<Math tex="(2k+1)^2=2(2k^2+2k)+1," display />
+
+es impar. Por tanto, un cuadrado par no puede proceder de un entero impar.
+
+Escribimos $p=2k$ y sustituimos en la ecuación supuesta:
+
+<Math tex="4k^2=2q^2\quad\Longrightarrow\quad q^2=2k^2." display />
+
+El mismo argumento obliga a que $q$ sea par. Ahora $p$ y $q$ comparten el factor $2$, en contradicción con la elección de una fracción irreducible. Por tanto, $\sqrt{2}\notin\mathbb{Q}$, aunque $\sqrt{2}\in\mathbb{R}$. La [demostración por contradicción ampliada](../widerspruch-und-irrationalitaet/) explica esta estrategia con más detalle.
+
+Un signo radical no es una prueba de irracionalidad: $\sqrt{9}=3$ es natural. Importa el número representado, no su escritura.
+
+## Demostración: por qué la unidad imaginaria no es real
+
+Para todo real $t$, el cuadrado $t^2$ es no negativo: el cuadrado de un número positivo o negativo es positivo, y $0^2=0$. Ningún real puede satisfacer $t^2=-1$. Como $i^2=-1$, el número $i$ no puede ser real.
+
+Esto también explica por qué $2+3i$ no es real. Si lo fuera, restar $2$ y dividir entre $3$ haría que $i=((2+3i)-2)/3$ fuera real: una contradicción. Los complejos amplían los reales para que ecuaciones como $z^2+1=0$ tengan soluciones: $z=i$ y $z=-i$.
 
 ## Práctica
 
-Usa el esquema de inclusiones para justificar el conjunto más pequeño, en vez de enumerar pertenencias de memoria.
+En cada respuesta, da una representación o un argumento. Usa después las inclusiones para identificar también los conjuntos mayores.
 
-<Exercise question="¿Dónde pertenecen −5/2 y √9?">
+<Exercise question="¿Cuál es el menor conjunto del esquema que contiene a cada uno de $-5/2$, $\sqrt{9}$, $0$ y $0{,}\overline{6}$?">
 
-−5/2 es racional pero no entero. √9 = 3 es natural según nuestra convención y pertenece a los conjuntos mayores. Un símbolo radical no implica irracionalidad.
+$-5/2$ es un cociente de enteros, pero está estrictamente entre $-3$ y $-2$, así que su menor conjunto es $\mathbb{Q}$. El número $\sqrt{9}=3$ está en $\mathbb{N}$. Según nuestra convención, $0$ está en $\mathbb{Z}$, pero no en $\mathbb{N}$. Finalmente, $0{,}\overline{6}=2/3$ está en $\mathbb{Q}$, pero no en $\mathbb{Z}$. Cada número pertenece también a todos los conjuntos que lo rodean.
+
+</Exercise>
+
+<Exercise question="¿Es siempre irracional la suma de dos irracionales? Comprueba la afirmación con $\sqrt{2}$ y $-\sqrt{2}$.">
+
+No. Ambos números son irracionales: si $-\sqrt{2}$ fuera racional, multiplicar por $-1$ haría que $\sqrt{2}$ también lo fuera. Sin embargo, su suma es $0$, que es racional. Pertenecer a un conjunto no significa automáticamente que toda operación aritmética permanezca en él.
 
 </Exercise>

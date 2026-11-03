@@ -46,6 +46,28 @@ Schreibe $B=(b_1\;b_2\;\cdots\;b_q)$. Dann gilt:
 
 Du transformierst also jede Spalte von $B$ mit derselben Matrix $A$ und stellst die Ergebnisse nebeneinander. Das verbindet die Rechenregel mit der Sicht auf lineare Abbildungen.
 
+## Eine zweite Methode: Linearkombinationen von Spalten
+
+Du kannst eine ganze Ergebnisspalte auf einmal berechnen. Nimm die Einträge einer Spalte von $B$ als Koeffizienten: Skaliere damit die entsprechenden Spalten von $A$ und addiere diese Vektoren.
+
+Schreibe $A=(a_1\;\cdots\;a_n)$ mit $a_k\in\mathbb R^m$. Jede Spalte $b_j\in\mathbb R^n$ von $B$ ist selbst eine Linearkombination der Standardbasisvektoren $e_1,\ldots,e_n$:
+
+<Math tex="\colB{b_j}=\sum_{k=1}^{n}\colB{b_{kj}}e_k,\qquad \colA{A}e_k=\colA{a_k}" display />
+
+Da die Multiplikation mit $A$ linear ist, bleibt diese Kombination erhalten. Dabei bezeichnet $(AB)_{:j}$ die gesamte $j$-te Spalte des Produkts:
+
+<Math tex="\colResult{(AB)_{:j}}=A b_j=A\left(\sum_{k=1}^{n}b_{kj}e_k\right)=\sum_{k=1}^{n}\colB{b_{kj}}\colA{a_k}." display />
+
+Für dieselben Matrizen wie im interaktiven Beispiel oben sind die beiden Spalten von $A$:
+
+<Math tex="\colA{a_1}=\begin{pmatrix}3\\7\\-1\end{pmatrix},\qquad \colA{a_2}=\begin{pmatrix}2\\-5\\11\end{pmatrix}" display />
+
+Die Spalten von $B$ sind $(1,3)^T$, $(1,-2)^T$ und $(1,4)^T$. Verwende jedes Koeffizientenpaar nacheinander:
+
+<Math tex="\begin{aligned}\colResult{(AB)_{:1}}&=1\colA{a_1}+3\colA{a_2}=\colResult{\begin{pmatrix}9\\-8\\32\end{pmatrix}},\\[6pt]\colResult{(AB)_{:2}}&=1\colA{a_1}-2\colA{a_2}=\colResult{\begin{pmatrix}-1\\17\\-23\end{pmatrix}},\\[6pt]\colResult{(AB)_{:3}}&=1\colA{a_1}+4\colA{a_2}=\colResult{\begin{pmatrix}11\\-13\\43\end{pmatrix}}.\end{aligned}" display />
+
+Stelle diese drei Ergebnisvektoren nebeneinander, um $AB$ zu erhalten. Addiert wird innerhalb jeder Spalte; die drei Ergebnisspalten bleiben getrennt. Die zweite Komponente des letzten Vektors ist $7-20=-13$, genau der oben mit der Zeile-mal-Spalte-Regel berechnete Eintrag. Beide Methoden beschreiben dieselbe Multiplikation, einmal eintragsweise und einmal spaltenweise.
+
 ## Die Reihenfolge ist entscheidend
 
 Selbst wenn beide Produkte definiert sind, muss $AB$ nicht gleich $BA$ sein. Bei rechteckigen Matrizen können schon die Ergebnisgrößen verschieden sein: $(1\times2)(2\times1)$ ergibt $1\times1$, umgekehrt ergibt sich $2\times2$.
@@ -55,6 +77,6 @@ Auch für quadratische Matrizen gleicher Größe gilt Gleichheit nicht allgemein
 <Math tex="\colA{A}=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad \colB{B}=\begin{pmatrix}1&0\\0&2\end{pmatrix}" display />
 <Math tex="\colA{A}\colB{B}=\begin{pmatrix}1&2\\0&2\end{pmatrix}\ne\begin{pmatrix}1&1\\0&2\end{pmatrix}=\colB{B}\colA{A}." display />
 
-<Exercise question="A hat die Größe 3 × 2 und B die Größe 2 × 4. Welche Größe hat AB? Ist BA definiert?">
+<Exercise question="A hat die Größe $3 \times  2$ und B die Größe $2 \times  4$. Welche Größe hat AB? Ist BA definiert?">
 $AB$ ist eine $3\times4$-Matrix. $BA$ ist nicht definiert, denn die inneren Dimensionen $4$ und $3$ stimmen nicht überein.
 </Exercise>

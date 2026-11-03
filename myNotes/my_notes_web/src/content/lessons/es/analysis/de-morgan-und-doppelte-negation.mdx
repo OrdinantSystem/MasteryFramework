@@ -15,9 +15,9 @@ prerequisites: ["eindeutiges-komplement"]
 thumbnail: "de-morgan"
 ---
 
-## 9a · Un complemento de A ∨ B
+## 9a · Un complemento de $A \lor  B$
 
-Define X = A ∨ B e Y = ¬A ∧ ¬B. Demuestra X ∧ Y = 0 y X ∨ Y = 1 solo con las leyes ya disponibles.
+Define $X = A \lor  B$ e $Y = \neg A \land  \neg B$. Demuestra $X \land  Y = 0$ y $X \lor  Y = 1$ solo con las leyes ya disponibles.
 
 <Math tex="\begin{aligned}X\land Y&\overset{2,3}=(\colA{A}\land\neg \colA{A}\land\neg \colB{B})\lor(\colB{B}\land\neg \colA{A}\land\neg \colB{B})\\&\overset{1,2,5}=(0\land\neg \colB{B})\lor(0\land\neg \colA{A})\\&\overset{2,7d}=0\lor0\overset6=0\end{aligned}" display />
 
@@ -25,23 +25,23 @@ Define X = A ∨ B e Y = ¬A ∧ ¬B. Demuestra X ∧ Y = 0 y X ∨ Y = 1 solo c
 
 <Math tex="\neg(\colA{A}\lor \colB{B})=\neg \colA{A}\land\neg \colB{B}" display />
 
-La unicidad identifica Y con ¬X. Así se demuestra la primera ley de De Morgan sin usarla dentro de su propia demostración.
+La unicidad identifica $Y$ con $\neg X$. Así se demuestra la primera ley de De Morgan sin usarla dentro de su propia demostración.
 
 ## 10 · Doble negación de forma independiente
 
 <Math tex="\neg \colA{A}\lor \colA{A}=1,\quad\neg \colA{A}\land \colA{A}=0,\qquad\neg \colA{A}\lor\neg\neg \colA{A}=1,\quad\neg \colA{A}\land\neg\neg \colA{A}=0" display />
 
-Por las leyes 2 y 5, A y ¬¬A son complementos de ¬A. La unicidad da ¬¬A = A. Este argumento no necesita De Morgan.
+Por las leyes 2 y 5, $A$ y $\neg\neg A$ son complementos de $\neg A$. La unicidad da $\neg \neg A = A$. Este argumento no necesita De Morgan.
 
 ## 9b · Deduce la segunda ley
 
 <Math tex="\neg(\colA{A}\land \colB{B})\overset{10}=\neg(\neg\neg \colA{A}\land\neg\neg \colB{B})\overset{9a}=\neg\neg(\neg \colA{A}\lor\neg \colB{B})\overset{10}=\neg \colA{A}\lor\neg \colB{B}" display />
 
-En el paso central aplica 9a al revés con las entradas ¬A y ¬B. El orden de demostración es unicidad → 9a y 10 → 9b.
+En el paso central aplica 9a al revés con las entradas $\neg A$ y $\neg B$. El orden de demostración es unicidad → 9a y 10 → 9b.
 
 ## La estrategia del complemento
 
-Para identificar ¬(A ∨ B) no suponemos que la negación se distribuya. Proponemos un candidato Y y comprobamos las dos propiedades que determinan un complemento único. La primera cadena prueba que X e Y nunca se cumplen juntos; la segunda, que cubren todos los casos. Hacen falta ambas. Para la doble negación basta comparar los dos complementos de ¬A. La segunda identidad de De Morgan se deduce entonces de resultados ya probados, sin circularidad.
+Para identificar $\neg (A \lor  B)$ no suponemos que la negación se distribuya. Proponemos un candidato $Y$ y comprobamos las dos propiedades que determinan un complemento único. La primera cadena prueba que $X$ e $Y$ nunca se cumplen juntos; la segunda, que cubren todos los casos. Hacen falta ambas. Para la doble negación basta comparar los dos complementos de $\neg A$. La segunda identidad de De Morgan se deduce entonces de resultados ya probados, sin circularidad.
 
 ## Negar una afirmación compuesta
 
@@ -49,6 +49,6 @@ Las identidades demostradas permiten transformar una negación sin tabla de verd
 
 <Exercise question="Niega «se cumple A y al menos una de B o C».">
 
-El enunciado es A ∧ (B ∨ C). Su negación es ¬A ∨ ¬(B ∨ C), es decir, ¬A ∨ (¬B ∧ ¬C). El O interior se convierte en Y; negar solo las letras ignoraría la agrupación.
+El enunciado es $A \land  (B \lor  C)$. Su negación es $\neg A \lor  \neg (B \lor  C)$, es decir, $\neg A \lor  (\neg B \land  \neg C)$. El O interior se convierte en $Y$; negar solo las letras ignoraría la agrupación.
 
 </Exercise>

@@ -127,3 +127,24 @@ assert.throws(() => matrixCellEquation(left, right, 99, 0));
 console.log(
   `Verified ${Object.keys(vectorPresets).length} reusable vector presets, isolation, invalid configurations, SVG primitives, and arbitrary matrix products.`,
 );
+
+// Independent rotation outcomes, preserved length, snapping, and the atan2 seam.
+const {rotation, snapAngle, draggedAngle, rotationEquation} = await import('../src/lib/interactive/rotation.ts');
+for (const [angle,expected] of [[0,[2,1]],[90,[-1,2]],[180,[-2,-1]],[270,[1,-2]],[360,[2,1]]]) {
+  assert.deepEqual(rotation(angle).point,expected);
+  assert.equal(rotation(angle).power,angle/90);
+  katex.renderToString(rotationEquation(angle),mathOptions);
+}
+for (const angle of [1,37,135,229,359]) {
+  const {point,c,s,power}=rotation(angle);
+  assert.ok(Math.abs(Math.hypot(...point)-Math.sqrt(5))<1e-10);
+  assert.ok(Math.abs(c*c+s*s-1)<1e-10);
+  assert.equal(power,null);
+  katex.renderToString(rotationEquation(angle),mathOptions);
+}
+assert.equal(snapAngle(44),0); assert.equal(snapAngle(46),90);
+assert.equal(snapAngle(359),360);
+assert.equal(draggedAngle(150,179,-179),152);
+assert.equal(draggedAngle(150,-179,179),148);
+assert.equal(draggedAngle(359,0,10),360);
+assert.equal(draggedAngle(1,0,-10),0);

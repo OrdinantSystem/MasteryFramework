@@ -19,7 +19,7 @@ thumbnail: "complement"
 
 <Math tex="\colA{A}\lor \colB{B}=1,\quad \colA{A}\land \colB{B}=0,\qquad \colA{A}\lor \colC{C}=1,\quad \colA{A}\land \colC{C}=0" display />
 
-Assume B and C both complement A. The OR condition covers all possibilities; the AND condition excludes overlap. Use one candidate’s conditions to simplify the other.
+Assume $B$ and $C$ both complement A. The OR condition covers all possibilities; the AND condition excludes overlap. Use one candidate’s conditions to simplify the other.
 
 ## Reduce both to the same expression
 
@@ -27,8 +27,8 @@ Assume B and C both complement A. The OR condition covers all possibilities; the
 
 <Math tex="\begin{aligned}\colC{C}&\overset{7b}=\colC{C}\land1=\colC{C}\land(\colA{A}\lor \colB{B})\\&\overset3=(\colC{C}\land \colA{A})\lor(\colC{C}\land \colB{B})\\&\overset2=0\lor(\colC{C}\land \colB{B})\overset{2,7a}=\colC{C}\land \colB{B}\overset2=\colB{B}\land \colC{C}\end{aligned}" display />
 
-Thus B = C. The unnumbered substitutions use the assumed complement conditions. Since ¬A is a complement by law 5, any expression satisfying both conditions must equal ¬A. This is the tool for the next proofs.
+Thus $B = C$. The unnumbered substitutions use the assumed complement conditions. Since $\neg A$ is a complement by law 5, any expression satisfying both conditions must equal $\neg A$. This is the tool for the next proofs.
 
-## Why compare B with C?
+## Why compare $B$ with $C$?
 
-We know how B relates to A and how C relates to A, but not yet how B relates to C. Insert 1 = A ∨ C into B ∧ 1 to connect the two sets of information. Distribution separates the part B shares with A—which vanishes—from B ∧ C. Repeating the argument for C shows that both candidates equal their overlap. Only one complement can therefore satisfy both requirements. Merely satisfying A ∨ B = 1 would not suffice: B = 1 always does that.
+We know how $B$ relates to $A$ and how $C$ relates to $A$, but not yet how $B$ relates to $C$. Insert $1 = A \lor  C$ into $B \land  1$ to connect the two sets of information. Distribution separates the part $B$ shares with A—which vanishes—from $B \land  C$. Repeating the argument for $C$ shows that both candidates equal their overlap. Only one complement can therefore satisfy both requirements. Merely satisfying $A \lor  B = 1$ would not suffice: $B = 1$ always does that.

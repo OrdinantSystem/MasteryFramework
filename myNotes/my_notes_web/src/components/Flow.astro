@@ -1,4 +1,5 @@
 ---
+import MathText from './MathText.astro';
 import Math from './Math.astro';
 import {strings} from '../lib/i18n';
 interface Props {variant?:'vector'|'composition'|'dimensions';nodes?:{label:string;tex:string;detail:string}[];caption?:string}
@@ -18,4 +19,4 @@ const nodes=customNodes??(variant==='vector'?[
  {label:t.product,tex:'\\colA{m}\\times\\colResult{q}',detail:t.outer},
 ]);
 ---
-<figure class="flow-figure"><div class="flow-nodes">{nodes.map((node,i)=><><div class="flow-node"><span class="section-label">{node.label}</span><Math tex={node.tex} display/><small>{node.detail}</small></div>{i<nodes.length-1&&<span class="flow-arrow" aria-hidden="true">→</span>}</>)}</div><figcaption>{caption??(variant==='vector'?t.flowVector:variant==='composition'?t.flowComposition:t.flowDimensions)}</figcaption></figure>
+<figure class="flow-figure"><div class="flow-nodes">{nodes.map((node,i)=><><div class="flow-node"><span class="section-label"><MathText text={node.label} /></span><Math tex={node.tex} display/><small><MathText text={node.detail} /></small></div>{i<nodes.length-1&&<span class="flow-arrow" aria-hidden="true">→</span>}</>)}</div><figcaption><MathText text={caption??(variant==='vector'?t.flowVector:variant==='composition'?t.flowComposition:t.flowDimensions)} /></figcaption></figure>

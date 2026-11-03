@@ -4,7 +4,7 @@ import AreaIcon from '../components/AreaIcon.astro';
 import SiteLayout from '../layouts/SiteLayout.astro';
 import ConceptMap from '../components/ConceptMap.astro';
 import Thumbnail from '../components/Thumbnail.astro';
-import {areas,areaFor,courses,chaptersFor,courseFor,type CourseId} from '../lib/navigation';
+import {areas,courses,chaptersFor,courseFor,type CourseId} from '../lib/navigation';
 import {learningComponents} from '../components/mdx';
 import {getLessons,courseUrl,lessonUrl,url} from '../lib/content';
 import {locales,strings,type Locale} from '../lib/i18n';
@@ -29,29 +29,27 @@ const rendered=lesson?await render(lesson):undefined,Content=rendered?.Content;
 const title=lesson?.data.title||(kind==='search'?t.search:course?.title[locale]||'myNotes');
 const description=lesson?.data.description||(kind==='search'?t.searchLead:course?.description[locale]||t.archiveLead);
 const i=lessons.findIndex(l=>l.key===lesson?.key),previous=lessons[i-1],next=lessons[i+1];
-const kinds={concept:t.concept,'worked-problem':t.worked,recap:t.recap,note:t.note};
 ---
 <SiteLayout title={title} description={description} locale={locale} courseId={courseId} current={lesson?.key||(kind==='archive'?'index':kind)} headings={rendered?.headings||[]}>
  {kind==='archive'&&<>
-  <header class="index-heading"><span class="section-label">{(course?areaFor(course.area).title[locale]:t.archive).toUpperCase()}</span><h1>myNotes</h1><p class="lead">{t.archiveLead}</p></header>
-  {areas.filter(area=>courses.some(c=>c.area===area.id)).map(area=><section class="chapter-index" aria-labelledby={area.id}><h2 id={area.id}><AreaIcon kind={area.icon}/>{area.title[locale]}</h2><ol class="lesson-list course-list">{courses.filter(c=>c.area===area.id).map(course=><li><div class="course-entry"><a class="course-main" href={courseUrl(course.id,locale)}><Thumbnail order={course.id==='linear-algebra'?2:0} visual={course.id==='analysis'?'logic':course.id==='learning'?'learning-cycle':undefined} locale={locale}/><div><h3>{course.title[locale]}</h3><p>{course.description[locale]}</p><small>{lessons.filter(l=>l.data.course===course.id).length} {t.count}</small></div><span class="index-arrow" aria-hidden="true">↗</span></a><nav class="course-chapter-links" aria-label={course.title[locale]}>{chaptersFor(course.id).map(c=><a id={c.id} href={`${courseUrl(course.id,locale)}#${c.id}`}>{c.title[locale]}</a>)}</nav></div></li>)}</ol></section>)}
+  <h1 class="visually-hidden">myNotes</h1>
+  {areas.filter(area=>courses.some(c=>c.area===area.id)).map(area=><section class="chapter-index" aria-labelledby={area.id}><h2 class="area-heading" id={area.id}><AreaIcon kind={area.icon}/>{area.title[locale]}</h2><ol class="lesson-list course-list">{courses.filter(c=>c.area===area.id).map(course=><li><div class="course-entry"><a class="course-main" href={courseUrl(course.id,locale)}><Thumbnail order={course.id==='linear-algebra'?2:0} visual={course.id==='analysis'?'logic':course.id==='learning'?'learning-cycle':undefined} locale={locale}/><div><h3>{course.title[locale]}</h3><small>{lessons.filter(l=>l.data.course===course.id).length} {t.count}</small></div><span class="index-arrow" aria-hidden="true">↗</span></a><nav class="course-chapter-links" aria-label={course.title[locale]}>{chaptersFor(course.id).map(c=><a id={c.id} href={`${courseUrl(course.id,locale)}#${c.id}`}>{c.title[locale]}</a>)}</nav></div></li>)}</ol></section>)}
  </>}
  {kind==='course'&&course&&<>
-  <header class="index-heading"><span class="section-label">{(course?areaFor(course.area).title[locale]:t.archive).toUpperCase()}</span><h1>{course.title[locale]}</h1><p class="lead">{course.description[locale]}</p></header>
-  <p class="index-intro">{t.indexIntro}</p>
+  <header class="index-heading"><h1>{course.title[locale]}</h1></header>
   <nav class="chapter-jumps" aria-label={t.contents}>{chaptersFor(course.id).map(c=><a href={`#${c.id}`}>{c.title[locale]}</a>)}</nav>
-  {chaptersFor(course.id).map(chapter=><section class="chapter-index" aria-labelledby={chapter.id}><h2 id={chapter.id}>{chapter.title[locale]}<span class="index-total">{lessons.filter(l=>l.data.chapter===chapter.id).length} {t.count}</span></h2><p class="chapter-description">{chapter.description[locale]}</p>{chapter.id==='sheet-1-1'&&<ConceptMap locale={locale}/>}<ol class="lesson-list">{lessons.filter(l=>l.data.chapter===chapter.id).map(l=><li><a href={lessonUrl(l.key,locale,course.id)}><span class="index-number">{String(l.data.order).padStart(2,'0')}</span><Thumbnail order={l.data.order} visual={l.data.thumbnail} locale={locale}/><div><h3>{l.data.title}</h3><p>{l.data.description}</p></div><span class="index-arrow" aria-hidden="true">↗</span></a></li>)}</ol></section>)}
+  {chaptersFor(course.id).map(chapter=><section class="chapter-index" aria-labelledby={chapter.id}><h2 id={chapter.id}>{chapter.title[locale]}<span class="index-total">{lessons.filter(l=>l.data.chapter===chapter.id).length} {t.count}</span></h2>{chapter.id==='sheet-1-1'&&<ConceptMap locale={locale}/>}<ol class="lesson-list">{lessons.filter(l=>l.data.chapter===chapter.id).map(l=><li><a href={lessonUrl(l.key,locale,course.id)}><span class="index-number">{String(l.data.order).padStart(2,'0')}</span><Thumbnail order={l.data.order} visual={l.data.thumbnail} locale={locale}/><div><h3>{l.data.title}</h3></div><span class="index-arrow" aria-hidden="true">↗</span></a></li>)}</ol></section>)}
  </>}
  {kind==='lesson'&&lesson&&Content&&course&&<>
   <article data-pagefind-body data-pagefind-filter={`${t.courses}:${course.title[locale]}`}>
-   <header class="article-header"><div class="article-meta" data-pagefind-ignore><span class="section-label">{course.title[locale].toUpperCase()}</span><span class="meta-dot">·</span><span>{kinds[lesson.data.kind]}</span><span class="lesson-count">{String(lesson.data.order).padStart(2,'0')} / {String(lessons.length).padStart(2,'0')}</span></div><h1 data-pagefind-meta="title">{lesson.data.title}</h1><p class="lead">{lesson.data.description}</p></header>
+   <header class="article-header"><h1 data-pagefind-meta="title">{lesson.data.title}</h1></header>
    {lesson.data.prerequisites.length>0&&<div class="prerequisites" data-pagefind-ignore><span>{t.prerequisites}</span>{lesson.data.prerequisites.map(id=><a href={lessonUrl(id,locale,course.id)}>{lessons.find(l=>l.key===id)?.data.navTitle}</a>)}</div>}
    <div class="prose"><Content components={learningComponents}/></div>
   </article>
   <nav class="page-turn" aria-label={t.lessons} data-pagefind-ignore><a href={previous?lessonUrl(previous.key,locale,course.id):courseUrl(course.id,locale)}><small>← {previous?t.previous:t.backOverview}</small><span>{previous?.data.navTitle||course.title[locale]}</span></a>{next&&<a class="next" href={lessonUrl(next.key,locale,course.id)}><small>{t.next} →</small><span>{next.data.navTitle}</span></a>}</nav>
  </>}
  {kind==='search'&&<>
-  <header class="article-header"><div class="article-meta"><span class="section-label">{t.archive.toUpperCase()}</span></div><h1>{t.search}</h1><p class="lead">{t.searchLead}</p></header>
+  <header class="article-header"><h1>{t.search}</h1></header>
   <link rel="stylesheet" href={url('pagefind/pagefind-ui.css')}/><div id="search"></div><noscript><p>{t.noSearchScript}</p></noscript>
   <script is:inline src={url('pagefind/pagefind-ui.js')}></script>
   <script is:inline define:vars={{baseUrl:url(),t}}>

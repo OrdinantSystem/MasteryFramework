@@ -19,13 +19,13 @@ thumbnail: signs
 
 <Math tex="D=\operatorname{diag}(d_1,\ldots,d_n),\quad d_i\in\{-1,1\},\qquad\det D=\prod_{i=1}^{n}d_i=(-1)^k." display />
 
-Aquí $n$ cuenta todas las entradas diagonales y $k$ solo las negativas. El símbolo de producto significa $d_1d_2\cdots d_n$. Un número par de signos negativos da +1; uno impar da −1.
+Aquí $n$ cuenta todas las entradas diagonales $y$ $k$ solo las negativas. El símbolo de producto significa $d_1d_2\cdots d_n$. Un número par de signos negativos da $+1$; uno impar da $-1$.
 
 <Math tex="\operatorname{diag}(-1,1,-1,1):\quad n=4,\quad k=2,\quad\det D=(-1)\cdot1\cdot(-1)\cdot1=1." display />
 
 ## Por qué un número impar es imposible
 
-Todo cizallamiento elemental tiene determinante 1 y también cualquier producto finito de ellos. Por eso una matriz de signos con determinante −1 no puede ser tal producto. Es una obstrucción, no una construcción.
+Todo cizallamiento elemental tiene determinante 1 $y$ también cualquier producto finito de ellos. Por eso una matriz de signos con determinante $-1$ no puede ser tal producto. Es una obstrucción, no una construcción.
 
 <Math tex="\det(T_1\cdots T_r)=\prod_{j=1}^{r}\det T_j=1\ne-1." display />
 
@@ -35,20 +35,20 @@ Todo cizallamiento elemental tiene determinante 1 y también cualquier producto 
 
 <Flow nodes={[{"label": "Cizallamientos", "tex": "HVH", "detail": "Tres factores permitidos"}, {"label": "Cuarto de vuelta", "tex": "J", "detail": "Rotación de 90°"}, {"label": "Media vuelta", "tex": "(HVH)^2=-I_2", "detail": "Cambiar ambos signos"}]} caption={"La acción empieza por el factor de la derecha. El producto está escrito en orden algebraico."} />
 
-Para coordenadas $i\ne j$, usa $H_{ij}=I_n-E_{ij}$ y $V_{ji}=I_n+E_{ji}$. El mismo bloque de dos coordenadas funciona dentro de una matriz mayor y deja las demás coordenadas sin cambios.
+Para coordenadas $i\ne j$, usa $H_{ij}=I_n-E_{ij}$ $y$ $V_{ji}=I_n+E_{ji}$. El mismo bloque de dos coordenadas funciona dentro de una matriz mayor $y$ deja las demás coordenadas sin cambios.
 
 <Math tex="(H_{13}V_{31}H_{13})^2=\operatorname{diag}(-1,1,-1,1)\quad(n=4)." display />
 
-Agrupa por parejas las posiciones negativas y aplica una construcción a cada pareja. Así toda matriz de signos con un número par de entradas negativas se genera con estos cizallamientos. Si no hay entradas negativas, el producto vacío da la identidad.
+Agrupa por parejas las posiciones negativas $y$ aplica una construcción a cada pareja. Así toda matriz de signos con un número par de entradas negativas se genera con estos cizallamientos. Si no hay entradas negativas, el producto vacío da la identidad.
 
 <Note title={"La convención utilizada aquí"}>
-En estos apuntes, «unimodular» significa generado por los cizallamientos permitidos, equivalentemente, equivalente a la identidad mediante ellos. Mantenemos explícita esa convención. El determinante 1 es necesario y la construcción anterior demuestra que basta para estas matrices de signos.
+En estos apuntes, «unimodular» significa generado por los cizallamientos permitidos, equivalentemente, equivalente a la identidad mediante ellos. Mantenemos explícita esa convención. El determinante 1 es necesario $y$ la construcción anterior demuestra que basta para estas matrices de signos.
 </Note>
 
 <Math tex="D=\operatorname{diag}(1,-1,1),\qquad\det D=-1." display />
 
 <Math tex="U=\colA{\begin{pmatrix}1&2\\0&1\end{pmatrix}}\colB{\begin{pmatrix}1&0\\3&1\end{pmatrix}}=\colResult{\begin{pmatrix}7&2\\3&1\end{pmatrix}},\qquad\det U=1." display />
 
-<Exercise question={"¿Puede diag(−1,−1,−1,1) ser un producto de cizallamientos?"}>
-No. Tiene tres entradas negativas, por lo que el determinante es −1. Aun así es una involución invertible.
+<Exercise question="¿Puede diag($-1$,$-1$,$-1$,1) ser un producto de cizallamientos?">
+No. Tiene tres entradas negativas, por lo que el determinante es $-1$. Aun así es una involución invertible.
 </Exercise>

@@ -46,6 +46,28 @@ Write $B=(b_1\;b_2\;\cdots\;b_q)$. Then:
 
 Transform each column of $B$ with the same matrix $A$ and place the results next to one another. This connects the calculation rule with linear maps.
 
+## A second method: linear combinations of columns
+
+You can calculate a whole result column at once. Take the entries of one column of $B$ as coefficients: scale the corresponding columns of $A$, then add those vectors.
+
+Write $A=(a_1\;\cdots\;a_n)$, where $a_k\in\mathbb R^m$. Each column $b_j\in\mathbb R^n$ of $B$ is itself a linear combination of the standard basis vectors $e_1,\ldots,e_n$:
+
+<Math tex="\colB{b_j}=\sum_{k=1}^{n}\colB{b_{kj}}e_k,\qquad \colA{A}e_k=\colA{a_k}" display />
+
+Since multiplication by $A$ is linear, it preserves this combination. Here $(AB)_{:j}$ denotes the entire $j$-th column of the product:
+
+<Math tex="\colResult{(AB)_{:j}}=A b_j=A\left(\sum_{k=1}^{n}b_{kj}e_k\right)=\sum_{k=1}^{n}\colB{b_{kj}}\colA{a_k}." display />
+
+For the same matrices in the interactive example above, the two columns of $A$ are:
+
+<Math tex="\colA{a_1}=\begin{pmatrix}3\\7\\-1\end{pmatrix},\qquad \colA{a_2}=\begin{pmatrix}2\\-5\\11\end{pmatrix}" display />
+
+The columns of $B$ are $(1,3)^T$, $(1,-2)^T$, and $(1,4)^T$. Use each pair of coefficients in turn:
+
+<Math tex="\begin{aligned}\colResult{(AB)_{:1}}&=1\colA{a_1}+3\colA{a_2}=\colResult{\begin{pmatrix}9\\-8\\32\end{pmatrix}},\\[6pt]\colResult{(AB)_{:2}}&=1\colA{a_1}-2\colA{a_2}=\colResult{\begin{pmatrix}-1\\17\\-23\end{pmatrix}},\\[6pt]\colResult{(AB)_{:3}}&=1\colA{a_1}+4\colA{a_2}=\colResult{\begin{pmatrix}11\\-13\\43\end{pmatrix}}.\end{aligned}" display />
+
+Place these three resulting vectors next to one another to obtain $AB$. The addition happens within each column; the three result columns stay separate. The second component of the last vector is $7-20=-13$, exactly the entry found above by the row-by-column rule. Both methods express the same multiplication, one entry at a time or one column at a time.
+
 ## Order matters
 
 Even when both products exist, $AB$ need not equal $BA$. For rectangular matrices, even their sizes may differ: $(1\times2)(2\times1)$ gives $1\times1$, while reversing the order gives $2\times2$.
@@ -55,6 +77,6 @@ Square matrices of the same size need not commute either. A counterexample is:
 <Math tex="\colA{A}=\begin{pmatrix}1&1\\0&1\end{pmatrix},\quad \colB{B}=\begin{pmatrix}1&0\\0&2\end{pmatrix}" display />
 <Math tex="\colA{A}\colB{B}=\begin{pmatrix}1&2\\0&2\end{pmatrix}\ne\begin{pmatrix}1&1\\0&2\end{pmatrix}=\colB{B}\colA{A}." display />
 
-<Exercise question="A is 3 × 2 and B is 2 × 4. What size is AB? Is BA defined?">
+<Exercise question="A is $3 \times  2$ and B is $2 \times  4$. What size is AB? Is BA defined?">
 $AB$ is $3\times4$. $BA$ is undefined because the inner dimensions $4$ and $3$ do not match.
 </Exercise>

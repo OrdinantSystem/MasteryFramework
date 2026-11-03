@@ -17,7 +17,7 @@ thumbnail: "quantifiers"
 
 ## Un testigo frente a todos los casos
 
-La existencia necesita un testigo. Una afirmación universal abarca cada elemento de su dominio; un contraejemplo la refuta. ∃! significa exactamente uno: existencia y unicidad juntas.
+La existencia necesita un testigo. Una afirmación universal abarca cada elemento de su dominio; un contraejemplo la refuta. $\exists!$ significa exactamente uno: existencia y unicidad juntas.
 
 <Math tex="\exists x\in\mathbb N:x+3=10\quad\text{(}x=7\text{)}\qquad\neg\bigl(\forall x\in\mathbb N:x+3=10\bigr)" display />
 
@@ -27,17 +27,17 @@ La existencia necesita un testigo. Una afirmación universal abarca cada element
 
 <Math tex="\neg(\exists x\in D:P(x))\iff\forall x\in D:\neg P(x)" display />
 
-La negación cambia el cuantificador y el predicado, manteniendo el dominio. Con cuantificadores anidados, cambia cada uno por orden. El orden importa: un único y común a todos los x exige más que un y posiblemente distinto para cada x.
+La negación cambia el cuantificador y el predicado, manteniendo el dominio. Con cuantificadores anidados, cambia cada uno por orden. El orden importa: un único y común a todos los $x$ exige más que un y posiblemente distinto para cada $x$.
 
 <Math tex="\neg(\forall x\,\exists y:P(x,y))\iff\exists x\,\forall y:\neg P(x,y)" display />
 
 ## El caso límite importa
 
-La afirmación n² > n para todo natural falla en n = 1. Si ℕ empieza en 1, la afirmación universal correcta es n² ≥ n; la desigualdad estricta vale para n > 1.
+La afirmación $n^2 > n$ para todo natural falla en $n = 1$. Si $\mathbb{N}$ empieza en 1, la afirmación universal correcta es $n^2 \ge  n$; la desigualdad estricta vale para $n > 1$.
 
 ## Orden de los cuantificadores
 
-En ℕ, «para todo x existe un y mayor que x» es verdadero: dado x, elige y = x + 1. «Existe un y mayor que todo x» es falso: fijado y, tomar x = y refuta la afirmación. En el primero, y puede depender de x; en el segundo debe servir un mismo y. Negar el primero significa que existe un x sin ningún natural y mayor. Cambian ambos cuantificadores, no solo la desigualdad.
+En $\mathbb{N}$, «para todo $x$ existe un y mayor que $x$» es verdadero: dado $x$, elige $y = x + 1$. «Existe un y mayor que todo $x$» es falso: fijado y, tomar $x = y$ refuta la afirmación. En el primero, y puede depender de $x$; en el segundo debe servir un mismo y. Negar el primero significa que existe un $x$ sin ningún natural y mayor. Cambian ambos cuantificadores, no solo la desigualdad.
 
 <Exercise question="Niega: todo número natural es par.">
 

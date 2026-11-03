@@ -15,15 +15,15 @@ sourcePages: [1, 4]
 
 ## ¿Qué significa lineal?
 
-Imagina que sumas dos entradas. En una transformación lineal, sumar primero y transformar después da el mismo resultado que transformar cada entrada y sumar las salidas. Lo mismo ocurre al multiplicar por un escalar.
+Imagina que sumas dos entradas. En una transformación lineal, sumar primero $y$ transformar después da el mismo resultado que transformar cada entrada $y$ sumar las salidas. Lo mismo ocurre al multiplicar por un escalar.
 
 <Math tex="f(x+y)=f(x)+f(y)\qquad f(\lambda x)=\lambda f(x)" display />
 
-La primera propiedad se llama **aditividad**; la segunda, **homogeneidad**. Ambas deben cumplirse para todos los vectores del dominio y todos los escalares del cuerpo correspondiente. Aquí trabajamos sobre los números reales.
+La primera propiedad se llama **aditividad**; la segunda, **homogeneidad**. Ambas deben cumplirse para todos los vectores del dominio $y$ todos los escalares del cuerpo correspondiente. Aquí trabajamos sobre los números reales.
 
 ## ¿Por qué importa un término constante?
 
-La transformación $f(x,y)=2x+3y$ es lineal. Cada entrada se multiplica por un coeficiente fijo y los resultados se suman. No hay una traslación adicional.
+La transformación $f(x,y)=2x+3y$ es lineal. Cada entrada se multiplica por un coeficiente fijo $y$ los resultados se suman. No hay una traslación adicional.
 
 Compárala con $g(x)=2x+3$. El $3$ adicional se suma cada vez que aplicamos la transformación:
 
@@ -33,7 +33,7 @@ Por tanto, $g$ no es aditiva. Es una transformación **afín**: una transformaci
 
 | Expresión | Clasificación | Motivo |
 | --- | --- | --- |
-| $2x+3y$ | Lineal en $x,y$ | Coeficientes fijos y suma |
+| $2x+3y$ | Lineal en $x,y$ | Coeficientes fijos $y$ suma |
 | $ax+2y$ | Lineal en $x,y$ con $a$ fijo | El parámetro es un coeficiente |
 | $2x+3$ | Afín, no lineal | Traslación de $3$ |
 | $2xy+3y$ | No lineal en $(x,y)$ | Producto de dos variables de entrada |
@@ -41,12 +41,12 @@ Por tanto, $g$ no es aditiva. Es una transformación **afín**: una transformaci
 
 ## El vector cero permanece en el origen
 
-De la aditividad obtenemos $f(0)=f(0)+f(0)$ y, por tanto, $f(0)=0$. Una transformación lineal no puede desplazar el origen.
+De la aditividad obtenemos $f(0)=f(0)+f(0)$ $y$, por tanto, $f(0)=0$. Una transformación lineal no puede desplazar el origen.
 
 <Note title="Una prueba rápida para descartar">Si $f(0)\ne0$, la transformación no es lineal. El recíproco es falso: $h(x)=x^2$ cumple $h(0)=0$, pero no es lineal.</Note>
 
-<Exercise question="¿Es lineal f(x,y) = 2x − y? ¿Qué cambia si añades 1 al final?">
-La primera transformación es lineal: la sustitución verifica aditividad y homogeneidad. Con el $1$ adicional, el vector cero se transforma en $1$. La segunda es afín, pero no lineal.
+<Exercise question="¿Es lineal $f(x,y)=2x - y$? ¿Qué cambia si añades 1 al final?">
+La primera transformación es lineal: la sustitución verifica aditividad $y$ homogeneidad. Con el $1$ adicional, el vector cero se transforma en $1$. La segunda es afín, pero no lineal.
 </Exercise>
 
 ## De las ecuaciones a una matriz
@@ -55,4 +55,4 @@ Varias expresiones lineales pueden compartir una representación. En
 
 <Math tex="u=3x+2y,\qquad v=7x-5y,\qquad w=-x+11y" display />
 
-una sola matriz reúne los coeficientes. Cada fila describe una salida y cada columna corresponde a una variable de entrada. La siguiente lección conecta estas dos perspectivas.
+una sola matriz reúne los coeficientes. Cada fila describe una salida $y$ cada columna corresponde a una variable de entrada. La siguiente lección conecta estas dos perspectivas.

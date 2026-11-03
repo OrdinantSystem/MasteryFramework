@@ -1,31 +1,42 @@
 ---
+import Math from '../Math.astro';
+import MathText from '../MathText.astro';
+import {evaluate, formula, formulaTex, assignments, type Operation} from '../../lib/interactive/logic-model';
 interface Props {preset?:'implication'|'nand';id:string}
 const {preset='implication',id}=Astro.props,l=Astro.locals.locale||'en';
-const copy={en:{title:preset==='nand'?'Build with NAND':'An implication and its relatives',inputs:'Inputs',mode:'Compare',reset:'Reset',original:'Original A ⇒ B',output:'Output',same:'Equivalent to A ⇒ B for every assignment.',different:'Not equivalent to A ⇒ B. The table shows all four cases.',gate:'NAND uses only AND followed by negation. Shared intermediate outputs are reused.'},de:{title:preset==='nand'?'Mit NAND bauen':'Eine Implikation und ihre Verwandten',inputs:'Eingaben',mode:'Vergleichen',reset:'Zurücksetzen',original:'Original A ⇒ B',output:'Ausgabe',same:'Für jede Belegung äquivalent zu A ⇒ B.',different:'Nicht äquivalent zu A ⇒ B. Die Tabelle zeigt alle vier Fälle.',gate:'NAND ist ein negiertes UND. Gemeinsame Zwischenergebnisse werden wiederverwendet.'},es:{title:preset==='nand'?'Construir con NAND':'Una implicación y sus variantes',inputs:'Entradas',mode:'Comparar',reset:'Reiniciar',original:'Original A ⇒ B',output:'Salida',same:'Equivalente a A ⇒ B para todas las asignaciones.',different:'No es equivalente a A ⇒ B. La tabla muestra los cuatro casos.',gate:'NAND es una conjunción negada. Se reutilizan las salidas intermedias compartidas.'}}[l];
+const copy={en:{title:preset==='nand'?'Build with NAND':'An implication and its relatives',inputs:'Inputs',mode:'Compare',reset:'Reset',original:'Original $A \\Rightarrow B$',output:'Output',same:'Equivalent to $A \\Rightarrow B$ for every assignment.',different:'Not equivalent to $A \\Rightarrow B$. The table shows all four cases.',gate:'NAND uses only AND followed by negation. Shared intermediate outputs are reused.'},de:{title:preset==='nand'?'Mit NAND bauen':'Eine Implikation und ihre Verwandten',inputs:'Eingaben',mode:'Vergleichen',reset:'Zurücksetzen',original:'Original $A \\Rightarrow B$',output:'Ausgabe',same:'Für jede Belegung äquivalent zu $A \\Rightarrow B$.',different:'Nicht äquivalent zu $A \\Rightarrow B$. Die Tabelle zeigt alle vier Fälle.',gate:'NAND ist ein negiertes UND. Gemeinsame Zwischenergebnisse werden wiederverwendet.'},es:{title:preset==='nand'?'Construir con NAND':'Una implicación y sus variantes',inputs:'Entradas',mode:'Comparar',reset:'Reiniciar',original:'Original $A \\Rightarrow B$',output:'Salida',same:'Equivalente a $A \\Rightarrow B$ para todas las asignaciones.',different:'No es equivalente a $A \\Rightarrow B$. La tabla muestra los cuatro casos.',gate:'NAND es una conjunción negada. Se reutilizan las salidas intermedias compartidas.'}}[l];
 const options=preset==='nand'?['not','and','or']:['implication','contrapositive','converse','inverse'];
 const names={en:['Implication','Contrapositive','Converse','Inverse','NOT','AND','OR'],de:['Implikation','Kontraposition','Umkehrung','Inverse','NICHT','UND','ODER'],es:['Implicación','Contraposición','Recíproca','Inversa','NO','Y','O']};
 const keys=['implication','contrapositive','converse','inverse','not','and','or'];
 ---
 <section class="logic-lab" data-logic={preset} id={id} data-copy={JSON.stringify(copy)} aria-label={copy.title}>
  <h3>{copy.title}</h3><fieldset><legend>{copy.mode}</legend>{options.map(op=><button type="button" data-op={op} aria-pressed={op===options[0]?'true':'false'}>{names[l][keys.indexOf(op)]}</button>)}</fieldset>
- <fieldset><legend>{copy.inputs} · 0 / 1</legend><button type="button" data-input="a" aria-pressed="false">A = 0</button><button type="button" data-input="b" aria-pressed="false">B = 0</button><button type="button" data-reset>{copy.reset}</button></fieldset>
- <p class="logic-formula" data-formula>{preset==='nand'?'A | A':'A ⇒ B'}</p>
+ <fieldset><legend>{copy.inputs} · 0 / 1</legend><button type="button" data-input="a" aria-pressed="false"><Math tex="A=0" /></button><button type="button" data-input="b" aria-pressed="false"><Math tex="B=0" /></button><button type="button" data-reset>{copy.reset}</button></fieldset>
+ <p class="logic-formula" data-formula><Math tex={preset==='nand'?formulaTex.not:formulaTex.implication} /></p>
  {preset==='nand'&&<svg data-circuit viewBox="0 0 620 190" role="img" aria-label="A | A = 1"><path d="M60 90H210V80H260M210 90V100H260M317 90H550" stroke="var(--axis)" fill="none"/><path d="M260 65h22a25 25 0 0 1 0 50h-22Z" fill="var(--panel)" stroke="var(--accent)"/><circle cx="312" cy="90" r="5" fill="var(--bg)" stroke="var(--accent)"/><text x="60" y="70" fill="var(--text)">A = 0</text><text x="560" y="95" fill="var(--text)">1</text></svg>}
  <p role="status" aria-live="polite" data-output>{copy.output}: 1</p>
- <div class="table-scroll"><table><thead><tr><th>A</th><th>B</th>{preset==='implication'&&<th>{copy.original}</th>}<th>{copy.output}</th></tr></thead><tbody data-rows>{(preset==='nand'?[[0,0],[1,0]]:[[0,0],[0,1],[1,0],[1,1]]).map(([a,b])=><tr><td>{a}</td><td>{preset==='nand'?'—':b}</td>{preset==='implication'&&<td>{Number(!a||b)}</td>}<td>{preset==='nand'?Number(!a):Number(!a||b)}</td></tr>)}</tbody></table></div>
- <p data-feedback>{preset==='nand'?copy.gate:copy.same}</p>
+ <div class="table-scroll" role="region" aria-label={copy.title} tabindex="0"><table><thead><tr><th scope="col"><Math tex="A" /></th><th scope="col"><Math tex="B" /></th>{preset==='implication'?options.map(op=><th scope="col" data-column={op} aria-label={names[l][keys.indexOf(op)]} class:list={{'selected-column':op==='implication'}}><span class="logic-column-formula"><Math tex={formulaTex[op as Operation]} /></span></th>):<th scope="col">{copy.output}</th>}</tr></thead><tbody data-rows>{preset==='implication'?assignments.map(([a,b],i)=><tr data-a={String(a)} data-b={String(b)} class:list={{'selected-row':i===0}}><td data-truth-value={Number(a)}>{Number(a)}</td><td data-truth-value={Number(b)}>{Number(b)}</td>{options.map(op=><td data-truth-value={Number(evaluate(op as Operation,a,b))} data-column={op} class:list={{'selected-column':op==='implication','current-cell':i===0&&op==='implication'}}>{Number(evaluate(op as Operation,a,b))}</td>)}</tr>):[[0,0],[1,0]].map(([a])=><tr><td data-truth-value={a}>{a}</td><td>—</td><td data-truth-value={Number(!a)}>{Number(!a)}</td></tr>)}</tbody></table></div>
+ <p data-feedback><MathText text={preset==='nand'?copy.gate:copy.same} /></p>
 </section>
 <script>
-import {evaluate,equivalent,formula,assignments,type Operation} from '../../lib/interactive/logic-model';
+import {renderMathText} from '../../lib/math-text';
+import katex from 'katex';
+import {mathOptions} from '../../lib/math-options.mjs';
+import {evaluate,equivalent,formula,formulaTex,assignments,type Operation} from '../../lib/interactive/logic-model';
 for(const root of document.querySelectorAll<HTMLElement>('[data-logic]')){
  const preset=root.dataset.logic,copy=JSON.parse(root.dataset.copy!);let op:Operation=preset==='nand'?'not':'implication',a=false,b=false;
  const gate=(x:number,y:number)=>`<path d="M${x} ${y}h22a25 25 0 0 1 0 50h-22Z" fill="var(--panel)" stroke="var(--accent)" stroke-width="2"/><circle cx="${x+52}" cy="${y+25}" r="5" fill="var(--bg)" stroke="var(--accent)" stroke-width="2"/>`;
  function draw(){
  root.querySelectorAll<HTMLButtonElement>('[data-op]').forEach(el=>el.setAttribute('aria-pressed',String(el.dataset.op===op)));
- root.querySelectorAll<HTMLButtonElement>('[data-input]').forEach(el=>{const v=el.dataset.input==='a'?a:b;el.textContent=`${el.dataset.input!.toUpperCase()} = ${Number(v)}`;el.setAttribute('aria-pressed',String(v));el.hidden=op==='not'&&el.dataset.input==='b'});
- root.querySelector('[data-formula]')!.textContent=formula[op];root.querySelector('[data-output]')!.textContent=`${copy.output}: ${Number(evaluate(op,a,b))}`;
- root.querySelector('[data-feedback]')!.textContent=preset==='nand'?copy.gate:equivalent('implication',op)?copy.same:copy.different;
- root.querySelector('[data-rows]')!.innerHTML=assignments.filter((_,i)=>op!=='not'||i%2===0).map(([x,y])=>`<tr ${x===a&&y===b?'class="selected-row"':''}><td>${Number(x)}</td><td>${op==='not'?'—':Number(y)}</td>${preset==='implication'?`<td>${Number(evaluate('implication',x,y))}</td>`:''}<td>${Number(evaluate(op,x,y))}</td></tr>`).join('');
+ root.querySelectorAll<HTMLButtonElement>('[data-input]').forEach(el=>{const v=el.dataset.input==='a'?a:b;el.innerHTML=katex.renderToString(`${el.dataset.input!.toUpperCase()} = ${Number(v)}`,mathOptions);el.setAttribute('aria-pressed',String(v));el.hidden=op==='not'&&el.dataset.input==='b'});
+ root.querySelector('[data-formula]')!.innerHTML=katex.renderToString(formulaTex[op],mathOptions);root.querySelector('[data-output]')!.textContent=`${copy.output}: ${Number(evaluate(op,a,b))}`;
+ root.querySelector('[data-feedback]')!.innerHTML=renderMathText(preset==='nand'?copy.gate:equivalent('implication',op)?copy.same:copy.different);
+ if(preset==='implication'){
+ root.querySelectorAll<HTMLElement>('[data-rows] tr').forEach(row=>row.classList.toggle('selected-row',row.dataset.a===String(a)&&row.dataset.b===String(b)));
+ root.querySelectorAll<HTMLElement>('[data-column]').forEach(cell=>{cell.classList.toggle('selected-column',cell.dataset.column===op);cell.classList.toggle('current-cell',cell.tagName==='TD'&&cell.dataset.column===op&&cell.parentElement!.classList.contains('selected-row'))});
+ }else{
+ root.querySelector('[data-rows]')!.innerHTML=assignments.filter((_,i)=>op!=='not'||i%2===0).map(([x,y])=>`<tr ${x===a&&y===b?'class="selected-row"':''}><td data-truth-value="${Number(x)}">${Number(x)}</td><td data-truth-value="${op==='not'?'':Number(y)}">${op==='not'?'—':Number(y)}</td><td data-truth-value="${Number(evaluate(op,x,y))}">${Number(evaluate(op,x,y))}</td></tr>`).join('');
+ }
  const svg=root.querySelector('[data-circuit]');if(svg){let wires='',gates='',labels='';
  if(op==='not'){gates=gate(260,65);wires='M60 90H210V80H260M210 90V100H260M317 90H550';labels=`<text x="60" y="70">A = ${Number(a)}</text>`}
  if(op==='and'){gates=gate(170,65)+gate(400,65);wires='M60 80H170M60 100H170M227 90H350V80H400M350 90V100H400M457 90H550';labels=`<text x="60" y="65">A = ${Number(a)}</text><text x="60" y="130">B = ${Number(b)}</text><text x="245" y="70">${Number(!(a&&b))}</text>`}
