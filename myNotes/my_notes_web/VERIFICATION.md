@@ -1,3 +1,77 @@
+# Session release validation · 3 November 2026
+
+- Ran the complete production build on Node 24.22.1 before creating the session commits. Repeated it with SITE_URL=https://ordinantsystem.github.io and BASE_PATH=/MasteryFramework, then restored the normal root build. All three runs passed: Astro diagnostics (0 errors/warnings/hints), library/content checks, 173 static pages, 147 indexed lessons, 12,156 local links/assets, contrast checks and 3,051 generated TeX annotations.
+- Checked that the root, German Analysis lesson and Spanish composition lesson in the prefixed output contain /MasteryFramework/ navigation and asset URLs. The prefix build is a local compatibility check; GitHub Pages deployment has not been activated or tested.
+- Session changes are grouped into local development setup, application/content improvements, and documentation/screenshots. Existing per-task records below describe the earlier browser checks and their limits. The Pages workflow remains an inactive template; generated build output and private source directories are excluded from Git.
+
+---
+
+# Breadcrumb hierarchy and homepage cleanup · 3 November 2026
+
+- Removed the Notes/root breadcrumb. Course breadcrumbs begin with the course name, using the same navigationColorAt-derived foreground token as the sidebar. Chapter and lesson labels retain neutral colors and the existing breadcrumb size. Removed the repeated course/type/count metadata row above lesson titles, plus area/archive eyebrows above course and search titles.
+- Homepage now starts with the topic sections: removed its breadcrumb and visible archive/myNotes heading. Retained a visually hidden h1 for document structure. Updated DESIGN-SYSTEM.md. Preserved unrelated pre-existing edits to page descriptions and the course navigation.
+- Node 24.22.1 production build passed: diagnostics, library/content checks, static generation, search, local references, contrast and math-copy verification. git diff --check passed.
+- Browser checked Linear Algebra and Analysis lessons in EN/DE/ES, 1440 × 1000 and 390 × 1000, light/dark (24 lesson states): course breadcrumb colors match sidebar course headings, all other breadcrumb text stays neutral, no lesson metadata row, no page-wide overflow. Also verified Learning course color matching.
+- Checked all three localized homepages at desktop/compact widths: no breadcrumb or visible index heading, two topic sections, offscreen h1, no overflow. Visually inspected desktop English lesson and compact Spanish homepage. Screenshots: previews/breadcrumb-course-color.png and previews/homepage-topics-compact.png.
+- Routes and localization identities are unchanged. No commit, push or deployment performed.
+
+---
+
+# Archive study-field heading alignment · 3 November 2026
+
+- Added a dedicated area-heading class to the archive overview's Mathematics and Learning & Teaching headings. Both now group the icon and title at the left with a 12 px gap; the icon's old right margin is removed for these headings. Other chapter headings retain their space-between layout for right-aligned lesson counts. Updated DESIGN-SYSTEM.md.
+- Node 24.22.1 production build passed: no Astro diagnostics, library/content and generated-math checks, 173 static pages, 147 indexed lessons, 12,320 checked links/assets, and theme contrast checks. Totals describe the shared working tree.
+- Browser checked EN/DE/ES at 1440 × 1000 and 390 × 844, light/dark (12 states): both headings use flex-start, a 12 px gap, and zero icon offset from the heading's left edge; no heading or page-wide overflow. Visually inspected desktop English and compact Spanish dark layouts. Confirmed the four Analysis chapter headings still use space-between with their counts. Screenshot: previews/archive-area-headings.png. No routes, dependencies, commit, push, or deployment changed; physical-device and screen-reader checks not performed.
+
+---
+
+# Subtle scrollbars and automatic course colors · 3 November 2026
+
+- Softened navigation scrollbar thumbs from 18% muted/30% hover blends to 10% muted/16% hover mixed with the reading background; tracks remain transparent. Applies to sidebar and page contents, so light thumbs are whiter and dark thumbs darker.
+- Replaced course-id CSS color rules with navigationColorAt in src/lib/navigation-colors.ts. SiteLayout computes colors from global course-registry order before filtering by area: blue → accent/teal → purple → coral, repeating. Chapters/groups and active lessons inherit the parent course color and tint. Current assignments are retained. Append-only growth preserves them; reordering deliberately changes them. Mathematical figure roles are untouched. Documented the contract in DESIGN-SYSTEM.md and development.md.
+- Direct checks verified the first eight assignments, wraparound, invalid indices, and balanced distribution over 101 positions (counts differ by at most one). Node 24 production build passed: 173 pages, 147 indexed lessons, 12,320 local links/assets and existing mathematical/content/library/contrast checks.
+- Browser at 390 and 1440 px, EN/DE/ES, light/dark (12 states): consistent three-course token mapping, correct theme-dependent scrollbar blends, no page-wide overflow. Expanded course branches and visually inspected the dark scrollbar. Screenshot: previews/navigation-colors-scrollbar.jpg. Physical scrollbar dragging, screen readers and OS scrollbar-preference variants were not independently exercised. No routes or localization mechanics changed.
+- No commit, push or deployment performed.
+
+---
+
+# Fainter navigation details · 3 November 2026
+
+- Removed the sidebar's vertical article divider. Reduced colored course rails from 2 px to 1 px. Navigation scrollbar thumbs now blend the muted color at 18% at rest and 30% on hover/focus, retaining transparent tracks and native scrolling. Updated the design guide and refreshed the course-color rollback patch so it preserves these independent divider/scrollbar refinements.
+- Node 24.22.1 production build passed: no Astro diagnostics, library/content and generated-math checks, 173 static pages, 147 indexed lessons, 12,308 local links/assets, and contrast checks. No route, localization, dependency, or behavior change.
+- Browser checked EN/DE/ES at 1440 × 1000 and 390 × 844 in both themes (12 states): computed sidebar divider 0 px, all three course rails 1 px, and no page-wide overflow. Resting scrollbar colors resolve to the 18% mix in both themes. Expanded a long desktop branch and verified a scrollable sidebar with the 30% focus mix; visually inspected the dark appearance. Screenshot: previews/navigation-faint-dark.png. Native scrollbar rendering can vary by operating system. No new commit, push, or deployment.
+
+---
+
+# Course navigation color trial · 3 November 2026
+
+- First committed the existing navigation cleanup as `2901665`: localized header-home behavior, removal of duplicate archive navigation, quiet scrollbars, related guide/verification notes, and two existing screenshots. Staged only navigation changes, including selected CSS/documentation changes; unrelated content and interaction edits were excluded. The Node 24 production build passed before committing.
+- The uncommitted trial assigns stable blue/teal/purple colors to Linear Algebra/Analysis/Learning Methodology. Added `data-course` to each course branch; shared tokens color course and subsection headings, overview links, continuous course rails, active lessons, and their dots. Course headings have stronger weight and a 44 px minimum height. Desktop headings stick at the sidebar edge while their expanded branch scrolls. Existing labels, grouping, stored expansion state, URLs, and active-ancestor reveal remain intact.
+- Final Node 24.22.1 production build passed: no Astro diagnostics, library/content checks, 173 static pages, 147 indexed lessons, 12,308 checked links/assets, both-theme contrast checks, and generated-math checks. Totals describe the shared working tree. No route, localization, or dependency changes.
+- Browser: all three courses in EN/DE/ES at 1440 × 1000 and 390 × 844, light/dark (36 states): every course heading and active lesson had the expected computed color, active ancestors were open, and no page-wide overflow occurred. Opened the compact menu in every tested course/language. Exercised keyboard Enter collapse/reopen, desktop lesson navigation, and compact lesson navigation. Verified a long Analysis branch scrolls with its course title at y=76, matching the sidebar top. Visually inspected the light desktop course comparison and compact Spanish learning branch. Saved previews/course-navigation-desktop.png, previews/course-navigation-compact.png, and previews/course-navigation-sticky.png.
+- A transient preview 404 occurred during the language sweep; reload restored the localized page and the completed sweep passed. No usability study, physical touch, screen-reader, or print check. The color trial remains uncommitted; no push or deployment. Its isolated implementation patch is ../docs/history/course-navigation-color-trial.patch; applying it in reverse from the repository root removes only the trial code, preserving other workspace edits.
+
+---
+
+# Implication comparison refinement · 3 November 2026
+
+- Replaced boxed table-header selectors and repeated operation names with formula-only headers, retaining localized accessible names. Selection stays in the top comparison controls. A/B headers use KaTeX. Reduced implication-panel vertical padding/margins, formula spacing, and table row padding; kept horizontal room with a full-width table and a compact-screen local scroll minimum.
+- Column tint now mixes 6% accent with transparency; row tint uses 4% muted. The active output has a larger bold digit and no outline. Existing blue/teal truth-value colors are preserved. Updated representation-library.md to describe the revised selection contract.
+- Node 24.22.1 production build passed: Astro diagnostics, library/content checks, 173 pages, 147 indexed lessons, 12,308 local links/assets, contrast and math-copy checks. git diff --check passed.
+- Browser exercised all four operations over all four input assignments (16 states): exactly one active cell, matching status output, no cell outline. Reset returned to implication and inputs 0/0. EN/DE/ES checked at 1440 × 1000 and 390 × 1000 in both themes: six KaTeX headers, no header buttons, correct selection via keyboard Enter, no KaTeX errors or page-wide overflow. Visually inspected desktop English dark and compact Spanish dark. Screenshot: previews/implication-table-refined.png.
+- No routes, dependencies, or mathematical truth functions changed. No commit, push or deployment. Other workspace edits preserved.
+
+---
+
+# Remove title subtitles · 3 November 2026
+
+- Removed visible description/tagline paragraphs from the shared lesson, archive, course and search page headings, chapter headings, course/lesson overview entries, and authoring-gallery heading. Removed the generic course index introduction and unused lead/chapter-description/index-intro CSS. Metadata descriptions remain in frontmatter/configuration and SiteLayout's meta description. Article explanations, math, exercises and captions were not edited by this task. Updated DESIGN-SYSTEM.md to make subtitle-free headings the ongoing contract.
+- Node 24 production build passed: 173 pages, 147 indexed lessons, 12,308 local links/assets, existing content/library/contrast checks and mathematical-notation checks. Parsed all 164 pages using the shared layout: no lead/chapter-description/index-intro blocks; all retain nonempty description metadata.
+- Browser production preview: Logical connectives, archive overview, and Analysis course overview in EN/DE/ES at 390 and 1440 px in both themes (36 states) had no subtitle blocks and no page-wide overflow. Visually inspected the requested Logical connectives page. Screenshot: previews/no-title-subtitles.jpg. Routes/localization mechanics unchanged, so no prefix rebuild for this presentation change.
+- No physical-device or screen-reader check for this rendering-only change. No commit, push or deployment.
+
+---
+
 # Combined archive-home logo · 3 November 2026
 
 - Removed the Study notes label, its three unused translations, and label-only CSS. The shared SiteLayout keeps one native anchor around the book icon and full myNotes wordmark, with explicit wordmark grouping, a 44 px click area, and constrained SVG sizing. Its href continues to use localeUrl(locale), returning to the archive overview rather than a course or external site. Updated the canonical header contract in DESIGN-SYSTEM.md.
@@ -15,6 +89,109 @@
 - Node 24.22.1 production build passed: Astro diagnostics, library/content checks, 173 static pages, 147 indexed lessons, 12,301 local links/assets and theme contrast checks. git diff --check passed.
 - Browser checked EN/DE/ES matrix lessons at 1440 × 1000 and 390 × 1000 in both themes: duplicate link absent, all three course overview links retained, wordmark targets the correct locale, no horizontal page overflow. Opened the compact menu in each locale. Computed scrollbar tracks are transparent; thumb opacity is 35% at rest and 65% with keyboard focus. Expanded the second chapter to confirm a scrollable desktop sidebar and visually inspected its dark scrollbar. Screenshot: previews/navigation-scrollbar-desktop.png.
 - No commit, push or deployment. Browser checks used the available macOS browser; other operating systems may render native scrollbar dimensions differently.
+
+---
+
+# Truth-table value colors · 3 November 2026
+
+- Added blue `0` / teal `1` styling using the existing semantic tokens. The Markdown table transform marks binary-only Analysis table bodies in all locales; LogicLab marks initial and regenerated implication/NAND cells. Selected rows, columns, and outlined cells retain value colors. Other numeric tables and Boolean mathematics remain unchanged. Updated the representation guide and design system.
+- Final Node 24.22.1 production build passed: Astro 0 errors/warnings/hints, library/content checks, 173 static pages, 147 indexed lessons, 12,465 local links/assets. Expanded the existing contrast checks to include blue text on the teal selected-column background (60 pairs across both themes).
+- Browser checked logical connectives, implication/contraposition, and NAND in EN/DE/ES at 1440 × 1000 and 390 × 844, light/dark: 36 layout states and 672 binary cell checks, all with correct computed colors and no page-wide overflow. Checked all seven operation selectors with input toggles in English in both themes, plus reset and a German implication reset; no incorrect value colors observed. Inspected desktop dark and compact light layouts; tables retain local horizontal scrolling. No console errors observed in the final checked page. Screenshots: previews/truth-values-desktop-dark.png and previews/truth-values-compact-light.png.
+- No route, translation, dependency, or public component API change. Physical touch, screen readers, and printing were not tested. No commit, push, or deployment performed; unrelated workspace changes preserved.
+
+---
+
+# Irrationality of √2 and proof methods · 3 November 2026
+
+- Read and rewrote the complete contradiction/irrationality lesson in EN/DE/ES, preserving stable identities and unreviewed status. Added the purpose of proof, a four-stage natural-number example, a self-contained parity lemma by contraposition, six justified steps for √2, a comparison of proof methods, a complete descent explanation, and two reference-answer exercises including the √4 boundary case. Authoring comments distinguish expanded teaching material from the source example.
+- Checked the algebra and logical dependencies: reduction is available for every rational; q is nonzero; even-square implies even-integer by the odd-square calculation; substitution gives q² = 2k²; both entries even contradict gcd = 1. For √4 substitution instead gives k² = q² and does not force the denominator even. Descent uses least positive denominator, with no assumption of reduction.
+- Node 24.22.1 production build passed: Astro 0 errors/warnings/hints, all library/content checks, 173 pages, 147 indexed lessons and 12,465 local links/assets plus contrast checks. git diff --check passed. An additional isolated root build was used for browser QA because shared dist output changed during verification.
+- In the isolated production preview, checked EN/DE/ES at 1440 × 1000 and 390 × 1000, light/dark (12 states): all six proof steps present, no KaTeX errors, no page-wide horizontal overflow. The methods table scrolls locally on compact screens. Keyboard Enter opened the √4 reference answer in each locale at both sizes. Visually inspected desktop English proof in dark, methods table in light, and compact Spanish dark. Screenshot: previews/irrationality-proof-desktop.png.
+- No routes, shared components, or dependencies changed. This is an authored explanation, not a completed external mathematical or translation review. No commit, push or deployment performed. Other workspace changes preserved.
+
+---
+
+# Bloom minimal styling · 3 November 2026
+
+- Removed left-edge accent stripes from the six tier buttons and the example panel. Removed the topic label and interaction instructions above the tiers, including their unused CSS and script lookup. Colors, action descriptions, selection/focus feedback, prompts and input behavior remain.
+- Updated the learning guide and appended the presentation change to ../docs/history/bloom-taxonomy.md.
+- Final canonical Node 24 production build passed: 173 pages, 147 indexed lessons, 12,465 local links/assets and existing content/library/contrast checks. Initial builds encountered concurrent dependency changes and unrelated rotation type/runtime errors; those were corrected by other work before the successful final build. This task did not edit rotation components.
+- Browser QA used a temporary source snapshot while the shared checkout was changing: EN/DE/ES at 390 and 1440 px in light/dark (12 states), no overflow, no introductory labels, and no accent stripe borders. Verified selection and captured the simplified graphic. Then opened the final canonical production preview on port 4321 and checked Analyze selection and removed introductory lines. Screenshot: previews/bloom-minimal-desktop.jpg. Temporary preview stopped afterward.
+- No physical-touch, screen-reader or print checks for this styling-only change. No commit, push or publication.
+
+---
+
+# Implication comparison columns · 3 November 2026
+
+- The implication lab now shows all four truth-table output columns simultaneously, with localized names and formulas in clickable headers. Existing selectors and header buttons highlight the selected column; an outlined cell identifies the current input result. Static values use the shared Boolean model, and input changes preserve the table DOM. NAND keeps its existing selected-output table.
+- Node 24.22.1 production build passed: Astro 0 errors/warnings/hints, library/content checks, 173 pages, 147 indexed lessons, 12,459 local links/assets and contrast checks. No dependencies or routes changed. Updated the representation-library contract.
+- Browser tested EN/DE/ES at 1440 and 390 px in light/dark (12 states). Independently checked all 16 truth-table results, clicked all four column headers, checked five highlighted column cells and one active intersection, changed A/B, reset, and selected a header using keyboard Enter. No page-wide overflow or page errors. Compact tables scroll locally; desktop displays all columns together. NAND NOT/AND/OR row counts still update correctly.
+- Visually inspected desktop and compact dark screenshots: previews/logic-columns-1440.png and previews/logic-columns-390.png. Physical touch, screen-reader output, print and JavaScript-disabled browser mode remain untested. Initial four-column content is server-rendered. No commit, push or deployment performed; unrelated workspace changes preserved.
+
+---
+
+# Shared lesson paragraph width · 3 November 2026
+
+- Removed both `.prose > p` character-width caps (the original 68ch rule and the later effective 78ch override) from shared site.css. Lesson body paragraphs now fill the same responsive article container as display mathematics and figures. Updated DESIGN-SYSTEM.md to record this requested layout change.
+- Node 24.22.1 production build passed: Astro 0 errors/warnings/hints, library/content checks, 173 static pages, 147 indexed lessons, 12,455 local links/assets and text contrast checks in both themes. Existing unrelated workspace changes were preserved.
+- Checked the built matrix-multiplication lesson in EN/DE/ES at 1440 × 1000 and 390 × 1000, both themes (12 states). Every direct prose paragraph matched its article width: 900 px desktop and 333 px compact. No page-wide horizontal overflow. Visually inspected desktop English light and compact Spanish dark. Screenshot: previews/paragraph-width-desktop.png.
+- This check covers the shared body-paragraph layout; component-specific captions and header leads retain their own typography. No commit, push or deployment performed.
+
+---
+
+# Matrix multiplication as column combinations · 3 November 2026
+
+- Added a visible second method to the EN/DE/ES matrix multiplication lessons, preserving the existing row-by-column interaction and all earlier content. Expanded each right-hand column in the standard basis, applied linearity, and calculated all three product columns as weighted sums of the left-hand columns using the existing example. Independently recalculated the nine product entries. Review status remains unreviewed.
+- Node 24.22.1 production builds passed at the root and with BASE_PATH=/myNotes; restored the normal root build. Astro reported no errors/warnings/hints; library/content checks, 173 generated pages, 147 indexed lessons, 12,455 local links/assets, and theme contrast checks passed. No dependencies, routes, or component contracts changed.
+- Browser checked all three languages at 1440 × 1000 and 390 × 844 in light/dark (12 states): new section present, no KaTeX errors, no page-wide overflow. Visually inspected English desktop dark/light and Spanish compact worked vectors. The general derivation scrolls in its existing math wrapper on compact screens; numerical column calculations fit. Screenshot: previews/matrix-column-combinations-compact.png.
+- Repository-prefix output passed automated checks; a separate prefixed browser server could not bind within the sandbox, so prefixed navigation was not browser-verified. Existing interaction behavior was not changed. Physical touch, screen readers, and print were not tested. No commit, push, or deployment performed; unrelated workspace changes preserved.
+
+---
+
+# Composition dimensions · 3 November 2026
+
+- Replaced the nine defined-product labels with theme-aware green/teal ticks and localized accessible names. Added a tick/dash legend. Both groups of matrix dimensions now use vertically aligned membership notation in EN/DE/ES; mathematical sizes and compatibility entries are unchanged.
+- Node 24.22.1 production build passed: Astro 0 errors/warnings/hints, library/content checks, 173 static pages, 147 indexed lessons, 12,455 local links/assets and contrast checks. An initial prerender attempt failed on a missing generated chunk; the complete rerun passed.
+- Production-preview browser checked all three languages at 1440 and 390 px in light/dark (12 states): all nine ticks have their localized accessible label and existing accent color, with no page-wide overflow. Visually inspected the desktop dark stacked notation and table. Screenshot: previews/composing-dimensions-desktop.png. Screen-reader output and print remain untested. No routes, dependencies or shared styles changed; no commit, push or deployment performed.
+
+---
+
+# Mind Maps and reusable concept graphs · 3 November 2026
+
+- Revised the full Mind Maps lesson in EN/DE/ES. Replaced calculus and linearity examples with an illustrative study-method map and a worked correction distinguishing retrieval from feedback. Explained radial mind maps versus concept maps, bounded questions, hierarchy, named direction, cross-links, conditions, source checking, reconstruction, and changed application. Preserved metadata and unreviewed status. Checked the existing Karpicke–Blunt abstract against the lesson's limited evidence claim.
+- Added the typed MindMap family through Interactive and central MDX registration. Shared localized data produces HTML controls/details/relationship lists and SVG branches/cross-links. Three views, concept selection, native keyboard input, and reset stay local. The compact layout responds to available article width. The gallery demonstrates both the seven-node study preset and a separate three-node teaching graph through the custom-data API; controls are independent. No dependency added.
+- Node 24.22.1 and locked dependencies: production build passed with zero Astro errors/warnings/hints; graph, existing library and content checks; 173 pages, 147 indexed lessons, 12,455 local links/assets, and existing text-contrast checks. New validation covers graph reachability, duplicate/self/missing links, localization, finite coordinates and height, bounded node rectangles, and supported routes. These are structural checks, not validation of learning outcomes or automatic layout quality.
+- Browser: all three lesson languages at 1440×1000 and 390×1000 in both themes (12 layout states) fit without page-wide overflow. Inspected English and German desktop labels and Spanish/English compact controls. Exercised all three stages, pointer selection, Enter/Space selection, repeated selection, reset, and two gallery instances with independent states. No browser console errors in the checked flows. Production search for “Mind Maps” returned the lesson and opened its correct route. Fixed an observed overlapping edge label. The complete node explanations and relationship list are server-rendered; a separate JavaScript-disabled browser session was not tested.
+- Screenshots: previews/mind-map-learning-desktop.jpg and previews/mind-map-learning-compact.jpg. Public API and limitations: ../docs/representation-library.md; design specification: ../docs/mind-map-interaction.md. Physical touch/pen, screen readers and print were not tested; translations still need independent human review. Routes and localization mechanics were unchanged. No commit, push, or publication performed. Concurrent edits elsewhere in the workspace were preserved.
+
+---
+
+# Interleaved practice example · 3 November 2026
+
+- Defined A/B/C before the schedules as direct proof, counterexample, and contraposition within integer reasoning. Added worked examples, equally balanced blocked/mixed schedules, and three unlabelled problems with native disclosures explaining strategy selection. Compared two valid routes for one claim in the article. Kept the distinction between interleaving and broader perspective changes.
+- Checked the PubMed abstracts for Rohrer, Dedrick & Burgess (2014), PMID 24578089, and Brunmair & Richter (2019), PMID 31556629. All three lesson languages now link concise findings and material-specific limits. The proof examples are explicitly authored illustrations, not research stimuli; review status remains unreviewed.
+- Final production build passed on Node 24.22.1: Astro 0 errors/warnings/hints, library/content checks, 173 static pages, 147 indexed lessons in three languages, 12,455 local links/assets and existing contrast checks. No dependencies or routes changed. Used the existing npm cache to install locked dependencies offline.
+- Browser checked EN/DE/ES at 390 × 844 and 1440 × 1000, light/dark (12 states): no page-wide overflow, all three method definitions and both research links present, no formula scrolling in the method legend. Keyboard Enter opened the third strategy disclosure at both widths in each language; separately checked first-task keyboard and second-task click reveals. Visually inspected desktop dark/light and compact German/Spanish layouts. No console errors observed. Screenshot: previews/interleaving-desktop.png.
+- No physical touch/pen, screen-reader, print, or JavaScript-disabled browser test. Content and native disclosures are server-rendered. No commit, push or deployment performed. Other concurrent workspace changes were preserved.
+
+---
+
+# Bloom rectangular tiers · 3 November 2026
+
+- Before revising, recorded the first pyramid version and retained its screenshot in ../docs/history/bloom-taxonomy.md. Read the sibling mastery-site BloomPyramid and tier styles as the reference; sibling files remain unchanged by this task.
+- Replaced triangle/trapezoids with centered colored rectangles, width 60%–100%, using existing tokens. Added localized action descriptions, an example-topic label, a selected outline, and matching detail-panel color. Kept native hover/focus/click and keyboard selection, server-rendered examples, and the qualification about effectiveness rankings. No dependency/configuration or route changes for this task.
+- Restored locked dependencies with npm ci and passed the final Node 24.22.1 production build: Astro 0 errors/warnings/hints, all library/content checks, 173 static pages, 147 indexed lessons, 12,455 local links/assets and existing contrast checks. Other work is present in the shared checkout; these totals describe the whole checkout.
+- Browser: all six tier clicks exercised in each locale at 390 px in light/dark, plus DE/ES at 1440 px in both themes; EN desktop visually inspected in both themes. These 12 distinct locale/width/theme layouts had no page-wide overflow. Exactly one detail panel remained visible in the automated selection checks. Home selected Create, ArrowDown selected Evaluate, End selected Remember. Visually checked German compact action wrapping. Screenshots: previews/bloom-rectangles-desktop.jpg and previews/bloom-rectangles-compact.jpg.
+- Physical touch/pen, screen-reader behavior, isolated hover-only input, print rendering and JavaScript-disabled browser mode remain untested. No commit, push or deployment performed.
+
+---
+
+# Bloom pyramid · 3 November 2026
+
+- Replaced QuestionLens's horizontal selector with six native, clipped pyramid layer buttons using the existing question data and shared theme/spacing tokens. Added pointer-entry, focus, click, Up/Down and Home/End selection. Details sit beside the pyramid on wide screens and below it on compact screens. All examples remain server-rendered for reading without JavaScript and for print. The public component and gallery share this implementation; no dependency was added.
+- Node 24.22.1 production build passed: Astro 0 errors/warnings/hints, all library/content checks, 173 pages, 147 indexed lessons in three languages, 12,445 local links/assets and existing contrast checks.
+- Production-preview browser checks: all six layer clicks in EN/DE/ES at 390 px; exactly one detail panel remained visible. ArrowUp moved focus/selection from Analyze to Evaluate. All three languages at 390 and 1440 px in light/dark themes had no page-wide horizontal overflow (12 states). Visually inspected English desktop in both themes and compact German labels, including the apex. Representative screenshot: previews/bloom-pyramid-desktop.jpg.
+- Physical touch/pen, screen readers, JavaScript-disabled browser mode and print output were not exercised. Hover is implemented through pointerenter; an isolated hover-only automation was unavailable. No routes or locale mechanics changed. No commit, push or deployment performed.
 
 ---
 
@@ -189,3 +366,43 @@ Representative light and dark layouts, mathematical figures, and the mobile matr
 The build verifies structure and selected numerical examples. It is not a formal mathematical review of every sentence or proof. Lesson review status remains unreviewed for Jean's editorial and mathematical check.
 
 No deployment, Git commit, or push was performed. The GitHub Actions file is an inactive template inside this prototype. Source files and original PDF remain local. Direct file URL use, automated accessibility auditing, and browser printing were not tested.
+
+## Matrix-power rotation refinement — 3 November 2026
+
+Kept the existing lesson and public `Interactive kind="rotation"` entry point. Added a stable draggable vector tip, a visible radius-√5 orbit and four labeled stations, continuous R(θ) matrices (rounded values marked ≈), release snapping, five quarter-turn buttons including J⁴ = I, numeric angle input, keyboard movement and reset. The initial equation is server rendered. Copy is available in English, German and Spanish.
+
+- Node 24.22.1, locked `npm ci`, final `npm run build`: passed, zero diagnostics; 173 pages, 12,465 checked local links/assets, three Pagefind languages and both-theme contrast checks.
+- Library checks cover all five exact quarter-turn results, length/determinant invariants at intermediate angles, nearest-quarter snapping, the atan2 seam, angle bounds and KaTeX rendering.
+- Browser: desktop pointer drag from J to near J² snapped to 180° with the −I matrix and (−2, −1). Compact pointer drag from I toward J snapped to 90°. Checked intermediate 95° R(θ), numeric 37° snapping to 0° on blur, quarter-turn buttons, Home/End, Shift+arrow movement, reset and the J⁴ identity explanation.
+- Inspected desktop (1440×1100) and compact (390×844 requested viewport; 375 px content with scrollbar), light/dark themes and EN/DE/ES controls. Compact pages had equal document client/scroll widths. The final English preview reported no browser errors.
+- Representative images: `previews/rotation-desktop-light.jpg`, `previews/rotation-desktop-dark.jpg`, `previews/rotation-compact-dark-de.jpg`, `previews/rotation-compact-light-es.jpg`.
+
+Physical touch/pen devices, screen-reader output and pointer cancellation were not exercised. A prefix-build command passed, but the existing persistent preview retained root routing, so no repository-prefix browser pass is claimed; the final normal root build was restored. No commit, push or publication.
+
+## Inline mathematical notation audit — 3 November 2026
+
+- Audited all 147 localized lesson sources across Linear Algebra, Analysis, and Learning & Teaching; updated notation in 118 lesson files. Preserved existing unrelated workspace edits and mathematical review statuses.
+- Converted plain expressions in paragraphs, lists, table headings, questions, and relevant teaching captions to explicit inline TeX. Included logical connectives, quantifiers, number domains, parity examples, sequence formulas, dimensions, and map notation. Complete expressions retain their signs and parentheses in a single math run.
+- Added shared mixed-copy rendering for component strings and dynamic logic/vector feedback and shear readouts. Regression checks cover escaped ordinary text, mixed localized copy, shared macros, invalid commands, seven logic formulas, and all seven localized truth-table headings.
+- Production build with Node 24 passed: 173 pages, 12,308 local links/assets, existing content/library/contrast checks, and 2,861 generated TeX annotations without damaged delimiters or control characters. Source audit found no unbalanced parentheses in inline math across the three locales.
+- Browser checks: English logical-connective prose at 1440×1000 in dark mode and 390×844 in light mode; computed inline math is 18.56px beside 16px prose (1.16em). The bundled KaTeX default no longer overrides the shared scale. No page-wide horizontal overflow; the compact truth table scrolls locally.
+- German implication activity: selecting the converse updates the displayed TeX to B ⇒ A and retains KaTeX in feedback, with no browser console warnings/errors. Spanish grouping captions use KaTeX in both associativity and distributivity figures.
+- Number-domain figure checked at desktop and compact widths: all 14 embedded math runs render, fractions remain inside the nested sets, and neither viewport has page-wide overflow. Representative screenshots: `previews/inline-math-desktop-dark.jpg` and `previews/inline-math-compact-light.jpg`.
+- Plain metadata titles/descriptions and native SVG geometry labels remain plain strings. These checks verify typography/rendering and selected interactions, not a fresh mathematical or translation review. No commit, push, or deployment performed.
+
+## Centered number-set boxes — 3 November 2026
+
+- Reduced the nested number-set diagram to 50% of the available article width and centered its outer box. A 320px readable minimum is capped at the available width on compact screens; typography and caption remain unchanged.
+- Production build passed with Node 24: 173 pages, 12,308 local links/assets, and 2,861 TeX annotations verified.
+- Browser: at 1440×1000, the box is 450px within a 900px figure with zero center offset (dark theme). At 390×844 it is 320px within a 333px figure, also centered, with no page-wide overflow (light theme).
+- Screenshot: `previews/number-domains-centered-desktop.jpg`. No commit, push, or deployment.
+
+## Number-set definitions and proofs — 3 November 2026
+
+- Expanded the existing number-set lesson in EN/DE/ES with definitions of all five sets, the convention excluding zero from the naturals, the meaning of strict inclusion, and witnesses distinguishing adjacent sets.
+- Added worked terminating/repeating decimal conversions, a self-contained reduced-fraction proof of the irrationality of sqrt(2) including the odd-square argument, and a proof that i and 2+3i are not real. Linked the existing expanded irrationality lesson. Added classification and irrational-sum exercises with disclosed reference answers. Marked these as authored additions in source comments; review status remains unreviewed.
+- Independently checked fraction reductions (125/1000 = 1/8, 27/99 = 3/11, 6/9 = 2/3), the parity identity, the reduced-fraction contradiction, and the real-square obstruction. These checks do not establish an independent editorial or formal mathematical review.
+- Equation parity now normalizes digit-surrounded TeX decimal commas to decimal points, allowing localized numerical notation while retaining value/equation comparison.
+- Node 24 production build passed: 173 pages, 12,320 links/assets, 3,051 TeX annotations and the existing type/library/content/contrast checks. git diff --check passed.
+- Browser: English decimal proof at 1440×1000 (light), German and Spanish at 390×844 (dark); no page-wide overflow. German display decimals use commas. Spanish reference-answer disclosure opens and retains KaTeX; browser logs contained no warnings/errors. The centered number-set diagram is preserved.
+- Screenshots: previews/number-sets-proofs-desktop.jpg and previews/number-sets-practice-compact-es.jpg. No commit, push, or deployment.

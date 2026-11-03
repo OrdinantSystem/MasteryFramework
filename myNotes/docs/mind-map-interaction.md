@@ -1,0 +1,13 @@
+# Mind-map interaction specification
+
+- Question: How can a study session find and repair learning gaps? Expose the difference between associations, hierarchy, and explicit relational claims.
+- Reason for interaction: compare three representations of the same concepts and inspect the role/limits of a selected concept. This makes the work of naming links visible without grading the learner.
+- Existing assets considered: ProcessDiagram describes branching procedures; RelationMap describes isolated claims; LearningFigure compares static terms and a short chain. None supplies an inspectable concept graph with hierarchy and cross-links. The new family reuses native controls, tokens, localization, and the Interactive dispatcher; it adds no dependency.
+- State: stage 0/1/2 and optional selected node id. Start with the complete graph. Change either state using native buttons; selecting a node again clears it. Reset restores stage 2 and all explanations. No continuous units, snapping, numerical inputs, or pointer capture are needed.
+- Invariants: the graph data never changes; selecting/staging cannot reverse a claim. Every node is reachable from the central concept. Links have named endpoints, meaning, and justification. Concepts, branch links, and cross-links derive from one typed graph.
+- Feedback: explain what the current representation conveys and what it leaves implicit. Node details and each relationship's reason remain readable. No right/wrong score or inferred mastery.
+- Initial/accessibility: full server-rendered graph plus node explanations and a complete relationship list. Native buttons activate only with JavaScript. Tab/Enter/Space provide the same action as pointer/touch. IDs scope marker/controls per instance. No motion. Compact screens use the same semantic HTML without tiny SVG labels.
+- Theme/roles: shared accent for branches and selected controls, purple dashed cross-links, explicit textual roles. Check contrast in both themes and translated wrapping.
+- Public API: Interactive kind="mind-map" or MindMap; unique id; preset="study-session" or typed MindMapData. Other conceptual subjects can supply localized nodes, branch/cross links, reasons, and authored routes.
+- Boundaries: small authored graph, not an editor or automatic graph-layout engine. Structural validation is not scientific validation. Do not imply the roles form mandatory steps or guaranteed causal effects.
+- Verification: graph endpoint/reachability/finite-bound/localization/route checks, complete production build, desktop/compact translated layouts, stages, keyboard selection, reset, independent gallery instance, both themes. Record observed results in VERIFICATION.md.

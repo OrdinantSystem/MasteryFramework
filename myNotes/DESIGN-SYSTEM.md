@@ -39,7 +39,7 @@ The site supports four content types:
 | Note | Focused observation with enough context to interpret it |
 | Recap | Compact definitions and relationships, conditions, links to fuller explanations |
 
-These are editorial contracts, not compulsory sections. Short notes stay short. Do not repeat the title, description, question, and objectives when they express the same thing. Do not force every page to contain an exercise or a minimum number of sections.
+These are editorial contracts, not compulsory sections. Short notes stay short. Do not render subtitle/tagline descriptions beneath page, chapter, or overview-entry titles. Keep descriptions as metadata; start the visible explanation in the article body. Do not repeat the title, description, question, and objectives when they express the same thing. Do not force every page to contain an exercise or a minimum number of sections.
 
 Central explanations remain visible in a continuous article. Hide reference solutions and optional additional explanations behind disclosures when that helps an independent attempt. Do not require a wizard, score, or completed interaction to read the material.
 
@@ -49,11 +49,15 @@ The header contains one archive-home anchor wrapping the book icon and the compl
 
 Do not add nonfunctional symbols or pretend buttons. The visible slash badge and decorative language circle have been removed. A working slash keyboard shortcut may remain without an ornamental badge. The sidebar footer says only Learning archive, translated in each language.
 
-The myNotes wordmark links to the localized archive overview; do not duplicate that destination with a top-level Overview link in the sidebar. Course overview links remain part of the course hierarchy. Navigation scrollbars use a thin, faint thumb and a transparent track, with stronger visibility on hover or keyboard focus.
+The myNotes wordmark links to the localized archive overview; do not duplicate that destination with a top-level Overview link in the sidebar. Course overview links remain part of the course hierarchy. Navigation scrollbars use a thin thumb mixed from the muted color at 18% opacity over a transparent track, rising gently to 30% on hover or keyboard focus. The sidebar has no vertical divider against the article.
+
+The current course-color trial assigns blue to Linear Algebra, teal to Analysis, and purple to Learning Methodology. Course headings, nested section headings, overview links, 1 px branch rails, and active lessons share that course color. Names, indentation, and disclosure controls retain the hierarchy without relying on color alone. On desktop, an open course heading stays visible while its branch scrolls. Colors are keyed to the stable course identity rather than alternating by row. This trial follows navigation checkpoint commit `2901665` and remains uncommitted for comparison.
 
 The desktop sidebar begins at x=0. Its position is not constrained by a centered outer container. Use native details for a subject → course → chapter-group → lesson hierarchy. Store expansion locally where available, and reveal the active lesson's ancestors on navigation. Do not display empty subject placeholders.
 
-Breadcrumbs, the article, and the footer share the content width. The article is centered in the area available after navigation and the right rail. Figures can use the article width; ordinary paragraphs keep a comfortable measure. The page contents list belongs near the top-right edge, remains secondary, and can collapse. It lists relevant second-level headings rather than every label inside a figure.
+The archive homepage starts with its topic sections, without a visible archive label, myNotes heading, or breadcrumb. An offscreen level-one heading retains the page identity for assistive technology. Course breadcrumbs start with the course name, colored using the same navigation-order color as its sidebar entry; chapter and lesson text stays neutral. Do not repeat the course/type metadata row above lesson titles or add an area/archive eyebrow above course and search titles.
+
+Breadcrumbs, the article, and the footer share the content width. The article is centered in the area available after navigation and the right rail. Lesson paragraphs, display mathematics, and figures use the same article width. The page contents list belongs near the top-right edge, remains secondary, and can collapse. It lists relevant second-level headings rather than every label inside a figure.
 
 ## Responsive layout
 
@@ -80,12 +84,11 @@ Use the system sans-serif stack already implemented; no remote font request is n
 | Section heading | About 25 px, reduced where needed on compact layouts |
 | Figure heading | About 18 to 19 px |
 | Lesson prose | 16 px with 1.85 line height |
-| Lead paragraph | About 18 px, 17 px on compact screens |
 | Supporting control text | About 11 to 12 px, with explicit labels |
 | Caption | About 11 px with generous line height |
 | Small navigation and metadata | About 10 to 12 px; kept secondary |
 
-Prose uses a maximum measure around 78 characters while diagrams can be wider. This balance is part of the approved layout; avoid both narrow text trapped in the center and long wall-to-wall paragraphs.
+Lesson prose fills the available article width, matching display mathematics and figures without an additional character-based paragraph cap. The responsive article maximum (900–1000 px on large screens) and page gutters constrain the reading area.
 
 The shared spacing scale is 4, 8, 12, 16, 20, 24, 32, 40, and 48 px. Use its CSS variables for new shared patterns. Existing alignment-specific values in the reference may remain when they serve the layout. Control radii are approximately 4 px; figure panels use approximately 8 px. A visible border normally uses 1 px.
 
@@ -112,13 +115,13 @@ All new colors come from semantic CSS variables. The canonical palette is:
 
 Corresponding tint tokens provide quiet selected states. Grid and axis tokens support figures. Use the implemented token file for exact tints, grid colors, and shared scales. Do not introduce yellow or amber.
 
-Dark mode is neutral and near black, with no green cast across the entire background. Theme choice persists locally when possible; the first visit follows the system setting. Color must agree between an equation, legend, figure, and selected control. It never carries meaning alone: retain labels, symbols, values, and explanatory text.
+Dark mode is neutral and near black, with no green cast across the entire background. Theme choice persists locally when possible; the first visit follows the system setting. Analysis truth tables use blue (`--blue`) for `0` and teal (`--accent`) for `1`, including selected cells and interactive updates. The visible digits remain the primary labels. Color must agree between an equation, legend, figure, and selected control. It never carries meaning alone: retain labels, symbols, values, and explanatory text.
 
 The build checks supported text pairs at 4.5:1 in both themes. Focus visibility, control affordances, and diagram clarity still need browser inspection.
 
 ## Mathematical notation
 
-Use inline dollar math and display dollar math in Markdown. Use the Math component when an embedded figure or derivation needs an explicit TeX value. Build-time rendering uses remark-math, rehype-katex, and locally bundled KaTeX assets.
+Use inline dollar math and display dollar math in Markdown. Use the Math component when an embedded figure or derivation needs an explicit TeX value. Build-time rendering uses remark-math, rehype-katex, and locally bundled KaTeX assets. Inline mathematics uses 1.16em for a modest emphasis within prose; display mathematics retains 1.1em. Component copy with mixed prose and explicit dollar math uses the shared MathText renderer. Keep a complete expression, including signs and parentheses, in one math run.
 
 | Macro | Role |
 | --- | --- |
@@ -157,6 +160,8 @@ Code blocks wrap long lines, constrain overflow locally, and use the shared surf
 ## Figures and tables
 
 Every figure needs meaningful labels and a nearby explanation of its relationship to the concept. Supply a caption and a useful accessible description. Prefer code-native SVG for mathematical geometry. Raster illustrations belong only where a photograph, texture, or other bitmap actually helps.
+
+On the archive overview, each study-field heading groups its icon and title together on the left with a shared 12 px gap. Course chapter headings retain their separate lesson-count alignment.
 
 Chapter listings include a small preview for every lesson. Use a relationship actually discussed by that lesson: transformed vectors, a selected matrix entry, an image line, or a transformation chain. Do not use unrelated stock illustrations.
 
@@ -230,3 +235,9 @@ For an interaction change, also verify pointer dragging, numeric input, keyboard
 Changes to routes or localization require a repository-prefix build and preview. Committing, pushing, and publishing remain separate actions. GitHub Pages deployment is still an inactive template until requested.
 
 Keep verification findings and representative screenshots with the implementation. Record a concrete reason when extending a pattern; do not silently substitute a different design system.
+
+### Navigation color assignment
+
+Course navigation colors come from `src/lib/navigation-colors.ts`, using the global order in the course registry. The four-role cycle is blue → teal (accent) → violet (purple) → orange (coral), then repeats. Assignment happens before grouping by knowledge area, and does not depend on language or expanded state. Every chapter, group and active lesson inherits its course's color and matching tint; adding a lesson does not introduce an unrelated color inside that branch. Append courses to preserve current assignments; reordering courses intentionally changes their colors. These are navigation identities, not difficulty or progress indicators, and do not change semantic colors within mathematical figures.
+
+Sidebar and contents scrollbars mix 10% muted color into the reading background, increasing to 16% while hovered or focused. Their tracks remain transparent.

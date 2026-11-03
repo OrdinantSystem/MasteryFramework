@@ -1,0 +1,66 @@
+--- a/myNotes/my_notes_web/src/layouts/SiteLayout.astro
++++ b/myNotes/my_notes_web/src/layouts/SiteLayout.astro
+@@ -39,7 +39,7 @@
+     <aside id="sidebar" class="sidebar" data-pagefind-ignore>
+       <nav class="content-tree" aria-label={t.lessons}>
+         {areas.filter(area=>courses.some(c=>c.area===area.id)).map(area=><details open={area.id===(activeCourse?.area??'mathematics')} class="tree-subject" data-tree={area.id}><summary><span class="tree-chevron" aria-hidden="true">›</span><AreaIcon kind={area.icon}/>{area.title[locale]}</summary>
+-          {courses.filter(c=>c.area===area.id).map(course=><details open={course.id===courseId} class="tree-course" data-tree={course.id}><summary><span class="tree-chevron" aria-hidden="true">›</span>{course.title[locale]}</summary><a class="course-overview-link" href={courseUrl(course.id,locale)} aria-label={`${t.overview} — ${course.title[locale]}`}>{t.overview} ↗</a>
++          {courses.filter(c=>c.area===area.id).map(course=><details open={course.id===courseId} class="tree-course" data-course={course.id} data-tree={course.id}><summary><span class="tree-chevron" aria-hidden="true">›</span>{course.title[locale]}</summary><a class="course-overview-link" href={courseUrl(course.id,locale)} aria-label={`${t.overview} — ${course.title[locale]}`}>{t.overview} ↗</a>
+             {chaptersFor(course.id).map(chapter=><details open={chapter.id===(currentChapter?.id??chaptersFor(course.id)[0].id)} class="tree-chapter-branch" data-tree={chapter.id}><summary><span class="tree-chevron" aria-hidden="true">›</span>{chapter.title[locale]}</summary>{chapter.groups.map(group=><details open class="tree-group" data-tree={`${chapter.id}-${group.key}`}><summary><span class="tree-chevron" aria-hidden="true">›</span>{group.title[locale]}<small>{group.orders.length}</small></summary>{lessons.filter(l=>l.data.course===course.id&&l.data.chapter===chapter.id&&group.orders.includes(l.data.order)).map(l=><a class:list={['lesson-link',{active:current===l.key&&course.id===courseId}]} href={lessonUrl(l.key,locale,course.id)} aria-current={current===l.key&&course.id===courseId?'page':undefined}><span class="lesson-number">{String(l.data.order).padStart(2,'0')}</span><span>{l.data.navTitle}</span>{current===l.key&&course.id===courseId&&<span class="active-dot" aria-hidden="true"/>}</a>)}</details>)}</details>)}
+           </details>)}
+         </details>)}
+--- a/myNotes/my_notes_web/src/styles/site.css
++++ b/myNotes/my_notes_web/src/styles/site.css
+@@ -1954,3 +1954,52 @@
+ .logic-lab td[data-truth-value="1"] {
+   color: var(--accent);
+ }
++
++/* A stable course color connects each heading with its nested branches. */
++.tree-course {
++  --course-color: var(--accent);
++  --course-tint: var(--tint);
++}
++.tree-course[data-course="linear-algebra"] {
++  --course-color: var(--blue);
++  --course-tint: var(--blue-tint);
++}
++.tree-course[data-course="learning"] {
++  --course-color: var(--purple);
++  --course-tint: var(--purple-tint);
++}
++.content-tree .tree-course {
++  margin-block: var(--space-3);
++  border-left: 1px solid var(--course-color);
++}
++.tree-course > summary {
++  min-height: 44px;
++  font-size: 13px;
++  font-weight: 650;
++  color: var(--course-color);
++  background: var(--bg);
++}
++@media (min-width: 801px) {
++  .tree-course[open] > summary {
++    position: sticky;
++    /* Match the sidebar's 28 px top padding so rows cannot peek above it. */
++    top: -28px;
++    z-index: 2;
++    border-bottom: 1px solid var(--line);
++  }
++}
++.tree-course > summary:hover {
++  background: var(--surface);
++}
++.tree-course .tree-chapter-branch > summary,
++.tree-course .tree-group > summary,
++.tree-course .course-overview-link {
++  color: var(--course-color);
++}
++.tree-course .lesson-link.active {
++  color: var(--course-color);
++  background: var(--course-tint);
++}
++.tree-course .active-dot {
++  background: var(--course-color);
++}

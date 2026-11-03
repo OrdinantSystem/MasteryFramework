@@ -12,7 +12,7 @@ The internal library is part of my_notes_web and shares its version/lockfile. Op
 | Coordinate basis | Interactive kind="vectors", preset="coordinate-basis" | Another data variant of the same engine |
 | Rank/column-space exploration | Interactive kind="vectors", preset="rank-collapse" | Configurable nonzero first column, movable second column, comparison context |
 | Selectable matrix product | Interactive kind="matrix-product" | Compatible rectangular left/right matrices, up to 6 rows/columns per visual |
-| Quarter-turn powers | Interactive kind="rotation" | Fixed demonstration of repeated quarter-turns |
+| Quarter-turn powers | Interactive kind="rotation" | Draggable rotation with quarter-turn snapping and live matrices |
 | Horizontal shear | Interactive kind="shear" | Fixed square, adjustable horizontal shear |
 | Static labeled vectors | VectorFigure | Data-driven arrows, starts/ends, labels, roles, extent; no browser controller |
 | SVG primitives | lib/interactive/plane.ts | Coordinates, grid, arrows, polygon points, guides, clipped origin line |
@@ -98,8 +98,10 @@ When deriving TeX in JavaScript/TypeScript, use String.raw or escape backslashes
 
 - `<NumberDomains />`: static nested number sets with localized captions. ℝ\ℚ is visibly outside ℚ but inside ℝ; non-real complex examples sit outside ℝ. Uses the source convention 0 ∉ ℕ.
 - `<ExpressionTrees />` or `<ExpressionTrees variant="distributivity" />`: static operator-tree pairs. Leaves retain A/B/C labels and consistent teal/blue/purple roles. Reproduce relationships rather than embedding source screenshots.
-- `<Interactive kind="logic" preset="implication" id="unique-id" />`: Boolean input buttons and four selectable transformations. The selected truth-table row is separate from the exhaustive equivalence feedback. Never infer global equivalence from a single matching assignment.
+- `<Interactive kind="logic" preset="implication" id="unique-id" />`: Boolean input buttons and four simultaneous truth-table output columns with formula-only headers and localized accessible names. A/B headers use KaTeX. Select a transformation using the comparison buttons above the table; faint row/column tints locate the active assignment and formula, and a larger bold digit marks their intersection without a cell outline. Vertical panel/table spacing is compact while horizontal spacing remains unchanged. All outputs are server-rendered and remain visible on selection; compact layouts scroll the table locally. The selected truth-table row is separate from the exhaustive equivalence feedback. Never infer global equivalence from a single matching assignment.
 - `<Interactive kind="logic" preset="nand" id="unique-id" />`: NOT/AND/OR selectors and binary inputs. Circuit diagrams show the negation bubble and reused wire outputs. AND needs two physical NAND gates; OR three. NOT ignores B.
+
+Truth-table body cells use `data-truth-value="0"` (blue) or `data-truth-value="1"` (teal), including server-rendered cells and NAND updates. Row/column selection preserves these value colors. The Markdown build applies the same convention to binary-only table bodies in Analysis lessons across all locales; other tables remain unchanged. Visible digits carry the meaning independently of color.
 
 Pure truth functions and exhaustive comparisons live in src/lib/interactive/logic-model.ts; localized controls and circuit rendering live in LogicLab.astro. These bounded families add no dependency, React runtime, remote submission, or general expression evaluator. Both presets have server-rendered initial content and native keyboard-accessible buttons; JavaScript updates the circuit, formula, result, and selected row. The executable /library/ catalog includes all four new assets. Run verify:content for Boolean equivalence, NAND, complement uniqueness, parity, and Analysis-content checks.
 
@@ -108,3 +110,31 @@ Pure truth functions and exhaustive comparisons live in src/lib/interactive/logi
 ProcessDiagram, LearningFigure, QuestionLens, and StudyTemplate are public MDX components. See [learning-teaching.md](learning-teaching.md) for preset names, localized data, desktop/compact behavior, template parity, attribution rules, and verification. The executable gallery covers process graphs, method roles, relational maps, practice mixing, review spacing, six cognitive question types, and blank template downloads. These share site tokens and do not introduce a framework dependency.
 
 RelationMap is a static localized example of named relations in a linearity concept map. Its three rows distinguish a definition, a consequence, and a failed converse, with textual labels as well as colors. It is centrally registered and demonstrated in /library/. Use the existing Flow component for a justified linear reasoning sequence; do not make every graph a one-way chain when relationships branch or fail in reverse.
+
+## Interactive mind maps
+
+`<Interactive kind="mind-map" preset="study-session" id="unique-map" />` (or the centrally registered `<MindMap ... />`) displays a directed concept graph. `/library/#mind-map` runs the same component. The `study-session` preset concerns organization, retrieval, and feedback; it is an illustrative protocol, not a verified causal model of memory. The older `LearningFigure kind="mapping"` remains a static comparison and now also uses study methods.
+
+For another subject, import a typed `MindMapData` object and pass `data={yourMap}` instead of a preset. Data lives under `src/lib/learning/`; no graph HTML belongs in MDX. Required fields:
+
+- `title`, `question`, `caption`: EN/DE/ES strings.
+- `nodes`: unique slug `id`, localized `label`/`detail`, and `x`/`y` in the shared 900-wide layout (`height` defaults to 620 and accepts 200…1000). Node rectangles are 180×76 and must fit.
+- `edges`: valid `from`/`to`, localized `label`/`reason`, `kind: 'branch' | 'cross'`, an SVG route `path`, and label-center `x`/`y`. Branches group concepts; dashed cross-links connect roles across branches. Directions express the named claim, not necessarily chronology or causation.
+
+`validateMindMap` rejects duplicate nodes/links, invalid endpoints, self-links, disconnected concepts, nonfinite/out-of-bounds positions, missing translations, and unsupported route strings. It cannot judge whether the claims are true or whether routes collide: review both separately. Fixed authored positions keep this small teaching graph predictable; there is no force simulation, dragging, graph editor, or new dependency. Larger maps should be split into focused questions.
+
+All nodes, connections, reasons, and the full initial graph render at build time. JavaScript enables three bounded views (terms, branches, named relationships), concept selection, and reset. Select a node again to clear it. Selection highlights incident edges and shows its detail; the complete relationship list remains available. Native buttons support pointer, touch, Tab, Enter and Space; there is no numeric state or drag interaction. Multiple instances have local state and unique marker/detail ids. At ≤700 px, readable HTML concept buttons and the explicit relationship list replace the scaled SVG; graph coordinates do not determine reading order. Provide a unique `id` per instance.
+
+The underlying SVG and accessible HTML share the same data. Never rely only on color: solid/dashed paths and branch/cross-link labels distinguish edge roles. No answers are collected and selection does not assess mastery. Print retains all node explanations. Localized prose and human review remain necessary.
+
+The `LearningFigure kind="interleaving"` preset defines three integer-reasoning methods before the blocked/mixed schedules and offers native strategy-reveal disclosures. It uses the same localized, server-rendered implementation in the lesson and gallery. See the learning/teaching guide for the example and evidence boundaries.
+
+The gallery also passes `teachingMap` as explicit `data`, showing a smaller three-concept graph about examples and diagnostic questions. Both maps coexist with independent controls and ids. This is a working second use of the data contract, rather than a second renderer.
+
+## Rotation refinement
+
+`Interactive kind="rotation"` keeps the fixed input x = (2, 1). Drag its teal image around the radius-√5 circle to inspect continuous R(θ), then release to snap to the nearest multiple of 90°. Five buttons select 0…4 quarter-turns (four distinct matrices); J⁴ = I shares the starting point. The angle is bounded to 0…360°, with arrow-key steps of 5° (Shift: 90°), Home/End, and equivalent numeric input that snaps on commit. Pointer cancellation restores the pre-drag angle. The stable SVG handle retains focus and scales its hit area to at least 44 physical pixels. Model, matrix, vector and feedback derive from one angle; non-quarter-turns are labeled R(θ), never fractional powers of J. The pure model lives in rotation.ts and localized teaching copy in rotation-copy.ts. Shear retains its existing component behavior.
+
+### Mixed prose and inline mathematics
+
+Exercise questions, Flow node labels/details/captions, and MatrixComparison labels/details/captions accept explicit `$TeX$` within their existing string props. Internal `MathText.astro` delegates to `renderMathText` for server rendering; interactive logic/vector feedback and shear readouts use the same helper after updates. Plain text is escaped before HTML insertion, and formulas use the shared restricted KaTeX options and accessible MathML. This is an inline-only copy convention; use Math or the existing equation fields for display mathematics. Native SVG coordinate labels remain SVG text.

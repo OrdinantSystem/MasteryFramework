@@ -14,7 +14,9 @@ Run commands in ../my_notes_web/ with Node 24 and the committed lockfile. No pri
 
 ## Build contract
 
-npm run build runs Astro diagnostics, verify:library, static generation, Pagefind, worksheet arithmetic/word checks (verify:content), and scripts/verify.mjs. Presets are validated both in the library check and when initialized by the Astro view. Generated-output checks derive published lesson counts, enforce localized counterparts, verify links/assets/anchors, check private source exclusion, and explicitly count text-contrast pairs so formatting cannot silently disable checks.
+npm run build runs Astro diagnostics, verify:library, static generation, Pagefind, worksheet arithmetic/word checks (verify:content), and scripts/verify.mjs. Presets are validated both in the library check and when initialized by the Astro view. Equation parity treats digit-surrounded TeX decimal commas and decimal points as equivalent, so EN/DE/ES numerical notation may be localized without weakening comparison of values.
+
+Generated-output checks derive published lesson counts, enforce localized counterparts, verify links/assets/anchors, check private source exclusion, and explicitly count text-contrast pairs so formatting cannot silently disable checks.
 
 Use relevant tests for actual risks: target reachability on a finite grid, singular/zero states, input bounds, inverse mappings, state isolation between instances, matrix dimensions, dynamic equation validity, and unsafe SVG labels. Do not add tests that merely reproduce prose or implementation structure.
 
@@ -25,6 +27,8 @@ Use relevant tests for actual risks: target reachability on a finite grid, singu
 - Use url(), localeUrl(), and lessonUrl() from src/lib/content.ts. Never concatenate /myNotes or a locale directly into an application link.
 - Search uses separate Pagefind language indexes. It does not translate query text. Test German and Spanish terms in the built preview.
 - /library/ is an authoring reference, noindex, outside Pagefind lesson bodies and learner navigation. It is English-only; its language control opens localized archive overviews.
+
+Course navigation color is automatic: `src/lib/navigation-colors.ts` cycles blue, teal, purple and coral by global course-registry position, before grouping into knowledge areas. Chapters, groups and active lessons inherit the course color. Append new courses to preserve existing assignments; do not add course-id color selectors or lesson color fields. Reordering courses deliberately reassigns their colors. This cycle does not alter the semantic colors used inside teaching figures.
 
 ## Dependencies and source hygiene
 

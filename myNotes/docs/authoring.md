@@ -82,3 +82,11 @@ Use plain subject titles such as Bloom’s Taxonomy, Mind Maps, and Error Analys
 Mind-map lessons must distinguish the speaker’s relational-thinking argument from our proposed procedure. Teach a bounded question, hierarchy, named directed links, conditions, source checking, reconstruction, and application. A map’s appearance is not evidence that its relationships are understood.
 
 For learning-method prose, explain why the next action helps before compressing it into a procedure. Carry a concrete attempt through diagnosis, correction, and a changed independent task where appropriate; label hypothetical examples as such. Read every section, table, exercise, and reference answer for natural phrasing in each language. Remove repeated slogans and mirrored sentence patterns without weakening source caveats or changing terms of art. Preserve the distinction between a proposed workflow, an attributed transcript claim, and research evidence.
+
+## Inline mathematical typography
+
+Write mathematical expressions and their variable references as `$...$` inside paragraphs, lists, table cells, and exercise questions. Use TeX commands (`\Rightarrow`, `\neg`, `\mathbb{R}`, subscripts and exponents) instead of plain Unicode approximations. Keep a complete expression inside one math run, including its signs and parentheses; leave sentence punctuation outside. Do not put dollar delimiters around ordinary articles, letter grades, or prose labels. Markdown table separators remain outside math.
+
+String-valued teaching copy (exercise questions, Flow labels/details/captions, comparison details, and interactive feedback) supports explicit `$TeX$` through the shared `MathText` component and `renderMathText` helper. Ordinary text is escaped; only explicit math is rendered with the shared KaTeX options. JavaScript/JSON strings require doubled backslashes; plain MDX attributes use literal backslashes. For a question with TeX, prefer `question="... $\sqrt{2}$ ..."` with a single literal backslash in the authored MDX. Use `Math` for a whole formula and native SVG text for coordinate/diagram labels. Preserve plain metadata titles for navigation and search.
+
+Inline KaTeX is 1.16 times its surrounding font size; display formulas retain 1.1. This scale applies to both Markdown math and component math in both themes.
