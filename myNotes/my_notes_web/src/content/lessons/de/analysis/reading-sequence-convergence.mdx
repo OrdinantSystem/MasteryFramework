@@ -24,6 +24,10 @@ additionalSources: []
 Die vollständige Geräteregel liefert zweimal neun, danach immer drei. Konvergenz erlaubt frühe Ausnahmen, verlangt aber dauerhaft beliebige Nähe aller hinreichend späten Glieder zu einem festen Ziel.
 
 
+Unterscheide vor der Definition Index und Glied sowie Abstand und gerichtete Differenz. Lies bei Unsicherheit [Folgen und Abstand](../real-sequences/#from-real-sequences) erneut. Verschiebe im Bild den Start hinter die frühen Ausnahmen: Die Regel legt jeden späteren Wert fest, nicht nur die sichtbaren Punkte.
+
+<Interactive kind="sequence" preset="device" presentation="terms" id="analysis-convergence-first-tail" />
+
 <span id="from-reading-sequence-convergence-objekte-vor-den-quantoren-festhalten"></span>
 
 ### Objekte vor den Quantoren festhalten
@@ -216,6 +220,14 @@ Rekonstruiere später den ganzen Beweis und begründe jede Gleichheit.
 
 Prüfe mit der obigen Definition die Reihenfolge: Toleranz, Startindex, jeder Index im Endstück.
 
+<Exercise question="Eine Folge erfüllt $a_1=a_2=7$ und $a_n=-2$ für jedes $n\ge3$. Beweise Konvergenz gegen $L=-2$ für beliebige positive Toleranz. Wähle den Startindex vor dem Prüfindex. Muss der Startindex von der Toleranz abhängen?">
+
+Fixiere $L=-2$ und akzeptiere beliebiges $\varepsilon>0$. Wähle $N=3\in\mathbb N$. Für jedes natürliche $n\ge N$ liefert die Folgenregel $a_n=-2$, also $|a_n-L|=|-2-(-2)|=0<\varepsilon$. Somit besteht jedes Glied dieses Endstücks jede positive Toleranz. Derselbe Start passt für alle Toleranzen; er muss nicht der kleinste sein. Die Wahl $N=n+1$ nach dem Prüfindex würde keinen festen Start für das ganze Endstück liefern.
+
+</Exercise>
+
+Prüfe deinen Beweis: feste Folge und festes Ziel; beliebige positive Toleranz; natürlicher Startindex ohne Verwendung des späteren Prüfindex; Abschätzung für jeden Index dieses Endstücks. Versuche nach einem Hinweis oder der Lösung später eine veränderte Folge ohne Nachsehen.
+
 <span id="from-reciprocal-sequence-convergence"></span>
 
 ## Konvergenz der Kehrwertfolge
@@ -247,6 +259,14 @@ Regel und Subtraktion von null liefern die erste Gleichheit; Positivität entfer
 
 Positive Glieder erreichen den Grenzwert nie. Die akzeptierten Tatsachen erfassen unendlich viele Toleranzen und Indizes, anders als jede endliche Liste.
 
+
+{/* analysis-visual:start reading-sequence-convergence-18 */}
+
+Beginne mit $\varepsilon=0{,}5$ und vergleiche $N=2$ mit $N=3$. Das Randglied scheitert an Gleichheit; ein späterer Start legt das gesamte Kehrwert-Reststück ins Band. Verenge dann das Band und finde einen neuen Startindex.
+
+<Interactive kind="sequence" preset="reciprocal" presentation="tail" id="analysis-convergence-tail" />
+
+{/* analysis-visual:end reading-sequence-convergence-18 */}
 
 <span id="from-reciprocal-sequence-convergence-die-strenge-grenze-prüfen"></span>
 
@@ -296,3 +316,10 @@ Rekonstruiere später den vollständigen Beweis und benenne, wo die Existenz ein
 ### Laut lesen
 
 Ab großem N größer als eins durch Epsilon ist jeder Kehrwert höchstens eins durch großes N, also kleiner als Epsilon.
+
+
+<Exercise question="Optionaler Transfer: Beweise mit demselben vorausgesetzten arithmetischen Hintergrund, dass $b_n=2/n$ gegen null konvergiert. Begründe die Existenz des Startindex und die Abschätzung für jeden späteren Index.">
+
+Für beliebiges $\varepsilon>0$ liefert archimedische Unbeschränktheit ein $N\in\mathbb N$ mit $N>2/\varepsilon$. Halte es fest. Für jedes $n\ge N$ geben Positivität und Kehrwertordnung $|b_n-0|=2/n\le2/N<\varepsilon$. Die letzte strenge Ungleichung folgt durch Multiplikation von $N>2/\varepsilon$ mit positivem $\varepsilon$ und Division durch positives N. Das prüft das ganze Endstück; zusätzliche arithmetische Fakten sind von der Quantorenreihenfolge zu trennen.
+
+</Exercise>

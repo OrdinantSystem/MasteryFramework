@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-04",
+  "reviewers_completed": 6,
+  "reviewers_incomplete": 0,
+  "retries": 0,
+  "raw_findings": {
+    "blocker": 0,
+    "major": 14,
+    "nit": 6
+  },
+  "deduplicated_findings": {
+    "blocker": 0,
+    "major": 7,
+    "nit": 4
+  },
+  "frozen_inputs_hashes_match": true,
+  "application_source_files_unchanged": 238,
+  "raw_responses_preserved": 6,
+  "normalized_artifact_local_links_valid": true,
+  "native_reviewer_completion_observed_by_root": true,
+  "root_independent_full_tool_transcript_audit": false,
+  "revised_brief_second_independent_review": false,
+  "learner_testing_performed": false,
+  "new_build_performed_this_review_round": false,
+  "reason_no_new_build": "Planning documents only; application source hashes unchanged. Prior audit production build passed; not rerun as evidence of learning."
+}

@@ -1,6 +1,7 @@
 ---
 import {render,getEntry} from 'astro:content';
 import AnalysisCompatibility from '../components/AnalysisCompatibility.astro';
+import AnalysisCourseIntroduction from '../components/AnalysisCourseIntroduction.astro';
 import analysisOrganization from '../lib/analysis-organization.json';
 import {analysisAliases,canonicalAnalysisKeys} from '../lib/analysis-compatibility';
 import AreaIcon from '../components/AreaIcon.astro';
@@ -43,6 +44,7 @@ const i=lessons.findIndex(l=>l.key===lesson?.key),previous=lessons[i-1],next=les
  </>}
  {kind==='course'&&course&&<>
   <header class="index-heading"><h1>{course.title[locale]}</h1></header>
+  {course.id==='analysis'&&<AnalysisCourseIntroduction locale={locale as Locale}/>}
   <nav class="chapter-jumps" aria-label={t.contents}>{chaptersFor(course.id).map(c=><a href={`#${c.id}`}>{c.title[locale]}</a>)}</nav>
   {chaptersFor(course.id).map(chapter=><section class="chapter-index" aria-labelledby={chapter.id}>{course.id==='analysis'&&analysisOrganization.legacyChapterAnchors.filter(anchor=>anchor.module===chapter.id).map(anchor=><span id={anchor.id}/>)}<h2 id={chapter.id}>{chapter.title[locale]}<span class="index-total">{lessons.filter(l=>l.data.chapter===chapter.id).length} {t.count}</span></h2>{chapter.id==='sheet-1-1'&&<ConceptMap locale={locale}/>}<ol class="lesson-list">{lessons.filter(l=>l.data.chapter===chapter.id).map(l=><li><a href={lessonUrl(l.key,locale,course.id)}><span class="index-number">{String(l.data.order).padStart(2,'0')}</span><Thumbnail order={l.data.order} visual={l.data.thumbnail} locale={locale}/><div><h3>{l.data.title}</h3></div><span class="index-arrow" aria-hidden="true">↗</span></a></li>)}</ol></section>)}
   {Guide&&guide&&<section class="prose course-review" data-analysis data-pagefind-body aria-labelledby="analysis-review">{analysisOrganization.legacyChapterAnchors.filter(anchor=>anchor.module==='analysis-review').map(anchor=><span id={anchor.id}/>)}<h2 id="analysis-review">{guide.data.title}</h2><Guide components={learningComponents}/><AnalysisCompatibility alias={analysisAliases[locale as Locale]['analysis-grundlagen-ueberblick']} locale={locale as Locale}/></section>}

@@ -1,0 +1,254 @@
+---
+locale: "es"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Fallo de convergencia y ausencia de límite real"
+navTitle: "Fallo de convergencia y ausencia de límite real"
+description: "Fallo de convergencia y ausencia de límite real"
+order: 17
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-sequence-convergence", "negating-nested-statements"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Deriving Negation of Sequence Convergence.md#Deriving Negation of Sequence Convergence", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "quantifiers"
+additionalSources: []
+---
+
+<span id="from-negating-sequence-convergence"></span>
+
+## Negar la convergencia de sucesiones
+
+Deriva primero fallo en un objetivo, no ausencia de todos los límites reales. Fija sucesión y objetivo.
+
+$\varepsilon>0$ es tolerancia, $N$ umbral y $n$ índice de prueba. Converger al real fijo $L$ significa:
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Un umbral fijo debe servir para toda su cola, no índices anteriores. Estas seis negaciones equivalentes no prueban por sí solas ningún fallo concreto.
+
+
+<span id="from-negating-sequence-convergence-1-niega-la-definición-completa"></span>
+
+### 1. Niega la definición completa
+
+$$
+\neg\Bigl(\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Niega todo el enunciado sin cambiar interior ni contexto fijo.
+
+
+<span id="from-negating-sequence-convergence-2-cruza-el-cuantificador-de-tolerancia"></span>
+
+### 2. Cruza el cuantificador de tolerancia
+
+$$
+\exists\varepsilon>0\;\neg\Bigl(\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Alguna tolerancia positiva hace fallar el resto. Se conserva positividad.
+
+
+<span id="from-negating-sequence-convergence-3-cruza-el-cuantificador-de-umbral"></span>
+
+### 3. Cruza el cuantificador de umbral
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\neg\Bigl(\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Para esta tolerancia fija, todo umbral natural falla.
+
+
+<span id="from-negating-sequence-convergence-4-cruza-el-cuantificador-de-índice"></span>
+
+### 4. Cruza el cuantificador de índice
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\neg\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Cada umbral necesita un índice fallido, que puede depender de él y del contexto fijo. No es necesario que fallen todos los índices.
+
+
+<span id="from-negating-sequence-convergence-5-niega-el-condicional"></span>
+
+### 5. Niega el condicional
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land\neg(|a_n-L|<\varepsilon)\bigr).
+$$
+
+Condicional falso significa hipótesis verdadera y conclusión falsa en el mismo índice. Conserva pertenencia a la cola y une fallo de distancia por conjunción; términos anteriores no refutan nada.
+
+
+<span id="from-negating-sequence-convergence-6-incluye-la-igualdad-en-el-fallo-de-distancia"></span>
+
+### 6. Incluye la igualdad en el fallo de distancia
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+No menor que $\varepsilon$ significa al menos $\varepsilon$, incluyendo igualdad. Una tolerancia positiva derrota toda cola propuesta con un término al menos así de lejos de $L$, no con el fallo de todo término tardío.
+
+
+<span id="from-negating-sequence-convergence-demuestra-un-fallo-real"></span>
+
+### Demuestra un fallo real
+
+Para constante $a_n=0$, $L=1$, toma $\varepsilon=1$. Todo natural $N$ permite $n=N\ge N$ con $|a_n-1|=1\ge\varepsilon$. Pero objetivo cero funciona para todo $\varepsilon>0$ con $N=1$ y distancia cero. Esta sucesión tiene límite real.
+
+<span id="from-negating-sequence-convergence-práctica"></span>
+
+#### Práctica
+
+¿Por qué es incorrecto conservar un condicional en la condición final de fallo?
+
+<details>
+<summary>Pista</summary>
+
+Considera un índice anterior cuando exista.
+
+</details>
+
+<Exercise>
+
+Un condicional podría cumplirse con hipótesis de cola falsa, sin término malo dentro. Fallar exige pertenencia y fallo de distancia: conjunción.
+
+</Exercise>
+
+Para la constante cero, reconstruye fallo en uno y éxito en cero sin muestrear tolerancias.
+
+<details>
+<summary>Pista</summary>
+
+Usa umbrales arbitrarios para fallar y tolerancias arbitrarias para converger.
+
+</details>
+
+<Exercise>
+
+En uno, $\varepsilon=1$ fijo y $n=N$ sirven para todo $N$. En cero, cualquier $\varepsilon>0$ permite $N=1$, con $0<\varepsilon$ siempre. Ninguno necesita el ejemplo opcional de recíprocos.
+
+</Exercise>
+
+Más tarde, deriva las seis etapas antes de añadir el cuantificador exterior de objetivo en [sin límite real](../negating-sequence-convergence/#from-no-real-limit).
+
+¿Qué elecciones pueden depender del umbral? ¿Debe incumplir la tolerancia todo índice posterior?
+
+<details>
+<summary>Pista</summary>
+
+Lee los tres cuantificadores en orden.
+
+</details>
+
+<Exercise>
+
+El índice puede usar el umbral; la tolerancia queda fija antes. Basta un término fallido por cola; otros pueden estar cerca.
+
+</Exercise>
+
+
+<span id="from-negating-sequence-convergence-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+Una tolerancia real positiva tiene en cada cola natural un término al menos así de lejos de ele.
+
+<span id="from-no-real-limit"></span>
+
+## Sin límite real
+
+No tener límite real exige fallar en todo objetivo real para la sucesión fija, no solo en uno.
+
+Abrevia la definición positiva completa por $C(L)$. Tener límite real significa $\exists L\in\mathbb R\;C(L)$; niega esta existencia exterior:
+
+$$
+\neg(\exists L\in\mathbb R\;C(L))\ \Longleftrightarrow\ \forall L\in\mathbb R\;\neg C(L).
+$$
+
+Sustituye la condición de fallo derivada. La tolerancia puede depender del objetivo anterior, pero queda fija ante todos sus umbrales.
+
+$$
+\forall L\in\mathbb R\;\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+Ausencia de límite real, o divergencia real, no exige crecimiento ni tender a infinito. Una tolerancia para todos los objetivos sería más fuerte y requeriría justificación. El índice fallido puede usar objetivo, umbral, tolerancia y sucesión.
+
+
+{/* analysis-visual:start negating-sequence-convergence-19 */}
+
+Fija $\varepsilon=0{,}5$ y mueve $N$: cada cola sigue conteniendo $-1$ y 1, así que al menos un valor queda fuera para cualquier objetivo real. Compara la sucesión cero en los objetivos uno y cero para distinguir un objetivo fallido de no tener límite real.
+
+<Interactive kind="sequence" preset="alternating" id="analysis-infinite-failures" />
+
+{/* analysis-visual:end negating-sequence-convergence-19 */}
+
+<span id="from-no-real-limit-intercambiar-cuantificadores-puede-destruir-la-prueba"></span>
+
+### Intercambiar cuantificadores puede destruir la prueba
+
+$$
+\forall N\in\mathbb N\;\exists\varepsilon>0\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|>\varepsilon\bigr).
+$$
+
+Reelige indebidamente tolerancia tras cada umbral y omite igualdad a la misma tolerancia. Negar cambia tipos de cuantificador en su sitio, no su orden.
+
+Contramodelo opcional: [convergencia recíproca](../reading-sequence-convergence/#from-reciprocal-sequence-convergence), con fundamento arquimediano aceptado. Aunque $a_n=1/n$ converge a cero, cada $N$ permite $n=N$, $\varepsilon=1/(2N)$, con $1/N>1/(2N)>0$: se cumple el orden incorrecto. La ruta principal solo necesita pruebas constantes.
+
+
+<span id="from-no-real-limit-matiz-opcional-una-forma-estricta-equivalente-por-separado"></span>
+
+### Matiz opcional: una forma estricta equivalente por separado
+
+Con orden correcto $\exists\varepsilon>0\;\forall N\;\exists n$, el fallo estricto es equivalente por separado: distancia al menos $\varepsilon$ implica distancia mayor que el positivo $\varepsilon/2$ en los mismos términos fallidos. A la inversa, mayor implica al menos. Cambiar testigo prueba equivalencia; $\neg(d<\varepsilon)$ no significa $d>\varepsilon$ con épsilon fijo. Dividir por dos no repara cuantificadores intercambiados.
+
+<span id="from-no-real-limit-práctica"></span>
+
+#### Práctica
+
+¿De qué puede depender la tolerancia al fallar en un objetivo fijo y al no tener límite real? ¿Deben fallar todos los términos tardíos?
+
+<details>
+<summary>Pista</summary>
+
+Lee el objetivo exterior antes de la tolerancia.
+
+</details>
+
+<Exercise>
+
+Con objetivo fijo, la tolerancia usa contexto, no umbral posterior. Sin límite real puede usar el objetivo anterior. El índice puede usar el umbral; basta un fallo por cola.
+
+</Exercise>
+
+Desde convergencia positiva, reconstruye fallo en objetivo fijo y después ausencia de límite real. Explica ambos errores de la propuesta mostrada.
+
+<details>
+<summary>Pista</summary>
+
+Niega el condicional solo después de cruzar los tres cuantificadores.
+
+</details>
+
+<Exercise>
+
+Objetivo fijo: $\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;(n\ge N\land |a_n-L|\ge\varepsilon)$. Añade $\forall L\in\mathbb R$ exterior para ausencia de límite real. Épsilon precede a umbrales; la negación literal incluye igualdad. La forma estricta probada aparte divide épsilon por dos sin intercambiar cuantificadores.
+
+</Exercise>
+
+Deriva después las seis etapas sin ayuda; usa la constante cero para distinguir un objetivo fallido de todos los objetivos.
+
+
+<span id="from-no-real-limit-lectura-en-voz-alta"></span>
+
+### Lectura en voz alta
+
+Para todo objetivo real ele existe una tolerancia positiva tal que todo umbral natural tiene un término en él o después al menos así de lejos de ele.

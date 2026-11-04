@@ -183,6 +183,18 @@ $$
 No real limit, or real-sequence divergence, need not mean growth or tending to infinity. One tolerance for all targets would be stronger and need justification. The bad index may use target, threshold, tolerance and sequence.
 
 
+{/* analysis-visual:start negating-sequence-convergence-19 */}
+
+Keep $\varepsilon=0.5$ fixed and move $N$: each tail still contains $-1$ and 1, so at least one value stays outside the band for any real target. Compare constant zero at targets one and zero to separate one failed target from having no real limit.
+
+<Interactive kind="sequence" preset="alternating" id="analysis-infinite-failures" />
+
+{/* analysis-visual:end negating-sequence-convergence-19 */}
+
+### A proof for every target
+
+For $a_n=(-1)^n$, fix an arbitrary real $L$ and choose $\varepsilon=1/2$. Let any $N\in\mathbb N$ be proposed. If $L\ge0$, take an odd $n\ge N$: then $a_n=-1$ and $|a_n-L|=1+L\ge1$. If $L<0$, take an even $n\ge N$: then $a_n=1$ and $|a_n-L|=1-L>1$. One of N and N+1 has the required parity. Each proposed tail therefore contains a term whose distance is at least $\varepsilon$. Since L was arbitrary, no real target is a limit. The argument covers indices beyond the plotted sample.
+
 <span id="from-no-real-limit-a-quantifier-swap-can-destroy-the-test"></span>
 
 ### A quantifier swap can destroy the test

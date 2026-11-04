@@ -21,6 +21,8 @@ additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0
 
 ## Die Zahlenmengen
 
+$x\in D$ heißt „x gehört zu D“, $x\notin D$ heißt „x gehört nicht zu D“. $A\setminus B$ enthält die Elemente von A, die nicht in B liegen. Bei $\{x\in D:P(x)\}$ steht nach dem Doppelpunkt die Bedingung, die ein zulässiges Element erfüllen muss.
+
 {/* Die Definitionen, Einordnungen und Beweise unten sind ergänzende didaktische Ausarbeitungen. */}
 
 
@@ -158,6 +160,8 @@ Näherungsgleichheit braucht Genauigkeit oder Toleranz; jeder Wechsel von exakte
 
 „Definiere $a:=0$“ benennt; „angenommen $a=0$“ setzt lokal voraus; „löse $x+1=3$ über den Reellen“ sucht erlaubte Eingaben, hier $x=2$. Der Kontext bestimmt die Rolle.
 
+Die nächste formale Darstellung verbindet Gleichheit mit [Quantoren und Geltungsbereichen](../universal-statements-and-domains/#from-bound-variables-and-scope). Konzentriere dich beim ersten Lesen auf die Gleichheitsaussage; kehre nach jener Lektion zur Bindungsterminologie zurück.
+
 Die Identität $x+0=x$ gilt für alle Reellen, bleibt aber ohne Quantor offen:
 
 $$\forall x\in\mathbb R\;(x+0=x).$$
@@ -220,6 +224,14 @@ $<$ und $>$ schließen Gleichheit aus, $\le$ und $\ge$ ein: $0\le0$ ist wahr, $0
 
 $a\le b$ bedeutet einschließend $(a<b)\lor(a=b)$; $a\ge b$ bedeutet $a>b$ oder $a=b$. Ungleichheit gibt keine Richtung vor: $0\ne1$, aber nicht $0>1$. Gleichheit braucht keine Ordnung.
 
+
+{/* analysis-visual:start zahlenmengen-0 */}
+
+Lies die beiden Vergleiche als einen Bereich. Prüfe null und zwei: Die unterschiedlichen Randpunkte erklären, warum die Vergleichszeichen nicht austauschbar sind.
+
+<Interactive kind="number-line" preset="bounds" id="analysis-order-region" />
+
+{/* analysis-visual:end zahlenmengen-0 */}
 
 <span id="from-order-comparisons-zwei-grenzen-für-dieselbe-eingabe"></span>
 

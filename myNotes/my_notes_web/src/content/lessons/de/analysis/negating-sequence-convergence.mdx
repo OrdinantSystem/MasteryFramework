@@ -183,6 +183,18 @@ $$
 Kein reeller Grenzwert, auch reelle Divergenz, bedeutet weder Wachstum noch Streben gegen unendlich. Eine Toleranz für alle Ziele wäre stärker und begründungsbedürftig. Der Fehlerindex darf Ziel, Start, Toleranz und Folge nutzen.
 
 
+{/* analysis-visual:start negating-sequence-convergence-19 */}
+
+Halte $\varepsilon=0{,}5$ fest und verschiebe $N$: Jedes Reststück enthält weiterhin $-1$ und 1; bei jedem reellen Zielwert bleibt mindestens ein Wert außerhalb. Vergleiche die Nullfolge bei den Zielwerten eins und null: Ein falscher Zielwert bedeutet noch nicht, dass kein reeller Grenzwert existiert.
+
+<Interactive kind="sequence" preset="alternating" id="analysis-infinite-failures" />
+
+{/* analysis-visual:end negating-sequence-convergence-19 */}
+
+### Ein Beweis für jedes Ziel
+
+Für $a_n=(-1)^n$ fixiere beliebiges reelles $L$ und wähle $\varepsilon=1/2$. Sei ein beliebiges $N\in\mathbb N$ vorgeschlagen. Falls $L\ge0$, wähle ungerades $n\ge N$: Dann ist $a_n=-1$ und $|a_n-L|=1+L\ge1$. Falls $L<0$, wähle gerades $n\ge N$: Dann ist $a_n=1$ und $|a_n-L|=1-L>1$. Einer der Indizes N und N+1 hat die benötigte Parität. Jedes vorgeschlagene Endstück enthält somit ein Glied mit Abstand mindestens $\varepsilon$. Weil L beliebig war, ist kein reelles Ziel ein Grenzwert. Das Argument erfasst Indizes jenseits der gezeichneten Stichprobe.
+
 <span id="from-no-real-limit-ein-quantorentausch-kann-den-test-zerstören"></span>
 
 ### Ein Quantorentausch kann den Test zerstören

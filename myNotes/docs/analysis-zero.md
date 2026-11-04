@@ -4,7 +4,7 @@ The Analysis course includes the authored Analysis 0 logic material formerly tau
 
 ## Where the teaching lives
 
-The canonical public teaching narrative is the EN/DE/ES MDX under `my_notes_web/src/content/lessons/{locale}/analysis/`. The existing poster-derived lessons, worksheet proofs, circuit lesson and stable routes remain available. The expanded foundations develop their prerequisites rather than replacing the original applications.
+The canonical public teaching narrative is the EN/DE MDX under `my_notes_web/src/content/lessons/{locale}/analysis/`. The existing poster-derived lessons, worksheet proofs, circuit lesson and stable routes remain available. The expanded foundations develop their prerequisites rather than replacing the original applications.
 
 Obsidian retains the original teaching drafts, provenance, curriculum and private learning evidence. Its Analysis 0 index links to the corresponding published lessons. Original files are not deleted or automatically synchronized with MDX. New public teaching revisions belong in MyNotes; personal attempts and assessments remain in the private learning workspace.
 
@@ -37,7 +37,7 @@ The reciprocal-sequence proof is an optional extension. State the Archimedean pr
 - Preserve the three-variable truth table on `logische-verknuepfungen`. Its existing regression check remains active.
 - Keep the early semantic proofs separate from the Boolean worksheets' derivations using only their numbered permitted laws. Do not use a later identity circularly or substitute a truth table for a requested algebraic proof.
 - Use the existing design system, registered teaching components, mathematical macros and accessible table/disclosure behavior. Core reasoning stays visible; optional hints and reference solutions may be folded.
-- Read the full prose, including exercises and answers, for natural language. Prefer worked examples and reasons over slogans, repeated meta-instructions or compulsory section templates. Keep local EN/DE/ES readings of important notation accurate without revealing exercise answers.
+- Read the full prose, including exercises and answers, for natural language. Prefer worked examples and reasons over slogans, repeated meta-instructions or compulsory section templates. Keep local EN/DE readings of important notation accurate without revealing exercise answers.
 - Do not export tutor names, private assessments, server paths, original source files or chat-specific workflow. Preserve mathematical substance, not private lesson-management boilerplate.
 
 ## Source identity

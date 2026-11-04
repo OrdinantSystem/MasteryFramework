@@ -55,6 +55,14 @@ Anders als Mengen bewahren Folgen Positionen und Wiederholungen. Abwechselnd nul
 
 Ein Endstück enthält das Glied am Index $N$ und alle späteren Glieder: Beim Gerät sind ab $N=3$ alle Glieder drei. Beide Indizes sind natürliche Zahlen: $N$ beginnt das Endstück, und $n$ ist der zu prüfende Index. Die Folge mit null am Anfang und danach immer eins stimmt ab Index zwei mit der konstanten Einsfolge überein; die beiden Folgen sind aber nicht gleich.
 
+{/* analysis-visual:start real-sequences-16 */}
+
+Waagerecht steht die Position $n$, senkrecht der Wert $a_n$. Wiederholte Werte bleiben getrennte Punkte an verschiedenen Indizes. Verschiebe $N$ hinter die ersten beiden Meldungen, um das konstante Reststück zu sehen.
+
+<Interactive kind="sequence" preset="device" presentation="terms" id="analysis-sequence-positions" />
+
+{/* analysis-visual:end real-sequences-16 */}
+
 <span id="from-real-sequences-übung"></span>
 
 #### Übung
@@ -150,6 +158,14 @@ $$
 Für feste $L$, $\varepsilon>0$ setze $u=t-L$. Bei $u\ge0$ bedeutet Abstand unter Toleranz $u<\varepsilon$; $-\varepsilon<u$ gilt automatisch. Bei $u<0$ bedeutet es $-u<\varepsilon$, also $-\varepsilon<u$; die obere Schranke gilt automatisch. Damit $-\varepsilon<u<\varepsilon$; addiere $L$. Umkehrbarkeit beweist beide Richtungen.
 
 Beide Schranken sind strikt: Bei Ziel drei, Toleranz $1/2$ scheitern Endpunkte $2.5,3.5$ an Gleichheit. Epsilon ist veränderlich, keine feste winzige Konstante.
+
+{/* analysis-visual:start real-sequences-17 */}
+
+Bewege den Punkt auf beide Seiten von drei und dann auf die Ränder. Die Richtung ändert das Vorzeichen der Verschiebung; die Zugehörigkeit hängt vom absoluten Abstand ab.
+
+<Interactive kind="number-line" preset="distance" id="analysis-distance-band" />
+
+{/* analysis-visual:end real-sequences-17 */}
 
 <span id="from-absolute-value-and-distance-übung"></span>
 

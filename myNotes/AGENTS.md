@@ -16,7 +16,9 @@ README.md is the documentation index. docs/history/ contains historical material
 
 ## Preserve the approved experience
 
-Use Astro static output, MDX collections, KaTeX, English/German/Spanish dictionaries, Pagefind, shared CSS tokens, and small native browser components. Preserve the left-edge expandable navigation, centered article, secondary upper-right contents, centered tables, visual previews, restrained surfaces, and mathematical color roles. No yellow or amber. No promotional sections, ornamental controls, or prototype/date labels.
+English and German are the only supported languages. Spanish was retired on 4 November 2026; older plans, archives and review receipts do not require maintaining Spanish counterparts.
+
+Use Astro static output, MDX collections, KaTeX, English/German dictionaries, Pagefind, shared CSS tokens, and small native browser components. Preserve the left-edge expandable navigation, centered article, secondary upper-right contents, centered tables, visual previews, restrained surfaces, and mathematical color roles. No yellow or amber. No promotional sections, ornamental controls, or prototype/date labels.
 
 Keep explanations direct, precise, and appropriately short. State assumptions and distinguish source examples from additional examples. Do not impose a mandatory section count. Reference answers may use disclosures; central explanations remain visible. Design approval and passing tests never establish mathematical or editorial review.
 

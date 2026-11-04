@@ -98,59 +98,10 @@ const de: Copy = {
   noScript:
     "Das ist die Ausgangseinstellung. Zum Verändern wird JavaScript benötigt; die Erklärung bleibt lesbar.",
 };
-const es: Copy = {
-  combinationTitle: "Construye un vector. Cambia el contexto.",
-  rankTitle: "Convierte dos direcciones en una.",
-  combinationPrompt:
-    "¿Puedes alcanzar $T = {target}$? Mueve las puntas de los vectores o cambia a y b. Después prueba el mismo objetivo con direcciones dependientes.",
-  rankPrompt:
-    "Haz que las columnas sean dependientes sin convertir v en cero. Predice qué ocurrirá con la imagen y después mueve el vector azul.",
-  independent: "Direcciones independientes",
-  dependent: "Misma recta",
-  parallelogram: "Paralelogramo",
-  chain: "Punta con origen",
-  context: "Contexto",
-  view: "Vista",
-  drag: "Arrastra las puntas resaltadas. Las flechas mueven una punta enfocada; Shift aumenta el paso. Los campos numéricos ofrecen los mismos controles.",
-  output: "Mover la suma w",
-  first: "Escalar el primer vector a·u",
-  second: "Escalar el segundo vector b·v",
-  column: "Mover la segunda columna v",
-  check: "Comprobar esta configuración",
-  reset: "Restablecer",
-  explain: "¿Por qué ocurre?",
-  coefficientA: "Coeficiente a",
-  coefficientB: "Coeficiente b",
-  columnX: "Segunda columna x",
-  columnY: "Segunda columna y",
-  sum: "Suma w",
-  rank: "Rango",
-  determinant: "Determinante",
-  reached:
-    "Has alcanzado el objetivo: $a = {a}$, $b = {b}$. Los vectores escalados suman T.",
-  tryTarget:
-    "La suma todavía no está en T. Compara sus coordenadas con {target} o arrastra la punta violeta al objetivo.",
-  unreachable:
-    "T es inalcanzable aquí: ambas columnas están en una recta por el origen, pero {target} no. Cambiar los coeficientes no crea otra dirección.",
-  rankSuccess:
-    "Las columnas son no nulas y paralelas: determinante 0, rango 1. Todas las salidas están en la misma recta.",
-  rankZero:
-    "La columna cero también da rango 1. Ahora encuentra un vector paralelo no nulo para cumplir el reto.",
-  rankTry:
-    "El determinante no es cero: las columnas siguen generando el plano. Prueba $v = {parallel}$ u otro múltiplo no nulo de u.",
-  combinationExplanation:
-    "Con columnas independientes, cada objetivo del plano tiene coeficientes únicos. Aquí se limitan a {min}…{max} para mantener una vista legible. Con columnas dependientes, la imagen se reduce a una recta y algunos objetivos son inalcanzables. Las dos vistas representan la misma suma de vectores.",
-  rankExplanation:
-    "El área del paralelogramo es el valor absoluto del determinante. Cuando las columnas son paralelas, el área se anula. Como u sigue siendo no nulo, la imagen tiene dimensión 1. Un determinante no nulo da rango 2.",
-  caption:
-    "Relaciona las flechas de colores con las coordenadas de la ecuación. Cambia una cantidad cada vez y compara el resultado.",
-  noScript:
-    "Esta es la configuración inicial. Activa JavaScript para modificarla; la explicación sigue disponible.",
-};
 import { number } from "./plane.ts";
 import type { LabState } from "./vector-model.ts";
 export function labCopy(locale: Locale = "en", state?: LabState): Copy {
-  const original = { en, de, es }[locale];
+  const original = { en, de }[locale];
   if (!state) return { ...original };
   const values: Record<string, string> = {
     target: `(${state.scenario.target.map(number).join(", ")})`,

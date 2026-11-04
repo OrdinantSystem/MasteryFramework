@@ -68,15 +68,6 @@ export const vectorPresets = {
         caption:
           "Das ausgefüllte Parallelogramm ist das Bild des Einheitsquadrats. Seine Fläche ist $|\\det A|$; das Vorzeichen beschreibt die Orientierung.",
       },
-      es: {
-        title: "Área, colapso y orientación",
-        prompt:
-          "Mantén u fijo y mueve v. Compara determinantes positivos, negativos y nulos. ¿Puedes anular el área sin convertir v en cero?",
-        explanation:
-          "Las columnas son $u = (1,0)$ y $v = (x,y)$, así que $\\det A = y$. El movimiento horizontal cambia el cizallamiento, pero no el área. Al bajar v del eje x se invierte la orientación; con $y = 0$ la imagen se reduce a una recta.",
-        caption:
-          "El paralelogramo coloreado es la imagen del cuadrado unidad. Su área es $|\\det A|$; el signo indica la orientación.",
-      },
     },
   },
   "coordinate-basis": {

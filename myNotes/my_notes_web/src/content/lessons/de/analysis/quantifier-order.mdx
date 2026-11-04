@@ -17,72 +17,11 @@ thumbnail: "quantifiers"
 additionalSources: []
 ---
 
-<span id="from-reading-mathematical-structure"></span>
-
-## Mathematische Struktur lesen
-
-„Finde eine reelle Zahl unter zwei“ fordert auf; „Jede reelle Zahl ist unter zwei“ behauptet falsch. Bestimme vor den Symbolen die Satzfunktion.
-
-
-<span id="from-reading-mathematical-structure-ein-verfahren-zum-lesen"></span>
-
-### Ein Verfahren zum Lesen
-
-Bestimme Definition, Behauptung, Annahme, Frage oder Aufforderung. Prüfe Bereiche, Definiertheit (keine reelle Division durch null), freie/gebundene Vorkommen und Kontextwerte. Erhalte Reihenfolge und Bereiche: $\forall$ heißt alle, $\exists$ mindestens eins, nicht eindeutig. Zerlege von außen mit vollständigen Eingaben; unterscheide Voraussetzung und Folgerung, ohne Gleichheiten Voraussetzungen anzudichten. Zerlegung, Auswertung und Beweis unterscheiden sich.
-
-In $x+y=3$ verbindet Addition Zahlen, keine Aussagen. Ein quantifizierter Satz darf ein aussagenlogischer Eingabebuchstabe sein, ohne prädikatenlogisch atomar zu sein.
-
-
-<span id="from-reading-mathematical-structure-eine-allaussage-mit-innerer-implikation"></span>
-
-### Eine Allaussage mit innerer Implikation
-
-Übersetze „Jede reelle Zahl streng zwischen null und eins ist unter zwei“:
-
-$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
-
-Beide strengen Schranken bilden die Voraussetzung.
-
-Der Quantor bindet alle $x$ in der gesamten Implikation: Die Formel ist geschlossen. Innen verbindet $\Rightarrow$ (auch $\to$) die ganze Konjunktion mit $x<2$; $\land$ heißt „und“, ist keine weitere äußere Verknüpfung.
-
-Erhalte beim Übersetzen $0<x$ und $x<1$, auch wenn der Beweis nur letzteres braucht. Keine Intervallzugehörigkeit aller reellen Zahlen wird behauptet.
-
-Bei $x=1/2$ gelten beide Teile, bei $x=3$ keiner. Gegenbeispiele brauchen **ganze Voraussetzung wahr**, Folgerung falsch; drei ist unzulässig.
-
-Für beliebiges passendes reelles $x$ ergibt $x<1<2$ durch Transitivität $x<2$. Das beweist, anders als Übersetzung oder Stichproben allein, mit akzeptierter klassischer Semantik und reeller Ordnung.
-
-
-<span id="from-reading-mathematical-structure-in-beide-richtungen-üben"></span>
-
-### In beide Richtungen üben
-
-<Exercise question="Zerlege $x=0\lor((x>0)\land(x<1))$. Nenne äußere Verknüpfung, vollständige Eingaben und freie Variablen. Übersetze danach: x ist null, und es ist nicht der Fall, dass y null ist.">
-
-Außen verbindet $\lor$ das $x=0$ mit ganz $(x>0)\land(x<1)$; alle $x$ bleiben ohne Quantor frei. Übersetzung: $(x=0)\land\neg(y=0)$, nur zweite Gleichheit negiert, beide Variablen frei.
-
-</Exercise>
-
-Übersetze „Jede reelle Zahl über eins übersteigt null“; bestimme die Voraussetzung und beweise ohne Stichproben. Werden alle reellen Zahlen positiv genannt?
-
-<details>
-<summary>Hinweis</summary>
-
-Nutze eine Implikation innerhalb des Bereichsquantors.
-
-</details>
-
-<details>
-<summary>Referenzlösung</summary>
-
-$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$ bindet alle $x$. Voraussetzung $x>1$ liefert Folgerung $x>0$ durch $1>0$ und Transitivität für beliebiges $x$. Nicht jede reelle Zahl ist positiv: Null verletzt die Voraussetzung, ist also kein Gegenbeispiel.
-
-</details>
-
-Prüfe wenn/und, einige/alle und strenge/nichtstrenge Grenzen; benenne echte Mehrdeutigkeit. Siehe [Bereiche](../universal-statements-and-domains/#from-universal-statements-and-domains).
-
 <span id="from-quantifier-order"></span>
 
 ## Reihenfolge der Quantoren
+
+Lies $\forall$ als „für jedes“ und $\exists$ als „mindestens eines“. Prüfe zuerst, ob du einen Bereich benennen und einen Zeugen verifizieren kannst; falls nötig, lies [Zeugen](../existence-and-uniqueness/#from-existence-and-witnesses) erneut. Hier geht es darum, ob jede Eingabe einen anderen Zeugen verwenden darf.
 
 Vollständiges Modell: Ana nutzt nur rot, Ben nur blau. Jede Person hat einen Schlüssel; keiner passt allen.
 
@@ -105,6 +44,16 @@ $$
 
 Rot scheitert bei Ben, blau bei Ana: Kein fester Schlüssel passt allen. Verschachtelte Quantoren liegen im Bereich anderer, nicht bloß konjunktiv verbunden. Beide Variablen sind gebunden; der erste umfasst den zweiten. Reihenfolge ist logisch, nicht zeitlich oder algorithmisch.
 
+
+{/* analysis-visual:start quantifier-order-11 */}
+
+Sage vor dem Umschalten voraus, was sich ändert, wenn auch Ben Rot verwenden darf. Ändere dann genau diese Berechtigung. Erkläre den Unterschied zwischen einem Treffer in jeder Zeile und einer passenden Spalte für alle.
+
+<Interactive kind="quantifiers" preset="keys" presentation="witnesses" id="analysis-shared-witness" />
+
+{/* analysis-visual:end quantifier-order-11 */}
+
+Entferne alle Schlüssel, während die Personen bleiben. Erkläre, warum beide Aussagen falsch sind, und setze die Tabelle zurück.
 
 <span id="from-quantifier-order-dieselbe-unterscheidung-über-den-reellen-zahlen"></span>
 
@@ -134,7 +83,7 @@ Feste unabhängige $D,E$ erlauben Vertauschen benachbarter Allquantoren: Ursprü
 #### Übung
 
 <details>
-<summary>Optionale Zusatzübungen</summary>
+<summary>Optionale Übung: Reihenfolge und vollständige Gegenmodelle</summary>
 
 Erkläre das vollständige Rot-Blau-Modell ohne Symbole.
 
@@ -221,6 +170,79 @@ Rekonstruiere später reellen Beweis und Widerlegung, keine Großzahltests.
 
 Für jedes x in D gibt es ein y in E, sodass R von x und y gilt.
 
+
+
+<Exercise question="Seien $D=\{0,1\}$, $E=\{0,1\}$ und $R(x,y)$ die Bedingung $x+y=1$. Entscheide $\forall x\in D\;\exists y\in E\;R(x,y)$ und $\exists y\in E\;\forall x\in D\;R(x,y)$. Gib alle benötigten Zeugen an und prüfe jeden gemeinsamen Kandidaten.">
+
+Die erste Aussage ist wahr: $x=0$ nutzt $y=1$, $x=1$ nutzt $y=0$. Das erfasst ganz D. Die gemeinsame Aussage ist falsch: Festes $y=0$ scheitert bei $x=0$, festes $y=1$ bei $x=1$. Das erfasst ganz E. Ein Zeuge je Eingabe liefert also keinen Zeugen für alle Eingaben.
+
+</Exercise>
+
+Prüfe dein Argument: beide vollständigen Bereiche angeben, für jede Eingabe einen Zeugen verifizieren und jeden gemeinsamen Zeugen ausschließen. Einige ausgewählte Fehlschläge in einem unendlichen Bereich wären kein entsprechender vollständiger Nachweis.
+
+<span id="from-reading-mathematical-structure"></span>
+
+## Mathematische Struktur lesen
+
+„Finde eine reelle Zahl unter zwei“ fordert auf; „Jede reelle Zahl ist unter zwei“ behauptet falsch. Bestimme vor den Symbolen die Satzfunktion.
+
+
+<span id="from-reading-mathematical-structure-ein-verfahren-zum-lesen"></span>
+
+### Ein Verfahren zum Lesen
+
+Bestimme Definition, Behauptung, Annahme, Frage oder Aufforderung. Prüfe Bereiche, Definiertheit (keine reelle Division durch null), freie/gebundene Vorkommen und Kontextwerte. Erhalte Reihenfolge und Bereiche: $\forall$ heißt alle, $\exists$ mindestens eins, nicht eindeutig. Zerlege von außen mit vollständigen Eingaben; unterscheide Voraussetzung und Folgerung, ohne Gleichheiten Voraussetzungen anzudichten. Zerlegung, Auswertung und Beweis unterscheiden sich.
+
+In $x+y=3$ verbindet Addition Zahlen, keine Aussagen. Ein quantifizierter Satz darf ein aussagenlogischer Eingabebuchstabe sein, ohne prädikatenlogisch atomar zu sein.
+
+
+<span id="from-reading-mathematical-structure-eine-allaussage-mit-innerer-implikation"></span>
+
+### Eine Allaussage mit innerer Implikation
+
+Übersetze „Jede reelle Zahl streng zwischen null und eins ist unter zwei“:
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+Beide strengen Schranken bilden die Voraussetzung.
+
+Der Quantor bindet alle $x$ in der gesamten Implikation: Die Formel ist geschlossen. Innen verbindet $\Rightarrow$ (auch $\to$) die ganze Konjunktion mit $x<2$; $\land$ heißt „und“, ist keine weitere äußere Verknüpfung.
+
+Erhalte beim Übersetzen $0<x$ und $x<1$, auch wenn der Beweis nur letzteres braucht. Keine Intervallzugehörigkeit aller reellen Zahlen wird behauptet.
+
+Bei $x=1/2$ gelten beide Teile, bei $x=3$ keiner. Gegenbeispiele brauchen **ganze Voraussetzung wahr**, Folgerung falsch; drei ist unzulässig.
+
+Für beliebiges passendes reelles $x$ ergibt $x<1<2$ durch Transitivität $x<2$. Das beweist, anders als Übersetzung oder Stichproben allein, mit akzeptierter klassischer Semantik und reeller Ordnung.
+
+
+<span id="from-reading-mathematical-structure-in-beide-richtungen-üben"></span>
+
+### In beide Richtungen üben
+
+<Exercise question="Zerlege $x=0\lor((x>0)\land(x<1))$. Nenne äußere Verknüpfung, vollständige Eingaben und freie Variablen. Übersetze danach: x ist null, und es ist nicht der Fall, dass y null ist.">
+
+Außen verbindet $\lor$ das $x=0$ mit ganz $(x>0)\land(x<1)$; alle $x$ bleiben ohne Quantor frei. Übersetzung: $(x=0)\land\neg(y=0)$, nur zweite Gleichheit negiert, beide Variablen frei.
+
+</Exercise>
+
+Übersetze „Jede reelle Zahl über eins übersteigt null“; bestimme die Voraussetzung und beweise ohne Stichproben. Werden alle reellen Zahlen positiv genannt?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze eine Implikation innerhalb des Bereichsquantors.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$ bindet alle $x$. Voraussetzung $x>1$ liefert Folgerung $x>0$ durch $1>0$ und Transitivität für beliebiges $x$. Nicht jede reelle Zahl ist positiv: Null verletzt die Voraussetzung, ist also kein Gegenbeispiel.
+
+</details>
+
+Prüfe wenn/und, einige/alle und strenge/nichtstrenge Grenzen; benenne echte Mehrdeutigkeit. Siehe [Bereiche](../universal-statements-and-domains/#from-universal-statements-and-domains).
+
 <span id="from-witness-dependence"></span>
 
 ## Abhängigkeit von Zeugen
@@ -248,14 +270,14 @@ $z$ darf $x$, nicht späteres $y$ nutzen: $y=0$ erzwingt $z=x$, $y=1$ das $z=x+1
 
 Umschlagwahl darf frühere Schlüssel nutzen: Existenzwahlen kooperieren. Festes reelles $c$ ist in $y=x+c$ verfügbar, ohne Quantor aber syntaktisch frei. Abhängigkeit ist keine Bindung: Gebundene Zeugen mit früheren Eingaben bleiben gebunden.
 
-Prüfe Information, Zugehörigkeit und ganzes Prädikat getrennt: Erlaubtes $y=1$ verletzt $y>x$ bei $x=1$; erlaubtes $y=x/2$ scheitert dort an Ganzzahligkeit.
+Prüfe Information, Zugehörigkeit und ganzes Prädikat getrennt. Die Wahl $y=1$ nutzt keine spätere Eingabe, verletzt aber $y>x$ bei $x=1$. Die Regel $y=x/2$ nutzt nur die frühere Eingabe; bei ganzzahligem $x=1$ ist ihr Wert nicht ganzzahlig und liefert daher keinen verlangten ganzzahligen Zeugen.
 
 <span id="from-witness-dependence-übung"></span>
 
 #### Übung
 
 <details>
-<summary>Optionale Zusatzübungen</summary>
+<summary>Optionale Übung: Welche Information darf ein Zeuge nutzen?</summary>
 
 Für jedes reelle $x$ wähle positives reelles $y$. Passt immer eins?
 
@@ -375,7 +397,7 @@ Ohne Personen gilt getrennt leer; gemeinsam braucht einen existierenden Schlüss
 #### Übung
 
 <details>
-<summary>Optionale Zusatzübungen</summary>
+<summary>Optionale Übung: Gemeinsame Zeugen und leere Bereiche</summary>
 
 Alle dürfen rot und blau nutzen. Bewerte beide Formen und Eindeutigkeit.
 
@@ -509,7 +531,7 @@ $A(s)$ heißt Teilnahme: Nur Teilnehmende brauchen ein gelesenes Buch. Mit einer
 #### Übung
 
 <details>
-<summary>Optionale Zusatzübungen</summary>
+<summary>Optionale Übung: Übersetzen und zurücklesen</summary>
 
 Mit $P,K,H$: Übersetze „Jede Person kann einen Schlüssel nutzen“.
 

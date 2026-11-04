@@ -1,0 +1,273 @@
+---
+course: "analysis"
+chapter: "analysis-foundations"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "de"
+title: "Zahlbereiche, Gleichheit und Ordnung"
+navTitle: "Zahlbereiche, Gleichheit und Ordnung"
+description: "Zahlbereiche, Gleichheit und Ordnung"
+order: 1
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: []
+thumbnail: "number-sets"
+sourceLocations: []
+additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]}]
+---
+
+<span id="from-zahlenmengen"></span>
+
+## Die Zahlenmengen
+
+{/* Die Definitionen, Einordnungen und Beweise unten sind ergänzende didaktische Ausarbeitungen. */}
+
+
+<span id="from-zahlenmengen-ein-bild-der-inklusionen"></span>
+
+### Ein Bild der Inklusionen
+
+<NumberDomains />
+
+Die Kästen zeigen **Zugehörigkeit**, nicht Größe: $3$ gehört zu allen fünf Mengen. Innere Zugehörigkeit schließt alle äußeren Kästen ein; zur Einordnung nennen wir die kleinste passende Menge.
+
+
+<span id="from-zahlenmengen-was-die-einzelnen-mengen-enthalten"></span>
+
+### Was die einzelnen Mengen enthalten
+
+- **Natürliche Zahlen** $\mathbb{N}=\{1,2,3,\ldots\}$ zählen ganze Objekte; hier ohne $0$, anders als in manchen Kursen.
+- **Ganze Zahlen** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ enthalten null und negative ganze Zahlen: $-3\in\mathbb{Z}$, aber $-3\notin\mathbb{N}$.
+- **Rationale Zahlen** $\mathbb{Q}$ sind Quotienten ganzer Zahlen; der Zähler darf negativ oder null sein, der Nenner nie null.
+
+<Math tex="\mathbb{Q}=\left\{\frac{p}{q}:p,q\in\mathbb{Z},\ q\ne0\right\}" display />
+
+- **Reelle Zahlen** $\mathbb{R}$ liegen auf der Zahlengeraden und umfassen rationale und **irrationale** Zahlen. Irrationale Zahlen, etwa $\sqrt{2}$, lassen sich nicht als Quotient ganzer Zahlen schreiben. Irrationale bilden $\mathbb{R}\setminus\mathbb{Q}$, keinen weiteren äußeren Kasten.
+- **Komplexe Zahlen** haben die Form $a+bi$ mit $a,b\in\mathbb{R}$ und $i^2=-1$. Reelle haben Imaginärteil null, etwa $3=3+0i$; $2+3i$ ist nicht reell.
+
+
+<span id="from-zahlenmengen-warum-die-inklusionen-echt-sind"></span>
+
+### Warum die Inklusionen echt sind
+
+$\subsetneq$ bedeutet enthalten, aber nicht gleich. Zeige dafür, dass jedes Element der kleineren Menge auch zur größeren gehört, und nenne ein Element der größeren Menge, das nicht zur kleineren gehört.
+
+Natürliche Zahlen sind ganz, rationale reell: Das gehört zur Konstruktion. Ganze sind wegen $n=n/1$ rational; Reelle wegen $a=a+0i$ komplex.
+
+<Math tex="\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}" display />
+
+Zeugen der Echtheit sind $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$ und $i\in\mathbb{C}\setminus\mathbb{R}$. Rational bedeutet also nicht ganz; die schwierigeren Zeugen begründen wir unten.
+
+
+<span id="from-zahlenmengen-beweis-abbrechende-und-periodische-dezimalzahlen-sind-rational"></span>
+
+### Beweis: Abbrechende und periodische Dezimalzahlen sind rational
+
+Abbrechende Dezimalzahlen haben Zehnerpotenzen als Nenner:
+
+<Math tex="0{,}125=\frac{125}{1000}=\frac18" display />
+
+Ganzzahlige Einträge und ein Nenner ungleich null zeigen Rationalität. Wegen $0<0{,}125<1$ ist die kleinste Menge $\mathbb{Q}$, nicht $\mathbb{Z}$.
+
+Für $x=0{,}\overline{27}=0{,}272727\ldots$ verschiebt Multiplikation mit $100$ eine zweistellige Periode. Subtraktion ergibt:
+
+<Math tex="\begin{aligned}100x&=27{,}272727\ldots\\x&=0{,}272727\ldots\\99x&=27\\x&=\frac{27}{99}=\frac3{11}.\end{aligned}" display />
+
+Identische unendliche Endstücke heben sich exakt auf, ohne Rundung. Bei schließlich periodischen Zahlen verschieben wir zuerst den nichtperiodischen Anfang. Umgekehrt endet oder wiederholt sich rationale Division wegen endlich vieler möglicher Reste. Unendliche Dezimalzahlen sind **nicht** zwingend irrational.
+
+
+<span id="from-zahlenmengen-beweis-warum-die-imaginäre-einheit-nicht-reell-ist"></span>
+
+### Beweis: Warum die imaginäre Einheit nicht reell ist
+
+Reelle Quadrate sind nichtnegativ: Positive und negative Eingaben ergeben positive Quadrate, und $0^2=0$. Kein Reeller erfüllt $t^2=-1$; daher ist $i$ nicht reell.
+
+Wäre $2+3i$ reell, wäre durch Subtraktion und Division auch $i=((2+3i)-2)/3$ reell: ein Widerspruch. Komplexe erweitern die Reellen etwa um die Lösungen $z=i$ und $z=-i$ von $z^2+1=0$.
+
+
+<span id="from-zahlenmengen-übung"></span>
+
+### Übung
+
+Begründe die Einordnung und nenne auch die größeren Mengen.
+
+<Exercise question="Ordne $-5/2$, $\sqrt{9}$, $0$ und $0{,}\overline{6}$ ihren kleinsten Mengen zu.">
+
+$-5/2$ ist rational, liegt aber zwischen $-3$ und $-2$, also nicht ganz. $\sqrt{9}=3$ ist natürlich; $0$ hier ganz, nicht natürlich; $0{,}\overline{6}=2/3$ rational, nicht ganz. Alle gehören auch zu den äußeren Mengen.
+
+</Exercise>
+
+<Exercise question="Ist die Summe zweier Irrationaler stets irrational? Prüfe $\sqrt{2}$ und $-\sqrt{2}$.">
+
+Nein: Ihre Summe ist die rationale Zahl $0$. Beide sind irrational, denn wäre $-\sqrt{2}$ rational, dann nach Multiplikation mit $-1$ auch $\sqrt{2}$. Zugehörigkeit allein garantiert keine Abgeschlossenheit unter Rechenoperationen.
+
+</Exercise>
+
+Der [Irrationalitätsbeweis](../widerspruch-und-irrationalitaet/#from-widerspruch-und-irrationalitaet) begründet die hier verwendete Unterscheidung reell/rational.
+
+Ein Wurzelzeichen beweist nichts: $\sqrt{9}=3$ ist natürlich. Entscheidend ist der Wert, nicht die Schreibweise.
+
+<span id="from-equality-and-equations"></span>
+
+## Gleichheit und Gleichungen
+
+$2+1=3$ verbindet verschiedene Ausdrücke derselben Zahl. Jedes Gleichheitszeichen behauptet dasselbe Objekt oder denselben Wert im Kontext, nicht „tue dies als Nächstes“.
+
+
+<span id="from-equality-and-equations-grundregeln-der-gleichheit"></span>
+
+### Grundregeln der Gleichheit
+
+Diese Grundregeln setzen wir ohne arithmetischen Beweis voraus:
+
+- **Reflexivität:** $a=a$.
+- **Symmetrie:** Aus $a=b$ folgt $b=a$.
+- **Transitivität:** Aus $a=b$ und $b=c$ folgt $a=c$.
+- **Ersetzung:** Gleiche Objekte dürfen in wohldefinierten Ausdrücken oder Eigenschaften ausgetauscht werden; Wert und Wahrheit bleiben erhalten.
+
+Definiertheit bleibt nötig: $a=b=0$ definiert weder $1/a$ noch $1/b$ in reeller Arithmetik. Beliebige Änderungen zitierter Wörter sind damit nicht erlaubt.
+
+
+<span id="from-equality-and-equations-jedes-kettenglied-behauptet-eine-gleichheit"></span>
+
+### Jedes Kettenglied behauptet eine Gleichheit
+
+$$a=b=c$$
+
+Die Kette behauptet gemeinsam $a=b$ und $b=c$; Transitivität liefert $a=c$. Sie ist keine Handlungsfolge.
+
+$2+1=3+4=7$ setzt fälschlich drei mit sieben gleich. Schreibe $2+1=3$, dann $3+4=7$, oder behalte die Vier durchgehend bei:
+
+$$(2+1)+4=3+4=7.$$
+
+Zuerst ersetzt drei den Ausdruck $2+1$, dann wird addiert. Alle Ausdrücke bezeichnen sieben.
+
+<Note title="Lesarten">
+
+$a=b=c$: „a ist gleich b und b ist gleich c“; $=$: „ist gleich“; $\approx$: „ist ungefähr gleich“.
+
+</Note>
+
+Näherungsgleichheit braucht Genauigkeit oder Toleranz; jeder Wechsel von exakter zu ungefährer Gleichheit verlangt Erklärung.
+
+
+<span id="from-equality-and-equations-der-zusammenhang-bestimmt-die-rolle"></span>
+
+### Der Zusammenhang bestimmt die Rolle
+
+„Definiere $a:=0$“ benennt; „angenommen $a=0$“ setzt lokal voraus; „löse $x+1=3$ über den Reellen“ sucht erlaubte Eingaben, hier $x=2$. Der Kontext bestimmt die Rolle.
+
+Die Identität $x+0=x$ gilt für alle Reellen, bleibt aber ohne Quantor offen:
+
+$$\forall x\in\mathbb R\;(x+0=x).$$
+
+Wertzuweisung wertet aus, ohne zu binden; Ersetzung tauscht Vorkommen aus und erzeugt eine andere Formel. Quantoren binden Vorkommen im Geltungsbereich.
+
+
+<span id="from-equality-and-equations-aufgaben"></span>
+
+### Aufgaben
+
+Erkläre und korrigiere das falsche Glied in $1+1=2+1=3$, bei gleichem Rechenziel.
+
+<details>
+<summary>Hinweis</summary>
+
+Werte das erste Glied aus; behalte in einer Kette die letzte Addition durchgehend bei.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+Das erste Glied setzt zwei mit drei gleich. Richtig: $1+1=2$, dann $2+1=3$, oder $(1+1)+1=2+1=3$. Alle Kettenglieder sind drei; zuerst wird ersetzt.
+
+</details>
+
+<Exercise question="Für beliebige reelle a, b, c mit $a=b$ und $b=c$: Nenne Voraussetzungen, Folgerung und Regel; formuliere die Allaussage.">
+
+Transitivität führt von $a=b$, $b=c$ zur Folgerung $a=c$:
+
+$$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
+
+Alle Vorkommen sind gebunden. Die Bedingung setzt nicht alle Reellen gleich: Beide Voraussetzungen müssen gelten. Die Regel erfasst beliebige passende Objekte, nicht nur ein geprüftes Zahlentripel.
+
+Lesart: „Für alle reellen a, b, c gilt: Wenn a gleich b und b gleich c, dann a gleich c.“
+
+</Exercise>
+
+<span id="from-order-comparisons"></span>
+
+## Ordnungsvergleiche und Randpunkte
+
+„Höchstens drei Bücher“ erlaubt drei; „weniger als drei“ nicht. Randpunkte zählen. Wir verwenden reelle Ordnung, keine Ordnung beliebiger Objekte oder komplexer Zahlen.
+
+
+<span id="from-order-comparisons-vergleiche-und-ihre-lesarten"></span>
+
+### Vergleiche und ihre Lesarten
+
+| Zeichen | Lesart |
+|---|---|
+| $a<b$ | a ist kleiner als b |
+| $a>b$ | a ist größer als b |
+| $a\le b$ | a ist kleiner oder gleich b |
+| $a\ge b$ | a ist größer oder gleich b |
+| $a\ne b$ | a ist ungleich b |
+
+$<$ und $>$ schließen Gleichheit aus, $\le$ und $\ge$ ein: $0\le0$ ist wahr, $0<0$ falsch. Von $a>b$ zu $b<a$ wechseln Zeichen und Operanden.
+
+$a\le b$ bedeutet einschließend $(a<b)\lor(a=b)$; $a\ge b$ bedeutet $a>b$ oder $a=b$. Ungleichheit gibt keine Richtung vor: $0\ne1$, aber nicht $0>1$. Gleichheit braucht keine Ordnung.
+
+
+{/* analysis-visual:start zahlenmengen-0 */}
+
+Lies die beiden Vergleiche als einen Bereich. Prüfe null und zwei: Die unterschiedlichen Randpunkte erklären, warum die Vergleichszeichen nicht austauschbar sind.
+
+<Interactive kind="number-line" preset="bounds" id="analysis-order-region" />
+
+{/* analysis-visual:end zahlenmengen-0 */}
+
+<span id="from-order-comparisons-zwei-grenzen-für-dieselbe-eingabe"></span>
+
+### Zwei Grenzen für dieselbe Eingabe
+
+$$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
+
+Beide Tests betreffen **dasselbe** $x$. Für $a<b$ ist der untere Rand ausgeschlossen, der obere eingeschlossen. Ein Test allein genügt nicht.
+
+„a ist kleiner als x, und x ist höchstens b.“
+
+„Mindestens a“ heißt $x\ge a$, „höchstens b“ heißt $x\le b$, jeweils einschließlich Gleichheit. „Streng zwischen“ heißt $a<x<b$, ohne Randpunkte. Kläre mehrdeutiges „zwischen“.
+
+$0\le x<1$ ist $x\in[0,1)$; $0<x\le2$ ist $x\in(0,2]$. Eckige Klammern schließen Ränder ein, runde aus; manche Texte nutzen stattdessen nach außen gerichtete eckige Klammern. Die Bedingungen bleiben offen: Kontextwerte erlauben Auswertung ohne Bindung; Quantoren binden im Geltungsbereich.
+
+
+<span id="from-order-comparisons-randpunkte-prüfen"></span>
+
+### Randpunkte prüfen
+
+Übersetze „ein Reeller ist mindestens null und höchstens eins“ sowie „streng zwischen null und eins“; prüfe $0$, $1/2$, $1$.
+
+<details>
+<summary>Hinweis</summary>
+
+Schreibe beide Tests einzeln; kläre Gleichheit vor dem Verknüpfen.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+$0\le x\le1$, also $x\in[0,1]$, erlaubt alle drei. $0<x<1$, also $x\in(0,1)$, erlaubt nur $1/2$: Jeder Rand scheitert an einem strengen Test. Beide Bereiche sind reell.
+
+</details>
+
+<Exercise question="Schreibe $0\le x<1$ mit einer Verknüpfung. Sind verschiedene x-Werte erlaubt? Wird x gebunden?">
+
+Es gilt $(0\le x)\land(x<1)$ für dieselbe Eingabe. $x=2$ im ersten und $x=0$ im zweiten Test zeigen keinen gemeinsamen Zeugen. Konjunktion bindet $x$ nicht; ohne zugehörigen Quantor bleibt es frei.
+
+</Exercise>
+
+Das sind Lesekonventionen, keine Lösungsregeln; übliche Ordnungseigenschaften werden vorausgesetzt. Siehe [Ordnungsvergleiche negieren](../logical-negation/#from-negating-order-comparisons) zur randgenauen Umkehr.

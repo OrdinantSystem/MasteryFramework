@@ -1,0 +1,107 @@
+[
+  {
+    "path": "src/content/lessons/en/analysis/zahlenmengen.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/zahlenmengen.mdx",
+    "sha256": "e2cc35e1c87d40e9ea100d9ce481bbead08d3fa930e86bd6a45ec95cadf85d1f"
+  },
+  {
+    "path": "src/content/lessons/en/analysis/aussagen-und-aussageformen.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/aussagen-und-aussageformen.mdx",
+    "sha256": "6a0cc6600436c112914f2ab32681f183d354c2604325680b6dcd912928adc2d3"
+  },
+  {
+    "path": "src/content/lessons/en/analysis/quantifier-order.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/quantifier-order.mdx",
+    "sha256": "8dab9724946b065ebc20aa36296cbd50e6679ef107bfcd196f44981a07d2c34c"
+  },
+  {
+    "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/real-sequences.mdx",
+    "sha256": "4bb15ed6f50b10c94fc514244e1252c965055191b26dd24c96486f47dc65bf46"
+  },
+  {
+    "path": "src/content/lessons/en/analysis/reading-sequence-convergence.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/reading-sequence-convergence.mdx",
+    "sha256": "bbc1ca8a9070cd45fd4e54e1af28f95b2c615e8f98320d7dd3bd238d88d08c75"
+  },
+  {
+    "path": "src/content/lessons/en/analysis/negating-sequence-convergence.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/negating-sequence-convergence.mdx",
+    "sha256": "c7e540bcbce91ba70d2051cba0e55441e401d5cf414b3c3bf790c97cc1981eda"
+  },
+  {
+    "path": "src/content/course-guides/en/analysis.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/en/overview.mdx",
+    "sha256": "25f26c0c6cd0a53e40e2fffeeee2e1806f0acb90039da7fead9beb6dd500dbea"
+  },
+  {
+    "path": "src/content/lessons/de/analysis/zahlenmengen.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/zahlenmengen.mdx",
+    "sha256": "8439be392dfd087d290dc5d7c393187f884b66ec0c143bfed3d0c3daa5bda384"
+  },
+  {
+    "path": "src/content/lessons/de/analysis/aussagen-und-aussageformen.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/aussagen-und-aussageformen.mdx",
+    "sha256": "67cb7ea9928db9d1bf3844201851ad29b9ccf3da29b966a8115d0fc69b911073"
+  },
+  {
+    "path": "src/content/lessons/de/analysis/quantifier-order.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/quantifier-order.mdx",
+    "sha256": "a9ae56161feb05388cd49edb0e555fc67af539ecd791b7f41ce4f0c2a91cb66d"
+  },
+  {
+    "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/real-sequences.mdx",
+    "sha256": "ee1b687108dfb3c0dae524fe51497573d7f62bbe3f149dcf8f78a31d6f4f5b53"
+  },
+  {
+    "path": "src/content/lessons/de/analysis/reading-sequence-convergence.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/reading-sequence-convergence.mdx",
+    "sha256": "240e2248b219a01a9d31df075c534a3eb70dc8fd3d60d2f3269e34ed02d4b99a"
+  },
+  {
+    "path": "src/content/lessons/de/analysis/negating-sequence-convergence.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/negating-sequence-convergence.mdx",
+    "sha256": "fa87c7416b72f864e703970355d203de81a248dcddcedefb4f41543c6eeb0726"
+  },
+  {
+    "path": "src/content/course-guides/de/analysis.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/de/overview.mdx",
+    "sha256": "192637b90626e5873182cce3fdb353007f4d474f2e2f992a370ad7ba11f3cd2b"
+  },
+  {
+    "path": "src/content/lessons/es/analysis/zahlenmengen.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/zahlenmengen.mdx",
+    "sha256": "40b9d720539020dcaf46daf80a5884b03e4095e07bd9691f6ab1fd8e7dd3244e"
+  },
+  {
+    "path": "src/content/lessons/es/analysis/aussagen-und-aussageformen.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/aussagen-und-aussageformen.mdx",
+    "sha256": "ef34ab4e874a47a84cb9671b0437e840c2f2b66cab1f8ca6340eba7f5ccc08eb"
+  },
+  {
+    "path": "src/content/lessons/es/analysis/quantifier-order.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/quantifier-order.mdx",
+    "sha256": "59c47db25cddb6fe97b3fd0ae9a8890b28a43d547643e8c7a4460bf000ec4c5b"
+  },
+  {
+    "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/real-sequences.mdx",
+    "sha256": "9aa2d62a847294d0ee92ae1b1df0d5c3c714c83f547b3d77628782b8e9315cff"
+  },
+  {
+    "path": "src/content/lessons/es/analysis/reading-sequence-convergence.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/reading-sequence-convergence.mdx",
+    "sha256": "37ec25d15f31bc3019cdee13d2b9d22b0be7d85c7c84b282bba444862b4ae31c"
+  },
+  {
+    "path": "src/content/lessons/es/analysis/negating-sequence-convergence.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/negating-sequence-convergence.mdx",
+    "sha256": "1f40c9525018974ed2a959c98fb5a17e2788fbf5875883650b7205c782b7a64c"
+  },
+  {
+    "path": "src/content/course-guides/es/analysis.mdx",
+    "baseline": "myNotes/docs/history/analysis-before-teaching/es/overview.mdx",
+    "sha256": "a38efff326bfcc1e850b76a162f9d495558f7a44ae84c67c3c2f9dd7ded74c1e"
+  }
+]

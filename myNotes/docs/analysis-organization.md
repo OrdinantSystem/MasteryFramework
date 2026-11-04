@@ -1,8 +1,10 @@
 # Analysis I course organization
 
-Analysis I has six sections and twenty lesson pages in EN/DE/ES. Its current material develops mathematical language, logic, quantifiers, proof and a first sequence-convergence application. It is not a complete Analysis I syllabus. Boolean algebra and circuits are optional applications after the core route, not prerequisites for convergence.
+Analysis I has six sections and twenty lesson pages in EN/DE. Its current material develops mathematical language, logic, quantifiers, proof and a first sequence-convergence application. It is not a complete Analysis I syllabus. Boolean algebra and circuits are optional applications after the core route, not prerequisites for convergence.
 
 ## Reader route
+
+The [first-semester refinement](analysis-teaching.md) updates the overview and selected entry/proof explanations in EN/DE. Its active-edition contract preserves old tasks, hints, proofs and destinations while permitting reviewed reordering and new practice. The twenty-row audit is candidate work, not a blanket rewrite. All original 130 lesson Exercise blocks per language remain, alongside four added lesson exercises and two Exercise disclosures in the review.
 
 1. **Mathematical foundations** — number systems/equality/order; statements/predicates/definitions.
 2. **Logic fundamentals** — combined conditions; truth-table construction; negation; implication/contraposition; equivalence and reversible transformations.

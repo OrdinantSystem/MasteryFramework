@@ -1,0 +1,254 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Failure of convergence and no real limit"
+navTitle: "Failure of convergence and no real limit"
+description: "Failure of convergence and no real limit"
+order: 17
+kind: "worked-problem"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["reading-sequence-convergence", "negating-nested-statements"]
+sourcePages: []
+sourceLocations: ["A0.1.9 Negation of quantified statements/05 Negating Quantified Inequalities.md#05 Negating Quantified Inequalities", "Concepts/Deriving Negation of Sequence Convergence.md#Deriving Negation of Sequence Convergence", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit"]
+thumbnail: "quantifiers"
+additionalSources: []
+---
+
+<span id="from-negating-sequence-convergence"></span>
+
+## Negating sequence convergence
+
+First derive failure at one target, not absence of all real limits. Fix sequence and target.
+
+Recall $\varepsilon>0$ as tolerance, $N$ as threshold, $n$ as test index. Convergence to fixed real $L$ means:
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+A fixed threshold must work for its entire tail, not earlier indices. These six equivalent negations alone establish no particular sequence’s failure.
+
+
+<span id="from-negating-sequence-convergence-1-deny-the-whole-definition"></span>
+
+### 1. Deny the whole definition
+
+$$
+\neg\Bigl(\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Negate the complete statement without changing its interior or fixed context.
+
+
+<span id="from-negating-sequence-convergence-2-cross-the-tolerance-quantifier"></span>
+
+### 2. Cross the tolerance quantifier
+
+$$
+\exists\varepsilon>0\;\neg\Bigl(\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+Some positive tolerance defeats the remainder. Positivity is retained.
+
+
+<span id="from-negating-sequence-convergence-3-cross-the-threshold-quantifier"></span>
+
+### 3. Cross the threshold quantifier
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\neg\Bigl(\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr)\Bigr).
+$$
+
+For this fixed tolerance, every natural threshold fails.
+
+
+<span id="from-negating-sequence-convergence-4-cross-the-test-index-quantifier"></span>
+
+### 4. Cross the test-index quantifier
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\neg\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Each threshold needs one falsifying index, which may depend on it and fixed context. Not every index must fail.
+
+
+<span id="from-negating-sequence-convergence-5-deny-the-implication"></span>
+
+### 5. Deny the implication
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land\neg(|a_n-L|<\varepsilon)\bigr).
+$$
+
+False implication means true hypothesis and false conclusion at the same index. Retain tail membership and conjoin distance failure; pre-tail terms cannot refute it.
+
+
+<span id="from-negating-sequence-convergence-6-include-equality-in-distance-failure"></span>
+
+### 6. Include equality in distance failure
+
+$$
+\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+Not below $\varepsilon$ means at least $\varepsilon$, including equality. One positive tolerance defeats every proposed tail through a term at least that far from $L$, not through failure of every late term.
+
+
+<span id="from-negating-sequence-convergence-prove-one-actual-failure"></span>
+
+### Prove one actual failure
+
+For constant $a_n=0$, $L=1$, take $\varepsilon=1$. Every natural $N$ permits $n=N\ge N$ with $|a_n-1|=1\ge\varepsilon$. Yet target zero succeeds for every $\varepsilon>0$ with $N=1$ and zero distance. This sequence has a real limit.
+
+<span id="from-negating-sequence-convergence-practice"></span>
+
+#### Practice
+
+Why is retaining an implication in the final failure condition wrong?
+
+<details>
+<summary>Hint</summary>
+
+Consider a pre-tail index when one exists.
+
+</details>
+
+<Exercise>
+
+An implication could pass on a false tail hypothesis without any bad tail term. Failure needs both tail membership and distance failure: conjunction.
+
+</Exercise>
+
+For constant zero, reconstruct failure at target one and success at target zero without sampling tolerances.
+
+<details>
+<summary>Hint</summary>
+
+Use arbitrary thresholds for failure and arbitrary tolerances for success.
+
+</details>
+
+<Exercise>
+
+At one, fixed $\varepsilon=1$ and $n=N$ work for every $N$. At zero, arbitrary $\varepsilon>0$ permits $N=1$, with $0<\varepsilon$ everywhere. Neither needs the optional reciprocal example.
+
+</Exercise>
+
+Later, derive all six stages before adding the outer target quantifier in [no real limit](../negating-sequence-convergence/#from-no-real-limit).
+
+Which choices may depend on the threshold? Must every later index violate tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Read the three quantifiers in order.
+
+</details>
+
+<Exercise>
+
+The index may use the threshold; tolerance is fixed beforehand. One bad term per tail suffices; others may be close.
+
+</Exercise>
+
+
+<span id="from-negating-sequence-convergence-read-aloud"></span>
+
+### Read aloud
+
+One positive real tolerance has a term at least that far from L in every natural-indexed tail.
+
+<span id="from-no-real-limit"></span>
+
+## No real limit
+
+No real limit requires failure at every real target for the fixed sequence, not just one.
+
+Abbreviate the complete positive convergence definition by $C(L)$. A real limit means $\exists L\in\mathbb R\;C(L)$; negate that outer existence:
+
+$$
+\neg(\exists L\in\mathbb R\;C(L))\ \Longleftrightarrow\ \forall L\in\mathbb R\;\neg C(L).
+$$
+
+Substitute the derived failure condition. Tolerance may depend on the earlier target but stays fixed across all its thresholds.
+
+$$
+\forall L\in\mathbb R\;\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|\ge\varepsilon\bigr).
+$$
+
+No real limit, or real-sequence divergence, need not mean growth or tending to infinity. One tolerance for all targets would be stronger and need justification. The bad index may use target, threshold, tolerance and sequence.
+
+
+{/* analysis-visual:start negating-sequence-convergence-19 */}
+
+Keep $\varepsilon=0.5$ fixed and move $N$: each tail still contains $-1$ and 1, so at least one value stays outside the band for any real target. Compare constant zero at targets one and zero to separate one failed target from having no real limit.
+
+<Interactive kind="sequence" preset="alternating" id="analysis-infinite-failures" />
+
+{/* analysis-visual:end negating-sequence-convergence-19 */}
+
+<span id="from-no-real-limit-a-quantifier-swap-can-destroy-the-test"></span>
+
+### A quantifier swap can destroy the test
+
+$$
+\forall N\in\mathbb N\;\exists\varepsilon>0\;\exists n\in\mathbb N\;\bigl(n\ge N\land |a_n-L|>\varepsilon\bigr).
+$$
+
+It wrongly rechooses tolerance after thresholds and omits equality at the same tolerance. Negation changes binder types in place, not order.
+
+Optional countermodel: [reciprocal convergence](../reading-sequence-convergence/#from-reciprocal-sequence-convergence), accepting Archimedean background. Although $a_n=1/n$ converges to zero, each $N$ permits $n=N$, $\varepsilon=1/(2N)$, with $1/N>1/(2N)>0$: the wrong-order condition holds. The main route needs only constant proofs.
+
+
+<span id="from-no-real-limit-optional-nuance-a-separately-equivalent-strict-form"></span>
+
+### Optional nuance: a separately equivalent strict form
+
+With correct order $\exists\varepsilon>0\;\forall N\;\exists n$, strict failure is separately equivalent: distance at least $\varepsilon$ implies distance above positive $\varepsilon/2$ at the same bad terms. Conversely, greater implies at least. Changing the witness proves equivalence; it does not make $\neg(d<\varepsilon)$ mean $d>\varepsilon$ at fixed epsilon. Halving cannot repair swapped quantifiers.
+
+<span id="from-no-real-limit-practice"></span>
+
+#### Practice
+
+What may the tolerance depend on in fixed-target failure and in no-real-limit failure? Must all late terms fail?
+
+<details>
+<summary>Hint</summary>
+
+Read the outer target before the tolerance.
+
+</details>
+
+<Exercise>
+
+Fixed-target tolerance uses context, not the later threshold. For no real limit it may use the earlier target. The index may use the threshold; one failure per tail suffices.
+
+</Exercise>
+
+Starting from positive convergence, reconstruct fixed-target failure and then no real limit. Explain both errors in the displayed proposed denial.
+
+<details>
+<summary>Hint</summary>
+
+Negate the implication only after crossing the three binders.
+
+</details>
+
+<Exercise>
+
+Fixed-target failure is $\exists\varepsilon>0\;\forall N\in\mathbb N\;\exists n\in\mathbb N\;(n\ge N\land |a_n-L|\ge\varepsilon)$. Add outer $\forall L\in\mathbb R$ for no real limit. Epsilon precedes thresholds; literal negation includes equality. The separately proved strict version halves epsilon without swapping quantifiers.
+
+</Exercise>
+
+Later, derive all six stages unaided; use constant zero to distinguish one failed target from all targets.
+
+
+<span id="from-no-real-limit-read-aloud"></span>
+
+### Read aloud
+
+For every real target L there is a positive tolerance such that every natural threshold has a later or equal term at least that far from L.

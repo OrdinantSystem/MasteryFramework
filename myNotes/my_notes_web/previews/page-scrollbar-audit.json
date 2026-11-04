@@ -1,0 +1,94 @@
+[
+  {
+    "lang": "en",
+    "overflow": false,
+    "rootColor": "color(srgb 0.92902 0.933333 0.923529) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "sidebarColor": "color(srgb 0.92902 0.933333 0.923529) rgba(0, 0, 0, 0)",
+    "sidebarWidth": "thin",
+    "theme": "light",
+    "thumbRadius": "999px",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 1440
+  },
+  {
+    "lang": "en",
+    "overflow": false,
+    "rootColor": "color(srgb 0.153098 0.162196 0.174431) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "sidebarColor": "color(srgb 0.119216 0.127843 0.138431) rgba(0, 0, 0, 0)",
+    "sidebarWidth": "thin",
+    "theme": "dark",
+    "thumbRadius": "999px",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 1440
+  },
+  {
+    "lang": "de",
+    "overflow": false,
+    "rootColor": "color(srgb 0.119216 0.127843 0.138431) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "sidebarColor": "color(srgb 0.119216 0.127843 0.138431) rgba(0, 0, 0, 0)",
+    "sidebarWidth": "thin",
+    "theme": "dark",
+    "thumbRadius": "999px",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 1440
+  },
+  {
+    "lang": "de",
+    "overflow": false,
+    "rootColor": "color(srgb 0.89349 0.900392 0.889412) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "sidebarColor": "color(srgb 0.92902 0.933333 0.923529) rgba(0, 0, 0, 0)",
+    "sidebarWidth": "thin",
+    "theme": "light",
+    "thumbRadius": "999px",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 1440
+  },
+  {
+    "lang": "en",
+    "overflow": false,
+    "rootColor": "color(srgb 0.92902 0.933333 0.923529) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "theme": "light",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 390
+  },
+  {
+    "lang": "en",
+    "overflow": false,
+    "rootColor": "color(srgb 0.153098 0.162196 0.174431) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "theme": "dark",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 390
+  },
+  {
+    "lang": "de",
+    "overflow": false,
+    "rootColor": "color(srgb 0.119216 0.127843 0.138431) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "theme": "dark",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 390
+  },
+  {
+    "lang": "de",
+    "overflow": false,
+    "rootColor": "color(srgb 0.89349 0.900392 0.889412) rgba(0, 0, 0, 0)",
+    "rootWidth": "thin",
+    "scrollable": true,
+    "theme": "light",
+    "track": "rgba(0, 0, 0, 0)",
+    "width": 390
+  }
+]

@@ -21,6 +21,8 @@ additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0
 
 ## The number sets
 
+$x\in D$ means “x belongs to D”; $x\notin D$ means it does not. $A\setminus B$ contains the members of A that are not in B. In $\{x\in D:P(x)\}$, the part after the colon is the condition an allowed member must satisfy.
+
 {/* The definitions, worked classifications, and proofs below are authored teaching additions. */}
 
 
@@ -158,6 +160,8 @@ Approximation requires a precision or tolerance; explain any replacement of exac
 
 “Define $a:=0$” names; “suppose $a=0$” assumes locally; “solve $x+1=3$ over the reals” seeks allowed inputs, here $x=2$. Context, not $=$ alone, determines the role.
 
+The next formal formulation is a connection to [quantifiers and scope](../universal-statements-and-domains/#from-bound-variables-and-scope). On a first reading, focus on what the equality says; return to the binding terminology after that lesson.
+
 The identity $x+0=x$ holds for every real, but remains open until quantified:
 
 $$\forall x\in\mathbb R\;(x+0=x).$$
@@ -220,6 +224,14 @@ $<$ and $>$ exclude equality; $\le$ and $\ge$ include it: $0\le0$ is true, $0<0$
 
 $a\le b$ means $(a<b)\lor(a=b)$ inclusively; $a\ge b$ means $a>b$ or $a=b$. Inequality gives no direction: $0\ne1$, yet not $0>1$. Equality needs no order.
 
+
+{/* analysis-visual:start zahlenmengen-0 */}
+
+Read the two comparisons as one region. Test zero and two: the different endpoints explain why the inequality signs cannot be interchanged.
+
+<Interactive kind="number-line" preset="bounds" id="analysis-order-region" />
+
+{/* analysis-visual:end zahlenmengen-0 */}
 
 <span id="from-order-comparisons-two-bounds-concern-one-input"></span>
 

@@ -33,7 +33,7 @@ Poster and worksheet applications remain. Numbered-law Boolean tasks require alg
 
 <span id="from-analysis-grundlagen-ueberblick-the-dependency-chain"></span>
 
-### The dependency chain
+### The dependency chain · optional Boolean application
 
 <Math tex="(1\text{–}5)\longrightarrow H_1,H_2\longrightarrow(6\text{–}8)\longrightarrow U\longrightarrow\{9a,10\}\longrightarrow9b" display />
 
@@ -50,11 +50,31 @@ Here $U$ denotes the uniqueness of the complement.
 - Why must identity laws be derived before using them to prove idempotence?
 - Why does the NAND implementation of AND need two gates rather than three?
 
-For uncertain answers, revisit the lesson. These six source documents prepare later Analysis; they do not cover limits or differentiation.
+For uncertain answers, revisit the linked explanations. The core route reaches sequence limits; Boolean laws and circuits are optional applications. Differentiation is beyond the present material.
 
 
 <span id="from-analysis-grundlagen-ueberblick-a-combined-problem"></span>
 
 ### A combined problem
 
-For integers $n$, test “even $n^2$ implies $4\mid n$.” Parity gives only even $n$, not divisibility by four. Counterexample $n=2$ has even square $4$ but is not divisible by $4$. A relevant theorem may prove less than the requested conclusion.
+For integers $n$, test “even $n^2$ implies $4\mid n$.”
+
+<Exercise>
+
+Parity gives only even $n$, not divisibility by four. Counterexample $n=2$ has even square $4$ but is not divisible by $4$. A relevant theorem may prove less than the requested conclusion.
+
+</Exercise>
+
+
+### A sequence proof to reconstruct
+
+Try the task before opening its solution. Check the order of choices and the entire tail, then revisit the convergence and failure lessons if your argument missed either.
+
+<Exercise question="For $a_1=8$ and $a_n=0$ at every $n\ge2$, prove convergence to zero. Explain why the initial term is harmless, why $N=n+1$ is not an allowed threshold choice, and whether failure at target one would mean no real limit.">
+
+For arbitrary $\varepsilon>0$, choose $N=2$. Every natural $n\ge N$ has $|a_n-0|=0<\varepsilon$. The initial term is outside this tail. N must be fixed before the arbitrary test index, so $N=n+1$ reverses the required dependence. At target one, $\varepsilon=1/2$ and $n=\max(N,2)$ defeat every proposed threshold. Nevertheless zero is a limit by the first argument: one failed target does not rule out all targets.
+
+</Exercise>
+
+
+Revisit <a href={lessonUrl("reading-sequence-convergence","en","analysis")}>convergence</a> · <a href={lessonUrl("negating-sequence-convergence","en","analysis")}>failure at a target</a>.

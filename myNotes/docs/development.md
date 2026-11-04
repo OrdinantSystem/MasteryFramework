@@ -14,9 +14,9 @@ Run commands in ../my_notes_web/ with Node 24 and the committed lockfile. No pri
 
 ## Build contract
 
-npm run build runs Astro diagnostics, verify:library, static generation, Pagefind, worksheet arithmetic/word checks (verify:content), and scripts/verify.mjs. Analysis checks derive matching localized inventories rather than assuming 15 lessons. The Analysis 0 check reconciles all 52 source dispositions and 28 concept mappings, preserves original keys through canonical pages or compatibility routes, and tests finite quantifier models including empty domains and numerical boundary examples; it is not proof or translation certification. Presets are validated both in the library check and when initialized by the Astro view. Equation parity treats digit-surrounded TeX decimal commas and decimal points as equivalent, so EN/DE/ES numerical notation may be localized without weakening comparison of values.
+npm run build runs Astro diagnostics, verify:library, static generation, Pagefind, worksheet arithmetic/word checks (verify:content), and scripts/verify.mjs. Analysis checks derive matching localized inventories rather than assuming 15 lessons. The Analysis 0 check reconciles all 52 source dispositions and 28 concept mappings, preserves original keys through canonical pages or compatibility routes, and tests finite quantifier models including empty domains and numerical boundary examples; it is not proof or translation certification. Presets are validated both in the library check and when initialized by the Astro view. Equation parity treats digit-surrounded TeX decimal commas and decimal points as equivalent, so EN/DE numerical notation may be localized without weakening comparison of values.
 
-The organization check additionally protects all 159 archived original MDX versions, every source-section disposition, prose/markup paragraphs with explicit duplicate allowances, exercises/solutions, hints/readings and tables. Test old page URLs and heading fragments as well as canonical routes. Compatibility documents are not lessons or search entries.
+The organization check additionally protects the 106 archived original MDX versions for supported languages (the complete 159-file historical archive remains frozen), every source-section disposition, prose/markup paragraphs with explicit duplicate allowances, exercises/solutions, hints/readings and tables. Test old page URLs and heading fragments as well as canonical routes. Compatibility documents are not lessons or search entries.
 
 Generated-output checks derive published lesson counts plus compatibility documents, enforce localized counterparts, verify links/assets/anchors, check private source exclusion, and explicitly count text-contrast pairs so formatting cannot silently disable checks.
 
@@ -24,10 +24,10 @@ Use relevant tests for actual risks: target reachability on a finite grid, singu
 
 ## Navigation, routes, and search
 
-- Publish matching EN/DE/ES filenames together. Titles can differ; filenames are stable translation keys.
+- Publish matching EN/DE filenames together. Titles can differ; filenames are stable translation keys.
 - Extend chapters/groups in src/lib/navigation.ts when adding a published order. Membership is checked exactly once per published lesson; a new lesson cannot disappear silently from the menu.
 - Use url(), localeUrl(), and lessonUrl() from src/lib/content.ts. Never concatenate /myNotes or a locale directly into an application link.
-- Search uses separate Pagefind language indexes. It does not translate query text. Test German and Spanish terms in the built preview.
+- Search uses separate Pagefind language indexes. It does not translate query text. Test English and German terms in the built preview.
 - /library/ is an authoring reference, noindex, outside Pagefind lesson bodies and learner navigation. It is English-only; its language control opens localized archive overviews.
 
 Course navigation color is automatic: `src/lib/navigation-colors.ts` cycles blue, teal, purple and coral by global course-registry position, before grouping into knowledge areas. Chapters, groups and active lessons inherit the course color. Append new courses to preserve existing assignments; do not add course-id color selectors or lesson color fields. Reordering courses deliberately reassigns their colors. This cycle does not alter the semantic colors used inside teaching figures.

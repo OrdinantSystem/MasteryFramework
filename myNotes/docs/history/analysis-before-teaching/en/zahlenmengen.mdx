@@ -1,0 +1,273 @@
+---
+course: "analysis"
+chapter: "analysis-foundations"
+sourceId: "analysis-concepts-1"
+sourcePages: [1]
+locale: "en"
+title: "Number systems, equality and order"
+navTitle: "Number systems, equality and order"
+description: "Number systems, equality and order"
+order: 1
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: []
+thumbnail: "number-sets"
+sourceLocations: []
+additionalSources: [{"sourceId": "analysis-zero", "pages": [], "locations": ["A0.1.1 Mathematical propositions/06 Equality and Inequality Conventions.md"]}]
+---
+
+<span id="from-zahlenmengen"></span>
+
+## The number sets
+
+{/* The definitions, worked classifications, and proofs below are authored teaching additions. */}
+
+
+<span id="from-zahlenmengen-an-inclusion-picture"></span>
+
+### An inclusion picture
+
+<NumberDomains />
+
+The boxes show **membership**, not magnitude: $3$ belongs to all five sets. Inner membership implies membership in every surrounding box; classify by the smallest containing set.
+
+
+<span id="from-zahlenmengen-what-each-set-contains"></span>
+
+### What each set contains
+
+- **Naturals** $\mathbb{N}=\{1,2,3,\ldots\}$ count whole objects; here $0$ is excluded, unlike in some courses.
+- **Integers** $\mathbb{Z}=\{\ldots,-2,-1,0,1,2,\ldots\}$ include zero and negative whole numbers: $-3\in\mathbb{Z}$ but $-3\notin\mathbb{N}$.
+- **Rationals** $\mathbb{Q}$ are integer ratios: the numerator may be negative or zero, the denominator must be nonzero.
+
+<Math tex="\mathbb{Q}=\left\{\frac{p}{q}:p,q\in\mathbb{Z},\ q\ne0\right\}" display />
+
+- **Reals** $\mathbb{R}$ fill the number line. They include rationals and **irrationals**, which have no integer-ratio representation, such as $\sqrt{2}$. Irrationals form $\mathbb{R}\setminus\mathbb{Q}$, not another outer box.
+- **Complex numbers** have form $a+bi$, with $a,b\in\mathbb{R}$ and $i^2=-1$. Reals have imaginary part zero, as in $3=3+0i$; $2+3i$ is not real.
+
+
+<span id="from-zahlenmengen-why-the-inclusions-are-strict"></span>
+
+### Why the inclusions are strict
+
+$\subsetneq$ means contained in but not equal to. Justify it by showing that every element of the smaller set is in the larger set and giving an element of the larger set that is not in the smaller one.
+
+Naturals are integers and rationals are real by construction. Integers are rational because $n=n/1$; reals are complex because $a=a+0i$.
+
+<Math tex="\mathbb{N}\subsetneq\mathbb{Z}\subsetneq\mathbb{Q}\subsetneq\mathbb{R}\subsetneq\mathbb{C}" display />
+
+Strictness witnesses are $0\in\mathbb{Z}\setminus\mathbb{N}$, $1/2\in\mathbb{Q}\setminus\mathbb{Z}$, $\sqrt{2}\in\mathbb{R}\setminus\mathbb{Q}$ and $i\in\mathbb{C}\setminus\mathbb{R}$. Thus rational need not mean integer; the less immediate witnesses are justified below.
+
+
+<span id="from-zahlenmengen-proof-a-terminating-or-repeating-decimal-is-rational"></span>
+
+### Proof: a terminating or repeating decimal is rational
+
+Terminating decimals are fractions over powers of ten:
+
+<Math tex="0.125=\frac{125}{1000}=\frac18" display />
+
+Integer entries and a nonzero denominator establish rationality. Since $0<0.125<1$, the smallest set is $\mathbb{Q}$, not $\mathbb{Z}$.
+
+For $x=0.\overline{27}=0.272727\ldots$, multiply by $100$ to shift one two-digit period, then subtract:
+
+<Math tex="\begin{aligned}100x&=27.272727\ldots\\x&=0.272727\ldots\\99x&=27\\x&=\frac{27}{99}=\frac3{11}.\end{aligned}" display />
+
+Identical infinite tails cancel exactly, without rounding. For eventually periodic decimals, first shift past the nonrepeating beginning. Conversely, rational long division terminates or repeats because finitely many remainders are possible. Infinite decimals need **not** be irrational.
+
+
+<span id="from-zahlenmengen-proof-why-the-imaginary-unit-is-not-real"></span>
+
+### Proof: why the imaginary unit is not real
+
+Real squares are nonnegative: positive and negative inputs square positively, and $0^2=0$. Hence no real satisfies $t^2=-1$, so $i$ is not real.
+
+If $2+3i$ were real, subtraction and division would make $i=((2+3i)-2)/3$ real, a contradiction. Complex numbers extend the reals to solve equations such as $z^2+1=0$, with solutions $z=i$ and $z=-i$.
+
+
+<span id="from-zahlenmengen-practice"></span>
+
+### Practice
+
+Justify each classification; also name the larger containing sets.
+
+<Exercise question="Classify $-5/2$, $\sqrt{9}$, $0$, and $0.\overline{6}$ by their smallest sets.">
+
+$-5/2$ is rational but between $-3$ and $-2$, hence not integer. $\sqrt{9}=3$ is natural; $0$ is integer but not natural here; $0.\overline{6}=2/3$ is rational, not integer. All belong to the surrounding sets.
+
+</Exercise>
+
+<Exercise question="Must two irrationals have an irrational sum? Test $\sqrt{2}$ and $-\sqrt{2}$.">
+
+No: their sum is rational $0$. Both are irrational, since rationality of $-\sqrt{2}$ would imply rationality of $\sqrt{2}$ after multiplication by $-1$. Set membership alone does not guarantee closure under arithmetic.
+
+</Exercise>
+
+The [irrationality proof](../widerspruch-und-irrationalitaet/#from-widerspruch-und-irrationalitaet) justifies the real/rational distinction used here.
+
+A radical alone proves nothing: $\sqrt{9}=3$ is natural. Classify the value, not its notation.
+
+<span id="from-equality-and-equations"></span>
+
+## Equality and equations
+
+$2+1=3$ equates different expressions for the same number. Each equals sign asserts the same object or value in context, never “do this next.”
+
+
+<span id="from-equality-and-equations-foundational-equality-rules"></span>
+
+### Foundational equality rules
+
+We accept these foundational rules without arithmetic proofs:
+
+- **Reflexivity:** $a=a$.
+- **Symmetry:** if $a=b$, then $b=a$.
+- **Transitivity:** if $a=b$ and $b=c$, then $a=c$.
+- **Substitution:** exchange equal objects in well-defined expressions or properties, preserving value or truth.
+
+Definedness still matters: $a=b=0$ does not define $1/a$ or $1/b$ in real arithmetic. Substitution does not license arbitrary changes to quoted words.
+
+
+<span id="from-equality-and-equations-every-link-of-a-chain-makes-a-claim"></span>
+
+### Every link of a chain makes a claim
+
+$$a=b=c$$
+
+This jointly asserts $a=b$ and $b=c$; transitivity gives $a=c$. It is not an action sequence.
+
+$2+1=3+4=7$ wrongly equates three and seven. Write $2+1=3$, then $3+4=7$, or retain the added four throughout:
+
+$$(2+1)+4=3+4=7.$$
+
+First substitute three for $2+1$, then add. Every expression now denotes seven.
+
+<Note title="Readings">
+
+$a=b=c$: “a equals b and b equals c”; $=$: “equals”; $\approx$: “is approximately equal to”.
+
+</Note>
+
+Approximation requires a precision or tolerance; explain any replacement of exact equality by approximate equality.
+
+
+<span id="from-equality-and-equations-an-equations-role-depends-on-context"></span>
+
+### An equation's role depends on context
+
+“Define $a:=0$” names; “suppose $a=0$” assumes locally; “solve $x+1=3$ over the reals” seeks allowed inputs, here $x=2$. Context, not $=$ alone, determines the role.
+
+The identity $x+0=x$ holds for every real, but remains open until quantified:
+
+$$\forall x\in\mathbb R\;(x+0=x).$$
+
+Assignment evaluates without binding; substitution replaces occurrences, producing another formula. Quantifiers bind occurrences within their scope.
+
+
+<span id="from-equality-and-equations-practice"></span>
+
+### Practice
+
+Explain and repair the false link in $1+1=2+1=3$, preserving the calculation.
+
+<details>
+<summary>Hint</summary>
+
+Evaluate the first link; retain the final addition throughout a single chain.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+The first link equates two and three. Use $1+1=2$, then $2+1=3$, or $(1+1)+1=2+1=3$. All chain entries equal three; the first step substitutes.
+
+</details>
+
+<Exercise question="For arbitrary reals a, b, c with $a=b$ and $b=c$, identify assumptions, conclusion and rule; state the universal claim.">
+
+Transitivity takes assumptions $a=b$, $b=c$ to conclusion $a=c$:
+
+$$\forall a\in\mathbb R\;\forall b\in\mathbb R\;\forall c\in\mathbb R\;(((a=b)\land(b=c))\Rightarrow(a=c)).$$
+
+All occurrences are bound. This conditional does not equate all reals: both assumptions must hold. The rule covers arbitrary suitable objects, not merely one checked triple.
+
+It reads: “For all real a, b, c, if a equals b and b equals c, then a equals c.”
+
+</Exercise>
+
+<span id="from-order-comparisons"></span>
+
+## Order comparisons and endpoints
+
+“At most three books” includes three; “fewer than three” excludes it. Endpoints matter. We use real order, not an order on arbitrary objects or complex numbers.
+
+
+<span id="from-order-comparisons-comparisons-and-their-readings"></span>
+
+### Comparisons and their readings
+
+| Symbol | Reading |
+|---|---|
+| $a<b$ | a is strictly less than b |
+| $a>b$ | a is strictly greater than b |
+| $a\le b$ | a is less than or equal to b |
+| $a\ge b$ | a is greater than or equal to b |
+| $a\ne b$ | a is not equal to b |
+
+$<$ and $>$ exclude equality; $\le$ and $\ge$ include it: $0\le0$ is true, $0<0$ false. Reversing $a>b$ to $b<a$ reverses both sign and operands.
+
+$a\le b$ means $(a<b)\lor(a=b)$ inclusively; $a\ge b$ means $a>b$ or $a=b$. Inequality gives no direction: $0\ne1$, yet not $0>1$. Equality needs no order.
+
+
+{/* analysis-visual:start zahlenmengen-0 */}
+
+Read the two comparisons as one region. Test zero and two: the different endpoints explain why the inequality signs cannot be interchanged.
+
+<Interactive kind="number-line" preset="bounds" id="analysis-order-region" />
+
+{/* analysis-visual:end zahlenmengen-0 */}
+
+<span id="from-order-comparisons-two-bounds-concern-one-input"></span>
+
+### Two bounds concern one input
+
+$$a<x\le b\quad\Longleftrightarrow\quad(a<x)\land(x\le b).$$
+
+Both tests concern the **same** $x$. For $a<b$, the lower endpoint is excluded and the upper included; one test alone is insufficient.
+
+“a is less than x, and x is at most b.”
+
+“At least a” is $x\ge a$; “at most b” is $x\le b$, both inclusive. “Strictly between” is $a<x<b$, excluding endpoints. Clarify ambiguous “between.”
+
+$0\le x<1$ is $x\in[0,1)$; $0<x\le2$ is $x\in(0,2]$. Square brackets include endpoints, parentheses exclude them; some texts instead use outward square brackets. These conditions are open: contextual values allow evaluation without binding; quantifiers bind within scope.
+
+
+<span id="from-order-comparisons-endpoint-checks"></span>
+
+### Endpoint checks
+
+Translate “a real is at least zero and at most one” versus “strictly between zero and one”; test $0$, $1/2$, $1$.
+
+<details>
+<summary>Hint</summary>
+
+Write both tests separately, checking equality before joining them.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+$0\le x\le1$, or $x\in[0,1]$, admits all three. $0<x<1$, or $x\in(0,1)$, admits only $1/2$: each endpoint fails a strict test. Both domains are real.
+
+</details>
+
+<Exercise question="Expand $0\le x<1$ with a connective. May the tests use different x values? Is x bound?">
+
+It is $(0\le x)\land(x<1)$ for one input. $x=2$ passing the first and $x=0$ passing the second establish no common witness. Conjunction does not bind $x$; without a governing quantifier it remains free.
+
+</Exercise>
+
+These are reading conventions, not inequality-solving rules; ordinary order properties are assumed. See [negating order comparisons](../logical-negation/#from-negating-order-comparisons) for boundary-sensitive reversal.

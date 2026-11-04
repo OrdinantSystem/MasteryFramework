@@ -1,0 +1,59 @@
+.analysis-lab { margin-block: var(--space-8); padding: var(--space-5); border: 1px solid var(--line); border-radius: var(--radius-panel); background: var(--panel); }
+.analysis-lab .figure-heading { margin-bottom: var(--space-3); }
+.analysis-lab .section-label { font-size: var(--font-small); color: var(--text); text-transform: none; letter-spacing: normal; }
+.analysis-lab .analysis-prompt { margin-block: var(--space-3) var(--space-5); font-size: .9rem; color: var(--secondary); line-height: 1.7; }
+.analysis-controls { display: flex; flex-wrap: wrap; align-items: end; gap: var(--space-4); margin-bottom: var(--space-5); }
+.analysis-controls label, .analysis-controls legend { display: block; font-size: var(--font-small); color: var(--secondary); }
+.analysis-controls select, .analysis-controls button, .analysis-controls input[type=number], .analysis-relation button { font: inherit; font-size: .85rem; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: var(--radius-control); min-height: 44px; padding: var(--space-2) var(--space-3); }
+.analysis-controls select { display: block; max-width: 100%; margin-top: var(--space-1); }
+.analysis-controls button, .analysis-relation button { cursor: pointer; }
+.analysis-controls fieldset { border: 0; padding: 0; margin: 0; }
+.analysis-controls fieldset button + button { margin-left: var(--space-2); }
+.analysis-controls button[aria-pressed=true], .analysis-relation button[aria-pressed=true] { background: var(--tint); color: var(--accent); border-color: var(--accent); }
+.analysis-controls button[aria-pressed=false], .analysis-relation button[aria-pressed=false] { color: var(--blue); }
+.analysis-controls .analysis-reset { margin-left: auto; }
+.analysis-param { flex: 1 1 180px; min-width: 0; }
+.analysis-param > div { display: flex; gap: var(--space-2); align-items: center; }
+.analysis-param input[type=range] { width: 100%; min-width: 0; height: 44px; accent-color: var(--accent); }
+.analysis-param input[type=number] { width: 76px; flex-shrink: 0; }
+.analysis-graphic svg { display: block; width: 100%; height: auto; overflow: visible; }
+.analysis-lab:is([data-presentation=terms],[data-presentation=tail]) .analysis-controls { margin-top: var(--space-4); }
+.analysis-equation { text-align: center; overflow-x: auto; padding: var(--space-2) 0; }
+.analysis-equation p { text-align: left; font-size: .85rem; line-height: 1.7; color: var(--secondary); }
+.analysis-results { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: var(--space-3) var(--space-5); margin-block: var(--space-3); font-size: .85rem; }
+.analysis-result[data-pass=true] strong { color: var(--accent); }
+.analysis-result[data-pass=false] strong { color: var(--blue); }
+.analysis-feedback { margin-block: var(--space-4); font-size: .85rem; line-height: 1.7; }
+.analysis-lab figcaption { border-top: 1px solid var(--line); padding-top: var(--space-3); color: var(--secondary); font-size: var(--font-small); line-height: 1.7; }
+.analysis-relation { margin: var(--space-4) 0; }
+.analysis-relation table { width: 100%; min-width: 0; margin: 0; font-size: .8rem; }
+.analysis-relation :is(th,td) { padding: var(--space-2); text-align: center; }
+.analysis-relation button { min-width: 44px; font-size: 1rem; }
+.analysis-relation tfoot { border-top: 1px solid var(--line); }
+.analysis-lab [hidden] { display: none !important; }
+.assignment-map { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: var(--space-3); }
+.assignment-tile { border: 1px solid var(--line); border-radius: var(--radius-control); padding: var(--space-3); font-size: .85rem; }
+.assignment-tile[data-current=true] { outline: 2px solid var(--purple); outline-offset: -2px; background: var(--purple-tint); }
+.assignment-tile > span { display: block; margin-top: var(--space-1); }
+.analysis-path { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: var(--space-3); margin-top: var(--space-4); }
+.analysis-path > :is(span,strong) { padding: var(--space-2); }
+.analysis-proof .flow-node .section-label { font-size: var(--font-small); text-transform: none; letter-spacing: normal; color: var(--text); }
+.analysis-proof .flow-node small { font-size: .8rem; line-height: 1.7; color: var(--secondary); }
+.analysis-proof .flow-node { font-size: 1rem; }
+.analysis-proof .flow-figure figcaption { font-size: var(--font-small); color: var(--secondary); }
+@media(max-width:1050px) {
+  .analysis-proof .flow-nodes { flex-direction: column; align-items: stretch; gap: var(--space-3); }
+  .analysis-proof .flow-node { flex: auto; }
+  .analysis-proof .flow-arrow { align-self: center; transform: rotate(90deg); font-size: 20px; }
+}
+@media(max-width:540px) {
+  .analysis-lab { padding: var(--space-3); }
+  .analysis-graphic svg text { font-size: 24px; }
+  .analysis-controls { gap: var(--space-3); }
+  .analysis-controls > label { max-width: 100%; }
+  .analysis-relation :is(th,td) { padding: var(--space-1); }
+  .analysis-relation th { overflow-wrap: anywhere; }
+  .analysis-relation button { padding-inline: var(--space-2); }
+  .assignment-tile { padding: var(--space-2); font-size: .75rem; }
+}
+@media print { .analysis-controls { display: none; } .analysis-lab { break-inside: avoid; } }

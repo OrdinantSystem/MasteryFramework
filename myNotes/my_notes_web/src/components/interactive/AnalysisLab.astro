@@ -1,0 +1,102 @@
+---
+import MathText from '../MathText.astro';
+import {analysisCopy,analysisTeachingCopy} from '../../lib/interactive/analysis-copy';
+import {analysisScene, initialAnalysisState, validateAnalysisPresentation, type AnalysisKind, type AnalysisPresentation} from '../../lib/interactive/analysis-scenes';
+import type {CandidatePreset, ConditionPreset, LinePreset} from '../../lib/interactive/analysis-model';
+import '../../styles/analysis-lab.css';
+interface Props {kind: AnalysisKind; preset: string; id: string; presentation?: AnalysisPresentation}
+const {kind, preset, id, presentation='full'} = Astro.props;
+const allowed = {candidates: ['equation','positive','witnesses'], conditions: ['connectives','construction','demorgan'], 'number-line': ['bounds','complement','counterexample','distance'], quantifiers: ['keys','nested'], sequence: ['reciprocal','device','alternating','zero']};
+if (!allowed[kind].includes(preset) || !/^[a-z][a-z0-9-]*$/.test(id)) throw new Error('Invalid Analysis activity preset or id');
+const locale = Astro.locals.locale || 'en', c = analysisCopy[locale];
+validateAnalysisPresentation(kind,preset,presentation);
+const teaching = presentation==='full'?undefined:analysisTeachingCopy[locale][presentation];
+const state = initialAnalysisState(kind,preset), scene = analysisScene(kind,preset,state,locale,presentation);
+const title = teaching?.title ?? (kind === 'candidates' ? c.candidates[preset as CandidatePreset] : kind === 'conditions' ? c.conditions[preset as ConditionPreset] : kind === 'number-line' ? c.line[preset as LinePreset] : kind === 'quantifiers' ? (preset === 'nested' ? c.nestedTitle : c.relations) : c.sequence);
+const prompt = teaching?.prompt ?? (kind === 'candidates' ? c.candidatePrompt : kind === 'conditions' ? c.conditionPrompt : kind === 'number-line' ? c.linePrompt : kind === 'quantifiers' ? (preset === 'nested' ? c.nestedPrompt : c.relationPrompt) : c.sequencePrompt);
+const caption = teaching?.caption ?? (kind === 'number-line' ? c.lineCaption[preset as LinePreset] : kind === 'quantifiers' ? (preset === 'nested' ? c.nestedCaption : c.relationCaption) : kind === 'sequence' ? c.sequenceCaption : kind === 'candidates' ? c.finite : c.conditionCaption[preset as ConditionPreset]);
+const allParams = kind === 'number-line' || kind === 'candidates' ? [{key:'x',label:c.point,min:kind==='candidates'?-1:-2,max:kind==='candidates'?9:8,step:kind==='candidates'?1:.25}, ...(preset==='distance'?[{key:'epsilon',label:c.epsilon,min:.25,max:1.5,step:.25}]:[])] : kind === 'sequence' ? [{key:'target',label:c.target,min:-1,max:3,step:.25},{key:'epsilon',label:c.epsilon,min:.1,max:1,step:.1},{key:'threshold',label:c.threshold,min:1,max:24,step:1}] : [];
+const params=allParams.filter(param=>presentation==='terms'?param.key==='threshold':presentation==='tail'?param.key!=='target':true);
+const plotFirst=presentation==='terms'||presentation==='tail';
+const names = preset === 'nested' ? ['x = 1','x = 2'] : [c.ana,c.ben], keyNames = preset === 'nested' ? ['y = 1','y = 2','y = 3'] : [c.red,c.blue,c.green];
+const rowLabel = preset === 'nested' ? c.rows : c.people, columnLabel = preset === 'nested' ? c.columns : c.keys;
+---
+<figure class="analysis-lab" id={id} data-analysis-lab={kind} data-preset={preset} data-locale={locale} data-presentation={presentation}>
+  <div class="figure-heading"><span class="section-label">{title}</span></div>
+  <p class="analysis-prompt">{prompt}</p>
+  {plotFirst&&<div class="analysis-graphic" data-graphic set:html={scene.graphic}/>}
+  <div class="analysis-controls">
+    {kind==='candidates'&&<label>{c.domain}<select data-select="domain"><option value="mixed" selected={state.domain==='mixed'}>{c.mixed}</option><option value="positive" selected={state.domain==='positive'}>{c.positive}</option><option value="empty">{c.empty}</option></select></label>}
+    {kind==='sequence'&&presentation==='full'&&<label>{c.change}<select data-select="sequence">{Object.entries(c.sequences).map(([value,label])=><option value={value} selected={value===state.sequence}>{label}</option>)}</select></label>}
+    {kind==='quantifiers'&&<><label>{rowLabel}<select data-select="people"><option value="2">2</option><option value="0">0</option></select></label><label>{columnLabel}<select data-select="keys"><option value="2">2</option><option value="3">3</option><option value="0">0</option></select></label></>}
+    {kind==='conditions'&&<fieldset><legend>{c.input} · 0 / 1</legend><button type="button" data-toggle="p" aria-pressed={state.p}>P = 1</button><button type="button" data-toggle="q" aria-pressed={state.q}>Q = 0</button></fieldset>}
+    {params.map(param=><div class="analysis-param"><label for={`${id}-${param.key}-range`}>{param.label}</label><div><input id={`${id}-${param.key}-range`} type="range" min={param.min} max={param.max} step={param.step} value={state[param.key as 'x']} data-param={param.key}/><input aria-label={param.label} type="number" min={param.min} max={param.max} step={param.step} value={state[param.key as 'x']} data-param={param.key}/></div></div>)}
+    <button class="analysis-reset" type="button" data-reset>{c.reset}</button>
+  </div>
+  {kind==='quantifiers'&&<div class="analysis-relation table-scroll" tabindex="0" role="region" aria-label={title}><table><thead><tr><th scope="col">{rowLabel}</th>{keyNames.map((name,j)=><th scope="col" data-key-column={j} hidden={j>=state.keys}>{name}</th>)}<th scope="col">{c.rowWitness}</th></tr></thead><tbody>{names.map((name,i)=><tr data-person-row={i}><th scope="row">{name}</th>{keyNames.map((key,j)=><td data-key-column={j} hidden={j>=state.keys}><button type="button" data-cell={`${i},${j}`} aria-label={`${c.permission}: ${name} / ${key}`} aria-pressed={state.cells[i][j]}>{state.cells[i][j]?'✓':'×'}</button></td>)}<td data-row-result={i}>{state.cells[i].slice(0,state.keys).some(Boolean)?'✓':'×'}</td></tr>)}</tbody><tfoot><tr><th scope="row">{c.shared}</th>{keyNames.map((_,j)=><td data-key-column={j} data-shared={j} hidden={j>=state.keys}>{state.cells.every(row=>row[j])?'✓':'×'}</td>)}<td>—</td></tr></tfoot></table></div>}
+  {!plotFirst&&<div class="analysis-graphic" data-graphic set:html={scene.graphic}/>}
+  <div class="analysis-equation" data-equation set:html={scene.equation}/>
+  <p class="analysis-feedback" data-feedback role="status" aria-live="polite">{scene.feedback}</p>
+  <figcaption><MathText text={caption}/></figcaption>
+</figure>
+<script>
+import {analysisScene,initialAnalysisState,type AnalysisKind,type AnalysisPresentation} from '../../lib/interactive/analysis-scenes';
+import {relationSummary} from '../../lib/interactive/analysis-model';
+import type {analysisCopy} from '../../lib/interactive/analysis-copy';
+for (const root of document.querySelectorAll<HTMLElement>('[data-analysis-lab]')) {
+  if(root.dataset.ready) continue;
+  root.dataset.ready='true';
+  const kind=root.dataset.analysisLab as AnalysisKind, preset=root.dataset.preset!, locale=root.dataset.locale as keyof typeof analysisCopy, presentation=root.dataset.presentation as AnalysisPresentation;
+  let state=initialAnalysisState(kind,preset);
+  function draw(){
+    const scene=analysisScene(kind,preset,state,locale,presentation);
+    root.querySelector('[data-graphic]')!.innerHTML=scene.graphic;
+    root.querySelector('[data-equation]')!.innerHTML=scene.equation;
+    root.querySelector('[data-feedback]')!.textContent=scene.feedback;
+    root.querySelectorAll<HTMLInputElement>('[data-param]').forEach(input=>{input.value=String(state[input.dataset.param as 'x']);});
+    root.querySelectorAll<HTMLSelectElement>('[data-select]').forEach(select=>{select.value=String(state[select.dataset.select as 'domain']);});
+    root.querySelectorAll<HTMLButtonElement>('[data-toggle]').forEach(button=>{const key=button.dataset.toggle as 'p'|'q';button.setAttribute('aria-pressed',String(state[key]));button.textContent=`${key.toUpperCase()} = ${Number(state[key])}`;});
+    if(kind==='quantifiers'){
+      const r=relationSummary(state.cells.slice(0,state.people).map(row=>row.slice(0,state.keys)),state.keys);
+      root.querySelectorAll<HTMLElement>('[data-key-column]').forEach(el=>el.hidden=Number(el.dataset.keyColumn)>=state.keys);
+      root.querySelectorAll<HTMLElement>('[data-person-row]').forEach(el=>el.hidden=Number(el.dataset.personRow)>=state.people);
+      root.querySelectorAll<HTMLElement>('[data-row-result]').forEach(el=>el.textContent=r.rows[Number(el.dataset.rowResult)]?.some?'✓':'×');
+      root.querySelectorAll<HTMLElement>('[data-shared]').forEach(el=>el.textContent=r.shared[Number(el.dataset.shared)]?'✓':'×');
+      root.querySelectorAll<HTMLButtonElement>('[data-cell]').forEach(button=>{const [i,j]=button.dataset.cell!.split(',').map(Number), value=state.cells[i][j];button.textContent=value?'✓':'×';button.setAttribute('aria-pressed',String(value));});
+    }
+  }
+  root.addEventListener('input',event=>{
+    const input=event.target as HTMLInputElement;
+    if(!input.matches('[data-param]')||input.value.trim()==='')return;
+    const value=Number(input.value), min=Number(input.min),max=Number(input.max),step=Number(input.step);
+    if(!Number.isFinite(value)||value<min||value>max||Math.abs((value-min)/step-Math.round((value-min)/step))>1e-7)return;
+    state[input.dataset.param as 'x']=value;draw();
+  });
+  root.addEventListener('change',event=>{
+    const select=event.target as HTMLSelectElement;
+    if(select.matches('[data-select]')){
+      const key=select.dataset.select!;
+      if(key==='domain')state.domain=select.value as typeof state.domain;
+      else if(key==='people'||key==='keys')state[key]=Number(select.value);
+      else if(key==='sequence'){state.sequence=select.value as typeof state.sequence;state.target=state.sequence==='device'?3:0;}
+    }
+    draw();
+  });
+  // Native number controls can retain an invalid edit without emitting change.
+  // Commit on blur/Enter as well; never let the displayed value disagree with the model.
+  root.addEventListener('focusout',event=>{
+    if((event.target as Element).matches('input[data-param]'))draw();
+  });
+  root.addEventListener('keydown',event=>{
+    if(event.key==='Enter'&&(event.target as Element).matches('input[data-param]'))draw();
+  });
+  root.addEventListener('click',event=>{
+    const button=(event.target as Element).closest<HTMLButtonElement>('button');if(!button)return;
+    if(button.hasAttribute('data-reset'))state=initialAnalysisState(kind,preset);
+    else if(button.dataset.toggle){const key=button.dataset.toggle as 'p'|'q';state[key]=!state[key];}
+    else if(button.dataset.cell){const [i,j]=button.dataset.cell.split(',').map(Number);state.cells[i][j]=!state.cells[i][j];}
+    else return;
+    draw();
+  });
+}
+</script>

@@ -37,7 +37,7 @@ On Jean's computer, the Codex bundled Node directory can be prepended to PATH: /
 
 ## Where to work
 
-- Lessons: src/content/lessons/{en,de,es}/ and templates/.
+- Lessons: src/content/lessons/{en,de}/ and templates/.
 - Shared lesson components: src/components/mdx.ts.
 - Reusable representations: src/components/interactive/ and src/lib/interactive/.
 - Layout/themes: src/layouts/ and src/styles/.

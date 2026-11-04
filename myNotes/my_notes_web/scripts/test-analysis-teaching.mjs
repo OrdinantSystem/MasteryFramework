@@ -1,0 +1,30 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {teachingCoverage} from './analysis-teaching-contract.mjs';
+import {sha,validateTeachingSource,validatePresentationReceipt,units,normalize} from './analysis-teaching-core.mjs';
+let fixtures=0;
+const row=teachingCoverage.files.find(r=>r.path.includes('/en/analysis/quantifier-order'));
+const baseline=readFileSync('../../'+row.baseline,'utf8'),source=readFileSync(row.path,'utf8');
+function check(name,alter,passes=false){
+  const r=structuredClone(row),review=structuredClone(row.review);let s=source;
+  s=alter(s,r,review);r.current_sha256=sha(s);review.current_sha256=sha(s);
+  if(passes)assert.doesNotThrow(()=>validateTeachingSource(s,baseline,r,review),name);
+  else assert.throws(()=>validateTeachingSource(s,baseline,r,review),undefined,name);
+  fixtures++;
+}
+check('actual reviewed edition',s=>s,true);
+check('pending review even with matching hashes',(s,r,v)=>{v.verdict='pending';return s;});
+check('missing exercise with renewed source/review version',s=>s.replace(/<Exercise\b[\s\S]*?<\/Exercise>/,''));
+check('missing anchor with renewed source/review version',s=>s.replace(/<span id="[^"]+"><\/span>/,''));
+check('missing table with renewed source/review version',s=>s.replace(/(?:^\|.*\|\r?\n?)+/m,''));
+check('missing display with renewed source/review version',s=>s.replace(/\$\$[\s\S]*?\$\$/,''));
+const outside=units(baseline).find(u=>u.startsWith('Explain the complete red'));
+assert.ok(outside&&normalize(source).includes(outside),'Fixture must actually target a retained outside-Exercise prompt');
+check('outside-Exercise prompt removed with renewed hashes',s=>s.replace('Explain the complete red–blue model without symbols.',''));
+check('optional prompt hidden inside a new reference answer with renewed hashes',s=>s.replace('Explain the complete red–blue model without symbols.','<details><summary>Reference answer</summary>Explain the complete red–blue model without symbols.</details>'));
+check('hidden core explanation with renewed hashes',s=>s.replace('Complete model: Ana uses only red, Ben only blue. Each has a key; none works for everyone.','<details><summary>Hidden explanation</summary>Complete model: Ana uses only red, Ben only blue. Each has a key; none works for everyone.</details>'));
+check('unmapped retained task replaced',(s,r)=>{r.unit_map.pop();return s;});
+check('wrong frozen input',(s,r)=>{r.baseline_sha256='0'.repeat(64);return s;});
+assert.throws(()=>validatePresentationReceipt({...teachingCoverage.presentation_review.sources,'src/lib/interactive/analysis-copy.ts':'changed'},teachingCoverage.presentation_review));fixtures++;
+assert.throws(()=>validateTeachingSource(source+'\nChanged\n',baseline,row,row.review));fixtures++;
+console.log(`Passed ${fixtures} positive/negative actual-teaching fixtures, including outside-Exercise loss and stale shared-presentation review.`);

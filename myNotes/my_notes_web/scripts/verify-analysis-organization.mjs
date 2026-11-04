@@ -1,3 +1,4 @@
+import {locales} from '../src/lib/i18n.ts';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
@@ -41,7 +42,7 @@ for(const p of coverage.consolidated_paragraphs.filter(p=>p.editorial_pass==='an
  assert.equal(p.retained_destination_sha256,destination.after_sha256,'Bind each wording disposition to the exact retained recap version');
  assert.ok(['native-language-localization','recap-consolidation'].includes(p.category));
 }
-for(const locale of ['en','de','es']){
+for(const locale of locales){
  const root=`src/content/lessons/${locale}/analysis`;
  assert.deepEqual((await readdir(root)).filter(n=>n.endsWith('.mdx')).map(n=>n.slice(0,-4)).sort(),[...canonical].sort());
  const aliases=organization.aliases[locale];assert.equal(Object.keys(aliases).length,53);
@@ -72,4 +73,4 @@ for(const locale of ['en','de','es']){
  containsInventory(oldTables,current.flatMap(s=>blocks(s,/(?:^\|.*\|\r?\n?)+/gm)),`${locale} original tables`,editorialAllowances(locale,'tables'),corpus);totalTables+=oldTables.length;
  assert.ok(!current.some(s=>/\b(?:Jean|Isaac)\b|\/home\/ubuntu|obsidian:\/\//.test(s)),'No private learner/server output');
 }
-console.log(`Verified ${historicalAnalysisLabel}: 20 canonical lessons / 6 sections, 159 archived originals, ${sectionCount} section dispositions, ${totalExercises} protected exercise blocks, ${totalTables} tables and ${paragraphsChecked} prose paragraphs with explicit duplicate dispositions, plus preserved hints/readings/answers. Compatibility anchors are checked against generated HTML.`);
+console.log(`Verified ${historicalAnalysisLabel}: 20 canonical lessons / 6 sections, ${53*locales.length} archived originals for supported languages, ${sectionCount} section dispositions, ${totalExercises} protected exercise blocks, ${totalTables} tables and ${paragraphsChecked} prose paragraphs with explicit duplicate dispositions, plus preserved hints/readings/answers. Compatibility anchors are checked against generated HTML.`);

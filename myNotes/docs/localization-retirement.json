@@ -1,0 +1,18 @@
+{
+  "date": "2026-11-04",
+  "supported_locales": [
+    "en",
+    "de"
+  ],
+  "reason": "Owner requested removal of the Spanish website and ongoing Spanish translation requirements. Historical content/review ledgers remain frozen. These shared-source changes only remove Spanish dictionary entries; they do not renew semantic review.",
+  "presentation_sources": {
+    "src/lib/interactive/analysis-copy.ts": {
+      "before_sha256": "e6b623b29ce742bf3efd152548211559976e22d6d727ac5065b7a084c47e57d8",
+      "after_sha256": "1b95b9be038dda9445064112b00e2e807a29cd2e886623f79cb04c27dfceedfb"
+    },
+    "src/components/AnalysisCourseIntroduction.astro": {
+      "before_sha256": "4ddd1fb109a351fef195bbfdb10b78398d5799356f41818831f9af310ab84cbe",
+      "after_sha256": "9d30cb2ca4216cb9044a173d52056fb6b062424570ba386af52d092b86367097"
+    }
+  }
+}

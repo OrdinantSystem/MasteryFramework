@@ -5,7 +5,7 @@
 | One canonical application in my_notes_web/ | The approved test became the standard. Preserve one implementation; new subjects reuse it. |
 | Astro static + MDX | Git-tracked content produces complete static pages, while shared components handle presentation. |
 | Custom restrained shell | Preserve the approved learning-focused layout instead of introducing another theme or marketing template. |
-| English default, German/Spanish counterparts | Matching stable keys connect concepts across languages. Published translations are checked together. |
+| English default, German counterparts | On 4 November 2026 Jean retired the Spanish website to reduce ongoing authoring work. Only English/German counterparts are required; frozen historical records remain outside public output. |
 | KaTeX and semantic color macros | Equations, diagrams, and controls share roles across both themes. |
 | Pagefind | Language-specific full-text search over static published lessons. |
 | Native SVG/TypeScript activity library | Reuse small mathematical models and primitives with no new runtime/framework dependency. |

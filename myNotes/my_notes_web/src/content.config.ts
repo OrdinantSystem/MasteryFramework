@@ -3,6 +3,7 @@ import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
 import {chapters,chapterFor,courses,type CourseId} from './lib/navigation';
 import {sourceCatalog,type SourceId} from './lib/sources';
+import {locales} from './lib/i18n';
 
 const sourceIds=Object.keys(sourceCatalog) as [SourceId,...SourceId[]];
 const chapterIds=chapters.map(c=>c.id) as [string,...string[]];
@@ -16,7 +17,7 @@ const lessons = defineCollection({
     sourceId: z.enum(sourceIds),
     additionalSources:z.array(reference).default([]),
     thumbnail: z.enum(['shear-inverse','area','diagonal','signs','words','equivalence','negative-identity','inverse-product','sheet-recap','logic','quantifiers','number-sets','implication','parity','proof','irrational','boolean-laws','identity-laws','complement','de-morgan','nand','learning-cycle','bloom','concept-map','explanation','practice','retrieval','workflow','hints','feedback','evidence','tutor','records','experiment','transcript']).optional(),
-    locale: z.enum(['en', 'de', 'es']).default('en'),
+    locale: z.enum(locales).default('en'),
     title: z.string(),
     description: z.string(),
     navTitle: z.string(),
@@ -42,7 +43,7 @@ const lessons = defineCollection({
 const courseGuides = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/course-guides' }),
   schema: z.object({
-    course:z.enum(courseIds), locale:z.enum(['en','de','es']), title:z.string(),
+    course:z.enum(courseIds), locale:z.enum(locales), title:z.string(),
     reviewStatus:z.enum(['unreviewed','needs-correction','reviewed']).default('unreviewed'),
     sourceId:z.enum(sourceIds), sourcePages:z.array(z.number().int().positive()).default([]),
     sourceLocations:z.array(z.string()).default([]), additionalSources:z.array(reference).default([]),

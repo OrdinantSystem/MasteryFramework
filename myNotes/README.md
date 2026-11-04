@@ -13,6 +13,9 @@ myNotes is a static, multilingual university learning archive. Its approved desi
 | Import another PDF/worksheet | [Source ingestion](docs/source-ingestion.md) |
 | Write or correct a lesson | [Authoring](docs/authoring.md) |
 | Add or reuse a visual/interaction | [Representation library](docs/representation-library.md) |
+| Review the Analysis visual teaching pass | [Lesson audit and interaction specifications](docs/analysis-visuals.md) |
+| Maintain first-semester Analysis refinements | [Active teaching and preservation contract](docs/analysis-teaching.md) |
+| Reuse the Analysis I improvement process | [Teaching improvement history and method](docs/history/analysis-i-teaching-retrospective.md) |
 | Change navigation, themes, search, or deployment | [Development](docs/development.md) |
 | Resume in a future session | [Project context](docs/context.md) |
 | Understand prior decisions | [Decisions](docs/decisions.md), [Brilliant research](docs/interactive-learning-analysis.md) |
@@ -40,7 +43,7 @@ myNotes/
   my_notes_web/             # Canonical executable application
     AGENTS.md
     README.md
-    src/content/lessons/{en,de,es}/
+    src/content/lessons/{en,de}/
     src/components/         # Teaching views and MDX registration
     src/components/interactive/
     src/lib/interactive/    # Pure primitives, models, presets, catalog
@@ -55,7 +58,7 @@ myNotes/
 
 Astro generates HTML from MDX; KaTeX renders mathematics; Pagefind builds language-specific search. Small native browser components handle optional interactions. There is no application backend or visitor submission service.
 
-The archive contains Mathematics (Linear Algebra I: 17 lessons; Analysis I: 20 consolidated lessons across six sections) and Learning & Teaching (learning methodology: 17 lessons), each in English, German, and Spanish. The Analysis 0 migration accounts for 52 authored source lessons and 28 linked concepts through consolidated teaching, not a second application; the former 53-page edition is preserved outside the content loader and old URLs resolve through compatibility aliases; see [its guide](docs/analysis-zero.md). Courses, source documents, chapters, localized routes, and course-local prerequisites/orders have validated identities. See docs/source-ingestion.md before extending the archive. Mathematical and translation review remains separate from design approval. Automatic Pages publishing is configured by the repository-root .github/workflows/mynotes-pages.yml workflow. Earlier sites and private source material remain preserved.
+The archive contains Mathematics (Linear Algebra I: 17 lessons; Analysis I: 20 consolidated lessons across six sections) and Learning & Teaching (learning methodology: 17 lessons), each in English and German. The Analysis 0 migration accounts for 52 authored source lessons and 28 linked concepts through consolidated teaching, not a second application; the former 53-page edition is preserved outside the content loader and old URLs resolve through compatibility aliases; see [its guide](docs/analysis-zero.md). Courses, source documents, chapters, localized routes, and course-local prerequisites/orders have validated identities. See docs/source-ingestion.md before extending the archive. Mathematical and translation review remains separate from design approval. Automatic Pages publishing is configured by the repository-root .github/workflows/mynotes-pages.yml workflow. Earlier sites and private source material remain preserved.
 
 The [original plan](docs/history/original-plan.md) is historical context, not an alternate implementation specification.
 

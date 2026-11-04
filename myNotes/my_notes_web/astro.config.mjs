@@ -4,6 +4,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import { unified } from "@astrojs/markdown-remark";
 import { mathOptions } from "./src/lib/math-options.mjs";
+import { locales } from "./src/lib/i18n.ts";
 
 // KaTeX emits visual HTML and accessible MathML. Index the explanation rather
 // than duplicating those representations in search excerpts.
@@ -24,11 +25,9 @@ function ignoreRenderedMathInSearch() {
 
 function centeredTables() {
   return (tree, file) => {
-    const locale = String(file.path || "").includes("/es/")
-      ? "es"
-      : String(file.path || "").includes("/de/")
-        ? "de"
-        : "en";
+    const locale = String(file.path || "").includes("/de/")
+      ? "de"
+      : "en";
     const visit = (node) => {
       if (!node.children) return;
       node.children = node.children.map((child) => {
@@ -56,7 +55,7 @@ function centeredTables() {
               className: ["table-scroll"],
               tabIndex: 0,
               role: "region",
-              "aria-label": { en: "Table", de: "Tabelle", es: "Tabla" }[locale],
+              "aria-label": { en: "Table", de: "Tabelle" }[locale],
             },
             children: [child],
           };
@@ -69,7 +68,7 @@ function centeredTables() {
               className: ["math-block"],
               tabIndex: 0,
               role: "region",
-              "aria-label": { en: "Mathematical expression", de: "Mathematischer Ausdruck", es: "Expresión matemática" }[locale],
+              "aria-label": { en: "Mathematical expression", de: "Mathematischer Ausdruck" }[locale],
             },
             children: [child],
           };
@@ -87,7 +86,7 @@ export default defineConfig({
   site: process.env.SITE_URL || "https://example.github.io",
   base: process.env.BASE_PATH || "/",
   i18n: {
-    locales: ["en", "de", "es"],
+    locales: [...locales],
     defaultLocale: "en",
     routing: { prefixDefaultLocale: false },
   },

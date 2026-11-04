@@ -8,7 +8,7 @@ For commands to start, stop, and preview the website locally, see
 ## Canonical website
 
 The current myNotes application is in [myNotes/my_notes_web](myNotes/my_notes_web/).
-It uses Astro, MDX, KaTeX, and Pagefind, with English, German, and Spanish lessons
+It uses Astro, MDX, KaTeX, and Pagefind, with English and German lessons
 for Linear Algebra I, Analysis I, and learning methodology. Start with [myNotes/README.md](myNotes/README.md)
 for the design system, authoring guides, and agent instructions.
 

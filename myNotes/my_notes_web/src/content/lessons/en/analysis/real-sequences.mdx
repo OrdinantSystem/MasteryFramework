@@ -55,6 +55,14 @@ Unlike sets, sequences retain positions and repetitions. Alternating zero–one 
 
 A tail includes $N$ and all later indices: from $N=3$ the device gives only threes. Both $N$ and $n$ are natural numbers: $N$ starts the tail, and $n$ is the index being tested. Zero then always one agrees with constant one from two onward, but is unequal to it.
 
+{/* analysis-visual:start real-sequences-16 */}
+
+The horizontal coordinate is the position $n$; the vertical coordinate is the value $a_n$. Repeated values remain separate dots at separate indices. Move $N$ past the two early reports to isolate the constant tail.
+
+<Interactive kind="sequence" preset="device" presentation="terms" id="analysis-sequence-positions" />
+
+{/* analysis-visual:end real-sequences-16 */}
+
 <span id="from-real-sequences-practice"></span>
 
 #### Practice
@@ -150,6 +158,14 @@ $$
 For fixed $L$, $\varepsilon>0$, put $u=t-L$. If $u\ge0$, distance below tolerance means $u<\varepsilon$; $-\varepsilon<u$ is automatic. If $u<0$, it means $-u<\varepsilon$, equivalently $-\varepsilon<u$; the upper bound is automatic. Thus $-\varepsilon<u<\varepsilon$; add $L$. Reversibility proves both directions.
 
 Both bounds are strict: at target three, tolerance $1/2$, endpoints $2.5,3.5$ fail by equality. Epsilon varies, rather than being a fixed tiny constant.
+
+{/* analysis-visual:start real-sequences-17 */}
+
+Move the point to either side of three, then onto each boundary. Direction changes the sign of the displacement; membership depends on its absolute distance.
+
+<Interactive kind="number-line" preset="distance" id="analysis-distance-band" />
+
+{/* analysis-visual:end real-sequences-17 */}
 
 <span id="from-absolute-value-and-distance-practice"></span>
 

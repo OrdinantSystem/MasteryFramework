@@ -1,0 +1,211 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Reelle Folgen und absoluter Abstand"
+navTitle: "Reelle Folgen und absoluter Abstand"
+description: "Reelle Folgen und absoluter Abstand"
+order: 15
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+additionalSources: []
+---
+
+<span id="from-real-sequences"></span>
+
+## Reelle Folgen
+
+Das Gerät meldet zweimal neun, danach immer drei. Bei „Dritte Meldung gleich drei“ stimmen Position und Wert zahlenmäßig überein, haben aber verschiedene Rollen.
+
+
+<span id="from-real-sequences-ein-wert-an-jeder-positiven-indexstelle"></span>
+
+### Ein Wert an jeder positiven Indexstelle
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+Eine reelle Folge ordnet jedem positiven natürlichen Index genau ein reelles Glied zu. Null ist hier ausgeschlossen; andere Konventionen sind anzugeben. Dabei ist $n$ der Index, $a_n$ das Glied an diesem Index und $a$ die ganze Funktion. Indizes multiplizieren nicht; der Pfeil nennt Bereiche, nicht Konvergenz.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+Es gibt kein letztes Glied und keinen Index unendlich. Positive natürliche Indizes dürfen negative, null oder positive Werte liefern.
+
+
+<span id="from-real-sequences-eine-regel-muss-jede-stelle-bestimmen"></span>
+
+### Eine Regel muss jede Stelle bestimmen
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+Also $a_1=2$, $a_2=4$, $a_3=6$. Konstant $a_n=c$ fixiert einen reellen Wert, etwa $-3$. Das Gerät hat $a_1=a_2=9$, dann $a_n=3$ für alle $n\ge3$; sein Drei-Glieder-Anfang allein erlaubt unendlich viele Fortsetzungen.
+
+Anders als Mengen bewahren Folgen Positionen und Wiederholungen. Abwechselnd null–eins und eins–null teilen die Werte, unterscheiden sich aber am Index eins. Gleichheit verlangt Übereinstimmung überall, nicht nur am endlichen Anfang.
+
+Ein Endstück enthält das Glied am Index $N$ und alle späteren Glieder: Beim Gerät sind ab $N=3$ alle Glieder drei. Beide Indizes sind natürliche Zahlen: $N$ beginnt das Endstück, und $n$ ist der zu prüfende Index. Die Folge mit null am Anfang und danach immer eins stimmt ab Index zwei mit der konstanten Einsfolge überein; die beiden Folgen sind aber nicht gleich.
+
+{/* analysis-visual:start real-sequences-16 */}
+
+Waagerecht steht die Position $n$, senkrecht der Wert $a_n$. Wiederholte Werte bleiben getrennte Punkte an verschiedenen Indizes. Verschiebe $N$ hinter die ersten beiden Meldungen, um das konstante Reststück zu sehen.
+
+<Interactive kind="sequence" preset="device" id="analysis-sequence-positions" />
+
+{/* analysis-visual:end real-sequences-16 */}
+
+<span id="from-real-sequences-übung"></span>
+
+#### Übung
+
+Nenne die ersten drei Glieder von $a_n=2n$. Darf eine reelle Folge negative Werte haben?
+
+<details>
+<summary>Hinweis</summary>
+
+Index und Glied haben verschiedene Rollen.
+
+</details>
+
+<Exercise>
+
+Zwei, vier, sechs. Ja: Ordne jedem positiven Index minus drei zu; Werte- und Indexbereich unterscheiden sich.
+
+</Exercise>
+
+Vergleiche die beiden abwechselnden Null-Eins-Folgen und ihre Wertemengen.
+
+<details>
+<summary>Hinweis</summary>
+
+Prüfe die erste Stelle.
+
+</details>
+
+<Exercise>
+
+Verschiedene erste Glieder bedeuten verschiedene Folgen; ihre gemeinsame Wertemenge vergisst Positionen und Wiederholungen.
+
+</Exercise>
+
+Ist null und danach immer eins gleich der konstanten Einsfolge? Stimmen sie schließlich überein?
+
+<details>
+<summary>Hinweis</summary>
+
+Gleichheit prüft auch den Anfang.
+
+</details>
+
+<Exercise>
+
+Sie unterscheiden sich bei Index eins, stimmen aber ab zwei überall überein.
+
+</Exercise>
+
+Konstruiere später zwei verschiedene Fortsetzungen desselben Drei-Glieder-Anfangs: Warum definieren Beobachtungen keine Folge?
+
+
+<span id="from-real-sequences-laut-lesen"></span>
+
+### Laut lesen
+
+a Index n bedeutet den reellen Wert von a am positiven natürlichen Index n.
+
+<span id="from-absolute-value-and-distance"></span>
+
+## Betrag und Abstand
+
+Minus drei und plus drei haben beide Abstand drei von null. Der Betrag misst nichtnegative Entfernung, nicht Richtung.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+Jede reelle Zahl gehört zu einem Fall. Bei $x<0$ ist $-x$ positiv: $|-3|=|3|=3$, $|0|=0$. Nichtnegativ schließt null ein. Gewöhnliche reelle Arithmetik und Ordnung werden vorausgesetzt.
+
+
+<span id="from-absolute-value-and-distance-gerichtete-differenz-und-abstand"></span>
+
+### Gerichtete Differenz und Abstand
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+$x-y$ ist Verschiebung von $y$ zu $x$; ihr Betrag gibt die Länge. Umgekehrte Subtraktion negiert sie. Eine Zahl und ihre Gegenzahl haben gleiche Beträge. Bei positiver Eingabe sind beide Beträge gleich dem Eingabewert; bei negativer Eingabe sind beide gleich seiner positiven Gegenzahl; bei null sind beide null. Somit gilt $d(x,y)=d(y,x)$ allgemein.
+
+Abstand null ist äquivalent zu $x=y$: Eine nichtnegative Differenz ist ihr eigener Betrag; eine negative hat positiven Betrag. Abstand null erzwingt also Differenz null und umgekehrt. Keine Dreiecksungleichung ist nötig.
+
+
+<span id="from-absolute-value-and-distance-eine-strenge-toleranz-ist-ein-offenes-intervall"></span>
+
+### Eine strenge Toleranz ist ein offenes Intervall
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+Für feste $L$, $\varepsilon>0$ setze $u=t-L$. Bei $u\ge0$ bedeutet Abstand unter Toleranz $u<\varepsilon$; $-\varepsilon<u$ gilt automatisch. Bei $u<0$ bedeutet es $-u<\varepsilon$, also $-\varepsilon<u$; die obere Schranke gilt automatisch. Damit $-\varepsilon<u<\varepsilon$; addiere $L$. Umkehrbarkeit beweist beide Richtungen.
+
+Beide Schranken sind strikt: Bei Ziel drei, Toleranz $1/2$ scheitern Endpunkte $2.5,3.5$ an Gleichheit. Epsilon ist veränderlich, keine feste winzige Konstante.
+
+{/* analysis-visual:start real-sequences-17 */}
+
+Bewege den Punkt auf beide Seiten von drei und dann auf die Ränder. Die Richtung ändert das Vorzeichen der Verschiebung; die Zugehörigkeit hängt vom absoluten Abstand ab.
+
+<Interactive kind="number-line" preset="distance" id="analysis-distance-band" />
+
+{/* analysis-visual:end real-sequences-17 */}
+
+<span id="from-absolute-value-and-distance-übung"></span>
+
+#### Übung
+
+Prüfe bei Ziel $3$ und Toleranz $1/2$ die Werte $2.5$, $3$ und $13/4$.
+
+<details>
+<summary>Hinweis</summary>
+
+Berechne zuerst den Abstand.
+
+</details>
+
+<Exercise>
+
+Abstände $1/2$, $0$, $1/4$: Der Endpunkt scheitert an Gleichheit, die anderen passen.
+
+</Exercise>
+
+Ein Punkt liegt links vom Ziel. Liegt er wegen negativer Differenz in jeder positiven Toleranz?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze zwei und fünf.
+
+</details>
+
+<Exercise>
+
+Nein. Von Ziel fünf zu Punkt zwei ist die Differenz minus drei, der Abstand aber drei; Toleranz eins scheitert.
+
+</Exercise>
+
+Rekonstruiere später beide Vorzeichenfälle der Intervalläquivalenz und den Beweis zu Abstand null.
+
+
+<span id="from-absolute-value-and-distance-laut-lesen"></span>
+
+### Laut lesen
+
+Der Betrag von t minus L ist kleiner als Epsilon genau dann, wenn t strikt zwischen L minus Epsilon und L plus Epsilon liegt.

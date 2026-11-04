@@ -1,3 +1,4 @@
+import {locales} from '../src/lib/i18n.ts';
 import assert from 'node:assert/strict';
 import {readFileSync,writeFileSync,mkdirSync,copyFileSync,mkdtempSync} from 'node:fs';
 import {dirname,join} from 'node:path';
@@ -11,9 +12,18 @@ const scratch=process.env.TMPDIR||join(app,'.astro');mkdirSync(scratch,{recursiv
 const temp=mkdtempSync(join(scratch,'analysis-summary-gate-')),cwd=temp+'/myNotes/my_notes_web';
 const put=(path,s)=>{mkdirSync(dirname(path),{recursive:true});writeFileSync(path,s);};
 const copy=(from,to)=>{mkdirSync(dirname(to),{recursive:true});copyFileSync(from,to);};
-for(const r of contract.files){copy(app+'/'+r.path,cwd+'/'+r.path);copy(root+'/'+r.archive,temp+'/'+r.archive);}
+for(const r of contract.files.filter(r=>locales.includes(r.locale))){copy(app+'/'+r.path,cwd+'/'+r.path);copy(root+'/'+r.archive,temp+'/'+r.archive);}
 for(const p of Object.keys(contract.legacy_contracts))copy(root+'/'+p,temp+'/'+p);
-for(const s of ['verify-analysis-summary.mjs','analysis-prose.mjs'])copy(app+'/scripts/'+s,cwd+'/scripts/'+s);
+for(const s of ['verify-analysis-summary.mjs','analysis-prose.mjs','analysis-visual-contract.mjs','analysis-teaching-contract.mjs','analysis-teaching-core.mjs','localization-contract.mjs'])copy(app+'/scripts/'+s,cwd+'/scripts/'+s);
+copy(root+'/myNotes/docs/analysis-visual-coverage.json',temp+'/myNotes/docs/analysis-visual-coverage.json');
+const teaching=JSON.parse(readFileSync(root+'/myNotes/docs/analysis-teaching-coverage.json','utf8'));
+copy(root+'/myNotes/docs/localization-retirement.json',temp+'/myNotes/docs/localization-retirement.json');
+copy(app+'/src/lib/i18n.ts',cwd+'/src/lib/i18n.ts');
+copy(root+'/myNotes/docs/analysis-teaching-coverage.json',temp+'/myNotes/docs/analysis-teaching-coverage.json');
+copy(root+'/myNotes/docs/history/analysis-before-teaching/manifest.json',temp+'/myNotes/docs/history/analysis-before-teaching/manifest.json');
+for(const row of teaching.files.filter(r=>locales.some(l=>r.path.includes(`/${l}/`)))){copy(root+'/'+row.baseline,temp+'/'+row.baseline);copy(root+'/'+row.review.report,temp+'/'+row.review.report);}
+copy(root+'/'+teaching.presentation_review.report,temp+'/'+teaching.presentation_review.report);
+for(const p of Object.keys(teaching.presentation_review.sources))copy(app+'/'+p,cwd+'/'+p);
 const target=temp+'/myNotes/docs/analysis-summary-coverage.json',results=[];
 const sha=s=>createHash('sha256').update(s).digest('hex');
 function run(name,mutate,expected){
@@ -24,7 +34,7 @@ function run(name,mutate,expected){
  for(const [path,s] of restore)put(path,s);
  assert.equal(p.status===0,expected,`${name}: ${p.stdout}\n${p.stderr}`);results.push({name,expected_pass:expected,actual_pass:p.status===0});
 }
-run('reviewed actual 63-source contract',()=>{},true);
+run('reviewed actual supported-locale contract',()=>{},true);
 run('unreviewed contract rejected',c=>c.status='editing',false);
 run('stale current content hash rejected', (c,e)=>e(c.files[0],s=>s+'\nChanged prose.\n'),false);
 run('pending semantic unit rejected',c=>c.files[0].learning_material_map[0].independently_reviewed=false,false);

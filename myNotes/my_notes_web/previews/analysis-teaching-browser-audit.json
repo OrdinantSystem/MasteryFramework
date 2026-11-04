@@ -1,0 +1,1076 @@
+{
+  "states": [
+    {
+      "locale": "en",
+      "key": "overview",
+      "viewport": 1440,
+      "activities": [],
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "zahlenmengen",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Point x"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Number systems, equality and order",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Point x"
+          ],
+          "presentation": "input",
+          "ready": "true"
+        }
+      ],
+      "h1": "Statements, predicates and definitions",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "quantifier-order",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [],
+          "presentation": "witnesses",
+          "ready": "true"
+        }
+      ],
+      "h1": "Quantifier order, dependence and translation",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "real-sequences",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Tail starts at N"
+          ],
+          "presentation": "terms",
+          "ready": "true"
+        },
+        {
+          "inputs": [
+            "Point x",
+            "Tolerance ε"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Real sequences and absolute distance",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "reading-sequence-convergence",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Tail starts at N"
+          ],
+          "presentation": "terms",
+          "ready": "true"
+        },
+        {
+          "inputs": [
+            "Tolerance ε",
+            "Tail starts at N"
+          ],
+          "presentation": "tail",
+          "ready": "true"
+        }
+      ],
+      "h1": "Convergence: definition and proofs",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "negating-sequence-convergence",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Target L",
+            "Tolerance ε",
+            "Tail starts at N"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Failure of convergence and no real limit",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "overview",
+      "viewport": 1440,
+      "activities": [],
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "zahlenmengen",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Punkt x"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Zahlbereiche, Gleichheit und Ordnung",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Punkt x"
+          ],
+          "presentation": "input",
+          "ready": "true"
+        }
+      ],
+      "h1": "Aussagen, Prädikate und Definitionen",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "quantifier-order",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [],
+          "presentation": "witnesses",
+          "ready": "true"
+        }
+      ],
+      "h1": "Quantorenreihenfolge, Abhängigkeit und Übersetzung",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "real-sequences",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Beginn des Reststücks N"
+          ],
+          "presentation": "terms",
+          "ready": "true"
+        },
+        {
+          "inputs": [
+            "Punkt x",
+            "Toleranz ε"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Reelle Folgen und absoluter Abstand",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "reading-sequence-convergence",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Beginn des Reststücks N"
+          ],
+          "presentation": "terms",
+          "ready": "true"
+        },
+        {
+          "inputs": [
+            "Toleranz ε",
+            "Beginn des Reststücks N"
+          ],
+          "presentation": "tail",
+          "ready": "true"
+        }
+      ],
+      "h1": "Konvergenz: Definition und Beweise",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "negating-sequence-convergence",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Zielwert L",
+            "Toleranz ε",
+            "Beginn des Reststücks N"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Scheitern der Konvergenz und kein reeller Grenzwert",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "overview",
+      "viewport": 1440,
+      "activities": [],
+      "h1": "Análisis I",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "zahlenmengen",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Punto x"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Sistemas numéricos, igualdad y orden",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Punto x"
+          ],
+          "presentation": "input",
+          "ready": "true"
+        }
+      ],
+      "h1": "Enunciados, predicados y definiciones",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "quantifier-order",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [],
+          "presentation": "witnesses",
+          "ready": "true"
+        }
+      ],
+      "h1": "Orden de cuantificadores, dependencia y traducción",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "real-sequences",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "La cola empieza en N"
+          ],
+          "presentation": "terms",
+          "ready": "true"
+        },
+        {
+          "inputs": [
+            "Punto x",
+            "Tolerancia ε"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Sucesiones reales y distancia absoluta",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "reading-sequence-convergence",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "La cola empieza en N"
+          ],
+          "presentation": "terms",
+          "ready": "true"
+        },
+        {
+          "inputs": [
+            "Tolerancia ε",
+            "La cola empieza en N"
+          ],
+          "presentation": "tail",
+          "ready": "true"
+        }
+      ],
+      "h1": "Convergencia: definición y demostraciones",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "negating-sequence-convergence",
+      "viewport": 1440,
+      "activities": [
+        {
+          "inputs": [
+            "Objetivo L",
+            "Tolerancia ε",
+            "La cola empieza en N"
+          ],
+          "presentation": "full",
+          "ready": "true"
+        }
+      ],
+      "h1": "Fallo de convergencia y ausencia de límite real",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "light",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "overview",
+      "viewport": 1440,
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "zahlenmengen",
+      "viewport": 1440,
+      "h1": "Number systems, equality and order",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 1440,
+      "h1": "Statements, predicates and definitions",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "quantifier-order",
+      "viewport": 1440,
+      "h1": "Quantifier order, dependence and translation",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "real-sequences",
+      "viewport": 1440,
+      "h1": "Real sequences and absolute distance",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "reading-sequence-convergence",
+      "viewport": 1440,
+      "h1": "Convergence: definition and proofs",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "negating-sequence-convergence",
+      "viewport": 1440,
+      "h1": "Failure of convergence and no real limit",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "overview",
+      "viewport": 1440,
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "zahlenmengen",
+      "viewport": 1440,
+      "h1": "Zahlbereiche, Gleichheit und Ordnung",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 1440,
+      "h1": "Aussagen, Prädikate und Definitionen",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "quantifier-order",
+      "viewport": 1440,
+      "h1": "Quantorenreihenfolge, Abhängigkeit und Übersetzung",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "real-sequences",
+      "viewport": 1440,
+      "h1": "Reelle Folgen und absoluter Abstand",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "reading-sequence-convergence",
+      "viewport": 1440,
+      "h1": "Konvergenz: Definition und Beweise",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "de",
+      "key": "negating-sequence-convergence",
+      "viewport": 1440,
+      "h1": "Scheitern der Konvergenz und kein reeller Grenzwert",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "overview",
+      "viewport": 1440,
+      "h1": "Análisis I",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "zahlenmengen",
+      "viewport": 1440,
+      "h1": "Sistemas numéricos, igualdad y orden",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 1440,
+      "h1": "Enunciados, predicados y definiciones",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "quantifier-order",
+      "viewport": 1440,
+      "h1": "Orden de cuantificadores, dependencia y traducción",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "real-sequences",
+      "viewport": 1440,
+      "h1": "Sucesiones reales y distancia absoluta",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "reading-sequence-convergence",
+      "viewport": 1440,
+      "h1": "Convergencia: definición y demostraciones",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "es",
+      "key": "negating-sequence-convergence",
+      "viewport": 1440,
+      "h1": "Fallo de convergencia y ausencia de límite real",
+      "mathErrors": 0,
+      "scroll": 1425,
+      "theme": "dark",
+      "width": 1425
+    },
+    {
+      "locale": "en",
+      "key": "overview",
+      "viewport": 390,
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "zahlenmengen",
+      "viewport": 390,
+      "h1": "Number systems, equality and order",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 390,
+      "h1": "Statements, predicates and definitions",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "quantifier-order",
+      "viewport": 390,
+      "h1": "Quantifier order, dependence and translation",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "real-sequences",
+      "viewport": 390,
+      "h1": "Real sequences and absolute distance",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "reading-sequence-convergence",
+      "viewport": 390,
+      "h1": "Convergence: definition and proofs",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "negating-sequence-convergence",
+      "viewport": 390,
+      "h1": "Failure of convergence and no real limit",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "overview",
+      "viewport": 390,
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "zahlenmengen",
+      "viewport": 390,
+      "h1": "Zahlbereiche, Gleichheit und Ordnung",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 390,
+      "h1": "Aussagen, Prädikate und Definitionen",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "quantifier-order",
+      "viewport": 390,
+      "h1": "Quantorenreihenfolge, Abhängigkeit und Übersetzung",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "real-sequences",
+      "viewport": 390,
+      "h1": "Reelle Folgen und absoluter Abstand",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "reading-sequence-convergence",
+      "viewport": 390,
+      "h1": "Konvergenz: Definition und Beweise",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "negating-sequence-convergence",
+      "viewport": 390,
+      "h1": "Scheitern der Konvergenz und kein reeller Grenzwert",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "overview",
+      "viewport": 390,
+      "h1": "Análisis I",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "zahlenmengen",
+      "viewport": 390,
+      "h1": "Sistemas numéricos, igualdad y orden",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 390,
+      "h1": "Enunciados, predicados y definiciones",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "quantifier-order",
+      "viewport": 390,
+      "h1": "Orden de cuantificadores, dependencia y traducción",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "real-sequences",
+      "viewport": 390,
+      "h1": "Sucesiones reales y distancia absoluta",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "reading-sequence-convergence",
+      "viewport": 390,
+      "h1": "Convergencia: definición y demostraciones",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "negating-sequence-convergence",
+      "viewport": 390,
+      "h1": "Fallo de convergencia y ausencia de límite real",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "dark",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "overview",
+      "viewport": 390,
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "zahlenmengen",
+      "viewport": 390,
+      "h1": "Number systems, equality and order",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 390,
+      "h1": "Statements, predicates and definitions",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "quantifier-order",
+      "viewport": 390,
+      "h1": "Quantifier order, dependence and translation",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "real-sequences",
+      "viewport": 390,
+      "h1": "Real sequences and absolute distance",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "reading-sequence-convergence",
+      "viewport": 390,
+      "h1": "Convergence: definition and proofs",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "en",
+      "key": "negating-sequence-convergence",
+      "viewport": 390,
+      "h1": "Failure of convergence and no real limit",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "overview",
+      "viewport": 390,
+      "h1": "Analysis I",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "zahlenmengen",
+      "viewport": 390,
+      "h1": "Zahlbereiche, Gleichheit und Ordnung",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 390,
+      "h1": "Aussagen, Prädikate und Definitionen",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "quantifier-order",
+      "viewport": 390,
+      "h1": "Quantorenreihenfolge, Abhängigkeit und Übersetzung",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "real-sequences",
+      "viewport": 390,
+      "h1": "Reelle Folgen und absoluter Abstand",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "reading-sequence-convergence",
+      "viewport": 390,
+      "h1": "Konvergenz: Definition und Beweise",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "de",
+      "key": "negating-sequence-convergence",
+      "viewport": 390,
+      "h1": "Scheitern der Konvergenz und kein reeller Grenzwert",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "overview",
+      "viewport": 390,
+      "h1": "Análisis I",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "zahlenmengen",
+      "viewport": 390,
+      "h1": "Sistemas numéricos, igualdad y orden",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "aussagen-und-aussageformen",
+      "viewport": 390,
+      "h1": "Enunciados, predicados y definiciones",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "quantifier-order",
+      "viewport": 390,
+      "h1": "Orden de cuantificadores, dependencia y traducción",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "real-sequences",
+      "viewport": 390,
+      "h1": "Sucesiones reales y distancia absoluta",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "reading-sequence-convergence",
+      "viewport": 390,
+      "h1": "Convergencia: definición y demostraciones",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    },
+    {
+      "locale": "es",
+      "key": "negating-sequence-convergence",
+      "viewport": 390,
+      "h1": "Fallo de convergencia y ausencia de límite real",
+      "mathErrors": 0,
+      "scroll": 375,
+      "theme": "light",
+      "width": 375
+    }
+  ],
+  "statesChecked": 84,
+  "failures": [],
+  "observedInteractions": [
+    "input 2: member true/equation false",
+    "empty domain: membership false",
+    "invalid numeric99 restores7 on blur",
+    "keyboard range advances7to8",
+    "reset restores7",
+    "Ben red makes both positive claims true",
+    "zero keys with people gives both false",
+    "terms N advances3to4 without tolerance controls/band",
+    "tail N2 fails and N3 passes at epsilon0.5",
+    "new predicate reference solution opens with4mathruns",
+    "DE root search returns quantifier lesson",
+    "DE prefixed convergence assets/links retainMyNotes",
+    "ES prefixed search result links retainMyNotes",
+    "EN to ES switch opens equivalent quantifier lesson"
+  ],
+  "consoleErrors": []
+}

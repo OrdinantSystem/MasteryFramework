@@ -37,6 +37,14 @@ $$
 Select a failing input; no witness works, so every candidate fails. Not greater includes equality: fix two, test one and two.
 
 
+{/* analysis-visual:start negating-nested-statements-13 */}
+
+This finite pattern mirrors $y>x$ on $\{1,2\}$: the first row has a success, the second none. The whole failing row witnesses the negation of “every row has a witness”. Toggle a cell to see exactly what repairs that failure.
+
+<Interactive kind="quantifiers" preset="nested" id="analysis-nested-failure" />
+
+{/* analysis-visual:end negating-nested-statements-13 */}
+
 <span id="from-negating-nested-statements-start-with-existence-instead"></span>
 
 ### Start with existence instead

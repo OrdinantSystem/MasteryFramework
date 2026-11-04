@@ -16,32 +16,30 @@ export const chapters: Chapter[] = [
     title: {
       en: "Exercise sheet 1.1",
       de: "Übungsblatt 1.1",
-      es: "Hoja de ejercicios 1.1",
     },
     description: {
       en: "Linear maps, matrix products, and their geometric meaning.",
       de: "Lineare Abbildungen, Matrixprodukte und ihre geometrische Bedeutung.",
-      es: "Transformaciones lineales, productos de matrices y su significado geométrico.",
     },
     groups: [
       {
         key: "foundations",
-        title: { en: "Foundations", de: "Grundlagen", es: "Fundamentos" },
+        title: { en: "Foundations", de: "Grundlagen" },
         orders: [1, 2, 3],
       },
       {
         key: "connections",
-        title: { en: "Connections", de: "Zusammenhänge", es: "Conexiones" },
+        title: { en: "Connections", de: "Zusammenhänge" },
         orders: [4, 5],
       },
       {
         key: "applications",
-        title: { en: "Applications", de: "Anwendungen", es: "Aplicaciones" },
+        title: { en: "Applications", de: "Anwendungen" },
         orders: [6, 7],
       },
       {
         key: "revision",
-        title: { en: "Revision", de: "Wiederholen", es: "Repaso" },
+        title: { en: "Revision", de: "Wiederholen" },
         orders: [8],
       },
     ],
@@ -52,12 +50,10 @@ export const chapters: Chapter[] = [
     title: {
       en: "Exercise sheet 2.1",
       de: "Übungsblatt 2.1",
-      es: "Hoja de ejercicios 2.1",
     },
     description: {
       en: "Shears, determinants, and how matrix products reveal their structure.",
       de: "Kippungen, Determinanten und die Struktur von Matrixprodukten.",
-      es: "Cizallamientos, determinantes y la estructura de los productos de matrices.",
     },
     groups: [
       {
@@ -65,7 +61,6 @@ export const chapters: Chapter[] = [
         title: {
           en: "Shears and geometry",
           de: "Kippungen und Geometrie",
-          es: "Cizallamientos y geometría",
         },
         orders: [9, 10, 11],
       },
@@ -74,7 +69,6 @@ export const chapters: Chapter[] = [
         title: {
           en: "Products and proofs",
           de: "Produkte und Beweise",
-          es: "Productos y demostraciones",
         },
         orders: [12, 13],
       },
@@ -83,13 +77,12 @@ export const chapters: Chapter[] = [
         title: {
           en: "Worked exercises",
           de: "Ausgearbeitete Aufgaben",
-          es: "Ejercicios resueltos",
         },
         orders: [14, 15, 16],
       },
       {
         key: "recap",
-        title: { en: "Revision", de: "Wiederholen", es: "Repaso" },
+        title: { en: "Revision", de: "Wiederholen" },
         orders: [17],
       },
     ],
@@ -97,19 +90,19 @@ export const chapters: Chapter[] = [
 ];
 export type AreaId='mathematics'|'learning-teaching';
 export const areas:{id:AreaId;title:Label;icon:'math'|'learning'}[]=[
- {id:'mathematics',title:{en:'Mathematics',de:'Mathematik',es:'Matemáticas'},icon:'math'},
- {id:'learning-teaching',title:{en:'Learning & Teaching',de:'Lernen & Lehren',es:'Aprendizaje y enseñanza'},icon:'learning'},
+ {id:'mathematics',title:{en:'Mathematics',de:'Mathematik'},icon:'math'},
+ {id:'learning-teaching',title:{en:'Learning & Teaching',de:'Lernen & Lehren'},icon:'learning'},
 ];
 export const areaFor=(id:AreaId)=>areas.find(a=>a.id===id)!;
 export const courses:{id:CourseId;area:AreaId;title:Label;description:Label}[]=[
- {id:'linear-algebra',area:'mathematics',title:{en:'Linear Algebra I',de:'Lineare Algebra I',es:'Álgebra lineal I'},description:{en:'Linear maps, matrices, and the geometry and structure of their products.',de:'Lineare Abbildungen, Matrizen sowie Geometrie und Struktur ihrer Produkte.',es:'Transformaciones lineales, matrices y la geometría y estructura de sus productos.'}},
- {id:'analysis',area:'mathematics',title:{en:'Analysis I',de:'Analysis I',es:'Análisis I'},description:{en:'Mathematical language, logic, and the foundations of rigorous proof.',de:'Mathematische Sprache, Logik und die Grundlagen präziser Beweise.',es:'Lenguaje matemático, lógica y fundamentos de la demostración rigurosa.'}},
+ {id:'linear-algebra',area:'mathematics',title:{en:'Linear Algebra I',de:'Lineare Algebra I'},description:{en:'Linear maps, matrices, and the geometry and structure of their products.',de:'Lineare Abbildungen, Matrizen sowie Geometrie und Struktur ihrer Produkte.'}},
+ {id:'analysis',area:'mathematics',title:{en:'Analysis I',de:'Analysis I'},description:{en:'Mathematical language, logic, and the foundations of rigorous proof.',de:'Mathematische Sprache, Logik und die Grundlagen präziser Beweise.'}},
 ];
-courses.push({id:'learning',area:'learning-teaching',title:{en:'Learning methodology',de:'Lernmethodik',es:'Metodología del aprendizaje'},description:{en:'Study methods, worked examples, and records of independent practice.',de:'Lernmethoden, ausgearbeitete Beispiele und Nachweise selbstständiger Praxis.',es:'Métodos de estudio, ejemplos resueltos y registros de práctica autónoma.'}});
+courses.push({id:'learning',area:'learning-teaching',title:{en:'Learning methodology',de:'Lernmethodik'},description:{en:'Study methods, worked examples, and records of independent practice.',de:'Lernmethoden, ausgearbeitete Beispiele und Nachweise selbstständiger Praxis.'}});
 const learningChapters:Chapter[]=[
- {id:'learning-methods',course:'learning',title:{en:'Principles and methods',de:'Prinzipien und Methoden',es:'Principios y métodos'},description:{en:'Give each method a clear job: organize, explain, choose, and recall.',de:'Jeder Methode eine klare Aufgabe geben: ordnen, erklären, auswählen und abrufen.',es:'Da a cada método una función: organizar, explicar, elegir y recordar.'},groups:[{key:'orientation',title:{en:'Start with a purpose',de:'Mit einem Ziel beginnen',es:'Empieza con un propósito'},orders:[1,2]},{key:'methods',title:{en:'The four methods',de:'Die vier Methoden',es:'Los cuatro métodos'},orders:[3,4,5,6]}]},
- {id:'learning-practice',course:'learning',title:{en:'The study workflow',de:'Der Lernablauf',es:'El proceso de estudio'},description:{en:'Turn the methods into attempts, feedback, and evidence you can revisit.',de:'Aus Methoden werden Versuche, Rückmeldungen und überprüfbare Ergebnisse.',es:'Convierte los métodos en intentos, comentarios y pruebas que puedas revisar.'},groups:[{key:'practice',title:{en:'Practise and repair',de:'Üben und verbessern',es:'Practicar y corregir'},orders:[7,8,9]},{key:'continuity',title:{en:'Evidence and continuity',de:'Nachweise und Kontinuität',es:'Evidencias y continuidad'},orders:[10,11,12,13]}]},
- {id:'learning-transcripts',course:'learning',title:{en:'Transcript reading guides',de:'Lesehilfen zu den Transkripten',es:'Guías de lectura de las transcripciones'},description:{en:'Understand the four sources, their useful ideas, and what their claims leave open.',de:'Die vier Quellen, ihre brauchbaren Ideen und offenen Behauptungen verstehen.',es:'Entiende las cuatro fuentes, sus ideas útiles y las limitaciones de sus afirmaciones.'},groups:[{key:'readings',title:{en:'Read critically',de:'Kritisch lesen',es:'Leer con criterio'},orders:[14,15,16,17]}]},
+ {id:'learning-methods',course:'learning',title:{en:'Principles and methods',de:'Prinzipien und Methoden'},description:{en:'Give each method a clear job: organize, explain, choose, and recall.',de:'Jeder Methode eine klare Aufgabe geben: ordnen, erklären, auswählen und abrufen.'},groups:[{key:'orientation',title:{en:'Start with a purpose',de:'Mit einem Ziel beginnen'},orders:[1,2]},{key:'methods',title:{en:'The four methods',de:'Die vier Methoden'},orders:[3,4,5,6]}]},
+ {id:'learning-practice',course:'learning',title:{en:'The study workflow',de:'Der Lernablauf'},description:{en:'Turn the methods into attempts, feedback, and evidence you can revisit.',de:'Aus Methoden werden Versuche, Rückmeldungen und überprüfbare Ergebnisse.'},groups:[{key:'practice',title:{en:'Practise and repair',de:'Üben und verbessern'},orders:[7,8,9]},{key:'continuity',title:{en:'Evidence and continuity',de:'Nachweise und Kontinuität'},orders:[10,11,12,13]}]},
+ {id:'learning-transcripts',course:'learning',title:{en:'Transcript reading guides',de:'Lesehilfen zu den Transkripten'},description:{en:'Understand the four sources, their useful ideas, and what their claims leave open.',de:'Die vier Quellen, ihre brauchbaren Ideen und offenen Behauptungen verstehen.'},groups:[{key:'readings',title:{en:'Read critically',de:'Kritisch lesen'},orders:[14,15,16,17]}]},
 ];
 chapters.push(...learningChapters);
 const analysisChapters:Chapter[]=analysisOrganization.modules.map(module=>({

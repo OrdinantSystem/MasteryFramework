@@ -1,6 +1,6 @@
-export const locales = ["en", "de", "es"] as const;
+export const locales = ["en", "de"] as const;
 export type Locale = (typeof locales)[number];
-export const languageNames = { en: "English", de: "Deutsch", es: "Español" };
+export const languageNames = { en: "English", de: "Deutsch" };
 const en = {
   skip: "Skip to content",
   search: "Search notes",
@@ -257,135 +257,7 @@ const de: Dictionary = {
   rotationAlt: "Vierteldrehung",
   shearAlt: "Scherung",
 };
-const es: Dictionary = {
-  skip: "Ir al contenido",
-  search: "Buscar apuntes",
-  language: "Idioma",
-  theme: "Cambiar tema",
-  contents: "Contenido",
-  overview: "Vista general",
-  relocated: "Este contenido forma ahora parte de una lección integrada.",
-  continueLesson: "Ir a la lección",
-  optionalNext: "APLICACIÓN OPCIONAL",
-  courses:"Cursos",
-  archiveLead:"Apuntes universitarios para comprender, practicar y repasar.",
-  mathematics: "Matemáticas",
-  subject: "Álgebra lineal I",
-  chapter: "Hoja de ejercicios 1.1",
-  lessons: "Lecciones",
-  foundations: "Fundamentos",
-  connections: "Conexiones",
-  applications: "Aplicaciones",
-  revision: "Repaso",
-  archive: "Archivo de aprendizaje",
-  notes: "Apuntes",
-  onPage: "EN ESTA PÁGINA",
-  print: "Imprimir página",
-  prerequisites: "Conocimientos previos",
-  concept: "Concepto",
-  worked: "Ejemplo resuelto",
-  recap: "Resumen",
-  note: "Apunte",
-  previous: "ANTERIOR",
-  next: "SIGUIENTE",
-  backOverview: "VOLVER AL ÍNDICE",
-  try: "EXPLORAR",
-  geometric: "VISIÓN GEOMÉTRICA",
-  interactive: "Interactivo",
-  reset: "Restablecer",
-  check: "COMPRUEBA LO APRENDIDO",
-  solution: "Ver solución",
-  remember: "Recuerda",
-  coefficient: "Coeficiente",
-  power: "Potencia n",
-  shear: "Cizallamiento t",
-  columns: "Vectores columna",
-  dependent: "Dependientes",
-  independent: "Independientes",
-  row: "Fila",
-  column: "Columna",
-  rowTimesColumn: "FILA × COLUMNA",
-  matrixTitle: "Una entrada. Dos perspectivas.",
-  matrixIntro:
-    "Elige una entrada del resultado. Su fila y su columna muestran de dónde procede.",
-  matrixCaption:
-    "La dimensión interior {inner} cuenta los sumandos. Las dimensiones exteriores {rows} y {columns} determinan la forma del resultado.",
-  input: "Entrada",
-  output: "Salida",
-  mapA: "Transformación A",
-  components: "componentes",
-  rowsColumns: "3 filas · 2 columnas",
-  firstB: "Primero B",
-  thenA: "Después A",
-  thenC: "Después C",
-  inputs: "entradas",
-  outputs: "salidas",
-  product: "Producto AB",
-  inner: "interior",
-  outer: "Se conservan las dimensiones exteriores",
-  flowVector:
-    "Las columnas cuentan las entradas; las filas, las salidas. La matriz las conecta.",
-  flowComposition:
-    "Sigue la cadena de izquierda a derecha. En CAB, B actúa primero porque está a la derecha.",
-  flowDimensions:
-    "Las dimensiones interiores deben coincidir. Las exteriores determinan el tamaño del producto.",
-  vectorsTitle: "Las columnas se convierten en direcciones",
-  rankTitle: "¿Una recta o todo el plano?",
-  rotationTitle: "Cuatro pasos de vuelta al inicio",
-  shearTitle: "Un cuadrado se convierte en un paralelogramo",
-  vectorsResult: "Se suman las dos columnas escaladas.",
-  rankOne: "Rango 1 · Todas las salidas están en una recta.",
-  rankTwo: "Rango 2 · Se puede alcanzar cualquier dirección del plano.",
-  rotationResult: "giro en sentido antihorario",
-  shearResult: "La altura se mantiene; cambia la posición horizontal.",
-  vectorsCaption:
-    "Ejemplo en 2D: verde y azul muestran las columnas escaladas; violeta, su suma. Las líneas discontinuas completan el paralelogramo.",
-  rankCaption:
-    "El rango cuenta las direcciones independientes de la imagen, no el número de columnas.",
-  rotationCaption:
-    "La longitud se conserva. Cuatro cuartos de vuelta recuperan la posición inicial.",
-  shearCaption:
-    "Una analogía bidimensional del cizallamiento de los apuntes. El contorno discontinuo muestra el cuadrado original.",
-  noScript:
-    "La figura inicial está visible. Cambiar los parámetros requiere JavaScript.",
-  indexEyebrow: "MATEMÁTICAS / APUNTES DEL SEMESTRE",
-  indexLead:
-    "Transformaciones lineales, matrices y la geometría que las conecta.",
-  indexIntro:
-    "Lecciones conectadas. Lee en orden, consulta un concepto o sigue las conexiones visuales.",
-  topics: "Temas de este capítulo",
-  count: "lecciones",
-  mapTitle: "Cómo se conectan los conceptos",
-  mapRelation: "representadas mediante matrices",
-  mapVector: "actúan sobre entradas",
-  mapProduct: "componen transformaciones",
-  mapRank: "describen salidas alcanzables",
-  mapBottom: "Giros · Cizallamientos · Composiciones",
-  mapCaption:
-    "Una idea, varias perspectivas. Elige un concepto para leer su explicación.",
-  mapLinear: "Transformaciones lineales",
-  mapMatrices: "Matrices y vectores",
-  mapMultiplication: "Producto de matrices",
-  mapSpan: "Espacio generado y rango",
-  searchLead: "Encuentra un concepto, una explicación o una conexión.",
-  searchPlaceholder: "Buscar un concepto…",
-  searchEmpty: "Sin resultados para [SEARCH_TERM]",
-  searching: "Buscando…",
-  clear: "Borrar búsqueda",
-  many: "[COUNT] resultados para [SEARCH_TERM]",
-  one: "Un resultado para [SEARCH_TERM]",
-  noSearch: "La búsqueda estará disponible después de compilar el sitio.",
-  noSearchScript:
-    "La búsqueda requiere JavaScript. También puedes consultar el índice del capítulo.",
-  missing: "Este apunte no existe.",
-  missingText: "Esta dirección no corresponde a ninguna página del archivo.",
-  matrixAlt: "Producto de matrices",
-  vectorAlt: "Combinación lineal",
-  rankAlt: "Espacio columna",
-  rotationAlt: "Cuarto de vuelta",
-  shearAlt: "Cizallamiento",
-};
-export const dictionaries: Record<Locale, Dictionary> = { en, de, es };
+export const dictionaries: Record<Locale, Dictionary> = { en, de };
 export const strings = (locale: Locale = "en") => dictionaries[locale];
 export const localeFromPath = (path: string): Locale =>
-  /\/(de)(\/|$)/.test(path) ? "de" : /\/(es)(\/|$)/.test(path) ? "es" : "en";
+  /\/(de)(\/|$)/.test(path) ? "de" : "en";

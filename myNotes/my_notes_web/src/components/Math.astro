@@ -5,6 +5,6 @@ interface Props { tex: string; display?: boolean; }
 const { tex, display = false } = Astro.props;
 const html = katex.renderToString(tex, { ...mathOptions, displayMode: display });
 const locale = Astro.locals.locale || 'en';
-const expressionLabel = {en:'Mathematical expression',de:'Mathematischer Ausdruck',es:'Expresión matemática'}[locale];
+const expressionLabel = {en:'Mathematical expression',de:'Mathematischer Ausdruck'}[locale];
 ---
 <span class:list={['math', { 'math-block': display }]} tabindex={display ? 0 : undefined} role={display ? 'region' : undefined} aria-label={display ? expressionLabel : undefined} data-pagefind-ignore="all" set:html={html} />

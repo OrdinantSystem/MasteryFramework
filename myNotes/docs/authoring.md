@@ -6,7 +6,9 @@ Work in ../my_notes_web/. Read the design system for presentation rules. Prefer 
 
 Choose concept, worked-problem, note, or recap. Use the corresponding file in templates/. Keep prose human and concrete, state formal assumptions precisely, show reasons behind steps, and give examples where they clarify. Short notes need no filler sections or compulsory exercise.
 
-Use matching stable filenames under src/content/lessons/en/, de/, and es/. English is default. Titles and headings are translated; filenames identify equivalent concepts. Draft translations may be incomplete; publishing requires all three counterparts.
+Use matching stable filenames under src/content/lessons/en/ and de/. English is default. Titles and headings are translated; filenames identify equivalent concepts. Draft translations may be incomplete; publishing requires both counterparts.
+
+Spanish was retired on 4 November 2026. Do not create Spanish counterparts or extend the Spanish rows in frozen historical review ledgers. Those records describe earlier editions outside the current content loader.
 
 ```yaml
 ---
@@ -26,7 +28,7 @@ sourcePages: []
 ---
 ```
 
-The executable schema is src/content.config.ts. chapter and sourceId are required registered identities; source page bounds are checked and translations must retain both identities. locale is en/de/es; kind is concept/worked-problem/recap/note; status is draft/published; reviewStatus is unreviewed/needs-correction/reviewed. Each published order is unique in its language and listed once in src/lib/navigation.ts. Prerequisites use stable filenames, must exist as published counterparts, and must not form cycles.
+The executable schema is src/content.config.ts. chapter and sourceId are required registered identities; source page bounds are checked and translations must retain both identities. locale is en/de; kind is concept/worked-problem/recap/note; status is draft/published; reviewStatus is unreviewed/needs-correction/reviewed. Each published order is unique in its language and listed once in src/lib/navigation.ts. Prerequisites use stable filenames, must exist as published counterparts, and must not form cycles.
 
 sourcePages contains positive page numbers from the supplied reference, without the original four-page restriction. Keep [] for original examples with no source page. Record source identity and which material was added in a private source record or a clear authoring comment. Register the document in src/lib/sources.ts and follow source-ingestion.md; page numbers are meaningful only together with sourceId. Never copy private PDFs or source images into public assets automatically.
 
@@ -59,7 +61,7 @@ The [representation library](representation-library.md) documents available visu
 ## Publishing a lesson locally
 
 1. Write the draft and its prerequisite links; distinguish source content from added examples.
-2. Add German/Spanish counterparts with matching identities and mathematical meaning.
+2. Add German counterparts with matching identities and mathematical meaning.
 3. Check values, assumptions, proof steps, notation, units, and translations independently.
 4. Set all counterparts to published when ready for a visible draft. Keep reviewStatus honest; published and reviewed are different states.
 5. Add the published order to the correct chapter group in navigation.ts. Counts are derived automatically. Add or select an appropriate thumbnail in Thumbnail.astro; the thumbnail field selects a semantic diagram for new lessons; the original eight retain their existing previews.
@@ -73,13 +75,17 @@ Read [analysis-organization.md](analysis-organization.md). Its twenty canonical 
 
 ## Recap-focused Analysis prose
 
+The [4 November first-semester refinement](analysis-teaching.md) adds a beginner entry to selected pages while retaining concise revision use. Its actual-version contract covers 14 active locale files. Old summary/visual receipts remain frozen; active teaching checks run before historical reconstruction. Preserve task/hint/answer roles and each new task's reasoning obligations. Core attempts remain visible; optional banks name their purpose.
+
 Analysis I is a reference for recalling studied material, not a mandatory restart from zero. Keep one coherent explanation of each definition or rule, then use concise reminders and links at applications. Preserve distinctions, domains, boundary cases, complete worked reasoning and useful graphics. Do not add the same recap template to every page or remove a proof merely because its conclusion appears elsewhere.
 
-Write notation readings only in the page language, without EN/DE/ES labels. Keep a reading where it explains a new or dense formula; omit it when adjacent prose already says the same thing. Tables and disclosure headings follow the same localization rule. Keep primary explanations visible. Extra practice may be grouped behind a clearly labelled native disclosure without losing tasks, hints, solution reasoning or stable anchors. The substantial-summary request separately authorizes concise rewording of practice, not deletion of its mathematical content.
+Write notation readings only in the page language, without EN/DE labels. Keep a reading where it explains a new or dense formula; omit it when adjacent prose already says the same thing. Tables and disclosure headings follow the same localization rule. Keep primary explanations visible. Extra practice may be grouped behind a clearly labelled native disclosure without losing tasks, hints, solution reasoning or stable anchors. The substantial-summary request separately authorizes concise rewording of practice, not deletion of its mathematical content.
 
 Read [analysis-summary-plan.md](analysis-summary-plan.md) for the current substantial compression pass; [analysis-recap-plan.md](analysis-recap-plan.md) records the earlier conservative edit. The old literal-preservation contracts continue to validate their exact archived 4bb67fc input, clearly labelled historical. The mandatory current-summary verifier protects all active locale files, metadata, anchors, graphics, mathematical tables, distinct displays and exercise ordinals, with hash-bound independent semantic reviews and learning-material/task maps. Questions, hints and answers may be reworded only without losing their goal or complete reasoning. Count all prose, including closed practice, with analysis-prose.mjs; no credit for hiding text, moving learning material only to an archive, or replacing needed explanations with TeX. Never disable a gate to meet a percentage. Editorial agent review does not change mathematical/translation reviewStatus.
 
 ## Correcting an existing lesson
+
+The owner-requested Analysis visual pass adds localized graphical explanations without replacing the reviewed summary. See [analysis-visuals.md](analysis-visuals.md). Its exact addition ledger reconstructs the previous reviewed source before the summary gate runs; the historical independent review is not a certification of the additions. Future source edits must update the appropriate actual-version record and preserve original learning material. Do not simply renew a hash to hide a missing proof or task.
 
 Preserve its stable key. Update all affected languages and linked examples. A source correction may require correcting a preset, explanation, feedback, or recap as well. Review equivalent equations, then build and inspect the affected flow. Do not mark reviewed solely because generated equations or arithmetic tests pass.
 

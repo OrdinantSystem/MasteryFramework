@@ -1,0 +1,257 @@
+{
+  "src/content/lessons/en/analysis/aussagen-und-aussageformen.mdx": [
+    {
+      "before": "$P(x):x+3=10$ is a predicate depending on $x$. The domain $x\\in\\mathbb N$ restricts without binding. Substitution of $7$ makes it true; $2$ makes it false. Alternatively, quantify to bind $x$.",
+      "after": "A **predicate** is a condition we evaluate at an allowed input. Keep the rule $P(x):x+3=10$ fixed. Its domain $\\mathbb N$ tells us which inputs are allowed. Input $7$ gives a true statement; input $2$ gives a false one. The input changes, not the rule.",
+      "reason": "Explain input/domain/result before formal binding; binding preserved in later connection"
+    },
+    {
+      "before": "Keep the rule fixed and change the input. The diamond selects one value; the circles show the results across the entire displayed domain. An input outside that domain cannot be its witness.",
+      "after": "Predict the result at input two, then check it. The circles show true/false results for the complete finite domain; the diamond selects one input. The two readouts distinguish domain membership from the result of the same fixed rule.",
+      "reason": "Focus the graphical question on input and truth"
+    },
+    {
+      "before": "preset=\"equation\" id=\"analysis-predicate-inputs\"",
+      "after": "preset=\"equation\" presentation=\"input\" id=\"analysis-predicate-inputs\"",
+      "reason": "Focused input presentation"
+    }
+  ],
+  "src/content/lessons/en/analysis/quantifier-order.mdx": [
+    {
+      "before": "Read a row to find a key for one person; read a whole column to test one key for everyone. Change permissions to make both claims true, or remove every key to make both false when people remain.",
+      "after": "Before changing the table, predict what happens if Ben may also use red. Then change that one permission. Explain the difference between a successful cell in every row and one successful column for everyone.",
+      "reason": "One shared prediction across prose and relation activity"
+    },
+    {
+      "before": "preset=\"keys\" id=\"analysis-shared-witness\"",
+      "after": "preset=\"keys\" presentation=\"witnesses\" id=\"analysis-shared-witness\"",
+      "reason": "Focused positive quantifier orders"
+    },
+    {
+      "before": "Check information, membership and full predicate separately: allowed $y=1$ fails $y>x$ at $x=1$; allowed $y=x/2$ fails integer membership there.",
+      "after": "Check information, membership and the whole predicate separately. The choice $y=1$ uses no later input, but fails $y>x$ at $x=1$. The rule $y=x/2$ uses only the earlier input; at integer $x=1$ its value is not an integer, so it cannot supply a required integer witness.",
+      "reason": "Separate availability of information from domain membership"
+    },
+    {
+      "before": "<summary>Optional additional practice</summary>",
+      "after": "<summary>Optional practice: order and complete countermodels</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Optional additional practice</summary>",
+      "after": "<summary>Optional practice: which information may a witness use?</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Optional additional practice</summary>",
+      "after": "<summary>Optional practice: shared witnesses and empty domains</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Optional additional practice</summary>",
+      "after": "<summary>Optional practice: translate and read back</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    }
+  ],
+  "src/content/lessons/en/analysis/real-sequences.mdx": [
+    {
+      "before": "preset=\"device\" id=\"analysis-sequence-positions\"",
+      "after": "preset=\"device\" presentation=\"terms\" id=\"analysis-sequence-positions\"",
+      "reason": "Show positions/values/tail before tolerance or convergence"
+    }
+  ],
+  "src/content/lessons/en/analysis/reading-sequence-convergence.mdx": [
+    {
+      "before": "preset=\"reciprocal\" id=\"analysis-convergence-tail\"",
+      "after": "preset=\"reciprocal\" presentation=\"tail\" id=\"analysis-convergence-tail\"",
+      "reason": "Fixed reciprocal/zero target with tolerance and threshold only"
+    }
+  ],
+  "src/content/course-guides/en/analysis.mdx": [
+    {
+      "before": "For uncertain answers, revisit the lesson. These six source documents prepare later Analysis; they do not cover limits or differentiation.",
+      "after": "For uncertain answers, revisit the linked explanations. The core route reaches sequence limits; Boolean laws and circuits are optional applications. Differentiation is beyond the present material.",
+      "reason": "Correct course scope and optional/core distinction"
+    },
+    {
+      "before": "### The dependency chain",
+      "after": "### The dependency chain · optional Boolean application",
+      "reason": "Identify numbered-law chain as optional Boolean application"
+    },
+    {
+      "before": "For integers $n$, test “even $n^2$ implies $4\\mid n$.” Parity gives only even $n$, not divisibility by four. Counterexample $n=2$ has even square $4$ but is not divisible by $4$. A relevant theorem may prove less than the requested conclusion.",
+      "after": "For integers $n$, test “even $n^2$ implies $4\\mid n$.”\n\n<Exercise>\n\nParity gives only even $n$, not divisibility by four. Counterexample $n=2$ has even square $4$ but is not divisible by $4$. A relevant theorem may prove less than the requested conclusion.\n\n</Exercise>",
+      "reason": "Keep combined task visible and let the learner attempt before the answer"
+    }
+  ],
+  "src/content/lessons/de/analysis/aussagen-und-aussageformen.mdx": [
+    {
+      "before": "$P(x):x+3=10$ ist eine von $x$ abhängige Aussageform. $x\\in\\mathbb N$ beschränkt den Bereich ohne Bindung. Einsetzen von $7$ ergibt wahr, von $2$ falsch. Alternativ bindet ein Quantor $x$.",
+      "after": "Eine **Aussageform** ist eine Bedingung, die wir an einer zulässigen Eingabe auswerten. Halte die Regel $P(x):x+3=10$ fest. Ihr Bereich $\\mathbb N$ bestimmt die erlaubten Eingaben. Eingabe $7$ ergibt eine wahre Aussage, Eingabe $2$ eine falsche. Die Eingabe wechselt, die Regel bleibt.",
+      "reason": "Explain input/domain/result before formal binding; binding preserved in later connection"
+    },
+    {
+      "before": "Halte die Regel fest und ändere die Eingabe. Die Raute wählt einen Wert; die Kreise zeigen die Ergebnisse auf der gesamten dargestellten Menge. Eine Eingabe außerhalb dieser Menge ist dort kein Zeuge.",
+      "after": "Sage das Ergebnis für Eingabe zwei voraus und prüfe es. Die Kreise zeigen wahr/falsch für den vollständigen endlichen Bereich; die Raute wählt eine Eingabe. Die beiden Anzeigen trennen Bereichszugehörigkeit vom Ergebnis derselben festen Regel.",
+      "reason": "Focus the graphical question on input and truth"
+    },
+    {
+      "before": "preset=\"equation\" id=\"analysis-predicate-inputs\"",
+      "after": "preset=\"equation\" presentation=\"input\" id=\"analysis-predicate-inputs\"",
+      "reason": "Focused input presentation"
+    }
+  ],
+  "src/content/lessons/de/analysis/quantifier-order.mdx": [
+    {
+      "before": "Lies eine Zeile für einen Schlüssel je Person; lies eine ganze Spalte für einen Schlüssel für alle. Ändere Berechtigungen, bis beide Aussagen wahr sind, oder entferne alle Schlüssel: Bei verbleibenden Personen sind dann beide falsch.",
+      "after": "Sage vor dem Umschalten voraus, was sich ändert, wenn auch Ben Rot verwenden darf. Ändere dann genau diese Berechtigung. Erkläre den Unterschied zwischen einem Treffer in jeder Zeile und einer passenden Spalte für alle.",
+      "reason": "One shared prediction across prose and relation activity"
+    },
+    {
+      "before": "preset=\"keys\" id=\"analysis-shared-witness\"",
+      "after": "preset=\"keys\" presentation=\"witnesses\" id=\"analysis-shared-witness\"",
+      "reason": "Focused positive quantifier orders"
+    },
+    {
+      "before": "Prüfe Information, Zugehörigkeit und ganzes Prädikat getrennt: Erlaubtes $y=1$ verletzt $y>x$ bei $x=1$; erlaubtes $y=x/2$ scheitert dort an Ganzzahligkeit.",
+      "after": "Prüfe Information, Zugehörigkeit und ganzes Prädikat getrennt. Die Wahl $y=1$ nutzt keine spätere Eingabe, verletzt aber $y>x$ bei $x=1$. Die Regel $y=x/2$ nutzt nur die frühere Eingabe; bei ganzzahligem $x=1$ ist ihr Wert nicht ganzzahlig und liefert daher keinen verlangten ganzzahligen Zeugen.",
+      "reason": "Separate availability of information from domain membership"
+    },
+    {
+      "before": "<summary>Optionale Zusatzübungen</summary>",
+      "after": "<summary>Optionale Übung: Reihenfolge und vollständige Gegenmodelle</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Optionale Zusatzübungen</summary>",
+      "after": "<summary>Optionale Übung: Welche Information darf ein Zeuge nutzen?</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Optionale Zusatzübungen</summary>",
+      "after": "<summary>Optionale Übung: Gemeinsame Zeugen und leere Bereiche</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Optionale Zusatzübungen</summary>",
+      "after": "<summary>Optionale Übung: Übersetzen und zurücklesen</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    }
+  ],
+  "src/content/lessons/de/analysis/real-sequences.mdx": [
+    {
+      "before": "preset=\"device\" id=\"analysis-sequence-positions\"",
+      "after": "preset=\"device\" presentation=\"terms\" id=\"analysis-sequence-positions\"",
+      "reason": "Show positions/values/tail before tolerance or convergence"
+    }
+  ],
+  "src/content/lessons/de/analysis/reading-sequence-convergence.mdx": [
+    {
+      "before": "preset=\"reciprocal\" id=\"analysis-convergence-tail\"",
+      "after": "preset=\"reciprocal\" presentation=\"tail\" id=\"analysis-convergence-tail\"",
+      "reason": "Fixed reciprocal/zero target with tolerance and threshold only"
+    }
+  ],
+  "src/content/course-guides/de/analysis.mdx": [
+    {
+      "before": "Kehre bei Unsicherheit zur Lektion zurück. Die sechs Quelldokumente bereiten spätere Analysis vor; Grenzwerte und Differentiation behandeln sie nicht.",
+      "after": "Kehre bei Unsicherheit zu den verlinkten Erklärungen zurück. Der Kernweg führt zu Folgengrenzwerten; boolesche Gesetze und Schaltungen sind optionale Anwendungen. Differentiation liegt außerhalb des bisherigen Stoffs.",
+      "reason": "Correct course scope and optional/core distinction"
+    },
+    {
+      "before": "### Die Abhängigkeitskette",
+      "after": "### Die Abhängigkeitskette · optionale boolesche Anwendung",
+      "reason": "Identify numbered-law chain as optional Boolean application"
+    },
+    {
+      "before": "Prüfe für ganze $n$: „Gerades $n^2$ impliziert $4\\mid n$.“ Parität liefert nur gerades $n$, keine Viererteilbarkeit. Gegenbeispiel $n=2$ hat gerades Quadrat $4$, ist aber nicht durch $4$ teilbar. Ein passender Satz beweist manchmal weniger als verlangt.",
+      "after": "Prüfe für ganze $n$: „Gerades $n^2$ impliziert $4\\mid n$.“\n\n<Exercise>\n\nParität liefert nur gerades $n$, keine Viererteilbarkeit. Gegenbeispiel $n=2$ hat gerades Quadrat $4$, ist aber nicht durch $4$ teilbar. Ein passender Satz beweist manchmal weniger als verlangt.\n\n</Exercise>",
+      "reason": "Keep combined task visible and let the learner attempt before the answer"
+    }
+  ],
+  "src/content/lessons/es/analysis/aussagen-und-aussageformen.mdx": [
+    {
+      "before": "$P(x):x+3=10$ es un predicado dependiente de $x$. $x\\in\\mathbb N$ restringe sin ligar. Sustituir $7$ lo hace verdadero; $2$, falso. Alternativamente, un cuantificador liga $x$.",
+      "after": "Un **predicado** es una condición que evaluamos en una entrada permitida. Mantén fija la regla $P(x):x+3=10$. Su dominio $\\mathbb N$ indica las entradas permitidas. La entrada $7$ da un enunciado verdadero; la entrada $2$, uno falso. Cambia la entrada, no la regla.",
+      "reason": "Explain input/domain/result before formal binding; binding preserved in later connection"
+    },
+    {
+      "before": "Mantén fija la regla y cambia la entrada. El rombo elige un valor; los círculos muestran los resultados en todo el dominio representado. Una entrada ajena al dominio no puede ser su testigo.",
+      "after": "Predice el resultado para la entrada dos y compruébalo. Los círculos muestran verdadero/falso en todo el dominio finito; el rombo elige una entrada. Las dos indicaciones separan pertenencia al dominio y resultado de la misma regla fija.",
+      "reason": "Focus the graphical question on input and truth"
+    },
+    {
+      "before": "preset=\"equation\" id=\"analysis-predicate-inputs\"",
+      "after": "preset=\"equation\" presentation=\"input\" id=\"analysis-predicate-inputs\"",
+      "reason": "Focused input presentation"
+    }
+  ],
+  "src/content/lessons/es/analysis/quantifier-order.mdx": [
+    {
+      "before": "Lee una fila para buscar una llave por persona y una columna entera para probar una llave para todos. Cambia permisos para que ambas afirmaciones sean verdaderas o quita todas las llaves: con personas presentes, ambas serán falsas.",
+      "after": "Antes de cambiar la tabla, predice qué ocurre si Ben también puede usar la roja. Cambia entonces solo ese permiso. Explica la diferencia entre un acierto en cada fila y una columna que funcione para todos.",
+      "reason": "One shared prediction across prose and relation activity"
+    },
+    {
+      "before": "preset=\"keys\" id=\"analysis-shared-witness\"",
+      "after": "preset=\"keys\" presentation=\"witnesses\" id=\"analysis-shared-witness\"",
+      "reason": "Focused positive quantifier orders"
+    },
+    {
+      "before": "Revisa información, pertenencia y predicado completo por separado: el permitido $y=1$ falla $y>x$ en $x=1$; el permitido $y=x/2$ falla allí pertenencia entera.",
+      "after": "Revisa información, pertenencia y predicado completo por separado. Elegir $y=1$ no usa una entrada posterior, pero falla $y>x$ en $x=1$. La regla $y=x/2$ solo usa la entrada anterior; en el entero $x=1$ su valor no es entero, por lo que no proporciona el testigo entero requerido.",
+      "reason": "Separate availability of information from domain membership"
+    },
+    {
+      "before": "<summary>Práctica adicional opcional</summary>",
+      "after": "<summary>Práctica opcional: orden y contramodelos completos</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Práctica adicional opcional</summary>",
+      "after": "<summary>Práctica opcional: información disponible para un testigo</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Práctica adicional opcional</summary>",
+      "after": "<summary>Práctica opcional: testigos compartidos y dominios vacíos</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    },
+    {
+      "before": "<summary>Práctica adicional opcional</summary>",
+      "after": "<summary>Práctica opcional: traducir y volver a leer</summary>",
+      "reason": "Name optional practice by its reasoning purpose"
+    }
+  ],
+  "src/content/lessons/es/analysis/real-sequences.mdx": [
+    {
+      "before": "preset=\"device\" id=\"analysis-sequence-positions\"",
+      "after": "preset=\"device\" presentation=\"terms\" id=\"analysis-sequence-positions\"",
+      "reason": "Show positions/values/tail before tolerance or convergence"
+    }
+  ],
+  "src/content/lessons/es/analysis/reading-sequence-convergence.mdx": [
+    {
+      "before": "preset=\"reciprocal\" id=\"analysis-convergence-tail\"",
+      "after": "preset=\"reciprocal\" presentation=\"tail\" id=\"analysis-convergence-tail\"",
+      "reason": "Fixed reciprocal/zero target with tolerance and threshold only"
+    }
+  ],
+  "src/content/course-guides/es/analysis.mdx": [
+    {
+      "before": "Si dudas, vuelve a la lección. Estos seis documentos fuente preparan el análisis posterior; no cubren límites ni diferenciación.",
+      "after": "Si dudas, vuelve a las explicaciones enlazadas. El recorrido principal llega a límites de sucesiones; leyes booleanas y circuitos son aplicaciones opcionales. La diferenciación queda fuera del material actual.",
+      "reason": "Correct course scope and optional/core distinction"
+    },
+    {
+      "before": "### La cadena de dependencias",
+      "after": "### La cadena de dependencias · aplicación booleana opcional",
+      "reason": "Identify numbered-law chain as optional Boolean application"
+    },
+    {
+      "before": "Para enteros $n$, comprueba «$n^2$ par implica $4\\mid n$». Paridad solo da $n$ par, no divisible por cuatro. El contraejemplo $n=2$ tiene cuadrado par $4$, pero no es divisible por $4$. Un teorema pertinente puede probar menos de lo pedido.",
+      "after": "Para enteros $n$, comprueba «$n^2$ par implica $4\\mid n$».\n\n<Exercise>\n\nParidad solo da $n$ par, no divisible por cuatro. El contraejemplo $n=2$ tiene cuadrado par $4$, pero no es divisible por $4$. Un teorema pertinente puede probar menos de lo pedido.\n\n</Exercise>",
+      "reason": "Keep combined task visible and let the learner attempt before the answer"
+    }
+  ]
+}

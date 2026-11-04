@@ -1,0 +1,306 @@
+---
+locale: "de"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Konvergenz: Definition und Beweise"
+navTitle: "Konvergenz: Definition und Beweise"
+description: "Konvergenz: Definition und Beweise"
+order: 16
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["real-sequences", "quantifier-order", "beweissprache-und-methoden"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit", "A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has"]
+thumbnail: "proof"
+additionalSources: []
+---
+
+<span id="from-reading-sequence-convergence"></span>
+
+## Folgenkonvergenz lesen
+
+Die vollständige Geräteregel liefert zweimal neun, danach immer drei. Konvergenz erlaubt frühe Ausnahmen, verlangt aber dauerhaft beliebige Nähe aller hinreichend späten Glieder zu einem festen Ziel.
+
+
+<span id="from-reading-sequence-convergence-objekte-vor-den-quantoren-festhalten"></span>
+
+### Objekte vor den Quantoren festhalten
+
+Fixiere reelle Folge $a:\mathbb N\to\mathbb R$, $\mathbb N=\{1,2,3,\ldots\}$, und reelles Ziel $L$. Glied $a_n$ am Index $n$ hat Abstand $|a_n-L|$. Der Kontext fixiert $a,L$; kein geschriebener Quantor unten bindet sie.
+
+$\varepsilon$ ist eine veränderliche positive reelle Toleranz, kein Index. Positives natürliches $N$ beginnt das Endstück; positives natürliches $n$ prüft es. $n\ge N$ schließt den Start ein; $|a_n-L|<\varepsilon$ schließt Gleichheit aus.
+
+
+<span id="from-reading-sequence-convergence-die-positive-definition"></span>
+
+### Die positive Definition
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+<Flow nodes={[{"label": "Toleranz", "tex": "\\varepsilon>0", "detail": "Akzeptiere jede positive reelle Toleranz."}, {"label": "Startindex", "tex": "N\\in\\mathbb N", "detail": "Wähle einen Startindex mithilfe der Toleranz."}, {"label": "Endstückprüfung", "tex": "n\\ge N", "detail": "Halte den Startindex bei jeder Prüfung fest."}]} caption="Erst die Toleranz, dann der Startindex, dann jeder Index im Endstück." />
+
+Zum Konvergenzbeweis erfülle die Definition: Akzeptiere jede Toleranz; wähle daraus und aus festem Kontext $N$, dann prüfe alle Indizes bei festem $N$. Toleranzabhängigkeit ist erlaubt, nicht verlangt.
+
+Frühere Indizes haben falsche Voraussetzung, also keine Näheforderung. Alle Endstückglieder müssen passen, nicht nur das erste. Größere natürliche Starts passen durch Endstückinklusion; ein kleinster ist unnötig.
+
+Für Gerät und Ziel drei liefert Start drei im ganzen Endstück Abstand null bei jeder Toleranz. Genaues Erreichen ist für Konvergenz nicht nötig.
+
+<span id="from-reading-sequence-convergence-übung"></span>
+
+#### Übung
+
+Rekonstruiere die vollständige Definition mit Bereichen und den drei Rollen.
+
+<details>
+<summary>Hinweis</summary>
+
+Toleranz, Startindex, Prüfindex.
+
+</details>
+
+<Exercise>
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Positives reelles $\varepsilon$ ist Toleranz; $N,n\in\mathbb N$ sind Start- und Prüfindex. Fixiere $a,L$, dann $N$ vor den Tests. Jedes $n\ge N$ verlangt Abstand unter $\varepsilon$; frühere Indizes bleiben frei.
+
+</Exercise>
+
+Zuerst null, dann immer eins: Beweist der erste Treffer Konvergenz gegen null?
+
+<details>
+<summary>Hinweis</summary>
+
+Nutze $\varepsilon=1/2$ und $n=\max(N,2)$.
+
+</details>
+
+<Exercise>
+
+Nein: Für jedes $N$ liegt $n=\max(N,2)$ im Endstück mit Abstand eins, nicht unter $1/2$. Ein Treffer genügt nicht.
+
+</Exercise>
+
+Unterscheide später Folge, Index, Glied, Ziel und Abstand; rekonstruiere dann die Formel.
+
+
+<span id="from-reading-sequence-convergence-laut-lesen"></span>
+
+### Laut lesen
+
+Jede positive Toleranz erlaubt einen Startindex, ab dem alle Glieder Abstand zu L strikt unter dieser Toleranz haben.
+
+<span id="from-proving-sequence-convergence"></span>
+
+## Folgenkonvergenz beweisen
+
+Fixiere Folge und Ziel vor der beliebigen Toleranz; neue Ziele für einzelne Glieder würden die Aussage ändern.
+
+
+<span id="from-proving-sequence-convergence-der-vollständige-beweis-für-eine-konstante-folge"></span>
+
+### Der vollständige Beweis für eine konstante Folge
+
+Sei $a_n=3$ überall, $L=3$. Für beliebiges $\varepsilon>0$ wähle natürliches $N=1$. Jedes natürliche $n\ge N$ erfüllt:
+
+$$
+|a_n-3|=|3-3|=|0|=0<\varepsilon.
+$$
+
+Regel, Subtraktion, Betrag von null und $\varepsilon>0$ begründen die Kette. Alle Endstückindizes passen für beliebige Toleranz. Natürliche Unbeschränktheit und Dreiecksungleichung sind unnötig.
+
+
+<span id="from-proving-sequence-convergence-wahlabhängigkeit-und-beweisabhängigkeit"></span>
+
+### Wahlabhängigkeit und Beweisabhängigkeit
+
+Wahlabhängigkeit erlaubt Toleranz und festen Kontext, nicht späteres $n$. Beweisabhängigkeit betrifft die Schätzungsbegründung. Die richtige Wahlreihenfolge behebt keine falsche Rechnung, und eine richtige Rechnung behebt keine Zeugenwahl nach dem Prüfindex. Konstantes $N$ darf die Toleranz ignorieren.
+
+
+
+<Note title="Ein später Startindex ändert die Aussage">
+
+Nach jedem Test macht $N=n+1$ dessen Implikation leer wahr, liefert aber keinen festen Endstückstart. Verbotene Abhängigkeit von späterem $n$, nicht Größe, ist der Fehler.
+
+</Note>
+
+<span id="from-proving-sequence-convergence-übung"></span>
+
+#### Übung
+
+Beweise Konvergenz der konstanten Folge minus vier gegen minus vier.
+
+<details>
+<summary>Hinweis</summary>
+
+Der Abstand zählt, nicht das Vorzeichen des Glieds.
+
+</details>
+
+<Exercise>
+
+Für beliebiges $\varepsilon>0$ wähle $N=1$. Jedes $n\ge1$ erfüllt $|-4-(-4)|=0<\varepsilon$ durch Folgenregel, Subtraktion, Betrag von null und Positivität.
+
+</Exercise>
+
+Zuerst hundert, dann null: Beweise Konvergenz gegen null. Muss der Startindex mit der Toleranz wechseln?
+
+<details>
+<summary>Hinweis</summary>
+
+Beginne nach der Ausnahme.
+
+</details>
+
+<Exercise>
+
+Wähle $N=2$ für jedes $\varepsilon>0$. Jedes $n\ge2$ liefert Abstand $0<\varepsilon$; der Start muss nicht wechseln.
+
+</Exercise>
+
+Repariere „Nach Toleranz und Prüfindex wähle $N=n+1$“.
+
+<details>
+<summary>Hinweis</summary>
+
+Halte einen Zeugen für alle Tests fest.
+
+</details>
+
+<Exercise>
+
+Wähle einen erlaubten Startindex vor dem Prüfindex und beweise die ganze Endstückschätzung. Jeden Test herauszuschieben ändert die Quantorenreihenfolge.
+
+</Exercise>
+
+Welche zusätzliche Tatsache braucht der optionale Kehrwertbeweis, und wird sie hier benötigt?
+
+<details>
+<summary>Hinweis</summary>
+
+Eine natürliche Zahl jenseits jeder reellen Schranke braucht Begründung.
+
+</details>
+
+<Exercise>
+
+Der [optionale Beweis](../reading-sequence-convergence/#from-reciprocal-sequence-convergence) akzeptiert archimedische Startindexexistenz und positive Kehrwertordnung. Der konstante Beweis braucht nur die bekannte natürliche Eins.
+
+</Exercise>
+
+Konvergiert die Nullfolge gegen Ziel eins? Zeigt das, dass sie keinen reellen Grenzwert hat?
+
+<details>
+<summary>Hinweis</summary>
+
+Vergleiche dieselben Glieder mit Ziel null.
+
+</details>
+
+<Exercise>
+
+Bei Ziel eins sind alle Abstände eins, nicht unter $1/2$. Bei null passt jede Toleranz mit $N=1$. Ein gescheitertes Ziel schließt nicht alle Grenzwerte aus.
+
+</Exercise>
+
+Rekonstruiere später den ganzen Beweis und begründe jede Gleichheit.
+
+
+<span id="from-proving-sequence-convergence-laut-lesen"></span>
+
+Prüfe mit der obigen Definition die Reihenfolge: Toleranz, Startindex, jeder Index im Endstück.
+
+<span id="from-reciprocal-sequence-convergence"></span>
+
+## Konvergenz der Kehrwertfolge
+
+Kehrwertglieder nähern sich null, ohne null zu erreichen. Liefere für jede Toleranz einen Start und prüfe sein Endstück.
+
+<Note title="Optionale Erweiterung: zusätzlich vorausgesetztes Wissen">
+
+Optional, nicht nötig für [logische Negation](../negating-sequence-convergence/#from-negating-sequence-convergence). Akzeptiere ohne Beweis: **Archimedische Unbeschränktheit**, zu jeder reellen Schranke gibt es eine größere positive natürliche Zahl; **positive Kehrwertordnung**, größere positive Nenner liefern kleinere oder gleiche Kehrwerte. Quantorenschreibweise beweist beides nicht.
+
+</Note>
+
+
+<span id="from-reciprocal-sequence-convergence-startindex-finden-und-sein-endstück-prüfen"></span>
+
+### Startindex finden und sein Endstück prüfen
+
+$$
+a_n=\frac1n\quad(n\in\mathbb N),\qquad L=0.
+$$
+
+Alle Glieder sind definiert und positiv. Für beliebiges reelles $\varepsilon>0$ ist $1/\varepsilon$ reell. Archimedische Unbeschränktheit liefert positives natürliches $N>1/\varepsilon$. Fixiere es; jedes natürliche $n\ge N$ erfüllt:
+
+$$
+|a_n-0|=|1/n|=1/n\le1/N<\varepsilon.
+$$
+
+Regel und Subtraktion von null liefern die erste Gleichheit; Positivität entfernt den Betrag. Kehrwertordnung gibt $1/n\le1/N$. Multipliziere $N>1/\varepsilon$ mit positivem $\varepsilon$ und teile durch positives $N$: $1/N<\varepsilon$. Das ganze Endstück passt für jede beliebige Toleranz, also folgt Konvergenz.
+
+Positive Glieder erreichen den Grenzwert nie. Die akzeptierten Tatsachen erfassen unendlich viele Toleranzen und Indizes, anders als jede endliche Liste.
+
+
+{/* analysis-visual:start reading-sequence-convergence-18 */}
+
+Beginne mit $\varepsilon=0{,}5$ und vergleiche $N=2$ mit $N=3$. Das Randglied scheitert an Gleichheit; ein späterer Start legt das gesamte Kehrwert-Reststück ins Band. Verenge dann das Band und finde einen neuen Startindex.
+
+<Interactive kind="sequence" preset="reciprocal" id="analysis-convergence-tail" />
+
+{/* analysis-visual:end reading-sequence-convergence-18 */}
+
+<span id="from-reciprocal-sequence-convergence-die-strenge-grenze-prüfen"></span>
+
+### Die strenge Grenze prüfen
+
+Bei $\varepsilon=1/10$ passt $N=11$, da spätere Abstände höchstens $1/11<1/10$ sind. $N=10$ scheitert am eigenen Glied an Gleichheit. Dies illustriert nur Strenge.
+
+<span id="from-reciprocal-sequence-convergence-übung"></span>
+
+#### Übung
+
+Warum braucht „Wähle einen hinreichend großen natürlichen Start“ eine Existenzbegründung?
+
+<details>
+<summary>Hinweis</summary>
+
+Quantoren stellen Anforderungen, keine arithmetischen Sätze.
+
+</details>
+
+<Exercise>
+
+Archimedische Unbeschränktheit liefert eine natürliche Zahl jenseits der reellen Schranke; sonst wird der Zeuge bloß verlangt. Konstante Konvergenz braucht nur die natürliche Eins.
+
+</Exercise>
+
+Erkläre bei Toleranz $1/10$, warum zehn scheitert, elf aber für alle späteren Indizes passt.
+
+<details>
+<summary>Hinweis</summary>
+
+Der Startindex selbst gehört zum Endstück.
+
+</details>
+
+<Exercise>
+
+Bei zehn ist der Abstand $1/10$, nicht strikt kleiner. Ab elf ist er höchstens $1/11<1/10$.
+
+</Exercise>
+
+Rekonstruiere später den vollständigen Beweis und benenne, wo die Existenz eines natürlichen Startindex und die positive Kehrwertordnung eingehen; logische Negation benötigt diesen Beweis nicht.
+
+
+<span id="from-reciprocal-sequence-convergence-laut-lesen"></span>
+
+### Laut lesen
+
+Ab großem N größer als eins durch Epsilon ist jeder Kehrwert höchstens eins durch großes N, also kleiner als Epsilon.

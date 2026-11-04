@@ -17,72 +17,11 @@ thumbnail: "quantifiers"
 additionalSources: []
 ---
 
-<span id="from-reading-mathematical-structure"></span>
-
-## Reading mathematical structure
-
-“Find a real below two” instructs; “every real is below two” asserts falsely. Identify a sentence’s job before its symbols.
-
-
-<span id="from-reading-mathematical-structure-a-reading-procedure"></span>
-
-### A reading procedure
-
-Identify definition, assertion, assumption, question or instruction. Check domains, definedness (no real division by zero), free/bound occurrences and contextual values. Preserve order and scope: $\forall$ means every, $\exists$ at least one, not unique. Parse outermost first with complete inputs; distinguish whole hypothesis and conclusion without inventing hypotheses for equalities. Parsing, evaluation and proof differ.
-
-In $x+y=3$, addition combines numbers, not propositions. A quantified statement can be one propositional input letter without being first-order atomic.
-
-
-<span id="from-reading-mathematical-structure-a-universal-claim-with-a-conditional-inside"></span>
-
-### A universal claim with a conditional inside
-
-Translate “Every real strictly between zero and one is below two”:
-
-$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
-
-Both strict bounds form the hypothesis.
-
-The quantifier binds all $x$ in the whole conditional, making it closed. Inside, $\Rightarrow$ (or $\to$) joins the entire conjunction to $x<2$; $\land$ means “and”, not another outer connective.
-
-Keep both $0<x$ and $x<1$ when translating, even if proof needs only the latter. No interval membership is asserted for all reals.
-
-Both parts hold at $x=1/2$, fail at $x=3$. A counterexample needs **whole hypothesis true**, conclusion false; three is ineligible.
-
-For arbitrary eligible real $x$, $x<1<2$ gives $x<2$ by transitivity. This proves, unlike translation or samples alone, using accepted classical semantics and real order.
-
-
-<span id="from-reading-mathematical-structure-practice-in-both-directions"></span>
-
-### Practice in both directions
-
-<Exercise question="Parse $x=0\lor((x>0)\land(x<1))$. Give the outer connective, its two whole inputs, and the free variables. Then translate ‘x equals zero and it is not the case that y equals zero’.">
-
-Outermost $\lor$ joins $x=0$ to the whole $(x>0)\land(x<1)$; all $x$ stay free without a binder. Translation: $(x=0)\land\neg(y=0)$, negating only the second equality, with both variables free.
-
-</Exercise>
-
-Translate “Every real above one exceeds zero”; identify its hypothesis and prove it without samples. Are all reals asserted positive?
-
-<details>
-<summary>Hint</summary>
-
-Use a conditional inside the domain quantifier.
-
-</details>
-
-<details>
-<summary>Reference answer</summary>
-
-$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$ binds every $x$. Hypothesis $x>1$ implies conclusion $x>0$ by $1>0$ and transitivity, for arbitrary $x$. Not every real is positive: zero fails the hypothesis, so is no counterexample.
-
-</details>
-
-Check “if” versus “and”, some/every, and strict/nonstrict bounds; state genuine ambiguities. See [domains](../universal-statements-and-domains/#from-universal-statements-and-domains).
-
 <span id="from-quantifier-order"></span>
 
 ## Quantifier order
+
+Read $\forall$ as “every” and $\exists$ as “at least one”. First check that you can name a domain and verify a witness; if needed, revisit [witnesses](../existence-and-uniqueness/#from-existence-and-witnesses). Here the question is whether each input may use a different witness.
 
 Complete model: Ana uses only red, Ben only blue. Each has a key; none works for everyone.
 
@@ -105,6 +44,16 @@ $$
 
 Red fails Ben, blue Ana: no fixed key works for all. Nested quantifiers lie in another’s scope, not merely conjoined statements. Both variables are bound; the first governs the second. Order is logical, not time or an algorithm.
 
+
+{/* analysis-visual:start quantifier-order-11 */}
+
+Before changing the table, predict what happens if Ben may also use red. Then change that one permission. Explain the difference between a successful cell in every row and one successful column for everyone.
+
+<Interactive kind="quantifiers" preset="keys" presentation="witnesses" id="analysis-shared-witness" />
+
+{/* analysis-visual:end quantifier-order-11 */}
+
+With people still present, remove every key. Explain why both claims are false, then reset the table.
 
 <span id="from-quantifier-order-the-same-distinction-over-the-reals"></span>
 
@@ -134,7 +83,7 @@ Fixed independent $D,E$ allow adjacent universals to commute: applying the origi
 #### Practice
 
 <details>
-<summary>Optional additional practice</summary>
+<summary>Optional practice: order and complete countermodels</summary>
 
 Explain the complete red–blue model without symbols.
 
@@ -221,6 +170,79 @@ Later, reconstruct arbitrary-real proof and disproof, not large-number tests.
 
 For every x in D, there exists y in E such that R of x and y holds.
 
+
+
+<Exercise question="Let $D=\{0,1\}$, $E=\{0,1\}$ and $R(x,y)$ mean $x+y=1$. Decide $\forall x\in D\;\exists y\in E\;R(x,y)$ and $\exists y\in E\;\forall x\in D\;R(x,y)$. Give every required witness and test every shared candidate.">
+
+The first claim is true: $x=0$ uses $y=1$, and $x=1$ uses $y=0$. These exhaust D. The shared claim is false: fixed $y=0$ fails at $x=0$, while fixed $y=1$ fails at $x=1$. These exhaust E. One witness per input therefore does not supply one witness for all inputs.
+
+</Exercise>
+
+Check your argument: specify both complete domains, verify a witness for each input, and exclude every possible shared witness. A few selected failures in an infinite domain would not give the same exhaustive argument.
+
+<span id="from-reading-mathematical-structure"></span>
+
+## Reading mathematical structure
+
+“Find a real below two” instructs; “every real is below two” asserts falsely. Identify a sentence’s job before its symbols.
+
+
+<span id="from-reading-mathematical-structure-a-reading-procedure"></span>
+
+### A reading procedure
+
+Identify definition, assertion, assumption, question or instruction. Check domains, definedness (no real division by zero), free/bound occurrences and contextual values. Preserve order and scope: $\forall$ means every, $\exists$ at least one, not unique. Parse outermost first with complete inputs; distinguish whole hypothesis and conclusion without inventing hypotheses for equalities. Parsing, evaluation and proof differ.
+
+In $x+y=3$, addition combines numbers, not propositions. A quantified statement can be one propositional input letter without being first-order atomic.
+
+
+<span id="from-reading-mathematical-structure-a-universal-claim-with-a-conditional-inside"></span>
+
+### A universal claim with a conditional inside
+
+Translate “Every real strictly between zero and one is below two”:
+
+$$\forall x\in\mathbb R\;(((0<x)\land(x<1))\Rightarrow(x<2)).$$
+
+Both strict bounds form the hypothesis.
+
+The quantifier binds all $x$ in the whole conditional, making it closed. Inside, $\Rightarrow$ (or $\to$) joins the entire conjunction to $x<2$; $\land$ means “and”, not another outer connective.
+
+Keep both $0<x$ and $x<1$ when translating, even if proof needs only the latter. No interval membership is asserted for all reals.
+
+Both parts hold at $x=1/2$, fail at $x=3$. A counterexample needs **whole hypothesis true**, conclusion false; three is ineligible.
+
+For arbitrary eligible real $x$, $x<1<2$ gives $x<2$ by transitivity. This proves, unlike translation or samples alone, using accepted classical semantics and real order.
+
+
+<span id="from-reading-mathematical-structure-practice-in-both-directions"></span>
+
+### Practice in both directions
+
+<Exercise question="Parse $x=0\lor((x>0)\land(x<1))$. Give the outer connective, its two whole inputs, and the free variables. Then translate ‘x equals zero and it is not the case that y equals zero’.">
+
+Outermost $\lor$ joins $x=0$ to the whole $(x>0)\land(x<1)$; all $x$ stay free without a binder. Translation: $(x=0)\land\neg(y=0)$, negating only the second equality, with both variables free.
+
+</Exercise>
+
+Translate “Every real above one exceeds zero”; identify its hypothesis and prove it without samples. Are all reals asserted positive?
+
+<details>
+<summary>Hint</summary>
+
+Use a conditional inside the domain quantifier.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+$\forall x\in\mathbb R\;((x>1)\Rightarrow(x>0))$ binds every $x$. Hypothesis $x>1$ implies conclusion $x>0$ by $1>0$ and transitivity, for arbitrary $x$. Not every real is positive: zero fails the hypothesis, so is no counterexample.
+
+</details>
+
+Check “if” versus “and”, some/every, and strict/nonstrict bounds; state genuine ambiguities. See [domains](../universal-statements-and-domains/#from-universal-statements-and-domains).
+
 <span id="from-witness-dependence"></span>
 
 ## Witness dependence
@@ -248,14 +270,14 @@ $z$ may use $x$, not later $y$: $y=0$ forces $z=x$, $y=1$ forces $z=x+1$. Incomp
 
 An envelope choice may use an earlier key: existential choices coordinate. Fixed real $c$ is available in $y=x+c$ but syntactically free without a binder. Dependence is not binding: bound witnesses using earlier inputs remain bound.
 
-Check information, membership and full predicate separately: allowed $y=1$ fails $y>x$ at $x=1$; allowed $y=x/2$ fails integer membership there.
+Check information, membership and the whole predicate separately. The choice $y=1$ uses no later input, but fails $y>x$ at $x=1$. The rule $y=x/2$ uses only the earlier input; at integer $x=1$ its value is not an integer, so it cannot supply a required integer witness.
 
 <span id="from-witness-dependence-practice"></span>
 
 #### Practice
 
 <details>
-<summary>Optional additional practice</summary>
+<summary>Optional practice: which information may a witness use?</summary>
 
 For every real $x$, choose positive real $y$. Can one always work?
 
@@ -375,7 +397,7 @@ No people makes separate vacuous; shared requires an existing key, then vacuous 
 #### Practice
 
 <details>
-<summary>Optional additional practice</summary>
+<summary>Optional practice: shared witnesses and empty domains</summary>
 
 Everyone may use both red and blue. Evaluate both forms and uniqueness.
 
@@ -509,7 +531,7 @@ $A(s)$ means attendance: only attenders need a read book. With one nonattender a
 #### Practice
 
 <details>
-<summary>Optional additional practice</summary>
+<summary>Optional practice: translate and read back</summary>
 
 Using $P,K,H$, translate “Each person can use a key”.
 

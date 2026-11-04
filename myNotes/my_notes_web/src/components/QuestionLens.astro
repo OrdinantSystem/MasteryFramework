@@ -5,16 +5,16 @@ const {id='bloom-taxonomy'}=Astro.props;
 const l=Astro.locals.locale||'en';
 const layers=[...questionLenses].reverse();
 ---
-<section class="question-lens" aria-label={{en:'Six ways to ask about one concept',de:'Sechs Fragen zu einem Begriff',es:'Seis formas de preguntar sobre un concepto'}[l]}>
+<section class="question-lens" aria-label={{en:'Six ways to ask about one concept',de:'Sechs Fragen zu einem Begriff'}[l]}>
   <div class="lens-layout">
-    <div class="lens-controls" hidden role="group" aria-label={{en:'Bloom’s taxonomy pyramid',de:'Pyramide der Bloom-Taxonomie',es:'Pirámide de la taxonomía de Bloom'}[l]}>
+    <div class="lens-controls" hidden role="group" aria-label={{en:'Bloom’s taxonomy pyramid',de:'Pyramide der Bloom-Taxonomie'}[l]}>
       {layers.map((q,i)=><button type="button" class="lens-layer" style={`--layer:${i};--lens-color:var(--${q.role});--lens-tint:var(--${q.tint})`} data-lens={q.id} aria-controls={`${id}-${q.id}`} aria-pressed={q.id==='remember'?'true':'false'}><strong>{q.name[l]}</strong><span>{q.action[l]}</span></button>)}
     </div>
     <div class="lens-details">
-      {questionLenses.map(q=><section id={`${id}-${q.id}`} data-lens-panel={q.id} aria-label={q.name[l]} style={`--lens-color:var(--${q.role})`}><p class="lens-example-label">{{en:'Example · sequence convergence',de:'Beispiel · Folgenkonvergenz',es:'Ejemplo · convergencia de sucesiones'}[l]}</p><h3>{q.name[l]}</h3><p>{q.prompt[l]}</p><small>{{en:'Look for',de:'Darauf achten',es:'Qué observar'}[l]}: {q.evidence[l]}</small></section>)}
+      {questionLenses.map(q=><section id={`${id}-${q.id}`} data-lens-panel={q.id} aria-label={q.name[l]} style={`--lens-color:var(--${q.role})`}><p class="lens-example-label">{{en:'Example · sequence convergence',de:'Beispiel · Folgenkonvergenz'}[l]}</p><h3>{q.name[l]}</h3><p>{q.prompt[l]}</p><small>{{en:'Look for',de:'Darauf achten'}[l]}: {q.evidence[l]}</small></section>)}
     </div>
   </div>
-  <p class="lens-note">{{en:'These are task types, not a proven ranking of learning effectiveness. Real tasks often combine them.',de:'Das sind Aufgabentypen, keine bewiesene Rangfolge der Lernwirksamkeit. Reale Aufgaben verbinden oft mehrere davon.',es:'Son tipos de tareas, no una clasificación demostrada de eficacia. Las tareas reales suelen combinarlos.'}[l]}</p>
+  <p class="lens-note">{{en:'These are task types, not a proven ranking of learning effectiveness. Real tasks often combine them.',de:'Das sind Aufgabentypen, keine bewiesene Rangfolge der Lernwirksamkeit. Reale Aufgaben verbinden oft mehrere davon.'}[l]}</p>
 </section>
 <script>
 for(const root of document.querySelectorAll<HTMLElement>('.question-lens')) {

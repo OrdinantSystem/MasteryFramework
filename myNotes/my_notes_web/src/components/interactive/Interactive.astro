@@ -4,11 +4,21 @@ import MindMap from './MindMap.astro';
 import type {MindMapData} from '../../lib/learning/mind-map';
 import type {MindMapPreset} from '../../lib/learning/mind-map-presets';
 import LogicLab from './LogicLab.astro';
+import AnalysisLab from './AnalysisLab.astro';
 import VectorLab from './VectorLab.astro';
 import ParameterExplorer from './ParameterExplorer.astro';
 import MatrixProduct from './MatrixProduct.astro';
 import type {VectorPreset,VectorScenario} from '../../lib/interactive/vector-scenarios';
 type Props =
+ | {kind:'candidates';preset:'equation';presentation?:'full'|'input';id:string}
+ | {kind:'candidates';preset:'positive'|'witnesses';presentation?:'full';id:string}
+ | {kind:'conditions';preset:'connectives'|'construction'|'demorgan';id:string}
+ | {kind:'number-line';preset:'bounds'|'complement'|'counterexample'|'distance';id:string}
+ | {kind:'quantifiers';preset:'keys';presentation?:'full'|'witnesses';id:string}
+ | {kind:'quantifiers';preset:'nested';presentation?:'full';id:string}
+ | {kind:'sequence';preset:'reciprocal';presentation?:'full'|'tail';id:string}
+ | {kind:'sequence';preset:'device';presentation?:'full'|'terms';id:string}
+ | {kind:'sequence';preset:'alternating'|'zero';presentation?:'full';id:string}
  | {kind:'mind-map';preset?:MindMapPreset;data?:MindMapData;id:string}
  | {kind:'logic';preset?:'implication'|'nand';id:string}
  | {kind:'vectors';preset?:VectorPreset;scenario?:VectorScenario;id:string}
@@ -16,4 +26,4 @@ type Props =
  | {kind:'matrix-product';left?:number[][];right?:number[][];title?:string;description?:string;caption?:string;id?:string};
 const props=Astro.props;
 ---
-{props.kind==='mind-map'?<MindMap {...props}/>:props.kind==='logic'?<LogicLab {...props}/>:props.kind==='vectors'?<VectorLab preset={props.preset} scenario={props.scenario} id={props.id}/>:props.kind==='matrix-product'?<MatrixProduct {...props}/>:<ParameterExplorer kind={props.kind} id={props.id}/>}
+{props.kind==='candidates'||props.kind==='conditions'||props.kind==='number-line'||props.kind==='quantifiers'||props.kind==='sequence'?<AnalysisLab {...props}/>:props.kind==='mind-map'?<MindMap {...props}/>:props.kind==='logic'?<LogicLab {...props}/>:props.kind==='vectors'?<VectorLab preset={props.preset} scenario={props.scenario} id={props.id}/>:props.kind==='matrix-product'?<MatrixProduct {...props}/>:<ParameterExplorer kind={props.kind} id={props.id}/>}

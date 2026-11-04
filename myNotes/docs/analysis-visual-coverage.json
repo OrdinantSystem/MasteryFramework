@@ -1,0 +1,723 @@
+{
+  "version": 1,
+  "purpose": "Owner-requested additive visual teaching pass. The independently reviewed summary remains byte-for-byte recoverable after removing these exact additions. New explanations and components are self-reviewed; no claim of new independent mathematical or translation certification.",
+  "files": [
+    {
+      "path": "src/content/lessons/en/analysis/zahlenmengen.mdx",
+      "reviewed_summary_sha256": "16c06dbf2210a1329eb0b9e7b8407ca6b4f41e73ac59080fafddfa62b8d34a6e",
+      "visual_source_sha256": "e2cc35e1c87d40e9ea100d9ce481bbead08d3fa930e86bd6a45ec95cadf85d1f",
+      "additions": [
+        {
+          "id": "zahlenmengen-0",
+          "block": "{/* analysis-visual:start zahlenmengen-0 */}\n\nRead the two comparisons as one region. Test zero and two: the different endpoints explain why the inequality signs cannot be interchanged.\n\n<Interactive kind=\"number-line\" preset=\"bounds\" id=\"analysis-order-region\" />\n\n{/* analysis-visual:end zahlenmengen-0 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/aussagen-und-aussageformen.mdx",
+      "reviewed_summary_sha256": "8adb24cfc8e84d0353f527592fa8884f07e569d017033a24975cb89f67a1f85d",
+      "visual_source_sha256": "6a0cc6600436c112914f2ab32681f183d354c2604325680b6dcd912928adc2d3",
+      "additions": [
+        {
+          "id": "aussagen-und-aussageformen-1",
+          "block": "{/* analysis-visual:start aussagen-und-aussageformen-1 */}\n\nKeep the rule fixed and change the input. The diamond selects one value; the circles show the results across the entire displayed domain. An input outside that domain cannot be its witness.\n\n<Interactive kind=\"candidates\" preset=\"equation\" id=\"analysis-predicate-inputs\" />\n\n{/* analysis-visual:end aussagen-und-aussageformen-1 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/simultaneous-conditions.mdx",
+      "reviewed_summary_sha256": "7d5ec4f501b6a683890a8e54cc65f989cdbf21d19d7012626101a4b3d66b7aa7",
+      "visual_source_sha256": "7d5ec4f501b6a683890a8e54cc65f989cdbf21d19d7012626101a4b3d66b7aa7",
+      "additions": [],
+      "removed_additions": [
+        {
+          "id": "simultaneous-conditions-2",
+          "block": "{/* analysis-visual:start simultaneous-conditions-2 */}\n\nThink of the four assignments as four regions: both conditions, only the first, only the second, neither. Compare which regions AND and inclusive OR accept.\n\n<Interactive kind=\"conditions\" preset=\"connectives\" id=\"analysis-and-or-cases\" />\n\n{/* analysis-visual:end simultaneous-conditions-2 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/logische-verknuepfungen.mdx",
+      "reviewed_summary_sha256": "d42742a39f34ff5dfa49076788dda8179f2220735fccdf7e1a1f5382c1ca7e23",
+      "visual_source_sha256": "d42742a39f34ff5dfa49076788dda8179f2220735fccdf7e1a1f5382c1ca7e23",
+      "additions": [],
+      "removed_additions": [
+        {
+          "id": "logische-verknuepfungen-3",
+          "block": "{/* analysis-visual:start logische-verknuepfungen-3 */}\n\nFollow one assignment through the two intermediate results before the final AND. Then compare that path with the other three tiles; no possible Boolean assignment is missing.\n\n<Interactive kind=\"conditions\" preset=\"construction\" id=\"analysis-table-construction\" />\n\n{/* analysis-visual:end logische-verknuepfungen-3 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/logical-negation.mdx",
+      "reviewed_summary_sha256": "6c6e2d08f025547e9be20cf356c161dcbe3b5f7641c2b4197ebc6b322317be45",
+      "visual_source_sha256": "b33bccbde6f3b5c9cef4215e80c99e94d23d49dfd507fb9ab02a44bfd3862b2f",
+      "additions": [
+        {
+          "id": "logical-negation-4",
+          "block": "{/* analysis-visual:start logical-negation-4 */}\n\nPlace the input exactly at the boundary before testing either side. The original condition and its negation must assign that boundary to exactly one region.\n\n<Interactive kind=\"number-line\" preset=\"complement\" id=\"analysis-negation-boundary\" />\n\n{/* analysis-visual:end logical-negation-4 */}\n\n"
+        }
+      ],
+      "removed_additions": [
+        {
+          "id": "logical-negation-5",
+          "block": "{/* analysis-visual:start logical-negation-5 */}\n\nNegating a conjunction selects every tile except the both-true case. The second path reaches those same tiles by asking whether at least one input is false.\n\n<Interactive kind=\"conditions\" preset=\"demorgan\" id=\"analysis-demorgan-cases\" />\n\n{/* analysis-visual:end logical-negation-5 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/implikation-und-kontraposition.mdx",
+      "reviewed_summary_sha256": "e637eb66674a2ff92d7feaeafed0f4024e9fe46926090698b3e5277daa245b2e",
+      "visual_source_sha256": "8d1b412545dcc10b988d32288ac2307ede432f86f2c73c00ea78acf03861252b",
+      "additions": [
+        {
+          "id": "implikation-und-kontraposition-6",
+          "block": "{/* analysis-visual:start implikation-und-kontraposition-6 */}\n\nIn the explorer above, first compare the implication with its contrapositive, then with its converse. A matching selected row is only one case; equivalence requires the whole columns to match.\n\n{/* analysis-visual:end implikation-und-kontraposition-6 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/biconditionals-and-equivalent-conditions.mdx",
+      "reviewed_summary_sha256": "0a99b345492cc55b4f5a18e93970eb8d6408f5a361e64528b1c615068aeabf07",
+      "visual_source_sha256": "6061d0e641e2de2a99b4091f0b7d9b572c3082608643fd882a8b7224e6d9aad7",
+      "additions": [
+        {
+          "id": "biconditionals-and-equivalent-conditions-7",
+          "block": "{/* analysis-visual:start biconditionals-and-equivalent-conditions-7 */}\n\nSquaring maps both signs to the same square. Looking at the solution sets makes the missing reverse implication visible.\n\n<AnalysisProof preset=\"equivalence\" />\n\n{/* analysis-visual:end biconditionals-and-equivalent-conditions-7 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/universal-statements-and-domains.mdx",
+      "reviewed_summary_sha256": "e75fbf5b1e74850b4c85e0903f3eca9326d3955ea922bbd67c17902905017fe7",
+      "visual_source_sha256": "b7221b38ef3668892e4702218f23aaccfcc8fc53208c8615fda8b6e53ee74d76",
+      "additions": [
+        {
+          "id": "universal-statements-and-domains-8",
+          "block": "{/* analysis-visual:start universal-statements-and-domains-8 */}\n\nChange the domain without changing positivity. Removing the failing members can change a universal verdict; choosing the empty domain does not manufacture an existential witness.\n\n<Interactive kind=\"candidates\" preset=\"positive\" id=\"analysis-domain-quantifiers\" />\n\n{/* analysis-visual:end universal-statements-and-domains-8 */}\n\n"
+        },
+        {
+          "id": "universal-statements-and-domains-9",
+          "block": "{/* analysis-visual:start universal-statements-and-domains-9 */}\n\nFollow which comparison changes with the quantified input and which value must remain fixed. The last panel deliberately shows an unsafe renaming.\n\n<AnalysisProof preset=\"scope\" />\n\n{/* analysis-visual:end universal-statements-and-domains-9 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/existence-and-uniqueness.mdx",
+      "reviewed_summary_sha256": "b220b6f4c8145ff1d9cad63405a72767e7ef50adc8c25f09d216a28447222211",
+      "visual_source_sha256": "9ef21300483ce2f8372a42f68a79bb3ae2eec7f17f6cc0ff4bdfe487e5b2e0cf",
+      "additions": [
+        {
+          "id": "existence-and-uniqueness-10",
+          "block": "{/* analysis-visual:start existence-and-uniqueness-10 */}\n\nOn this finite integer domain, only the cards five, six and seven pass both bounds. One proves existence; three distinct successes refute uniqueness. The complete displayed domain lets us count all witnesses here.\n\n<Interactive kind=\"candidates\" preset=\"witnesses\" id=\"analysis-count-witnesses\" />\n\n{/* analysis-visual:end existence-and-uniqueness-10 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/quantifier-order.mdx",
+      "reviewed_summary_sha256": "51eb6f4ab2794b58fd4bddd8310c9b1666adff24a0338f03264bceb3c2a8d152",
+      "visual_source_sha256": "8dab9724946b065ebc20aa36296cbd50e6679ef107bfcd196f44981a07d2c34c",
+      "additions": [
+        {
+          "id": "quantifier-order-11",
+          "block": "{/* analysis-visual:start quantifier-order-11 */}\n\nRead a row to find a key for one person; read a whole column to test one key for everyone. Change permissions to make both claims true, or remove every key to make both false when people remain.\n\n<Interactive kind=\"quantifiers\" preset=\"keys\" id=\"analysis-shared-witness\" />\n\n{/* analysis-visual:end quantifier-order-11 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/negating-universal-statements.mdx",
+      "reviewed_summary_sha256": "2d9c067481a14c38ad76117451a7f5d25289ec6db8d392ab87ce22994f01d4a9",
+      "visual_source_sha256": "2d88ed463f9ac3738c4840bafb98573176da6bfbf75af42e485afeccaa023338",
+      "additions": [
+        {
+          "id": "negating-universal-statements-12",
+          "block": "{/* analysis-visual:start negating-universal-statements-12 */}\n\nIn the mixed domain, successes and failures coexist. One blue zero-labelled truth marker is enough to refute “every”; it does not turn all the successful inputs into failures. Now compare the positive-only and empty domains.\n\n<Interactive kind=\"candidates\" preset=\"positive\" id=\"analysis-quantified-failure\" />\n\n{/* analysis-visual:end negating-universal-statements-12 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/negating-nested-statements.mdx",
+      "reviewed_summary_sha256": "bc076ef24e8c294a18e84f14fdeb32f31795be4d1ad479b2b340a53792a57878",
+      "visual_source_sha256": "9e6e6ca779305c3b3e0c58001aa69f3ee483961ec5ac3ccd6151ad7a65361941",
+      "additions": [
+        {
+          "id": "negating-nested-statements-13",
+          "block": "{/* analysis-visual:start negating-nested-statements-13 */}\n\nThis finite pattern mirrors $y>x$ on $\\{1,2\\}$: the first row has a success, the second none. The whole failing row witnesses the negation of “every row has a witness”. Toggle a cell to see exactly what repairs that failure.\n\n<Interactive kind=\"quantifiers\" preset=\"nested\" id=\"analysis-nested-failure\" />\n\n{/* analysis-visual:end negating-nested-statements-13 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/beweissprache-und-methoden.mdx",
+      "reviewed_summary_sha256": "acc291554c8958addec0a25a4d360c1d5d7e88a65ab88d0169bd342d771be895",
+      "visual_source_sha256": "4251390f719eea99e93b073b75dbdc1c5b0f62e6be1dff543cf024299fbf21c6",
+      "additions": [
+        {
+          "id": "beweissprache-und-methoden-14",
+          "block": "{/* analysis-visual:start beweissprache-und-methoden-14 */}\n\nThe marked interval contains exactly the counterexamples to this rule. Test both endpoints: two fails the hypothesis, while five satisfies the hypothesis and fails the strict conclusion.\n\n<Interactive kind=\"number-line\" preset=\"counterexample\" id=\"analysis-counterexample-region\" />\n\n{/* analysis-visual:end beweissprache-und-methoden-14 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/widerspruch-und-irrationalitaet.mdx",
+      "reviewed_summary_sha256": "262f09eadf2586d97fe564ae65bc93e43ea0686030f06051421fbeaa4f9033f9",
+      "visual_source_sha256": "0e9e5127cd2487ce28795dcdda0c4d3f18680ca2cdcaefc516e763dddd3db7a2",
+      "additions": [
+        {
+          "id": "widerspruch-und-irrationalitaet-15",
+          "block": "{/* analysis-visual:start widerspruch-und-irrationalitaet-15 */}\n\nKeep the reduced-fraction requirement in view throughout the parity argument. The last panel shows the exact incompatibility that the detailed proof must reach.\n\n<AnalysisProof preset=\"contradiction\" />\n\n{/* analysis-visual:end widerspruch-und-irrationalitaet-15 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/real-sequences.mdx",
+      "reviewed_summary_sha256": "3312a48f0c3c3dfcb9094dc2bccf77a8e525bff774ba3553129c1f445623938e",
+      "visual_source_sha256": "4bb15ed6f50b10c94fc514244e1252c965055191b26dd24c96486f47dc65bf46",
+      "additions": [
+        {
+          "id": "real-sequences-16",
+          "block": "{/* analysis-visual:start real-sequences-16 */}\n\nThe horizontal coordinate is the position $n$; the vertical coordinate is the value $a_n$. Repeated values remain separate dots at separate indices. Move $N$ past the two early reports to isolate the constant tail.\n\n<Interactive kind=\"sequence\" preset=\"device\" id=\"analysis-sequence-positions\" />\n\n{/* analysis-visual:end real-sequences-16 */}\n\n"
+        },
+        {
+          "id": "real-sequences-17",
+          "block": "{/* analysis-visual:start real-sequences-17 */}\n\nMove the point to either side of three, then onto each boundary. Direction changes the sign of the displacement; membership depends on its absolute distance.\n\n<Interactive kind=\"number-line\" preset=\"distance\" id=\"analysis-distance-band\" />\n\n{/* analysis-visual:end real-sequences-17 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/reading-sequence-convergence.mdx",
+      "reviewed_summary_sha256": "777260b1b4636d6734e432bc64dc2886e285eb9534d685b4e10f82376f01f07d",
+      "visual_source_sha256": "bbc1ca8a9070cd45fd4e54e1af28f95b2c615e8f98320d7dd3bd238d88d08c75",
+      "additions": [
+        {
+          "id": "reading-sequence-convergence-18",
+          "block": "{/* analysis-visual:start reading-sequence-convergence-18 */}\n\nStart at $\\varepsilon=0.5$ and compare $N=2$ with $N=3$. The boundary term fails at equality; moving the threshold past it puts the entire reciprocal tail inside. Then tighten the band and find a new threshold.\n\n<Interactive kind=\"sequence\" preset=\"reciprocal\" id=\"analysis-convergence-tail\" />\n\n{/* analysis-visual:end reading-sequence-convergence-18 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/negating-sequence-convergence.mdx",
+      "reviewed_summary_sha256": "70ab4360cd5f5a29450764b723abde11c49bda28ac232b4f5ec4af468809e920",
+      "visual_source_sha256": "c7e540bcbce91ba70d2051cba0e55441e401d5cf414b3c3bf790c97cc1981eda",
+      "additions": [
+        {
+          "id": "negating-sequence-convergence-19",
+          "block": "{/* analysis-visual:start negating-sequence-convergence-19 */}\n\nKeep $\\varepsilon=0.5$ fixed and move $N$: each tail still contains $-1$ and 1, so at least one value stays outside the band for any real target. Compare constant zero at targets one and zero to separate one failed target from having no real limit.\n\n<Interactive kind=\"sequence\" preset=\"alternating\" id=\"analysis-infinite-failures\" />\n\n{/* analysis-visual:end negating-sequence-convergence-19 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/boolesche-grundgesetze.mdx",
+      "reviewed_summary_sha256": "3efda9928d37019831b963c27091e08eff50188db56d871d7d753250cc4cdd87",
+      "visual_source_sha256": "330f45f0e7a31f917c4ca2933190f28cc2f9f893aca21b13c687f2af402a344e",
+      "additions": [
+        {
+          "id": "boolesche-grundgesetze-20",
+          "block": "{/* analysis-visual:start boolesche-grundgesetze-20 */}\n\nIn each tree above, start at the top operator and trace its two inputs. Associativity changes the grouping; distributivity duplicates the same A input across two branches. The diagrams explain the structures that the numbered laws allow you to transform.\n\n{/* analysis-visual:end boolesche-grundgesetze-20 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/eindeutiges-komplement.mdx",
+      "reviewed_summary_sha256": "0d724f60eb2997818d03b2a3799286d6c232041965d212b3b2fd5a58ef738fa3",
+      "visual_source_sha256": "cdf982d1c5f5c9193db0338ec2b63256ed35bebb2d6c4e118735273906d99cc4",
+      "additions": [
+        {
+          "id": "eindeutiges-komplement-21",
+          "block": "{/* analysis-visual:start eindeutiges-komplement-21 */}\n\nA candidate complement must pass two independent checks. The diagram keeps the proof order visible so that the identity being proved is never used as its own justification.\n\n<AnalysisProof preset=\"complement\" />\n\n{/* analysis-visual:end eindeutiges-komplement-21 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/en/analysis/nand-schaltungen.mdx",
+      "reviewed_summary_sha256": "6a7e0c6c2d38fd661f78c93784a4d91740f33ef8a6e1ddff4c2e0417e2778280",
+      "visual_source_sha256": "93e3cdae025fc68ea27fbc25f551ac4252f6065f65acd389657304249500a394",
+      "additions": [
+        {
+          "id": "nand-schaltungen-22",
+          "block": "{/* analysis-visual:start nand-schaltungen-22 */}\n\nPredict the output before changing an input in the circuit above. For AND, follow the first NAND output into both inputs of the second gate: that second negation restores conjunction. For OR, negate each input first.\n\n{/* analysis-visual:end nand-schaltungen-22 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/zahlenmengen.mdx",
+      "reviewed_summary_sha256": "985accfef7d6d36da49ecdfb4f310ce9d3ca10062a12ac9c582f4ef2d5450191",
+      "visual_source_sha256": "8439be392dfd087d290dc5d7c393187f884b66ec0c143bfed3d0c3daa5bda384",
+      "additions": [
+        {
+          "id": "zahlenmengen-0",
+          "block": "{/* analysis-visual:start zahlenmengen-0 */}\n\nLies die beiden Vergleiche als einen Bereich. Prüfe null und zwei: Die unterschiedlichen Randpunkte erklären, warum die Vergleichszeichen nicht austauschbar sind.\n\n<Interactive kind=\"number-line\" preset=\"bounds\" id=\"analysis-order-region\" />\n\n{/* analysis-visual:end zahlenmengen-0 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/aussagen-und-aussageformen.mdx",
+      "reviewed_summary_sha256": "d67c2da06c996591da1d92222896a2b54fa2508c73f678634573c828adea656a",
+      "visual_source_sha256": "67cb7ea9928db9d1bf3844201851ad29b9ccf3da29b966a8115d0fc69b911073",
+      "additions": [
+        {
+          "id": "aussagen-und-aussageformen-1",
+          "block": "{/* analysis-visual:start aussagen-und-aussageformen-1 */}\n\nHalte die Regel fest und ändere die Eingabe. Die Raute wählt einen Wert; die Kreise zeigen die Ergebnisse auf der gesamten dargestellten Menge. Eine Eingabe außerhalb dieser Menge ist dort kein Zeuge.\n\n<Interactive kind=\"candidates\" preset=\"equation\" id=\"analysis-predicate-inputs\" />\n\n{/* analysis-visual:end aussagen-und-aussageformen-1 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/simultaneous-conditions.mdx",
+      "reviewed_summary_sha256": "77f281c1010bb666b8e276972a7662d9e3b1aa0aad3ce1f16bf3817acdf8b5c8",
+      "visual_source_sha256": "77f281c1010bb666b8e276972a7662d9e3b1aa0aad3ce1f16bf3817acdf8b5c8",
+      "additions": [],
+      "removed_additions": [
+        {
+          "id": "simultaneous-conditions-2",
+          "block": "{/* analysis-visual:start simultaneous-conditions-2 */}\n\nDenke an vier Bereiche: beide Bedingungen, nur die erste, nur die zweite, keine. Vergleiche, welche Bereiche UND und inklusives ODER zulassen.\n\n<Interactive kind=\"conditions\" preset=\"connectives\" id=\"analysis-and-or-cases\" />\n\n{/* analysis-visual:end simultaneous-conditions-2 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/logische-verknuepfungen.mdx",
+      "reviewed_summary_sha256": "8dbf3d482fae5fc747e19e41712e1052530c08f416cb7a3e6bb4867130426f01",
+      "visual_source_sha256": "8dbf3d482fae5fc747e19e41712e1052530c08f416cb7a3e6bb4867130426f01",
+      "additions": [],
+      "removed_additions": [
+        {
+          "id": "logische-verknuepfungen-3",
+          "block": "{/* analysis-visual:start logische-verknuepfungen-3 */}\n\nVerfolge eine Belegung durch die beiden Zwischenergebnisse bis zum abschließenden UND. Vergleiche dann mit den anderen drei Feldern; keine boolesche Belegung fehlt.\n\n<Interactive kind=\"conditions\" preset=\"construction\" id=\"analysis-table-construction\" />\n\n{/* analysis-visual:end logische-verknuepfungen-3 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/logical-negation.mdx",
+      "reviewed_summary_sha256": "ad6922943787a28fa27aaa779eb733f6bf9eca02375f5a657d298794519f1b90",
+      "visual_source_sha256": "b0401c154451521aaec24f1c9a9e05a341ef96b32bc6e19b40dc9fbf52000c09",
+      "additions": [
+        {
+          "id": "logical-negation-4",
+          "block": "{/* analysis-visual:start logical-negation-4 */}\n\nSetze die Eingabe zuerst genau auf den Rand, dann auf beide Seiten. Ausgangsbedingung und Negation müssen den Rand genau einem Bereich zuordnen.\n\n<Interactive kind=\"number-line\" preset=\"complement\" id=\"analysis-negation-boundary\" />\n\n{/* analysis-visual:end logical-negation-4 */}\n\n"
+        }
+      ],
+      "removed_additions": [
+        {
+          "id": "logical-negation-5",
+          "block": "{/* analysis-visual:start logical-negation-5 */}\n\nDie Negation einer Konjunktion wählt jedes Feld außer dem mit zwei wahren Eingaben. Der zweite Weg wählt dieselben Felder über mindestens eine falsche Eingabe.\n\n<Interactive kind=\"conditions\" preset=\"demorgan\" id=\"analysis-demorgan-cases\" />\n\n{/* analysis-visual:end logical-negation-5 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/implikation-und-kontraposition.mdx",
+      "reviewed_summary_sha256": "8ec07760aa93bded97453fd9e41aeb1c86fc63d881185bc5301a3b3fa268686b",
+      "visual_source_sha256": "baae95985733063e6e09a22c71f2e7b6b05b07eed084dfacf294598fb44a3716",
+      "additions": [
+        {
+          "id": "implikation-und-kontraposition-6",
+          "block": "{/* analysis-visual:start implikation-und-kontraposition-6 */}\n\nVergleiche im Explorer oben zuerst Implikation und Kontraposition, dann die Umkehrung. Eine übereinstimmende ausgewählte Zeile ist nur ein Fall; Äquivalenz verlangt gleiche ganze Spalten.\n\n{/* analysis-visual:end implikation-und-kontraposition-6 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/biconditionals-and-equivalent-conditions.mdx",
+      "reviewed_summary_sha256": "3bee8682c0e67fe1fc46655ac412443310c283c27bbdc55fad2f656e406a5a09",
+      "visual_source_sha256": "79e5097026f15c1f0d021e70494981f5f78822e02cca8bd09cb6c5eccc35694b",
+      "additions": [
+        {
+          "id": "biconditionals-and-equivalent-conditions-7",
+          "block": "{/* analysis-visual:start biconditionals-and-equivalent-conditions-7 */}\n\nQuadrieren bildet beide Vorzeichen auf dasselbe Quadrat ab. An den Lösungsmengen wird die fehlende Rückrichtung sichtbar.\n\n<AnalysisProof preset=\"equivalence\" />\n\n{/* analysis-visual:end biconditionals-and-equivalent-conditions-7 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/universal-statements-and-domains.mdx",
+      "reviewed_summary_sha256": "57caad966a48002b1dcbb4878a967f76e2db9748c72ba783ac07cb278b8dfd19",
+      "visual_source_sha256": "598a789b6aa2b63aa18f4fe0625d55373e48ea0a1b1480cc75deafcb0bbac5a7",
+      "additions": [
+        {
+          "id": "universal-statements-and-domains-8",
+          "block": "{/* analysis-visual:start universal-statements-and-domains-8 */}\n\nÄndere die Menge, nicht die Positivitätsbedingung. Entfernte Gegenbeispiele können das Urteil über alle Elemente ändern; die leere Menge erzeugt aber keinen Existenzzeugen.\n\n<Interactive kind=\"candidates\" preset=\"positive\" id=\"analysis-domain-quantifiers\" />\n\n{/* analysis-visual:end universal-statements-and-domains-8 */}\n\n"
+        },
+        {
+          "id": "universal-statements-and-domains-9",
+          "block": "{/* analysis-visual:start universal-statements-and-domains-9 */}\n\nVerfolge, welcher Vergleich von der quantifizierten Eingabe abhängt und welcher Wert fest bleibt. Das letzte Feld zeigt absichtlich eine unzulässige Umbenennung.\n\n<AnalysisProof preset=\"scope\" />\n\n{/* analysis-visual:end universal-statements-and-domains-9 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/existence-and-uniqueness.mdx",
+      "reviewed_summary_sha256": "544414bf3477751f1567f83b35149657ae82d0def844a96c1dc86d8a58e49e35",
+      "visual_source_sha256": "0a6d987dd8b83e9b878f71d16ee99ce9f56842f2094271310946671f03280a60",
+      "additions": [
+        {
+          "id": "existence-and-uniqueness-10",
+          "block": "{/* analysis-visual:start existence-and-uniqueness-10 */}\n\nIn dieser endlichen ganzzahligen Menge erfüllen nur fünf, sechs und sieben beide Grenzen. Einer beweist Existenz; drei verschiedene Treffer widerlegen Eindeutigkeit. Die vollständig gezeigte Menge erlaubt hier das Zählen aller Zeugen.\n\n<Interactive kind=\"candidates\" preset=\"witnesses\" id=\"analysis-count-witnesses\" />\n\n{/* analysis-visual:end existence-and-uniqueness-10 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/quantifier-order.mdx",
+      "reviewed_summary_sha256": "b5e80085990c66bb512987011279259bd61b8f331fd198a83027ab4ee3c5e7c2",
+      "visual_source_sha256": "a9ae56161feb05388cd49edb0e555fc67af539ecd791b7f41ce4f0c2a91cb66d",
+      "additions": [
+        {
+          "id": "quantifier-order-11",
+          "block": "{/* analysis-visual:start quantifier-order-11 */}\n\nLies eine Zeile für einen Schlüssel je Person; lies eine ganze Spalte für einen Schlüssel für alle. Ändere Berechtigungen, bis beide Aussagen wahr sind, oder entferne alle Schlüssel: Bei verbleibenden Personen sind dann beide falsch.\n\n<Interactive kind=\"quantifiers\" preset=\"keys\" id=\"analysis-shared-witness\" />\n\n{/* analysis-visual:end quantifier-order-11 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/negating-universal-statements.mdx",
+      "reviewed_summary_sha256": "699502c642880f4b9af8ea24ac5946de110250d3d65c3c72e97c28462895df65",
+      "visual_source_sha256": "2112c3de562e48422e615ddad418b910677bff6465353f7c3ad711cad2dbc64c",
+      "additions": [
+        {
+          "id": "negating-universal-statements-12",
+          "block": "{/* analysis-visual:start negating-universal-statements-12 */}\n\nIn der gemischten Menge gibt es Erfolge und Fehlschläge. Ein blauer Wahrheitsmarker mit 0 widerlegt „alle“; erfolgreiche Eingaben werden dadurch nicht zu Fehlschlägen. Vergleiche mit der positiven und der leeren Menge.\n\n<Interactive kind=\"candidates\" preset=\"positive\" id=\"analysis-quantified-failure\" />\n\n{/* analysis-visual:end negating-universal-statements-12 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/negating-nested-statements.mdx",
+      "reviewed_summary_sha256": "b16b96c65e63895751bbf725eeb14d1bdec0003eaa99d21f3d60b98139514095",
+      "visual_source_sha256": "242b96cd6ee38252eeb6fca535ba15e643b9bd912180903cd3ad6510bad06fc8",
+      "additions": [
+        {
+          "id": "negating-nested-statements-13",
+          "block": "{/* analysis-visual:start negating-nested-statements-13 */}\n\nDieses endliche Muster entspricht $y>x$ auf $\\{1,2\\}$: Die erste Zeile hat einen Treffer, die zweite keinen. Die ganze fehlschlagende Zeile bezeugt die Negation von „jede Zeile hat einen Zeugen“. Ändere ein Feld, um den Fehler gezielt zu beheben.\n\n<Interactive kind=\"quantifiers\" preset=\"nested\" id=\"analysis-nested-failure\" />\n\n{/* analysis-visual:end negating-nested-statements-13 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/beweissprache-und-methoden.mdx",
+      "reviewed_summary_sha256": "4a39fde11f31cb369523939a4e67ba1637c9a0fe096dee9769f5979044655ce5",
+      "visual_source_sha256": "51ac6267509fcb189ccef761790a5b200c8a0b996aa08c2d104f461f797124db",
+      "additions": [
+        {
+          "id": "beweissprache-und-methoden-14",
+          "block": "{/* analysis-visual:start beweissprache-und-methoden-14 */}\n\nDas markierte Intervall enthält genau die Gegenbeispiele dieser Regel. Prüfe beide Ränder: Zwei erfüllt die Voraussetzung nicht; fünf erfüllt sie, aber nicht die strikte Folgerung.\n\n<Interactive kind=\"number-line\" preset=\"counterexample\" id=\"analysis-counterexample-region\" />\n\n{/* analysis-visual:end beweissprache-und-methoden-14 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/widerspruch-und-irrationalitaet.mdx",
+      "reviewed_summary_sha256": "6391d840cb287db27639fa8402bfbdafb4e748fd6216b34d64d56d7bc9c79ae2",
+      "visual_source_sha256": "aaf18afdca931f5c6e9bfb37b1fde361bfe28407908855328fc7e1f08c0f2b00",
+      "additions": [
+        {
+          "id": "widerspruch-und-irrationalitaet-15",
+          "block": "{/* analysis-visual:start widerspruch-und-irrationalitaet-15 */}\n\nBehalte beim Paritätsargument die vollständige Kürzung im Blick. Das letzte Feld zeigt die genaue Unvereinbarkeit, die der ausführliche Beweis erreichen muss.\n\n<AnalysisProof preset=\"contradiction\" />\n\n{/* analysis-visual:end widerspruch-und-irrationalitaet-15 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/real-sequences.mdx",
+      "reviewed_summary_sha256": "2b41d82839bce9b501acfd0b416166702d4e646b871d9ccfddbe3fb74c0960e4",
+      "visual_source_sha256": "ee1b687108dfb3c0dae524fe51497573d7f62bbe3f149dcf8f78a31d6f4f5b53",
+      "additions": [
+        {
+          "id": "real-sequences-16",
+          "block": "{/* analysis-visual:start real-sequences-16 */}\n\nWaagerecht steht die Position $n$, senkrecht der Wert $a_n$. Wiederholte Werte bleiben getrennte Punkte an verschiedenen Indizes. Verschiebe $N$ hinter die ersten beiden Meldungen, um das konstante Reststück zu sehen.\n\n<Interactive kind=\"sequence\" preset=\"device\" id=\"analysis-sequence-positions\" />\n\n{/* analysis-visual:end real-sequences-16 */}\n\n"
+        },
+        {
+          "id": "real-sequences-17",
+          "block": "{/* analysis-visual:start real-sequences-17 */}\n\nBewege den Punkt auf beide Seiten von drei und dann auf die Ränder. Die Richtung ändert das Vorzeichen der Verschiebung; die Zugehörigkeit hängt vom absoluten Abstand ab.\n\n<Interactive kind=\"number-line\" preset=\"distance\" id=\"analysis-distance-band\" />\n\n{/* analysis-visual:end real-sequences-17 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/reading-sequence-convergence.mdx",
+      "reviewed_summary_sha256": "53e473b817cab45c5b88643386110c562181419bcfcc37b32d451a1fcaec75e7",
+      "visual_source_sha256": "240e2248b219a01a9d31df075c534a3eb70dc8fd3d60d2f3269e34ed02d4b99a",
+      "additions": [
+        {
+          "id": "reading-sequence-convergence-18",
+          "block": "{/* analysis-visual:start reading-sequence-convergence-18 */}\n\nBeginne mit $\\varepsilon=0{,}5$ und vergleiche $N=2$ mit $N=3$. Das Randglied scheitert an Gleichheit; ein späterer Start legt das gesamte Kehrwert-Reststück ins Band. Verenge dann das Band und finde einen neuen Startindex.\n\n<Interactive kind=\"sequence\" preset=\"reciprocal\" id=\"analysis-convergence-tail\" />\n\n{/* analysis-visual:end reading-sequence-convergence-18 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/negating-sequence-convergence.mdx",
+      "reviewed_summary_sha256": "b296b748ddba69fdff9d585d438f91984b8f3ff00ee80773fe66fcc7f05ef7a9",
+      "visual_source_sha256": "fa87c7416b72f864e703970355d203de81a248dcddcedefb4f41543c6eeb0726",
+      "additions": [
+        {
+          "id": "negating-sequence-convergence-19",
+          "block": "{/* analysis-visual:start negating-sequence-convergence-19 */}\n\nHalte $\\varepsilon=0{,}5$ fest und verschiebe $N$: Jedes Reststück enthält weiterhin $-1$ und 1; bei jedem reellen Zielwert bleibt mindestens ein Wert außerhalb. Vergleiche die Nullfolge bei den Zielwerten eins und null: Ein falscher Zielwert bedeutet noch nicht, dass kein reeller Grenzwert existiert.\n\n<Interactive kind=\"sequence\" preset=\"alternating\" id=\"analysis-infinite-failures\" />\n\n{/* analysis-visual:end negating-sequence-convergence-19 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/boolesche-grundgesetze.mdx",
+      "reviewed_summary_sha256": "2501e1d22b3aa181e7237174a72a248f65cee93465d8cacbdf1596c675f043bb",
+      "visual_source_sha256": "1a956ab4f71058323d08e7f4860eec7789ba7f675c50c41b4345587a1bf32b41",
+      "additions": [
+        {
+          "id": "boolesche-grundgesetze-20",
+          "block": "{/* analysis-visual:start boolesche-grundgesetze-20 */}\n\nBeginne in jedem Baum oben beim Operator und verfolge seine beiden Eingaben. Assoziativität ändert die Gruppierung; Distributivität wiederholt dieselbe Eingabe A in zwei Zweigen. Die Diagramme erklären die Strukturen, deren Umformung die nummerierten Gesetze erlauben.\n\n{/* analysis-visual:end boolesche-grundgesetze-20 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/eindeutiges-komplement.mdx",
+      "reviewed_summary_sha256": "60c9d075d7366cd4e4cd46d36822de6914fc1c8a87e80056aaf0fa8e9b526dcc",
+      "visual_source_sha256": "22cc9b83e88ea1706cb803ea8b339f16c0128f4fa1cbb69e1a922a4706f4add1",
+      "additions": [
+        {
+          "id": "eindeutiges-komplement-21",
+          "block": "{/* analysis-visual:start eindeutiges-komplement-21 */}\n\nEin Komplementkandidat muss zwei getrennte Prüfungen bestehen. Das Diagramm zeigt die Beweisreihenfolge, damit die zu beweisende Identität nicht zu ihrer eigenen Begründung wird.\n\n<AnalysisProof preset=\"complement\" />\n\n{/* analysis-visual:end eindeutiges-komplement-21 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/de/analysis/nand-schaltungen.mdx",
+      "reviewed_summary_sha256": "0a8a3585fa474c6e6ffab2a04daebc13dc3a09ee782d92ca7311cb153f508116",
+      "visual_source_sha256": "96ac4a494593a8ac3ce03536200daa2636d6e11af0c2953ddd8d0351da68599b",
+      "additions": [
+        {
+          "id": "nand-schaltungen-22",
+          "block": "{/* analysis-visual:start nand-schaltungen-22 */}\n\nSage die Ausgabe voraus, bevor du oben eine Eingabe änderst. Verfolge bei UND die Ausgabe des ersten NAND zu beiden Eingängen des zweiten Gatters: Die zweite Negation stellt die Konjunktion wieder her. Bei ODER werden zuerst beide Eingaben negiert.\n\n{/* analysis-visual:end nand-schaltungen-22 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/zahlenmengen.mdx",
+      "reviewed_summary_sha256": "afb70e7424de16c7e44627694f8aea5fe2c132d3bb3013368db5874143e3c84c",
+      "visual_source_sha256": "40b9d720539020dcaf46daf80a5884b03e4095e07bd9691f6ab1fd8e7dd3244e",
+      "additions": [
+        {
+          "id": "zahlenmengen-0",
+          "block": "{/* analysis-visual:start zahlenmengen-0 */}\n\nLee las dos comparaciones como una región. Prueba cero y dos: los extremos distintos explican por qué no se pueden intercambiar los signos.\n\n<Interactive kind=\"number-line\" preset=\"bounds\" id=\"analysis-order-region\" />\n\n{/* analysis-visual:end zahlenmengen-0 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/aussagen-und-aussageformen.mdx",
+      "reviewed_summary_sha256": "331ca88f8cb7aeaa8d42e7419be576b0834719ad7b3818b3e8a4ffdd897d231e",
+      "visual_source_sha256": "ef34ab4e874a47a84cb9671b0437e840c2f2b66cab1f8ca6340eba7f5ccc08eb",
+      "additions": [
+        {
+          "id": "aussagen-und-aussageformen-1",
+          "block": "{/* analysis-visual:start aussagen-und-aussageformen-1 */}\n\nMantén fija la regla y cambia la entrada. El rombo elige un valor; los círculos muestran los resultados en todo el dominio representado. Una entrada ajena al dominio no puede ser su testigo.\n\n<Interactive kind=\"candidates\" preset=\"equation\" id=\"analysis-predicate-inputs\" />\n\n{/* analysis-visual:end aussagen-und-aussageformen-1 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/simultaneous-conditions.mdx",
+      "reviewed_summary_sha256": "63e8bfaada6150a371fd65e7ca0947004562c05a1395cde69c6124142001e363",
+      "visual_source_sha256": "63e8bfaada6150a371fd65e7ca0947004562c05a1395cde69c6124142001e363",
+      "additions": [],
+      "removed_additions": [
+        {
+          "id": "simultaneous-conditions-2",
+          "block": "{/* analysis-visual:start simultaneous-conditions-2 */}\n\nPiensa en cuatro regiones: ambas condiciones, solo la primera, solo la segunda, ninguna. Compara cuáles admiten Y y O inclusiva.\n\n<Interactive kind=\"conditions\" preset=\"connectives\" id=\"analysis-and-or-cases\" />\n\n{/* analysis-visual:end simultaneous-conditions-2 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/logische-verknuepfungen.mdx",
+      "reviewed_summary_sha256": "ced7faad723f72ffbec13c939037585e9ac6f1b434d5995a164660c65a08d4f6",
+      "visual_source_sha256": "ced7faad723f72ffbec13c939037585e9ac6f1b434d5995a164660c65a08d4f6",
+      "additions": [],
+      "removed_additions": [
+        {
+          "id": "logische-verknuepfungen-3",
+          "block": "{/* analysis-visual:start logische-verknuepfungen-3 */}\n\nSigue una asignación por los dos resultados intermedios hasta la Y final. Compárala con las otras tres casillas: no falta ninguna asignación booleana.\n\n<Interactive kind=\"conditions\" preset=\"construction\" id=\"analysis-table-construction\" />\n\n{/* analysis-visual:end logische-verknuepfungen-3 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/logical-negation.mdx",
+      "reviewed_summary_sha256": "6d3b89216114dbaddfca5d8938fe11693b6f9d383b7b4d206df8dd8df8b338d9",
+      "visual_source_sha256": "da6316ca6e96185cdc57cb969d28f00c9de47019e86a72b4de7a8e23edc0140a",
+      "additions": [
+        {
+          "id": "logical-negation-4",
+          "block": "{/* analysis-visual:start logical-negation-4 */}\n\nColoca primero la entrada justo en el extremo y después a cada lado. La condición original y su negación deben asignar el extremo a una sola región.\n\n<Interactive kind=\"number-line\" preset=\"complement\" id=\"analysis-negation-boundary\" />\n\n{/* analysis-visual:end logical-negation-4 */}\n\n"
+        }
+      ],
+      "removed_additions": [
+        {
+          "id": "logical-negation-5",
+          "block": "{/* analysis-visual:start logical-negation-5 */}\n\nNegar una conjunción selecciona todas las casillas salvo la de ambas entradas verdaderas. La segunda ruta obtiene las mismas preguntando si al menos una entrada es falsa.\n\n<Interactive kind=\"conditions\" preset=\"demorgan\" id=\"analysis-demorgan-cases\" />\n\n{/* analysis-visual:end logical-negation-5 */}\n\n",
+          "reason": "Owner requested removal on 4 November 2026: the existing truth tables explain these cases without redundant interactive tiles."
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/implikation-und-kontraposition.mdx",
+      "reviewed_summary_sha256": "be4785b1be75fe5d5835cc01c8fe6a70a45a7358c0ea25c387bc2111c0eaee26",
+      "visual_source_sha256": "0ebb68256ff9500d508d85bd7963d2df7c860240be03d0aae84ad4f3b2b24df3",
+      "additions": [
+        {
+          "id": "implikation-und-kontraposition-6",
+          "block": "{/* analysis-visual:start implikation-und-kontraposition-6 */}\n\nEn el explorador anterior, compara primero implicación y contraposición, y después la recíproca. Una fila seleccionada coincidente es solo un caso; la equivalencia exige columnas completas iguales.\n\n{/* analysis-visual:end implikation-und-kontraposition-6 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/biconditionals-and-equivalent-conditions.mdx",
+      "reviewed_summary_sha256": "ae7c064d6adb748eadf791c34988792c6acedbdce7c3f46b4df9c9fc599952d8",
+      "visual_source_sha256": "0b133eb274da13c04d5eaf7f26453d3c0abb05a5a3831c2f1e4ec7f84aa35e1e",
+      "additions": [
+        {
+          "id": "biconditionals-and-equivalent-conditions-7",
+          "block": "{/* analysis-visual:start biconditionals-and-equivalent-conditions-7 */}\n\nElevar al cuadrado lleva ambos signos al mismo cuadrado. Los conjuntos de soluciones hacen visible la implicación inversa que falta.\n\n<AnalysisProof preset=\"equivalence\" />\n\n{/* analysis-visual:end biconditionals-and-equivalent-conditions-7 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/universal-statements-and-domains.mdx",
+      "reviewed_summary_sha256": "02391d571dc333394475e043b50b079dccdfbf25494da6fdf91f24bb34653011",
+      "visual_source_sha256": "c4324c6b25edf4fa44f5f8163e6805295cd10925ae62082f01551fdcee953d24",
+      "additions": [
+        {
+          "id": "universal-statements-and-domains-8",
+          "block": "{/* analysis-visual:start universal-statements-and-domains-8 */}\n\nCambia el dominio sin cambiar la positividad. Quitar los elementos que fallan puede cambiar el resultado universal; elegir el dominio vacío no crea un testigo existencial.\n\n<Interactive kind=\"candidates\" preset=\"positive\" id=\"analysis-domain-quantifiers\" />\n\n{/* analysis-visual:end universal-statements-and-domains-8 */}\n\n"
+        },
+        {
+          "id": "universal-statements-and-domains-9",
+          "block": "{/* analysis-visual:start universal-statements-and-domains-9 */}\n\nSigue qué comparación depende de la entrada cuantificada y qué valor debe permanecer fijo. El último panel muestra deliberadamente un cambio de nombre incorrecto.\n\n<AnalysisProof preset=\"scope\" />\n\n{/* analysis-visual:end universal-statements-and-domains-9 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/existence-and-uniqueness.mdx",
+      "reviewed_summary_sha256": "bd8ee89a8df6b75c02cd827d25e79363704371dcf8ff3a6eab71145328e19f2b",
+      "visual_source_sha256": "75653e5df787f9480be378825827e07c481142c77000fbe7b9456a34fe8585b2",
+      "additions": [
+        {
+          "id": "existence-and-uniqueness-10",
+          "block": "{/* analysis-visual:start existence-and-uniqueness-10 */}\n\nEn este dominio finito de enteros, solo cinco, seis y siete cumplen ambos límites. Uno prueba existencia; tres aciertos distintos refutan unicidad. El dominio completo permite contar aquí todos los testigos.\n\n<Interactive kind=\"candidates\" preset=\"witnesses\" id=\"analysis-count-witnesses\" />\n\n{/* analysis-visual:end existence-and-uniqueness-10 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/quantifier-order.mdx",
+      "reviewed_summary_sha256": "24403a098804e9452d261e17dd154da56725a1b77dad10f7cd9078af1360d72e",
+      "visual_source_sha256": "59c47db25cddb6fe97b3fd0ae9a8890b28a43d547643e8c7a4460bf000ec4c5b",
+      "additions": [
+        {
+          "id": "quantifier-order-11",
+          "block": "{/* analysis-visual:start quantifier-order-11 */}\n\nLee una fila para buscar una llave por persona y una columna entera para probar una llave para todos. Cambia permisos para que ambas afirmaciones sean verdaderas o quita todas las llaves: con personas presentes, ambas serán falsas.\n\n<Interactive kind=\"quantifiers\" preset=\"keys\" id=\"analysis-shared-witness\" />\n\n{/* analysis-visual:end quantifier-order-11 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/negating-universal-statements.mdx",
+      "reviewed_summary_sha256": "d5bc7c106b1b9e9ab9c424b67841c7da2e64750c3b73979397345fe1f7ce60ce",
+      "visual_source_sha256": "20c84383f79a2f62ba42a1c9ba5df29adabd6a9ca42c4272ca32a3aff5b8d104",
+      "additions": [
+        {
+          "id": "negating-universal-statements-12",
+          "block": "{/* analysis-visual:start negating-universal-statements-12 */}\n\nEn el dominio mixto coexisten aciertos y fallos. Un marcador azul de verdad con 0 basta para refutar «todos»; no convierte los aciertos en fallos. Compara con los dominios positivo y vacío.\n\n<Interactive kind=\"candidates\" preset=\"positive\" id=\"analysis-quantified-failure\" />\n\n{/* analysis-visual:end negating-universal-statements-12 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/negating-nested-statements.mdx",
+      "reviewed_summary_sha256": "2646a40c103d67d03a34357326aac7628716f5767dd38aa2a14ac087b1ac9b86",
+      "visual_source_sha256": "ee33ef0205f13dcc5d159c7ba5aaec9dc1f1a7a2332213804f10ad18e7d6e446",
+      "additions": [
+        {
+          "id": "negating-nested-statements-13",
+          "block": "{/* analysis-visual:start negating-nested-statements-13 */}\n\nEste patrón finito reproduce $y>x$ en $\\{1,2\\}$: la primera fila tiene un acierto y la segunda ninguno. La fila entera que falla testimonia la negación de «cada fila tiene un testigo». Cambia una casilla para ver cómo se corrige ese fallo.\n\n<Interactive kind=\"quantifiers\" preset=\"nested\" id=\"analysis-nested-failure\" />\n\n{/* analysis-visual:end negating-nested-statements-13 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/beweissprache-und-methoden.mdx",
+      "reviewed_summary_sha256": "2d09e201d2bad94a7fa5f1df78bd873fa8f44d6309ff0dfc0590f5b661471fa0",
+      "visual_source_sha256": "04279471146fd2160752b2df1bd01acb75decb0e7b247b734f69afbfd3a3cab0",
+      "additions": [
+        {
+          "id": "beweissprache-und-methoden-14",
+          "block": "{/* analysis-visual:start beweissprache-und-methoden-14 */}\n\nEl intervalo marcado contiene exactamente los contraejemplos de esta regla. Prueba ambos extremos: dos no cumple la hipótesis; cinco sí la cumple, pero incumple la conclusión estricta.\n\n<Interactive kind=\"number-line\" preset=\"counterexample\" id=\"analysis-counterexample-region\" />\n\n{/* analysis-visual:end beweissprache-und-methoden-14 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/widerspruch-und-irrationalitaet.mdx",
+      "reviewed_summary_sha256": "d66ba8f309f0d04aec3b877d6a56cd3f2d83fb453c550478b4b149f9d913a283",
+      "visual_source_sha256": "2832b627698ae9fa9a25b1f249b8929923b9b4e17997b75604a5c7e43f6f85c0",
+      "additions": [
+        {
+          "id": "widerspruch-und-irrationalitaet-15",
+          "block": "{/* analysis-visual:start widerspruch-und-irrationalitaet-15 */}\n\nMantén presente la condición de fracción irreducible durante el argumento de paridad. El último panel muestra la incompatibilidad exacta a la que debe llegar la prueba detallada.\n\n<AnalysisProof preset=\"contradiction\" />\n\n{/* analysis-visual:end widerspruch-und-irrationalitaet-15 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/real-sequences.mdx",
+      "reviewed_summary_sha256": "921e7c77ebbbb860b40d6cfc52a0c8af2a26466a95f7e0e819a5fc88cdff3a7f",
+      "visual_source_sha256": "9aa2d62a847294d0ee92ae1b1df0d5c3c714c83f547b3d77628782b8e9315cff",
+      "additions": [
+        {
+          "id": "real-sequences-16",
+          "block": "{/* analysis-visual:start real-sequences-16 */}\n\nLa coordenada horizontal es la posición $n$; la vertical, el valor $a_n$. Los valores repetidos siguen siendo puntos separados en índices distintos. Mueve $N$ más allá de los dos primeros informes para aislar la cola constante.\n\n<Interactive kind=\"sequence\" preset=\"device\" id=\"analysis-sequence-positions\" />\n\n{/* analysis-visual:end real-sequences-16 */}\n\n"
+        },
+        {
+          "id": "real-sequences-17",
+          "block": "{/* analysis-visual:start real-sequences-17 */}\n\nMueve el punto a ambos lados de tres y después a los extremos. La dirección cambia el signo del desplazamiento; la pertenencia depende de su distancia absoluta.\n\n<Interactive kind=\"number-line\" preset=\"distance\" id=\"analysis-distance-band\" />\n\n{/* analysis-visual:end real-sequences-17 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/reading-sequence-convergence.mdx",
+      "reviewed_summary_sha256": "10ec22988e1a0aee054c45a515e961c9de1ff6a45e79cc95f379f1035477f972",
+      "visual_source_sha256": "37ec25d15f31bc3019cdee13d2b9d22b0be7d85c7c84b282bba444862b4ae31c",
+      "additions": [
+        {
+          "id": "reading-sequence-convergence-18",
+          "block": "{/* analysis-visual:start reading-sequence-convergence-18 */}\n\nEmpieza con $\\varepsilon=0{,}5$ y compara $N=2$ con $N=3$. El término del extremo falla por igualdad; avanzar el umbral deja toda la cola recíproca dentro. Estrecha después la banda y busca un nuevo umbral.\n\n<Interactive kind=\"sequence\" preset=\"reciprocal\" id=\"analysis-convergence-tail\" />\n\n{/* analysis-visual:end reading-sequence-convergence-18 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/negating-sequence-convergence.mdx",
+      "reviewed_summary_sha256": "c719a8b831a05b025b21f921a1a391227d03d038a999a8bb790d37e6c1c64c28",
+      "visual_source_sha256": "1f40c9525018974ed2a959c98fb5a17e2788fbf5875883650b7205c782b7a64c",
+      "additions": [
+        {
+          "id": "negating-sequence-convergence-19",
+          "block": "{/* analysis-visual:start negating-sequence-convergence-19 */}\n\nFija $\\varepsilon=0{,}5$ y mueve $N$: cada cola sigue conteniendo $-1$ y 1, así que al menos un valor queda fuera para cualquier objetivo real. Compara la sucesión cero en los objetivos uno y cero para distinguir un objetivo fallido de no tener límite real.\n\n<Interactive kind=\"sequence\" preset=\"alternating\" id=\"analysis-infinite-failures\" />\n\n{/* analysis-visual:end negating-sequence-convergence-19 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/boolesche-grundgesetze.mdx",
+      "reviewed_summary_sha256": "0729b46b079fbf2d54b4a1d68a0dc4657619db644e56328614f72ff50c077ed9",
+      "visual_source_sha256": "79be67b9ea0e70e5215510f9a5524e793aa5adfef0a9b0637aa3c8e41e5908f3",
+      "additions": [
+        {
+          "id": "boolesche-grundgesetze-20",
+          "block": "{/* analysis-visual:start boolesche-grundgesetze-20 */}\n\nEn cada árbol anterior, empieza por el operador superior y sigue sus dos entradas. La asociatividad cambia la agrupación; la distributividad repite la misma entrada A en dos ramas. Los diagramas explican las estructuras que permiten transformar las leyes numeradas.\n\n{/* analysis-visual:end boolesche-grundgesetze-20 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/eindeutiges-komplement.mdx",
+      "reviewed_summary_sha256": "d7fc276a4184c6e4e6762c2bf4e535ad6ab302cf4c2bf80cb0de37abf8d7fa2f",
+      "visual_source_sha256": "ae7d7c90fe429595297695a9a7230b899724f06a2501f2202178d588483f8a15",
+      "additions": [
+        {
+          "id": "eindeutiges-komplement-21",
+          "block": "{/* analysis-visual:start eindeutiges-komplement-21 */}\n\nUn candidato a complemento debe superar dos comprobaciones independientes. El diagrama muestra el orden de la prueba para no justificar una identidad con ella misma.\n\n<AnalysisProof preset=\"complement\" />\n\n{/* analysis-visual:end eindeutiges-komplement-21 */}\n\n"
+        }
+      ]
+    },
+    {
+      "path": "src/content/lessons/es/analysis/nand-schaltungen.mdx",
+      "reviewed_summary_sha256": "1ef050a76f64b13aa7d49ca9c678d7083b66fc68756b5d64b092407cbcd02bfa",
+      "visual_source_sha256": "714e3b190a0f250c4722f26b387427fb2692cfd7a4eb13f30857d80605435b88",
+      "additions": [
+        {
+          "id": "nand-schaltungen-22",
+          "block": "{/* analysis-visual:start nand-schaltungen-22 */}\n\nPredice la salida antes de cambiar una entrada del circuito anterior. Para Y, sigue la salida del primer NAND hasta ambas entradas de la segunda puerta: esa segunda negación recupera la conjunción. Para O, niega primero cada entrada.\n\n{/* analysis-visual:end nand-schaltungen-22 */}\n\n"
+        }
+      ]
+    }
+  ]
+}

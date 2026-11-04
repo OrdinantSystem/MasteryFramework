@@ -20,15 +20,5 @@ const copy = {
     start: 'J⁰ = I: die Ausgangslage ohne Drehung.',
     caption: 'Die Länge bleibt $\\sqrt{5}$. Ziehe frei und lasse los, um die Drehung einer der vier verschiedenen Potenzen von J zuzuordnen.',
   },
-  es: {
-    prompt: 'Arrastra la punta turquesa por el círculo. ¿Qué giro devuelve x a su posición inicial?',
-    help: 'Al soltar, la punta se ajusta al cuarto de vuelta más cercano. Flechas: 5° (Mayús: 90°). También puedes elegir una potencia abajo.',
-    angle: 'Ángulo de giro (°)', handle: 'Girar el vector',
-    free: 'Entre los cuartos de vuelta, R(θ) es una matriz de rotación. En los puntos marcados es una potencia de J.',
-    snapped: 'Cada factor J añade un giro de 90° en sentido antihorario.',
-    identity: 'Cuatro cuartos de vuelta: J⁴ = I. El vector vuelve a x; todo vector regresa a su posición inicial.',
-    start: 'J⁰ = I: la posición inicial, sin giro.',
-    caption: 'La longitud sigue siendo $\\sqrt{5}$. Arrastra libremente y suelta para relacionar el giro con una de las cuatro potencias distintas de J.',
-  },
 };
 export const rotationCopy = (locale: Locale) => copy[locale];

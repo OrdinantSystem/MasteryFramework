@@ -1231,31 +1231,37 @@ kbd {
   width: var(--sidebar-width);
   padding: 28px 16px 20px;
 }
-/* Keep navigation scrollbars visible without a contrasting track. */
+/* Give the page and navigation the same quiet, trackless scrollbars. */
+html,
 .sidebar,
 .page-toc {
-  --navigation-scroll-thumb: color-mix(in srgb, var(--muted) 10%, var(--bg));
+  --scroll-thumb: color-mix(in srgb, var(--muted) 10%, var(--bg));
   scrollbar-width: thin;
-  scrollbar-color: var(--navigation-scroll-thumb) transparent;
+  scrollbar-color: var(--scroll-thumb) transparent;
 }
+html:hover,
+html:focus-within,
 .sidebar:hover,
 .sidebar:focus-within,
 .page-toc:hover,
 .page-toc:focus-within {
-  --navigation-scroll-thumb: color-mix(in srgb, var(--muted) 16%, var(--bg));
+  --scroll-thumb: color-mix(in srgb, var(--muted) 16%, var(--bg));
 }
+html::-webkit-scrollbar,
 .sidebar::-webkit-scrollbar,
 .page-toc::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
+html::-webkit-scrollbar-track,
 .sidebar::-webkit-scrollbar-track,
 .page-toc::-webkit-scrollbar-track {
   background: transparent;
 }
+html::-webkit-scrollbar-thumb,
 .sidebar::-webkit-scrollbar-thumb,
 .page-toc::-webkit-scrollbar-thumb {
-  background: var(--navigation-scroll-thumb);
+  background: var(--scroll-thumb);
   border-radius: 999px;
 }
 .content-tree details {

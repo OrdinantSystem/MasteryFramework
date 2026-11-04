@@ -1,0 +1,306 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Convergence: definition and proofs"
+navTitle: "Convergence: definition and proofs"
+description: "Convergence: definition and proofs"
+order: 16
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["real-sequences", "quantifier-order", "beweissprache-und-methoden"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Convergence of a Real Sequence to a Specified Limit.md#Convergence of a Real Sequence to a Specified Limit", "A0.1.8 Nested quantifiers/06 Logical Dependency.md#06 · A proof must use only the information it has"]
+thumbnail: "proof"
+additionalSources: []
+---
+
+<span id="from-reading-sequence-convergence"></span>
+
+## Reading sequence convergence
+
+The device’s complete rule gives nine twice, then three forever. Convergence allows early exceptions but requires every sufficiently late term to stay arbitrarily close to one fixed target.
+
+
+<span id="from-reading-sequence-convergence-fix-the-objects-before-reading-the-quantifiers"></span>
+
+### Fix the objects before reading the quantifiers
+
+Fix real sequence $a:\mathbb N\to\mathbb R$, $\mathbb N=\{1,2,3,\ldots\}$, and real target $L$. Term $a_n$ at index $n$ has distance $|a_n-L|$. Context fixes $a,L$; no written quantifier below binds them.
+
+$\varepsilon$ is a variable positive real tolerance, not an index. Positive natural $N$ starts the tail; positive natural $n$ tests it. $n\ge N$ includes the threshold; $|a_n-L|<\varepsilon$ excludes equality.
+
+
+<span id="from-reading-sequence-convergence-the-positive-definition"></span>
+
+### The positive definition
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+<Flow nodes={[{"label": "Tolerance", "tex": "\\varepsilon>0", "detail": "Accept any positive real tolerance."}, {"label": "Threshold", "tex": "N\\in\\mathbb N", "detail": "Choose one threshold using the tolerance."}, {"label": "Tail test", "tex": "n\\ge N", "detail": "Keep the threshold fixed for every test."}]} caption="A tolerance, then a threshold, then every tail index." />
+
+To prove convergence, verify this definition: accept any tolerance; choose $N$ using it and fixed context, then test every index with $N$ fixed. Tolerance dependence is permitted, not required.
+
+Earlier indices have false hypothesis, hence no closeness requirement. Every tail term must pass, not just its first. Larger natural thresholds work by tail containment; no smallest is required.
+
+For the device and target three, threshold three gives zero distance on its entire tail for every tolerance. Exact attainment is not required for convergence.
+
+<span id="from-reading-sequence-convergence-practice"></span>
+
+#### Practice
+
+Rebuild the complete definition, including domains, and identify the three variable roles.
+
+<details>
+<summary>Hint</summary>
+
+Tolerance, threshold, test index.
+
+</details>
+
+<Exercise>
+
+$$
+\forall\varepsilon>0\;\exists N\in\mathbb N\;\forall n\in\mathbb N\;\bigl(n\ge N\Rightarrow |a_n-L|<\varepsilon\bigr).
+$$
+
+Positive real $\varepsilon$ is tolerance; $N,n\in\mathbb N$ are threshold and test index. Fix $a,L$, then $N$ before testing. Every $n\ge N$ requires distance below $\varepsilon$; earlier indices are unrestricted.
+
+</Exercise>
+
+Zero first, then always one: does the first hit prove convergence to zero?
+
+<details>
+<summary>Hint</summary>
+
+Use $\varepsilon=1/2$ and $n=\max(N,2)$.
+
+</details>
+
+<Exercise>
+
+No: for every $N$, $n=\max(N,2)$ is in its tail with distance one, failing $1/2$. One hit is insufficient.
+
+</Exercise>
+
+Later, distinguish sequence, index, term, target and distance; then rebuild the formula.
+
+
+<span id="from-reading-sequence-convergence-read-aloud"></span>
+
+### Read aloud
+
+Every positive tolerance permits a threshold from which all terms have distance to L strictly below that tolerance.
+
+<span id="from-proving-sequence-convergence"></span>
+
+## Proving sequence convergence
+
+Fix sequence and target before the arbitrary tolerance; changing targets for individual terms would change the claim.
+
+
+<span id="from-proving-sequence-convergence-the-full-constant-sequence-proof"></span>
+
+### The full constant-sequence proof
+
+Let $a_n=3$ throughout, $L=3$. For arbitrary $\varepsilon>0$, choose natural $N=1$. Every natural $n\ge N$ satisfies:
+
+$$
+|a_n-3|=|3-3|=|0|=0<\varepsilon.
+$$
+
+Rule, subtraction, absolute value at zero and $\varepsilon>0$ justify the chain. Every tail index passes for arbitrary tolerance. No natural unboundedness or triangle inequality is needed.
+
+
+<span id="from-proving-sequence-convergence-choice-dependence-and-proof-dependence"></span>
+
+### Choice dependence and proof dependence
+
+Choice dependence permits tolerance and fixed context, not later $n$. Proof dependence concerns the estimate’s justification. Correct choice order cannot repair false arithmetic, and correct arithmetic cannot repair a witness chosen after the test index. Constant $N$ may ignore tolerance.
+
+
+
+<Note title="A late threshold changes the claim">
+
+After each test, $N=n+1$ makes its implication vacuously true but supplies no single tail threshold. Forbidden dependence on later $n$, not size, is the error.
+
+</Note>
+
+<span id="from-proving-sequence-convergence-practice"></span>
+
+#### Practice
+
+Prove constant negative four converges to negative four.
+
+<details>
+<summary>Hint</summary>
+
+Distance, not sign of the term, matters.
+
+</details>
+
+<Exercise>
+
+For arbitrary $\varepsilon>0$, choose $N=1$. Every $n\ge1$ satisfies $|-4-(-4)|=0<\varepsilon$ by the sequence rule, subtraction, absolute value at zero and positivity.
+
+</Exercise>
+
+One hundred first, then zero: prove convergence to zero. Must the threshold vary with tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Start after the exception.
+
+</details>
+
+<Exercise>
+
+Choose $N=2$ for any $\varepsilon>0$. Every $n\ge2$ gives distance $0<\varepsilon$; the threshold need not vary.
+
+</Exercise>
+
+Repair “Given tolerance and test index, choose $N=n+1$”.
+
+<details>
+<summary>Hint</summary>
+
+Keep one witness for every test.
+
+</details>
+
+<Exercise>
+
+Choose a permitted threshold before the test index, then prove its whole tail estimate. Moving each test outside the tail changes quantifier order.
+
+</Exercise>
+
+Which extra fact is needed for the optional reciprocal proof, and is it needed here?
+
+<details>
+<summary>Hint</summary>
+
+A natural number beyond an arbitrary real bound needs justification.
+
+</details>
+
+<Exercise>
+
+The [optional proof](../reading-sequence-convergence/#from-reciprocal-sequence-convergence) accepts Archimedean threshold existence and positive reciprocal order. The constant proof only needs known natural one.
+
+</Exercise>
+
+Does constant zero converge to target one? Does that show it has no real limit?
+
+<details>
+<summary>Hint</summary>
+
+Compare the same terms with target zero.
+
+</details>
+
+<Exercise>
+
+At target one, every distance is one, failing $1/2$. At zero, every tolerance works with $N=1$. One failed target does not exclude all limits.
+
+</Exercise>
+
+Later, reconstruct the full proof and justify each equality.
+
+
+<span id="from-proving-sequence-convergence-read-aloud"></span>
+
+Use the definition above to check the order: tolerance, threshold, every tail index.
+
+<span id="from-reciprocal-sequence-convergence"></span>
+
+## Reciprocal sequence convergence
+
+Reciprocal terms approach zero without reaching it. Supply a threshold for every tolerance and check its tail.
+
+<Note title="Optional extension: additional accepted background">
+
+Optional, not required for [logical negation](../negating-sequence-convergence/#from-negating-sequence-convergence). Accept without proof: **Archimedean unboundedness**, every real bound is exceeded by some positive natural number; **positive reciprocal order**, increasing a positive denominator decreases or preserves its reciprocal. Quantifier notation proves neither fact.
+
+</Note>
+
+
+<span id="from-reciprocal-sequence-convergence-find-a-threshold-then-prove-its-tail-works"></span>
+
+### Find a threshold, then prove its tail works
+
+$$
+a_n=\frac1n\quad(n\in\mathbb N),\qquad L=0.
+$$
+
+All terms are defined and positive. For arbitrary real $\varepsilon>0$, $1/\varepsilon$ is real. Archimedean unboundedness gives positive natural $N>1/\varepsilon$. Fix it; any natural $n\ge N$ satisfies:
+
+$$
+|a_n-0|=|1/n|=1/n\le1/N<\varepsilon.
+$$
+
+The rule and subtracting zero give the first equality; positivity removes absolute value. Reciprocal order gives $1/n\le1/N$. From $N>1/\varepsilon$, multiply by positive $\varepsilon$, then divide by positive $N$, obtaining $1/N<\varepsilon$. Thus the whole tail passes every arbitrary tolerance, proving convergence.
+
+Positive terms never equal the limit. The accepted facts cover infinitely many tolerances and indices, unlike any finite list.
+
+
+{/* analysis-visual:start reading-sequence-convergence-18 */}
+
+Start at $\varepsilon=0.5$ and compare $N=2$ with $N=3$. The boundary term fails at equality; moving the threshold past it puts the entire reciprocal tail inside. Then tighten the band and find a new threshold.
+
+<Interactive kind="sequence" preset="reciprocal" id="analysis-convergence-tail" />
+
+{/* analysis-visual:end reading-sequence-convergence-18 */}
+
+<span id="from-reciprocal-sequence-convergence-a-strict-boundary-check"></span>
+
+### A strict boundary check
+
+At $\varepsilon=1/10$, $N=11$ works since later distances are at most $1/11<1/10$. $N=10$ fails by equality at its own term. This illustrates strictness only.
+
+<span id="from-reciprocal-sequence-convergence-practice"></span>
+
+#### Practice
+
+Why must “choose a large enough natural threshold” justify existence?
+
+<details>
+<summary>Hint</summary>
+
+Quantifiers state obligations, not arithmetic theorems.
+
+</details>
+
+<Exercise>
+
+Archimedean unboundedness supplies a natural beyond the real bound; otherwise the witness is merely requested. Constant convergence only needs natural one.
+
+</Exercise>
+
+At tolerance $1/10$, explain why threshold ten fails but eleven works for every later index.
+
+<details>
+<summary>Hint</summary>
+
+The threshold itself belongs to the tail.
+
+</details>
+
+<Exercise>
+
+At ten the distance is $1/10$, not strictly less. From eleven onward it is at most $1/11<1/10$.
+
+</Exercise>
+
+Later, reconstruct the full proof, identifying where the existence of a natural threshold and positive reciprocal order enter; logical negation does not require this proof.
+
+
+<span id="from-reciprocal-sequence-convergence-read-aloud"></span>
+
+### Read aloud
+
+Beyond capital N greater than one over epsilon, every reciprocal is at most one over capital N, hence below epsilon.

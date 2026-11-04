@@ -32,31 +32,26 @@ A statement has one definite truth value, true (1) or false (0), even if unknown
 
 ### An open variable leaves a question
 
-$P(x):x+3=10$ is a predicate depending on $x$. The domain $x\in\mathbb N$ restricts without binding. Substitution of $7$ makes it true; $2$ makes it false. Alternatively, quantify to bind $x$.
+A **predicate** is a condition we evaluate at an allowed input. Keep the rule $P(x):x+3=10$ fixed. Its domain $\mathbb N$ tells us which inputs are allowed. Input $7$ gives a true statement; input $2$ gives a false one. The input changes, not the rule.
 
 <Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
 
 $P(2)$ is the false equality $2+3=10$, not a negated redefinition. $x=4$ also makes it false. Inputs change; the rule does not.
 
 
+{/* analysis-visual:start aussagen-und-aussageformen-1 */}
+
+Predict the result at input two, then check it. The circles show true/false results for the complete finite domain; the diamond selects one input. The two readouts distinguish domain membership from the result of the same fixed rule.
+
+<Interactive kind="candidates" preset="equation" presentation="input" id="analysis-predicate-inputs" />
+
+{/* analysis-visual:end aussagen-und-aussageformen-1 */}
+
 <span id="from-aussagen-und-aussageformen-check-your-classification"></span>
 
 ### Check your classification
 
 Questions and commands are not statements. “This sentence is false” is a paradox without a consistent classical truth value, not an ordinary false statement. Classify before proving.
-
-
-<span id="from-aussagen-und-aussageformen-substitution-and-truth"></span>
-
-### Substitution and truth
-
-“There exists a natural $x$ with $x+3=10$” is complete without preselecting an input; $7$ witnesses truth. A free input differs from unknown truth.
-
-<Exercise question="Is $x^2 = 4$ a statement? What about $\exists x \in  \mathbb{N} : x^2 = 4$?">
-
-The first is a predicate with free $x$. The second is a true statement, witnessed by $x = 2$.
-
-</Exercise>
 
 
 <span id="from-aussagen-und-aussageformen-claims-expressions-and-requests"></span>
@@ -72,50 +67,13 @@ Classify the **whole utterance**: “Prove zero equals one” requests action de
 In real arithmetic $1/0=2$ is undefined, not ordinarily false: no real multiplied by zero gives one, since every such product is zero. This failure of meaning is not a third truth value.
 
 
-<span id="from-aussagen-und-aussageformen-truth-knowledge-and-reasons"></span>
+<Exercise question="For integer inputs, let $Q(t):2t+1=7$. Evaluate at $t=3$ and $t=2$. Identify the rule, allowed input and resulting statement. Must changing the input always change truth?">
 
-### Truth, knowledge, and reasons
-
-Classical **bivalence** is accepted here, not proved: every meaningful proposition has exactly one of two truth values. $T/F$ and $1$ and $0$ label truth, not arithmetic quantities.
-
-A fixed card is zero or nonzero before opening; finding five changes knowledge, not truth. Three morning chairs versus four afternoon chairs yield different **time-indexed claims**, not two truth values for one claim. Different predicate inputs likewise complete different claims.
-
-One witness proves existence; one counterexample refutes universality. Universal proof may require arbitrary inputs, or exhaustive checks in finite domains; selected infinite-domain successes do not suffice. For arbitrary real $x<1$, transitivity with $1<2$ yields $x<2$: logical structure alone supplies no order argument.
-
-
-<span id="from-aussagen-und-aussageformen-independent-checks"></span>
-
-### Independent checks
-
-Classify “One equals zero,” “Explain why one equals one,” and $7$; turn $7$ into two claims. Complete $x=0$ by context and by quantification.
-
-<details>
-<summary>Hint</summary>
-
-Separate requested action from embedded claim; distinguish choosing an input from quantifying over all inputs.
-
-</details>
-
-<details>
-<summary>Reference answer</summary>
-
-“One equals zero” is false; “Explain …” requests action about a true equality. $7$ names a number; “Seven equals seven” and “Seven is greater than zero” claim something. Context fixing $x$ as real zero evaluates $x=0$ without binding it. “Every real equals zero” is closed and false, not an instruction.
-
-</details>
-
-<Exercise question="For real y in $\forall x\in\mathbb R\;(x<y)$, identify bound occurrences and the effect of assigning $y=0$. Compare $\exists x\in\mathbb R\;(x=0)$ and ‘Every integer is positive’.">
-
-Only $x$ is bound; $y$ stays free even when assigned zero. That assignment makes the formula false, refuted by $x=1$. The existential is closed and true, witnessed by zero. The verbal universal is closed without letters and false, refuted by zero.
+Both inputs belong to $\mathbb Z$. Substitution gives $2\cdot3+1=7$, true, and $2\cdot2+1=7$, false. The equation is the fixed rule; each substituted equation is a statement. Changing an input need not change truth: $R(t):t^2\ge0$ is true at every integer input. It is still a condition evaluated at an input.
 
 </Exercise>
 
-<Exercise question="Translate ‘There is a real at least zero and less than one’; give a witness. Change ‘there is’ to ‘every’, justify the verdict, and identify what stays unchanged.">
-
-$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ is true, witnessed by zero. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ is false: one fails the strict upper bound. Both are closed with the same domain and comparisons; only the one-versus-every requirement changes.
-
-</Exercise>
-
-Distinguish unknown (sealed fixed card), undefined (real division by zero), and unsupported (possibly correct but inadequately justified). Reconstruct why; see [Reading mathematical structure](../quantifier-order/#from-reading-mathematical-structure).
+Check your explanation: name the domain, substitute into the unchanged rule, then justify the truth value. A matching answer without those steps leaves the reasoning unchecked.
 
 <span id="from-definitions-assumptions-results"></span>
 
@@ -189,3 +147,66 @@ For $x\in\mathbb R$, the criterion is $(0\le x)\land(x\le1)$. Zero passes both. 
 </Exercise>
 
 Invent another property; separate its definition from one true and one false application. See [Several simultaneous conditions](../simultaneous-conditions/#from-simultaneous-conditions) for a longer criterion.
+
+
+## Quantifiers and proof: a later connection
+
+The input, statement and definition examples above are enough for a first pass. Return here after [quantifiers and scope](../universal-statements-and-domains/#from-bound-variables-and-scope). Declaring $x\in\mathbb N$ restricts the domain without binding $x$; a quantifier binds it within its scope. Assigning a value and binding a variable are different operations.
+
+<span id="from-aussagen-und-aussageformen-substitution-and-truth"></span>
+
+### Substitution and truth
+
+“There exists a natural $x$ with $x+3=10$” is complete without preselecting an input; $7$ witnesses truth. A free input differs from unknown truth.
+
+<Exercise question="Is $x^2 = 4$ a statement? What about $\exists x \in  \mathbb{N} : x^2 = 4$?">
+
+The first is a predicate with free $x$. The second is a true statement, witnessed by $x = 2$.
+
+</Exercise>
+
+
+<span id="from-aussagen-und-aussageformen-truth-knowledge-and-reasons"></span>
+
+### Truth, knowledge, and reasons
+
+Classical **bivalence** is accepted here, not proved: every meaningful proposition has exactly one of two truth values. $T/F$ and $1$ and $0$ label truth, not arithmetic quantities.
+
+A fixed card is zero or nonzero before opening; finding five changes knowledge, not truth. Three morning chairs versus four afternoon chairs yield different **time-indexed claims**, not two truth values for one claim. Different predicate inputs likewise complete different claims.
+
+One witness proves existence; one counterexample refutes universality. Universal proof may require arbitrary inputs, or exhaustive checks in finite domains; selected infinite-domain successes do not suffice. For arbitrary real $x<1$, transitivity with $1<2$ yields $x<2$: logical structure alone supplies no order argument.
+
+
+<span id="from-aussagen-und-aussageformen-independent-checks"></span>
+
+### Independent checks
+
+Classify “One equals zero,” “Explain why one equals one,” and $7$; turn $7$ into two claims. Complete $x=0$ by context and by quantification.
+
+<details>
+<summary>Hint</summary>
+
+Separate requested action from embedded claim; distinguish choosing an input from quantifying over all inputs.
+
+</details>
+
+<details>
+<summary>Reference answer</summary>
+
+“One equals zero” is false; “Explain …” requests action about a true equality. $7$ names a number; “Seven equals seven” and “Seven is greater than zero” claim something. Context fixing $x$ as real zero evaluates $x=0$ without binding it. “Every real equals zero” is closed and false, not an instruction.
+
+</details>
+
+<Exercise question="For real y in $\forall x\in\mathbb R\;(x<y)$, identify bound occurrences and the effect of assigning $y=0$. Compare $\exists x\in\mathbb R\;(x=0)$ and ‘Every integer is positive’.">
+
+Only $x$ is bound; $y$ stays free even when assigned zero. That assignment makes the formula false, refuted by $x=1$. The existential is closed and true, witnessed by zero. The verbal universal is closed without letters and false, refuted by zero.
+
+</Exercise>
+
+<Exercise question="Translate ‘There is a real at least zero and less than one’; give a witness. Change ‘there is’ to ‘every’, justify the verdict, and identify what stays unchanged.">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ is true, witnessed by zero. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ is false: one fails the strict upper bound. Both are closed with the same domain and comparisons; only the one-versus-every requirement changes.
+
+</Exercise>
+
+Distinguish unknown (sealed fixed card), undefined (real division by zero), and unsupported (possibly correct but inadequately justified). Reconstruct why; see [Reading mathematical structure](../quantifier-order/#from-reading-mathematical-structure).

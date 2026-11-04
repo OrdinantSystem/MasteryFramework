@@ -1,7 +1,9 @@
+import {locales} from '../src/lib/i18n.ts';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {proseCount} from './analysis-prose.mjs';
+import {reviewedSummarySource} from './analysis-visual-contract.mjs';
 const coverage=JSON.parse(await readFile('../docs/analysis-summary-coverage.json','utf8'));
 const normalize=s=>s.replace(/\s+/g,' ').trim();
 const sha=s=>createHash('sha256').update(s).digest('hex');
@@ -18,8 +20,9 @@ function details(source){
 assert.equal(coverage.status,'reviewed-summary','Do not publish a summary before independent semantic review');
 assert.equal(coverage.files.length,63);
 assert.equal(new Set(coverage.files.map(r=>r.path)).size,63);
+coverage.files=coverage.files.filter(row=>locales.includes(row.locale));
 const expectedPaths=[];
-for(const locale of ['en','de','es']){
+for(const locale of locales){
  for(const name of (await readdir(`src/content/lessons/${locale}/analysis`)).filter(n=>n.endsWith('.mdx')))expectedPaths.push(`src/content/lessons/${locale}/analysis/${name}`);
  expectedPaths.push(`src/content/course-guides/${locale}/analysis.mdx`);
 }
@@ -27,7 +30,7 @@ assert.deepEqual(coverage.files.map(r=>r.path).sort(),expectedPaths.sort(),'Revi
 for(const [path,hash] of Object.entries(coverage.legacy_contracts))assert.equal(sha(await readFile('../../'+path,'utf8')),hash,'Historical preservation contracts remain unchanged');
 const totals={};let exerciseCount=0,graphicCount=0,tableCount=0,displayCount=0,anchorCount=0;
 for(const row of coverage.files){
- const old=await readFile('../../'+row.archive,'utf8'),source=await readFile(row.path,'utf8'),label=`${row.locale}/${row.kind}/${row.key}`;
+ const old=await readFile('../../'+row.archive,'utf8'),source=reviewedSummarySource(await readFile(row.path,'utf8'),row.path),label=`${row.locale}/${row.kind}/${row.key}`;
  assert.equal(sha(old),row.before_sha256,`${label}: exact public pre-summary input`);
  assert.equal(sha(source),row.after_sha256,`${label}: renew exact-version semantic review after changes`);
  assert.equal(row.before_prose_words,proseCount(old));assert.equal(row.after_prose_words,proseCount(source));
@@ -77,11 +80,11 @@ for(const row of coverage.files){
  const t=totals[row.locale]??={before:0,after:0,files:0};t.before+=row.before_prose_words;t.after+=row.after_prose_words;t.files++;
  exerciseCount+=exercise.length;graphicCount+=Object.values(row.graphics).reduce((a,b)=>a+b,0);tableCount+=Object.values(row.tables).reduce((a,b)=>a+b,0);displayCount+=row.displays.length;anchorCount+=row.anchors.length;
 }
-for(const locale of ['en','de','es']){
+for(const locale of locales){
  const t=totals[locale];assert.equal(t.files,21);
  const actual=(t.before-t.after)/t.before;
  if(actual<coverage.prose_target.preferred_min||actual>coverage.prose_target.preferred_max)assert.ok(coverage.reduction_exceptions?.[locale]?.length>40,`${locale}: explicitly justify a departure from the approximate reduction target`);
  console.log(`${locale}: ${t.before} → ${t.after} authored prose words (${(actual*100).toFixed(2)}% shorter), including all closed practice/answers.`);
  const lessonFiles=(await readdir(`src/content/lessons/${locale}/analysis`)).filter(n=>n.endsWith('.mdx'));assert.equal(lessonFiles.length,20);
 }
-console.log(`Verified CURRENT summaries: 63 reviewed locale files, ${exerciseCount} mapped exercises, ${graphicCount} graphical invocations, ${tableCount} exact tables, ${displayCount} distinct displays and ${anchorCount} anchors. Semantic preservation relies on explicit independent full-text review, not word counts.`);
+console.log(`Verified reconstructed historical summary: ${coverage.files.length} exact supported-locale sources, ${exerciseCount} mapped exercises, ${graphicCount} original graphics, ${tableCount} tables, ${displayCount} displays and ${anchorCount} anchors. Active teaching editions are checked separately before reconstruction; historical review is not renewed.`);

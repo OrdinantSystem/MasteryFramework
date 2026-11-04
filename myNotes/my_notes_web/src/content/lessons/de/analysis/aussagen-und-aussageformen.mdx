@@ -32,31 +32,26 @@ Eine Aussage hat genau einen Wahrheitswert, wahr (1) oder falsch (0), auch wenn 
 
 ### Eine freie Variable lässt eine Frage offen
 
-$P(x):x+3=10$ ist eine von $x$ abhängige Aussageform. $x\in\mathbb N$ beschränkt den Bereich ohne Bindung. Einsetzen von $7$ ergibt wahr, von $2$ falsch. Alternativ bindet ein Quantor $x$.
+Eine **Aussageform** ist eine Bedingung, die wir an einer zulässigen Eingabe auswerten. Halte die Regel $P(x):x+3=10$ fest. Ihr Bereich $\mathbb N$ bestimmt die erlaubten Eingaben. Eingabe $7$ ergibt eine wahre Aussage, Eingabe $2$ eine falsche. Die Eingabe wechselt, die Regel bleibt.
 
 <Math tex="P(7):7+3=10\qquad P(2):2+3=10" display />
 
 $P(2)$ ist die falsche Gleichheit $2+3=10$, keine negierte Umdefinition. Auch $x=4$ ergibt falsch. Die Eingabe wechselt, die Regel bleibt.
 
 
+{/* analysis-visual:start aussagen-und-aussageformen-1 */}
+
+Sage das Ergebnis für Eingabe zwei voraus und prüfe es. Die Kreise zeigen wahr/falsch für den vollständigen endlichen Bereich; die Raute wählt eine Eingabe. Die beiden Anzeigen trennen Bereichszugehörigkeit vom Ergebnis derselben festen Regel.
+
+<Interactive kind="candidates" preset="equation" presentation="input" id="analysis-predicate-inputs" />
+
+{/* analysis-visual:end aussagen-und-aussageformen-1 */}
+
 <span id="from-aussagen-und-aussageformen-die-einordnung-prüfen"></span>
 
 ### Die Einordnung prüfen
 
 Fragen und Aufforderungen sind keine Aussagen. „Dieser Satz ist falsch“ ist ein Paradox ohne konsistenten klassischen Wahrheitswert, keine gewöhnliche falsche Aussage. Erst einordnen, dann beweisen.
-
-
-<span id="from-aussagen-und-aussageformen-einsetzen-und-wahrheit"></span>
-
-### Einsetzen und Wahrheit
-
-„Es gibt ein natürliches $x$ mit $x+3=10$“ ist ohne vorab gewählte Eingabe vollständig; $7$ bezeugt Wahrheit. Freie Eingabe und unbekannte Wahrheit sind verschieden.
-
-<Exercise question="Ist $x^2 = 4$ eine Aussage? Und $\exists x \in  \mathbb{N} : x^2 = 4$?">
-
-Das Erste ist eine Aussageform mit freiem $x$. Das Zweite ist eine wahre Aussage mit Zeuge $x = 2$.
-
-</Exercise>
 
 
 <span id="from-aussagen-und-aussageformen-behauptungen-ausdrücke-und-aufforderungen"></span>
@@ -72,50 +67,13 @@ Entscheidend ist die **ganze Äußerung**: „Beweise null gleich eins“ forder
 Reell ist $1/0=2$ undefiniert, nicht gewöhnlich falsch: Kein Reeller ergibt mit null multipliziert eins, denn jedes solche Produkt ist null. Dieses Bedeutungsproblem ist kein dritter Wahrheitswert.
 
 
-<span id="from-aussagen-und-aussageformen-wahrheit-wissen-und-gründe"></span>
+<Exercise question="Für ganzzahlige Eingaben sei $Q(t):2t+1=7$. Werte bei $t=3$ und $t=2$ aus. Benenne Regel, zulässige Eingabe und entstehende Aussage. Muss eine andere Eingabe immer den Wahrheitswert ändern?">
 
-### Wahrheit, Wissen und Gründe
-
-Klassische **Zweiwertigkeit** wird vorausgesetzt, nicht bewiesen: Jede sinnvolle Aussage hat genau einen von zwei Wahrheitswerten. $T/F$ und $1$ und $0$ bezeichnen Wahrheit, keine Rechengrößen.
-
-Eine feste Karte zeigt schon vor dem Öffnen null oder nicht null. Fünf zu finden ändert Wissen, nicht Wahrheit. Drei Stühle morgens und vier nachmittags ergeben verschiedene **zeitbezogene Aussagen**, keine doppelte Wahrheit einer Aussage. Verschiedene Prädikateingaben vervollständigen ebenfalls verschiedene Behauptungen.
-
-Ein Zeuge beweist Existenz, ein Gegenbeispiel widerlegt Universalität. Allbeweise brauchen gegebenenfalls beliebige Eingaben oder vollständige Prüfung endlicher Bereiche; ausgesuchte Erfolge im Unendlichen genügen nicht. Für beliebiges reelles $x<1$ liefert Transitivität mit $1<2$ den Schluss $x<2$: Logische Struktur allein begründet keine Ordnung.
-
-
-<span id="from-aussagen-und-aussageformen-selbst-prüfen"></span>
-
-### Selbst prüfen
-
-Ordne „Eins ist gleich null“, „Erkläre, warum eins gleich eins ist“ und $7$ ein; mache aus $7$ zwei Behauptungen. Ergänze $x=0$ durch Kontext und Quantifizierung.
-
-<details>
-<summary>Hinweis</summary>
-
-Trenne verlangte Handlung und eingebettete Behauptung; unterscheide Eingabewahl von Quantifizierung über alle Eingaben.
-
-</details>
-
-<details>
-<summary>Referenzlösung</summary>
-
-„Eins ist gleich null“ ist falsch; „Erkläre …“ fordert zur wahren Gleichheit auf. $7$ benennt; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten. Legt der Kontext $x$ als reelle Zahl null fest, ist $x=0$ auswertbar, aber ungebunden. „Jeder Reelle ist null“ ist geschlossen und falsch, keine Anweisung.
-
-</details>
-
-<Exercise question="Für reelles y in $\forall x\in\mathbb R\;(x<y)$: Was ist gebunden, was bewirkt $y=0$? Vergleiche $\exists x\in\mathbb R\;(x=0)$ und ‘Jede ganze Zahl ist positiv’.">
-
-Nur $x$ ist gebunden; $y$ bleibt auch mit Zuweisung null frei. Dann ist die Formel falsch, widerlegt durch $x=1$. Die Existenzformel ist geschlossen und mit Zeuge null wahr. Die sprachliche Allaussage ist ohne Buchstaben geschlossen und durch null widerlegt.
+Beide Eingaben gehören zu $\mathbb Z$. Einsetzen ergibt $2\cdot3+1=7$, wahr, und $2\cdot2+1=7$, falsch. Die Gleichung ist die feste Regel; jede eingesetzte Gleichung ist eine Aussage. Eine andere Eingabe muss Wahrheit nicht ändern: $R(t):t^2\ge0$ ist bei jeder ganzzahligen Eingabe wahr. Es bleibt eine an einer Eingabe ausgewertete Bedingung.
 
 </Exercise>
 
-<Exercise question="Übersetze ‘Es gibt einen Reellen mindestens null und kleiner als eins’; nenne einen Zeugen. Ersetze ‘es gibt’ durch ‘jeder’, begründe den Wahrheitswert und benenne Unverändertes.">
-
-$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ ist mit Zeuge null wahr. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ ist falsch: Eins verletzt die strenge Obergrenze. Beide sind geschlossen, mit gleichem Bereich und Vergleichen; nur die Anforderung eine/jede Eingabe wechselt.
-
-</Exercise>
-
-Unterscheide unbekannt (verdeckte feste Karte), undefiniert (reelle Division durch null) und unbegründet (möglicherweise richtig, aber unzureichend begründet). Erkläre warum; siehe [Mathematische Struktur lesen](../quantifier-order/#from-reading-mathematical-structure).
+Prüfe deine Erklärung: Bereich nennen, in die unveränderte Regel einsetzen, Wahrheitswert begründen. Ein passendes Ergebnis ohne diese Schritte lässt die Begründung offen.
 
 <span id="from-definitions-assumptions-results"></span>
 
@@ -189,3 +147,66 @@ Für $x\in\mathbb R$ lautet das Kriterium $(0\le x)\land(x\le1)$. Null erfüllt 
 </Exercise>
 
 Erfinde eine Eigenschaft; trenne Definition, wahre und falsche Anwendung. Siehe [Mehrere gleichzeitige Bedingungen](../simultaneous-conditions/#from-simultaneous-conditions) für ein längeres Kriterium.
+
+
+## Quantoren und Beweise: eine spätere Verbindung
+
+Die Beispiele zu Eingaben, Aussagen und Definitionen oben genügen für den ersten Durchgang. Kehre nach [Quantoren und Geltungsbereichen](../universal-statements-and-domains/#from-bound-variables-and-scope) hierher zurück. $x\in\mathbb N$ beschränkt den Bereich ohne Bindung; ein Quantor bindet x in seinem Geltungsbereich. Wertzuweisung und Variablenbindung sind verschiedene Vorgänge.
+
+<span id="from-aussagen-und-aussageformen-einsetzen-und-wahrheit"></span>
+
+### Einsetzen und Wahrheit
+
+„Es gibt ein natürliches $x$ mit $x+3=10$“ ist ohne vorab gewählte Eingabe vollständig; $7$ bezeugt Wahrheit. Freie Eingabe und unbekannte Wahrheit sind verschieden.
+
+<Exercise question="Ist $x^2 = 4$ eine Aussage? Und $\exists x \in  \mathbb{N} : x^2 = 4$?">
+
+Das Erste ist eine Aussageform mit freiem $x$. Das Zweite ist eine wahre Aussage mit Zeuge $x = 2$.
+
+</Exercise>
+
+
+<span id="from-aussagen-und-aussageformen-wahrheit-wissen-und-gründe"></span>
+
+### Wahrheit, Wissen und Gründe
+
+Klassische **Zweiwertigkeit** wird vorausgesetzt, nicht bewiesen: Jede sinnvolle Aussage hat genau einen von zwei Wahrheitswerten. $T/F$ und $1$ und $0$ bezeichnen Wahrheit, keine Rechengrößen.
+
+Eine feste Karte zeigt schon vor dem Öffnen null oder nicht null. Fünf zu finden ändert Wissen, nicht Wahrheit. Drei Stühle morgens und vier nachmittags ergeben verschiedene **zeitbezogene Aussagen**, keine doppelte Wahrheit einer Aussage. Verschiedene Prädikateingaben vervollständigen ebenfalls verschiedene Behauptungen.
+
+Ein Zeuge beweist Existenz, ein Gegenbeispiel widerlegt Universalität. Allbeweise brauchen gegebenenfalls beliebige Eingaben oder vollständige Prüfung endlicher Bereiche; ausgesuchte Erfolge im Unendlichen genügen nicht. Für beliebiges reelles $x<1$ liefert Transitivität mit $1<2$ den Schluss $x<2$: Logische Struktur allein begründet keine Ordnung.
+
+
+<span id="from-aussagen-und-aussageformen-selbst-prüfen"></span>
+
+### Selbst prüfen
+
+Ordne „Eins ist gleich null“, „Erkläre, warum eins gleich eins ist“ und $7$ ein; mache aus $7$ zwei Behauptungen. Ergänze $x=0$ durch Kontext und Quantifizierung.
+
+<details>
+<summary>Hinweis</summary>
+
+Trenne verlangte Handlung und eingebettete Behauptung; unterscheide Eingabewahl von Quantifizierung über alle Eingaben.
+
+</details>
+
+<details>
+<summary>Referenzlösung</summary>
+
+„Eins ist gleich null“ ist falsch; „Erkläre …“ fordert zur wahren Gleichheit auf. $7$ benennt; „Sieben ist gleich sieben“ und „Sieben ist größer als null“ behaupten. Legt der Kontext $x$ als reelle Zahl null fest, ist $x=0$ auswertbar, aber ungebunden. „Jeder Reelle ist null“ ist geschlossen und falsch, keine Anweisung.
+
+</details>
+
+<Exercise question="Für reelles y in $\forall x\in\mathbb R\;(x<y)$: Was ist gebunden, was bewirkt $y=0$? Vergleiche $\exists x\in\mathbb R\;(x=0)$ und ‘Jede ganze Zahl ist positiv’.">
+
+Nur $x$ ist gebunden; $y$ bleibt auch mit Zuweisung null frei. Dann ist die Formel falsch, widerlegt durch $x=1$. Die Existenzformel ist geschlossen und mit Zeuge null wahr. Die sprachliche Allaussage ist ohne Buchstaben geschlossen und durch null widerlegt.
+
+</Exercise>
+
+<Exercise question="Übersetze ‘Es gibt einen Reellen mindestens null und kleiner als eins’; nenne einen Zeugen. Ersetze ‘es gibt’ durch ‘jeder’, begründe den Wahrheitswert und benenne Unverändertes.">
+
+$\exists x\in\mathbb R\;((0\le x)\land(x<1))$ ist mit Zeuge null wahr. $\forall x\in\mathbb R\;((0\le x)\land(x<1))$ ist falsch: Eins verletzt die strenge Obergrenze. Beide sind geschlossen, mit gleichem Bereich und Vergleichen; nur die Anforderung eine/jede Eingabe wechselt.
+
+</Exercise>
+
+Unterscheide unbekannt (verdeckte feste Karte), undefiniert (reelle Division durch null) und unbegründet (möglicherweise richtig, aber unzureichend begründet). Erkläre warum; siehe [Mathematische Struktur lesen](../quantifier-order/#from-reading-mathematical-structure).

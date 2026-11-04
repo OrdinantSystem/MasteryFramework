@@ -1,0 +1,211 @@
+---
+locale: "en"
+course: "analysis"
+chapter: "analysis-sequences"
+sourceId: "analysis-zero"
+title: "Real sequences and absolute distance"
+navTitle: "Real sequences and absolute distance"
+description: "Real sequences and absolute distance"
+order: 15
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["zahlenmengen"]
+sourcePages: []
+sourceLocations: ["A0.1.8 Nested quantifiers/05 Reading Quantified Definitions Left to Right.md#05 · Read a quantified definition from the left", "Concepts/Real Sequences.md#Real Sequences", "Concepts/Absolute Value and Distance on the Real Line.md#Absolute Value and Distance on the Real Line"]
+thumbnail: "number-sets"
+additionalSources: []
+---
+
+<span id="from-real-sequences"></span>
+
+## Real sequences
+
+The device reports nine twice, then three forever. In “third report equals three,” position and value coincide numerically but have different roles.
+
+
+<span id="from-real-sequences-one-output-at-every-positive-index"></span>
+
+### One output at every positive index
+
+$$
+\mathbb N=\{1,2,3,\ldots\},\qquad a:\mathbb N\to\mathbb R,\qquad a_n=a(n).
+$$
+
+A real sequence assigns one real term to every positive natural index. Zero is excluded here; specify other conventions. Here $n$ is the index, $a_n$ is the term at that index, and $a$ is the whole function. Subscripts do not multiply; the arrow specifies domains, not convergence.
+
+$$
+(a_n)_{n=1}^{\infty}.
+$$
+
+There is no last term or index infinity. Positive natural indices can output negative, zero or positive values.
+
+
+<span id="from-real-sequences-a-rule-must-specify-every-position"></span>
+
+### A rule must specify every position
+
+$$
+a_n=2n\quad(n\in\mathbb N).
+$$
+
+Thus $a_1=2$, $a_2=4$, $a_3=6$. Constant $a_n=c$ fixes one real output, for example $-3$. The device rule specifies $a_1=a_2=9$ and $a_n=3$ for all $n\ge3$; its three-term prefix alone permits infinitely many continuations.
+
+Unlike sets, sequences retain positions and repetitions. Alternating zero–one and one–zero share values but differ at index one. Equality requires agreement at every index, not a finite prefix.
+
+A tail includes $N$ and all later indices: from $N=3$ the device gives only threes. Both $N$ and $n$ are natural numbers: $N$ starts the tail, and $n$ is the index being tested. Zero then always one agrees with constant one from two onward, but is unequal to it.
+
+{/* analysis-visual:start real-sequences-16 */}
+
+The horizontal coordinate is the position $n$; the vertical coordinate is the value $a_n$. Repeated values remain separate dots at separate indices. Move $N$ past the two early reports to isolate the constant tail.
+
+<Interactive kind="sequence" preset="device" id="analysis-sequence-positions" />
+
+{/* analysis-visual:end real-sequences-16 */}
+
+<span id="from-real-sequences-practice"></span>
+
+#### Practice
+
+Give the first three terms of $a_n=2n$. May a real sequence have negative outputs?
+
+<details>
+<summary>Hint</summary>
+
+Index and term have different roles.
+
+</details>
+
+<Exercise>
+
+Two, four, six. Yes: assign negative three to every positive index; output and index domains differ.
+
+</Exercise>
+
+Compare the two alternating zero–one sequences and their value sets.
+
+<details>
+<summary>Hint</summary>
+
+Inspect the first position.
+
+</details>
+
+<Exercise>
+
+Different first terms mean different sequences; their common value set forgets positions and repetitions.
+
+</Exercise>
+
+Does zero then always one equal constant one? Do they eventually agree?
+
+<details>
+<summary>Hint</summary>
+
+Equality checks the beginning too.
+
+</details>
+
+<Exercise>
+
+They are unequal at index one, but agree at every index from two onward.
+
+</Exercise>
+
+Later, construct two different continuations of one three-term prefix: why do observations not define a sequence?
+
+
+<span id="from-real-sequences-read-aloud"></span>
+
+### Read aloud
+
+a sub n means the real output of a at positive natural index n.
+
+<span id="from-absolute-value-and-distance"></span>
+
+## Absolute value and distance
+
+Minus three and plus three both have distance three from zero. Absolute value measures nonnegative distance, not direction.
+
+$$
+|x|=\begin{cases}x,&x\ge0,\\-x,&x<0.\end{cases}
+$$
+
+Each real belongs to one branch. For $x<0$, $-x$ is positive: $|-3|=|3|=3$, $|0|=0$. Nonnegative includes zero. Familiar real arithmetic and order are assumed.
+
+
+<span id="from-absolute-value-and-distance-signed-displacement-and-distance"></span>
+
+### Signed displacement and distance
+
+$$
+d(x,y)=|x-y|,\qquad |2-5|=|-3|=3,\qquad |5-2|=3.
+$$
+
+$x-y$ is displacement from $y$ to $x$; absolute value gives length. Reversing subtraction negates displacement. A number and its opposite have equal absolute values. For a positive input, both absolute values equal that input; for a negative input, both equal its positive opposite; at zero, both equal zero. Hence $d(x,y)=d(y,x)$ universally.
+
+Zero distance is equivalent to $x=y$: a nonnegative difference equals its absolute value; a negative difference has positive absolute value. Thus zero distance forces zero difference, and conversely. No triangle inequality is needed.
+
+
+<span id="from-absolute-value-and-distance-a-strict-tolerance-is-an-open-interval"></span>
+
+### A strict tolerance is an open interval
+
+$$
+\varepsilon>0:\qquad |t-L|<\varepsilon\ \Longleftrightarrow\ L-\varepsilon<t<L+\varepsilon.
+$$
+
+For fixed $L$, $\varepsilon>0$, put $u=t-L$. If $u\ge0$, distance below tolerance means $u<\varepsilon$; $-\varepsilon<u$ is automatic. If $u<0$, it means $-u<\varepsilon$, equivalently $-\varepsilon<u$; the upper bound is automatic. Thus $-\varepsilon<u<\varepsilon$; add $L$. Reversibility proves both directions.
+
+Both bounds are strict: at target three, tolerance $1/2$, endpoints $2.5,3.5$ fail by equality. Epsilon varies, rather than being a fixed tiny constant.
+
+{/* analysis-visual:start real-sequences-17 */}
+
+Move the point to either side of three, then onto each boundary. Direction changes the sign of the displacement; membership depends on its absolute distance.
+
+<Interactive kind="number-line" preset="distance" id="analysis-distance-band" />
+
+{/* analysis-visual:end real-sequences-17 */}
+
+<span id="from-absolute-value-and-distance-practice"></span>
+
+#### Practice
+
+At target $3$ and tolerance $1/2$, test $2.5$, $3$ and $13/4$.
+
+<details>
+<summary>Hint</summary>
+
+Compute distance before comparing.
+
+</details>
+
+<Exercise>
+
+Distances $1/2$, $0$, $1/4$: the endpoint fails by equality; the others pass.
+
+</Exercise>
+
+A point lies left of its target. Does negative displacement put it inside every positive tolerance?
+
+<details>
+<summary>Hint</summary>
+
+Use two and five.
+
+</details>
+
+<Exercise>
+
+No. From target five to point two, displacement is negative three but distance is three, failing tolerance one.
+
+</Exercise>
+
+Later, reconstruct both sign cases for the interval equivalence and the zero-distance proof.
+
+
+<span id="from-absolute-value-and-distance-read-aloud"></span>
+
+### Read aloud
+
+The absolute value of t minus L is less than epsilon exactly when t lies strictly between L minus epsilon and L plus epsilon.

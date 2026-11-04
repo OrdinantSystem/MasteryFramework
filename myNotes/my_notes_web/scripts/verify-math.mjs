@@ -31,7 +31,7 @@ for(const path of await pages('dist')){
  }
  assert.ok(!html.includes('katex-error'),`${path}: KaTeX error`);
 }
-for(const locale of ['','de/','es/']){
+for(const locale of ['','de/']){
  const html=await readFile(`dist/${locale}analysis/lessons/logische-verknuepfungen/index.html`,'utf8');
  const table=html.match(/<thead>([\s\S]*?)<\/thead>/)?.[1]??'';
  assert.equal((table.match(/class="katex"/g)||[]).length,7,`${locale}: all seven truth-table headings use KaTeX`);

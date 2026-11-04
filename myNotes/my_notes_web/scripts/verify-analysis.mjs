@@ -1,3 +1,4 @@
+import {locales} from '../src/lib/i18n.ts';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 import {evaluate,equivalent,nand,assignments} from '../src/lib/interactive/logic-model.ts';
@@ -12,7 +13,7 @@ for(const [a,b] of assignments){
 for(let n=-40;n<=40;n++)assert.equal(n%2===0,(n*n)%2===0);
 assert.equal(1*1>1,false);
 const analysisInventory=[];
-for(const locale of ['en','de','es']){
+for(const locale of locales){
  const dir=`src/content/lessons/${locale}/analysis`,names=(await readdir(dir)).filter(name=>name.endsWith('.mdx')).sort();
  assert.ok(names.length>0);analysisInventory.push(names);
  if(analysisInventory.length>1)assert.deepEqual(names,analysisInventory[0],`${locale}: matching Analysis lesson inventory`);

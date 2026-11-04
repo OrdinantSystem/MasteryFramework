@@ -33,7 +33,7 @@ Poster- und Blattanwendungen bleiben. Boolesche Aufgaben mit nummerierten Gesetz
 
 <span id="from-analysis-grundlagen-ueberblick-die-abhängigkeitskette"></span>
 
-### Die Abhängigkeitskette
+### Die Abhängigkeitskette · optionale boolesche Anwendung
 
 <Math tex="(1\text{–}5)\longrightarrow H_1,H_2\longrightarrow(6\text{–}8)\longrightarrow U\longrightarrow\{9a,10\}\longrightarrow9b" display />
 
@@ -50,11 +50,31 @@ $U$ bezeichnet hier die Eindeutigkeit des Komplements.
 - Warum müssen die Neutralitätsgesetze vor ihrer Verwendung im Idempotenzbeweis hergeleitet werden?
 - Warum braucht die NAND-Realisierung von UND zwei statt drei Gatter?
 
-Kehre bei Unsicherheit zur Lektion zurück. Die sechs Quelldokumente bereiten spätere Analysis vor; Grenzwerte und Differentiation behandeln sie nicht.
+Kehre bei Unsicherheit zu den verlinkten Erklärungen zurück. Der Kernweg führt zu Folgengrenzwerten; boolesche Gesetze und Schaltungen sind optionale Anwendungen. Differentiation liegt außerhalb des bisherigen Stoffs.
 
 
 <span id="from-analysis-grundlagen-ueberblick-eine-verknüpfte-aufgabe"></span>
 
 ### Eine verknüpfte Aufgabe
 
-Prüfe für ganze $n$: „Gerades $n^2$ impliziert $4\mid n$.“ Parität liefert nur gerades $n$, keine Viererteilbarkeit. Gegenbeispiel $n=2$ hat gerades Quadrat $4$, ist aber nicht durch $4$ teilbar. Ein passender Satz beweist manchmal weniger als verlangt.
+Prüfe für ganze $n$: „Gerades $n^2$ impliziert $4\mid n$.“
+
+<Exercise>
+
+Parität liefert nur gerades $n$, keine Viererteilbarkeit. Gegenbeispiel $n=2$ hat gerades Quadrat $4$, ist aber nicht durch $4$ teilbar. Ein passender Satz beweist manchmal weniger als verlangt.
+
+</Exercise>
+
+
+### Einen Folgenbeweis rekonstruieren
+
+Versuche die Aufgabe vor dem Öffnen der Lösung. Prüfe Wahlreihenfolge und ganzes Endstück; lies bei einer Lücke die Lektionen zu Konvergenz und ihrem Scheitern erneut.
+
+<Exercise question="Für $a_1=8$ und $a_n=0$ bei jedem $n\ge2$: Beweise Konvergenz gegen null. Erkläre, warum das erste Glied nicht stört, warum $N=n+1$ kein zulässiger Start ist und ob Scheitern am Ziel eins jeden reellen Grenzwert ausschlösse.">
+
+Für beliebiges $\varepsilon>0$ wähle $N=2$. Jedes natürliche $n\ge N$ erfüllt $|a_n-0|=0<\varepsilon$. Das erste Glied liegt vor diesem Endstück. N muss vor dem beliebigen Prüfindex feststehen; $N=n+1$ kehrt die benötigte Abhängigkeit um. Am Ziel eins widerlegen $\varepsilon=1/2$ und $n=\max(N,2)$ jeden vorgeschlagenen Start. Trotzdem ist null nach dem ersten Argument ein Grenzwert: Ein gescheitertes Ziel schließt nicht alle Ziele aus.
+
+</Exercise>
+
+
+Zum Nachlesen: <a href={lessonUrl("reading-sequence-convergence","de","analysis")}>Konvergenz</a> · <a href={lessonUrl("negating-sequence-convergence","de","analysis")}>Scheitern am Ziel</a>.

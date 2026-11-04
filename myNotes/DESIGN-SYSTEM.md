@@ -49,9 +49,9 @@ The header contains one archive-home anchor wrapping the book icon and the compl
 
 Do not add nonfunctional symbols or pretend buttons. The visible slash badge and decorative language circle have been removed. A working slash keyboard shortcut may remain without an ornamental badge. The sidebar footer says only Learning archive, translated in each language.
 
-The myNotes wordmark links to the localized archive overview; do not duplicate that destination with a top-level Overview link in the sidebar. Course overview links remain part of the course hierarchy. Navigation scrollbars use a thin thumb mixed from the muted color at 18% opacity over a transparent track, rising gently to 30% on hover or keyboard focus. The sidebar has no vertical divider against the article.
+The myNotes wordmark links to the localized archive overview; do not duplicate that destination with a top-level Overview link in the sidebar. Course overview links remain part of the course hierarchy. The main page and navigation share thin scrollbars with transparent tracks and a subtle thumb mixed from muted color into the reading background (10%, rising to 16% on hover or keyboard focus). The sidebar has no vertical divider against the article.
 
-The current course-color trial assigns blue to Linear Algebra, teal to Analysis, and purple to Learning Methodology. Course headings, nested section headings, overview links, 1 px branch rails, and active lessons share that course color. Names, indentation, and disclosure controls retain the hierarchy without relying on color alone. On desktop, an open course heading stays visible while its branch scrolls. Colors are keyed to the stable course identity rather than alternating by row. This trial follows navigation checkpoint commit `2901665` and remains uncommitted for comparison.
+The current course-color trial assigns blue to Linear Algebra, teal to Analysis, and purple to Learning Methodology. Course headings, nested section headings, overview links, 1 px branch rails, and active lessons share that course color. Names, indentation, and disclosure controls retain the hierarchy without relying on color alone. On desktop, an open course heading stays visible while its branch scrolls. Colors are keyed to the stable course identity rather than alternating by row. This color scheme follows navigation checkpoint commit `2901665` and is part of the current archive baseline.
 
 The desktop sidebar begins at x=0. Its position is not constrained by a centered outer container. Use native details for a subject → course → chapter-group → lesson hierarchy. Store expansion locally where available, and reveal the active lesson's ancestors on navigation. Do not display empty subject placeholders. Analysis deliberately omits the chapter-group layer: its six sections link directly to lessons, while other courses retain their existing grouped hierarchy. Use the organization guide for the twenty-page route; source labels such as Analysis 0 belong in provenance, not navigation.
 
@@ -204,20 +204,20 @@ Use native SVG and small scripts for these bounded 2D models. Evaluate JSXGraph 
 
 ## Localization
 
-English is the unprefixed default. German uses `/de/`; Spanish uses `/es/`. Keep one MDX file per language and lesson, with the same stable filename and order. Titles can be translated independently of that identity.
+English is the unprefixed default. German uses `/de/`. These are the only supported languages. Keep one MDX file per language and lesson, with the same stable filename and order. Titles can be translated independently of that identity.
 
 Generic interface text lives in the typed central dictionaries. Vector-specific instructions and feedback live in src/lib/interactive/vector-copy.ts, with state-derived numerical values and optional localized scenario copy. Localize headings, controls, captions, accessible names, feedback, and equations' natural-language labels. Retain mathematical meaning rather than translating word by word.
 
 Language links open the equivalent concept and preserve the search query on search pages. They remain functional without JavaScript. Use the centralized route helpers for both locale and GitHub Pages prefixes.
 
-Set the page's actual html language. Pagefind builds and searches the matching language index. This is language-specific full-text search, not automatic translation of a search query. Check German umlauts and Spanish accents with real terms.
+Set the page's actual html language. Pagefind builds and searches the matching language index. This is language-specific full-text search, not automatic translation of a search query. Check German umlauts with real terms.
 
 The build validates published counterparts and equation parity across translations. Human review still covers the prose, notation, and interpretation. Do not mark a translation reviewed because it compiles.
 
 ## Applying the design to another area
 
 1. Define the subject, chapter order, prerequisites, and learner question before page layout.
-2. Write the English concept or problem and its sources, then create German and Spanish equivalents with matching identities.
+2. Write the English concept or problem and its sources, then create German equivalents with matching identities.
 3. Reuse the existing shell and teaching components; do not generate a new landing-page design.
 4. Select a visual relationship that clarifies the concept. Use a static figure if manipulation adds no useful question.
 5. For an interaction, specify state, permitted actions, constraints, feedback, edge cases, and an input alternative before coding.
@@ -240,4 +240,4 @@ Keep verification findings and representative screenshots with the implementatio
 
 Course navigation colors come from `src/lib/navigation-colors.ts`, using the global order in the course registry. The four-role cycle is blue → teal (accent) → violet (purple) → orange (coral), then repeats. Assignment happens before grouping by knowledge area, and does not depend on language or expanded state. Every chapter, group and active lesson inherits its course's color and matching tint; adding a lesson does not introduce an unrelated color inside that branch. Append courses to preserve current assignments; reordering courses intentionally changes their colors. These are navigation identities, not difficulty or progress indicators, and do not change semantic colors within mathematical figures.
 
-Sidebar and contents scrollbars mix 10% muted color into the reading background, increasing to 16% while hovered or focused. Their tracks remain transparent.
+The main page, sidebar and contents scrollbars share a thin, rounded thumb that mixes 10% muted color into the reading background, increasing to 16% while their scroll region is hovered or focused. Their tracks remain transparent. The shared rule in site.css supplies both standard scrollbar properties and WebKit pseudo-elements.

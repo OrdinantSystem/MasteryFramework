@@ -1,3 +1,4 @@
+import {locales} from '../src/lib/i18n.ts';
 import assert from 'node:assert/strict';
 import {readFile,readdir} from 'node:fs/promises';
 
@@ -18,7 +19,7 @@ for(const item of [...coverage.lessons,...coverage.concepts]){
  item.targets.forEach(key=>targets.add(key));
 }
 const inventories=[];
-for(const locale of ['en','de','es']){
+for(const locale of locales){
  const root=`src/content/lessons/${locale}/analysis`;
  const keys=(await readdir(root)).filter(name=>name.endsWith('.mdx')).map(name=>name.slice(0,-4)).sort();
  inventories.push(keys);
@@ -30,7 +31,7 @@ for(const locale of ['en','de','es']){
   assert.ok(!/\b(?:Jean|Isaac)\b|\/home\/ubuntu|obsidian:\/\//.test(source),`No private tutoring or server paths: ${locale}/${key}`);
  }
 }
-assert.deepEqual(inventories[0],inventories[1]);assert.deepEqual(inventories[0],inventories[2]);
+assert.deepEqual(inventories[0],inventories[1]);
 
 const values=[false,true];
 for(const a of values)for(const b of values)for(const c of values){
@@ -75,4 +76,4 @@ for(const threshold of [1,2,3,10,100]){
 }
 assert.equal(1/10<0.1,false,'Equality is not strict closeness');
 assert.equal(1/11<0.1,true);
-console.log(`Verified 52 source dispositions, 28 concept mappings, ${targets.size} destinations in EN/DE/ES, ${relations} finite relation models, and order/convergence boundary examples. Proof and translation review remain separate.`);
+console.log(`Verified 52 source dispositions, 28 concept mappings, ${targets.size} destinations in EN/DE, ${relations} finite relation models, and order/convergence boundary examples. Proof and translation review remain separate.`);

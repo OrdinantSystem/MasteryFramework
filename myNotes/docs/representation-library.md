@@ -1,8 +1,12 @@
 # Reusable representation library
 
+Analysis teaching presentations introduced on 4 November 2026 use the same models with a closed optional `presentation` prop. Supported pairs are candidates/equation/input, quantifiers/keys/witnesses, sequence/device/terms and sequence/reciprocal/tail. Default full preserves the explorer. Each view has coherent localized instructions, actions, readouts, static rendering and reset; unsupported pairs fail initialization. See [the contract and gallery obligations](analysis-teaching.md); bind review receipts to shared source versions.
+
 The internal library is part of my_notes_web and shares its version/lockfile. Open the executable [gallery](http://127.0.0.1:4321/library/) after a production build. It demonstrates the actual APIs below, including a second basis using the same vector engine and a matrix with a different inner dimension.
 
 ## Choose the appropriate asset
+
+Analysis I additionally uses five focused kinds through Interactive: `candidates` (equation/positive/witnesses), `conditions` (connectives/construction/demorgan), `number-line` (bounds/complement/counterexample/distance), `quantifiers` (keys/nested), and `sequence` (reciprocal/device/alternating/zero). Each requires a unique id and a listed preset. `AnalysisProof preset="equivalence|scope|contradiction|complement"` supplies localized data to the existing Flow renderer. See [the visual audit and specifications](analysis-visuals.md) for state bounds, exact mathematical feedback, finite-sample limitations, accessibility and preservation contracts. Every preset has a working gallery example.
 
 | Asset | Public lesson API | Reuse level |
 | --- | --- | --- |
@@ -55,7 +59,7 @@ Prefer a named preset in src/lib/interactive/vector-scenarios.ts. Copy templates
 | coefficients | min/max/step for a and b |
 | column | min/max/step for the rank column coordinates |
 | extent | Integer visible coordinate extent, 2…20 |
-| text | Optional en/de/es overrides for title, prompt, explanation, caption |
+| text | Optional en/de overrides for title, prompt, explanation, caption |
 
 The validation function rejects zero starting directions, incorrect context types, off-grid coefficients/columns, nonfinite values, invalid bounds, unreachable independent targets, and configurations that extend beyond the visible plane. Bounds contain zero, align to step, and use steps of at least 0.01 with at most two decimal places. Both comparison contexts must fit all permitted coefficient corners; rank activities keep the first column fixed and allow zero only through the learner's movable column.
 
@@ -117,7 +121,7 @@ RelationMap is a static localized example of named relations in a linearity conc
 
 For another subject, import a typed `MindMapData` object and pass `data={yourMap}` instead of a preset. Data lives under `src/lib/learning/`; no graph HTML belongs in MDX. Required fields:
 
-- `title`, `question`, `caption`: EN/DE/ES strings.
+- `title`, `question`, `caption`: EN/DE strings.
 - `nodes`: unique slug `id`, localized `label`/`detail`, and `x`/`y` in the shared 900-wide layout (`height` defaults to 620 and accepts 200…1000). Node rectangles are 180×76 and must fit.
 - `edges`: valid `from`/`to`, localized `label`/`reason`, `kind: 'branch' | 'cross'`, an SVG route `path`, and label-center `x`/`y`. Branches group concepts; dashed cross-links connect roles across branches. Directions express the named claim, not necessarily chronology or causation.
 

@@ -12,6 +12,7 @@ import MatrixComparison from '../components/MatrixComparison.astro';
 import Interactive from '../components/interactive/Interactive.astro';
 import VectorFigure from '../components/VectorFigure.astro';
 import {assets} from '../lib/interactive/catalog';
+import AnalysisProof from '../components/AnalysisProof.astro';
 Astro.locals.locale='en';
 ---
 <SiteLayout title="Representation library" description="Reusable teaching assets and authoring examples." locale="en" current="library">
@@ -22,6 +23,17 @@ Astro.locals.locale='en';
     <ul>{assets.map(asset=><li><a href={`#${asset.id}`}>{asset.name}</a> — {asset.purpose}</li>)}</ul>
     {assets.map(asset=><section id={asset.id}>
       <h2>{asset.name}</h2><p>{asset.purpose}</p><pre><code>{asset.example}</code></pre>
+      {asset.id==='analysis-candidates'&&['equation','positive','witnesses'].map((preset)=><Interactive kind="candidates" preset={preset as 'equation'|'positive'|'witnesses'} id={`library-candidates-${preset}`}/>)}
+      {asset.id==='analysis-conditions'&&['connectives','construction','demorgan'].map((preset)=><Interactive kind="conditions" preset={preset as 'connectives'|'construction'|'demorgan'} id={`library-conditions-${preset}`}/>)}
+      {asset.id==='analysis-number-line'&&['bounds','complement','counterexample','distance'].map((preset)=><Interactive kind="number-line" preset={preset as 'bounds'|'complement'|'counterexample'|'distance'} id={`library-line-${preset}`}/>)}
+      {asset.id==='analysis-quantifiers'&&<Interactive kind="quantifiers" preset="keys" id="library-keys"/>}
+      {asset.id==='analysis-quantifiers'&&<Interactive kind="quantifiers" preset="keys" presentation="witnesses" id="library-keys-focused"/>}
+      {asset.id==='analysis-quantifiers'&&<Interactive kind="quantifiers" preset="nested" id="library-nested"/>}
+      {asset.id==='analysis-sequence'&&<Interactive kind="sequence" preset="reciprocal" id="library-tail"/>}
+      {asset.id==='analysis-candidates'&&<Interactive kind="candidates" preset="equation" presentation="input" id="library-input-focused"/>}
+      {asset.id==='analysis-sequence'&&<Interactive kind="sequence" preset="device" presentation="terms" id="library-terms-focused"/>}
+      {asset.id==='analysis-sequence'&&<Interactive kind="sequence" preset="reciprocal" presentation="tail" id="library-tail-focused"/>}
+      {asset.id==='analysis-proof'&&['equivalence','scope','contradiction','complement'].map(preset=><AnalysisProof preset={preset as 'equivalence'|'scope'|'contradiction'|'complement'}/>)}
       {asset.id==='mind-map'&&<Interactive kind="mind-map" preset="study-session" id="library-study-map"/>}
       {asset.id==='mind-map'&&<><p>A different graph supplied through the typed data API:</p><pre><code>{'<Interactive kind="mind-map" data={teachingMap} id="library-teaching-map" />'}</code></pre><Interactive kind="mind-map" data={teachingMap} id="library-teaching-map"/></>}
       {asset.id==='relation-map'&&<RelationMap/>}

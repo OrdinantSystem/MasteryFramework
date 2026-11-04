@@ -1,3 +1,4 @@
+import {locales} from '../src/lib/i18n.ts';
 import assert from "node:assert/strict";
 import katex from "katex";
 import { mathOptions } from "../src/lib/math-options.mjs";
@@ -37,7 +38,7 @@ for (const preset of Object.values(vectorPresets)) {
     moveHandle(s, "result", preset.target);
     assert.ok(equal(sum(s), preset.target));
     assert.ok(equal([s.a, s.b], ab));
-    for (const locale of ["en", "de", "es"])
+    for (const locale of locales)
       assert.ok(!JSON.stringify(labCopy(locale, s)).match(/\{\w+\}/));
     setContext(s, "dependent");
     assert.ok(!targetInSpan(s));

@@ -16,7 +16,9 @@ import QuestionLens from './QuestionLens.astro';
 import StudyTemplate from './StudyTemplate.astro';
 import RelationMap from './RelationMap.astro';
 import MindMap from './interactive/MindMap.astro';
+import AnalysisProof from './AnalysisProof.astro';
 export const learningComponents = {
+  AnalysisProof,
   Math,
   MindMap,
   RelationMap,

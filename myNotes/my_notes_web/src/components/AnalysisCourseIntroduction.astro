@@ -1,0 +1,14 @@
+---
+import {lessonUrl} from '../lib/content';
+import type {Locale} from '../lib/i18n';
+const {locale}=Astro.props as {locale:Locale};
+const copy={
+ en:{scope:'These notes build the mathematical language used in first-semester Analysis: precise statements, quantifiers and proofs, followed by a first application to sequences and limits.',start:'Start with',foundations:'number systems and statements',then:'and follow the core route through logic and proof to',limits:'sequence convergence',optional:'Boolean algebra and circuits are optional applications. The current material is a foundations section, rather than a complete Analysis I syllabus.',revision:'For revision, use the lesson headings and the',review:'course review',try:'to reconstruct the arguments before reading their solutions.'},
+ de:{scope:'Diese Notizen entwickeln die mathematische Sprache der Analysis im ersten Semester: präzise Aussagen, Quantoren und Beweise, danach eine erste Anwendung auf Folgen und Grenzwerte.',start:'Beginne mit',foundations:'Zahlbereichen und Aussagen',then:'und folge dem Kernweg über Logik und Beweise zur',limits:'Folgenkonvergenz',optional:'Boolesche Algebra und Schaltungen sind optionale Anwendungen. Das bisherige Material bildet einen Grundlagenteil, keinen vollständigen Analysis-I-Lehrplan.',revision:'Nutze zum Wiederholen die Lektionsüberschriften und den',review:'Kursrückblick',try:'und rekonstruiere die Argumente vor dem Lesen ihrer Lösungen.'},
+}[locale];
+---
+<div class="prose" data-analysis-introduction>
+ <p>{copy.scope}</p>
+ <p>{copy.start} <a href={lessonUrl('zahlenmengen',locale,'analysis')}>{copy.foundations}</a> {copy.then} <a href={lessonUrl('reading-sequence-convergence',locale,'analysis')}>{copy.limits}</a>. {copy.optional}</p>
+ <p>{copy.revision} <a href="#analysis-review">{copy.review}</a> {copy.try}</p>
+</div>

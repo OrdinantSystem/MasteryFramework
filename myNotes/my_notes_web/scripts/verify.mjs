@@ -1,3 +1,4 @@
+import {locales} from '../src/lib/i18n.ts';
 import { readFile, readdir, access } from "node:fs/promises";
 import path from "node:path";
 import assert from "node:assert/strict";
@@ -18,10 +19,21 @@ async function walk(dir) {
 }
 const files = await walk(root);
 const pages = files.filter((p) => p.endsWith(".html"));
+assert.deepEqual(locales,["en","de"],"The archive supports only English and German");
+for(const collection of ["lessons","course-guides"]){
+  const folders=(await readdir(`src/content/${collection}`,{withFileTypes:true})).filter(e=>e.isDirectory()).map(e=>e.name).sort();
+  assert.deepEqual(folders,[...locales].sort(),`${collection}: only supported locale folders`);
+}
+assert.ok(!files.some(f=>path.relative(root,f).split(path.sep).includes("es")||f.endsWith(".es.md")),"No Spanish routes or downloads in the output");
+const searchManifest=JSON.parse(await readFile(path.join(root,"pagefind/pagefind-entry.json"),"utf8"));
+assert.deepEqual(Object.keys(searchManifest.languages).sort(),[...locales].sort(),"Search indexes must match supported locales");
 let links = 0;
 const errors = [];
 for (const page of pages) {
   const html = await readFile(page, "utf8");
+  assert.ok(!/\b(?:lang|hreflang)="es"/.test(html),`${page}: retired Spanish language metadata`);
+  const languageLinks=[...html.matchAll(/class="language-menu"[\s\S]*?<\/details>/g)].flatMap(m=>[...m[0].matchAll(/<a\b[^>]*\blang="([^"]+)"/g)].map(a=>a[1]));
+  if(!html.includes('http-equiv="refresh"'))assert.deepEqual(languageLinks,[...locales],`${page}: exactly two language choices`);
   if ((html.match(/<h1[\s>]/g) || []).length !== 1)
     errors.push(`${page}: expected one h1`);
   const identifiers = [...html.matchAll(/\sid="([^"]+)"/g)].map((m) => m[1]);
@@ -224,7 +236,7 @@ const canonicalAnalysis=new Set(organization.lessons.map(l=>l.key));
 const compatibilityCount=Object.keys(organization.aliases.en).filter(k=>!canonicalAnalysis.has(k)).length;
 const lessonSets = Object.fromEntries(
   await Promise.all(
-    ["en", "de", "es"].map(async (locale) => {
+    locales.map(async (locale) => {
       const entries = (await walk(`src/content/lessons/${locale}`)).map(f=>path.relative(`src/content/lessons/${locale}`,f));
       const published = [];
       for (const name of entries.filter((n) => /\.mdx?$/.test(n))) {
@@ -240,10 +252,10 @@ const lessonSets = Object.fromEntries(
 );
 assert.equal(
   pages.length,
-  3 * (2 + courseIds.length + lessonSets.en.length + compatibilityCount) + 11,
+  locales.length * (2 + courseIds.length + lessonSets.en.length + compatibilityCount) + 11,
   "Expected localized archive/course indexes/search/lessons, 404, library, and nine legacy redirects",
 );
-for (const locale of ["en", "de", "es"]) {
+for (const locale of locales) {
   const prefix = locale === "en" ? "" : `${locale}/`;
   const landing = await readFile(path.join(root, prefix, "index.html"), "utf8");
   assert.ok(
@@ -300,7 +312,7 @@ for (const locale of ["en", "de", "es"]) {
     );
     const normalize = (s) =>
       s
-        // German and Spanish use a decimal comma; the value is unchanged.
+        // German uses a decimal comma; the value is unchanged.
         .replace(/(\d)\{,\}(?=\d)/g, "$1.")
         .replace(/\\text\{(?:aber|but|pero)\}/g, "TEXT")
         .replace(/\\operatorname\{(?:Bild|im)\}/g, "IMAGE")
@@ -318,7 +330,7 @@ assert.ok(
   !files.some((f) => f.includes("/source/")),
   "Source PDF must not ship with the public build",
 );
-for(const locale of ['en','de','es'])for(const alias of Object.values(organization.aliases[locale])){
+for(const locale of locales)for(const alias of Object.values(organization.aliases[locale])){
  for(const destination of [alias,...Object.values(alias.fragments)]){
   const target=path.join(root,locale==='en'?'':locale,'analysis',...(destination.key?['lessons',destination.key]:[]),'index.html');
   const html=await readFile(target,'utf8');assert.ok(html.includes(`id="${destination.anchor}"`),`Missing compatibility anchor ${locale}/${destination.key}#${destination.anchor}`);
