@@ -11,7 +11,7 @@
     "check": "ASTRO_TELEMETRY_DISABLED=1 astro check",
     "build": "npm run check && npm run verify:library && npm run verify:content && ASTRO_TELEMETRY_DISABLED=1 astro build && pagefind --site dist && node scripts/verify.mjs && node scripts/verify-math.mjs",
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview --host 127.0.0.1 --port 4321",
-    "verify:library": "node scripts/verify-library.mjs && node scripts/verify-analysis-teaching.mjs && node scripts/test-analysis-teaching.mjs && node scripts/verify-analysis-visuals.mjs",
+    "verify:library": "node scripts/verify-library.mjs && node scripts/verify-reasoning.mjs && node scripts/verify-algebra.mjs && node scripts/verify-equations.mjs && node scripts/verify-parity.mjs && node scripts/verify-patterns.mjs && node scripts/verify-analysis-teaching.mjs && node scripts/test-analysis-teaching.mjs && node scripts/verify-analysis-visuals.mjs",
     "test:analysis-teaching": "node scripts/test-analysis-teaching.mjs",
     "test:analysis-summary": "node scripts/test-analysis-summary.mjs",
     "verify:content": "node scripts/verify-sheet-2-1.mjs && node scripts/verify-analysis.mjs && node scripts/verify-analysis-zero.mjs && node scripts/verify-analysis-organization.mjs && node scripts/verify-analysis-recap.mjs && node scripts/verify-analysis-summary.mjs && node scripts/verify-learning.mjs"

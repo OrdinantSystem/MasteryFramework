@@ -1,0 +1,52 @@
+---
+import Math from '../Math.astro';
+import {parityBounds,type ParityPreset} from '../../lib/interactive/parity-model';
+import {parityMarkup} from '../../lib/interactive/parity-render';
+import {proofCopy,parityReadout} from '../../lib/reasoning/proof-copy';
+import '../../styles/proof.css';
+interface Props {preset:ParityPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',c=proofCopy[locale],r=parityReadout(locale,parityBounds.blue,parityBounds.gold,false);
+if(preset!=='even-sum')throw new Error('Unknown parity explorer');
+---
+<figure class="parity-lab" id={id} data-parity-lab={preset} data-locale={locale}>
+ <h3>{c.explore}</h3>
+ <div class="parity-controls"><button type="button" data-parity-mode="separate" aria-pressed="true" aria-controls={`${id}-scene`}>{c.separate}</button><button type="button" data-parity-mode="combined" aria-pressed="false" aria-controls={`${id}-scene`}>{c.combine}</button><button type="button" data-parity-reset>{c.reset}</button></div>
+ <div id={`${id}-scene`} data-parity-scene role="img" aria-label={r.description} set:html={parityMarkup(locale,parityBounds.blue,parityBounds.gold,false)}/>
+ <div class="parity-inputs">{(['blue','gold'] as const).map(role=><div>
+  <label for={`${id}-${role}-range`}>{c[role]}<output data-parity-count={role}>{parityBounds[role]}</output></label>
+  <input id={`${id}-${role}-range`} data-parity-range={role} type="range" min="0" max="6" step="1" value={parityBounds[role]} aria-describedby={`${id}-bounds`}/>
+  <label class="parity-numeric-label" for={`${id}-${role}-number`}>{c.number} · {c[role]}<input id={`${id}-${role}-number`} data-parity-number={role} type="number" inputmode="numeric" min="0" max="6" step="1" value={parityBounds[role]} aria-describedby={`${id}-bounds`}/></label>
+ </div>)}</div>
+ <div data-parity-equation><Math tex={r.tex} display/></div><p class="proof-caption" data-parity-pairs>{r.pairs}</p>
+ <figcaption><p>{c.help}</p><p id={`${id}-bounds`}>{c.bounds}</p><p data-parity-feedback role="status" aria-live="polite" aria-atomic="true">{r.feedback}</p></figcaption>
+</figure>
+<script>
+import katex from 'katex';
+import {mathOptions} from '../../lib/math-options.mjs';
+import {parityBounds,parityInput} from '../../lib/interactive/parity-model';
+import {parityMarkup} from '../../lib/interactive/parity-render';
+import {proofCopy,parityReadout} from '../../lib/reasoning/proof-copy';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-parity-lab]')){
+ const locale=root.dataset.locale as Locale,c=proofCopy[locale];
+ let blue:number=parityBounds.blue,gold:number=parityBounds.gold,combined=false;
+ const feedback=root.querySelector('[data-parity-feedback]')!,scene=root.querySelector('[data-parity-scene]')!;
+ function draw(){
+  const r=parityReadout(locale,blue,gold,combined);
+  scene.innerHTML=parityMarkup(locale,blue,gold,combined);scene.setAttribute('aria-label',r.description);
+  for(const role of ['blue','gold'] as const){const n=role==='blue'?blue:gold;root.querySelectorAll<HTMLInputElement>(`[data-parity-range="${role}"],[data-parity-number="${role}"]`).forEach(input=>input.value=String(n));root.querySelector(`[data-parity-count="${role}"]`)!.textContent=String(n);}
+  root.querySelectorAll<HTMLElement>('[data-parity-mode]').forEach(button=>button.setAttribute('aria-pressed',String((button.dataset.parityMode==='combined')===combined)));
+  root.querySelector('[data-parity-equation] .math-block')!.innerHTML=katex.renderToString(r.tex,{...mathOptions,displayMode:true});
+  root.querySelector('[data-parity-pairs]')!.textContent=r.pairs;feedback.textContent=r.feedback;
+ }
+ for(const role of ['blue','gold'] as const){
+  const range=root.querySelector<HTMLInputElement>(`[data-parity-range="${role}"]`)!,number=root.querySelector<HTMLInputElement>(`[data-parity-number="${role}"]`)!;
+  function update(raw:string){const n=parityInput(raw);if(n===null){feedback.textContent=c.invalid;return;}if(role==='blue')blue=n;else gold=n;draw();}
+  range.addEventListener('input',()=>update(range.value));number.addEventListener('input',()=>update(number.value));
+  function commit(){if(parityInput(number.value)===null){number.value=String(role==='blue'?blue:gold);feedback.textContent=c.invalid;}}
+  number.addEventListener('change',commit);number.addEventListener('blur',commit);
+ }
+ root.querySelectorAll<HTMLElement>('[data-parity-mode]').forEach(button=>button.addEventListener('click',()=>{combined=button.dataset.parityMode==='combined';draw();}));
+ root.querySelector('[data-parity-reset]')!.addEventListener('click',()=>{blue=parityBounds.blue;gold=parityBounds.gold;combined=false;draw();});
+}
+</script>

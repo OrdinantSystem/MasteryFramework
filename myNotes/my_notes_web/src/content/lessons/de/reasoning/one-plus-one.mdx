@@ -1,0 +1,551 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-01
+sourcePages: []
+additionalSources:
+  - sourceId: reasoning-episode-01-expanded
+    locations: ["Sections 3–10 · sets, cardinality, union, grouping, functions and equality"]
+sourceLocations: ["Episode 01 · sections 1–8, final learning checkpoint, sources and further reading"]
+title: "Was sagen wir eigentlich, wenn wir 1+1=2 schreiben?"
+navTitle: "Was bedeutet 1+1=2 eigentlich?"
+description: "Abstraktion, Mengen, Mächtigkeit, Funktionen, Gleichheit und die Annahmen hinter einer vertrauten Gleichung."
+order: 1
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: []
+thumbnail: reasoning
+---
+
+RATIONALES DENKEN · EPISODE 01
+
+Die einfachste Gleichung der Mathematik verbirgt eine überraschend wichtige Frage: Wie übersetzen wir die komplizierte Welt um uns herum in präzise Aussagen, über die wir nachdenken können?
+
+<ReasoningFigure kind="opening" />
+
+## 1. Die einfachste Frage der Mathematik
+
+Stell dir vor, ich lege einen kleinen Zählstein auf einen Tisch.
+
+Dann lege ich einen weiteren daneben.
+
+Wie viele Zählsteine sind es?
+
+Zwei, natürlich.
+
+Aber nun ändere ich die Farbe eines Zählsteins. Ändert sich dadurch die Antwort?
+
+Was, wenn ein Zählstein größer ist als der andere? Wenn einer aus Metall und der andere aus Kunststoff besteht? Oder wenn ich sie weiter auseinanderlege?
+
+Die Antwort bleibt zwei.
+
+Warum?
+
+Darüber lohnt es sich nachzudenken, denn die beiden Zählsteine könnten sich in fast jeder physischen Eigenschaft unterscheiden. Dennoch ist mathematisch etwas unverändert geblieben.
+
+Wir lassen die meisten Eigenschaften der Gegenstände außer Acht und behalten nur eine bei: wie viele es sind.
+
+Dieser scheinbar triviale Schritt ist eine der Grundlagen mathematischen Denkens.
+
+Er heißt Abstraktion.
+
+Ohne ihn wäre selbst etwas so Vertrautes wie $1+1=2$ schwer zu verstehen.
+
+## 2. Abstraktion: Was ändert sich, und was bleibt gleich?
+
+Kehren wir zu unseren beiden Zählsteinen zurück.
+
+Verändere ihr Aussehen mit den Bedienelementen unten.
+
+<Interactive kind="reasoning" preset="appearance" id="counter-appearance" />
+
+Beachte einen wichtigen Punkt: Wir behaupten nicht, dass die beiden Gegenstände identisch sind.
+
+Wir behaupten, dass ihre Unterschiede für die Frage, die wir stellen, unerheblich sind.
+
+Ginge es um die Farbe, wären ihre Unterschiede wichtig. Ginge es um das Gewicht, könnten Größe und Material eine Rolle spielen.
+
+Unsere Frage betrifft aber die Anzahl.
+
+Abstraktion bedeutet, die für eine bestimmte Frage relevanten Eigenschaften auszuwählen und die übrigen beiseitezulassen.
+
+So können wir dieselbe mathematische Struktur in sehr unterschiedlichen Situationen erkennen.
+
+<ReasoningFigure kind="collections" />
+
+Äpfel, Bücher und Sterne haben physisch sehr wenig gemeinsam.
+
+Trotzdem haben alle drei Sammlungen dieselbe Anzahl von Elementen.
+
+Diese gemeinsame mathematische Eigenschaft nennen wir zwei.
+
+Und hier wird es spannend: Sobald wir von den unerheblichen Eigenschaften abstrahiert haben, können wir über die Zahl zwei nachdenken, ohne ständig an Äpfel, Bücher oder Sterne zu denken.
+
+Deshalb lässt sich Arithmetik auf so viele unterschiedliche Dinge anwenden.
+
+## 3. Was genau zählen wir?
+
+Stell dir nun vor, ich lege zwei Schuhe auf einen Tisch: einen linken Schuh und einen passenden rechten Schuh.
+
+Ich frage: Wie viele sind es?
+
+Du könntest zwei antworten.
+
+Aber angenommen, ich frage: Wie viele Paare sind es?
+
+Jetzt lautet deine Antwort eins.
+
+Die physischen Gegenstände haben sich überhaupt nicht verändert.
+
+Nur unsere Entscheidung darüber, was wir zählen, hat sich verändert.
+
+<Interactive kind="reasoning" preset="units" id="counting-units" />
+
+Dieses Beispiel zeigt einen grundlegenden Unterschied zwischen drei Ideen.
+
+- Gegenstände: Die physischen Dinge, die existieren, etwa Schuhe.
+- Größen: Wie viel oder wie viele von etwas wir haben.
+- Einheiten: Was bei der Frage, die wir stellen, als eins zählt.
+
+Wenn wir Schuhe zählen, steht jeder Schuh für eine Einheit.
+
+Wenn wir Paare zählen, bilden zwei passend zusammengehörige Schuhe eine Einheit.
+
+Folglich gilt:
+
+$$ 2\text{ Schuhe}=1\text{ Paar} $$
+
+Das sind zwei verschiedene Beschreibungen derselben Sammlung. Wir ändern die Zähleinheit und behaupten nicht, dass die Zahlen zwei und eins gleich sind.
+
+Keine der beiden Beschreibungen ist falsch.
+
+Aber stell dir vor, jemand fragt, wie viele Schuhe ein Geschäft hat, und du nennst die Anzahl der Paare, ohne das klarzustellen.
+
+Deine Rechnung könnte richtig sein, während deine Antwort irreführend ist.
+
+Deshalb müssen wir vor dem Rechnen wissen, worauf sich unsere Zahlen beziehen.
+
+## 4. Von physischen Gegenständen zu mathematischen Mengen
+
+Kehren wir zu unseren beiden Zählsteinen zurück: einem türkisen und einem blauen Zählstein.
+
+Angenommen, wir möchten sie mathematisch beschreiben, ohne die physischen Gegenstände jedes Mal zeichnen zu müssen. Zuerst können wir jedem Zählstein einen Namen geben.
+
+Nennen wir den ersten Zählstein $a$ und den zweiten $b$.
+
+<ReasoningFigure kind="objects" />
+
+Diese Buchstaben sind lediglich Bezeichnungen. Wir sagen nicht, dass die Gegenstände Zahlen sind oder dass die Buchstaben eine besondere physische Eigenschaft besitzen. Wir verwenden einfach Zeichen, um auf die Gegenstände zu verweisen.
+
+Stellen wir uns nun vor, dass wir einen Kreis um den ersten Zählstein zeichnen. Der Kreis stellt eine Sammlung dar, die diesen Gegenstand enthält.
+
+In der Mathematik nennen wir eine solche Sammlung eine **Menge**.
+
+Eine Menge ist eine mathematische Sammlung verschiedener Elemente. Ihre Elemente können Zahlen, geometrische Objekte oder, wie in unserem Beispiel, Darstellungen physischer Zählsteine sein.
+
+Nennen wir unsere erste Menge $A$.
+
+<ReasoningFigure kind="singleton" />
+
+### Die Schreibweise lesen
+
+Die Aussage $A=\{a\}$ liest sich: „A ist die Menge, die a enthält.“
+
+- Der Großbuchstabe $A$ benennt unsere Menge.
+- Das Gleichheitszeichen sagt uns, welche Menge das ist.
+- Die geschweiften Klammern $\{\ \}$ umschließen die Elemente der Menge.
+- Innerhalb der Klammern steht unser einzelner Gegenstand $a$.
+
+Wir haben die Zeichnung einer Sammlung in mathematische Schreibweise übersetzt. Dasselbe können wir mit dem zweiten Zählstein tun und erhalten $B=\{b\}$.
+
+<ReasoningFigure kind="singletons" />
+
+Wenn wir sagen möchten, dass der Gegenstand $a$ zur Menge $A$ gehört, schreiben wir:
+
+$$ a\in A $$
+
+Das Zeichen $\in$ bedeutet **ist ein Element von**. Wir lesen: „a ist ein Element von A.“
+
+Beachte einen feinen Unterschied. Der Gegenstand $a$ ist nicht dasselbe mathematische Objekt wie die Menge $\{a\}$: Hier benennt $a$ den Zählstein, während $\{a\}$ eine Sammlung benennt, die ihn enthält.
+
+$$ a\ne\{a\} $$
+
+Das Zeichen $\ne$ bedeutet „ist nicht gleich“. Der Unterschied ähnelt dem zwischen einem Buch und einer Schachtel, die dieses Buch enthält. Selbst wenn nur ein Buch in der Schachtel liegt, sind Buch und Schachtel nicht derselbe Gegenstand.
+
+Diese Unterscheidung wird wichtig, wenn wir ganze Gruppen als einzelne Einheiten behandeln. Zunächst zählen wir aber die Elemente unserer Mengen.
+
+## 5. Mächtigkeit: zählen und zuordnen
+
+Mathematiker nennen die Anzahl verschiedener Elemente einer Menge ihre **Mächtigkeit** oder **Kardinalität**. Bei einer endlichen Menge gibt sie einfach an, wie viele Elemente die Menge enthält.
+
+Wir schreiben die Mächtigkeit mit zwei senkrechten Strichen um den Namen der Menge:
+
+$$ |A|=1,\qquad |B|=1 $$
+
+Wir lesen $|A|=1$ als: „Die Mächtigkeit von A ist eins.“ Das Zeichen $A$ bezeichnet die Menge selbst; $|A|$ bezeichnet die Anzahl ihrer Elemente. Diese beiden Dinge sind nicht austauschbar.
+
+### Anzahlen unabhängig vom Aussehen vergleichen
+
+Woher wissen wir, dass zwei verschiedene Sammlungen dieselbe Anzahl von Elementen haben?
+
+Für einen neuen Vergleich enthalte $A$ drei Zählsteine und $B$ drei Quadrate. Statt jede Sammlung einzeln zu zählen, können wir jedem Zählstein genau ein Quadrat zuordnen.
+
+<ReasoningFigure kind="matching" />
+
+Jeder Zählstein hat genau einen Partner. Jedes Quadrat hat ebenfalls genau einen Partner. Nichts bleibt übrig.
+
+Das heißt **Eins-zu-eins-Zuordnung**. Eine Funktion, die eine solche vollständige Paarung zwischen zwei Mengen herstellt, heißt **Bijektion**; Funktionen erklären wir gleich noch genauer.
+
+Entscheidend ist, dass wir die Anzahlen vergleichen können, ohne dass die Elemente gleich aussehen müssen. Die Zahl drei ist keine bestimmte Form, Farbe oder ein physischer Gegenstand. Sie ist eine mathematische Eigenschaft, die viele verschiedene Sammlungen gemeinsam haben können.
+
+Mathematiker vergleichen durch Eins-zu-eins-Zuordnungen auch unendliche Mengen, bei denen ein schrittweises Abzählen nicht ausreicht. Hier bleiben wir bei endlichen Mengen.
+
+<span id="4-was-bedeutet-addieren-eigentlich"></span>
+
+## 6. Was bedeutet Addieren eigentlich?
+
+Bisher haben wir Gegenstände gezählt. Aber Zählen ist noch keine Addition.
+
+Kehren wir zu unseren ursprünglichen einelementigen Mengen zurück:
+
+$$ A=\{a\},\qquad B=\{b\},\qquad a\ne b $$
+
+Angenommen, wir möchten eine neue Menge bilden, die jedes Element aus mindestens einer der beiden Sammlungen enthält. Diese Operation heißt **Vereinigung** und wird durch $\cup$ dargestellt.
+
+Wir schreiben $A\cup B$ und lesen „A vereinigt mit B“. Die Vereinigung enthält alle Elemente, die zu $A$, zu $B$ oder zu beiden gehören.
+
+<ReasoningFigure kind="addition" />
+
+Die Vereinigung enthält zwei verschiedene Elemente, ihre Mächtigkeit ist also zwei:
+
+$$ |A\cup B|=2 $$
+
+Weil jede ursprüngliche Menge ein Element enthält, können wir die Beziehung so ausdrücken:
+
+$$ \underbrace{|A|}_{1}+\underbrace{|B|}_{1}=\underbrace{|A\cup B|}_{2} $$
+
+Das Vereinigungszeichen verknüpft **Mengen**. Das Pluszeichen verknüpft **Zahlen**. Die Mächtigkeit verbindet diese beiden Operationen.
+
+Dabei gibt es eine verborgene Annahme: Die Gegenstände dürfen nicht versehentlich doppelt gezählt werden. Bei endlichen Mengen ist die Mächtigkeit der Vereinigung nur dann gleich der Summe der beiden Mächtigkeiten, wenn die Mengen keine gemeinsamen Elemente haben. Solche Mengen heißen **disjunkt**.
+
+### Wenn sich die Sammlungen überschneiden
+
+Stellen wir zwei Listen von Personen auf, die eine Vorlesung besuchen: eine für diejenigen, die Mathematik studieren, und eine für diejenigen, die Physik studieren.
+
+Alex und Sam studieren Mathematik. Sam und Jo studieren Physik.
+
+$$ A=\{\text{Alex},\text{Sam}\},\qquad B=\{\text{Sam},\text{Jo}\} $$
+
+Wie viele verschiedene Personen stehen auf mindestens einer Liste? Wenn wir zwei plus zwei rechnen, zählen wir Sam doppelt.
+
+<ReasoningFigure kind="overlap" />
+
+Der **Schnitt** zweier Mengen, geschrieben $A\cap B$, enthält nur die Elemente, die zu beiden gehören. Hier gilt:
+
+$$ A\cap B=\{\text{Sam}\} $$
+
+Wenn wir die beiden Mächtigkeiten addieren, wird jedes gemeinsame Element doppelt gezählt. Ziehen wir die Mächtigkeit des Schnitts ab, wird jedes davon nur noch einmal gezählt. Allgemein gilt für zwei endliche Mengen:
+
+$$ \boxed{|A\cup B|=|A|+|B|-|A\cap B|} $$
+
+In Worten: Die Anzahl der Elemente in der Vereinigung ist die Anzahl in der ersten Menge plus die Anzahl in der zweiten, abzüglich der Anzahl der Elemente, die zu beiden gehören.
+
+Haben die Mengen keine gemeinsamen Elemente, ist ihr Schnitt die **leere Menge**, geschrieben $\varnothing$. Sie enthält null Elemente:
+
+$$ A\cap B=\varnothing,\qquad |A\cap B|=0 $$
+
+Für disjunkte endliche Mengen vereinfacht sich die Formel daher zu:
+
+$$ |A\cup B|=|A|+|B| $$
+
+Für unsere beiden verschiedenen Zählsteine wird daraus $1+1=2$.
+
+Wir versuchen hier nicht, die Arithmetik formal zu beweisen. Wir untersuchen die Bedingungen, unter denen Arithmetik eine reale Situation richtig beschreibt.
+
+Diese Unterscheidung wird in den Naturwissenschaften, der Statistik und beim logischen Denken besonders wichtig.
+
+## 7. Kann eine ganze Sammlung als ein Ding zählen?
+
+Zuvor zählten zwei zusammengehörige Schuhe als zwei einzelne Gegenstände oder als ein Paar. Nun können wir diesen Unterschied mit Mengen beschreiben.
+
+Stell dir vier Schuhe vor, die zwei passende Paare bilden. Wir bezeichnen sie mit $L_1,R_1,L_2,R_2$, wobei $L$ für einen linken und $R$ für einen rechten Schuh steht.
+
+Wenn wir einzelne Schuhe zählen, erhalten wir:
+
+$$ S=\{L_1,R_1,L_2,R_2\},\qquad |S|=4 $$
+
+Um Paare zu zählen, ordnen wir dieselben Schuhe anders. Eine Menge kann selbst ein Element einer anderen Menge sein:
+
+$$ P=\big\{\{L_1,R_1\},\{L_2,R_2\}\big\} $$
+
+<ReasoningFigure kind="pairs" />
+
+Die inneren Klammern stellen die einzelnen Paare dar. Die äußeren Klammern fassen diese Paare zu einer neuen Menge zusammen. Wir zählen die beiden inneren Mengen als ihre Elemente, also gilt $|P|=2$.
+
+Wir haben mit vier einzelnen Gegenständen begonnen, sie zu Paaren gruppiert und jedes Paar als ein Element einer neuen Menge behandelt. Die Gegenstände haben sich nicht verändert. Nur die Struktur unserer Beschreibung hat sich verändert.
+
+Eine Einheit und eine Menge sind nicht dieselbe Idee. Eine Einheit ist das, was wir beim Zählen oder Messen als eins behandeln. Eine Menge ist ein mathematisches Objekt, das Elemente enthält.
+
+Wir können eine Einheit, etwa ein passendes Paar, durch eine Menge darstellen. Aber nicht jede Einheit muss als Menge dargestellt werden, und Mengen bestimmen nicht automatisch, welche Einheiten geeignet sind. Diese Wahl hängt davon ab, was wir beschreiben möchten.
+
+## 8. Addition als Funktion
+
+Bisher haben wir Addition durch das Zusammenfassen von Sammlungen beschrieben. Wir können sie aber auch abstrakter verstehen: als **Funktion**.
+
+Eine Funktion ist eine Regel, die jeder zulässigen Eingabe genau eine Ausgabe zuordnet. Stell sie dir als Maschine vor: Du gibst etwas hinein, sie wendet eine Regel an und erzeugt eine Ausgabe.
+
+Die Addition verwendet zwei Eingabezahlen und heißt deshalb **binäre Operation**. Formal erhält die Funktion ein geordnetes Paar, das diese beiden Zahlen enthält.
+
+$$ \operatorname{add}(1,1)=2 $$
+
+Hier benennt „add“ die Operation, die Zahlen in den Klammern sind ihre Eingaben und die Zahl rechts ist ihre Ausgabe. Üblicherweise schreiben wir dieselbe Rechnung mit einem Pluszeichen: $1+1=2$.
+
+### Die zulässigen Eingaben und Ausgaben
+
+Betrachten wir die Menge der nichtnegativen ganzen Zahlen:
+
+$$ \mathbb{N}_0=\{0,1,2,3,\ldots\} $$
+
+Die Bezeichnung $\mathbb{N}_0$ schließt null ein; die Punkte bedeuten, dass das Muster ohne Ende weitergeht. Die Addition nimmt zwei Zahlen aus dieser Menge und liefert eine weitere Zahl aus derselben Menge:
+
+$$ +:\mathbb{N}_0\times\mathbb{N}_0\longrightarrow\mathbb{N}_0 $$
+
+Lesen wir diese Schreibweise Stück für Stück.
+
+- Das Pluszeichen benennt die Funktion.
+- $\mathbb{N}_0\times\mathbb{N}_0$ ist die Menge aller **geordneten Paare** nichtnegativer ganzer Zahlen, etwa $(1,1)$, $(2,3)$ und $(4,0)$.
+- Der Pfeil zeigt auf die Menge, in der die Ausgaben liegen.
+
+Das Zeichen $\times$ bedeutet hier **kartesisches Produkt**: Es bildet Paare aus Elementen der beiden Mengen. Es ist keine gewöhnliche Multiplikation von Zahlen.
+
+Ein geordnetes Paar behält zwei Eingabepositionen, auch wenn darin dieselbe Zahl steht. Das Paar $(1,1)$ unterscheidet sich deshalb von der Menge $\{1,1\}=\{1\}$, die nur ein verschiedenes Element enthält.
+
+Der gesamte Ausdruck besagt: „Die Addition nimmt ein Paar nichtnegativer ganzer Zahlen und liefert eine nichtnegative ganze Zahl.“
+
+<ReasoningFigure kind="function" />
+
+Anders als die zuvor betrachtete Bijektion muss eine Funktion nicht jede Ausgabe mit genau einer Eingabe paaren. Beispielsweise haben sowohl $(1,1)$ als auch $(2,0)$ die Summe $2$. Jede Funktion verlangt aber genau eine Ausgabe für jede zulässige Eingabe.
+
+Die Rechenoperation muss nicht wissen, ob du Äpfel, Schuhe oder Sterne zählst. Sie ist eine auf Zahlen definierte Regel. Die Verbindung zur physischen Welt entsteht dadurch, wie wir diese Zahlen deuten und welche Operation wir zur Beschreibung der Situation wählen.
+
+Deshalb kann $1+1=2$ mathematisch wahr bleiben, wenn nach einem physischen Vorgang keine zwei erkennbaren Gegenstände mehr vorliegen.
+
+<span id="5-kann-eins-plus-eins-jemals-eins-ergeben"></span>
+
+## 9. Kann eins plus eins jemals eins ergeben?
+
+Hier ist eine Herausforderung.
+
+Stell dir zwei getrennte Wassertropfen vor.
+
+Sie bewegen sich aufeinander zu, berühren sich und verschmelzen zu einem einzigen größeren Tropfen.
+
+Vor dem Zusammenstoß hatten wir zwei Tropfen.
+
+Danach haben wir einen.
+
+Bedeutet das $1+1=1$?
+
+Stelle eine Vermutung auf und untersuche dann beide Zustände.
+
+<Interactive kind="reasoning" preset="water" id="water-drops" />
+
+Was passiert hier?
+
+Die Antwort lautet: Wir beschreiben einen physischen Vorgang und ändern nicht die Regeln der Arithmetik.
+
+Anfangs gibt es zwei getrennte Tropfen.
+
+Wenn sie verschmelzen, verschwinden die Grenzen zwischen diesen Tropfen. Was als ein einzelner Tropfen zählt, hat sich verändert.
+
+Die Anzahl getrennter Tropfen sinkt, aber die gesamte Wassermenge bleibt gleich, sofern nichts verloren geht.
+
+Enthielt beispielsweise jeder ursprüngliche Tropfen 0,05 Milliliter Wasser, enthalten sie zusammen:
+
+$$ 0.05+0.05=0.10\text{ mL} $$
+
+Die Anzahl der Tropfen ändert sich also von zwei zu eins, während ihr gemeinsames Volumen ungefähr der Summe ihrer ursprünglichen Volumina entspricht, sofern kein Wasser verloren geht und die Volumina unter den betrachteten Bedingungen additiv sind.
+
+Der Fehler wäre, zwei verschiedene Größen zu verwechseln: die Anzahl der Tropfen und die Wassermenge.
+
+Das ist eine schöne Lektion über mathematische Modelle.
+
+Wenn wir die Welt mit Mathematik beschreiben, müssen wir die Eigenschaften bestimmen, die wir messen, die Einheiten, die wir verwenden, und die Annahmen, unter denen unsere Rechnungen sinnvoll sind.
+
+Die Mathematik wird nicht widerlegt, wenn sich unsere Beschreibung der Wirklichkeit verändert.
+
+Stattdessen müssen wir möglicherweise unser Modell überarbeiten.
+
+<span id="6-was-sagt-die-gleichung-eigentlich-aus"></span>
+
+## 10. Was sagt die Gleichung eigentlich aus?
+
+Wir haben nun Anzahlen, Einheiten, Abstraktion, Mengen und Addition untersucht.
+
+Damit können wir endlich zu unserer ursprünglichen Gleichung zurückkehren.
+
+Jedes Zeichen hat eine eigene Aufgabe.
+
+<ReasoningFigure kind="symbols" />
+
+### 1, 2
+
+Die Zahlzeichen
+
+Das sind geschriebene Zeichen, die Zahlen darstellen. Das Zahlzeichen `2` ist nicht dasselbe wie zwei physische Gegenstände; es bezeichnet die Zahl, die diese Gegenstände gemeinsam haben.
+
+### $+$
+
+Die Operation
+
+Das Pluszeichen sagt uns, wie wir zwei Zahlen zu ihrer Summe zusammenfassen. Beim Zählen disjunkter Sammlungen entspricht das dem Zusammenfassen ihrer Anzahlen.
+
+### $=$
+
+Die Gleichheitsrelation
+
+Das Gleichheitszeichen besagt, dass der Ausdruck links genau denselben Wert hat wie der Ausdruck rechts.
+
+Hier gibt es eine feine, aber wichtige Einzelheit.
+
+Das Gleichheitszeichen bedeutet nicht „und dann kommt die Antwort“.
+
+Es bedeutet: hat denselben Wert wie.
+
+Deshalb ist auch die folgende Aussage gültig:
+
+$$ 2=1+1 $$
+
+Und ebenso:
+
+$$ 1+1=3-1 $$
+
+Die Zeichen auf beiden Seiten können verschieden sein und trotzdem denselben Wert darstellen.
+
+In der mathematischen Sprache ist $1+1$ ein Ausdruck, während $1+1=2$ eine Gleichheitsaussage, eine Gleichung, ist.
+
+Ein Ausdruck stellt einen Wert dar. Eine Gleichung stellt eine Behauptung auf, die als wahr oder falsch beurteilt werden kann. Beispielsweise ist $1+1=2$ wahr und $1+1=3$ falsch.
+
+Diese Unterscheidung ist wesentlich, denn Mathematik ist nicht nur eine Sammlung von Anweisungen, um Antworten zu erzeugen.
+
+Sie ist auch eine Sprache, mit der wir Beziehungen ausdrücken.
+
+### Die logischen Eigenschaften der Gleichheit
+
+Gleichheit ist eine Relation zwischen mathematischen Objekten. Ihre grundlegenden Eigenschaften erlauben es, Aussagen zu verbinden und Ersetzungen zu begründen:
+
+- **Reflexivität:** Jedes Objekt ist gleich sich selbst: $a=a$.
+- **Symmetrie:** Wenn $a=b$, dann gilt $b=a$. Gleichheit gilt in beide Richtungen.
+- **Transitivität:** Wenn $a=b$ und $b=c$, dann gilt $a=c$.
+
+Wissen wir beispielsweise, dass $1+1=2$ und $2=4-2$ gelten, können wir folgern:
+
+$$ 1+1=4-2 $$
+
+Gleichheit erlaubt auch **Substitution**. Ersetzen wir einen Ausdruck durch einen gleichen, bleibt der Wert unverändert:
+
+$$ (1+1)+3=2+3 $$
+
+Diese Eigenschaften werden wesentlich, wenn wir Aussagen beweisen, statt nur Beispiele zu überprüfen.
+
+### Gleiche Anzahlen bedeuten nicht gleiche Mengen
+
+Angenommen, eine Menge enthält zwei Äpfel und eine andere zwei Orangen. Ihre Mächtigkeiten sind gleich, ihre Elemente aber verschieden:
+
+$$ |A|=|B|\quad\text{aber}\quad A\ne B $$
+
+Zwei Mengen sind gleich, wenn sie genau dieselben Elemente enthalten. Damit zwei endliche Mengen dieselbe Mächtigkeit haben, brauchen sie nur dieselbe Anzahl von Elementen.
+
+Gleichheit in einer Hinsicht macht die Sammlungen nicht identisch. Ebenso sind $1+1$ und $2$ verschiedene Schreibweisen, die dieselbe Zahl darstellen. Genau das behauptet das Gleichheitszeichen.
+
+<span id="7-prüfen-wir-dein-verständnis"></span>
+
+## 11. Prüfen wir dein Verständnis
+
+Wir haben mehrere Beispiele gesehen. Versuche nun, die Ideen auf neue Situationen anzuwenden, ohne zurückzublicken.
+
+Beschreibe für jede Situation, was gezählt wird, welche Annahmen wichtig sind und ob das mathematische Modell geeignet ist.
+
+Situation A — Obst
+
+Du legst einen Apfel und eine Orange in einen leeren Korb. Kannst du sagen, dass du jetzt zwei Früchte hast? Kannst du sagen, dass du zwei Äpfel hast?
+
+Situation B — Personen
+
+Eine Person tritt einer Onlinebesprechung bei, dann verbindet sich ein weiterer Account. Ist damit garantiert, dass zwei verschiedene Personen anwesend sind?
+
+Situation C — Paare
+
+Du hast ein Paar Schuhe und bekommst ein weiteres Paar. Wie viele Paare hast du? Wie viele einzelne Schuhe?
+
+Situation D — Sport
+
+An einer Schule spielen zwölf Schülerinnen und Schüler Fußball und acht Basketball. Kannst du folgern, dass zwanzig verschiedene Personen mindestens eine dieser Sportarten spielen? Welche Information fehlt?
+
+{/* Ergänzte Referenzantworten für die im Ausgangstext leere Aufklappfläche. */}
+<details>
+<summary>Erklärungen anzeigen</summary>
+
+**Situation A — Obst.** Es sind zwei Früchte: ein Apfel und eine Orange. Es gibt nur einen Apfel. Die Einheit „Frucht“ umfasst beide Gegenstände, die Einheit „Apfel“ nicht.
+
+**Situation B — Personen.** Zwei verbundene Accounts garantieren nicht zwei verschiedene Personen. Eine Person könnte beide Accounts verwenden, oder ein Account könnte mehrere Personen vertreten. Bevor wir mit der Anzahl von Accounts auf die Anzahl von Personen schließen, brauchen wir eine Annahme, die Accounts und verschiedene Personen verknüpft.
+
+**Situation C — Paare.** Du hast zwei Paare und vier einzelne Schuhe, sofern jedes Paar aus zwei Schuhen besteht und die Paare keinen Schuh gemeinsam haben. Gib die Einheit mit der Antwort an.
+
+**Situation D — Sport.** Wir müssen wissen, wie viele Personen beide Sportarten spielen. Sind $F$ und $B$ die beiden Gruppen, gilt $|F\cup B|=12+8-|F\cap B|$. Zwanzig verschiedene Personen ist nur bei disjunkten Gruppen richtig. Ohne die Überschneidung ist die genaue Gesamtzahl unbestimmt.
+
+</details>
+
+Beachte, dass keine dieser Fragen schwierige Arithmetik erforderte.
+
+Sie erforderten etwas Grundlegenderes: Klarheit darüber, was unsere mathematischen Zeichen beschreiben.
+
+Und diese Fähigkeit lässt sich durch Übung entwickeln.
+
+<span id="8-die-größere-erkenntnis"></span>
+
+## 12. Die größere Erkenntnis
+
+Wir haben mit etwas begonnen, das so offensichtlich ist, dass es kaum einer Diskussion wert schien.
+
+Eins plus eins ist gleich zwei.
+
+Aber wir haben entdeckt, dass mehrere gedankliche Schritte nötig sind, wenn wir mit dieser Aussage die Wirklichkeit beschreiben.
+
+Mit Mengen stellen wir Sammlungen dar. Mit Mächtigkeiten beschreiben wir ihre Anzahlen. Gruppierung verändert, was als eins zählt, und eine Funktion legt fest, wie aus numerischen Eingaben eine Ausgabe entsteht. Gleichheit sagt dann aus, wann zwei Ausdrücke denselben Wert haben.
+
+<ReasoningFigure kind="process" />
+
+Die zentrale Einsicht lautet: Mathematik ermöglicht es uns, über Strukturen unabhängig von den konkreten Gegenständen nachzudenken, die diese Strukturen aufweisen.
+
+Wenn wir mathematische Strukturen auf die Wirklichkeit anwenden, müssen wir unsere Beschreibungen jedoch sorgfältig wählen.
+
+Und hier begegnen sich Mathematik und rationales Denken.
+
+Bevor du fragst, ob eine Rechnung richtig ist, frage, ob du richtig verstanden hast, was du berechnest.
+
+## Abschließende Lernkontrolle
+
+Versuche, die gesamte Lektion in eigenen Worten zu erklären, ohne die vorherigen Abschnitte anzusehen.
+
+Warum müssen wir die Einheit und die Annahmen bestimmen, bevor wir eine reale Situation mit $1+1=2$ beschreiben? Verbinde in deiner Erklärung die Gegenstände, ihre Mengen und Mächtigkeiten, die Additionsfunktion und die Gleichheitsrelation.
+
+{/* Ergänzte Referenzerklärung für die Lernkontrolle. */}
+<details>
+<summary>Meine Erklärung überprüfen</summary>
+
+Bestimme zuerst, was als eins zählt und welche Größe die Zahlen beschreiben. Prüfe dann, ob die Gegenstände verschieden sind und ob beim Zusammenfassen die gezählten Einheiten erhalten bleiben. Unter diesen Annahmen bilden ein Gegenstand und ein weiterer Gegenstand eine Sammlung von zwei. Die Mächtigkeit liefert für diese Mengen die numerischen Eingaben für die Addition; Gleichheit besagt, dass die entstehenden Ausdrücke denselben Wert haben. Schuhe gegenüber Paaren und Tropfen gegenüber Wasservolumen zeigen, weshalb auch eine richtige Rechnung die falsche Größe beschreiben kann.
+
+</details>
+
+## Quellen und weiterführende Literatur
+
+Die obige Lektion ist eine begriffliche Einführung, kein formaler Beweis der Arithmetik. Die Quellen stützen die mathematische Terminologie und bieten Möglichkeiten zur Vertiefung.
+
+- [OpenStax — Elementary Algebra 2e, Abschnitt 1.2](https://openstax.org/books/elementary-algebra-2e/pages/1-2-use-the-language-of-algebra). Besonders hilfreich zum Verständnis von Zahlzeichen, Operationen, Ausdrücken, Gleichungen und Gleichheit.
+
+- [Richard Hammack — Book of Proof](https://richardhammack.github.io/BookOfProof/). Die Kapitel 1, 3 und 12 führen Mengen, Zählen und Funktionen ein und bieten eine formalere Grundlage für die hier untersuchten Ideen.
+
+Der nächste gedankliche Schritt besteht darin, ein überzeugendes Beispiel von einem mathematischen Beweis zu unterscheiden und zu untersuchen, was mathematische Aussagen rechtfertigt.

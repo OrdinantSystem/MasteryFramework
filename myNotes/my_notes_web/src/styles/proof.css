@@ -1,0 +1,44 @@
+.proof-figure,.parity-lab{display:block;margin:var(--space-8) 0;padding:var(--space-6);border:1px solid var(--line);border-radius:8px;background:var(--panel);}
+.proof-figure h3,.parity-lab h3{font-size:18px;letter-spacing:-.02em;margin:0 0 var(--space-5);}
+.proof-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);}
+.proof-case{min-width:0;text-align:center;}
+.proof-figure .proof-label{font-size:12px;color:var(--secondary);margin:0 0 var(--space-4);}
+.proof-figure p,.parity-lab p{margin:var(--space-3) 0;}
+.proof-pair-row{display:flex;flex-wrap:wrap;gap:var(--space-2);justify-content:center;align-items:center;min-height:100px;}
+.proof-pair,.proof-leftover{display:inline-flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;flex:none;width:42px;height:84px;border:1px solid currentColor;border-radius:28px;}
+.proof-blue{color:var(--accent);}.proof-gold{color:var(--coral);}
+.proof-pair.proof-blue{background:var(--tint);}.proof-pair.proof-gold{background:var(--coral-tint);}
+.proof-pair i,.proof-leftover i{display:block;width:23px;height:23px;border-radius:50%;background:currentColor;}
+.proof-leftover{height:42px;border-style:dashed;color:var(--coral);background:var(--coral-tint);align-self:flex-start;margin-top:8px;}
+.proof-ellipsis{font-size:24px;color:var(--secondary);}
+.proof-caption,.proof-figure figcaption,.parity-lab figcaption{font-size:13px;line-height:1.7;color:var(--secondary);text-align:center;}
+.proof-collection,.proof-combined,.proof-surface{padding:var(--space-4);background:var(--surface);border-radius:4px;min-width:0;text-align:center;}
+.proof-collection{border:1px solid currentColor;}.proof-combined{border:1px solid var(--purple);}
+.proof-collection p{font-size:13px;color:var(--text);}.proof-combined p{font-size:13px;color:var(--text);}
+.proof-symbol{font-size:28px;font-weight:600;color:var(--text);}.proof-arrow{display:block;text-align:center;color:var(--muted);font-size:24px;margin:var(--space-4) 0;}
+.proof-figure .math-block,.parity-lab .math-block{margin:var(--space-4) 0;}
+.proof-equation{margin:var(--space-5) 0;text-align:center;}
+.proof-checks{display:flex;justify-content:center;gap:var(--space-2);margin:var(--space-5) 0;flex-wrap:wrap;}
+.proof-check{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid var(--accent);border-radius:4px;background:var(--tint);color:var(--accent);font-size:26px;}
+.proof-unchecked{font-size:24px;color:var(--secondary);text-align:center;letter-spacing:8px;}
+.proof-infinite{position:relative;min-height:116px;display:grid;grid-template-columns:repeat(7,1fr);align-content:center;justify-items:center;gap:15px;padding:var(--space-4);border:1px solid var(--accent);border-radius:8px;background:var(--tint);margin:var(--space-5) 0;}
+.proof-infinite i{width:8px;height:8px;background:var(--accent);border-radius:50%;}.proof-infinite span{position:absolute;right:6px;bottom:0;color:var(--accent);font-size:22px;}
+.proof-examples{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4);text-align:center;}.proof-examples strong{color:var(--accent);font-size:26px;}.proof-examples .proof-arrow{margin:var(--space-2) 0;}
+.proof-number-line{position:relative;width:100%;margin:var(--space-6) 0;min-height:70px;}
+.proof-axis{position:absolute;top:7px;left:0;right:0;border-top:2px solid var(--axis);}
+.proof-axis::before,.proof-axis::after{content:"";position:absolute;top:-5px;border-top:4px solid transparent;border-bottom:4px solid transparent;}.proof-axis::before{left:0;border-right:7px solid var(--axis);}.proof-axis::after{right:0;border-left:7px solid var(--axis);}
+.proof-line-values{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));padding:0 8px;}
+.proof-line-values>span{position:relative;text-align:center;}.proof-line-values i{position:relative;display:block;width:16px;height:16px;margin:0 auto;background:var(--accent);border-radius:50%;}.proof-line-values b{display:block;margin-top:var(--space-3);font-size:14px;font-weight:500;color:var(--text);}
+.proof-line-values>span:not(:last-child)::after{content:"";position:absolute;top:3px;right:0;height:10px;border-left:1px solid var(--axis);}
+.proof-new-pair{display:flex;align-items:center;justify-content:center;gap:var(--space-3);margin:var(--space-4) 0;flex-wrap:wrap;}
+.proof-result{padding:var(--space-4);background:var(--tint);text-align:center;border-radius:4px;}.proof-result strong{font-size:21px;color:var(--text);}
+.proof-process-steps{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:var(--space-3);}.proof-process-steps span{padding:var(--space-2) var(--space-3);background:var(--surface);border-radius:4px;font-size:14px;}
+.parity-controls{display:flex;flex-wrap:wrap;gap:var(--space-2);margin-bottom:var(--space-5);}
+.parity-controls button{min-height:44px;padding:var(--space-2) var(--space-3);background:var(--panel);color:var(--secondary);border:1px solid var(--line);border-radius:4px;font-size:13px;}
+.parity-controls button[aria-pressed="true"]{background:var(--tint);color:var(--accent);border-color:var(--accent);}
+.parity-controls [data-parity-reset]{margin-left:auto;}
+.parity-inputs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-5);margin-top:var(--space-5);}
+.parity-inputs label{font-size:12px;color:var(--secondary);}.parity-inputs input{min-height:44px;}.parity-inputs input[type="range"]{display:block;width:100%;accent-color:var(--accent);}.parity-inputs input[type="number"]{width:70px;margin-left:var(--space-2);padding:var(--space-2);border:1px solid var(--line);border-radius:4px;color:var(--text);background:var(--panel);}
+.parity-inputs output{float:right;color:var(--text);}.parity-inputs .parity-numeric-label{display:block;margin-top:var(--space-2);}
+.parity-lab figcaption>p{text-align:left;}.proof-empty{color:var(--secondary);font-size:14px;}
+@media(max-width:650px){.proof-columns{grid-template-columns:1fr;gap:var(--space-5);}.proof-process-steps{flex-direction:column;}.proof-process-steps b{transform:rotate(90deg);}.parity-inputs{grid-template-columns:1fr;}.proof-pair-row{min-height:90px;}.proof-figure,.parity-lab{padding:var(--space-4);}.proof-examples{gap:var(--space-2);font-size:14px;}.proof-pair{width:34px;height:70px;gap:8px;}.proof-pair i,.proof-leftover i{width:19px;height:19px;}.proof-leftover{width:34px;height:34px;}.parity-controls [data-parity-reset]{margin-left:0;}}

@@ -1,0 +1,90 @@
+[
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "light",
+    "url": "/reasoning/lessons/one-plus-one/",
+    "width": 1440
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "dark",
+    "url": "/reasoning/lessons/one-plus-one/",
+    "width": 1440
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "light",
+    "url": "/reasoning/lessons/one-plus-one/",
+    "width": 390
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "dark",
+    "url": "/reasoning/lessons/one-plus-one/",
+    "width": 390
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "light",
+    "url": "/de/reasoning/lessons/one-plus-one/",
+    "width": 1440
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "dark",
+    "url": "/de/reasoning/lessons/one-plus-one/",
+    "width": 1440
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "light",
+    "url": "/de/reasoning/lessons/one-plus-one/",
+    "width": 390
+  },
+  {
+    "captionedFigures": 4,
+    "h1": 1,
+    "katexErrors": 0,
+    "labs": 3,
+    "minControlHeight": 44,
+    "overflow": 0,
+    "theme": "dark",
+    "url": "/de/reasoning/lessons/one-plus-one/",
+    "width": 390
+  }
+]

@@ -1,0 +1,38 @@
+---
+import ProofFigure from './ProofFigure.astro';
+import {isProofFigureKind,type ProofFigureKind} from '../lib/interactive/parity-model';
+import PatternFigure from './PatternFigure.astro';
+import {isPatternFigureKind,type PatternFigureKind} from '../lib/interactive/patterns-model';
+import Flow from './Flow.astro';
+import EquationFigure from './EquationFigure.astro';
+import AlgebraFigure from './AlgebraFigure.astro';
+import {isAlgebraFigureKind,type AlgebraFigureKind} from '../lib/interactive/algebra-model';
+import ReasoningSetFigure from './ReasoningSetFigure.astro';
+import {structureNodes} from '../lib/reasoning/structure';
+import {reasoningCopy} from '../lib/reasoning/copy';
+import '../styles/reasoning.css';
+interface Props {kind:PatternFigureKind|ProofFigureKind|'squared-solutions'|'opening'|'collections'|'addition'|'symbols'|'process'|'objects'|'singleton'|'singletons'|'matching'|'overlap'|'pairs'|'function'|AlgebraFigureKind}
+const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=reasoningCopy[locale];
+const setKind=kind==='addition'?'union':kind==='objects'||kind==='singleton'||kind==='singletons'||kind==='matching'||kind==='overlap'||kind==='pairs'||kind==='function'?kind:null;
+---
+{isPatternFigureKind(kind)?<PatternFigure kind={kind}/>: isProofFigureKind(kind)?<ProofFigure kind={kind}/>:kind==='squared-solutions'?<EquationFigure/>:isAlgebraFigureKind(kind)?<AlgebraFigure kind={kind}/>:setKind?<ReasoningSetFigure kind={setKind}/>:kind==='process'?<div class="reasoning-process"><h3>{c.processTitle}</h3><Flow nodes={structureNodes[locale]} caption={c.processCaption}/></div>:
+<figure class:list={['reasoning-figure',`reasoning-${kind}`]}>
+ {kind==='opening'&&<>
+  <svg viewBox="0 0 720 230" role="img" aria-label={c.openingDescription}>
+   <circle cx="100" cy="92" r="43" fill="var(--accent)"/><circle cx="325" cy="92" r="43" fill="var(--blue)"/>
+   <circle cx="605" cy="60" r="30" fill="var(--accent)"/><circle cx="605" cy="127" r="30" fill="var(--blue)"/>
+   <g text-anchor="middle" fill="var(--text)" font-size="50"><text x="212" y="109">+</text><text x="455" y="109">=</text></g>
+   <g text-anchor="middle" fill="var(--secondary)" font-size="28"><text x="100" y="202">1</text><text x="325" y="202">1</text><text x="605" y="202">2</text></g>
+  </svg><figcaption>{c.openingCaption}</figcaption>
+ </>}
+ {kind==='collections'&&<div class="reasoning-collection-items" role="img" aria-label={c.collectionDescription}>
+  {c.collectionLabels.map((label,i)=><div><svg viewBox="0 0 180 100" aria-hidden="true">
+   {[45,130].map(x=>i===0?<g fill="var(--coral)" transform={`translate(${x} 48)`}><path d="M0-18C-30-34-36 3-20 27Q-8 43 0 32Q10 43 23 25C37 0 27-32 0-18Z"/><path d="M0-18Q-5-38 10-39" fill="none" stroke="var(--accent)" stroke-width="4"/></g>:i===1?<g transform={`translate(${x-22} 17)`}><rect width="45" height="66" rx="3" fill="var(--blue-tint)" stroke="var(--blue)" stroke-width="3"/><path d="M9 0V66M17 20H37M17 29H37" stroke="var(--blue)" stroke-width="2"/></g>:<path d={`M${x} 14l10 23 25 3-19 17 6 26-22-13-22 13 6-26-19-17 25-3Z`} fill="var(--purple)"/>)}
+  </svg><p>{label}</p></div>)}
+ </div>}
+ {kind==='collections'&&<figcaption>{c.collectionCaption}</figcaption>}
+ {kind==='symbols'&&<div class="reasoning-symbol-items" role="img" aria-label={c.symbolDescription}>
+  {['1','+','1','=','2'].map((symbol,i)=><div><span class:list={['reasoning-symbol',i===1?'reasoning-operation':i===3?'':'reasoning-numeral']}>{symbol}</span><span>{c.symbolLabels[i]}</span></div>)}
+ </div>}
+ {kind==='symbols'&&<figcaption>{c.symbolCaption}</figcaption>}
+</figure>}

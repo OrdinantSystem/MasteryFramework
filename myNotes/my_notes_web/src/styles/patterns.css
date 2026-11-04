@@ -1,0 +1,39 @@
+.pattern-figure,.pattern-lab{display:block;margin:var(--space-8) 0;padding:var(--space-6);border:1px solid var(--line);border-radius:8px;background:var(--panel);}
+.pattern-figure h3,.pattern-lab h3{margin:0 0 var(--space-6);font-size:18px;letter-spacing:-.02em;}
+.pattern-figure svg,.pattern-lab svg{display:block;width:100%;height:auto;max-width:720px;margin-inline:auto;}
+.pattern-figure figcaption,.pattern-lab figcaption,.pattern-help{font-size:13px;color:var(--secondary);line-height:1.7;margin-top:var(--space-4);}
+.pattern-figure figcaption{text-align:center;}
+.pattern-history-items{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--space-4);text-align:center;}
+.pattern-history-items>div{min-width:0;display:flex;flex-direction:column;align-items:center;}
+.pattern-round{font-size:12px;color:var(--secondary);margin:0;}
+.pattern-count{font-size:24px;font-weight:600;text-align:center;line-height:1.4;margin:var(--space-4) 0;}
+.pattern-lights{display:grid;grid-template-columns:repeat(var(--light-columns),minmax(0,1fr));gap:4px;width:calc(var(--light-columns)*12px - 4px);max-width:100%;margin:var(--space-3) auto;}
+.pattern-lights i{display:block;aspect-ratio:1;border-radius:50%;background:var(--blue);}
+.pattern-history-items [role="img"]{min-height:68px;}
+.pattern-comparison{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-4);}
+.pattern-case{min-width:0;padding:var(--space-4);border-radius:4px;background:var(--surface);text-align:center;}
+.pattern-case-label{font-size:14px;font-weight:600;}
+.pattern-case>p:last-child{font-size:13px;color:var(--secondary);}
+.pattern-machines .pattern-lights{width:280px;gap:8px;}
+.pattern-machine-B .pattern-lights i{background:var(--purple);}
+.pattern-arrow{font-size:36px;color:var(--secondary);text-align:center;line-height:1;margin:var(--space-3) 0;}
+.pattern-test-root{max-width:280px;margin:var(--space-5) auto;text-align:center;padding:var(--space-3);border:1px solid var(--line);border-radius:4px;font-weight:600;}
+.pattern-test-branches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-6);text-align:center;}
+.pattern-test-branch{border-top:2px solid var(--blue);padding-top:var(--space-4);min-width:0;}
+.pattern-test-branch.pattern-machine-B{border-color:var(--purple);}
+.pattern-test-branch p:not(.pattern-count){font-size:13px;}
+.pattern-controls{display:flex;flex-wrap:wrap;gap:var(--space-2);margin:var(--space-4) 0;}
+.pattern-controls button{min-height:44px;padding:var(--space-2) var(--space-3);border:1px solid var(--line);border-radius:4px;background:var(--panel);color:var(--text);font-size:13px;}
+.pattern-controls button[aria-pressed="true"]{background:var(--tint);color:var(--accent);border-color:var(--accent);}
+.pattern-controls [data-pattern-reset]{margin-left:auto;color:var(--secondary);}
+.pattern-axis-label{font-size:12px;color:var(--secondary);text-align:center;margin:var(--space-3) 0;}
+.pattern-legend{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4);font-size:13px;margin:var(--space-4) 0;}
+.pattern-blue{color:var(--blue);}.pattern-purple{color:var(--purple);}
+.pattern-values{font-size:13px;margin:var(--space-4) 0;}
+.pattern-values summary{min-height:44px;cursor:pointer;padding:var(--space-3);}
+.pattern-values table{min-width:430px;}.pattern-values caption{font-size:12px;line-height:1.7;color:var(--secondary);margin-bottom:var(--space-3);}
+.pattern-sequence{display:flex;justify-content:center;align-items:center;gap:var(--space-4);list-style:none;padding:0;margin:var(--space-6) 0;}
+.pattern-sequence li{display:flex;align-items:center;gap:var(--space-4);font-size:clamp(20px,3vw,30px);font-weight:600;}
+.pattern-sequence li span{font-weight:400;color:var(--secondary);}
+@media(max-width:650px){.pattern-comparison{grid-template-columns:1fr;}.pattern-history-items{grid-template-columns:repeat(2,minmax(0,1fr));}.pattern-controls [data-pattern-reset]{margin-left:0;}}
+@media(max-width:540px){.pattern-figure,.pattern-lab{padding:var(--space-4);}.pattern-sequence,.pattern-sequence li{gap:var(--space-2);}}

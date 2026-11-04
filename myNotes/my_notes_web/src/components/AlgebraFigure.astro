@@ -1,0 +1,73 @@
+---
+import Math from './Math.astro';
+import {algebraCopy,algebraLabCopy,groupingCopy} from '../lib/reasoning/algebra-copy';
+import {chairPuzzle,candlePuzzle,patternInputs,chairTotal,temperature,heatingTimes,ticketCost,type AlgebraFigureKind} from '../lib/interactive/algebra-model';
+import {arrangementScene,groupingScene,tableGlyph,ticketScene,svgText,heatingX as tx,heatingY as ty} from '../lib/interactive/algebra-scenes';
+import '../styles/algebra.css';
+interface Props {kind:AlgebraFigureKind}
+const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=algebraCopy[locale];
+const titles={room:c.roomTitle,'table-pattern':c.patternTitle,'impossible-chairs':c.impossibleTitle,'letter-roles':c.rolesTitle,domains:c.domainsTitle,'ticket-fees':c.feesTitle,heating:c.heatingTitle,candles:c.candleTitle};
+const puzzle=kind==='candles'?candlePuzzle:chairPuzzle,grouped=groupingScene(puzzle),groupCopy=groupingCopy(locale,puzzle);
+const decimal=(n:number)=>n.toLocaleString(locale);
+const money=(n:number)=>n.toLocaleString(locale,{style:'currency',currency:'EUR',maximumFractionDigits:0});
+const heatingLine=heatingTimes.map(t=>`${tx(t)},${ty(temperature(t))}`).join(' ');
+---
+<figure class:list={['algebra-figure',`algebra-${kind}`]}>
+ <h3>{titles[kind]}</h3>
+ {kind==='room'&&<>
+  <svg viewBox="0 0 600 230" role="img" aria-label={c.roomAlt}>
+   <rect x="5" y="5" width="590" height="220" rx="18" fill="var(--surface)" stroke="var(--axis)" stroke-width="2" stroke-dasharray="8 6"/>
+   <g set:html={[30,142,254].map(x=>tableGlyph(x,30)).join('')}/>
+   <text x="452" y="88" text-anchor="middle" font-size="48" fill="var(--muted)">?</text>
+   <g set:html={svgText(452,127,c.more,22,'secondary','middle')}/>
+   <path d="M20 148H580" stroke="var(--line)" stroke-width="2"/>
+   <circle cx="54" cy="185" r="12" fill="var(--purple)"/><circle cx="90" cy="185" r="12" fill="var(--purple)"/>
+   <text x="132" y="194" font-size="28" fill="var(--purple)">+2</text><text x="530" y="194" font-size="30" fill="var(--text)">?</text>
+  </svg>
+  <div class="algebra-possibilities"><span>{c.fourteen}</span><span>{c.fifteen}</span></div>
+  <figcaption>{c.roomCaption}</figcaption>
+ </>}
+ {kind==='table-pattern'&&<>
+  <div class="table-scroll" role="region" aria-label={c.patternTitle} tabindex="0"><table class="algebra-pattern-table"><thead><tr><th scope="col">{c.tables}</th><th scope="col">{c.arrangement}</th><th scope="col">{c.total}</th></tr></thead><tbody>
+   {patternInputs.map(n=>{const scene=arrangementScene('tables',n);return <tr><th scope="row">{n}</th><td><svg viewBox={`0 0 600 ${scene.height}`} role="img" aria-label={algebraLabCopy(locale,'tables',n).originalDescription}><g set:html={scene.markup}/></svg></td><td>{chairTotal(n)}</td></tr>;})}
+  </tbody></table></div><figcaption>{c.patternCaption}</figcaption>
+ </>}
+ {(kind==='impossible-chairs'||kind==='candles')&&<>
+  <Math tex={`${puzzle.total}-${puzzle.extras}=${puzzle.remaining}`} display/>
+  <svg viewBox={`0 0 600 ${grouped.height}`} role="img" aria-label={groupCopy.description}><g set:html={grouped.markup}/></svg>
+  <p class="algebra-total">{groupCopy.summary}</p>
+  <Math tex={String.raw`${puzzle.size}n+${puzzle.extras}=${puzzle.total}\quad\Longrightarrow\quad ${puzzle.size}n=${puzzle.remaining}`} display/>
+  <p class="algebra-model-warning">{c.noSolution}</p>
+  <figcaption>{kind==='candles'?c.candleCaption:c.impossibleCaption}</figcaption>
+ </>}
+ {kind==='letter-roles'&&<>
+  <div class="algebra-role-items">{c.roles.map((role,i)=><div><p class="algebra-case-label">{role}</p><Math tex={i===1?'3n+2=17':'3n+2'} display/><p>{c.roleDetails[i]}</p></div>)}</div>
+  <figcaption>{c.rolesCaption}</figcaption>
+ </>}
+ {kind==='domains'&&<>
+  <svg viewBox="0 0 640 310" role="img" aria-label={c.domainsAlt}>
+   <g set:html={svgText(24,32,c.whole,26)+svgText(24,184,c.time,26)}/>
+   <path d="M50 99H590" stroke="var(--axis)" stroke-width="2"/>
+   {[0,1,2,3,4,5].map(n=><><circle cx={50+n*108} cy="99" r="9" fill="var(--blue)"/><text x={50+n*108} y="139" text-anchor="middle" font-size="24" fill="var(--text)">{n}</text></>)}
+   <text x="320" y="69" text-anchor="middle" font-size="24" fill="var(--coral)">{decimal(2.5)}</text><path d="m311 90 18 18m-18 0 18-18" stroke="var(--coral)" stroke-width="4"/>
+   <path d="M50 245H590" stroke="var(--blue)" stroke-width="5" stroke-linecap="round"/>
+   {[0,1,2,3,4,5].map(n=><text x={50+n*108} y="289" text-anchor="middle" font-size="24" fill="var(--text)">{n}</text>)}
+   <circle cx={50+1.5*108} cy="245" r="12" fill="var(--purple)"/><text x={50+1.5*108} y="220" text-anchor="middle" font-size="24" fill="var(--purple)">{decimal(1.5)} h</text>
+  </svg><figcaption>{c.domainsCaption}</figcaption>
+ </>}
+ {kind==='ticket-fees'&&<>
+  <div class="algebra-comparison algebra-two-columns">{(['booking','ticket'] as const).map(scope=><div class="algebra-case"><p class="algebra-case-label">{scope==='booking'?c.booking:c.perTicket}</p><svg viewBox="0 0 480 165" role="img" aria-label={scope==='booking'?c.bookingAlt:c.ticketAlt}><g set:html={ticketScene(scope)}/></svg><p class="algebra-total">{money(ticketCost(3,scope))}</p><Math tex={scope==='booking'?'5n+1':'(5+1)n=6n'} display/></div>)}</div>
+  <figcaption>{c.feesCaption}</figcaption>
+ </>}
+ {kind==='heating'&&<>
+  <svg viewBox="0 0 680 385" role="img" aria-label={c.heatingAlt}>
+   <g set:html={svgText(70,32,c.temperature,26)+svgText(610,375,c.hours,26,'text','end')+svgText(610,47,c.continuation,26,'secondary','end')}/>
+   {[18,21,24,27,30].map(value=><><path d={`M70 ${ty(value)}H625`} stroke="var(--grid)" stroke-dasharray="5 5"/><text x="57" y={ty(value)+7} text-anchor="end" font-size="26" fill="var(--secondary)">{value}</text></>)}
+   <path d="M70 47V320H625" fill="none" stroke="var(--axis)" stroke-width="2"/>
+   {[0,1,1.5,2,3,4,5,6,7].map(t=><text x={tx(t)} y="349" text-anchor="middle" font-size="26" fill="var(--secondary)">{decimal(t)}</text>)}
+   <polyline points={heatingLine} fill="none" stroke="var(--blue)" stroke-width="3"/>
+   <path d={`M${tx(6)} ${ty(temperature(6))}L${tx(7)} ${ty(temperature(7))}`} fill="none" stroke="var(--blue)" stroke-width="3" stroke-dasharray="6 5"/>
+   {heatingTimes.map(t=><circle cx={tx(t)} cy={ty(temperature(t))} r="4.5" fill="var(--blue)"/>)}
+  </svg><Math tex="T=18+2t" display/><figcaption>{c.heatingCaption}</figcaption>
+ </>}
+</figure>

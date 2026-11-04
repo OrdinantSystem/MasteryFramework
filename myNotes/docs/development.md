@@ -18,6 +18,8 @@ npm run build runs Astro diagnostics, verify:library, static generation, Pagefin
 
 The organization check additionally protects the 106 archived original MDX versions for supported languages (the complete 159-file historical archive remains frozen), every source-section disposition, prose/markup paragraphs with explicit duplicate allowances, exercises/solutions, hints/readings and tables. Test old page URLs and heading fragments as well as canonical routes. Compatibility documents are not lessons or search entries.
 
+The Reasoning extension validates full current shared-source hashes and exactly reconstructs the preceding Analysis presentation dependencies before their frozen review checks run; unrecorded source changes fail. See [reasoning.md](reasoning.md).
+
 Generated-output checks derive published lesson counts plus compatibility documents, enforce localized counterparts, verify links/assets/anchors, check private source exclusion, and explicitly count text-contrast pairs so formatting cannot silently disable checks.
 
 Use relevant tests for actual risks: target reachability on a finite grid, singular/zero states, input bounds, inverse mappings, state isolation between instances, matrix dimensions, dynamic equation validity, and unsafe SVG labels. Do not add tests that merely reproduce prose or implementation structure.

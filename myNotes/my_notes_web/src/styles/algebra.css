@@ -1,0 +1,35 @@
+.algebra-lab,.algebra-figure {display:block;margin:var(--space-8) 0;padding:var(--space-6);border:1px solid var(--line);border-radius:8px;background:var(--panel);}
+.algebra-lab h3,.algebra-figure h3 {margin:0 0 var(--space-6);font-size:18px;letter-spacing:-.02em;}
+.algebra-lab svg,.algebra-figure svg {display:block;width:100%;height:auto;max-width:720px;margin-inline:auto;}
+.algebra-comparison {display:grid;gap:var(--space-6);}
+.algebra-two-columns {grid-template-columns:repeat(2,minmax(0,1fr));}
+.algebra-case {min-width:0;text-align:center;}
+.algebra-case .algebra-case-label {margin:0 0 var(--space-3);font-weight:600;}
+.algebra-total {font-size:18px;font-weight:600;text-align:center;margin:var(--space-3) 0;}
+.algebra-lab figcaption,.algebra-figure figcaption,.algebra-help {margin-top:var(--space-4);color:var(--secondary);font-size:13px;line-height:1.7;}
+.algebra-figure figcaption {text-align:center;}
+.algebra-inputs {display:grid;grid-template-columns:minmax(0,1fr) 130px auto;align-items:end;gap:var(--space-4);margin-top:var(--space-6);}
+.algebra-inputs label {display:flex;flex-direction:column;min-width:0;gap:var(--space-2);font-size:12px;color:var(--secondary);}
+.algebra-inputs label:first-child {display:block;}
+.algebra-inputs input[type="range"] {display:block;width:100%;min-height:44px;accent-color:var(--blue);}
+.algebra-inputs input[type="number"],.algebra-inputs button {min-height:44px;min-width:0;padding:var(--space-2) var(--space-3);color:var(--text);background:var(--panel);border:1px solid var(--line);border-radius:4px;}
+.algebra-inputs input[type="number"] {width:100%;}
+.algebra-inputs button {font-size:12px;}
+.algebra-lab [data-algebra-feedback] {font-size:14px;}
+.algebra-possibilities {display:flex;justify-content:center;gap:var(--space-8);font-size:16px;margin:var(--space-4) 0;}
+.algebra-pattern-table {min-width:560px;}
+.algebra-pattern-table td:nth-child(2) {width:70%;}
+.algebra-pattern-table svg {min-width:360px;}
+.algebra-role-items {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-6);text-align:center;}
+.algebra-role-items>div {min-width:0;}
+.algebra-role-items .algebra-case-label {font-weight:600;}
+.algebra-role-items p:last-child {font-size:13px;color:var(--secondary);}
+.algebra-model-warning {color:var(--coral);font-size:14px;text-align:center;}
+.algebra-figure .math-block {margin:var(--space-4) 0;}
+@media(max-width:650px){
+ .algebra-two-columns,.algebra-role-items {grid-template-columns:1fr;}
+ .algebra-inputs {grid-template-columns:minmax(0,1fr) auto;}
+ .algebra-inputs label:first-child {grid-column:1/-1;}
+ .algebra-inputs input[type="number"] {max-width:130px;}
+}
+@media(max-width:540px){.algebra-lab,.algebra-figure {padding:var(--space-4);}}

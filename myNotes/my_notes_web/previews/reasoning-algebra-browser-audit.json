@@ -1,0 +1,205 @@
+{
+  "states": [
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 1429,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 1429,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 379,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 560,
+          "width": 303
+        }
+      ],
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 379,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 560,
+          "width": 303
+        }
+      ],
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 1429,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 1429,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 379,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 560,
+          "width": 303
+        }
+      ],
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "clippedLabels": [],
+      "figures": 8,
+      "h1": 1,
+      "h2": 11,
+      "labels": true,
+      "labs": 2,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "overflows": [],
+      "pageWidth": 379,
+      "solutionOpen": true,
+      "table": [
+        {
+          "scrollWidth": 560,
+          "width": 303
+        }
+      ],
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "galleryIsolation": [
+    {
+      "feedback": "Tables: 6. Chairs in table groups: 18. Fixed extra chairs: 2. Total: 20.",
+      "id": "library-algebra-tables",
+      "value": "6"
+    },
+    {
+      "feedback": "With 3 original tables, adding two chairs gives 11; adding two complete tables gives 15. Difference: 4 chairs.",
+      "id": "library-algebra-grouping",
+      "value": "3"
+    }
+  ],
+  "checks": {
+    "numericFractionRestoration": "2.5 restores 3 on blur and retains last valid arrangement",
+    "germanOutOfRange": "7 restores 3 on blur with localized explanation",
+    "rangeKeyboard": "End selects 6; center pointer selects 3",
+    "zeroGrouping": "2 chairs versus 6 chairs at zero original tables",
+    "comparisonBaselines": "both SVG heights 178.96px; both totals at y=411.95px at desktop",
+    "localTableScroll": "390px viewport: 303px scroll wrapper, 560px content, ArrowRight sets scrollLeft=40",
+    "navigation": "Part One has 2 direct links; Episode 01 next opens Episode 02; Episode 02 previous returns to Episode 01",
+    "localization": "Language control preserves new lesson and /MyNotes prefix",
+    "search": "English booking and German Buchungsgebühr return prefixed Episode 02; both results open correctly",
+    "gallery": "Both explorers and all 8 static variants render; no KaTeX errors",
+    "console": "No warning/error logs captured"
+  }
+}

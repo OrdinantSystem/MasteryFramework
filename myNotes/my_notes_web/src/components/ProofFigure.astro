@@ -1,0 +1,32 @@
+---
+import Math from './Math.astro';
+import MathText from './MathText.astro';
+import {evenLine,parityExamples,type ProofFigureKind} from '../lib/interactive/parity-model';
+import {counterPairs} from '../lib/interactive/parity-render';
+import {proofCopy} from '../lib/reasoning/proof-copy';
+import '../styles/proof.css';
+interface Props {kind:ProofFigureKind}
+const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=proofCopy[locale];
+const template=kind==='proof-template';
+---
+<figure class="proof-figure" data-proof-figure={kind}>
+ {kind==='proof-examples'&&<div class="proof-examples">{parityExamples.map(([a,b])=><div><span>{a} + {b}</span><span class="proof-arrow" aria-hidden="true">↓</span><strong>{a+b}</strong><p class="proof-caption">{c.even}</p></div>)}</div>}
+ {kind==='proof-evidence'&&<div class="proof-columns">
+  <div class="proof-case"><h3>{c.observation}</h3><div class="proof-checks" aria-hidden="true">{[1,2,3,4,5].map(()=> <span class="proof-check">✓</span>)}</div><div class="proof-unchecked" aria-hidden="true">● ● ● … ?</div><p><strong>{c.checked}</strong></p><p class="proof-caption">{c.evidence}</p></div>
+  <div class="proof-case"><h3>{c.claim}</h3><div class="proof-infinite" aria-hidden="true">{Array.from({length:21},()=> <i/>)}<span>∞</span></div><p><strong>{c.every}</strong></p><p class="proof-caption">{c.infinite}</p></div>
+ </div>}
+ {kind==='proof-pairs'&&<><div class="proof-columns" role="img" aria-label={c.pairDescription}>
+  <div class="proof-case"><p class="proof-label">{c.eight}</p><div class="proof-pair-row" aria-hidden="true" set:html={counterPairs(4,'blue')}/><p>{c.fourPairs}</p></div>
+  <div class="proof-case"><p class="proof-label">{c.seven}</p><div class="proof-pair-row" aria-hidden="true" set:html={counterPairs(3,'blue',true)}/><p>{c.threeLeft}</p></div>
+ </div></>}
+ {kind==='proof-general-pairs'&&<><div class="proof-pair-row" aria-hidden="true"><Fragment set:html={counterPairs(3,'blue')}/><span class="proof-ellipsis">…</span><Fragment set:html={counterPairs(1,'blue')}/></div><figcaption><MathText text={c.generalPairs.replace(/^a /,'$a$ ')}/></figcaption></>}
+ {template&&<><div class="proof-columns" role="img" aria-label={c.templateDescription}>
+  {(['blue','gold'] as const).map((role,i)=><div class={`proof-collection proof-${role}`}><div class="proof-pair-row" aria-hidden="true"><Fragment set:html={counterPairs(2,role)}/><span class="proof-ellipsis">…</span><Fragment set:html={counterPairs(1,role)}/></div><Math tex={i===0?'2a':'2b'} display/><p><MathText text={i===0?c.aPairs.replace(/^a /,'$a$ '):c.bPairs.replace(/^b /,'$b$ ')}/></p></div>)}
+ </div><span class="proof-arrow" aria-hidden="true">↓</span><div class="proof-equation"><Math tex="\colA{a}+\colC{b}" display/><Math tex="2(a+b)" display/><p class="proof-caption"><MathText text={c.abPairs.replace('a + b','$a+b$')}/></p></div></>}
+ {kind==='proof-chain'&&<><h3>{c.follow}</h3><div class="proof-surface"><div class="proof-columns"><span class="proof-blue">{c.first}</span><span class="proof-gold">{c.second}</span></div><Math tex="\colA{2a}+\colC{2b}" display/><p class="proof-caption">{c.twoGroups}</p></div><span class="proof-arrow" aria-hidden="true">↓</span><div class="proof-equation"><Math tex="2(a+b)" display/><p class="proof-caption">{c.twice}</p></div><span class="proof-arrow" aria-hidden="true">↓</span><div class="proof-result"><strong>✓ {c.even}</strong><p class="proof-caption"><MathText text={c.integer.replace('a + b','$a+b$')}/></p></div></>}
+ {kind==='proof-number-line'&&<><h3>{c.line}</h3><div class="proof-number-line" role="img" aria-label={c.lineDescription}><span class="proof-axis" aria-hidden="true"/><div class="proof-line-values" aria-hidden="true">{evenLine.filter(n=>n%2===0).map(n=><span><i/><b>{n<0?`−${-n}`:n}</b></span>)}</div></div><figcaption>{c.lineCaption}</figcaption></>}
+
+ {kind==='proof-odd-sum'&&<><div class="proof-columns" role="img" aria-label={c.oddDescription}>{[2,3].map((n,i)=><div class="proof-case"><p><MathText text={i===0?c.five:c.sevenOdd}/></p><div class="proof-pair-row" aria-hidden="true" set:html={counterPairs(n,'blue',true)}/></div>)}</div><p class="proof-caption"><span aria-hidden="true">↓ </span>{c.leftovers}<span aria-hidden="true"> ↓</span></p><div class="proof-new-pair" aria-hidden="true"><Math tex="2+3+1=6"/><Fragment set:html={counterPairs(1,'gold')}/></div><div class="proof-result"><strong>{c.sixPairs} ✓</strong><p class="proof-caption">{c.newPair}</p></div></>}
+ {kind==='proof-distinction'&&<><h3>{c.key}</h3><div class="proof-columns"><div class="proof-case"><p><strong>{c.particular}</strong></p><div class="proof-checks" aria-hidden="true">{[1,2,3,4,5].map(()=> <span class="proof-check">✓</span>)}</div><p class="proof-caption">{c.more}</p></div><div class="proof-case"><p><strong>{c.arbitrary}</strong></p><div class="proof-surface"><Math tex="2(a+b)" display/></div><p class="proof-caption">{c.rule}</p></div></div></>}
+ {kind==='proof-process'&&<><div class="proof-process-steps"><span>{c.examples}</span><b aria-hidden="true">→</b><span>{c.pattern}</span><b aria-hidden="true">→</b><span>{c.relationship}</span></div><span class="proof-arrow" aria-hidden="true">↓</span><div class="proof-result"><strong>✓ {c.proof}</strong><p class="proof-caption">{c.assumptions}</p></div></>}
+</figure>

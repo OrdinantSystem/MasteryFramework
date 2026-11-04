@@ -1,0 +1,457 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-04
+sourcePages: []
+sourceLocations: ["Sections 1–8; Further reading"]
+title: "How Can a Picture Explain Infinitely Many Cases?"
+navTitle: "Pictures and general proofs"
+description: "From examples and paired counters to a direct proof for every even integer."
+order: 4
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [equality-and-solutions]
+thumbnail: reasoning-proof
+---
+
+## 1. The problem with a thousand examples
+
+Let me ask you a question that seems almost too simple to deserve an explanation.
+
+What happens when we add two even numbers?
+
+We can start with a few examples.
+
+<ReasoningFigure kind="proof-examples" />
+
+Every answer is even.
+
+And if we try larger numbers, nothing seems to change.
+
+$$
+124+386=510
+$$
+
+Even.
+
+$$
+2\,000+8\,000=10\,000
+$$
+
+Also even.
+
+We could continue. We could write a computer program to test a million examples. Or a billion. Or so many that checking them takes longer than we are willing to wait.
+
+But suppose we did.
+
+Would we have proven that adding two even numbers always produces an even number?
+
+Not quite.
+
+Because there is something fundamentally different about these two statements:
+
+<ReasoningFigure kind="proof-evidence" />
+
+The first statement tells us what happened in the cases we examined.
+
+The second makes a promise about cases we have never examined, including numbers too large to write down.
+
+And there are infinitely many pairs of even integers.
+
+So however impressive our computer program might be, it can only finish checking finitely many of them.
+
+A million successful examples are still a million examples.
+
+We need a different kind of explanation. Not one that checks the numbers one after another, but one that reveals something they all have in common.
+
+And surprisingly, we can begin to discover that something with a very simple picture.
+
+## 2. What does it actually mean to be even?
+
+Think about the number eight.
+
+Imagine eight little counters on a table. We could arrange them in one long line, or in a circle, or scatter them randomly.
+
+But there is a particular arrangement that reveals something important about eight.
+
+We can place the counters into pairs.
+
+<ReasoningFigure kind="proof-pairs" />
+
+Eight can be divided into four pairs, with nothing left over. Seven cannot: after making three pairs, one counter remains.
+
+That is the difference between an even number and an odd number.
+
+And notice that the important thing is not the exact number of counters. We could have two, four, six, eight, or two thousand of them.
+
+What makes the number even is the same in every case: it consists of some number of complete pairs.
+
+Let's represent that number of pairs with a letter.
+
+Call it $a$.
+
+<ReasoningFigure kind="proof-general-pairs" />
+
+$$
+2\times a=2a
+$$
+
+If there are three pairs, we have six counters.
+
+If there are five pairs, we have ten.
+
+If there are a million pairs, we have two million.
+
+The number of pairs can change, but the relationship stays the same: the total is always twice the number of pairs.
+
+And this gives us a precise mathematical definition.
+
+An integer $n$ is even when there exists an integer $a$ such that
+
+$$
+\boxed{n=2a.}
+$$
+
+An integer is a whole number, including zero and negative whole numbers: $\ldots,-2,-1,0,1,2,\ldots$.
+
+So the letter $a$ is not a mysterious unknown that we must somehow discover. It represents an integer whose value depends on which even number we are considering.
+
+For six, $a=3$. For ten, $a=5$. For zero, $a=0$.
+
+And this is a remarkable step.
+
+Instead of listing all the even integers, we have described what makes any integer even.
+
+But we still haven't proven anything about adding them.
+
+For that, we need to bring two collections together.
+
+## 3. Two collections, one picture
+
+Imagine we have six blue counters and four golden counters.
+
+Before adding them, arrange both collections into pairs.
+
+<Interactive kind="parity" preset="even-sum" id="complete-pairs" />
+
+What happened when we brought the collections together?
+
+We didn't have to rearrange the individual counters into something completely new. The blue counters were already paired, and so were the golden ones.
+
+Combining the collections simply gave us a larger collection of complete pairs.
+
+Six plus four makes ten, because three pairs plus two pairs makes five pairs.
+
+Now try changing the numbers in the picture.
+
+Perhaps four pairs in the first collection and one in the second. Or two pairs and six pairs. Or even zero pairs in one collection.
+
+The result is the same kind of object: another collection of pairs.
+
+And that tells us why the answer keeps being even.
+
+Not because we have been lucky with our examples, but because adding two collections of complete pairs never creates an unpaired counter.
+
+Now comes the interesting question.
+
+Can we replace those specific collections with a picture that doesn't depend on how many pairs we started with?
+
+## 4. A picture that no longer needs specific numbers
+
+We already have a letter for the number of pairs in the first collection: $a$.
+
+Let's use a different letter for the number of pairs in the second collection: $b$.
+
+<ReasoningFigure kind="proof-template" />
+
+Why two different letters?
+
+Because the two numbers might be different.
+
+If we wrote $2a+2a$, we would be describing two equal even numbers. That would prove something about sums like $6+6$ or $10+10$, but not necessarily about sums like $6+10$.
+
+By using $a$ and $b$, we allow each collection to have its own number of pairs.
+
+They can be equal. They can be different. One can be zero. Nothing requires us to choose particular values.
+
+And this picture is no longer just a drawing of six plus four.
+
+It is a template.
+
+Each blue pair stands for one of the $a$ pairs. Each golden pair stands for one of the $b$ pairs. The dots represent the same relationship, regardless of how long either collection becomes.
+
+The dots themselves do not literally show infinitely many counters. The three dots in the middle indicate that the number of pairs can vary. What makes the picture general is the rule for constructing it, not the number of dots we managed to draw.
+
+That distinction matters.
+
+A drawing of ten counters illustrates a single case.
+
+A diagram describing $a$ pairs and $b$ pairs can represent an entire family of cases.
+
+And once we understand the rule, we can translate it into mathematics.
+
+## 5. Turning the picture into a proof
+
+Let's return to our original question:
+
+Is the sum of any two even integers always even?
+
+This time, instead of choosing examples, imagine that somebody gives us two even integers without telling us which ones.
+
+We'll call them $x$ and $y$.
+
+We don't know their values, and we don't need to.
+
+We know only that both are even.
+
+But what does even mean?
+
+It means that each number is twice some integer.
+
+So, for some integers $a$ and $b$, we can write
+
+$$
+x=2a,\qquad y=2b.
+$$
+
+We have already made our first important move. We replaced the information "these numbers are even" with an exact mathematical relationship.
+
+Now add them.
+
+$$
+x+y=2a+2b.
+$$
+
+This tells us that the first number contains $a$ pairs, and the second contains $b$ pairs.
+
+And the picture has already shown us what happens when those pairs are combined.
+
+We have $a+b$ pairs in total, with two elements in each pair.
+
+Mathematically, this is the distributive property, used in reverse:
+
+$$
+2a+2b=2(a+b).
+$$
+
+<ReasoningFigure kind="proof-chain" />
+
+Now, there is one last step we must not skip.
+
+How do we know that $2(a+b)$ is even?
+
+The definition says that a number is even if it is twice an integer.
+
+We know $a$ and $b$ are integers. And when we add two integers, the result is another integer.
+
+Therefore, $a+b$ is an integer.
+
+Call it $c$, if you like. Then our result is simply $2c$, which is exactly the form required by the definition of an even number.
+
+And that's it.
+
+We have proven the statement.
+
+<Note title="THE COMPLETE DIRECT PROOF">
+
+Let $x$ and $y$ be arbitrary even integers. By the definition of evenness, there exist integers $a,b$ such that $x=2a$ and $y=2b$. Thus,
+
+$$
+x+y=2a+2b=2(a+b).
+$$
+
+Since integers are closed under addition, $a+b$ is an integer. Therefore, $x+y$ is twice an integer and hence even. $\square$
+
+</Note>
+
+Notice what made this argument different from our first examples.
+
+We never needed to know which even integers we were adding.
+
+We only used properties that apply to every integer satisfying the definition.
+
+Our proof works just as well for six and four as it does for two numbers containing a thousand digits.
+
+The generality comes from the freedom of $a$ and $b$, not from the size or number of examples.
+
+## 6. Where the picture stops working
+
+There is one subtle detail worth examining.
+
+Our drawing of counters was persuasive because every counter could be placed into a pair.
+
+But what if one of our integers is negative?
+
+Consider:
+
+$$
+-8+6=-2.
+$$
+
+All three numbers are even.
+
+Yet what would it mean to have negative eight physical counters on a table?
+
+We can't simply place negative counters into pairs in the ordinary sense.
+
+<ReasoningFigure kind="proof-number-line" />
+
+The counter picture naturally describes nonnegative quantities. Our algebra describes something more general.
+
+We can write:
+
+$$
+-8=2(-4), \qquad 6=2(3).
+$$
+
+Therefore,
+
+$$
+-8+6=2(-4+3)=2(-1)=-2.
+$$
+
+The same reasoning still works.
+
+The picture helped us discover the underlying relationship. The algebra allowed us to express it without depending on physical counters.
+
+So we should distinguish two things: a visual intuition that helps us understand why something is true, and a formal argument that establishes precisely where it is true.
+
+Here, the algebra proves the statement for all integers, including zero and negative integers.
+
+That is more than the literal counter picture could show us.
+
+## 7. Can we use the same idea to discover something new?
+
+Let's see whether we can use what we've learned without being given the answer first.
+
+Consider this statement:
+
+The sum of two odd integers is even.
+
+We could begin by testing examples:
+
+$$
+3+5=8,\qquad 7+9=16.
+$$
+
+But we know that examples alone aren't enough.
+
+Instead, let's return to the counters.
+
+An odd number consists of complete pairs with one counter left over.
+
+If we take five counters, we have two pairs and one extra.
+
+If we take seven, we have three pairs and one extra.
+
+Now put both collections together.
+
+<ReasoningFigure kind="proof-odd-sum" />
+
+This time, something new happens.
+
+Each original number has one unpaired counter. But when we add the numbers, those two extra counters form a new pair.
+
+So the result is even.
+
+And once again, the picture suggests the general argument.
+
+What is the definition of an odd integer?
+
+An integer is odd if it can be written as twice an integer plus one.
+
+$$
+2a+1.
+$$
+
+For two potentially different odd integers, we write
+
+$$
+2a+1,\qquad 2b+1.
+$$
+
+Add them:
+
+$$
+\begin{aligned} (2a+1)+(2b+1) &=2a+2b+2\\ &=2(a+b+1). \end{aligned}
+$$
+
+Notice the final $+1$ inside the parentheses.
+
+It represents the new pair formed by the two leftover counters.
+
+Because $a$ and $b$ are integers, $a+b+1$ is also an integer. So the sum is twice an integer.
+
+It must be even.
+
+Our visual discovery has become a complete proof, and this time we have used the method to establish a different result.
+
+## 8. What actually makes an argument general?
+
+There is one final question I want you to consider.
+
+Suppose two people claim to have proven that the sum of two even numbers is even.
+
+The first person says:
+
+"I've tried ten thousand combinations, and every single answer was even."
+
+The second says:
+
+"Take any two even integers. They must be $2a$ and $2b$ for some integers $a,b$. Their sum is $2(a+b)$, and $a+b$ is an integer."
+
+Why is the second argument a proof while the first is not?
+
+<ReasoningFigure kind="proof-distinction" />
+
+The answer is not merely that the second person used letters.
+
+Letters alone do not make an argument general. We could write a completely invalid argument using letters.
+
+What matters is that $a$ and $b$ were never restricted to particular values. We began with any two even integers and used only relationships guaranteed by their definition.
+
+And every step followed from the previous one.
+
+This also reveals something important about mathematical pictures.
+
+A picture does not become a proof just because it looks convincing.
+
+Its real power is that it can help us recognize a relationship that does not depend on a particular example.
+
+In this case, the relationship was simple: complete pairs remain complete pairs when collections are combined.
+
+Once we expressed that relationship precisely, we no longer needed to check examples.
+
+<ReasoningFigure kind="proof-process" />
+
+This distinction matters far beyond arithmetic.
+
+When we observe something repeatedly, we might reasonably become more confident that it will happen again. That is a valuable form of reasoning, particularly when studying the physical world.
+
+But in mathematics, we can sometimes do something stronger.
+
+We can uncover a structure that makes a conclusion unavoidable, given our assumptions.
+
+And that's what we have done here.
+
+We began with a few numbers.
+
+Then we discovered pairs.
+
+Then we replaced those pairs with letters.
+
+And finally, we showed why the relationships between those letters hold for every possible case.
+
+We haven't drawn infinitely many pictures.
+
+We have discovered why one general picture can represent infinitely many cases — and how to justify what it reveals.
+
+## Further reading
+
+The lesson follows the definition-based approach to direct proof developed in Richard Hammack's Book of Proof, Chapter 4, especially Sections 4.2–4.3. Daniel Velleman's How to Prove It, Chapter 3, provides a more systematic treatment of proof strategies.
+
+
+- [Book of Proof — Richard Hammack (free textbook)](https://richardhammack.github.io/BookOfProof/)
+- [How to Prove It — Daniel J. Velleman](https://www.cambridge.org/highereducation/books/how-to-prove-it/6D2965D625C6836CD4A785A2C843B3DA)

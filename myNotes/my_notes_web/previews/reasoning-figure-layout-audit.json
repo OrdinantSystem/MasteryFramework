@@ -1,0 +1,338 @@
+[
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 159.234375,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 149.1875,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/reasoning/lessons/one-plus-one/",
+    "theme": "light",
+    "width": 390
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 159.234375,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 149.1875,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/reasoning/lessons/one-plus-one/",
+    "theme": "dark",
+    "width": 390
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/reasoning/lessons/one-plus-one/",
+    "theme": "light",
+    "width": 1440
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/reasoning/lessons/one-plus-one/",
+    "theme": "dark",
+    "width": 1440
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/reasoning/lessons/one-plus-one/",
+    "theme": "light",
+    "width": 2200
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/reasoning/lessons/one-plus-one/",
+    "theme": "dark",
+    "width": 2200
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 159.234375,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 193.578125,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/de/reasoning/lessons/one-plus-one/",
+    "theme": "light",
+    "width": 390
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 159.234375,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 193.578125,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/de/reasoning/lessons/one-plus-one/",
+    "theme": "dark",
+    "width": 390
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/de/reasoning/lessons/one-plus-one/",
+    "theme": "light",
+    "width": 1440
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/de/reasoning/lessons/one-plus-one/",
+    "theme": "dark",
+    "width": 1440
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/de/reasoning/lessons/one-plus-one/",
+    "theme": "light",
+    "width": 2200
+  },
+  {
+    "figures": [
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 255.046875,
+        "inOrder": true,
+        "items": 3,
+        "kind": "collections",
+        "rowAligned": true,
+        "withinFigure": true
+      },
+      {
+        "captionBelow": true,
+        "captionFullWidth": true,
+        "height": 213.8359375,
+        "inOrder": true,
+        "items": 5,
+        "kind": "symbols",
+        "rowAligned": true,
+        "withinFigure": true
+      }
+    ],
+    "overflow": 0,
+    "path": "/de/reasoning/lessons/one-plus-one/",
+    "theme": "dark",
+    "width": 2200
+  }
+]

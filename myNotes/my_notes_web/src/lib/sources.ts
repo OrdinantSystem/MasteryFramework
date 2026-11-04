@@ -1,5 +1,11 @@
 /** Provenance identities only; private originals are never public links. */
 export const sourceCatalog = {
+  'reasoning-episode-05':{title:'Rational Thinking · Episode 05 · patterns and evidence',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-04':{title:'Rational Thinking · Episode 04 · pictures and general proofs',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-03':{title:'Rational Thinking · Episode 03 · equality and equation transformations',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-02':{title:'Rational Thinking · Episode 02 · foundations of algebra',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-01-expanded':{title:'Rational Thinking · Episode 01 · expanded script',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-01':{title:'Rational Thinking · Episode 01 · supplied lesson',kind:'markdown',pages:0,course:'reasoning'},
   "sheet-1-1": { title: "Linear Algebra I — Übungsblatt 1.1", pages: 4,kind:"pdf",course:"linear-algebra" },
   "sheet-2-1": { title: "Linear Algebra I — Übungsblatt 2.1", pages: 6,kind:"pdf",course:"linear-algebra" },
   "analysis-concepts-1":{title:"Analysis I — Konzepte 01",pages:1,kind:"pdf",course:"analysis"},

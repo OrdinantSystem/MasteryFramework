@@ -1,0 +1,52 @@
+{
+  "source": "Expanded supplied script, integrated by concept rather than duplicated as a second article",
+  "locales": {
+    "en": {
+      "before_sha256": "6f2f40bdf53942533c90b4f4a43d74c489a5785a9c118e2874d56eec0e80837e",
+      "after_sha256": "8a3a213c95c3e921da2d9ce874879447d4c049b4d80954504853c62fa4e20964",
+      "retained_original_h2_fragments": [
+        "1-the-simplest-question-in-mathematics",
+        "2-abstraction-what-changes-and-what-stays-the-same",
+        "3-what-exactly-are-we-counting",
+        "4-what-does-adding-actually-mean",
+        "5-can-one-plus-one-ever-equal-one",
+        "6-what-does-the-equation-actually-say",
+        "7-lets-test-your-understanding",
+        "8-the-bigger-lesson",
+        "final-learning-checkpoint",
+        "sources-and-further-reading"
+      ],
+      "numbered_sections": 12,
+      "static_variants": 12,
+      "comparisons": 3,
+      "disclosures": 2
+    },
+    "de": {
+      "before_sha256": "bde75c66d6700aac11d9b9ef54a396b320fb59954b4f5cc377be7434c2e365ae",
+      "after_sha256": "ea2e11366508c86e6c256d0b8ca55c78d3a920e4b13cf2fe6498fef1357892d7",
+      "retained_original_h2_fragments": [
+        "1-die-einfachste-frage-der-mathematik",
+        "2-abstraktion-was-\u00e4ndert-sich-und-was-bleibt-gleich",
+        "3-was-genau-z\u00e4hlen-wir",
+        "4-was-bedeutet-addieren-eigentlich",
+        "5-kann-eins-plus-eins-jemals-eins-ergeben",
+        "6-was-sagt-die-gleichung-eigentlich-aus",
+        "7-pr\u00fcfen-wir-dein-verst\u00e4ndnis",
+        "8-die-gr\u00f6\u00dfere-erkenntnis",
+        "abschlie\u00dfende-lernkontrolle",
+        "quellen-und-weiterf\u00fchrende-literatur"
+      ],
+      "numbered_sections": 12,
+      "static_variants": 12,
+      "comparisons": 3,
+      "disclosures": 2
+    }
+  },
+  "scope": "Owner-authorized same-page expansion; the initial 148-block literal-preservation report describes the preceding edition.",
+  "checks": {
+    "localized_inline_and_display_math_runs": 90,
+    "inline_display_parity": "pass, after unit-word and but/aber normalization",
+    "expanded_source_sections": "Mapped 1\u201310 to retained and integrated sections; see docs/reasoning.md",
+    "prior_notes": "Original source and pre-expansion EN/DE page snapshots retained privately."
+  }
+}

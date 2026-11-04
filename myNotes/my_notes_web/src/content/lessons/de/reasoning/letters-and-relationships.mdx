@@ -1,0 +1,413 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-02
+sourcePages: []
+sourceLocations: ["Complete Video Script · sections 1–10; Sources and Further Reading"]
+title: "Warum stehen Buchstaben dort, wo Zahlen sein sollten?"
+navTitle: "Warum Buchstaben in der Algebra?"
+description: "Variablen, Gruppierung, Definitionsbereiche und was eine Beziehung verrät, bevor ihre Eingaben bekannt sind."
+order: 2
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [one-plus-one]
+thumbnail: reasoning-algebra
+---
+
+RATIONALES DENKEN · EPISODE 02
+
+## 1. Ein Raum, den ich nie gesehen habe
+
+Stell dir einen Raum vor, den du noch nie betreten hast.
+
+Du weißt nicht, wie groß er ist. Du weißt nicht, wie viele Menschen darin sind. Und erst recht weißt du nicht, wie viele Stühle er enthält.
+
+Aber ich verrate dir nur zwei Dinge.
+
+An jedem Tisch stehen genau drei Stühle.
+
+Und am Eingang stehen zwei zusätzliche Stühle.
+
+Das ist alles.
+
+<ReasoningFigure kind="room" />
+
+Nun eine merkwürdige Frage: Könnten in dem Raum vierzehn Stühle stehen?
+
+Vielleicht.
+
+Aber wie wäre es mit fünfzehn?
+
+Ich behaupte, dass fünfzehn Stühle unmöglich sind.
+
+Das ist eine überraschend starke Behauptung. Schließlich haben wir die Stühle nicht gezählt. Wir haben den Raum nicht einmal gesehen.
+
+Woher könnten wir das also wissen?
+
+Vielleicht könnten wir Anordnungen auflisten und prüfen, welche Zahlen vorkommen. Aber es geht auch anders.
+
+Wir können etwas über die Gesamtzahl der Stühle herausfinden, ohne die Gesamtzahl selbst zu kennen.
+
+Dazu müssen wir eine Idee untersuchen, die im Zentrum der Algebra steht: dass ein Buchstabe uns manchmal mehr sagen kann als eine Zahl.
+
+## 2. Was ändert sich, und was bleibt gleich?
+
+Betrachten wir einige mögliche Räume.
+
+Angenommen, es gibt nur einen Tisch. Wir brauchen drei Stühle daran und die beiden Stühle am Eingang.
+
+Das sind fünf Stühle.
+
+Nun kommt ein weiterer Tisch hinzu. Wir brauchen drei weitere Stühle, insgesamt also acht.
+
+Bei einem dritten Tisch sind es elf. Bei einem vierten sind es vierzehn.
+
+Schau dir diese Anordnungen genau an.
+
+Die Gesamtzahl der Stühle verändert sich ständig. Aber nicht alles verändert sich.
+
+Jeder neue Tisch trägt genau dasselbe bei: drei Stühle.
+
+Und die beiden Stühle am Eingang bleiben unverändert.
+
+Der Raum enthält also zwei Arten von Größen: eine, die fest bleibt, und eine andere, die von der Anzahl der Tische abhängt.
+
+Wir könnten unbegrenzt weiterrechnen. Doch egal, wie viele Beispiele wir prüfen, dieselbe Struktur taucht immer wieder auf.
+
+Dreiergruppen und zwei zusätzliche Stühle.
+
+Was wäre, wenn wir diese gemeinsame Struktur beschreiben, statt jeden möglichen Raum einzeln aufzulisten?
+
+<ReasoningFigure kind="table-pattern" />
+
+## 3. Eine Zahl durch eine Idee ersetzen
+
+Wir wissen, dass zu jedem Tisch drei Stühle gehören. Aber wir wissen noch immer nicht, wie viele Tische der Raum enthält.
+
+Tun wir also etwas Einfaches.
+
+Statt eine bestimmte Anzahl von Tischen hinzuschreiben, geben wir dieser Größe einen Namen.
+
+Wir könnten sie fast beliebig nennen. Mathematiker verwenden dafür jedoch häufig Buchstaben.
+
+Nehmen wir $n$.
+
+Von nun an bezeichnet $n$ die Anzahl der Tische.
+
+Nicht die Anzahl der Stühle. Nicht die Anzahl der Menschen. Die Anzahl der Tische.
+
+Da jeder Tisch drei Stühle benötigt, ist die Anzahl der Stühle an den Tischen dreimal $n$.
+
+Wir können das als drei multipliziert mit $n$ schreiben. Oder kurz als drei $n$.
+
+Denke nun an die beiden Stühle am Eingang. Sie müssen zur Gesamtzahl hinzukommen.
+
+Damit erhalten wir:
+
+$$ \boxed{3n+2} $$
+
+Dreimal die Anzahl der Tische plus zwei.
+
+Das heißt **algebraischer Ausdruck**: eine Kombination mathematischer Zeichen, die eine Größe darstellt.
+
+Beachte, was wir erreicht haben.
+
+Wir haben die genaue Anzahl der Stühle nicht berechnet. Wir haben die Beziehung beschrieben, die diese Anzahl bestimmt.
+
+Wählen wir vier Tische, liefert der Ausdruck vierzehn Stühle. Wählen wir sechs, liefert er zwanzig.
+
+Die konkrete Antwort ändert sich. Die Regel bleibt gleich.
+
+<Interactive kind="algebra" preset="tables" id="chair-rule" />
+
+## 4. Eine Antwort ausschließen, ohne zu zählen
+
+Nun können wir zu unserer ursprünglichen Frage zurückkehren.
+
+Warum habe ich behauptet, dass der Raum keine fünfzehn Stühle enthalten kann?
+
+Überlegen wir, was fünfzehn Stühle bedeuten würden.
+
+Wir wissen, dass immer zwei Stühle am Eingang stehen. Wären es insgesamt fünfzehn, blieben nach dem Entfernen dieser beiden dreizehn Stühle an den Tischen übrig.
+
+Aber an jedem Tisch müssen genau drei Stühle stehen.
+
+Lassen sich dreizehn Stühle in vollständige Dreiergruppen aufteilen?
+
+Nein.
+
+Vier Dreiergruppen würden zwölf Stühle verwenden. Ein Stuhl bliebe ohne vollständige Gruppe übrig.
+
+Das lässt unsere Anordnung nicht zu. Fünfzehn kann deshalb nicht die Gesamtzahl sein.
+
+Dieselbe Frage können wir mathematisch ausdrücken.
+
+Wäre drei $n$ plus zwei gleich fünfzehn, müsste drei $n$ gleich dreizehn sein.
+
+Aber keine ganze Anzahl von Tischen ergibt beim Multiplizieren mit drei die Zahl dreizehn.
+
+Es gibt also keinen zulässigen Wert von $n$, der funktioniert.
+
+<ReasoningFigure kind="impossible-chairs" />
+
+Beachte, wodurch sich dieses Argument vom Prüfen einzelner Beispiele unterscheidet.
+
+Wir haben nicht jeden möglichen Raum untersucht. Wir haben die Struktur der Anordnung genutzt, um eine ganze Möglichkeit auszuschließen.
+
+Das ist eine starke Form von Wissen: Wir können etwas über eine Antwort feststellen, ohne die Antwort selbst zu kennen.
+
+## 5. Wenn aus zwei zusätzlichen Stühlen zwei zusätzliche Tische werden
+
+Ändern wir nun eine Kleinigkeit an unserem Raum.
+
+Statt zwei zusätzlicher Stühle am Eingang gibt es nun zwei zusätzliche Tische. Auch jeder dieser Tische braucht drei Stühle.
+
+Beschreibt unser ursprünglicher Ausdruck den Raum noch richtig?
+
+Überlege, was sich verändert hat.
+
+Zuvor haben wir drei Stühle für jeden unserer $n$ Tische gezählt und anschließend zwei einzelne Stühle hinzugefügt.
+
+Jetzt fügen wir zwei vollständige Tische hinzu.
+
+Die Gesamtzahl der Tische ist also $n$ plus zwei. Da jeder dieser Tische drei Stühle benötigt, multiplizieren wir diese gesamte Größe mit drei.
+
+Wir schreiben:
+
+$$ 3(n+2) $$
+
+Die gebogenen Zeichen heißen **Klammern**. Sie zeigen, dass $n$ plus zwei eine Gruppe bildet und die Drei alles innerhalb dieser Gruppe multipliziert.
+
+Vergleiche das mit unserem ursprünglichen Ausdruck:
+
+$$ 3n+2 \qquad\text{und}\qquad 3(n+2) $$
+
+Ist $n$ gleich zwei, hat die erste Anordnung acht Stühle, die zweite dagegen zwölf.
+
+Warum vier mehr?
+
+Zwei zusätzliche Tische benötigen sechs Stühle, während die ursprüngliche Anordnung nur zwei hinzufügte.
+
+Der zweite Ausdruck ist also gleich drei $n$ plus sechs.
+
+Die Klammern haben verändert, auf welche Größen sich die Multiplikation bezieht.
+
+Sie sind keine Verzierung mathematischer Schreibweise. Sie gehören zur Bedeutung des Ausdrucks.
+
+$$ 3(n+2)=3n+6 $$
+
+<Interactive kind="algebra" preset="grouping" id="chair-grouping" />
+
+## 6. Die drei verschiedenen Rollen eines Buchstabens
+
+Es gibt noch eine Feinheit.
+
+Während unserer Untersuchung haben wir durchgehend denselben Buchstaben $n$ verwendet. Aber wir haben verschiedene Arten von Fragen dazu gestellt.
+
+Als wir uns einen Tisch, dann zwei und dann drei vorstellten, durfte sich $n$ verändern.
+
+In dieser Situation nennen wir $n$ eine **Variable**. Sie bezeichnet eine Größe, die verschiedene Werte annehmen kann.
+
+Als wir dagegen fragten, ob der Raum fünfzehn Stühle enthalten könnte, suchten wir einen bestimmten Wert von $n$, der eine Gleichung wahr macht.
+
+Dort war $n$ eine **Unbekannte**.
+
+Und als wir begründeten, dass jede zulässige Anordnung aus vollständigen Dreiergruppen und zwei zusätzlichen Stühlen bestehen muss, hatte $n$ eine dritte Rolle.
+
+Wir suchten überhaupt keinen bestimmten Wert. Wir argumentierten über eine **beliebige Anzahl** von Tischen.
+
+Jede zulässige Anzahl.
+
+Das sind keine drei verschiedenen Arten von Buchstaben. Es sind drei verschiedene Verwendungsweisen eines mathematischen Zeichens.
+
+Die wichtige Frage lautet deshalb nicht immer einfach: „Welchen Wert hat $n$?“
+
+Manchmal soll es gar keinen einzelnen bestimmten Wert geben.
+
+Manchmal möchten wir verstehen, was wahr bleiben muss, wenn sich dieser Wert verändert.
+
+<ReasoningFigure kind="letter-roles" />
+
+## 7. Wenn eine richtige Rechnung eine bedeutungslose Antwort liefert
+
+Wenn sich $n$ verändern darf, wie weit darf es sich dann verändern?
+
+Was geschieht, wenn wir zweieinhalb wählen?
+
+Natürlich können wir dreimal zweieinhalb plus zwei berechnen. Das ergibt neuneinhalb.
+
+An dieser Rechnung ist nichts falsch.
+
+Aber enthält unser Raum wirklich zweieinhalb Tische mit jeweils drei Stühlen?
+
+Nicht unter den Regeln, die wir festgelegt haben.
+
+Unsere Tische sind vollständige Gegenstände. Wir zählen sie mit ganzen Zahlen: null Tische, ein Tisch, zwei Tische und so weiter.
+
+Die Sammlung zulässiger Werte heißt **Definitionsbereich**.
+
+Für vollständige Tische sind die zulässigen Werte die nichtnegativen ganzen Zahlen:
+
+$$ n\in\mathbb{N}_0=\{0,1,2,3,\ldots\} $$
+
+Der Definitionsbereich hängt davon ab, was der Buchstabe bezeichnet.
+
+Zählen wir vollständige Tische, gehören Bruchteile nicht zu unserem Definitionsbereich.
+
+Messen wir dagegen Zeit, können eineinhalb Stunden völlig sinnvoll sein.
+
+Darin liegt die tiefere Erkenntnis.
+
+Ein mathematischer Ausdruck verrät uns nicht alles über seine eigene Deutung. Wir müssen wissen, worauf sich seine Zeichen beziehen.
+
+Dieselbe Rechnung kann mathematisch gültig sein und trotzdem die beabsichtigte Situation nicht beschreiben.
+
+<ReasoningFigure kind="domains" />
+
+## 8. Mathematik ist eine Sprache, nicht nur eine Rechnung
+
+Versuchen wir eine andere Situation.
+
+Stell dir vor, du kaufst Tickets für eine Veranstaltung. Jedes Ticket kostet fünf Euro, dazu kommt eine einzige Buchungsgebühr von einem Euro für den gesamten Kauf.
+
+Du weißt noch nicht, wie viele Tickets du kaufen wirst.
+
+Wie könnten wir den Gesamtpreis beschreiben?
+
+Nennen wir die Anzahl der Tickets $n$. Für einen Kauf ist $n$ eine positive ganze Zahl.
+
+Jedes Ticket trägt fünf Euro bei. Also kosten $n$ Tickets fünfmal $n$ Euro. Anschließend addieren wir die Buchungsgebühr von einem Euro.
+
+$$ 5n+1 $$
+
+Stell dir nun vor, ich zeige dir nur diesen Ausdruck, ohne die Geschichte dazu zu erzählen.
+
+Könntest du die ursprüngliche Situation daraus erschließen?
+
+Nicht unbedingt.
+
+Er könnte Ticketpreise, die Anzahl von Gegenständen in einer Sammlung oder etwas völlig anderes beschreiben.
+
+Die Zeichen bewahren die mathematische Beziehung, aber nicht jede Einzelheit der Geschichte.
+
+Schon kleine Unterschiede in der Alltagssprache können diese Beziehung verändern.
+
+Angenommen, die Gebühr beträgt einen Euro pro Ticket statt einen Euro für den gesamten Kauf.
+
+Dann kostet jedes Ticket insgesamt sechs Euro. Der Ausdruck wird zu sechs $n$.
+
+Die Wörter haben sich nur leicht verändert, die mathematische Struktur aber hat sich verändert.
+
+Deshalb verlangt das Übersetzen zwischen Bildern, Sprache und Zeichen ein Verständnis dafür, was jede Größe tatsächlich bedeutet.
+
+Es genügt nicht, vertraute Zahlen und Rechenoperationen wiederzuerkennen.
+
+<ReasoningFigure kind="ticket-fees" />
+
+## 9. Wenn mathematische Regeln auf die Wirklichkeit treffen
+
+Betrachten wir nun ein naturwissenschaftliches Beispiel.
+
+Stell dir eine Kammer vor, deren Temperatur anfangs achtzehn Grad Celsius beträgt.
+
+Eine Heizung erhöht die Temperatur jede Stunde um zwei Grad.
+
+Zumindest ist das die Regel, die wir annehmen.
+
+Wie könnten wir ihre Temperatur nach einer beliebigen Zeitspanne ausdrücken?
+
+Nennen wir die Anzahl der Stunden $t$.
+
+Wir beginnen bei achtzehn Grad und addieren für jede Stunde zwei Grad.
+
+Die Temperatur wird also beschrieben durch:
+
+$$ 18+2t $$
+
+Nach einer Stunde sagt unser Modell zwanzig Grad voraus. Nach eineinhalb Stunden einundzwanzig.
+
+Aber nun eine Frage: Was geschieht, wenn wir für $t$ eintausend einsetzen?
+
+Der Ausdruck ergibt zweitausendachtzehn Grad Celsius.
+
+Bedeutet das, dass die Kammer diese Temperatur tatsächlich erreichen wird?
+
+Nicht unbedingt.
+
+Unsere Rechnung setzt voraus, dass die Temperatur weiterhin mit genau derselben Rate steigt.
+
+Ein echtes Heizsystem könnte sich abschalten. Wärmeverluste könnten zunehmen. Bauteile könnten versagen.
+
+Die mathematische Folgerung ergibt sich aus der angenommenen Regel. Ob diese Regel die Wirklichkeit weiterhin beschreibt, muss jedoch unabhängig davon festgestellt werden.
+
+Das ist eine wichtige Unterscheidung.
+
+Die Mathematik sagt uns, was aus unseren Annahmen folgt. Die Naturwissenschaft fragt auch, ob diese Annahmen die Welt richtig beschreiben.
+
+<ReasoningFigure kind="heating" />
+
+## 10. Was können wir wissen, ohne die Zahl zu kennen?
+
+Bevor wir zum Ende kommen, noch eine letzte Aufgabe.
+
+Ein Lager verpackt Kerzen in Schachteln zu je vier Stück. Außerdem gibt es drei lose Kerzen, die noch nicht verpackt sind.
+
+Du weißt nicht, wie viele Schachteln das Lager enthält.
+
+Jemand behauptet aber, dass es genau vierundzwanzig Kerzen sind.
+
+Kann das stimmen?
+
+Denke über die Struktur nach.
+
+<Exercise>
+
+Jede vollständige Schachtel trägt vier Kerzen bei. Dazu kommen immer drei lose Kerzen.
+
+Nennen wir die Anzahl der Schachteln $n$, muss die Gesamtzahl also vier $n$ plus drei sein.
+
+Ziehen wir die drei losen Kerzen von der behaupteten Gesamtzahl vierundzwanzig ab, bleiben einundzwanzig.
+
+Aber einundzwanzig lässt sich nicht in vollständige Vierergruppen aufteilen.
+
+Die Behauptung ist deshalb unmöglich, sofern die Verpackungsregel stimmt.
+
+<ReasoningFigure kind="candles" />
+
+</Exercise>
+
+Beachte, wie wenig Information wir dafür brauchten.
+
+Wir mussten die Schachteln nicht zählen. Wir mussten das Lager nicht sehen.
+
+Wir mussten nur die Beziehung verstehen.
+
+Genau das hat uns der Buchstabe ermöglicht: keine bestimmte Antwort auszudrücken, sondern die Struktur, die alle zulässigen Antworten gemeinsam haben.
+
+Die Zahlen können sich ändern. Die Situation kann sich ändern. Sogar die Gegenstände selbst können sich ändern.
+
+Bleibt aber dieselbe mathematische Beziehung bestehen, können wir über all diese Möglichkeiten gemeinsam nachdenken.
+
+Natürlich hängen unsere Folgerungen weiterhin davon ab, was die Zeichen bedeuten und welche Annahmen wir treffen.
+
+Ein Buchstabe nimmt uns das sorgfältige Denken nicht ab. Er gibt diesem Denken eine präzisere Sprache.
+
+Sobald wir eine Beziehung beschrieben haben, die für jeden zulässigen Fall zu gelten scheint, folgt daraus eine neue Frage.
+
+Wie können wir feststellen, dass sie wirklich für alle gilt?
+
+Nicht nur für die Beispiele, die wir gesehen haben.
+
+Für jeden einzelnen Fall.
+
+Raum und Lager teilen eine Idee: vollständige gleich große Gruppen plus eine feste Anzahl zusätzlicher Gegenstände.
+
+$$ 3n+2\qquad 4n+3 $$
+
+## Quellen und weiterführende Literatur
+
+- [OpenStax — Elementary Algebra 2e, Abschnitt 1.2: Use the Language of Algebra](https://openstax.org/books/elementary-algebra-2e/pages/1-2-use-the-language-of-algebra). Variablen, Ausdrücke, Gleichungen, Einsetzen, Klammern und das Übersetzen zwischen Wörtern und mathematischer Schreibweise.
+- [Kevin Houston — How to Think Like a Mathematician](https://www.cambridge.org/core/books/how-to-think-like-a-mathematician/FB0813C3AEDDECD40BE58AF186370D52). Weiterführende Lektüre zu mathematischer Sprache, Definitionen, allgemeinem Argumentieren und dem Unterschied zwischen Beispielen und Begründung.
+- [OpenStax — College Algebra with Corequisite Support, Abschnitt 4.2: Modeling with Linear Functions](https://openstax.org/books/college-algebra-corequisite-support/pages/4-2-modeling-with-linear-functions). Modelle, Änderungsraten und Einschränkungen des realen Definitionsbereichs eines Modells.

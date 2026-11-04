@@ -1,0 +1,616 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-03
+sourcePages: []
+sourceLocations: ["Sections 1–8; References for the episode"]
+title: "What does the equals sign promise?"
+navTitle: "What does equality promise?"
+description: "Equality, solution sets, and when transforming an equation gains or loses information."
+order: 3
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [letters-and-relationships]
+thumbnail: reasoning-equality
+---
+
+RATIONAL THINKING · EPISODE 03
+
+## 1. The equation that gained an answer
+
+In this lesson, all numbers are real unless a further restriction is stated.
+
+Imagine I tell you that I've chosen a number.
+
+I'll call it $x$.
+
+And suppose I give you one piece of information about that number:
+
+$$
+x=2
+$$
+
+There's not much mystery here. I've told you exactly what the number is.
+
+But now, let's do something perfectly ordinary with this equation.
+
+Let's square both sides.
+
+If $x$ equals two, then $x$ squared must equal four.
+
+$$
+x^2=4
+$$
+
+So far, everything seems reasonable.
+
+We've started with something true, performed the same operation on both sides, and arrived at something else that's true.
+
+But look more closely at the new equation.
+
+What values of $x$ could make it true?
+
+Two certainly works.
+
+But negative two also works, because multiplying negative two by itself gives positive four.
+
+So somehow, we've taken an equation with exactly one possible solution and transformed it into an equation with two.
+
+<ReasoningFigure kind="squared-solutions" />
+
+And here's the strange part.
+
+We haven't made a calculation mistake.
+
+Two squared really is four.
+
+The new equation really is true.
+
+Yet we've gained a possibility that wasn't permitted by the original statement.
+
+Where did that extra answer come from?
+
+Did squaring somehow change the meaning of the equation?
+
+Or is there something about the equations themselves that we're not paying attention to?
+
+To understand what's happening, we need to investigate a symbol so familiar that we rarely stop to think about it.
+
+The equals sign.
+
+## 2. What equality actually tells us
+
+Think back to the first arithmetic problems you learned.
+
+You probably saw equations like this:
+
+$$
+3+4=7
+$$
+
+Three plus four equals seven.
+
+And because most elementary calculations are written this way, it's easy to begin thinking that the equals sign means something like "now calculate the answer."
+
+You start with a calculation on the left, and the result appears on the right.
+
+But what happens if we reverse the equation?
+
+$$
+7=3+4
+$$
+
+Is it still true?
+
+Of course.
+
+Or suppose we write:
+
+$$
+3+4=2+5
+$$
+
+Now both sides contain calculations.
+
+Neither side is more of an answer than the other.
+
+And yet, the equation is perfectly valid.
+
+To understand why, imagine seven stones lying on a table.
+
+You could arrange them into a group of three and a group of four.
+
+Or you could rearrange those same stones into a group of two and a group of five.
+
+<Interactive kind="equations" preset="stones" id="seven-stones" />
+
+Notice what changes and what stays the same.
+
+The arrangement changes.
+
+The numbers in each group change.
+
+Even the expressions we use to describe the arrangement change.
+
+But the total quantity remains exactly the same.
+
+And that's what the equals sign is telling us.
+
+It isn't an instruction to calculate.
+
+It's a claim that two expressions represent the same value.
+
+Once we understand equality this way, several important properties follow naturally.
+
+If three plus four equals seven, then seven must equal three plus four.
+
+It doesn't matter which expression we write first. This is called symmetry.
+
+And if three plus four equals seven, while seven also equals two plus five, then three plus four must equal two plus five.
+
+This is called transitivity.
+
+But perhaps the most useful consequence is that we can substitute one expression for another whenever we know they're equal.
+
+Since $3+4=7$, we can replace the expression $3+4$ with $7$, even when it's part of a larger calculation.
+
+For example:
+
+$$
+2(3+4)=2(7)=14
+$$
+
+What makes all these operations reasonable isn't that we've memorized a rule about symbols.
+
+It's that equal expressions represent the same value.
+
+And this gives us an interesting possibility.
+
+If equality tells us that two expressions represent the same quantity, perhaps we can use that relationship to discover a quantity we don't yet know.
+
+## 3. What can we change without changing the truth?
+
+Imagine a perfectly balanced scale.
+
+On one side, there's a sealed box containing an unknown weight, together with three kilograms.
+
+On the other side, there are eight kilograms.
+
+We don't know how much the box weighs.
+
+But because the scale is balanced, we know something about the relationship between the two sides.
+
+The box, together with three kilograms, must weigh exactly eight kilograms.
+
+Let's call the weight of the box $x$. Here $x$ is its numerical mass in kilograms.
+
+Then we can describe the situation with an equation:
+
+$$
+x+3=8
+$$
+
+Now suppose we want to discover the weight of the box.
+
+We could try guessing.
+
+But instead, let's use what we know about equality.
+
+If we remove three kilograms from the left side, the balance would be disturbed.
+
+Unless we also remove three kilograms from the right.
+
+Then both sides have lost the same amount of weight.
+
+And the relationship between them is preserved.
+
+<Interactive kind="equations" preset="balance" id="equal-balance" />
+
+And now, after removing those three kilograms from each side, the box is alone on the left, while five kilograms remain on the right.
+
+So the box must weigh five kilograms.
+
+Algebra expresses the very same reasoning.
+
+$$
+\begin{aligned} x+3&=8\\ x+3-3&=8-3\\ x&=5 \end{aligned}
+$$
+
+But here's something important.
+
+We can also reverse the entire process.
+
+If the box weighs five kilograms, then adding three kilograms to it gives eight kilograms.
+
+So starting with $x=5$, we can recover our original equation.
+
+We're not merely creating a new true statement.
+
+We're describing exactly the same situation in a different way.
+
+Any value of $x$ that makes the first equation true also makes the second true.
+
+And any value that makes the second true also makes the first true.
+
+The two equations permit exactly the same possibilities.
+
+This is the kind of transformation we want when solving equations.
+
+We want to simplify the mathematical relationship without accidentally changing which values satisfy it.
+
+But how can we actually tell whether we've succeeded?
+
+We need a way to examine not only the expressions in an equation, but the values that make the entire statement true.
+
+## 4. Every equation tells us which possibilities remain
+
+Consider this equation:
+
+$$
+x+3=3+x
+$$
+
+If $x$ is two, both sides equal five.
+
+If $x$ is ten, both sides equal thirteen.
+
+And if $x$ is negative three, both sides equal zero.
+
+In fact, this equation works for every real number.
+
+That's because changing the order in which we add two numbers doesn't change their sum.
+
+An equation that's true for every value in its stated domain is called an identity.
+
+Now compare it with our balance equation:
+
+$$
+x+3=8
+$$
+
+That equation isn't true for every number.
+
+It works only when $x$ equals five.
+
+<Interactive kind="equations" preset="identity" id="identity-and-solution" />
+
+And this gives us a useful way to think about an equation.
+
+For every number we're allowed to consider, the equation either accepts that value or rejects it.
+
+When we solve an equation, we're trying to discover the complete collection of values it accepts.
+
+So an important question emerges.
+
+When we transform one equation into another, have we preserved that collection?
+
+If yes, we haven't lost or gained any possible solutions.
+
+But if the collection changes, then something about the information the equation gives us has changed as well.
+
+And now we're ready to return to our original mystery.
+
+## 5. How a true statement can lose information
+
+We started by knowing exactly what $x$ was.
+
+$$
+x=2
+$$
+
+But after squaring, we obtained:
+
+$$
+x^2=4
+$$
+
+And somehow, we gained an extra possibility.
+
+To see why, let's forget equations for a moment.
+
+Imagine a machine that squares whatever number we give it.
+
+Put two into the machine, and four comes out.
+
+Put negative two into the machine, and four comes out again.
+
+Two different inputs have produced the same output.
+
+Now imagine that you can only see the output.
+
+You see the number four.
+
+Could you tell me which number entered the machine?
+
+Not necessarily.
+
+It might have been two, or it might have been negative two.
+
+The process of squaring has made those two inputs indistinguishable.
+
+In other words, the operation has lost information about the original input.
+
+We can see this directly if we draw a graph of the squaring operation.
+
+<Interactive kind="equations" preset="square" id="square-information" />
+
+Notice how the graph is symmetrical.
+
+Whenever we choose a number on one side of zero, there's another number on the opposite side that produces the same squared value.
+
+The operation preserves the fact that equal numbers have equal squares.
+
+But it doesn't allow us to recover every original number uniquely.
+
+And that's precisely what happened to our equation.
+
+When $x=2$, the equation $x^2=4$ must also be true.
+
+But knowing only that $x^2=4$ doesn't tell us whether $x$ was two or negative two.
+
+Let's compare this with an everyday example.
+
+If I tell you that someone is exactly twenty years old, then you know that they're older than ten.
+
+But if I only tell you that they're older than ten, you can't conclude that they're exactly twenty.
+
+The second statement follows from the first, but it gives you less information.
+
+Our equations work in a similar way.
+
+The first equation allows only one value.
+
+The second allows two.
+
+This is where we need a new concept.
+
+When the truth of one statement guarantees the truth of another, we call that an implication.
+
+We write:
+
+$$
+x=2\quad\Longrightarrow\quad x^2=4
+$$
+
+The arrow tells us that the first statement guarantees the second.
+
+But it doesn't promise that we can reverse the reasoning.
+
+To do that, we would need to know something more.
+
+For example, suppose I also tell you that $x$ cannot be negative.
+
+Now, if $x^2=4$, only one possibility remains.
+
+Two.
+
+The lost information has been restored through an additional condition.
+
+<Interactive kind="equations" preset="restriction" id="recover-sign" />
+
+And now we can understand the difference between two mathematical relationships.
+
+An implication tells us that one statement guarantees another.
+
+An equivalence tells us that each statement guarantees the other.
+
+We write a double arrow when both directions work.
+
+For example:
+
+$$
+x+3=8\quad\Longleftrightarrow\quad x=5
+$$
+
+Subtracting three takes us from the first equation to the second.
+
+Adding three takes us back.
+
+Both equations admit exactly the same values.
+
+But squaring $x=2$ gives us only a one-way implication unless we preserve an additional condition that rules out negative two.
+
+This is why performing the same operation on both sides isn't enough to guarantee that we've preserved all the original information.
+
+The operation may produce a true statement while allowing more possibilities than before.
+
+And once we understand that, we can recognize another kind of mistake—one where we lose a genuine solution instead of gaining an extra one.
+
+## 6. The answer that disappeared
+
+Consider this equation:
+
+$$
+x(x-2)=0
+$$
+
+We want to discover which values of $x$ make it true.
+
+Now imagine someone tries to solve it by dividing both sides by $x$.
+
+The $x$ on the left cancels, and they're left with:
+
+$$
+x-2=0
+$$
+
+So they conclude that $x=2$.
+
+And if we substitute two into the original equation, it works.
+
+Two multiplied by zero is zero.
+
+So the answer appears correct.
+
+But let's try something else.
+
+What happens when $x$ equals zero?
+
+The original expression becomes zero multiplied by negative two.
+
+And that also equals zero.
+
+So zero is another perfectly valid solution.
+
+Where did it disappear?
+
+The problem lies in the step where we divided by $x$.
+
+Because dividing by $x$ is only allowed when $x$ isn't zero.
+
+We silently introduced a restriction that excluded one of the original solutions.
+
+<Interactive kind="equations" preset="division" id="division-restriction" />
+
+So how should we solve this equation correctly?
+
+Instead of immediately dividing, let's examine what the original relationship tells us.
+
+We have two factors being multiplied together, and their product is zero.
+
+A product of two real numbers is zero precisely when at least one of its factors is zero.
+
+So either the first factor is zero, or the second factor is zero.
+
+$$
+x=0\quad\text{or}\quad x-2=0
+$$
+
+And that gives us:
+
+$$
+\boxed{x=0\quad\text{or}\quad x=2}
+$$
+
+Both values satisfy the original equation.
+
+Now compare this mistake with the one we made by squaring.
+
+When we squared $x=2$, we gained a solution.
+
+When we divided by $x$, we lost a solution.
+
+But both mistakes teach us the same general lesson.
+
+We cannot judge an algebraic transformation merely by how simple its result looks.
+
+We need to understand what happens to the possible solutions.
+
+And whenever an operation requires a condition, that condition is part of the reasoning.
+
+This gives us a much more reliable way to solve equations.
+
+Rather than asking only whether we've performed an operation correctly, we ask whether the new equation describes exactly the same possibilities as the original.
+
+And we can test whether we've really understood that idea by applying it to a completely different situation.
+
+## 7. A final challenge: the answer that isn't complete
+
+Imagine a number line.
+
+Place a point at three.
+
+Now I want you to find every number exactly two units away from that point.
+
+If we move two units to the right, we arrive at five.
+
+But if we move two units to the left, we arrive at one.
+
+So there are two answers.
+
+We can describe this mathematically using absolute value.
+
+$$
+|x-3|=2
+$$
+
+The vertical bars represent absolute value. For real numbers, the absolute value of $x-3$ is the distance between $x$ and three.
+
+Now imagine someone removes those bars, leaving:
+
+$$
+x-3=2
+$$
+
+They solve the equation and obtain five.
+
+Is five a valid solution?
+
+Absolutely.
+
+But is it the complete answer?
+
+<Interactive kind="equations" preset="distance" id="two-directions" />
+
+The problem is that the original equation describes a distance.
+
+And distance doesn't specify a direction.
+
+When we replaced the absolute-value equation with $x-3=2$, we considered only the point to the right of three.
+
+To preserve every possibility, we also need to consider:
+
+$$
+x-3=-2
+$$
+
+So our complete solution is:
+
+$$
+\boxed{x=1\quad\text{or}\quad x=5}
+$$
+
+Notice what we've learned to recognize.
+
+The answer five wasn't false.
+
+The calculation that produced it was valid for one of the possibilities.
+
+But finding a correct answer isn't necessarily the same as finding every correct answer.
+
+And that's an important distinction, not just in algebra, but in reasoning generally.
+
+A conclusion may follow correctly from what we know without capturing everything that the original information tells us.
+
+## 8. What the equals sign promises
+
+So let's return to our original question.
+
+What does the equals sign actually promise?
+
+It tells us that two expressions represent the same value.
+
+But when we transform an equation, we make another kind of claim.
+
+We're claiming that our reasoning is justified.
+
+And if we're solving an equation through equivalent transformations, we're also claiming that we haven't changed the collection of possible solutions.
+
+These are different promises.
+
+$$
+\underbrace{x=2\;\Longrightarrow\;x^2=4}_{\text{Implication}}
+$$
+
+$$
+\underbrace{x+3=8\;\Longleftrightarrow\;x=5}_{\text{Equivalence}}
+$$
+
+A true statement can lead us to another true statement without preserving all the information we started with.
+
+And once we understand that, equations stop being mere collections of symbols to manipulate.
+
+They become statements whose meaning we can examine, whose consequences we can investigate, and whose transformations we can justify.
+
+Which leads us to a deeper question:
+
+When does one statement genuinely follow from another—and how can we prove that the reasoning is valid?
+
+That's where our study of mathematics begins to connect with the foundations of logic.
+
+## Sources and further reading
+
+- [OpenStax — Elementary Algebra 2e, Section 1.2: Use the Language of Algebra](https://openstax.org/books/elementary-algebra-2e/pages/1-2-use-the-language-of-algebra). Elementary algebra, equality, expressions, and equations.
+- [forall x: Calgary](https://forallx.openlogicproject.org/html/). Further study of identity and formal logical reasoning.

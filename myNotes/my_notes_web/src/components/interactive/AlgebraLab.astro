@@ -1,0 +1,62 @@
+---
+import Math from '../Math.astro';
+import {algebraBounds,algebraState,algebraEquation,type AlgebraPreset} from '../../lib/interactive/algebra-model';
+import {arrangementScene} from '../../lib/interactive/algebra-scenes';
+import {algebraLabCopy} from '../../lib/reasoning/algebra-copy';
+import '../../styles/algebra.css';
+interface Props {preset:AlgebraPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',n=algebraBounds.initial;
+const state=algebraState(preset,n),copy=algebraLabCopy(locale,preset,n);
+const sides=preset==='tables'?['original'] as const:['original','changed'] as const;
+---
+<figure class="algebra-lab" id={id} data-algebra-lab={preset} data-locale={locale}>
+ <h3>{copy.title}</h3>
+ <div class:list={['algebra-comparison',{'algebra-two-columns':preset==='grouping'}]}>
+  {sides.map(side=>{const scene=arrangementScene(preset,n,side);return <div class="algebra-case">
+   {preset==='grouping'&&<p class="algebra-case-label">{side==='original'?copy.addChairs:copy.addTables}</p>}
+   <svg data-algebra-scene={side} viewBox={`0 0 600 ${scene.height}`} role="img" aria-label={side==='original'?copy.originalDescription:copy.changedDescription}><g set:html={scene.markup}/></svg>
+   <p class="algebra-total">{copy.totalChairs}: <output data-algebra-total={side}>{side==='original'?state.total:state.groupedTotal}</output></p>
+  </div>;})}
+ </div>
+ <div class="algebra-inputs">
+  <label for={`${id}-range`}>{copy.count}: <output data-algebra-count>{n}</output>
+   <input id={`${id}-range`} data-algebra-range type="range" min={algebraBounds.min} max={algebraBounds.max} step="1" value={n} aria-describedby={`${id}-help`}/>
+  </label>
+  <label for={`${id}-number`}>{copy.number}<input id={`${id}-number`} data-algebra-number type="number" min={algebraBounds.min} max={algebraBounds.max} step="1" value={n} inputmode="numeric" aria-describedby={`${id}-help`}/></label>
+  <button type="button" data-algebra-reset>{copy.reset}</button>
+ </div>
+ <figcaption>
+ <p id={`${id}-help`} class="algebra-help">{copy.helpText}</p>
+ <div data-algebra-equation><Math tex={algebraEquation(preset,n)} display/></div>
+ <p data-algebra-feedback role="status" aria-live="polite" aria-atomic="true">{copy.feedback}</p>
+ </figcaption>
+</figure>
+<script>
+import katex from 'katex';
+import {mathOptions} from '../../lib/math-options.mjs';
+import {algebraBounds,algebraState,algebraInput,algebraEquation,type AlgebraPreset} from '../../lib/interactive/algebra-model';
+import {arrangementScene} from '../../lib/interactive/algebra-scenes';
+import {algebraLabCopy} from '../../lib/reasoning/algebra-copy';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-algebra-lab]')){
+ const preset=root.dataset.algebraLab as AlgebraPreset,locale=root.dataset.locale as Locale;
+ const range=root.querySelector<HTMLInputElement>('[data-algebra-range]')!,number=root.querySelector<HTMLInputElement>('[data-algebra-number]')!;
+ let n:number=algebraBounds.initial;
+ function draw(){
+  const state=algebraState(preset,n),copy=algebraLabCopy(locale,preset,n);
+  range.value=String(n);number.value=String(n);root.querySelector('[data-algebra-count]')!.textContent=String(n);
+  root.querySelectorAll<SVGSVGElement>('[data-algebra-scene]').forEach(svg=>{
+   const side=svg.dataset.algebraScene as 'original'|'changed',scene=arrangementScene(preset,n,side);
+   svg.setAttribute('viewBox',`0 0 600 ${scene.height}`);svg.setAttribute('aria-label',side==='original'?copy.originalDescription:copy.changedDescription);svg.innerHTML=scene.markup;
+   root.querySelector(`[data-algebra-total="${side}"]`)!.textContent=String(side==='original'?state.total:state.groupedTotal);
+  });
+  root.querySelector('[data-algebra-equation] .math-block')!.innerHTML=katex.renderToString(algebraEquation(preset,n),{...mathOptions,displayMode:true});
+  root.querySelector('[data-algebra-feedback]')!.textContent=copy.feedback;
+ }
+ function update(raw:string){const next=algebraInput(raw);if(next===null){root.querySelector('[data-algebra-feedback]')!.textContent=algebraLabCopy(locale,preset,n).invalidText;return;}n=next;draw();}
+ range.addEventListener('input',()=>update(range.value));number.addEventListener('input',()=>update(number.value));
+ function commitNumber(){if(algebraInput(number.value)===null){number.value=String(n);root.querySelector('[data-algebra-feedback]')!.textContent=algebraLabCopy(locale,preset,n).invalidText;}}
+ number.addEventListener('change',commitNumber);number.addEventListener('blur',commitNumber);
+ root.querySelector('[data-algebra-reset]')!.addEventListener('click',()=>{n=algebraBounds.initial;draw();});
+}
+</script>

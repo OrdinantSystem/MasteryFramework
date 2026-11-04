@@ -1,0 +1,33 @@
+---
+import {patternsCopy,patternFeedback,patternText} from '../../lib/reasoning/patterns-copy';
+import {continuationChoices,testChoices,type PatternPreset} from '../../lib/interactive/patterns-model';
+import {continuationMarkup} from '../../lib/interactive/patterns-render';
+import '../../styles/patterns.css';
+interface Props {preset:PatternPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',c=patternsCopy[locale],initial=preset==='continuations'?5:0,choices=preset==='continuations'?continuationChoices:testChoices;
+const title=preset==='continuations'?c.labTitle:c.testTitle;
+---
+<figure class="pattern-lab" id={id} data-pattern-lab={preset} data-locale={locale}>
+ <h3>{title}</h3><p class="pattern-help">{preset==='continuations'?c.chartNote:c.testPrompt}</p>
+ <div class="pattern-controls" role="group" aria-label={title}>{choices.map(value=><button type="button" data-pattern-choice={value} aria-pressed={value===initial?'true':'false'} aria-controls={`${id}-result`}>{preset==='continuations'?(value===5?c.observedFive:patternText(c.through,{n:value})):patternText(c.tryRound,{n:value})}</button>)}<button type="button" data-pattern-reset>{c.reset}</button></div>
+ {preset==='continuations'&&<><p class="pattern-axis-label">{c.lights}</p><div data-pattern-view set:html={continuationMarkup(locale,initial)}/></>}
+ <figcaption id={`${id}-result`} data-pattern-feedback role="status" aria-live="polite" aria-atomic="true">{patternFeedback(locale,preset,initial)}</figcaption>
+</figure>
+<script>
+import {continuationChoices,testChoices,type PatternPreset} from '../../lib/interactive/patterns-model';
+import {continuationMarkup} from '../../lib/interactive/patterns-render';
+import {patternFeedback} from '../../lib/reasoning/patterns-copy';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-pattern-lab]')){
+ const preset=root.dataset.patternLab as PatternPreset,locale=root.dataset.locale as Locale,choices=preset==='continuations'?continuationChoices:testChoices,initial=preset==='continuations'?5:0;
+ function select(value:number){
+  if(value!==initial&&!(choices as readonly number[]).includes(value))throw new Error('Invalid pattern choice');
+  const view=root.querySelector<HTMLElement>('[data-pattern-view]');
+  if(view){const open=view.querySelector('details')?.open;view.innerHTML=continuationMarkup(locale,value);if(open)view.querySelector('details')!.open=true;}
+  root.querySelectorAll<HTMLButtonElement>('[data-pattern-choice]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.patternChoice)===value)));
+  root.querySelector('[data-pattern-feedback]')!.textContent=patternFeedback(locale,preset,value);
+ }
+ root.querySelectorAll<HTMLButtonElement>('[data-pattern-choice]').forEach(button=>button.addEventListener('click',()=>select(Number(button.dataset.patternChoice))));
+ root.querySelector('[data-pattern-reset]')!.addEventListener('click',()=>select(initial));
+}
+</script>

@@ -1,0 +1,18 @@
+---
+import Math from './Math.astro';
+import {patternsCopy,patternTitle,patternText} from '../lib/reasoning/patterns-copy';
+import {observedRounds,observedLights,machineValue,challengeValue,type PatternFigureKind} from '../lib/interactive/patterns-model';
+import {lightDots,forecastMarkup} from '../lib/interactive/patterns-render';
+import '../styles/patterns.css';
+interface Props {kind:PatternFigureKind}
+const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=patternsCopy[locale];
+---
+<figure class:list={['pattern-figure',kind]}>
+ <h3>{patternTitle(locale,kind)}</h3>
+ {kind==='pattern-history'&&<><div class="pattern-history-items">{observedRounds.map((round,i)=><div><p class="pattern-round">{c.round} {round}</p><p class="pattern-count">{observedLights[i]}</p><div role="img" aria-label={`${c.round} ${round}: ${observedLights[i]} ${c.lights}`} set:html={lightDots(observedLights[i])}/><p>{i===0?c.start:'× 2'}</p></div>)}</div><figcaption>{c.historyCaption}</figcaption></>}
+ {kind==='pattern-machines'&&<><div class="pattern-comparison">{(['A','B'] as const).map(rule=><div class:list={['pattern-case',`pattern-machine-${rule}`]}><p class="pattern-case-label">{rule==='A'?c.machineA:c.machineB}</p><div role="img" aria-label={`32 ${c.lights}`} set:html={lightDots(machineValue(rule,5))}/><p class="pattern-arrow" aria-hidden="true">↓</p><p class="pattern-count">{machineValue(rule,5)} → {machineValue(rule,6)}</p><p>{c.roundSix}: {rule==='A'?'× 2':'+ 2'}</p></div>)}</div><figcaption>{c.machineCaption}</figcaption></>}
+ {kind==='pattern-rules'&&<><div class="pattern-comparison"><div class="pattern-case"><p class="pattern-case-label">{c.simple}</p><Math tex="A(n)=2^n" display/><p>{c.simpleDetail}</p></div><div class="pattern-case"><p class="pattern-case-label">{c.change}</p><Math tex={String.raw`B(n)=\begin{cases}2^n&1\le n\le5\\32+2(n-5)&n\ge6\end{cases}`} display/><p>{c.changeDetail}</p></div></div><figcaption>{c.rulesCaption}</figcaption></>}
+ {kind==='pattern-test'&&<><p class="pattern-test-root">{c.observeSix}</p><div class="pattern-test-branches">{(['A','B'] as const).map(rule=><div class:list={['pattern-test-branch',`pattern-machine-${rule}`]}><p class="pattern-count">{patternText(c.outcome,{n:machineValue(rule,6)})}</p><p>{rule==='A'?c.ruleBOut:c.ruleAOut}</p><p>{rule==='A'?c.ruleAPossible:c.ruleBPossible}</p></div>)}</div><figcaption>{c.testCaption}</figcaption></>}
+ {kind==='pattern-forecasts'&&<><p class="pattern-axis-label">{c.views}</p><div set:html={forecastMarkup(locale)}/><figcaption>{c.forecastCaption}</figcaption></>}
+ {kind==='pattern-challenge'&&<><ol class="pattern-sequence" aria-label={c.titles[kind]}>{[1,2,3,4].map(n=><li>{challengeValue('A',n)}<span aria-hidden="true">→</span></li>)}<li>?</li></ol><figcaption>{c.challengeCaption}</figcaption></>}
+</figure>

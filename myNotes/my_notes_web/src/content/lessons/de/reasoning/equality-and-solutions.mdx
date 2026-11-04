@@ -1,0 +1,538 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-03
+sourcePages: []
+sourceLocations: ["Sections 1–8; References for the episode"]
+title: "Was verspricht das Gleichheitszeichen?"
+navTitle: "Was verspricht Gleichheit?"
+description: "Gleichheit, Lösungsmengen und die Frage, wann eine Umformung Information gewinnt oder verliert."
+order: 3
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [letters-and-relationships]
+thumbnail: reasoning-equality
+---
+
+RATIONALES DENKEN · EPISODE 03
+
+## 1. Die Gleichung, die eine Antwort hinzugewann
+
+In dieser Lektion sind alle Zahlen reell, sofern keine weitere Einschränkung genannt wird.
+
+Stell dir vor, ich habe eine Zahl gewählt. Ich nenne sie $x$.
+
+Und ich verrate dir eine einzige Information darüber:
+
+$$
+x=2
+$$
+
+Hier gibt es kaum ein Rätsel. Ich habe dir genau gesagt, welche Zahl es ist.
+
+Nun tun wir etwas ganz Gewöhnliches mit dieser Gleichung: Wir quadrieren beide Seiten.
+
+Ist $x$ gleich zwei, muss $x$ zum Quadrat gleich vier sein.
+
+$$
+x^2=4
+$$
+
+Bis hierhin scheint alles vernünftig.
+
+Wir sind von einer wahren Aussage ausgegangen, haben auf beiden Seiten dieselbe Operation ausgeführt und sind bei einer weiteren wahren Aussage angekommen.
+
+Aber sieh dir die neue Gleichung genauer an. Welche Werte von $x$ könnten sie wahr machen?
+
+Zwei funktioniert auf jeden Fall.
+
+Aber auch minus zwei funktioniert, denn minus zwei mit sich selbst multipliziert ergibt plus vier.
+
+Wir haben also eine Gleichung mit genau einer möglichen Lösung in eine Gleichung mit zwei Lösungen verwandelt.
+
+<ReasoningFigure kind="squared-solutions" />
+
+Und das Merkwürdige ist: Wir haben keinen Rechenfehler gemacht.
+
+Zwei zum Quadrat ist tatsächlich vier. Die neue Gleichung ist tatsächlich wahr.
+
+Trotzdem ist eine Möglichkeit hinzugekommen, die die ursprüngliche Aussage nicht zuließ.
+
+Woher kam diese zusätzliche Antwort?
+
+Hat das Quadrieren die Bedeutung der Gleichung verändert? Oder übersehen wir etwas an den Gleichungen selbst?
+
+Um zu verstehen, was geschieht, müssen wir ein Zeichen untersuchen, das so vertraut ist, dass wir kaum darüber nachdenken.
+
+Das Gleichheitszeichen.
+
+## 2. Was Gleichheit uns tatsächlich sagt
+
+Denke an die ersten Rechenaufgaben zurück, die du gelernt hast.
+
+Wahrscheinlich hast du Gleichungen wie diese gesehen:
+
+$$
+3+4=7
+$$
+
+Drei plus vier ist gleich sieben.
+
+Weil die meisten einfachen Rechnungen so geschrieben werden, kann leicht der Eindruck entstehen, das Gleichheitszeichen bedeute ungefähr: „Berechne jetzt die Antwort.“
+
+Links beginnt man mit einer Rechnung, rechts erscheint das Ergebnis.
+
+Aber was geschieht, wenn wir die Gleichung umdrehen?
+
+$$
+7=3+4
+$$
+
+Ist sie noch immer wahr?
+
+Natürlich.
+
+Oder wir schreiben:
+
+$$
+3+4=2+5
+$$
+
+Nun stehen auf beiden Seiten Rechnungen. Keine Seite ist eher eine Antwort als die andere.
+
+Trotzdem ist die Gleichung vollkommen gültig.
+
+Stell dir sieben Steine auf einem Tisch vor. Du könntest sie in eine Dreiergruppe und eine Vierergruppe aufteilen.
+
+Oder du könntest dieselben Steine zu einer Zweiergruppe und einer Fünfergruppe umordnen.
+
+<Interactive kind="equations" preset="stones" id="seven-stones" />
+
+Beachte, was sich verändert und was gleich bleibt.
+
+Die Anordnung verändert sich. Die Anzahl der Steine in jeder Gruppe verändert sich. Selbst die Ausdrücke, mit denen wir die Anordnung beschreiben, verändern sich.
+
+Die Gesamtanzahl bleibt aber genau gleich.
+
+Und genau das sagt uns das Gleichheitszeichen.
+
+Es ist keine Aufforderung zum Rechnen. Es behauptet, dass zwei Ausdrücke denselben Wert darstellen.
+
+Wenn wir Gleichheit so verstehen, ergeben sich mehrere wichtige Eigenschaften ganz natürlich.
+
+Ist drei plus vier gleich sieben, muss auch sieben gleich drei plus vier sein.
+
+Es spielt keine Rolle, welchen Ausdruck wir zuerst schreiben. Das heißt **Symmetrie**.
+
+Und ist drei plus vier gleich sieben, während sieben auch gleich zwei plus fünf ist, muss drei plus vier gleich zwei plus fünf sein.
+
+Das heißt **Transitivität**.
+
+Besonders nützlich ist aber, dass wir einen Ausdruck durch einen anderen ersetzen können, sobald wir wissen, dass sie gleich sind.
+
+Da $3+4=7$ gilt, können wir $3+4$ durch $7$ ersetzen, auch innerhalb einer größeren Rechnung.
+
+Zum Beispiel:
+
+$$
+2(3+4)=2(7)=14
+$$
+
+Diese Schritte sind nicht deshalb vernünftig, weil wir eine Regel über Zeichen auswendig gelernt haben.
+
+Sie sind vernünftig, weil gleiche Ausdrücke denselben Wert darstellen.
+
+Daraus ergibt sich eine interessante Möglichkeit.
+
+Wenn Gleichheit uns sagt, dass zwei Ausdrücke dieselbe Größe darstellen, können wir diese Beziehung vielleicht nutzen, um eine noch unbekannte Größe zu bestimmen.
+
+## 3. Was können wir verändern, ohne die Wahrheit zu verändern?
+
+Stell dir eine vollkommen ausgeglichene Waage vor.
+
+Auf einer Seite steht eine verschlossene Schachtel mit unbekanntem Gewicht, zusammen mit drei Kilogramm.
+
+Auf der anderen Seite liegen acht Kilogramm.
+
+Wir wissen nicht, wie viel die Schachtel wiegt. Weil die Waage im Gleichgewicht ist, kennen wir aber eine Beziehung zwischen den beiden Seiten.
+
+Die Schachtel muss zusammen mit drei Kilogramm genau acht Kilogramm wiegen.
+
+Nennen wir das Gewicht der Schachtel $x$. Dabei ist $x$ die Maßzahl ihrer Masse in Kilogramm.
+
+Dann beschreibt diese Gleichung die Situation:
+
+$$
+x+3=8
+$$
+
+Nun möchten wir das Gewicht der Schachtel herausfinden.
+
+Wir könnten raten. Nutzen wir stattdessen das, was wir über Gleichheit wissen.
+
+Entfernen wir auf der linken Seite drei Kilogramm, gerät die Waage aus dem Gleichgewicht.
+
+Es sei denn, wir entfernen auch rechts drei Kilogramm.
+
+Dann haben beide Seiten dieselbe Masse verloren. Ihre Beziehung bleibt erhalten.
+
+<Interactive kind="equations" preset="balance" id="equal-balance" />
+
+Nachdem wir auf beiden Seiten drei Kilogramm entfernt haben, steht links nur noch die Schachtel. Rechts bleiben fünf Kilogramm.
+
+Die Schachtel muss also fünf Kilogramm wiegen.
+
+Die Algebra drückt genau dieselbe Überlegung aus:
+
+$$
+\begin{aligned} x+3&=8\\ x+3-3&=8-3\\ x&=5 \end{aligned}
+$$
+
+Dabei ist etwas wichtig: Wir können den gesamten Vorgang auch umkehren.
+
+Wiegt die Schachtel fünf Kilogramm, ergeben drei zusätzliche Kilogramm insgesamt acht.
+
+Ausgehend von $x=5$ können wir also die ursprüngliche Gleichung zurückgewinnen.
+
+Wir erzeugen nicht bloß eine neue wahre Aussage. Wir beschreiben genau dieselbe Situation auf eine andere Weise.
+
+Jeder Wert von $x$, der die erste Gleichung wahr macht, macht auch die zweite wahr. Und jeder Wert, der die zweite wahr macht, macht auch die erste wahr.
+
+Die beiden Gleichungen lassen genau dieselben Möglichkeiten zu.
+
+Diese Art von Umformung möchten wir beim Lösen von Gleichungen verwenden.
+
+Wir möchten die mathematische Beziehung vereinfachen, ohne versehentlich zu verändern, welche Werte sie erfüllen.
+
+Aber wie können wir feststellen, ob uns das gelungen ist?
+
+Wir müssen nicht nur die Ausdrücke in einer Gleichung betrachten, sondern auch die Werte, die die gesamte Aussage wahr machen.
+
+## 4. Jede Gleichung sagt uns, welche Möglichkeiten bleiben
+
+Betrachte diese Gleichung:
+
+$$
+x+3=3+x
+$$
+
+Ist $x$ gleich zwei, ergeben beide Seiten fünf. Ist $x$ gleich zehn, ergeben beide Seiten dreizehn.
+
+Und ist $x$ gleich minus drei, ergeben beide Seiten null.
+
+Tatsächlich funktioniert die Gleichung für jede reelle Zahl.
+
+Denn die Reihenfolge, in der wir zwei Zahlen addieren, verändert ihre Summe nicht.
+
+Eine Gleichung, die für jeden Wert ihres angegebenen Definitionsbereichs wahr ist, heißt **Identität**.
+
+Vergleiche sie mit unserer Waagengleichung:
+
+$$
+x+3=8
+$$
+
+Diese Gleichung ist nicht für jede Zahl wahr. Sie funktioniert nur, wenn $x$ gleich fünf ist.
+
+<Interactive kind="equations" preset="identity" id="identity-and-solution" />
+
+Damit haben wir eine nützliche Sicht auf Gleichungen.
+
+Für jede Zahl, die wir betrachten dürfen, nimmt die Gleichung diesen Wert entweder an oder weist ihn zurück.
+
+Wenn wir eine Gleichung lösen, suchen wir die vollständige Sammlung der Werte, die sie annimmt.
+
+Es stellt sich also eine wichtige Frage: Bleibt diese Sammlung erhalten, wenn wir eine Gleichung in eine andere umformen?
+
+Falls ja, haben wir keine möglichen Lösungen verloren oder hinzugewonnen.
+
+Verändert sich die Sammlung, hat sich auch etwas an der Information verändert, die uns die Gleichung gibt.
+
+Nun können wir zu unserem ursprünglichen Rätsel zurückkehren.
+
+## 5. Wie eine wahre Aussage Information verlieren kann
+
+Am Anfang wussten wir genau, welchen Wert $x$ hatte:
+
+$$
+x=2
+$$
+
+Nach dem Quadrieren erhielten wir aber:
+
+$$
+x^2=4
+$$
+
+Dabei kam eine zusätzliche Möglichkeit hinzu.
+
+Vergessen wir die Gleichungen für einen Moment, um zu verstehen, warum.
+
+Stell dir eine Maschine vor, die jede eingegebene Zahl quadriert.
+
+Geben wir zwei hinein, kommt vier heraus. Geben wir minus zwei hinein, kommt ebenfalls vier heraus.
+
+Zwei verschiedene Eingaben haben dieselbe Ausgabe erzeugt.
+
+Stell dir nun vor, du könntest nur die Ausgabe sehen. Du siehst die Zahl vier.
+
+Könntest du mir sagen, welche Zahl in die Maschine gelangt ist?
+
+Nicht unbedingt. Es könnte zwei gewesen sein oder minus zwei.
+
+Durch das Quadrieren sind diese beiden Eingaben ununterscheidbar geworden.
+
+Anders gesagt: Die Operation hat Information über die ursprüngliche Eingabe verloren.
+
+Das können wir direkt am Graphen der Quadratfunktion sehen.
+
+<Interactive kind="equations" preset="square" id="square-information" />
+
+Beachte die Symmetrie des Graphen.
+
+Wählen wir eine Zahl auf einer Seite von null, gibt es eine Zahl auf der gegenüberliegenden Seite, die denselben Quadratwert erzeugt.
+
+Die Operation erhält die Tatsache, dass gleiche Zahlen gleiche Quadrate haben.
+
+Sie erlaubt uns aber nicht, jede ursprüngliche Zahl eindeutig zurückzugewinnen.
+
+Genau das ist mit unserer Gleichung geschehen.
+
+Gilt $x=2$, muss auch $x^2=4$ wahr sein.
+
+Wissen wir dagegen nur, dass $x^2=4$ gilt, wissen wir nicht, ob $x$ zwei oder minus zwei war.
+
+Vergleichen wir das mit einem Alltagsbeispiel.
+
+Wenn ich dir sage, dass jemand genau zwanzig Jahre alt ist, weißt du, dass diese Person älter als zehn ist.
+
+Sage ich dir aber nur, dass sie älter als zehn ist, kannst du daraus nicht schließen, dass sie genau zwanzig ist.
+
+Die zweite Aussage folgt aus der ersten, gibt dir aber weniger Information.
+
+Unsere Gleichungen funktionieren ähnlich. Die erste lässt nur einen Wert zu, die zweite zwei.
+
+Hier brauchen wir einen neuen Begriff.
+
+Wenn die Wahrheit einer Aussage die Wahrheit einer anderen garantiert, nennen wir das eine **Implikation**.
+
+Wir schreiben:
+
+$$
+x=2\quad\Longrightarrow\quad x^2=4
+$$
+
+Der Pfeil sagt uns, dass die erste Aussage die zweite garantiert. Er verspricht aber nicht, dass wir die Überlegung umkehren können.
+
+Dafür müssten wir mehr wissen.
+
+Angenommen, ich sage dir zusätzlich, dass $x$ nicht negativ sein kann.
+
+Dann bleibt bei $x^2=4$ nur noch eine Möglichkeit übrig: zwei.
+
+Die verlorene Information ist durch eine zusätzliche Bedingung wiederhergestellt worden.
+
+<Interactive kind="equations" preset="restriction" id="recover-sign" />
+
+Nun verstehen wir den Unterschied zwischen zwei mathematischen Beziehungen.
+
+Eine Implikation sagt, dass eine Aussage eine andere garantiert.
+
+Eine **Äquivalenz** sagt, dass jede der beiden Aussagen die jeweils andere garantiert.
+
+Wenn beide Richtungen funktionieren, schreiben wir einen Doppelpfeil.
+
+Zum Beispiel:
+
+$$
+x+3=8\quad\Longleftrightarrow\quad x=5
+$$
+
+Subtrahieren wir drei, gelangen wir von der ersten Gleichung zur zweiten. Addieren wir drei, gelangen wir zurück.
+
+Beide Gleichungen lassen genau dieselben Werte zu.
+
+Das Quadrieren von $x=2$ liefert dagegen nur eine Implikation in eine Richtung, sofern wir keine zusätzliche Bedingung beibehalten, die minus zwei ausschließt.
+
+Deshalb reicht es nicht, auf beiden Seiten dieselbe Operation auszuführen, um den Erhalt der gesamten ursprünglichen Information zu garantieren.
+
+Die Operation kann eine wahre Aussage erzeugen und dabei mehr Möglichkeiten als zuvor zulassen.
+
+Wenn wir das verstehen, können wir auch eine andere Art von Fehler erkennen: eine echte Lösung zu verlieren, statt eine zusätzliche hinzuzugewinnen.
+
+## 6. Die Antwort, die verschwand
+
+Betrachte diese Gleichung:
+
+$$
+x(x-2)=0
+$$
+
+Wir suchen die Werte von $x$, die sie wahr machen.
+
+Nun versucht jemand, sie zu lösen, indem er beide Seiten durch $x$ dividiert.
+
+Das $x$ links kürzt sich heraus. Es bleibt:
+
+$$
+x-2=0
+$$
+
+Daraus folgert die Person, dass $x=2$ gilt.
+
+Setzen wir zwei in die ursprüngliche Gleichung ein, funktioniert es: Zwei multipliziert mit null ist null.
+
+Die Antwort scheint also richtig zu sein.
+
+Versuchen wir aber etwas anderes. Was geschieht, wenn $x$ gleich null ist?
+
+Der ursprüngliche Ausdruck wird zu null multipliziert mit minus zwei. Auch das ergibt null.
+
+Null ist also eine weitere gültige Lösung.
+
+Wo ist sie verschwunden?
+
+Das Problem liegt in dem Schritt, in dem wir durch $x$ dividiert haben.
+
+Denn durch $x$ dürfen wir nur dividieren, wenn $x$ ungleich null ist.
+
+Wir haben stillschweigend eine Einschränkung eingeführt, die eine der ursprünglichen Lösungen ausschloss.
+
+<Interactive kind="equations" preset="division" id="division-restriction" />
+
+Wie lösen wir diese Gleichung richtig?
+
+Statt sofort zu dividieren, betrachten wir, was die ursprüngliche Beziehung sagt.
+
+Zwei Faktoren werden miteinander multipliziert, und ihr Produkt ist null.
+
+Ein Produkt zweier reeller Zahlen ist genau dann null, wenn mindestens einer seiner Faktoren null ist.
+
+Also ist entweder der erste Faktor null oder der zweite:
+
+$$
+x=0\quad\text{oder}\quad x-2=0
+$$
+
+Damit erhalten wir:
+
+$$
+\boxed{x=0\quad\text{oder}\quad x=2}
+$$
+
+Beide Werte erfüllen die ursprüngliche Gleichung.
+
+Vergleiche diesen Fehler mit dem Quadrieren.
+
+Beim Quadrieren von $x=2$ haben wir eine Lösung hinzugewonnen. Bei der Division durch $x$ haben wir eine verloren.
+
+Beide Fehler führen aber zur selben allgemeinen Erkenntnis.
+
+Wir können eine algebraische Umformung nicht allein danach beurteilen, wie einfach ihr Ergebnis aussieht. Wir müssen verstehen, was mit den möglichen Lösungen geschieht.
+
+Und sobald eine Operation eine Bedingung voraussetzt, ist diese Bedingung Teil der Begründung.
+
+Damit erhalten wir eine verlässlichere Art, Gleichungen zu lösen.
+
+Wir fragen nicht nur, ob eine Operation korrekt ausgeführt wurde. Wir fragen, ob die neue Gleichung genau dieselben Möglichkeiten beschreibt wie die ursprüngliche.
+
+Ob wir diese Idee verstanden haben, können wir an einer ganz anderen Situation prüfen.
+
+## 7. Eine letzte Aufgabe: die unvollständige Antwort
+
+Stell dir eine Zahlengerade vor. Markiere einen Punkt bei drei.
+
+Nun suchen wir jede Zahl, die genau zwei Einheiten von diesem Punkt entfernt ist.
+
+Gehen wir zwei Einheiten nach rechts, gelangen wir zu fünf. Gehen wir zwei Einheiten nach links, gelangen wir zu eins.
+
+Es gibt also zwei Antworten.
+
+Mit dem Betrag können wir das mathematisch beschreiben:
+
+$$
+|x-3|=2
+$$
+
+Die senkrechten Striche stehen für den Betrag. Für reelle Zahlen ist der Betrag von $x-3$ der Abstand zwischen $x$ und drei.
+
+Nun entfernt jemand diese Striche. Es bleibt:
+
+$$
+x-3=2
+$$
+
+Die Person löst die Gleichung und erhält fünf.
+
+Ist fünf eine gültige Lösung? Auf jeden Fall.
+
+Aber ist es die vollständige Antwort?
+
+<Interactive kind="equations" preset="distance" id="two-directions" />
+
+Das Problem ist, dass die ursprüngliche Gleichung einen Abstand beschreibt. Ein Abstand legt keine Richtung fest.
+
+Als wir die Betragsgleichung durch $x-3=2$ ersetzten, betrachteten wir nur den Punkt rechts von drei.
+
+Um jede Möglichkeit zu erhalten, müssen wir auch diesen Fall betrachten:
+
+$$
+x-3=-2
+$$
+
+Die vollständige Lösung lautet deshalb:
+
+$$
+\boxed{x=1\quad\text{oder}\quad x=5}
+$$
+
+Beachte, was wir nun erkennen können.
+
+Die Antwort fünf war nicht falsch. Die Rechnung, die sie lieferte, war für eine der Möglichkeiten gültig.
+
+Eine richtige Antwort zu finden ist aber nicht unbedingt dasselbe, wie jede richtige Antwort zu finden.
+
+Diese Unterscheidung ist nicht nur in der Algebra wichtig, sondern beim Denken allgemein.
+
+Eine Schlussfolgerung kann sich korrekt aus unserem Wissen ergeben, ohne alles zu erfassen, was die ursprüngliche Information uns sagt.
+
+## 8. Was das Gleichheitszeichen verspricht
+
+Kehren wir zu unserer ursprünglichen Frage zurück.
+
+Was verspricht das Gleichheitszeichen tatsächlich?
+
+Es sagt uns, dass zwei Ausdrücke denselben Wert darstellen.
+
+Wenn wir eine Gleichung umformen, behaupten wir jedoch noch etwas anderes: dass unser Vorgehen begründet ist.
+
+Lösen wir eine Gleichung durch Äquivalenzumformungen, behaupten wir außerdem, dass wir die Sammlung möglicher Lösungen nicht verändert haben.
+
+Das sind verschiedene Versprechen.
+
+$$
+\underbrace{x=2\;\Longrightarrow\;x^2=4}_{\text{Implikation}}
+$$
+
+$$
+\underbrace{x+3=8\;\Longleftrightarrow\;x=5}_{\text{Äquivalenz}}
+$$
+
+Eine wahre Aussage kann uns zu einer weiteren wahren Aussage führen, ohne die gesamte Information zu erhalten, mit der wir begonnen haben.
+
+Sobald wir das verstehen, sind Gleichungen nicht mehr bloße Zeichensammlungen, die wir umstellen.
+
+Sie werden zu Aussagen, deren Bedeutung wir untersuchen, deren Konsequenzen wir erkunden und deren Umformungen wir begründen können.
+
+Das führt zu einer tieferen Frage:
+
+Wann folgt eine Aussage tatsächlich aus einer anderen, und wie können wir beweisen, dass die Begründung gültig ist?
+
+Hier beginnt sich unser Studium der Mathematik mit den Grundlagen der Logik zu verbinden.
+
+## Quellen und weiterführende Literatur
+
+- [OpenStax — Elementary Algebra 2e, Abschnitt 1.2: Use the Language of Algebra](https://openstax.org/books/elementary-algebra-2e/pages/1-2-use-the-language-of-algebra). Elementare Algebra, Gleichheit, Ausdrücke und Gleichungen.
+- [forall x: Calgary](https://forallx.openlogicproject.org/html/). Weiterführende Darstellung von Identität und formaler logischer Begründung.

@@ -1,0 +1,509 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-02
+sourcePages: []
+sourceLocations: ["Complete Video Script · sections 1–10; Sources and Further Reading"]
+title: "Why put letters where numbers should be?"
+navTitle: "Why use letters in algebra?"
+description: "Variables, grouping, domains, and what a relationship tells us before we know its inputs."
+order: 2
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [one-plus-one]
+thumbnail: reasoning-algebra
+---
+
+RATIONAL THINKING · EPISODE 02
+
+## 1. A room I've never seen
+
+Imagine a room you've never visited.
+
+You don't know how large it is. You don't know how many people are inside. And you certainly don't know how many chairs it contains.
+
+But I tell you just two things.
+
+Every table has exactly three chairs around it.
+
+And there are two additional chairs near the entrance.
+
+That's all.
+
+<ReasoningFigure kind="room" />
+
+Now, here's a strange question.
+
+Could the room contain fourteen chairs?
+
+Maybe.
+
+But what about fifteen?
+
+I claim that fifteen chairs are impossible.
+
+And that's a surprisingly strong claim, isn't it?
+
+After all, we haven't counted the chairs. We haven't even seen the room.
+
+So how could we possibly know that?
+
+Perhaps we could start listing arrangements and checking which numbers appear.
+
+But there's a better way.
+
+We can discover something about the total number of chairs without knowing the total itself.
+
+And to understand how, we need to explore an idea that sits at the heart of algebra.
+
+The idea that a letter can sometimes tell us more than a number.
+
+## 2. What changes, and what doesn't?
+
+Let's examine a few possible rooms.
+
+Suppose there's only one table.
+
+We need three chairs around it, and the two chairs near the entrance.
+
+That's five chairs.
+
+Now add another table.
+
+We need three more chairs. So our total becomes eight.
+
+Add a third table, and we get eleven.
+
+A fourth, and we get fourteen.
+
+Look carefully at these arrangements.
+
+The total number of chairs keeps changing. But not everything changes.
+
+Each new table contributes exactly the same thing: three chairs.
+
+And the two chairs near the entrance never change at all.
+
+So the room contains two different kinds of quantities.
+
+One that stays fixed.
+
+And another that depends on how many tables we have.
+
+We could continue calculating indefinitely. But no matter how many examples we check, the same structure keeps appearing.
+
+Groups of three.
+
+And two additional chairs.
+
+So rather than listing every possible room, what if we described the structure that all these rooms share?
+
+<ReasoningFigure kind="table-pattern" />
+
+## 3. Replacing a number with an idea
+
+We know that every table requires three chairs.
+
+But we still don't know how many tables the room contains.
+
+So let's do something simple.
+
+Instead of writing a particular number of tables, let's give that quantity a name.
+
+We could call it almost anything. But mathematicians often use letters.
+
+Let's choose $n$.
+
+From now on, $n$ represents the number of tables.
+
+Not the number of chairs. Not the number of people.
+
+The number of tables.
+
+And because every table needs three chairs, the chairs around the tables must total three times $n$.
+
+We can write that as three multiplied by $n$.
+
+Or simply, three $n$.
+
+Now remember the two chairs near the entrance.
+
+Those must be added to the total.
+
+And so we arrive at this:
+
+$$ \boxed{3n+2} $$
+
+Three times the number of tables, plus two.
+
+This is called an algebraic expression.
+
+It's a combination of mathematical symbols that represents a quantity.
+
+And notice what we've accomplished.
+
+We haven't calculated the exact number of chairs.
+
+We've described the relationship that determines that number.
+
+Choose four tables, and the expression gives fourteen chairs.
+
+Choose six, and it gives twenty.
+
+The particular answer changes.
+
+But the rule doesn't.
+
+<Interactive kind="algebra" preset="tables" id="chair-rule" />
+
+## 4. An answer we can rule out without counting
+
+Now we can return to our original question.
+
+Why did I claim that the room cannot contain fifteen chairs?
+
+Let's think about what fifteen chairs would mean.
+
+We know that two chairs are always near the entrance.
+
+If the total were fifteen, removing those two would leave thirteen chairs around the tables.
+
+But every table must have exactly three chairs.
+
+Can thirteen chairs be divided into complete groups of three?
+
+No.
+
+Four groups of three would use twelve chairs, leaving one chair without a complete group.
+
+And that's not permitted by our arrangement.
+
+So fifteen cannot be the total.
+
+We can express this same question mathematically.
+
+If three $n$ plus two were equal to fifteen, then three $n$ would have to equal thirteen.
+
+But no whole number of tables multiplied by three gives thirteen.
+
+So there is no permitted value of $n$ that works.
+
+<ReasoningFigure kind="impossible-chairs" />
+
+Notice what makes this reasoning different from checking examples.
+
+We didn't examine every possible room.
+
+We used the structure of the arrangement to rule out an entire possibility.
+
+And that's a powerful form of knowledge.
+
+We can establish something about an answer without ever knowing the answer itself.
+
+## 5. When two extra chairs become two extra tables
+
+Now let's make a tiny change to our room.
+
+Instead of having two extra chairs near the entrance, imagine we have two extra tables.
+
+And each of those tables also needs three chairs.
+
+Does our original expression still describe the room?
+
+Think about what changed.
+
+Previously, we counted three chairs for each of our $n$ tables, and then added two individual chairs.
+
+Now we're adding two complete tables.
+
+So the total number of tables is $n$ plus two.
+
+And since every one of those tables needs three chairs, we multiply that entire quantity by three.
+
+We write:
+
+$$ 3(n+2) $$
+
+The curved marks are called parentheses.
+
+They show that $n$ plus two forms a group, and that the three multiplies everything inside it.
+
+Compare that with our original expression.
+
+$$ 3n+2 \qquad\text{and}\qquad 3(n+2) $$
+
+If $n$ is two, the first arrangement has eight chairs.
+
+But the second has twelve.
+
+Why four more?
+
+Because two extra tables require six chairs, whereas our original arrangement added only two.
+
+In fact, the second expression is the same as three $n$ plus six.
+
+Those parentheses have changed which quantities the multiplication applies to.
+
+They're not a decorative feature of mathematical writing.
+
+They're part of what the expression means.
+
+$$ 3(n+2)=3n+6 $$
+
+<Interactive kind="algebra" preset="grouping" id="chair-grouping" />
+
+## 6. The three different things a letter can mean
+
+There's another subtlety.
+
+We've been using the same letter, $n$, throughout our investigation.
+
+But we've actually been asking different kinds of questions about it.
+
+When we imagined one table, then two, then three, $n$ was allowed to change.
+
+In that situation, we call $n$ a variable.
+
+It represents a quantity that can take different values.
+
+But when we asked whether the room could contain fifteen chairs, we were looking for a particular value of $n$ that would make an equation true.
+
+There, $n$ was an unknown.
+
+And when we reasoned that every permitted arrangement must contain complete groups of three plus two extra chairs, $n$ had a third role.
+
+We weren't looking for a particular value at all.
+
+We were reasoning about an arbitrary number of tables.
+
+Any allowed number.
+
+These aren't three different kinds of letters.
+
+They're three different ways to use a mathematical symbol.
+
+And the important question is never simply, "What does $n$ equal?"
+
+Sometimes there isn't supposed to be one particular value.
+
+Sometimes we're trying to understand what must remain true as that value changes.
+
+<ReasoningFigure kind="letter-roles" />
+
+## 7. When a correct calculation gives a meaningless answer
+
+But if $n$ can change, how far can it change?
+
+What happens if we choose two and a half?
+
+We can certainly calculate three times two and a half, plus two.
+
+That gives nine and a half.
+
+There's nothing wrong with the arithmetic.
+
+But does our room really contain two and a half tables, each with three chairs?
+
+Not under the rules we've established.
+
+Our tables are complete objects. We count them using whole numbers.
+
+Zero tables, one table, two tables, and so on.
+
+Mathematicians call the collection of permitted values the domain.
+
+For complete tables, the permitted values are the nonnegative integers:
+
+$$ n\in\mathbb{N}_0=\{0,1,2,3,\ldots\} $$
+
+And the domain depends on what the letter represents.
+
+If we're counting complete tables, fractional values don't belong to our domain.
+
+But if we're measuring time, one and a half hours might be perfectly sensible.
+
+And here's the deeper lesson.
+
+A mathematical expression doesn't tell us everything about its own interpretation.
+
+We have to know what its symbols refer to.
+
+The same calculation can be mathematically valid, yet fail to describe the situation we intended.
+
+<ReasoningFigure kind="domains" />
+
+## 8. Mathematics is a language, not just a calculation
+
+Let's try a different situation.
+
+Imagine you're buying tickets to an event.
+
+Each ticket costs five euros, and there's a single booking fee of one euro for the entire purchase.
+
+You don't yet know how many tickets you'll buy.
+
+How could we describe the total price?
+
+Let's call the number of tickets $n$. For a purchase, $n$ is a positive whole number.
+
+Each ticket contributes five euros. So $n$ tickets cost five times $n$.
+
+And then we add the one-euro booking fee.
+
+$$ 5n+1 $$
+
+Now imagine that I show you only that expression, without telling you the story.
+
+Could you discover the original situation?
+
+Not necessarily.
+
+It might describe ticket prices, or the number of objects in a collection, or something completely different.
+
+The symbols preserve the mathematical relationship, but not every detail of the story.
+
+And even small differences in ordinary language can change that relationship.
+
+Suppose the booking fee is one euro per ticket, instead of one euro for the whole purchase.
+
+Then every ticket costs six euros in total.
+
+And the expression becomes six $n$.
+
+The words have changed slightly.
+
+But the mathematical structure has changed.
+
+This is why translating between pictures, language, and symbols requires understanding what each quantity actually means.
+
+Not merely recognizing familiar numbers and operations.
+
+<ReasoningFigure kind="ticket-fees" />
+
+## 9. When mathematical rules meet the real world
+
+Now consider a scientific example.
+
+Imagine a chamber whose temperature begins at eighteen degrees Celsius.
+
+A heater raises its temperature by two degrees every hour.
+
+At least, that's the rule we're assuming.
+
+How could we express its temperature after an arbitrary amount of time?
+
+Let's call the number of hours $t$.
+
+We begin at eighteen degrees.
+
+And add two degrees for each hour.
+
+So the temperature is described by:
+
+$$ 18+2t $$
+
+After one hour, our model predicts twenty degrees.
+
+After one and a half hours, it predicts twenty-one.
+
+But here's a question.
+
+What happens if we put one thousand in place of $t$?
+
+The expression gives two thousand and eighteen degrees Celsius.
+
+Does that mean the chamber will actually reach that temperature?
+
+Not necessarily.
+
+Our calculation assumes the temperature keeps rising at exactly the same rate.
+
+A real heating system might shut off. Heat losses might increase. Its components might fail.
+
+The mathematical conclusion follows from the assumed rule.
+
+But whether that rule continues to describe reality must be established independently.
+
+That's an important distinction.
+
+Mathematics tells us what follows from our assumptions.
+
+Science also asks whether those assumptions describe the world accurately.
+
+<ReasoningFigure kind="heating" />
+
+## 10. What can we know without knowing the number?
+
+Before we finish, here's one last problem.
+
+A warehouse packages candles in boxes of four.
+
+There are also three loose candles that haven't been packed.
+
+You don't know how many boxes the warehouse contains.
+
+But someone claims there are exactly twenty-four candles.
+
+Could that be true?
+
+Think about the structure.
+
+<Exercise>
+
+Every complete box contributes four candles. And there are always three loose ones.
+
+So if we call the number of boxes $n$, the total must be four $n$ plus three.
+
+Now remove the three loose candles from the claimed total of twenty-four.
+
+That leaves twenty-one.
+
+But twenty-one cannot be divided into complete groups of four.
+
+So the claim is impossible, provided the packing rule is correct.
+
+<ReasoningFigure kind="candles" />
+
+</Exercise>
+
+And notice how little information we needed.
+
+We didn't have to count the boxes.
+
+We didn't have to see the warehouse.
+
+We only needed to understand the relationship.
+
+That's what a letter has allowed us to express.
+
+Not a particular answer, but the structure shared by every permitted answer.
+
+The numbers may change. The situation may change. Even the objects themselves may change.
+
+But if the same mathematical relationship remains, we can reason about all those possibilities together.
+
+Of course, the conclusions we draw still depend on what our symbols mean and which assumptions we're making.
+
+A letter doesn't remove the need to think carefully.
+
+It gives that thinking a more precise language.
+
+And once we've described a relationship that seems to hold for every permitted case, another question naturally follows.
+
+How can we establish that it really holds for all of them?
+
+Not just the examples we've seen.
+
+Every single one.
+
+The room and the warehouse share an idea: complete equal-sized groups plus a fixed number of extras.
+
+$$ 3n+2\qquad 4n+3 $$
+
+## Sources and further reading
+
+- [OpenStax — Elementary Algebra 2e, Section 1.2: Use the Language of Algebra](https://openstax.org/books/elementary-algebra-2e/pages/1-2-use-the-language-of-algebra). Variables, expressions, equations, substitution, grouping symbols, and translating between words and mathematical notation.
+- [Kevin Houston — How to Think Like a Mathematician](https://www.cambridge.org/core/books/how-to-think-like-a-mathematician/FB0813C3AEDDECD40BE58AF186370D52). Further reading on mathematical language, definitions, general reasoning, and the distinction between examples and justification.
+- [OpenStax — College Algebra with Corequisite Support, Section 4.2: Modeling with Linear Functions](https://openstax.org/books/college-algebra-corequisite-support/pages/4-2-modeling-with-linear-functions). Models, rates of change, and restrictions on a model's real-world domain.

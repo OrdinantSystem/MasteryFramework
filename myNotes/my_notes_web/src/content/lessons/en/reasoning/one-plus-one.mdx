@@ -1,0 +1,554 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-01
+sourcePages: []
+additionalSources:
+  - sourceId: reasoning-episode-01-expanded
+    locations: ["Sections 3–10 · sets, cardinality, union, grouping, functions and equality"]
+sourceLocations: ["Episode 01 · sections 1–8, final learning checkpoint, sources and further reading"]
+title: "What are we really saying when we write 1+1=2?"
+navTitle: "What does 1+1=2 really mean?"
+description: "Abstraction, sets, cardinality, functions, equality, and the assumptions behind a familiar equation."
+order: 1
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: []
+thumbnail: reasoning
+---
+
+RATIONAL THINKING · EPISODE 01
+
+
+The most elementary equation in mathematics hides a surprisingly important question: How do we turn the complicated world around us into precise statements we can reason about?
+
+<ReasoningFigure kind="opening" />
+
+## 1. The simplest question in mathematics
+
+Imagine that I place one small counter on a table.
+
+Then I place another beside it.
+
+How many counters are there?
+
+Two, obviously.
+
+But now suppose I change the color of one counter. Does the answer change?
+
+What if one counter is larger than the other? What if one is made of metal and the other of plastic? Or I move them farther apart?
+
+The answer remains two.
+
+Why?
+
+This is worth thinking about because the two counters might be completely different in almost every physical respect. Yet mathematically, something has remained unchanged.
+
+We are ignoring most of the properties of the objects and retaining just one: how many there are.
+
+This apparently trivial act is one of the foundations of mathematical reasoning.
+
+It is called abstraction.
+
+And without it, even something as familiar as $1+1=2$ would be difficult to understand.
+
+## 2. Abstraction: what changes, and what stays the same?
+
+Let's return to our two counters.
+
+Change their appearance using the controls below.
+
+<Interactive kind="reasoning" preset="appearance" id="counter-appearance" />
+
+Notice something important: we are not claiming that the two objects are identical.
+
+We are claiming that their differences are irrelevant to the question we're asking.
+
+If our question were about color, their differences would matter. If it were about weight, size and material might matter.
+
+But our question is about number.
+
+Abstraction means selecting the properties that matter for a particular question and setting aside the others.
+
+This lets us recognize the same mathematical structure in very different situations.
+
+<ReasoningFigure kind="collections" />
+
+Apples, books, and stars have very little in common physically.
+
+Nevertheless, all three collections share the same number of elements.
+
+That shared mathematical property is what we call two.
+
+And here's the fascinating part: once we've abstracted away the irrelevant properties, we can reason about the number two without constantly thinking about apples, books, or stars.
+
+That's why arithmetic can apply to so many different things.
+
+## 3. What exactly are we counting?
+
+Now imagine that I place two shoes on a table: one left shoe and one matching right shoe.
+
+I ask: How many are there?
+
+You might answer two.
+
+But suppose I ask: How many pairs are there?
+
+Now your answer is one.
+
+The physical objects haven't changed at all.
+
+Only our choice of what to count has changed.
+
+<Interactive kind="reasoning" preset="units" id="counting-units" />
+
+This example reveals a fundamental distinction between three ideas.
+
+- Objects: The physical things that exist, such as shoes.
+- Quantities: How much or how many of something we have.
+- Units: What counts as one for the question we're asking.
+
+When we count shoes, each shoe represents one unit.
+
+When we count pairs, two appropriately matched shoes form one unit.
+
+Consequently:
+
+$$ 2\text{ shoes}=1\text{ pair} $$
+
+These are two different descriptions of the same collection. We are changing the counting unit, not claiming that the numbers two and one are equal.
+
+Neither description is wrong.
+
+But imagine someone asks how many shoes a shop has, and you report the number of pairs without clarifying.
+
+Your calculation could be correct while your answer is misleading.
+
+That's why, before calculating, we need to know what our numbers refer to.
+
+## 4. From physical objects to mathematical sets
+
+Let's return to our two counters: one teal counter and one blue counter.
+
+Suppose we want to describe them mathematically, without having to draw the physical objects every time. The first thing we can do is give each counter a name.
+
+Let's call the first counter $a$, and the second counter $b$.
+
+<ReasoningFigure kind="objects" />
+
+These letters are just labels. We're not saying that the objects are numbers or that the letters have some special physical property. We're simply using symbols to refer to them.
+
+Now imagine that we draw a circle around the first counter. The circle represents a collection containing that object.
+
+In mathematics, we call such a collection a **set**.
+
+A set is a mathematical collection of distinct elements. Those elements might be numbers, geometric objects, or, as in our example, representations of physical counters.
+
+Let's call our first set $A$.
+
+<ReasoningFigure kind="singleton" />
+
+### Reading the notation
+
+The statement $A=\{a\}$ reads: “A is the set containing a.”
+
+- The capital letter $A$ names our set.
+- The equal sign tells us what that set is.
+- The curly braces $\{\ \}$ enclose the elements of the set.
+- Inside the braces is our single object, $a$.
+
+We've taken a drawing of a collection and expressed it using mathematical notation. We can do exactly the same thing for our second counter, giving us $B=\{b\}$.
+
+<ReasoningFigure kind="singletons" />
+
+If we want to say that the object $a$ belongs to the set $A$, we write:
+
+$$ a\in A $$
+
+The symbol $\in$ means **is an element of**. We read this as: “a is an element of A.”
+
+But notice something subtle. The object $a$ is not the same mathematical thing as the set $\{a\}$: here, $a$ names the counter, while $\{a\}$ names a collection containing it.
+
+$$ a\ne\{a\} $$
+
+The symbol $\ne$ means “is not equal to.” The difference is similar to the difference between a book and a box containing that book. Even if the box contains only one book, the book and the box are not the same object.
+
+This distinction matters when we start treating entire groups as individual units. Before that, though, let's count the elements of our sets.
+
+## 5. Cardinality: counting and matching
+
+Mathematicians call the number of distinct elements in a set its **cardinality**. For a finite set, its cardinality is simply how many elements it contains.
+
+We represent cardinality by placing two vertical bars around the name of the set:
+
+$$ |A|=1,\qquad |B|=1 $$
+
+We read $|A|=1$ as: “The cardinality of A is one.” The symbol $A$ refers to the set itself; $|A|$ refers to the number of elements in that set. These are not interchangeable.
+
+### Comparing sizes without comparing appearances
+
+How do we know that two different collections have the same number of elements?
+
+For a new comparison, let $A$ contain three counters and $B$ contain three squares. Rather than counting each collection separately, we can match each counter with exactly one square.
+
+<ReasoningFigure kind="matching" />
+
+Every counter has exactly one partner. Every square also has exactly one partner. Nothing remains unmatched.
+
+This is called a **one-to-one correspondence**. A function that establishes such a perfect pairing between two sets is called a **bijection**; we'll explain functions shortly.
+
+The important idea is that we can compare the sizes of collections without caring whether their elements look alike. The number three is not a particular shape, color, or physical object. It's a mathematical property that many different collections can share.
+
+Mathematicians also use one-to-one correspondences to compare infinite sets, where counting elements one after another isn't enough. Here, we'll stay with finite sets.
+
+<span id="4-what-does-adding-actually-mean"></span>
+
+## 6. What does adding actually mean?
+
+So far, we've counted objects. But counting is not yet addition.
+
+Return now to our original singleton sets:
+
+$$ A=\{a\},\qquad B=\{b\},\qquad a\ne b $$
+
+Suppose we want to create a new set that contains every element from either collection. Mathematicians call this operation a **union**, represented by the symbol $\cup$.
+
+We write $A\cup B$ and read it as “A union B.” The union is the set of all elements that belong to $A$, to $B$, or to both.
+
+<ReasoningFigure kind="addition" />
+
+The union contains two distinct elements, so its cardinality is two:
+
+$$ |A\cup B|=2 $$
+
+Because each original set contains one element, we can express the relationship as:
+
+$$ \underbrace{|A|}_{1}+\underbrace{|B|}_{1}=\underbrace{|A\cup B|}_{2} $$
+
+The union symbol combines **sets**. The addition symbol combines **numbers**. Cardinality connects these two operations.
+
+But there is a hidden assumption: the objects must not be accidentally counted twice. For finite sets, the size of the union equals the sum of the two cardinalities only when the sets have no elements in common. Such sets are called **disjoint**.
+
+### When the collections overlap
+
+Suppose we make two lists of people attending a lecture: those who study mathematics and those who study physics.
+
+Alex and Sam study mathematics. Sam and Jo study physics.
+
+$$ A=\{\text{Alex},\text{Sam}\},\qquad B=\{\text{Sam},\text{Jo}\} $$
+
+How many different people appear in at least one list? Adding two plus two would count Sam twice.
+
+<ReasoningFigure kind="overlap" />
+
+The **intersection** of two sets, written $A\cap B$, contains only the elements that belong to both. Here:
+
+$$ A\cap B=\{\text{Sam}\} $$
+
+When we add the two cardinalities, every shared element is counted twice. Subtracting the cardinality of the intersection leaves each of them counted once. More generally, for two finite sets:
+
+$$ \boxed{|A\cup B|=|A|+|B|-|A\cap B|} $$
+
+In words: the number of elements in the union equals the number in the first set, plus the number in the second, minus the number that belong to both.
+
+If the sets have no elements in common, their intersection is the **empty set**, written $\varnothing$. It contains zero elements:
+
+$$ A\cap B=\varnothing,\qquad |A\cap B|=0 $$
+
+For disjoint finite sets, the formula therefore simplifies to:
+
+$$ |A\cup B|=|A|+|B| $$
+
+For our two distinct counters, that becomes $1+1=2$.
+
+We're not trying to prove arithmetic formally here. We're discovering the conditions under which arithmetic correctly represents a real situation.
+
+That distinction will become especially important in science, statistics, and logical reasoning.
+
+## 7. Can a whole collection count as one thing?
+
+Earlier, two matching shoes counted as two individual objects or as one pair. Now we can describe that distinction using sets.
+
+Imagine four shoes forming two matching pairs. Label them $L_1,R_1,L_2,R_2$, where $L$ represents a left shoe and $R$ a right shoe.
+
+Counting individual shoes gives us:
+
+$$ S=\{L_1,R_1,L_2,R_2\},\qquad |S|=4 $$
+
+To count pairs, we organize the same shoes differently. A set can itself be an element of another set:
+
+$$ P=\big\{\{L_1,R_1\},\{L_2,R_2\}\big\} $$
+
+<ReasoningFigure kind="pairs" />
+
+The inner braces represent the individual pairs. The outer braces collect those pairs into a new set. We count the two inner sets as its elements, so $|P|=2$.
+
+We began with four individual objects, grouped them into pairs, and treated each pair as one element of a new set. The objects haven't changed. Only the structure of our description has changed.
+
+A unit and a set are not the same idea. A unit is what we choose to treat as one when counting or measuring. A set is a mathematical object that contains elements.
+
+We can use a set to represent a unit, such as a matching pair. But not every unit must be represented as a set, and sets don't automatically determine which units are appropriate. That choice depends on what we want to describe.
+
+## 8. Addition as a function
+
+So far, we've described addition by combining collections. But addition can also be understood in a more abstract way: as a **function**.
+
+A function is a rule that assigns exactly one output to every allowed input. Think of a machine: you provide an input, it applies a rule, and it produces an output.
+
+Addition uses two input numbers, which is why it is called a **binary operation**. Formally, the function receives one ordered pair containing those two numbers.
+
+$$ \operatorname{add}(1,1)=2 $$
+
+Here, “add” names the operation, the numbers in parentheses are its inputs, and the number on the right is its output. We usually write the same calculation with a plus sign: $1+1=2$.
+
+### The allowed inputs and outputs
+
+Consider the set of nonnegative integers:
+
+$$ \mathbb{N}_0=\{0,1,2,3,\ldots\} $$
+
+The name $\mathbb{N}_0$ includes zero; the dots mean that the pattern continues without end. Addition takes two numbers from this set and returns another number in the same set:
+
+$$ +:\mathbb{N}_0\times\mathbb{N}_0\longrightarrow\mathbb{N}_0 $$
+
+Let's read that notation one part at a time.
+
+- The plus sign names the function.
+- $\mathbb{N}_0\times\mathbb{N}_0$ is the set of all **ordered pairs** of nonnegative integers, such as $(1,1)$, $(2,3)$, and $(4,0)$.
+- The arrow points to the set in which the outputs lie.
+
+The symbol $\times$ here means **Cartesian product**: it constructs pairs of elements from the two sets. It is not ordinary multiplication of numbers.
+
+An ordered pair keeps two input positions, even when they hold the same number. The pair $(1,1)$ is therefore different from the set $\{1,1\}=\{1\}$, which has only one distinct element.
+
+The whole expression says: “Addition takes a pair of nonnegative integers and returns a nonnegative integer.”
+
+<ReasoningFigure kind="function" />
+
+Unlike the earlier bijection, a function need not pair every output with exactly one input. For example, both $(1,1)$ and $(2,0)$ have the sum $2$. What every function requires is exactly one output for each allowed input.
+
+The arithmetic operation doesn't need to know whether you're counting apples, shoes, or stars. It's a rule defined on numbers. The connection to the physical world comes from how we interpret those numbers and decide which operation describes the situation.
+
+That's why $1+1=2$ can remain mathematically true when a physical event doesn't leave us with two identifiable objects.
+
+<span id="5-can-one-plus-one-ever-equal-one"></span>
+
+## 9. Can one plus one ever equal one?
+
+Here's a challenge.
+
+Imagine two separate drops of water.
+
+They move toward one another, touch, and merge into a single larger drop.
+
+Before the collision, we had two drops.
+
+After the collision, we have one.
+
+Does this mean $1+1=1$?
+
+Make a prediction, then explore both states.
+
+<Interactive kind="reasoning" preset="water" id="water-drops" />
+
+What's going on?
+
+The answer is that we are describing a physical process, not changing the rules of arithmetic.
+
+Initially, there are two distinct drops.
+
+When they merge, the boundaries separating those drops disappear. What counts as one individual drop has changed.
+
+The number of separate drops decreases, but the total amount of water remains the same, assuming none is lost.
+
+For example, if each original drop contained 0.05 milliliters of water, together they contain:
+
+$$ 0.05+0.05=0.10\text{ mL} $$
+
+So the number of drops changes from two to one, while their combined volume remains approximately the sum of their initial volumes, assuming no water is lost and volumes are additive under the conditions considered.
+
+The mistake would be to confuse two different quantities: number of drops and amount of water.
+
+This is a beautiful lesson about mathematical models.
+
+When we use mathematics to describe the world, we must identify the properties we're measuring, the units we're using, and the assumptions under which our calculations make sense.
+
+Mathematics isn't contradicted when our description of reality changes.
+
+Instead, we may need to revise the model we're using.
+
+<span id="6-what-does-the-equation-actually-say"></span>
+
+## 10. What does the equation actually say?
+
+We've now explored quantities, units, abstraction, sets, and addition.
+
+We can finally return to our original equation.
+
+Each symbol has a distinct role.
+
+<ReasoningFigure kind="symbols" />
+
+### 1, 2
+
+The numerals
+
+These are written symbols representing numbers. The numeral `2` is not the same thing as two physical objects; it names the number those objects share.
+
+### $+$
+
+The operation
+
+The addition sign tells us how to combine two numbers to obtain their sum. When counting disjoint collections, this corresponds to combining their sizes.
+
+### $=$
+
+The equality relation
+
+The equal sign states that the expression on the left has exactly the same value as the expression on the right.
+
+There's a subtle but important detail here.
+
+The equal sign doesn't mean "and then the answer comes next."
+
+It means has the same value as.
+
+That's why the following statement is equally valid:
+
+$$ 2=1+1 $$
+
+And so is:
+
+$$ 1+1=3-1 $$
+
+The symbols on either side can be different while still representing the same value.
+
+In mathematical language, $1+1$ is an expression, while $1+1=2$ is a statement of equality, an equation.
+
+An expression represents a value. An equation makes a claim that can be evaluated as true or false. For example, $1+1=2$ is true, while $1+1=3$ is false.
+
+This distinction is essential because mathematics isn't merely a collection of instructions for producing answers.
+
+It is also a language for expressing relationships.
+
+### The logical properties of equality
+
+Equality is a relation between mathematical objects. Its basic properties let us connect statements and justify replacements:
+
+- **Reflexivity:** every object is equal to itself: $a=a$.
+- **Symmetry:** if $a=b$, then $b=a$. Equality works in both directions.
+- **Transitivity:** if $a=b$ and $b=c$, then $a=c$.
+
+For example, knowing that $1+1=2$ and $2=4-2$ lets us conclude:
+
+$$ 1+1=4-2 $$
+
+Equality also allows **substitution**. Replacing an expression by an equal one leaves the value unchanged:
+
+$$ (1+1)+3=2+3 $$
+
+These properties become essential when we begin proving statements rather than simply checking examples.
+
+### Equal sizes do not mean equal sets
+
+Suppose one set contains two apples and another contains two oranges. Their cardinalities are equal, but their elements are different:
+
+$$ |A|=|B|\quad\text{but}\quad A\ne B $$
+
+For two sets to be equal, they must contain exactly the same elements. For two finite sets to have equal cardinality, they only need the same number of elements.
+
+Being equal in one respect doesn't make the collections identical. Similarly, $1+1$ and $2$ are different pieces of notation that represent the same number. That is what the equal sign asserts.
+
+<span id="7-lets-test-your-understanding"></span>
+
+## 11. Let's test your understanding
+
+We've seen several examples. Now try applying the ideas to new situations without looking back.
+
+In each situation, describe what is being counted, which assumptions matter, and whether the mathematical model is appropriate.
+
+Situation A — Fruit
+
+You put one apple and one orange into an empty basket. Can you say that you now have two fruits? Can you say that you have two apples?
+
+Situation B — People
+
+One person joins an online meeting, and then another account connects. Does that guarantee two different people are present?
+
+Situation C — Pairs
+
+You have one pair of shoes and receive another pair. How many pairs do you have? How many individual shoes?
+
+Situation D — Sports
+
+A school has twelve students who play football and eight who play basketball. Can you conclude that twenty different students play at least one of those sports? What information is missing?
+
+{/* Reference answers added for the supplied disclosure; not present in the pasted source. */}
+<details>
+<summary>Reveal explanations</summary>
+
+**Situation A — Fruit.** There are two fruits: one apple and one orange. There is only one apple. The unit “fruit” includes both objects; the unit “apple” does not.
+
+**Situation B — People.** Two connected accounts do not guarantee two different people. One person could use both accounts, or an account could represent several people. We need an assumption connecting accounts to distinct people before using account counts as people counts.
+
+**Situation C — Pairs.** You have two pairs and four individual shoes, assuming each pair consists of two shoes and the pairs share no shoe. State the unit with the answer.
+
+**Situation D — Sports.** We need to know how many students play both sports. If $F$ and $B$ are the two groups, then $|F\cup B|=12+8-|F\cap B|$. Twenty distinct students is correct only if the groups are disjoint. Without the overlap, the exact total is undetermined.
+
+</details>
+
+Notice that none of these questions required difficult arithmetic.
+
+They required something more fundamental: clarity about what our mathematical symbols are describing.
+
+And that is a skill you can develop through practice.
+
+<span id="8-the-bigger-lesson"></span>
+
+## 12. The bigger lesson
+
+We began with something so obvious that it barely seemed worth discussing.
+
+One plus one equals two.
+
+But we've discovered that using this statement to describe reality involves several intellectual steps.
+
+Sets let us represent collections. Cardinality lets us describe their sizes. Grouping changes what counts as one, and a function defines how numerical inputs produce an output. Equality then states when two expressions have the same value.
+
+<ReasoningFigure kind="process" />
+
+The central insight is that mathematics allows us to reason about structures independently of the particular objects that exhibit them.
+
+But applying mathematical structures to reality requires us to choose our descriptions carefully.
+
+And that is where mathematics and rational thinking meet.
+
+Before asking whether a calculation is correct, ask whether you've correctly understood what you're calculating.
+
+## Final learning checkpoint
+
+Try explaining the entire lesson in your own words without looking at the earlier sections.
+
+Why must we identify the unit and the assumptions before using $1+1=2$ to describe a real situation? In your explanation, connect the objects, their sets and cardinalities, the addition function, and the equality relation.
+
+{/* Reference explanation added for the supplied checkpoint. */}
+<details>
+<summary>Check my explanation</summary>
+
+First identify what counts as one and which quantity the numbers describe. Then check that the objects are distinct and that combining them preserves the units being counted. Under those assumptions, one object and one other object form a collection of two. Cardinality turns the sizes of those sets into numerical inputs for addition; equality states that the resulting expressions have the same value. Shoes versus pairs and drops versus water volume show why a correct calculation can still describe the wrong quantity.
+
+</details>
+
+## Sources and further reading
+
+The lesson above is an introductory conceptual explanation, not a formal proof of arithmetic. The source material supports the mathematical terminology and provides a path for going deeper.
+
+- [OpenStax — Elementary Algebra 2e, Section 1.2](https://openstax.org/books/elementary-algebra-2e/pages/1-2-use-the-language-of-algebra). Especially useful for understanding numerals, operations, expressions, equations, and equality.
+
+
+- [Richard Hammack — Book of Proof](https://richardhammack.github.io/BookOfProof/). Chapters 1, 3, and 12 introduce sets, counting, and functions, providing a more formal foundation for the ideas explored here.
+
+
+The next conceptual step is to distinguish a convincing example from a mathematical proof, and to investigate what gives mathematical statements their certainty.

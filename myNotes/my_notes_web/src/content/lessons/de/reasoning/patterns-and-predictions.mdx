@@ -1,0 +1,423 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-05
+sourcePages: []
+sourceLocations: ["Sections 1–8; The central idea; Sources for further study"]
+title: "Wie kann ein Muster dich täuschen?"
+navTitle: "Muster, Vorhersagen und Evidenz"
+description: "Beobachtete Werte, vorgeschlagene Regeln und Prognosen unterscheiden und einen Test für konkurrierende Erklärungen entwerfen."
+order: 5
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [pictures-and-proofs]
+thumbnail: reasoning-patterns
+---
+
+RATIONALES DENKEN · EPISODE 05
+
+## 1. Eine Vorhersage, die unvermeidlich scheint
+
+Stell dir vor, du beobachtest eine Maschine.
+
+Alle paar Sekunden lässt sie eine Gruppe kleiner Lichter aufleuchten. Beim ersten Mal siehst du zwei Lichter. Beim zweiten Mal vier. Dann acht.
+
+Du beobachtest weiter.
+
+<ReasoningFigure kind="pattern-history" />
+
+Dann hält die Maschine an.
+
+Nicht, weil sie fertig ist, sondern weil jemand die Aufnahme angehalten hat.
+
+Die Person dreht sich zu dir und fragt:
+
+Wie viele Lichter werden als Nächstes erscheinen?
+
+Die meisten Menschen werden mit 64 antworten. Dafür gibt es einen guten Grund.
+
+Sieh dir die Zahlen an. Aus zwei wird vier. Aus vier wird acht. Aus acht wird sechzehn. Aus sechzehn wird zweiunddreißig.
+
+Jede Zahl ist doppelt so groß wie die vorherige.
+
+Es erscheint deshalb natürlich, dass aus zweiunddreißig vierundsechzig werden sollte.
+
+Das ist kein zufälliges Raten, sondern eine vernünftige Vorhersage.
+
+Stell dir aber vor, die Person schüttelt den Kopf und sagt:
+
+„Was wäre, wenn ich dir sage, dass die nächste Zahl auch vierunddreißig sein könnte?“
+
+Vielleicht widersprichst du: „Vierunddreißig? Das durchbricht doch das Muster!“
+
+Denke genau darüber nach, was du gerade gesagt hast.
+
+Welches Muster?
+
+Das Muster, das du beobachtet hast? Oder das Muster, von dem du angenommen hast, dass es weitergeht?
+
+Das ist nicht ganz dasselbe.
+
+Diesen Unterschied zu verstehen ist einer der wichtigsten Schritte auf dem Weg zu sorgfältigem Denken.
+
+## 2. Zwei völlig unterschiedliche Geschichten
+
+Betrachte zwei mögliche Maschinen.
+
+Die erste Maschine hat eine sehr einfache Anweisung: Verdopple in jedem Durchlauf die Anzahl der Lichter.
+
+Beginnst du mit zwei Lichtern, erhältst du vier, dann acht, dann sechzehn und dann zweiunddreißig.
+
+Und als Nächstes natürlich vierundsechzig.
+
+Ihre Regel könnten wir mathematisch so schreiben:
+
+$$
+\boxed{A(n)=2^n}
+$$
+
+Dabei bezeichnet $n$ den Durchlauf, beginnend bei $n=1$.
+
+Also gilt $A(1)=2$, $A(2)=4$ und $A(6)=64$.
+
+Betrachte nun eine zweite Maschine.
+
+Diese Maschine hat zwei Betriebsmodi.
+
+In den ersten fünf Durchläufen verhält sie sich genau wie die erste: Die Anzahl der Lichter verdoppelt sich.
+
+Nach dem fünften Durchlauf verändert sie aber ihr Verhalten.
+
+Von da an verdoppelt sie nicht mehr, sondern fügt in jedem Durchlauf zwei Lichter hinzu.
+
+<ReasoningFigure kind="pattern-machines" />
+
+Beide Maschinen erzeugen genau die fünf Zahlen, die du gesehen hast. Trotzdem sagen sie völlig unterschiedliche Zukünfte voraus.
+
+Hier liegt der entscheidende Punkt.
+
+Niemand hat dir gesagt, dass die Maschine für immer weiter verdoppeln muss.
+
+Du hast nur die ersten fünf Durchläufe beobachtet. Zwischen ihren aufeinanderfolgenden Werten liegen vier Verdopplungen.
+
+Den Rest hast du selbst ergänzt.
+
+Das Verhalten der zweiten Maschine können wir ebenfalls als eindeutig festgelegte mathematische Regel ausdrücken:
+
+$$
+B(n)=\begin{cases}2^n&\text{falls }1\le n\le5\\32+2(n-5)&\text{falls }n\ge6\end{cases}
+$$
+
+Die Regel mag komplizierter aussehen, aber ihre Bedeutung ist einfach: In den ersten fünf Durchläufen verdoppeln, danach zwei addieren.
+
+Schauen wir uns an, was geschieht, wenn beide Regeln weiterlaufen.
+
+<Interactive kind="patterns" preset="continuations" id="two-continuations" />
+
+Überlege, was das bedeutet.
+
+Vor dem sechsten Durchlauf lassen sich die beiden Erklärungen anhand der gegebenen Information nicht unterscheiden.
+
+Hättest du statt fünf hundert Durchläufe mit Verdopplung gesehen, könntest du eine weitere Maschine konstruieren, die genau hundert Durchläufe lang verdoppelt und sich danach verändert.
+
+Und selbst bei einer Million Durchläufen bliebe diese Möglichkeit bestehen.
+
+Keine endliche Liste von Beispielen garantiert für sich allein eine einzige eindeutige Regel für eine uneingeschränkte Folge.
+
+Das bedeutet nicht, dass keine Regel richtig wäre oder alle Regeln gleich plausibel wären.
+
+Es bedeutet, dass die Beobachtungen allein uns noch nicht alles sagen, was wir wissen müssten.
+
+## 3. Drei Dinge, die wir nicht verwechseln dürfen
+
+Betrachte nun, was tatsächlich geschah, als du mit vierundsechzig geantwortet hast.
+
+Dein Denken führte drei verschiedene Schritte aus, so schnell, dass sie sich wie ein einziger anfühlten.
+
+<Flow nodes={[
+ {label:"1. Beobachtung",tex:"2,4,8,16,32",detail:"Du hast diese fünf Zahlen gesehen: Evidenz."},
+ {label:"2. Vorgeschlagene Regel",tex:"\\times2",detail:"Immer mit 2 multiplizieren: eine Vermutung."},
+ {label:"3. Vorhersage",tex:"64",detail:"Du hast das nächste Glied erwartet: eine Prognose."}
+]} caption="Beobachtungen motivieren eine Regel. Die Regel liefert eine Vorhersage. Die Beobachtungen allein begründen die Regel aber nicht abschließend." />
+
+Beachte, an welcher Stelle die Unsicherheit entsteht.
+
+Am ersten Schritt ist nichts unsicher. Vorausgesetzt, die Aufnahme ist korrekt, zeigte die Maschine tatsächlich diese fünf Zahlen.
+
+Und auch an der mathematischen Folgerung besteht keine Unsicherheit, wenn die erste Regel gilt.
+
+Wird eine Zahl in jedem Durchlauf verdoppelt, muss aus zweiunddreißig vierundsechzig werden.
+
+Das ist eine gültige Deduktion.
+
+Die Unsicherheit liegt im mittleren Schritt.
+
+Woher wissen wir, dass unbegrenztes Verdoppeln die richtige Regel ist?
+
+Aus den fünf Zahlen allein wissen wir das nicht.
+
+Wir haben eine **Vermutung**: eine vorgeschlagene Erklärung, die durch die Evidenz gestützt, aber nicht durch sie gesichert ist.
+
+Das ist der Unterschied zwischen diesen Aussagen:
+
+„Diese Zahlen haben sich verdoppelt, deshalb vermute ich, dass die nächste vierundsechzig sein wird.“
+
+Und:
+
+„Diese Zahlen haben sich verdoppelt, deshalb muss die nächste vierundsechzig sein.“
+
+Die erste Aussage ist eine Vorhersage auf Grundlage einer Annahme. Die zweite beansprucht logische Notwendigkeit.
+
+Nur die erste Behauptung ist durch die gegebene Information gerechtfertigt.
+
+## 4. Sollten wir nicht die einfachste Erklärung bevorzugen?
+
+Vielleicht denkst du jetzt:
+
+„Gut. Technisch gesehen sind mehrere Regeln möglich. Aber die Verdopplungsregel ist doch eindeutig besser.“
+
+Das halte ich für eine vernünftige Position.
+
+Welche Erklärung würdest du schließlich bevorzugen, wenn du keine weiteren Informationen hättest?
+
+<ReasoningFigure kind="pattern-rules" />
+
+Wenn wir nur die Folge kennen, wirkt die erste Regel einfacher.
+
+Sie braucht weniger Einschränkungen. Wir müssen keinen bestimmten Durchlauf erfinden, an dem die Maschine ihr Verhalten ändert.
+
+Einfachheit ist häufig eine äußerst nützliche Orientierung bei der Suche nach Erklärungen.
+
+Stell dir vor, du möchtest die Bewegung von Planeten, das Wachstum einer Population oder das Verhalten einer unbekannten mathematischen Funktion verstehen.
+
+Bräuchte jede neue Beobachtung eine völlig unabhängige Erklärung, würden unsere Theorien schnell unüberschaubar kompliziert.
+
+Einfache Beziehungen zu finden hilft uns, Informationen zu ordnen, Beobachtungen zu verbinden und nützliche Vorhersagen zu treffen.
+
+Stell dir aber nun vor, jemand gibt dir eine zusätzliche Information.
+
+Die Maschine gehört zu einer Fabrik.
+
+Während ihrer ersten fünf Betriebsdurchläufe verwendet sie einen besonderen Verdopplungsmodus, um die Produktion zu erhöhen.
+
+Danach wechselt sie in einen Erhaltungsmodus, der in jedem Durchlauf zwei Einheiten hinzufügt.
+
+Welche Erklärung erscheint jetzt natürlicher?
+
+Die zweite.
+
+Nicht, weil sich die fünf beobachteten Zahlen verändert hätten. Sie sind gleich geblieben.
+
+Verändert hat sich der Kontext.
+
+Dieselbe Folge. Anderes Hintergrundwissen.
+
+| Keine zusätzlichen Informationen | Bekannte Betriebsmodi |
+| --- | --- |
+| Verdoppeln ist eine nützliche einfache Ausgangsannahme. | Ein geplanter Wechsel nach dem fünften Durchlauf wird plausibel. |
+
+Einfachheit ist also eine Orientierungshilfe, keine Garantie.
+
+Die Regel, die uns bei unserem Wissensstand und unserer Beschreibung des Problems am einfachsten erscheint, muss nicht der tatsächlich erzeugende Prozess sein.
+
+Manchmal lautet die wichtigste Frage nicht: „Welches Muster kann ich erkennen?“
+
+Sondern: „Welche Information fehlt mir?“
+
+## 5. Die nützlichste nächste Frage
+
+Angenommen, du könntest die Aufnahme fortsetzen.
+
+Jetzt darfst du einen weiteren Durchlauf der Maschine beobachten.
+
+Versuchen wir aber vorher etwas anderes.
+
+Frage nicht, welche Regel du bevorzugst, sondern:
+
+Welche Beobachtung würde uns helfen, die beiden Regeln zu unterscheiden?
+
+Wir wissen bereits, dass beide Maschinen dieselben ersten fünf Zahlen erzeugen.
+
+Den dritten Durchlauf noch einmal anzusehen hilft deshalb nicht. Den fünften auch nicht.
+
+Wir brauchen eine Beobachtung, für die die beiden Regeln unterschiedliche Ergebnisse vorhersagen.
+
+| Beobachtete Fälle | Mögliche Regel | Nächster Test: Durchlauf 6 |
+| --- | --- | --- |
+| 2, 4, 8, 16, 32 | A: Immer verdoppeln | 64 |
+| 2, 4, 8, 16, 32 | B: Bis Durchlauf 5 verdoppeln, dann 2 addieren | 34 |
+
+Jetzt haben wir etwas Nützliches: einen Test.
+
+Zeigt die Maschine vierunddreißig, ist die Regel des ständigen Verdoppelns falsch.
+
+Zeigt sie vierundsechzig, ist die zweite Regel falsch.
+
+Aber es gibt noch eine Wendung.
+
+Angenommen, sie zeigt vierundsechzig.
+
+Beweist das, dass die erste Regel für immer richtig ist?
+
+Nein.
+
+Vielleicht gibt es eine dritte Maschine, die sechs Durchläufe lang verdoppelt und erst danach wechselt.
+
+Die sechste Beobachtung könnte eine unserer Erklärungen ausschließen. Sie schließt aber nicht jede Erklärung aus, die überhaupt denkbar ist.
+
+<ReasoningFigure kind="pattern-test" />
+
+Darin liegt eine bemerkenswerte Asymmetrie des Denkens.
+
+Eine einzige unvereinbare Beobachtung kann eine vorgeschlagene universelle Regel widerlegen.
+
+Eine einzige passende Beobachtung beweist dagegen nicht, dass diese Regel universell wahr ist.
+
+Das hängt eng mit mathematischen Gegenbeispielen zusammen: Behauptet jemand, etwas gelte für jeden Fall, genügt ein einziger Fall, in dem es nicht gilt, um die Behauptung zu widerlegen.
+
+Die Erkenntnis lautet nicht, dass Tests nutzlos wären. Ganz im Gegenteil.
+
+Tests helfen uns, falsche Erklärungen auszuscheiden und das Vertrauen in diejenigen zu erhöhen, die bestehen bleiben.
+
+Wir dürfen nur nicht verwechseln, einen Test bestanden zu haben und für immer als wahr bewiesen zu sein.
+
+## 6. Dieselbe Täuschung außerhalb der Mathematik
+
+Stell dir vor, du betrachtest keine Folge von Lichtern mehr, sondern die Auswertungen eines YouTube-Kanals.
+
+Über vier Wochen steigen seine wöchentlichen Aufrufe:
+
+<ReasoningFigure kind="pattern-forecasts" />
+
+Sieh dir die ersten vier Wochen an.
+
+Der Kanal wächst. Jede neue Woche hat mehr Aufrufe als die vorherige.
+
+Natürlich könntest du erwarten, dass dieses Wachstum weitergeht.
+
+Vielleicht tut es das auch.
+
+Vielleicht fielen die ersten vier Wochen aber mit einer Werbekampagne zusammen. Oder mit einem besonders erfolgreichen Video. Oder mit einem vorübergehenden Anstieg der Empfehlungen.
+
+Ändert sich diese Situation, könnten auch die Aufrufe aufhören zu steigen.
+
+Beachte, dass beide Geschichten mit denselben vergangenen Beobachtungen vereinbar sind.
+
+Ein Muster in vergangenen Daten kann eine Prognose stützen. Die Prognose ist aber keine logische Folgerung aus den Daten allein.
+
+Dasselbe geschieht bei Verkäufen, Anlagerenditen, Immobilienpreisen, Bevölkerungswachstum und in zahllosen anderen Situationen.
+
+Manchmal erkennen wir das Muster richtig.
+
+Die Täuschung entsteht, wenn wir stillschweigend annehmen, dass die Umstände, die es hervorbringen, unverändert bleiben.
+
+Die Gefahr liegt nicht darin, Regelmäßigkeiten zu erkennen.
+
+Sie liegt darin, zu vergessen, dass eine Regelmäßigkeit in den Beobachtungen und ein Gesetz für jede zukünftige Beobachtung verschiedene Behauptungen sind.
+
+## 7. Du bist dran: Entkommst du der Falle?
+
+Zum Abschluss ein kleines Experiment.
+
+Vergiss die ursprüngliche Maschine. Du erhältst nun eine ganz neue Folge.
+
+<ReasoningFigure kind="pattern-challenge" />
+
+Was kommt als Nächstes?
+
+Antworte nicht vorschnell.
+
+Versuche stattdessen, drei Dinge im Kopf zu tun.
+
+Finde erstens eine einfache Regel, die mit jeder gegebenen Zahl vereinbar ist.
+
+Erfinde zweitens eine andere Regel, die ebenfalls zu allen gegebenen Zahlen passt, aber ein anderes nächstes Glied liefert.
+
+Bestimme drittens die früheste Beobachtung, die diese beiden Regeln unterscheiden könnte.
+
+Nimm dir einen Moment für einen eigenen Versuch.
+
+<Exercise>
+
+Eine einfache Regel verdoppelt immer. Das fünfte Glied wäre dann $48$.
+
+Eine andere Regel verdoppelt nur bis zum vierten Durchlauf und addiert danach in jedem Durchlauf drei. Sie passt ebenfalls zu $3,6,12,24$, liefert als Nächstes aber $27$.
+
+$$
+C(n)=3\cdot2^{n-1}
+$$
+
+$$
+D(n)=\begin{cases}3\cdot2^{n-1}&1\le n\le4\\24+3(n-4)&n\ge5\end{cases}
+$$
+
+Die ersten vier Glieder stimmen überein. Durchlauf fünf ist die früheste Beobachtung, die diese beiden Regeln unterscheidet: $48$ gegenüber $27$. Keine der Regeln wird durch die vier Glieder allein erzwungen.
+
+</Exercise>
+
+Noch eine letzte Frage. Jemand behauptet:
+
+„Weil sich die ersten fünf Glieder verdoppelt haben, muss das sechste Glied vierundsechzig sein.“
+
+Welche Beobachtung würde die beiden Maschinenregeln, die wir zuvor untersucht haben, am besten testen?
+
+<Interactive kind="patterns" preset="next-test" id="test-the-two-rules" />
+
+Das Ziel dieser Aufgabe ist nicht, die fantasievollste mögliche Folge zu finden.
+
+Es geht um eine Gewohnheit.
+
+Wenn du ein Muster entdeckst, frage, was du tatsächlich beobachtet hast, welche Regel du vorgeschlagen hast und welche neue Beobachtung diese Regel sinnvoll prüfen würde.
+
+Das hängt eng mit der Problemlösungsphilosophie von George Pólya zusammen. Er betonte, ein Problem aus unterschiedlichen Perspektiven zu betrachten, Ansätze zu prüfen und Lösungen zu überdenken, statt nur eine Antwort zu produzieren.
+
+## 8. Was haben wir tatsächlich gelernt?
+
+Kehren wir ein letztes Mal zu den ursprünglichen fünf Zahlen zurück.
+
+$$
+2,\quad4,\quad8,\quad16,\quad32,\quad?
+$$
+
+Die verlockende Antwort ist noch immer vierundsechzig.
+
+Müsste ich ohne weitere Informationen eine Vorhersage treffen, würde ich wahrscheinlich ebenfalls vierundsechzig wählen.
+
+Der Unterschied ist, dass wir jetzt verstehen, was diese Antwort bedeutet.
+
+Sie ist das Ergebnis einer einfachen vorgeschlagenen Regel.
+
+Kein Satz, der durch die fünf Beobachtungen allein bewiesen wäre.
+
+Dieser Unterschied ist wichtig.
+
+Muster zu erkennen gehört zu unseren stärksten geistigen Fähigkeiten. Es ermöglicht uns, aus Erfahrung zu lernen, wissenschaftliche Theorien zu entwickeln und vorauszusehen, was als Nächstes geschehen könnte.
+
+Ein Muster kann uns aber auch zu einer Gewissheit verleiten, die die Evidenz nicht rechtfertigt.
+
+Vielleicht ist die bessere Frage deshalb nicht immer:
+
+Was kommt als Nächstes?
+
+Manchmal lautet sie:
+
+Was müsste ich wissen, bevor ich sicher sein könnte?
+
+Diese Frage führt uns vom bloßen Raten darüber, was die Welt tun wird, zur Untersuchung, warum sie sich so verhält.
+
+## Der zentrale Gedanke
+
+Beobachtung sagt uns, was geschehen ist.
+
+Eine Vermutung schlägt eine Regel vor, die es erklärt.
+
+Eine Vorhersage sagt uns, was wir erwarten dürfen, falls diese Regel weiterhin gilt.
+
+Tests helfen uns, Erklärungen zu unterscheiden, ohne automatisch eine davon für immer zu beweisen.
+
+## Quellen und weiterführende Literatur
+
+- [George Pólya — How to Solve It: eine Zusammenfassung](https://people.f4.htw-berlin.de/~weberwu/info2/Handouts/polya.html). Heuristisches Problemlösen, Alternativen prüfen und eine Begründung überprüfen.
+- [Richard Hammack — Book of Proof](https://richardhammack.github.io/BookOfProof/index.html), Kapitel 9. Gegenbeispiele und Widerlegung.

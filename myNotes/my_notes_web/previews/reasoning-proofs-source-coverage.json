@@ -1,0 +1,15 @@
+{
+  "sourceId": "reasoning-episode-04",
+  "retainedNarrationAndMathBlocks": 189,
+  "missingBlocks": 0,
+  "visualReplacements": 11,
+  "preservedPreviousLessons": 6,
+  "englishSha256": "6f895417ee18201bfafafb9700d9fff480919cf04b8c1d05885a87be4758e489",
+  "germanSha256": "9da7349be61206a43fd8364a77dfe88ab1ae766293ca4c15b9c8f23174b4cd72",
+  "normalization": [
+    "math delimiters",
+    "TeX spacing and aligned line break",
+    "production/search artifacts excluded"
+  ],
+  "reviewStatus": "unreviewed"
+}

@@ -1,0 +1,65 @@
+{
+  "scope": "Eight narration sections retained; eight flattened visual blocks replaced by localized native representations. Video pacing/editorial artifacts excluded.",
+  "sections": [
+    {
+      "section": 1,
+      "narration_blocks": 26,
+      "preserved": 26,
+      "missing": []
+    },
+    {
+      "section": 2,
+      "narration_blocks": 39,
+      "preserved": 39,
+      "missing": []
+    },
+    {
+      "section": 3,
+      "narration_blocks": 33,
+      "preserved": 33,
+      "missing": []
+    },
+    {
+      "section": 4,
+      "narration_blocks": 20,
+      "preserved": 20,
+      "missing": []
+    },
+    {
+      "section": 5,
+      "narration_blocks": 56,
+      "preserved": 56,
+      "missing": []
+    },
+    {
+      "section": 6,
+      "narration_blocks": 38,
+      "preserved": 38,
+      "missing": []
+    },
+    {
+      "section": 7,
+      "narration_blocks": 28,
+      "preserved": 28,
+      "missing": []
+    },
+    {
+      "section": 8,
+      "narration_blocks": 15,
+      "preserved": 15,
+      "missing": []
+    }
+  ],
+  "previous_lessons": {
+    "en/one-plus-one": "8a3a213c95c3e921da2d9ce874879447d4c049b4d80954504853c62fa4e20964",
+    "en/letters-and-relationships": "6f57df005409184d56c473ca34d5a41502860db770700bc015044714893454e7",
+    "de/one-plus-one": "ea2e11366508c86e6c256d0b8ca55c78d3a920e4b13cf2fe6498fef1357892d7",
+    "de/letters-and-relationships": "8249fd12a10531d16d1c4bfaea3a75f806902c4e61a3708579f5d2fb75d93b2e"
+  },
+  "episode_03_sha256": {
+    "en": "17651d1d2aae933ce10edc3520775e2d89056b51decd610434160517bb7a5aaa",
+    "de": "67a1eb13a3533928c21b1f68d85170230d30e70ecf2bfa8a763c5e9c23fff1c6"
+  },
+  "matching_display_equations": 24,
+  "normalization": "Math delimiters, block display whitespace, escaped spacing and aligned-equation line endings normalized."
+}

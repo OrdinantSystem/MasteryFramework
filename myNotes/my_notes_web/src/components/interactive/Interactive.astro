@@ -1,6 +1,16 @@
 ---
 /** Public MDX entry point. Presets are versioned with source, not copied into pages. */
+import ParityLab from './ParityLab.astro';
+import type {ParityPreset} from '../../lib/interactive/parity-model';
+import PatternLab from './PatternLab.astro';
+import type {PatternPreset} from '../../lib/interactive/patterns-model';
 import MindMap from './MindMap.astro';
+import EquationLab from './EquationLab.astro';
+import type {EquationPreset} from '../../lib/interactive/equation-model';
+import AlgebraLab from './AlgebraLab.astro';
+import type {AlgebraPreset} from '../../lib/interactive/algebra-model';
+import ReasoningLab from './ReasoningLab.astro';
+import type {ReasoningPreset} from '../../lib/interactive/reasoning-model';
 import type {MindMapData} from '../../lib/learning/mind-map';
 import type {MindMapPreset} from '../../lib/learning/mind-map-presets';
 import LogicLab from './LogicLab.astro';
@@ -10,6 +20,11 @@ import ParameterExplorer from './ParameterExplorer.astro';
 import MatrixProduct from './MatrixProduct.astro';
 import type {VectorPreset,VectorScenario} from '../../lib/interactive/vector-scenarios';
 type Props =
+ | {kind:'patterns';preset:PatternPreset;id:string}
+ | {kind:'parity';preset:ParityPreset;id:string}
+ | {kind:'equations';preset:EquationPreset;id:string}
+ | {kind:'algebra';preset:AlgebraPreset;id:string}
+ | {kind:'reasoning';preset:ReasoningPreset;id:string}
  | {kind:'candidates';preset:'equation';presentation?:'full'|'input';id:string}
  | {kind:'candidates';preset:'positive'|'witnesses';presentation?:'full';id:string}
  | {kind:'conditions';preset:'connectives'|'construction'|'demorgan';id:string}
@@ -26,4 +41,4 @@ type Props =
  | {kind:'matrix-product';left?:number[][];right?:number[][];title?:string;description?:string;caption?:string;id?:string};
 const props=Astro.props;
 ---
-{props.kind==='candidates'||props.kind==='conditions'||props.kind==='number-line'||props.kind==='quantifiers'||props.kind==='sequence'?<AnalysisLab {...props}/>:props.kind==='mind-map'?<MindMap {...props}/>:props.kind==='logic'?<LogicLab {...props}/>:props.kind==='vectors'?<VectorLab preset={props.preset} scenario={props.scenario} id={props.id}/>:props.kind==='matrix-product'?<MatrixProduct {...props}/>:<ParameterExplorer kind={props.kind} id={props.id}/>}
+{props.kind==='patterns'?<PatternLab {...props}/>:props.kind==='parity'?<ParityLab {...props}/>:props.kind==='equations'?<EquationLab {...props}/>:props.kind==='algebra'?<AlgebraLab {...props}/>:props.kind==='reasoning'?<ReasoningLab {...props}/>:props.kind==='candidates'||props.kind==='conditions'||props.kind==='number-line'||props.kind==='quantifiers'||props.kind==='sequence'?<AnalysisLab {...props}/>:props.kind==='mind-map'?<MindMap {...props}/>:props.kind==='logic'?<LogicLab {...props}/>:props.kind==='vectors'?<VectorLab preset={props.preset} scenario={props.scenario} id={props.id}/>:props.kind==='matrix-product'?<MatrixProduct {...props}/>:<ParameterExplorer kind={props.kind} id={props.id}/>}

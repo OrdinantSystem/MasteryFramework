@@ -1,0 +1,223 @@
+{
+  "states": [
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 1429,
+      "staticFigures": 1,
+      "theme": "light",
+      "unlabeledSvg": 0,
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 1429,
+      "staticFigures": 1,
+      "theme": "dark",
+      "unlabeledSvg": 0,
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 379,
+      "staticFigures": 1,
+      "theme": "light",
+      "unlabeledSvg": 0,
+      "width": 390
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "en",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 379,
+      "staticFigures": 1,
+      "theme": "dark",
+      "unlabeledSvg": 0,
+      "width": 390
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 1429,
+      "staticFigures": 1,
+      "theme": "light",
+      "unlabeledSvg": 0,
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 1429,
+      "staticFigures": 1,
+      "theme": "dark",
+      "unlabeledSvg": 0,
+      "width": 1440
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 379,
+      "staticFigures": 1,
+      "theme": "light",
+      "unlabeledSvg": 0,
+      "width": 390
+    },
+    {
+      "clippedLabels": [],
+      "firstEquationCenterError": 0,
+      "h1": 1,
+      "h2": 9,
+      "labs": 7,
+      "locale": "de",
+      "mathErrors": 0,
+      "minimumControlHeight": 44,
+      "missingControlsTargets": 0,
+      "pageWidth": 379,
+      "staticFigures": 1,
+      "theme": "dark",
+      "unlabeledSvg": 0,
+      "width": 390
+    }
+  ],
+  "interactions": {
+    "stones": {
+      "circles": 7,
+      "description": "Seven stones in two groups: 2 and 5.",
+      "feedback": "2 + 5 = 7. The grouping changes; all seven stones remain."
+    },
+    "balance": "x kg\n5 kg\n𝑥\n=\n5\nx=5\n𝑥\n+\n3\n=\n8\n⟺\n𝑥\n=\n5\nx+3=8⟺x=5",
+    "identity": {
+      "feedback": "At x=5x=5x=5, the identity compares 8 with 8; the equation x+3=8x+3=8x+3=8 is True. The identity holds for every real x by commutativity of addition, not because these samples prove it.",
+      "focus": "identity-and-solution-number",
+      "trueCases": 2
+    },
+    "square": "The graph y = x² marks x=1.5 and its opposite -1.5 at the same output 2.25.",
+    "invalid": {
+      "feedback": "Enter a value from -3 to 3 in steps of 0.25. The last valid state is retained.",
+      "number": "1.5",
+      "range": "1.5"
+    },
+    "home": {
+      "focus": "square-information-range",
+      "value": "-3"
+    },
+    "zero": "𝑥\n=\n0\nx=0 and \n𝑥\n=\n0\nx=0 both give 0. When x is nonzero, squaring loses the sign; at zero the two marked inputs coincide.",
+    "restriction": {
+      "excluded": "-2: Excluded by the condition",
+      "feedback": "The condition x≥0x\\geq0x≥0 excludes −2. Under this condition, x2=4x^2=4x2=4 is equivalent to x=2x=2x=2."
+    },
+    "division": "Two satisfies the original equation, and division by two is defined. This case does not remove the need to check \n𝑥\n=\n0\nx=0 separately.",
+    "distanceOne": "𝑥\n=\n1\nx=1 is 2 units from 3. The equation \n∣\n𝑥\n−\n3\n∣\n=\n2\n∣x−3∣=2 is True. Both 1 and 5 solve the original distance equation.",
+    "distanceZero": "𝑥\n=\n3\nx=3 is 0 units from 3. The equation \n∣\n𝑥\n−\n3\n∣\n=\n2\n∣x−3∣=2 is False. Both 1 and 5 solve the original distance equation.",
+    "isolation": "5",
+    "resetDivision": {
+      "focus": true,
+      "undefined": "× Undefined: division by zero"
+    }
+  },
+  "gallery": {
+    "mathErrors": 0,
+    "presets": [
+      "stones",
+      "balance",
+      "identity",
+      "square",
+      "restriction",
+      "division",
+      "distance"
+    ],
+    "static": 1,
+    "isolation": [
+      {
+        "id": "library-equation-identity-number",
+        "value": "2"
+      },
+      {
+        "id": "library-equation-square-number",
+        "value": "0"
+      },
+      {
+        "id": "library-equation-distance-number",
+        "value": "5"
+      }
+    ]
+  },
+  "prefix": {
+    "navigation": "Three direct Part One links with a semantic third thumbnail; English/German counts 3 lessons/3 Lektionen; third previous opens second and second next returns to third.",
+    "languages": "EN/DE switch preserves third lesson and /MyNotes prefix.",
+    "search": "English squaring and German Quadrieren return the new lesson with prefixed URLs; both results opened successfully.",
+    "decimal": "German square at 1.5 renders 1{,}5^2=2{,}25=(-1{,}5)^2.",
+    "console": "No warning/error logs captured."
+  },
+  "precision": {
+    "english": {
+      "description": "The graph y = x² marks x=1.25 and its opposite -1.25 at the same output 1.5625.",
+      "feedback": "x=1.25x=1.25x=1.25 and x=−1.25x=-1.25x=−1.25 both give 1.5625. When x is nonzero, squaring loses the sign; at zero the two marked inputs coincide.",
+      "formula": [
+        "y=x^2",
+        "1.25^2=1.5625=(-1.25)^2"
+      ],
+      "range": "1.25",
+      "typed": "1.25"
+    },
+    "german": {
+      "description": "Der Graph y = x² markiert x=1,25 und den Gegenwert -1,25 bei derselben Ausgabe 1,5625.",
+      "feedback": "x=1,25x=1{,}25x=1,25 und x=−1,25x=-1{,}25x=−1,25 ergeben beide 1,5625. Für x ungleich null geht beim Quadrieren das Vorzeichen verloren; bei null fallen die beiden markierten Eingaben zusammen.",
+      "formula": [
+        "y=x^2",
+        "1{,}25^2=1{,}5625=(-1{,}25)^2"
+      ]
+    },
+    "invalidRestored": "1.25"
+  }
+}

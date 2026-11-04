@@ -1,0 +1,73 @@
+{
+  "source": "Owner-supplied Episode 02 revised script",
+  "sections": [
+    {
+      "section": 1,
+      "narration_blocks": 19,
+      "preserved_blocks": 19,
+      "missing": []
+    },
+    {
+      "section": 2,
+      "narration_blocks": 19,
+      "preserved_blocks": 19,
+      "missing": []
+    },
+    {
+      "section": 3,
+      "narration_blocks": 26,
+      "preserved_blocks": 26,
+      "missing": []
+    },
+    {
+      "section": 4,
+      "narration_blocks": 20,
+      "preserved_blocks": 20,
+      "missing": []
+    },
+    {
+      "section": 5,
+      "narration_blocks": 23,
+      "preserved_blocks": 23,
+      "missing": []
+    },
+    {
+      "section": 6,
+      "narration_blocks": 17,
+      "preserved_blocks": 17,
+      "missing": []
+    },
+    {
+      "section": 7,
+      "narration_blocks": 17,
+      "preserved_blocks": 17,
+      "missing": []
+    },
+    {
+      "section": 8,
+      "narration_blocks": 22,
+      "preserved_blocks": 22,
+      "missing": []
+    },
+    {
+      "section": 9,
+      "narration_blocks": 24,
+      "preserved_blocks": 24,
+      "missing": []
+    },
+    {
+      "section": 10,
+      "narration_blocks": 28,
+      "preserved_blocks": 28,
+      "missing": []
+    }
+  ],
+  "first_lesson_unchanged": {
+    "en": "8a3a213c95c3e921da2d9ce874879447d4c049b4d80954504853c62fa4e20964",
+    "de": "ea2e11366508c86e6c256d0b8ca55c78d3a920e4b13cf2fe6498fef1357892d7"
+  },
+  "episode_02_sha256": {
+    "en": "6f57df005409184d56c473ca34d5a41502860db770700bc015044714893454e7",
+    "de": "8249fd12a10531d16d1c4bfaea3a75f806902c4e61a3708579f5d2fb75d93b2e"
+  }
+}

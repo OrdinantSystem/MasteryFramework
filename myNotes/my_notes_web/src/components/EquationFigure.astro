@@ -1,0 +1,7 @@
+---
+import {squaredSolutionMarkup} from '../lib/interactive/equation-render';
+import {equationCopy} from '../lib/reasoning/equation-copy';
+import '../styles/equations.css';
+const locale=Astro.locals.locale||'en',c=equationCopy[locale];
+---
+<figure class="equation-figure"><h3>{c.staticTitle}</h3><div set:html={squaredSolutionMarkup(locale)}/><figcaption>{c.staticCaption}</figcaption></figure>

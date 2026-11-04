@@ -1,3 +1,23 @@
+## Reasoning Episode 05 · 4 November 2026
+
+Part One now contains five EN/DE pages. `patterns-and-predictions` follows the concurrently developed `pictures-and-proofs`, which is preserved together with its parity/proof assets. The source's eight-section explanation distinguishes observation, conjecture, prediction and testing; six static figures, two local comparisons, shared Flow and an added reference answer implement the supplied material. Five observed values are correctly counted as four transitions. All forecast data remains illustrative. See [the current source, model and concurrency contract](reasoning-patterns.md). The archive has 59 lessons per language, 207 static documents and 120 Pagefind entries. Review status remains unreviewed. No Git write or publication is implied.
+
+## Reasoning Episode 03 · 4 November 2026
+
+Part One now has a third EN/DE page, `equality-and-solutions`, after `letters-and-relationships`. It retains the supplied eight-section explanation of equality, identity, implication/equivalence, squaring, restrictions, division by zero and complete distance solutions. Seven bounded local comparisons/explorers and one static solution-set comparison implement the eight supplied visuals. The first two lesson sources remain unchanged. See [the current source and model contract](reasoning-equations.md). The archive has 57 lessons per language, 203 static documents and 116 Pagefind entries. Review flags remain unreviewed; no Git write or publishing is implied.
+
+## Reasoning Episode 02 · 4 November 2026
+
+Part One now contains a second EN/DE page, `letters-and-relationships`, after `one-plus-one`. The supplied ten-section narration is adapted into notes with eight static visual explanations and two local table-count explorers. It covers expressions, grouping, variable roles, domains, fee scope, modeling assumptions and a candle-box transfer task. The earlier lesson remains unchanged. See [the current model/source contract](reasoning-algebra.md). The archive now has 56 lessons per language, 201 static documents and 114 Pagefind entries. Sources remain private and review flags unreviewed. No Git write or publication is authorized by this content request.
+
+## Reasoning lesson expansion · 4 November 2026
+
+The owner authorized merging an expanded script into the existing EN/DE one-plus-one lesson, with small editorial changes and removal of redundancy. The page now explains sets/membership, cardinality/matching, union/intersection/inclusion-exclusion, nested shoe pairs, addition as a function and equality properties. It retains the original explanation/practice flow, all three comparisons and old section-fragment destinations; video-only timings are removed. Nine supplied visual relationships are represented through seven new and two updated static variants, using the existing ReasoningFigure and Flow APIs. See [the active source and diagram contract](reasoning.md). No additional lesson or course, Git write or publication.
+
+## The Art of Reasoning · 4 November 2026
+
+Added the `reasoning` course in a separate Reasoning area (`thinking`), with a collapsible Part One containing one EN/DE lesson, `one-plus-one`. The owner-supplied English explanation is retained verbatim; flattened controls become functional components, and the two empty answer disclosures receive added reference explanations. See [reasoning.md](reasoning.md) for source boundaries, interactions and maintenance. Originals stay private. There are now 55 lessons per language across four courses. No Git write or publishing authorization is implied.
+
 ## Learning Methodology teaching batch · 4 November 2026
 
 A course-wide EN/DE audit and fresh-context EGM reviews supported a bounded five-lesson refinement, not a rewrite of all seventeen identities. A familiar entry route and Bloom bridges precede specialist examples; retrieval, spacing and interleaving have distinct roles; existing session/proof tasks now have complete reference answers. Changed immediate applications do not imply unfamiliar strategy selection. The other twelve identities and all shared presentation sources remain unchanged.
@@ -61,3 +81,7 @@ Read ../AGENTS.md and ../DESIGN-SYSTEM.md, then the task-specific guide. Inspect
 Editorial revision: Analysis lessons now explain proof strategy and intermediate reasoning and include independent exercises. All 17 Learning Methodology lessons in EN/DE/ES have a source-grounded prose revision covering the complete article, tables, prompts, exercises, and reference answers. Explanations now develop decisions and examples rather than only listing instructions; the Feynman follow-up checks necessary versus sufficient conditions instead of repeating the worked example. Preserve the named relationships in Mind Maps, research/claim/protocol boundaries, adaptive timing, assistance records, and delayed assessment. Do not replace worked reasoning with brief summaries or promotional headings.
 
 Mind Maps (3 November 2026): both supported lesson languages use a learning-method example and a reusable directed concept graph. Interactive kind="mind-map" accepts a study-session preset or typed custom graph data; the gallery demonstrates a separate teaching graph with independent controls. See representation-library.md and mind-map-interaction.md. Concept-map claims remain illustrative and source-checked, not guarantees of learning outcomes.
+
+## Reasoning Episode 04
+
+The Art of Reasoning now has four EN/DE pages in its existing direct, expandable Part One. `pictures-and-proofs` follows equality and retains the supplied English narration with ten static visuals and one pair-count explorer. The course remains separate from Mathematics. See [the source and interaction contract](reasoning-proofs.md) and the latest application verification entry. No Git write or publication is authorized by this content task.

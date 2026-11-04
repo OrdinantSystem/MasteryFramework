@@ -1,0 +1,47 @@
+---
+import MathText from '../MathText.astro';
+import {equationPresets,type EquationPreset} from '../../lib/interactive/equation-model';
+import {equationCopy,equationHelp,equationFeedback} from '../../lib/reasoning/equation-copy';
+import {equationMarkup} from '../../lib/interactive/equation-render';
+import '../../styles/equations.css';
+interface Props {preset:EquationPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',spec=equationPresets[preset],c=equationCopy[locale],initial=spec.initial;
+const choices='choices' in spec?spec.choices:preset==='square'?[-2,2]:preset==='distance'?[1,5]:[];
+const options='choices' in spec?c.choices[preset as keyof typeof c.choices]:preset==='square'?[c.tryNegative,c.tryPositive]:[c.tryOne,c.tryFive];
+---
+<figure class="equation-lab" id={id} data-equation-lab={preset} data-locale={locale}>
+ <h3>{c.titles[preset]}</h3>
+ <div id={`${id}-view`} data-equation-view set:html={equationMarkup(locale,preset,initial)}/>
+ {'min' in spec&&<div class="equation-inputs">
+  <label for={`${id}-range`}>{c.range}: <output data-equation-value>{initial}</output><input id={`${id}-range`} data-equation-range type="range" min={spec.min} max={spec.max} step={spec.step} value={initial} aria-describedby={`${id}-help`}/></label>
+  <label for={`${id}-number`}>{c.number}<input id={`${id}-number`} data-equation-number type="number" min={spec.min} max={spec.max} step={spec.step} value={initial} aria-describedby={`${id}-help`}/></label>
+ </div>}
+ <div class="equation-controls" role="group" aria-label={c.titles[preset]}>
+  {choices.map((value,i)=><button type="button" data-equation-choice={value} aria-pressed={value===initial?'true':'false'} aria-controls={`${id}-view`} aria-label={options[i].replace(/\$/g,'').replace(/\\geq/g,'≥')}><MathText text={options[i]}/></button>)}
+  <button type="button" data-equation-reset>{c.reset}</button>
+ </div>
+ <figcaption>{'min' in spec&&<p id={`${id}-help`}>{equationHelp(locale,preset)}</p>}<p data-equation-feedback role="status" aria-live="polite" aria-atomic="true"><MathText text={equationFeedback(locale,preset,initial)}/></p></figcaption>
+</figure>
+<script>
+import {equationPresets,equationInput,type EquationPreset} from '../../lib/interactive/equation-model';
+import {equationMarkup} from '../../lib/interactive/equation-render';
+import {equationFeedback,equationHelp} from '../../lib/reasoning/equation-copy';
+import type {Locale} from '../../lib/i18n';
+import {renderMathText} from '../../lib/math-text';
+for(const root of document.querySelectorAll<HTMLElement>('[data-equation-lab]')){
+ const preset=root.dataset.equationLab as EquationPreset,locale=root.dataset.locale as Locale,spec=equationPresets[preset];let value:number=spec.initial;
+ const range=root.querySelector<HTMLInputElement>('[data-equation-range]'),number=root.querySelector<HTMLInputElement>('[data-equation-number]'),view=root.querySelector<HTMLElement>('[data-equation-view]')!,feedback=root.querySelector<HTMLElement>('[data-equation-feedback]')!;
+ function draw(editingNumber=false){
+  view.innerHTML=equationMarkup(locale,preset,value);
+  if(range&&number){range.value=String(value);if(!editingNumber)number.value=String(value);root.querySelector('[data-equation-value]')!.textContent=value.toLocaleString(locale);}
+  root.querySelectorAll<HTMLButtonElement>('[data-equation-choice]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.equationChoice)===value)));
+  feedback.innerHTML=renderMathText(equationFeedback(locale,preset,value));
+ }
+ function update(raw:string,editingNumber=false){const next=equationInput(preset,raw);if(next===null){feedback.textContent=equationHelp(locale,preset,true);return;}value=next;draw(editingNumber);}
+ range?.addEventListener('input',()=>update(range.value));number?.addEventListener('input',()=>update(number.value,true));
+ function commit(){if(number){if(equationInput(preset,number.value)===null)feedback.textContent=equationHelp(locale,preset,true);number.value=String(value);}}
+ number?.addEventListener('change',commit);number?.addEventListener('blur',commit);
+ root.querySelectorAll<HTMLButtonElement>('[data-equation-choice]').forEach(button=>button.addEventListener('click',()=>update(button.dataset.equationChoice!)));
+ root.querySelector('[data-equation-reset]')!.addEventListener('click',()=>{value=spec.initial;draw();});
+}
+</script>

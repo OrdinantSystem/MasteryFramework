@@ -1,9 +1,10 @@
 import type { Locale } from "./i18n";
 import analysisOrganization from "./analysis-organization.json" with {type:"json"};
 type Label = Record<Locale, string>;
-export type CourseId="linear-algebra"|"analysis"|"learning";
+export type CourseId="linear-algebra"|"analysis"|"learning"|"reasoning";
 interface Chapter {
   course:CourseId;
+  directLessons?:boolean;
   id: string;
   title: Label;
   description: Label;
@@ -88,10 +89,11 @@ export const chapters: Chapter[] = [
     ],
   },
 ];
-export type AreaId='mathematics'|'learning-teaching';
-export const areas:{id:AreaId;title:Label;icon:'math'|'learning'}[]=[
+export type AreaId='mathematics'|'learning-teaching'|'thinking';
+export const areas:{id:AreaId;title:Label;icon:'math'|'learning'|'reasoning'}[]=[
  {id:'mathematics',title:{en:'Mathematics',de:'Mathematik'},icon:'math'},
  {id:'learning-teaching',title:{en:'Learning & Teaching',de:'Lernen & Lehren'},icon:'learning'},
+ {id:'thinking',title:{en:'Reasoning',de:'Denken & Argumentieren'},icon:'reasoning'},
 ];
 export const areaFor=(id:AreaId)=>areas.find(a=>a.id===id)!;
 export const courses:{id:CourseId;area:AreaId;title:Label;description:Label}[]=[
@@ -99,6 +101,8 @@ export const courses:{id:CourseId;area:AreaId;title:Label;description:Label}[]=[
  {id:'analysis',area:'mathematics',title:{en:'Analysis I',de:'Analysis I'},description:{en:'Mathematical language, logic, and the foundations of rigorous proof.',de:'Mathematische Sprache, Logik und die Grundlagen präziser Beweise.'}},
 ];
 courses.push({id:'learning',area:'learning-teaching',title:{en:'Learning methodology',de:'Lernmethodik'},description:{en:'Study methods, worked examples, and records of independent practice.',de:'Lernmethoden, ausgearbeitete Beispiele und Nachweise selbstständiger Praxis.'}});
+courses.push({id:'reasoning',area:'thinking',title:{en:'The Art of Reasoning',de:'Die Kunst des Denkens'},description:{en:'Clear thinking across mathematics, philosophy, and psychology.',de:'Klares Denken in Mathematik, Philosophie und Psychologie.'}});
+chapters.push({id:'reasoning-part-one',course:'reasoning',directLessons:true,title:{en:'Part One',de:'Teil Eins'},description:{en:'From everyday observations to precise reasoning.',de:'Von alltäglichen Beobachtungen zu präzisem Denken.'},groups:[{key:'lessons',title:{en:'Lessons',de:'Lektionen'},orders:[1,2,3,4,5]}]});
 const learningChapters:Chapter[]=[
  {id:'learning-methods',course:'learning',title:{en:'Principles and methods',de:'Prinzipien und Methoden'},description:{en:'Give each method a clear job: organize, explain, choose, and recall.',de:'Jeder Methode eine klare Aufgabe geben: ordnen, erklären, auswählen und abrufen.'},groups:[{key:'orientation',title:{en:'Start with a purpose',de:'Mit einem Ziel beginnen'},orders:[1,2]},{key:'methods',title:{en:'The four methods',de:'Die vier Methoden'},orders:[3,4,5,6]}]},
  {id:'learning-practice',course:'learning',title:{en:'The study workflow',de:'Der Lernablauf'},description:{en:'Turn the methods into attempts, feedback, and evidence you can revisit.',de:'Aus Methoden werden Versuche, Rückmeldungen und überprüfbare Ergebnisse.'},groups:[{key:'practice',title:{en:'Practise and repair',de:'Üben und verbessern'},orders:[7,8,9]},{key:'continuity',title:{en:'Evidence and continuity',de:'Nachweise und Kontinuität'},orders:[10,11,12,13]}]},

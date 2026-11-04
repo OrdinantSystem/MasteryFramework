@@ -1,0 +1,342 @@
+{
+  "states": [
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "en",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 1429,
+      "tableWidths": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        },
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "en",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 1429,
+      "tableWidths": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        },
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "en",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 379,
+      "tableWidths": [
+        {
+          "scrollWidth": 430,
+          "width": 303
+        },
+        {
+          "scrollWidth": 430,
+          "width": 303
+        }
+      ],
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "en",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 379,
+      "tableWidths": [
+        {
+          "scrollWidth": 430,
+          "width": 303
+        },
+        {
+          "scrollWidth": 430,
+          "width": 303
+        }
+      ],
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "de",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 1429,
+      "tableWidths": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        },
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "de",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 1429,
+      "tableWidths": [
+        {
+          "scrollWidth": 850,
+          "width": 850
+        },
+        {
+          "scrollWidth": 850,
+          "width": 850
+        }
+      ],
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "de",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 379,
+      "tableWidths": [
+        {
+          "scrollWidth": 430,
+          "width": 303
+        },
+        {
+          "scrollWidth": 430,
+          "width": 303
+        }
+      ],
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "clippedSvgText": [],
+      "controlHeight": 44,
+      "figures": 6,
+      "flowTimes": [
+        "2,4,8,16,32",
+        "\\times2",
+        "64"
+      ],
+      "h1": 1,
+      "h2": 10,
+      "labs": 2,
+      "lightCounts": [
+        2,
+        4,
+        8,
+        16,
+        32
+      ],
+      "locale": "de",
+      "mathErrors": 0,
+      "missingTargets": 0,
+      "pageWidth": 379,
+      "tableWidths": [
+        {
+          "scrollWidth": 430,
+          "width": 303
+        },
+        {
+          "scrollWidth": 430,
+          "width": 303
+        }
+      ],
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "interactions": {
+    "future": "At round 8, A predicts 256 and B predicts 38. This is a comparison of possible futures, not evidence that either occurred.",
+    "table": {
+      "focus": "6",
+      "last": "66434Predicted",
+      "open": true,
+      "rows": 6
+    },
+    "third": "At round 3, both rules give 8. Repeating this observation would not distinguish A from B.",
+    "fifth": "At round 5, both rules give 32. Repeating this observation would not distinguish A from B.",
+    "sixth": "At round 6, A gives 64 and B gives 34. This test distinguishes these two candidates; it cannot prove a rule correct forever.",
+    "isolation": "true",
+    "reset": {
+      "feedback": "Choose a round and compare what the two rules predict.",
+      "focus": true,
+      "selected": 0
+    },
+    "prefix": {
+      "overviewLessonCount": 5,
+      "fourthPreviousAndNext": true,
+      "equivalentGermanLesson": true,
+      "englishSearch": "conjecture",
+      "germanSearch": "Betriebsmodi",
+      "searchResultsOpened": true,
+      "gallery": {
+        "patternLabs": 2,
+        "patternFigures": 6,
+        "proofFigures": 10,
+        "parityLabs": 1,
+        "mathErrors": 0,
+        "missingPrefixLinks": 0
+      },
+      "referenceAnswer": {
+        "firstRuleNext": 48,
+        "alternativeNext": 27,
+        "earliestDistinguishingRound": 5
+      }
+    },
+    "compactTable": {
+      "scrollWidth": 430,
+      "containerWidth": 303,
+      "keyboardScrollLeft": 40,
+      "retainedFocus": true
+    },
+    "finalRoot": {
+      "url": "http://127.0.0.1:4321/reasoning/lessons/patterns-and-predictions/",
+      "warningsAndErrors": [],
+      "build": "207 static pages; 120 EN/DE search entries"
+    }
+  }
+}

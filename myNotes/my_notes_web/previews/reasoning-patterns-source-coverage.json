@@ -1,0 +1,79 @@
+{
+  "sourceId": "reasoning-episode-05",
+  "sections": [
+    {
+      "section": 1,
+      "tested_explanation_blocks": 24,
+      "retained_after_normalization": 24,
+      "corrected": 0,
+      "unexplained_missing": []
+    },
+    {
+      "section": 2,
+      "tested_explanation_blocks": 31,
+      "retained_after_normalization": 30,
+      "corrected": 1,
+      "unexplained_missing": []
+    },
+    {
+      "section": 3,
+      "tested_explanation_blocks": 18,
+      "retained_after_normalization": 18,
+      "corrected": 0,
+      "unexplained_missing": []
+    },
+    {
+      "section": 4,
+      "tested_explanation_blocks": 24,
+      "retained_after_normalization": 24,
+      "corrected": 0,
+      "unexplained_missing": []
+    },
+    {
+      "section": 5,
+      "tested_explanation_blocks": 28,
+      "retained_after_normalization": 28,
+      "corrected": 0,
+      "unexplained_missing": []
+    },
+    {
+      "section": 6,
+      "tested_explanation_blocks": 18,
+      "retained_after_normalization": 18,
+      "corrected": 0,
+      "unexplained_missing": []
+    },
+    {
+      "section": 7,
+      "tested_explanation_blocks": 16,
+      "retained_after_normalization": 16,
+      "corrected": 0,
+      "unexplained_missing": []
+    },
+    {
+      "section": 8,
+      "tested_explanation_blocks": 15,
+      "retained_after_normalization": 15,
+      "corrected": 0,
+      "unexplained_missing": []
+    }
+  ],
+  "intentional_correction": "Five displayed values contain four observed doubling transitions; replaced the source sentence saying five observed doublings.",
+  "added_reference": "The source disclosure was empty. The added example contrasts 48 with 27 and tests round five.",
+  "previous_lessons": {
+    "src/content/lessons/de/reasoning/equality-and-solutions.mdx": "67a1eb13a3533928c21b1f68d85170230d30e70ecf2bfa8a763c5e9c23fff1c6",
+    "src/content/lessons/de/reasoning/one-plus-one.mdx": "ea2e11366508c86e6c256d0b8ca55c78d3a920e4b13cf2fe6498fef1357892d7",
+    "src/content/lessons/de/reasoning/letters-and-relationships.mdx": "8249fd12a10531d16d1c4bfaea3a75f806902c4e61a3708579f5d2fb75d93b2e",
+    "src/content/lessons/en/reasoning/equality-and-solutions.mdx": "17651d1d2aae933ce10edc3520775e2d89056b51decd610434160517bb7a5aaa",
+    "src/content/lessons/en/reasoning/one-plus-one.mdx": "8a3a213c95c3e921da2d9ce874879447d4c049b4d80954504853c62fa4e20964",
+    "src/content/lessons/en/reasoning/letters-and-relationships.mdx": "6f57df005409184d56c473ca34d5a41502860db770700bc015044714893454e7",
+    "src/content/lessons/en/reasoning/pictures-and-proofs.mdx": "6f895417ee18201bfafafb9700d9fff480919cf04b8c1d05885a87be4758e489",
+    "src/content/lessons/de/reasoning/pictures-and-proofs.mdx": "9da7349be61206a43fd8364a77dfe88ab1ae766293ca4c15b9c8f23174b4cd72"
+  },
+  "central_idea_preserved": true,
+  "episode_05_sha256": {
+    "en": "6c4741de224bc8d30eab78aebcfca9351ce1f9cc44474d5eb5a6307642226dc9",
+    "de": "a20a0873f82aa554529f68f25d93ffb61a38b00fdf95b11488a453743ebbd841"
+  },
+  "matching_authored_display_equations": 5
+}

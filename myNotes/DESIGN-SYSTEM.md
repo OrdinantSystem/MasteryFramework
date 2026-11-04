@@ -53,7 +53,7 @@ The myNotes wordmark links to the localized archive overview; do not duplicate t
 
 The current course-color trial assigns blue to Linear Algebra, teal to Analysis, and purple to Learning Methodology. Course headings, nested section headings, overview links, 1 px branch rails, and active lessons share that course color. Names, indentation, and disclosure controls retain the hierarchy without relying on color alone. On desktop, an open course heading stays visible while its branch scrolls. Colors are keyed to the stable course identity rather than alternating by row. This color scheme follows navigation checkpoint commit `2901665` and is part of the current archive baseline.
 
-The desktop sidebar begins at x=0. Its position is not constrained by a centered outer container. Use native details for a subject → course → chapter-group → lesson hierarchy. Store expansion locally where available, and reveal the active lesson's ancestors on navigation. Do not display empty subject placeholders. Analysis deliberately omits the chapter-group layer: its six sections link directly to lessons, while other courses retain their existing grouped hierarchy. Use the organization guide for the twenty-page route; source labels such as Analysis 0 belong in provenance, not navigation.
+The desktop sidebar begins at x=0. Its position is not constrained by a centered outer container. Use native details for a subject → course → chapter-group → lesson hierarchy. Store expansion locally where available, and reveal the active lesson's ancestors on navigation. Do not display empty subject placeholders. Chapters with directLessons also omit an intermediate group: The Art of Reasoning has Part One → lesson. Analysis deliberately omits the chapter-group layer: its six sections link directly to lessons, while other courses retain their existing grouped hierarchy. Use the organization guide for the twenty-page route; source labels such as Analysis 0 belong in provenance, not navigation.
 
 The archive homepage starts with its topic sections, without a visible archive label, myNotes heading, or breadcrumb. An offscreen level-one heading retains the page identity for assistive technology. Course breadcrumbs start with the course name, colored using the same navigation-order color as its sidebar entry; chapter and lesson text stays neutral. Do not repeat the course/type metadata row above lesson titles or add an area/archive eyebrow above course and search titles.
 
@@ -224,7 +224,7 @@ The build validates published counterparts and equation parity across translatio
 6. Add a data variant to a reusable family when possible. Create a new engine only when the mathematical relationship warrants it.
 7. Validate the mathematics, build, read the page, and try its relevant input modes on desktop and mobile.
 
-The archive has three registered courses, including the expanded Analysis 0 foundations inside Analysis I. Extend the shared navigation, source and course registries when adding real material; do not duplicate the application. Shared visual conventions are canonical, while each course supplies its own content, prerequisites and examples.
+The archive has four registered courses, including the expanded Analysis 0 foundations inside Analysis I. Extend the shared navigation, source and course registries when adding real material; do not duplicate the application. Shared visual conventions are canonical, while each course supplies its own content, prerequisites and examples.
 
 ## Review and release gate
 

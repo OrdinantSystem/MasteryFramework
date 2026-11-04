@@ -1,5 +1,6 @@
 import {locales} from '../src/lib/i18n.ts';
 import {presentationHashBeforeLocaleRetirement} from './localization-contract.mjs';
+import {sourceBeforeReasoningExtension} from './reasoning-extension.mjs';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {sha,validateTeachingSource,validatePresentationReceipt} from './analysis-teaching-core.mjs';
@@ -19,7 +20,7 @@ function requireReport(review){
   assert.equal(reviewedReports.get(review.report),review.report_sha256,'Review artifact changed');
 }
 requireReport(teachingCoverage.presentation_review);
-const actual=Object.fromEntries(Object.keys(teachingCoverage.presentation_review.sources).map(path=>[path,presentationHashBeforeLocaleRetirement(path,sha(readFileSync(path,'utf8')))]));
+const actual=Object.fromEntries(Object.keys(teachingCoverage.presentation_review.sources).map(path=>[path,presentationHashBeforeLocaleRetirement(path,sha(sourceBeforeReasoningExtension(path,readFileSync(path,'utf8'))))]));
 for(const path of ['src/components/interactive/Interactive.astro','src/components/interactive/AnalysisLab.astro','src/lib/interactive/analysis-scenes.ts','src/lib/interactive/analysis-copy.ts','src/components/AnalysisCourseIntroduction.astro','src/pages/[...path].astro','src/styles/analysis-lab.css'])assert.ok(path in actual,'Missing presentation dependency from review');
 validatePresentationReceipt(actual,teachingCoverage.presentation_review);
 const rows=new Map(teachingCoverage.files.map(r=>[r.path,r]));

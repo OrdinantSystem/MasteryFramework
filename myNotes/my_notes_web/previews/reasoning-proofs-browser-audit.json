@@ -1,0 +1,159 @@
+{
+  "rootMatrix": [
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "exampleColumns": [
+        273,
+        273,
+        273
+      ],
+      "figureWidth": 900,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "en",
+      "scroll": 1429,
+      "smallControls": 0,
+      "theme": "light",
+      "viewport": 1440,
+      "width": 1429
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "exampleColumns": [
+        273,
+        273,
+        273
+      ],
+      "figureWidth": 900,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "en",
+      "scroll": 1429,
+      "smallControls": 0,
+      "theme": "dark",
+      "viewport": 1440,
+      "width": 1429
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "exampleColumns": [
+        96,
+        96,
+        96
+      ],
+      "figureWidth": 337,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "en",
+      "scroll": 379,
+      "smallControls": 0,
+      "theme": "light",
+      "viewport": 390,
+      "width": 379
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "exampleColumns": [
+        96,
+        96,
+        96
+      ],
+      "figureWidth": 337,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "en",
+      "scroll": 379,
+      "smallControls": 0,
+      "theme": "dark",
+      "viewport": 390,
+      "width": 379
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "de",
+      "scroll": 1429,
+      "smallControls": 0,
+      "theme": "light",
+      "viewport": 1440,
+      "width": 1429
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "de",
+      "scroll": 1429,
+      "smallControls": 0,
+      "theme": "dark",
+      "viewport": 1440,
+      "width": 1429
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "de",
+      "scroll": 379,
+      "smallControls": 0,
+      "theme": "light",
+      "viewport": 390,
+      "width": 379
+    },
+    {
+      "brokenControls": 0,
+      "errors": 0,
+      "figures": 10,
+      "h1": 1,
+      "h2": 9,
+      "labs": 1,
+      "locale": "de",
+      "scroll": 379,
+      "smallControls": 0,
+      "theme": "dark",
+      "viewport": 390,
+      "width": 379
+    }
+  ],
+  "flows": {
+    "combined": {
+      "counters": 10,
+      "pairs": 5
+    },
+    "zeroAndTwelve": "0 + 12 = 12: 6 complete pairs",
+    "emptySum": "0 + 0 = 0: 0 complete pairs",
+    "invalidGold": "7 restored to 6 on blur",
+    "reset": "3/2, separate, focus retained on Reset",
+    "germanSpace": "combined",
+    "partOne": "collapse/open works; four links and semantic pairing thumbnail",
+    "sequence": "fourth previous → third next → fourth",
+    "languages": "equivalent fourth page",
+    "prefix": "EN/DE under /MyNotes, zero unprefixed local links",
+    "search": "English counters and German Zählsteine return the new lesson and open its prefixed route",
+    "gallery": "10 figures + 1 explorer, no KaTeX errors; blue End gives 12 + 4 = 16",
+    "numberLine": "seven labels remain 14px on compact screens"
+  },
+  "logs": []
+}

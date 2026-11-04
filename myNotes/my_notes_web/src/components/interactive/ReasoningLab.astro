@@ -1,0 +1,46 @@
+---
+import ReasoningScene from '../ReasoningScene.astro';
+import {reasoningChoices,reasoningState,type ReasoningPreset} from '../../lib/interactive/reasoning-model';
+import {reasoningCopy,comparisonCopy,volumeCopy} from '../../lib/reasoning/copy';
+import '../../styles/reasoning.css';
+interface Props {preset:ReasoningPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en';
+const copy=comparisonCopy(locale,preset),common=reasoningCopy[locale];
+const choices=reasoningChoices[preset];
+choices.forEach(choice=>reasoningState(preset,choice));
+---
+<figure class="reasoning-lab" data-reasoning={preset} id={id}>
+ <fieldset><legend>{copy.title}</legend><div class="reasoning-controls">
+  {choices.map((choice,i)=><button type="button" data-choice={choice} aria-pressed={i===0?'true':'false'} aria-controls={`${id}-scene`}>{copy.options[i]}</button>)}
+  <button type="button" data-reset>{common.reset}</button>
+ </div></fieldset>
+ <div id={`${id}-scene`} class="reasoning-panels">
+  {choices.map((choice,i)=><div data-state={choice} hidden={i!==0}>
+   <ReasoningScene kind={preset} choice={choice} description={copy.descriptions[i]}/>
+   <p class="reasoning-result">{copy.results[i]}</p>
+  </div>)}
+ </div>
+ <figcaption>
+  <p role="status" aria-live="polite" aria-atomic="true" data-feedback>{copy.details[0]}</p>
+  {preset==='water'&&<><p>{common.waterCaption}</p><p>{volumeCopy(locale)}</p></>}
+ </figcaption>
+ <script type="application/json" data-reasoning-copy set:html={JSON.stringify(copy.details).replace(/</g,'\\u003c')}/>
+</figure>
+<script>
+import {reasoningChoices,reasoningState,type ReasoningPreset} from '../../lib/interactive/reasoning-model';
+for(const root of document.querySelectorAll<HTMLElement>('[data-reasoning]')){
+ const preset=root.dataset.reasoning as ReasoningPreset,choices=reasoningChoices[preset];
+ const feedback=JSON.parse(root.querySelector('[data-reasoning-copy]')!.textContent!) as string[];
+ function select(choice:string){
+  reasoningState(preset,choice);
+  root.querySelectorAll<HTMLButtonElement>('[data-choice]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.choice===choice)));
+  root.querySelectorAll<HTMLElement>('[data-state]').forEach(panel=>{panel.hidden=panel.dataset.state!==choice;});
+  root.querySelector('[data-feedback]')!.textContent=feedback[(choices as readonly string[]).indexOf(choice)];
+ }
+ root.addEventListener('click',event=>{
+  const button=(event.target as Element).closest<HTMLButtonElement>('button');
+  if(button?.dataset.choice)select(button.dataset.choice);
+  else if(button?.hasAttribute('data-reset'))select(choices[0]);
+ });
+}
+</script>

@@ -1,0 +1,455 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-05
+sourcePages: []
+sourceLocations: ["Sections 1–8; The central idea; Sources for further study"]
+title: "How can a pattern fool you?"
+navTitle: "Patterns, predictions and evidence"
+description: "Distinguish observed values, proposed rules and forecasts, then design a test that separates competing explanations."
+order: 5
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [pictures-and-proofs]
+thumbnail: reasoning-patterns
+---
+
+RATIONAL THINKING · EPISODE 05
+
+## 1. A prediction that feels inevitable
+
+Imagine you're watching a machine.
+
+Every few seconds, it illuminates a collection of small lights. The first time, you see two lights. The second time, four. Then eight.
+
+You continue watching.
+
+<ReasoningFigure kind="pattern-history" />
+
+And then the machine stops.
+
+Not because it has finished, but because someone has paused the recording.
+
+They turn to you and ask:
+
+How many lights will appear next?
+
+Most people will answer 64.
+
+And there's a very good reason for that.
+
+Look at the numbers. Two becomes four. Four becomes eight. Eight becomes sixteen. Sixteen becomes thirty-two.
+
+Every number is twice the previous one.
+
+So it seems natural to say that thirty-two should become sixty-four.
+
+That isn't a random guess. It's a perfectly reasonable prediction.
+
+But imagine the person who asked you the question shakes their head.
+
+And says:
+
+"What if I told you the next number could be thirty-four?"
+
+You might object.
+
+"Thirty-four? That breaks the pattern!"
+
+But think carefully about what you've just said.
+
+Which pattern?
+
+The one you observed?
+
+Or the one you assumed would continue?
+
+Those are not quite the same thing.
+
+And understanding the difference is one of the most important steps toward learning how to reason.
+
+## 2. Two completely different stories
+
+Consider two possible machines.
+
+The first machine has a very simple instruction:
+
+Every round, double the number of lights.
+
+If you start with two lights, you get four, then eight, then sixteen, then thirty-two.
+
+And, naturally, sixty-four.
+
+We could write its rule mathematically as:
+
+$$
+\boxed{A(n)=2^n}
+$$
+
+Here, $n$ represents the round, starting at $n=1$.
+
+So $A(1)=2$, $A(2)=4$, and $A(6)=64$.
+
+Now consider a second machine.
+
+This machine has two operating modes.
+
+For the first five rounds, it does exactly what the first machine does: it doubles the number of lights.
+
+But after the fifth round, it changes its behavior.
+
+From then on, instead of doubling, it adds two lights every round.
+
+<ReasoningFigure kind="pattern-machines" />
+
+Both machines produce exactly the same five numbers that you saw.
+
+And yet they predict completely different futures.
+
+Here's the important part.
+
+You were never told that the machine must continue doubling forever.
+
+You only observed the first five rounds, containing four doublings between consecutive values.
+
+You supplied the rest.
+
+Now we can express the second machine's behavior as another perfectly well-defined mathematical rule:
+
+$$
+B(n)= \begin{cases} 2^n & \text{if }1\le n\le5\\ 32+2(n-5) & \text{if }n\ge6 \end{cases}
+$$
+
+It may look more complicated, but its meaning is straightforward. Double during the first five rounds, then add two.
+
+Let's watch what happens when both rules run.
+
+<Interactive kind="patterns" preset="continuations" id="two-continuations" />
+
+Think about what this means.
+
+Before round six, the two explanations are indistinguishable from the information you've been given.
+
+If you saw a hundred rounds of doubling instead of five, you could construct another machine that doubles for exactly a hundred rounds before changing.
+
+And if you saw a million rounds, the same possibility would remain.
+
+No finite list of examples, by itself, guarantees one unique rule for an unrestricted sequence.
+
+This doesn't mean that no rule is correct, or that every rule is equally plausible.
+
+It means the observations alone haven't told us everything we would need to know.
+
+## 3. The three things we must not confuse
+
+Now consider what actually happened when you answered sixty-four.
+
+Your mind performed three distinct operations, so quickly that they felt like just one.
+
+<Flow nodes={[
+ {label:"1. Observation",tex:"2,4,8,16,32",detail:"You saw these five numbers: evidence."},
+ {label:"2. Proposed rule",tex:"\\times2",detail:"Always multiply by 2: a conjecture."},
+ {label:"3. Prediction",tex:"64",detail:"You expected the next term: a forecast."}
+]} caption="Observations motivate a rule. The rule produces a prediction. The observations do not, by themselves, establish the rule." />
+
+Notice where the uncertainty enters.
+
+There's nothing uncertain about the first step. Assuming the recording is accurate, the machine really did display those five numbers.
+
+And there's nothing mathematically uncertain about what follows if the first rule is true.
+
+If a number is doubled every round, then thirty-two must become sixty-four.
+
+That's a valid deduction.
+
+The uncertain step comes in the middle.
+
+How do we know that doubling forever is the correct rule?
+
+We don't know that from the five numbers alone.
+
+We have a conjecture: a proposed explanation supported by the evidence, but not established by it.
+
+This is the difference between saying:
+
+"These numbers doubled, so I suspect the next one will be sixty-four."
+
+And saying:
+
+"These numbers doubled, so the next one must be sixty-four."
+
+One is a prediction based on an assumption.
+
+The other claims logical necessity.
+
+And only the first claim is justified by the information we were given.
+
+## 4. But shouldn't we prefer the simplest explanation?
+
+At this point, you might be thinking:
+
+"All right. Technically, there are multiple possible rules. But come on. Surely the doubling rule is better."
+
+And I think that's a very reasonable position.
+
+After all, which explanation would you prefer if you had no other information?
+
+<ReasoningFigure kind="pattern-rules" />
+
+If all we know is the sequence, the first rule looks simpler.
+
+It requires fewer qualifications.
+
+We don't have to invent a particular round at which the machine changes its behavior.
+
+And simplicity is often an extremely useful guide when searching for explanations.
+
+Imagine trying to understand the movements of the planets, the growth of a population, or the behavior of an unfamiliar mathematical function.
+
+If every new observation required a completely unrelated explanation, our theories would quickly become impossibly complicated.
+
+Finding simple relationships helps us organize information, connect observations, and make useful predictions.
+
+But now imagine that someone gives you one more piece of information.
+
+The machine is part of a factory.
+
+During its first five operating rounds, it uses a special doubling mode to increase production.
+
+Afterward, it switches to a maintenance mode that adds two units each round.
+
+Suddenly, which explanation seems more natural?
+
+The second one.
+
+Not because the five observed numbers changed.
+
+They didn't.
+
+What changed was the context.
+
+Same sequence. Different background knowledge.
+
+| No extra information | Known operating modes |
+| --- | --- |
+| Doubling is a useful simple default. | A planned change after round five becomes plausible. |
+
+So simplicity is a guide, not a guarantee.
+
+The simplest rule to us, given what we know and how we describe the problem, is not necessarily the actual generating process.
+
+And sometimes the most important question isn't "What pattern can I see?"
+
+It's "What information am I missing?"
+
+## 5. The most useful next question
+
+Suppose you could unpause the recording.
+
+You can now observe one more round of the machine.
+
+But before you do, let's try something different.
+
+Instead of asking which rule you prefer, ask:
+
+What observation would help us distinguish the two rules?
+
+We already know that both machines produce the same first five numbers.
+
+So watching the third round again won't help.
+
+Neither will watching the fifth.
+
+We need an observation for which the two rules predict different outcomes.
+
+| Observed cases  | Candidate rule                        | Next test: round 6 |
+| --------------- | ------------------------------------- | ------------------ |
+| 2, 4, 8, 16, 32 | A: Always double                      | 64                 |
+| 2, 4, 8, 16, 32 | B: Double through round 5, then add 2 | 34                 |
+
+Now we have something genuinely useful.
+
+A test.
+
+If the machine displays thirty-four, the always-doubling rule is false.
+
+If it displays sixty-four, the second rule is false.
+
+But there's another twist.
+
+Imagine it displays sixty-four.
+
+Does that prove the first rule is correct forever?
+
+No.
+
+Because perhaps there's a third machine that doubles for six rounds and switches afterward.
+
+The sixth observation might eliminate one of our explanations, but it doesn't eliminate every explanation that could possibly exist.
+
+<ReasoningFigure kind="pattern-test" />
+
+That is a beautiful asymmetry in reasoning.
+
+One incompatible observation can disprove a proposed universal rule.
+
+But one compatible observation doesn't prove that rule universally true.
+
+In fact, this is closely connected to mathematical counterexamples: if someone claims something is true for every case, finding one case where it fails is enough to disprove that claim.
+
+The key lesson isn't that testing is useless.
+
+Quite the opposite.
+
+Testing helps us eliminate incorrect explanations and improve our confidence in the ones that survive.
+
+We simply have to be careful not to confuse surviving a test with being proved true forever.
+
+## 6. The same illusion outside mathematics
+
+Now imagine you're no longer looking at a sequence of lights.
+
+You're looking at the analytics of a YouTube channel.
+
+Over four weeks, its weekly views increase:
+
+<ReasoningFigure kind="pattern-forecasts" />
+
+Look at the first four weeks.
+
+The channel is growing.
+
+Every new week has more views than the previous one.
+
+Naturally, you might expect the growth to continue.
+
+And perhaps it will.
+
+But perhaps those first four weeks coincided with a promotional campaign. Or one especially successful video. Or a temporary increase in recommendations.
+
+Once that situation changes, the views might stop increasing.
+
+Notice that both stories are compatible with the same past observations.
+
+A pattern in past data can give us evidence for a forecast.
+
+But the forecast is not a logical consequence of the data alone.
+
+And the same thing happens in sales, investment returns, housing prices, population growth, and countless other situations.
+
+Sometimes we notice the pattern correctly.
+
+What fools us is quietly assuming that the circumstances producing it will remain unchanged.
+
+The danger isn't recognizing regularities.
+
+The danger is forgetting that a regularity in the observations and a law governing every future observation are different claims.
+
+## 7. Your turn: Can you escape the trap?
+
+Let's finish with a small experiment.
+
+Forget the original machine. You're now given a completely new sequence.
+
+<ReasoningFigure kind="pattern-challenge" />
+
+What comes next?
+
+Don't rush to answer.
+
+Instead, try to do three things in your head.
+
+First, find a simple rule compatible with every number.
+
+Second, invent another rule that also fits every number but produces a different next term.
+
+Third, identify the earliest observation that could distinguish the two.
+
+Take a moment to try.
+
+<Exercise>
+
+One simple rule doubles every time, so the fifth term would be $48$.
+
+Another rule doubles only through round four, then adds three each round. It fits $3,6,12,24$ too, but gives $27$ next.
+
+$$
+C(n)=3\cdot2^{n-1}
+$$
+
+$$
+D(n)=\begin{cases}3\cdot2^{n-1}&1\le n\le4\\24+3(n-4)&n\ge5\end{cases}
+$$
+
+The first four terms agree. Round five is the earliest observation that distinguishes these two rules: $48$ versus $27$. Neither rule is forced by the four terms alone.
+
+</Exercise>
+
+One final question. Imagine someone claims:
+
+"Because the first five terms doubled, the sixth term has to be sixty-four."
+
+Which observation would best test the two machine rules we explored earlier?
+
+<Interactive kind="patterns" preset="next-test" id="test-the-two-rules" />
+
+The goal of the exercise isn't to find the most imaginative possible sequence.
+
+It's to develop a habit.
+
+When you discover a pattern, ask what you've actually observed, what rule you've proposed, and what new observation would put that rule to a meaningful test.
+
+This is closely related to the problem-solving philosophy of George Pólya, who emphasized examining a problem from different perspectives, testing approaches, and reconsidering solutions rather than merely producing an answer.
+
+
+
+## 8. What have we actually learned?
+
+Return to the original five numbers one last time.
+
+$$
+2,\quad4,\quad8,\quad16,\quad32,\quad?
+$$
+
+The tempting answer is still sixty-four.
+
+And if someone asked me to make a prediction with no other information, I would probably choose sixty-four too.
+
+The difference is that now we understand what that answer means.
+
+It's the result of a simple proposed rule.
+
+Not a theorem established by the five observations alone.
+
+And that difference matters.
+
+Because recognizing patterns is one of our most powerful intellectual abilities. It allows us to learn from experience, develop scientific theories, and anticipate what might happen next.
+
+But a pattern can also seduce us into certainty that the evidence hasn't earned.
+
+So perhaps the better question is not always:
+
+What comes next?
+
+Sometimes it's:
+
+What would I need to know before I could be sure?
+
+And that question takes us from merely guessing what the world will do to investigating why it behaves the way it does.
+
+## The central idea
+
+Observation tells us what has happened.
+
+Conjecture proposes a rule explaining it.
+
+Prediction tells us what to expect if that rule continues to apply.
+
+Testing helps us distinguish explanations, without automatically proving one true forever.
+
+## Sources and further reading
+
+- [George Pólya — How to Solve It: a summary](https://people.f4.htw-berlin.de/~weberwu/info2/Handouts/polya.html). Heuristic problem solving, examining alternatives, and checking an argument.
+- [Richard Hammack — Book of Proof](https://richardhammack.github.io/BookOfProof/index.html), Chapter 9. Counterexamples and disproof.

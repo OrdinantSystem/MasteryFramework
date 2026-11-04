@@ -1,0 +1,24 @@
+---
+interface Props {kind:'appearance'|'units'|'water';choice:string;description:string}
+const {kind,choice,description}=Astro.props;
+---
+<svg viewBox="0 0 640 240" role="img" aria-label={description}>
+ {kind==='appearance'&&<>
+  <circle cx="205" cy="120" r="60" fill="var(--accent)"/>
+  <circle cx="435" cy="120" r={choice==='sizes'?42:60} fill={choice==='colors'?'var(--blue)':'var(--accent)'}/>
+ </>}
+ {kind==='units'&&<>
+  {choice==='pairs'&&<rect x="120" y="30" width="400" height="180" rx="16" fill="var(--purple-tint)" stroke="var(--purple)" stroke-width="2" stroke-dasharray="8 6"/>}
+  {[0,1].map(i=><g transform={`translate(${i===0?175:465} 70) scale(${i===0?1:-1} 1)`}>
+   <path d="M0 8H55V58L94 78Q111 87 101 104H-10Q-19 89-10 72Z" fill={i===0?'var(--tint)':'var(--blue-tint)'} stroke={i===0?'var(--accent)':'var(--blue)'} stroke-width="3" stroke-linejoin="round"/>
+   <path d="M0 91H102M38 39H57M38 53H57M43 67L61 61" fill="none" stroke={i===0?'var(--accent)':'var(--blue)'} stroke-width="3"/>
+  </g>)}
+ </>}
+ {kind==='water'&&<>
+  {(choice==='separate'?[190,450]:[320]).map(x=><g transform={`translate(${x} 118) scale(${choice==='merged'?1.24:0.88})`}>
+   <path d="M0-92C-20-54-64-5-64 32A64 64 0 0 0 64 32C64-5 20-54 0-92Z" fill="var(--cyan-tint)" stroke="var(--cyan)" stroke-width="4"/>
+   <path d="M-38 24Q-45 57-17 70" fill="none" stroke="var(--cyan)" stroke-width="3" stroke-linecap="round"/>
+  </g>)}
+  {choice==='separate'&&<text x="320" y="145" text-anchor="middle" font-size="48" fill="var(--text)">+</text>}
+ </>}
+</svg>

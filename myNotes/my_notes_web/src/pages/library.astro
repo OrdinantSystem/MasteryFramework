@@ -1,4 +1,8 @@
 ---
+import {patternFigureKinds} from '../lib/interactive/patterns-model';
+import {proofFigureKinds} from '../lib/interactive/parity-model';
+import {equationPresetNames} from '../lib/interactive/equation-model';
+import {algebraFigureKinds} from '../lib/interactive/algebra-model';
 import {teachingMap} from '../lib/learning/mind-map-presets';
 import NumberDomains from '../components/NumberDomains.astro';
 import ExpressionTrees from '../components/ExpressionTrees.astro';
@@ -12,6 +16,7 @@ import MatrixComparison from '../components/MatrixComparison.astro';
 import Interactive from '../components/interactive/Interactive.astro';
 import VectorFigure from '../components/VectorFigure.astro';
 import {assets} from '../lib/interactive/catalog';
+import ReasoningFigure from '../components/ReasoningFigure.astro';
 import AnalysisProof from '../components/AnalysisProof.astro';
 Astro.locals.locale='en';
 ---
@@ -23,6 +28,16 @@ Astro.locals.locale='en';
     <ul>{assets.map(asset=><li><a href={`#${asset.id}`}>{asset.name}</a> — {asset.purpose}</li>)}</ul>
     {assets.map(asset=><section id={asset.id}>
       <h2>{asset.name}</h2><p>{asset.purpose}</p><pre><code>{asset.example}</code></pre>
+      {asset.id==='pattern-explorers'&&(['continuations','next-test'] as const).map(preset=><Interactive kind="patterns" preset={preset} id={`library-pattern-${preset}`}/>)}
+      {asset.id==='pattern-figures'&&patternFigureKinds.map(kind=><ReasoningFigure kind={kind}/>)}
+      {asset.id==='proof-pairs'&&<Interactive kind="parity" preset="even-sum" id="library-complete-pairs"/>}
+      {asset.id==='proof-figures'&&proofFigureKinds.map(kind=><ReasoningFigure kind={kind}/>)}
+      {asset.id==='equation-transformations' &&equationPresetNames.map(preset=><Interactive kind="equations" preset={preset} id={`library-equation-${preset}`}/>)}
+    {asset.id==='equation-solutions'&&<ReasoningFigure kind="squared-solutions"/>}
+    {asset.id==='algebra-models'&&(['tables','grouping'] as const).map(preset=><Interactive kind="algebra" preset={preset} id={`library-algebra-${preset}`}/>)}
+      {asset.id==='algebra-figures'&&algebraFigureKinds.map(kind=><ReasoningFigure kind={kind}/>)}
+      {asset.id==='reasoning-comparisons'&&(['appearance','units','water'] as const).map(preset=><Interactive kind="reasoning" preset={preset} id={`library-reasoning-${preset}`}/>)}
+      {asset.id==='reasoning-figures'&&(['opening','collections','objects','singleton','singletons','matching','addition','overlap','pairs','function','symbols','process'] as const).map(kind=><ReasoningFigure kind={kind}/>)}
       {asset.id==='analysis-candidates'&&['equation','positive','witnesses'].map((preset)=><Interactive kind="candidates" preset={preset as 'equation'|'positive'|'witnesses'} id={`library-candidates-${preset}`}/>)}
       {asset.id==='analysis-conditions'&&['connectives','construction','demorgan'].map((preset)=><Interactive kind="conditions" preset={preset as 'connectives'|'construction'|'demorgan'} id={`library-conditions-${preset}`}/>)}
       {asset.id==='analysis-number-line'&&['bounds','complement','counterexample','distance'].map((preset)=><Interactive kind="number-line" preset={preset as 'bounds'|'complement'|'counterexample'|'distance'} id={`library-line-${preset}`}/>)}

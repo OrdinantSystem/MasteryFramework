@@ -1,0 +1,456 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-04
+sourcePages: []
+sourceLocations: ["Sections 1–8; Further reading"]
+title: "Wie kann ein Bild unendlich viele Fälle erklären?"
+navTitle: "Bilder und allgemeine Beweise"
+description: "Von Beispielen und Zählsteinpaaren zu einem direkten Beweis für jede gerade ganze Zahl."
+order: 4
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [equality-and-solutions]
+thumbnail: reasoning-proof
+---
+
+## 1. Das Problem mit tausend Beispielen
+
+Ich möchte dir eine Frage stellen, die fast zu einfach erscheint, um eine Erklärung zu verdienen.
+
+Was passiert, wenn wir zwei gerade Zahlen addieren?
+
+Wir können mit ein paar Beispielen anfangen.
+
+<ReasoningFigure kind="proof-examples" />
+
+Jedes Ergebnis ist gerade.
+
+Und wenn wir größere Zahlen ausprobieren, scheint sich nichts zu ändern.
+
+$$
+124+386=510
+$$
+
+Gerade.
+
+$$
+2\,000+8\,000=10\,000
+$$
+
+Auch gerade.
+
+Wir könnten weitermachen. Wir könnten ein Computerprogramm schreiben, das eine Million Beispiele prüft. Oder eine Milliarde. Oder so viele, dass die Prüfung länger dauert, als wir warten möchten.
+
+Aber nehmen wir an, wir täten es.
+
+Hätten wir damit bewiesen, dass die Addition zweier gerader Zahlen immer eine gerade Zahl ergibt?
+
+Nicht ganz.
+
+Denn zwischen diesen beiden Aussagen besteht ein grundlegender Unterschied:
+
+<ReasoningFigure kind="proof-evidence" />
+
+Die erste Aussage sagt uns, was in den untersuchten Fällen passiert ist.
+
+Die zweite macht eine Zusage über Fälle, die wir nie untersucht haben, darunter Zahlen, die zu groß sind, um sie aufzuschreiben.
+
+Und es gibt unendlich viele Paare gerader ganzer Zahlen.
+
+So beeindruckend unser Computerprogramm auch sein mag: Es kann nur endlich viele davon vollständig überprüfen.
+
+Eine Million erfolgreiche Beispiele bleiben eine Million Beispiele.
+
+Wir brauchen eine andere Art von Erklärung. Eine, die die Zahlen nicht nacheinander überprüft, sondern etwas sichtbar macht, das sie alle gemeinsam haben.
+
+Und überraschenderweise können wir mit einem sehr einfachen Bild beginnen, diese Gemeinsamkeit zu entdecken.
+
+## 2. Was bedeutet es eigentlich, gerade zu sein?
+
+Denke an die Zahl acht.
+
+Stell dir acht kleine Zählsteine auf einem Tisch vor. Wir könnten sie in einer langen Reihe oder in einem Kreis anordnen oder zufällig verteilen.
+
+Aber eine bestimmte Anordnung zeigt uns etwas Wichtiges über die Acht.
+
+Wir können die Zählsteine zu Paaren zusammenlegen.
+
+<ReasoningFigure kind="proof-pairs" />
+
+Acht lässt sich in vier Paare aufteilen, ohne dass etwas übrig bleibt. Bei sieben geht das nicht: Nach drei Paaren bleibt ein Zählstein übrig.
+
+Das ist der Unterschied zwischen einer geraden und einer ungeraden Zahl.
+
+Beachte dabei: Entscheidend ist nicht die genaue Anzahl der Zählsteine. Es könnten zwei, vier, sechs, acht oder zweitausend sein.
+
+Was die Zahl gerade macht, ist in jedem Fall dasselbe: Sie besteht aus einer gewissen Anzahl vollständiger Paare.
+
+Stellen wir diese Anzahl von Paaren mit einem Buchstaben dar.
+
+Nennen wir sie $a$.
+
+<ReasoningFigure kind="proof-general-pairs" />
+
+$$
+2\times a=2a
+$$
+
+Bei drei Paaren haben wir sechs Zählsteine.
+
+Bei fünf Paaren haben wir zehn.
+
+Bei einer Million Paaren haben wir zwei Millionen.
+
+Die Anzahl der Paare kann sich ändern, aber der Zusammenhang bleibt gleich: Die Gesamtzahl ist immer das Doppelte der Anzahl der Paare.
+
+Damit erhalten wir eine präzise mathematische Definition.
+
+Eine ganze Zahl $n$ ist gerade, wenn es eine ganze Zahl $a$ gibt, sodass
+
+$$
+\boxed{n=2a.}
+$$
+
+Zu den ganzen Zahlen gehören null sowie positive und negative ganze Zahlen: $\ldots,-2,-1,0,1,2,\ldots$.
+
+Der Buchstabe $a$ ist also keine geheimnisvolle Unbekannte, die wir irgendwie herausfinden müssen. Er steht für eine ganze Zahl, deren Wert davon abhängt, welche gerade Zahl wir betrachten.
+
+Bei sechs ist $a=3$. Bei zehn ist $a=5$. Bei null ist $a=0$.
+
+Das ist ein bemerkenswerter Schritt.
+
+Anstatt alle geraden ganzen Zahlen aufzulisten, haben wir beschrieben, was jede beliebige ganze Zahl gerade macht.
+
+Aber über ihre Addition haben wir noch nichts bewiesen.
+
+Dafür müssen wir zwei Sammlungen zusammenbringen.
+
+## 3. Zwei Sammlungen, ein Bild
+
+Stell dir vor, wir haben sechs blaue und vier goldene Zählsteine.
+
+Bevor wir sie addieren, ordnen wir beide Sammlungen zu Paaren.
+
+<Interactive kind="parity" preset="even-sum" id="complete-pairs" />
+
+Was ist passiert, als wir die Sammlungen zusammengebracht haben?
+
+Wir mussten die einzelnen Zählsteine nicht völlig neu anordnen. Die blauen Zählsteine waren bereits gepaart, ebenso die goldenen.
+
+Durch das Zusammenführen entstand einfach eine größere Sammlung vollständiger Paare.
+
+Sechs plus vier ergibt zehn, weil drei Paare plus zwei Paare fünf Paare ergeben.
+
+Versuche nun, die Zahlen im Bild zu verändern.
+
+Vielleicht vier Paare in der ersten Sammlung und eines in der zweiten. Oder zwei Paare und sechs Paare. Oder sogar null Paare in einer Sammlung.
+
+Das Ergebnis ist dieselbe Art von Objekt: eine weitere Sammlung von Paaren.
+
+Und das erklärt, warum das Ergebnis immer wieder gerade ist.
+
+Nicht weil wir mit unseren Beispielen Glück hatten, sondern weil beim Zusammenführen zweier Sammlungen vollständiger Paare niemals ein ungepaarter Zählstein entsteht.
+
+Nun kommt die interessante Frage.
+
+Können wir diese konkreten Sammlungen durch ein Bild ersetzen, das nicht davon abhängt, mit wie vielen Paaren wir begonnen haben?
+
+## 4. Ein Bild, das keine bestimmten Zahlen mehr braucht
+
+Für die Anzahl der Paare in der ersten Sammlung haben wir bereits einen Buchstaben: $a$.
+
+Für die Anzahl der Paare in der zweiten Sammlung verwenden wir einen anderen Buchstaben: $b$.
+
+<ReasoningFigure kind="proof-template" />
+
+Warum zwei verschiedene Buchstaben?
+
+Weil die beiden Zahlen unterschiedlich sein können.
+
+Mit $2a+2a$ würden wir zwei gleiche gerade Zahlen beschreiben. Damit würden wir etwas über Summen wie $6+6$ oder $10+10$ beweisen, aber nicht unbedingt über Summen wie $6+10$.
+
+Mit $a$ und $b$ erlauben wir jeder Sammlung eine eigene Anzahl von Paaren.
+
+Sie können gleich sein. Sie können verschieden sein. Eine kann null sein. Nichts zwingt uns, bestimmte Werte zu wählen.
+
+Dieses Bild ist nun nicht mehr bloß eine Zeichnung von sechs plus vier.
+
+Es ist eine Vorlage.
+
+Jedes blaue Paar steht für eines der $a$ Paare. Jedes goldene Paar steht für eines der $b$ Paare. Die Punkte stehen für denselben Zusammenhang, unabhängig davon, wie lang die jeweilige Sammlung wird.
+
+Die Punkte zeigen nicht buchstäblich unendlich viele Zählsteine. Die drei Punkte in der Mitte zeigen an, dass die Anzahl der Paare variieren kann. Allgemein wird das Bild durch seine Konstruktionsregel, nicht durch die Anzahl der Punkte, die wir zeichnen konnten.
+
+Dieser Unterschied ist wichtig.
+
+Eine Zeichnung von zehn Zählsteinen veranschaulicht einen einzelnen Fall.
+
+Ein Diagramm, das $a$ Paare und $b$ Paare beschreibt, kann eine ganze Familie von Fällen darstellen.
+
+Und sobald wir die Regel verstanden haben, können wir sie in Mathematik übersetzen.
+
+## 5. Aus dem Bild wird ein Beweis
+
+Kehren wir zu unserer ursprünglichen Frage zurück:
+
+Ist die Summe zweier beliebiger gerader ganzer Zahlen immer gerade?
+
+Statt Beispiele auszuwählen, stellen wir uns diesmal vor, jemand gibt uns zwei gerade ganze Zahlen, ohne zu verraten, welche es sind.
+
+Wir nennen sie $x$ und $y$.
+
+Wir kennen ihre Werte nicht und müssen sie auch nicht kennen.
+
+Wir wissen nur, dass beide gerade sind.
+
+Aber was bedeutet gerade?
+
+Es bedeutet, dass jede Zahl das Doppelte einer ganzen Zahl ist.
+
+Für gewisse ganze Zahlen $a$ und $b$ können wir also schreiben:
+
+$$
+x=2a,\qquad y=2b.
+$$
+
+Damit haben wir bereits unseren ersten wichtigen Schritt gemacht. Wir haben die Information „Diese Zahlen sind gerade“ durch einen exakten mathematischen Zusammenhang ersetzt.
+
+Nun addieren wir sie.
+
+$$
+x+y=2a+2b.
+$$
+
+Das sagt uns, dass die erste Zahl $a$ Paare enthält und die zweite $b$ Paare.
+
+Und das Bild hat uns bereits gezeigt, was passiert, wenn diese Paare zusammenkommen.
+
+Insgesamt haben wir $a+b$ Paare mit jeweils zwei Elementen.
+
+Mathematisch ist das das Distributivgesetz, rückwärts angewendet:
+
+$$
+2a+2b=2(a+b).
+$$
+
+<ReasoningFigure kind="proof-chain" />
+
+Nun gibt es noch einen letzten Schritt, den wir nicht überspringen dürfen.
+
+Woher wissen wir, dass $2(a+b)$ gerade ist?
+
+Laut Definition ist eine Zahl gerade, wenn sie das Doppelte einer ganzen Zahl ist.
+
+Wir wissen, dass $a$ und $b$ ganze Zahlen sind. Und wenn wir zwei ganze Zahlen addieren, ist das Ergebnis wieder eine ganze Zahl.
+
+Also ist $a+b$ eine ganze Zahl.
+
+Wenn du möchtest, nennen wir sie $c$. Dann lautet unser Ergebnis einfach $2c$ und hat genau die Form, die die Definition einer geraden Zahl verlangt.
+
+Und das ist alles.
+
+Wir haben die Aussage bewiesen.
+
+<Note title="DER VOLLSTÄNDIGE DIREKTE BEWEIS">
+
+Seien $x$ und $y$ beliebige gerade ganze Zahlen. Nach der Definition der Geradheit gibt es ganze Zahlen $a,b$ mit $x=2a$ und $y=2b$. Somit gilt:
+
+$$
+x+y=2a+2b=2(a+b).
+$$
+
+Da die ganzen Zahlen unter Addition abgeschlossen sind, ist $a+b$ eine ganze Zahl. Also ist $x+y$ das Doppelte einer ganzen Zahl und damit gerade. $\square$
+
+</Note>
+
+Beachte, was dieses Argument von unseren ersten Beispielen unterscheidet.
+
+Wir mussten nie wissen, welche geraden ganzen Zahlen wir addieren.
+
+Wir haben nur Eigenschaften verwendet, die für jede ganze Zahl gelten, die die Definition erfüllt.
+
+Unser Beweis funktioniert für sechs und vier genauso wie für zwei Zahlen mit jeweils tausend Ziffern.
+
+Die Allgemeinheit ergibt sich aus der freien Wahl von $a$ und $b$, nicht aus der Größe oder Anzahl der Beispiele.
+
+## 6. Wo das Bild an seine Grenzen stößt
+
+Ein feines Detail sollten wir noch untersuchen.
+
+Unsere Zeichnung der Zählsteine war überzeugend, weil sich jeder Zählstein einem Paar zuordnen ließ.
+
+Aber was ist, wenn eine unserer ganzen Zahlen negativ ist?
+
+Betrachte:
+
+$$
+-8+6=-2.
+$$
+
+Alle drei Zahlen sind gerade.
+
+Doch was würde es bedeuten, minus acht echte Zählsteine auf einem Tisch zu haben?
+
+Negative Zählsteine können wir im üblichen Sinn nicht einfach zu Paaren zusammenlegen.
+
+<ReasoningFigure kind="proof-number-line" />
+
+Das Bild mit Zählsteinen beschreibt auf natürliche Weise nichtnegative Anzahlen. Unsere Algebra beschreibt etwas Allgemeineres.
+
+Wir können schreiben:
+
+$$
+-8=2(-4), \qquad 6=2(3).
+$$
+
+Also gilt:
+
+$$
+-8+6=2(-4+3)=2(-1)=-2.
+$$
+
+Dieselbe Überlegung funktioniert weiterhin.
+
+Das Bild hat uns geholfen, den zugrunde liegenden Zusammenhang zu entdecken. Die Algebra hat uns erlaubt, ihn unabhängig von echten Zählsteinen auszudrücken.
+
+Wir sollten also zwei Dinge unterscheiden: eine visuelle Vorstellung, die uns verstehen hilft, warum etwas wahr ist, und ein formales Argument, das genau feststellt, wo es wahr ist.
+
+Hier beweist die Algebra die Aussage für alle ganzen Zahlen, einschließlich null und negativer ganzer Zahlen.
+
+Das ist mehr, als das wörtlich verstandene Bild mit Zählsteinen zeigen konnte.
+
+## 7. Können wir mit derselben Idee etwas Neues entdecken?
+
+Prüfen wir, ob wir das Gelernte nutzen können, ohne vorher die Antwort zu bekommen.
+
+Betrachte diese Aussage:
+
+Die Summe zweier ungerader ganzer Zahlen ist gerade.
+
+Wir könnten zunächst Beispiele überprüfen:
+
+$$
+3+5=8,\qquad 7+9=16.
+$$
+
+Aber wir wissen, dass Beispiele allein nicht ausreichen.
+
+Kehren wir stattdessen zu den Zählsteinen zurück.
+
+Eine ungerade Anzahl besteht aus vollständigen Paaren und einem übrigen Zählstein.
+
+Bei fünf Zählsteinen haben wir zwei Paare und einen zusätzlichen.
+
+Bei sieben haben wir drei Paare und einen zusätzlichen.
+
+Nun legen wir beide Sammlungen zusammen.
+
+<ReasoningFigure kind="proof-odd-sum" />
+
+Diesmal passiert etwas Neues.
+
+Jede ursprüngliche Zahl hat einen ungepaarten Zählstein. Aber wenn wir die Zahlen addieren, bilden diese beiden zusätzlichen Zählsteine ein neues Paar.
+
+Das Ergebnis ist also gerade.
+
+Und wieder legt das Bild das allgemeine Argument nahe.
+
+Wie lautet die Definition einer ungeraden ganzen Zahl?
+
+Eine ganze Zahl ist ungerade, wenn sie sich als das Doppelte einer ganzen Zahl plus eins schreiben lässt.
+
+$$
+2a+1.
+$$
+
+Für zwei möglicherweise verschiedene ungerade ganze Zahlen schreiben wir:
+
+$$
+2a+1,\qquad 2b+1.
+$$
+
+Wir addieren sie:
+
+$$
+\begin{aligned} (2a+1)+(2b+1) &=2a+2b+2\\ &=2(a+b+1). \end{aligned}
+$$
+
+Beachte das letzte $+1$ in der Klammer.
+
+Es steht für das neue Paar, das die beiden übrigen Zählsteine bilden.
+
+Da $a$ und $b$ ganze Zahlen sind, ist auch $a+b+1$ eine ganze Zahl. Die Summe ist also das Doppelte einer ganzen Zahl.
+
+Sie muss gerade sein.
+
+Unsere visuelle Entdeckung ist zu einem vollständigen Beweis geworden, und diesmal haben wir mit der Methode ein anderes Ergebnis bewiesen.
+
+## 8. Was macht ein Argument eigentlich allgemein?
+
+Zum Schluss möchte ich dir noch eine Frage stellen.
+
+Angenommen, zwei Personen behaupten, bewiesen zu haben, dass die Summe zweier gerader Zahlen gerade ist.
+
+Die erste Person sagt:
+
+„Ich habe zehntausend Kombinationen ausprobiert, und jedes einzelne Ergebnis war gerade.“
+
+Die zweite sagt:
+
+„Nimm zwei beliebige gerade ganze Zahlen. Sie müssen die Form $2a$ und $2b$ für gewisse ganze Zahlen $a,b$ haben. Ihre Summe ist $2(a+b)$, und $a+b$ ist eine ganze Zahl.“
+
+Warum ist das zweite Argument ein Beweis, während das erste keiner ist?
+
+<ReasoningFigure kind="proof-distinction" />
+
+Die Antwort ist nicht einfach, dass die zweite Person Buchstaben verwendet hat.
+
+Buchstaben allein machen ein Argument nicht allgemein. Wir könnten mit Buchstaben auch ein völlig ungültiges Argument aufschreiben.
+
+Entscheidend ist, dass $a$ und $b$ nie auf bestimmte Werte eingeschränkt wurden. Wir haben mit zwei beliebigen geraden ganzen Zahlen begonnen und nur Zusammenhänge verwendet, die ihre Definition garantiert.
+
+Und jeder Schritt folgte aus dem vorherigen.
+
+Das zeigt auch etwas Wichtiges über mathematische Bilder.
+
+Ein Bild wird nicht zum Beweis, nur weil es überzeugend aussieht.
+
+Seine eigentliche Stärke liegt darin, dass es uns helfen kann, einen Zusammenhang zu erkennen, der nicht von einem bestimmten Beispiel abhängt.
+
+In diesem Fall war der Zusammenhang einfach: Vollständige Paare bleiben vollständige Paare, wenn wir Sammlungen zusammenführen.
+
+Sobald wir diesen Zusammenhang präzise ausgedrückt hatten, mussten wir keine Beispiele mehr überprüfen.
+
+<ReasoningFigure kind="proof-process" />
+
+Dieser Unterschied ist weit über die Arithmetik hinaus wichtig.
+
+Wenn wir etwas wiederholt beobachten, können wir vernünftigerweise zuversichtlicher werden, dass es wieder geschehen wird. Das ist eine wertvolle Form des Denkens, besonders bei der Untersuchung der physischen Welt.
+
+In der Mathematik können wir aber manchmal etwas Stärkeres erreichen.
+
+Wir können eine Struktur aufdecken, die eine Schlussfolgerung unter unseren Voraussetzungen unausweichlich macht.
+
+Und genau das haben wir hier getan.
+
+Wir haben mit ein paar Zahlen begonnen.
+
+Dann haben wir Paare entdeckt.
+
+Dann haben wir diese Paare durch Buchstaben ersetzt.
+
+Und schließlich haben wir gezeigt, warum die Beziehungen zwischen diesen Buchstaben für jeden möglichen Fall gelten.
+
+Wir haben nicht unendlich viele Bilder gezeichnet.
+
+Wir haben entdeckt, warum ein allgemeines Bild unendlich viele Fälle darstellen kann — und wie wir begründen können, was es zeigt.
+
+## Weiterführende Literatur
+
+Die Lektion folgt dem definitionsbasierten Ansatz zum direkten Beweis in Richard Hammacks Book of Proof, Kapitel 4, insbesondere den Abschnitten 4.2–4.3. Daniel Vellemans How to Prove It, Kapitel 3, behandelt Beweisstrategien systematischer.
+
+- [Book of Proof — Richard Hammack (kostenloses Lehrbuch)](https://richardhammack.github.io/BookOfProof/)
+- [How to Prove It — Daniel J. Velleman](https://www.cambridge.org/highereducation/books/how-to-prove-it/6D2965D625C6836CD4A785A2C843B3DA)
