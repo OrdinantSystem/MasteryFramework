@@ -1,0 +1,45 @@
+---
+course: "learning"
+chapter: "learning-practice"
+sourceId: "learning-protocol"
+sourcePages: []
+sourceLocations: ["02-protocols/04-Error-Diagnosis.md"]
+locale: "en"
+title: "Error Analysis"
+navTitle: "Error Analysis"
+description: "Types of error and the reasoning behind a targeted correction."
+order: 9
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["topic-session"]
+thumbnail: "feedback"
+---
+
+## The original attempt
+
+Keep the work you actually wrote, including the step that went wrong. Replacing it immediately with a model solution can hide the decision you need to examine. Find the first invalid or unjustified step, and separate it from the parts that remain correct.
+
+<ProcessDiagram preset="repair" id="repair-process" />
+
+A diagnosis is a working explanation to test with another question. One mistake does not tell a tutor exactly what was happening in your mind. The point of naming a difficulty is to choose a useful correction.
+
+## Types of error
+
+| Difficulty | What to investigate | A possible next action |
+|---|---|---|
+| Conceptual | Is the meaning of the object or property clear? | Compare a definition with an example and non-example |
+| Logical | Were a quantifier, implication, or assumption mishandled? | Audit the inference or construct a counterexample |
+| Procedural | Was a valid algorithm executed incorrectly? | Isolate the faulty calculation and try a new one |
+| Strategic | Would naming a theorem make the task solvable? | Practise choosing among methods without labels |
+| Representational | Can the same relationship be expressed in words, symbols, and a diagram? | Translate it and compare the versions |
+| Communication | Is valid reasoning missing from the written argument? | Write the justification another reader needs |
+| Prerequisite | Is an earlier idea unavailable? | Study that idea briefly, then return |
+
+More than one category may apply. Use the smallest correction that addresses the observed problem, then let a new attempt show whether it helped. “Practise more” gives too little direction until you know what needs practice.
+
+## Example diagnosis
+
+Suppose a student writes: “No entry of this matrix is zero, so it is invertible.” The inference uses a false criterion. A $2\times 2$ matrix of ones has no zero entries, yet its columns are equal and its determinant is zero. This counterexample addresses the stated reason before introducing another calculation.
+
+Ask the student to explain which invertibility criterion the course permits, then inspect a different square matrix. If they can now justify the decision without help, record that result. If they still rely on the original criterion, the gap remains open. A later independent task is needed before describing the repair as durable.

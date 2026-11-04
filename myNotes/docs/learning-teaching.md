@@ -1,5 +1,14 @@
 # Learning & Teaching authoring guide
 
+## Reviewed first batch · 4 November 2026
+
+A complete EN/DE audit retained twelve of seventeen lesson identities and refined five: Learning Methodology, Bloom’s Taxonomy, Retrieval and Spaced Practice, Study Sessions, and Proof Practice. The entry offers a familiar own-subject route; Bloom has local vocabulary and task examples; retrieval/timing/mixing are distinct; the existing parity tasks have complete disclosed references. Immediate variations after a worked example are identified as such, with example exposure recorded separately from hints.
+
+Read the [audit and learner brief](egm/learning-teaching/audit-and-brief.md), [accepted concrete plan](egm/learning-teaching/plan-final.md), [Elephant decisions](egm/learning-teaching/elephant-decisions.md), and [retrospective/evidence index](egm/learning-teaching/retrospective.md) before extending this work. [Acceptance receipts](egm/learning-teaching/acceptance.json) bind independent source review to the final ten locale versions and unchanged shared sources. They are records, not a new build gate: later edits need their own honest review record; changing a hash does not renew semantic acceptance.
+
+Existing diagrams, question lens, mind-map interaction, source distinctions, exercises, metadata, anchors and downloads remain. No shared renderer, new component, scoring, backend or course reorder was introduced. Mathematical/native-language human review and learner outcomes remain unestablished; `reviewStatus` remains unreviewed. The sources and frozen Analysis evidence were not rewritten.
+
+
 The canonical archive now separates knowledge areas from courses. Mathematics contains Linear Algebra I and Analysis I. Learning & Teaching (book-outline icon) contains the learning-methodology course. Empty future areas are not rendered. All use one shell, design system, MDX collection, language controls, and search bundle.
 
 ## Source coverage

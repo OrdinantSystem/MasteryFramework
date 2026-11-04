@@ -1,0 +1,103 @@
+{
+  "prefEn": "http://127.0.0.1:4325/MyNotes/learning/lessons/retrieval-and-spacing/",
+  "prefDe": "http://127.0.0.1:4325/MyNotes/de/learning/lessons/retrieval-and-spacing/",
+  "preservedQuery": "http://127.0.0.1:4325/MyNotes/de/search/?q=retrieval",
+  "searchEn": {
+    "message": "8 results for retrieval",
+    "results": [
+      "/MyNotes/learning/lessons/retrieval-and-spacing/",
+      "/MyNotes/learning/lessons/retrieval-and-spacing/#retrieval-before-checking",
+      "/MyNotes/learning/lessons/retrieval-and-spacing/#review-intervals",
+      "/MyNotes/learning/lessons/relational-mapping/",
+      "/MyNotes/learning/lessons/relational-mapping/#from-words-to-a-map-you-can-explain",
+      "/MyNotes/learning/lessons/relational-mapping/#worked-example-correcting-a-study-decision",
+      "/MyNotes/learning/lessons/relational-mapping/#checking-the-meaning",
+      "/MyNotes/learning/lessons/learning-cycle/",
+      "/MyNotes/learning/lessons/learning-cycle/#a-starting-route",
+      "/MyNotes/learning/lessons/learning-cycle/#the-four-methods",
+      "/MyNotes/learning/lessons/learning-cycle/#the-learning-cycle",
+      "/MyNotes/learning/lessons/reading-study-techniques/",
+      "/MyNotes/learning/lessons/reading-study-techniques/#a-map-of-the-discussion",
+      "/MyNotes/learning/lessons/reading-study-techniques/#a-useful-takeaway-with-a-boundary",
+      "/MyNotes/learning/lessons/bloom-and-purpose/",
+      "/MyNotes/learning/lessons/bloom-and-purpose/#the-six-categories"
+    ],
+    "url": "http://127.0.0.1:4325/MyNotes/search/?q=retrieval"
+  },
+  "searchDe": {
+    "message": "10 Ergebnisse für Abruf",
+    "results": [
+      {
+        "href": "/MyNotes/de/learning/lessons/retrieval-and-spacing/",
+        "text": "Abruf und verteiltes Lernen"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/retrieval-and-spacing/#abruf-vor-dem-nachsehen",
+        "text": "Abruf vor dem Nachsehen"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/retrieval-and-spacing/#wiederholungsabst%C3%A4nde",
+        "text": "Wiederholungsabstände"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/relational-mapping/",
+        "text": "Begriffsnetze"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/relational-mapping/#von-w%C3%B6rtern-zu-erkl%C3%A4rbaren-beziehungen",
+        "text": "Von Wörtern zu erklärbaren Beziehungen"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/relational-mapping/#beispiel-eine-lernentscheidung-korrigieren",
+        "text": "Beispiel: eine Lernentscheidung korrigieren"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/relational-mapping/#die-bedeutung-pr%C3%BCfen",
+        "text": "Die Bedeutung prüfen"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/reading-study-techniques/",
+        "text": "Transkript: Lerntechniken"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/reading-study-techniques/#eine-karte-des-gespr%C3%A4chs",
+        "text": "Eine Karte des Gesprächs"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/reading-study-techniques/#ein-n%C3%BCtzlicher-gedanke-mit-grenze",
+        "text": "Ein nützlicher Gedanke mit Grenze"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/learning-cycle/",
+        "text": "Lernmethodik"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/learning-cycle/#ein-einstieg",
+        "text": "Ein Einstieg"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/learning-cycle/#die-vier-methoden",
+        "text": "Die vier Methoden"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/learning-cycle/#der-lernkreislauf",
+        "text": "Der Lernkreislauf"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/bloom-and-purpose/",
+        "text": "Blooms Taxonomie"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/bloom-and-purpose/#die-sechs-kategorien",
+        "text": "Die sechs Kategorien"
+      },
+      {
+        "href": "/MyNotes/de/learning/lessons/bloom-and-purpose/#aufgabenorientiertes-lernen",
+        "text": "Aufgabenorientiertes Lernen"
+      }
+    ],
+    "url": "http://127.0.0.1:4325/MyNotes/de/search/?q=Abruf"
+  },
+  "openedGermanResult": "http://127.0.0.1:4325/MyNotes/de/learning/lessons/retrieval-and-spacing/",
+  "logs": []
+}

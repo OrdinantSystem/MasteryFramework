@@ -1,0 +1,46 @@
+---
+course: "learning"
+chapter: "learning-methods"
+sourceId: "learning-bloom"
+sourcePages: []
+sourceLocations: ["§2 The six levels", "§3 Why sequencing matters", "§6 Math example: monotone convergence"]
+locale: "en"
+title: "Bloom’s Taxonomy"
+navTitle: "Bloom’s Taxonomy"
+description: "Six categories of cognitive tasks, illustrated with sequence convergence."
+order: 2
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["learning-cycle"]
+thumbnail: "bloom"
+additionalSources: [{"sourceId": "transcript-bloom", "locations": ["14:30–16:16"]}]
+---
+
+## The six categories
+
+Bloom’s revised taxonomy gives you a vocabulary for what a question asks you to do: remember, understand, apply, analyze, evaluate, or create. Stating a theorem from memory and deciding whether it applies to a new problem require different work, even when they concern the same theorem.
+
+<QuestionLens />
+
+Try switching between the prompts above. Notice what you would have to produce for each one: a precise statement, an explanation, a proof, a comparison, a justified choice, or a checked construction. These categories can overlap in a single task. They are not a compulsory sequence or a scientific ranking of how much you learn. Creating a valid example of your own is enough to count as construction here; no new research is required.
+
+## Problem-oriented study
+
+“How could I prove a real sequence converges if I do not know its limit?” gives boundedness and monotonicity a purpose before you study their definitions in detail.
+
+<LearningFigure kind="problem-first" />
+
+You might begin with a prediction or a rough first step. If the terms and definitions are unfamiliar, ask for an explanation and a worked example. The early problem helps you see what the knowledge is for. It does not require you to discover a convergence theorem without instruction, and it does not remove the need to recall its exact assumptions later.
+
+<Exercise question="An increasing real sequence must converge to a real number. Which condition is missing, and how can you show it matters?">
+
+The theorem also needs an upper bound. The sequence $a_n = n$ increases without bound, so it cannot converge to a real number. Conversely, boundedness alone cannot guarantee convergence: $(-1)^n$ keeps alternating between two values. These counterexamples show what can go wrong when a hypothesis is removed; they do not say every sequence missing that hypothesis must diverge.
+
+</Exercise>
+
+## A worked comparison
+
+Take $a_n = 1 - 1/n$ for positive integers $n$. To use the monotone convergence theorem, first check growth: $a_{n+1} - a_n = 1/[n(n + 1)] > 0$. Next check a bound: $0 \le  a_n < 1$. The theorem now establishes that the sequence converges in $\mathbb{R}$. Determining its limit as 1 is a further step, which a direct limit argument can supply.
+
+Checking those hypotheses is application. Comparing this sequence with $n$ and $(-1)^n$ is analysis of where the conditions matter. Choosing between a direct proof and the theorem is evaluation: for an explicit formula, calculating a limit may be straightforward; for a recursive sequence whose limit is unknown, proving existence first may help. Choose a question because it practises a needed skill, rather than because its Bloom label sounds more advanced.

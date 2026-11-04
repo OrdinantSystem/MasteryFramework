@@ -1,0 +1,14 @@
+{
+  "route": "http://127.0.0.1:4323/learning/lessons/retrieval-and-spacing/",
+  "anchor": {
+    "target": "Worked example: correcting a study decision",
+    "top": 4666.0703125,
+    "url": "http://127.0.0.1:4323/learning/lessons/relational-mapping/#worked-example-correcting-a-study-decision"
+  },
+  "settledObservation": {
+    "heading": "Worked example: correcting a study decision",
+    "top": 200.0703125,
+    "scrollY": 5197.5,
+    "note": "Observed in the next browser call after the existing smooth anchor scroll settled; initial measurement was during scroll."
+  }
+}

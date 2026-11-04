@@ -1,0 +1,44 @@
+---
+course: "learning"
+chapter: "learning-methods"
+sourceId: "learning-method"
+sourcePages: []
+sourceLocations: ["§2.2 AI-assisted Feynman"]
+locale: "de"
+title: "Die Feynman-Technik"
+navTitle: "Die Feynman-Technik"
+description: "Erklärung aus dem Gedächtnis, Rückmeldung, Korrektur und neue Anwendung."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["relational-mapping"]
+thumbnail: "explanation"
+additionalSources: [{"sourceId": "transcript-techniques", "locations": ["9:04–10:57"]}]
+---
+
+## Erklären aus dem Gedächtnis
+
+Wähle eine Idee, mit der du dich schon etwas beschäftigt hast, schließe die Notizen und erkläre sie einer Person ohne Vorwissen. Du kannst sprechen oder schreiben. Erkläre die Bedeutung, nötige Voraussetzungen und eine Begründung oder ein verständliches Beispiel. Wo ein Wort wie „linear“ oder „offensichtlich“ einen ungeklärten Schritt überdeckt, halte an.
+
+Kannst du wegen einer unbekannten Definition nicht beginnen, gehe zunächst zur Erklärung oder zu einem ausgearbeiteten Beispiel zurück. Sobald du etwas rekonstruieren kannst, versuche es ohne Vorlage erneut. Einfachere Sprache soll die Begründung zugänglich machen, ohne eine Voraussetzung wegzulassen, die die Aussage wahr macht.
+
+<ProcessDiagram preset="feynman" id="feynman-loop" />
+
+## Rückmeldung und Überarbeitung
+
+Gib einer Lehrperson, Mitlernenden oder KI deine tatsächliche Erklärung. Frage, wo die Begründung zuerst unvollständig oder falsch wird. Prüfe wichtige Korrekturen an der Kursquelle: Auch eine KI-Kritik kann selbstsicher falsch sein.
+
+Erarbeite die fehlende Stelle und erkläre erneut mit verdecktem Feedback. Versuche danach ein verändertes Beispiel, das die Korrektur verlangt. Die Formulierung des Tutors unmittelbar zu wiederholen lässt offen, ob du das Argument selbst liefern könntest.
+
+## Beispiel: eine Erklärung überarbeiten
+
+Der erste Versuch lautet vielleicht: „Eine lineare Abbildung hat einen geraden Graphen, also ist $g(x) = 2x + 3$ linear.“ Eine hilfreiche Antwort verweist auf die Definition: Eine lineare Abbildung erhält Addition und Skalierung. Insbesondere bildet sie null auf null ab. Hier ist $g(0) = 3$; eine notwendige Bedingung ist verletzt.
+
+Du kannst die Erklärung überarbeiten: „$x\mapsto 2x$ ist linear. Der Zusatz 3 verschiebt die Ausgabe und verletzt die Additivität.“ Prüfe den letzten Satz durch den Vergleich von $g(1 + 1)$ und $g(1) + g(1)$. So erhält die Erklärung eine nachprüfbare Rechnung.
+
+<Exercise question="Nun heißt es: ‘Zum Beweis der Linearität reicht es zu prüfen, dass null auf null abgebildet wird.’ Wie antwortest du?">
+
+Nutze $h(x) = x^2$ als Gegenbeispiel. Die Abbildung schickt null auf null, aber $h(1 + 1) = 4$ und $h(1) + h(1) = 2$. Sie erhält also nicht die Addition. Erkläre, dass die Nullbedingung notwendig, aber nicht hinreichend ist. Eine weitere selbstständige Prüfung sollte die definierenden Bedingungen an einer anderen Abbildung verlangen.
+
+</Exercise>

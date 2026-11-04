@@ -1,0 +1,42 @@
+[
+  {
+    "focus": "create",
+    "key": "Home",
+    "selected": "create"
+  },
+  {
+    "focus": "evaluate",
+    "key": "ArrowDown",
+    "selected": "evaluate"
+  },
+  {
+    "focus": "analyze",
+    "key": "ArrowDown",
+    "selected": "analyze"
+  },
+  {
+    "focus": "apply",
+    "key": "ArrowDown",
+    "selected": "apply"
+  },
+  {
+    "focus": "understand",
+    "key": "ArrowDown",
+    "selected": "understand"
+  },
+  {
+    "focus": "remember",
+    "key": "ArrowDown",
+    "selected": "remember"
+  },
+  {
+    "focus": "understand",
+    "key": "ArrowUp",
+    "selected": "understand"
+  },
+  {
+    "focus": "remember",
+    "key": "End",
+    "selected": "remember"
+  }
+]

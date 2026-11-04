@@ -1,0 +1,98 @@
+{
+  "planSha256": "6326609093c502230c707fe355df2981f0bd5917e8f7b1e8703b39ab6ef6734c",
+  "content": [
+    {
+      "locale": "en",
+      "key": "learning-cycle",
+      "before": "myNotes/docs/egm/learning-teaching/before/en/learning-cycle.mdx",
+      "beforeSha256": "217c05116208fae898c3bc04f20936f359323c21815c7d9c2a272d2c5447fc8e",
+      "current": "myNotes/my_notes_web/src/content/lessons/en/learning/learning-cycle.mdx",
+      "currentSha256": "7b772ff89c71028297dbb18fed4afed4ec5079bb88532d4966dc0c9293891e4e"
+    },
+    {
+      "locale": "en",
+      "key": "bloom-and-purpose",
+      "before": "myNotes/docs/egm/learning-teaching/before/en/bloom-and-purpose.mdx",
+      "beforeSha256": "5335394a261f8165c6075338eaee554c2428aca7c560bbc3feade2b6f6fb748c",
+      "current": "myNotes/my_notes_web/src/content/lessons/en/learning/bloom-and-purpose.mdx",
+      "currentSha256": "e2696ee4b01081e4bf3eb442d395731759314ae3d52989c87a503a8b6643e7c6"
+    },
+    {
+      "locale": "en",
+      "key": "retrieval-and-spacing",
+      "before": "myNotes/docs/egm/learning-teaching/before/en/retrieval-and-spacing.mdx",
+      "beforeSha256": "cdcb956a7b2a5a380c8eb3c68d6419d8d31352d4635e10b8d725080eabe1b4f6",
+      "current": "myNotes/my_notes_web/src/content/lessons/en/learning/retrieval-and-spacing.mdx",
+      "currentSha256": "4342daa1f6f118cc1c56c2106ea22a4ff3c439a31ab3fe37538f34cd08a599e8"
+    },
+    {
+      "locale": "en",
+      "key": "topic-session",
+      "before": "myNotes/docs/egm/learning-teaching/before/en/topic-session.mdx",
+      "beforeSha256": "56ee3d1402271a87fe78c2b25fa5bb45db4f031dfda03a065dc0399e94fc136f",
+      "current": "myNotes/my_notes_web/src/content/lessons/en/learning/topic-session.mdx",
+      "currentSha256": "0a12200743274ece8d5d86bd169f856a2dafdfc9743f0053b076503a0f5f455c"
+    },
+    {
+      "locale": "en",
+      "key": "proof-workshop",
+      "before": "myNotes/docs/egm/learning-teaching/before/en/proof-workshop.mdx",
+      "beforeSha256": "daf02cc2a6de53d82c6a34fc95ec3392df27f018797ac0b2b9548a1e5c4a9d93",
+      "current": "myNotes/my_notes_web/src/content/lessons/en/learning/proof-workshop.mdx",
+      "currentSha256": "ff4fc38e2f3f581d9d5b98729d2d36f5aec01d9f2ad913a519086df867b90f37"
+    },
+    {
+      "locale": "de",
+      "key": "learning-cycle",
+      "before": "myNotes/docs/egm/learning-teaching/before/de/learning-cycle.mdx",
+      "beforeSha256": "1ec34dcc1414fbab4584fb84908be32fffdbebe7cfa8de9430cfd90553c15882",
+      "current": "myNotes/my_notes_web/src/content/lessons/de/learning/learning-cycle.mdx",
+      "currentSha256": "c683db5baabaacd6a33e7435e778659913b5fd54a6e057ee53e8dea040aae19f"
+    },
+    {
+      "locale": "de",
+      "key": "bloom-and-purpose",
+      "before": "myNotes/docs/egm/learning-teaching/before/de/bloom-and-purpose.mdx",
+      "beforeSha256": "df2e8c4503d1746fbd64e99fc9f7ae06b8923842f728a80b980c78914c575b88",
+      "current": "myNotes/my_notes_web/src/content/lessons/de/learning/bloom-and-purpose.mdx",
+      "currentSha256": "a5b4d9c3ce192ba04d0e89b8bdc74274b9a362bafc5731b00fe2ebb956f2c05b"
+    },
+    {
+      "locale": "de",
+      "key": "retrieval-and-spacing",
+      "before": "myNotes/docs/egm/learning-teaching/before/de/retrieval-and-spacing.mdx",
+      "beforeSha256": "5b301fe2f7521b0df487309e7b34725cf047367fecd37e0d73f1421669ad8803",
+      "current": "myNotes/my_notes_web/src/content/lessons/de/learning/retrieval-and-spacing.mdx",
+      "currentSha256": "28cfd183e136585588bcbc686f12001a09e4611d346be31f843b5796c3955223"
+    },
+    {
+      "locale": "de",
+      "key": "topic-session",
+      "before": "myNotes/docs/egm/learning-teaching/before/de/topic-session.mdx",
+      "beforeSha256": "7475d5f7b3bf745b05acd35a352fa53f6fd5f44c762f88c9d98a574d9ab323ad",
+      "current": "myNotes/my_notes_web/src/content/lessons/de/learning/topic-session.mdx",
+      "currentSha256": "a1cb3230bbba2752e3eaf1919a2380dc77441820bb49d1ce16e0ec68eecdecd7"
+    },
+    {
+      "locale": "de",
+      "key": "proof-workshop",
+      "before": "myNotes/docs/egm/learning-teaching/before/de/proof-workshop.mdx",
+      "beforeSha256": "9aa447d2486e21e834c1b0dde44d8698135d7d720d1ec6d7a1889a4d9f871402",
+      "current": "myNotes/my_notes_web/src/content/lessons/de/learning/proof-workshop.mdx",
+      "currentSha256": "590b405256616487164b102070fb40529627cf74a73f35c7b7c4a03b390f3413"
+    }
+  ],
+  "unchangedPresentationBefore": {
+    "src/components/LearningFigure.astro": "ce8477e4557b0c00dab427e71a2488526be14e4e6bf0901cbe55032542e89079",
+    "src/components/ProcessDiagram.astro": "e298ce11ee51c6468695fc5a3c7368361e30cd1c590b5d8a53331f60fc0f31a7",
+    "src/components/QuestionLens.astro": "5e93c9582dc24822205f6ccd16708eabb7822c585ff3f330b42c4dbfbc2fc51e",
+    "src/components/StudyTemplate.astro": "eff0a356bf1c3990fe861d5c9d0150644ef560a1d487a3f2398275dbba181c33",
+    "src/components/InterleavingPractice.astro": "51291b7598bb0e3a4e44e849ed26af5c46177b1c2b94bdb20fb8aab14ccab9a0",
+    "src/lib/learning/diagrams.ts": "4a1f24bdf2121f1d8cb3e197c7eb26e9bdf8486e9b61522108f5ab13f9da5ea9",
+    "src/lib/learning/templates.ts": "6a188a29ee97e6886db006e538dd68e71d12f437ffddd7b0fb4dc6da55b10463",
+    "src/lib/learning/mind-map-presets.ts": "6abbe734c1f9ec358805b9013066caf840ae1813d7823596399af6183ac4530e",
+    "src/lib/learning/questions.ts": "e6fe171dfe5a6e90641c00d29bcf549efba21facd656ea977be49c188385a535",
+    "src/lib/learning/mind-map.ts": "7f20fd6d8e4d06fb8d5f84e3bd8d3533d0f7273b64c16c86c8eeb2321240b5ab",
+    "src/components/interactive/MindMap.astro": "910fb227ded87ff80a3f721cec82a9e25f2e8f19b157418ae235be8030d80e91"
+  }
+}

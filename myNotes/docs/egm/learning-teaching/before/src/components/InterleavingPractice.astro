@@ -1,0 +1,71 @@
+---
+import { text } from '../lib/learning/diagrams';
+import MathText from './MathText.astro';
+import Math from './Math.astro';
+const locale = Astro.locals.locale || 'en';
+const t = (en: string, de: string) => text(en, de)[locale];
+const methods = [
+  { letter: 'A', name: t('Direct proof', 'Direkter Beweis'),
+    cue: t('Start from the definition and derive the result.', 'Von der Definition zum Ergebnis rechnen.'),
+    example: t('An odd integer plus 1 is even.', 'Eine ungerade ganze Zahl plus 1 ist gerade.'),
+    tex: '(2k+1)+1=2(k+1)' },
+  { letter: 'B', name: t('Counterexample', 'Gegenbeispiel'),
+    cue: t('One exception disproves a claim about every integer.', 'Eine Ausnahme widerlegt eine Aussage über alle ganzen Zahlen.'),
+    example: t('“Every even integer is divisible by 4” is false.', '„Jede gerade ganze Zahl ist durch 4 teilbar“ ist falsch.'),
+    tex: '6=2\\cdot3,\\qquad 6/4\\notin\\mathbb{Z}' },
+  { letter: 'C', name: t('Contraposition', 'Kontraposition'),
+    cue: t('For “if P, then Q”, prove “if not Q, then not P”.', 'Für „wenn P, dann Q“ zeige „wenn nicht Q, dann nicht P“.'),
+    example: t('If $n^2$ is even, n is even: show that odd n gives odd $n^2$.', 'Ist $n^2$ gerade, ist n gerade: Zeige, dass ungerades n ein ungerades Quadrat hat.'),
+    tex: '(2k+1)^2=2(2k^2+2k)+1' },
+];
+const tasks = [
+  { prompt: t('The square of an odd integer is odd. Prove it.', 'Das Quadrat einer ungeraden ganzen Zahl ist ungerade. Beweise es.'), method: 0,
+    reason: t('The definition gives a direct route: write $n = 2k + 1$. Expanding the square gives $2(2k^2 + 2k) + 1$, which is odd.', 'Die Definition liefert einen direkten Weg: Schreibe $n = 2k + 1$. Das Quadrat ist $2(2k^2 + 2k) + 1$, also ungerade.') },
+  { prompt: t('If $n^2$ is even, n is even. Prove it.', 'Ist $n^2$ gerade, dann ist n gerade. Beweise es.'), method: 2,
+    reason: t('Starting from $n^2 = 2m$ does not immediately tell us the form of n. Instead prove the contrapositive: if n is odd, $n^2$ is odd. The preceding result supplies exactly that argument.', 'Aus $n^2 = 2m$ folgt die Form von n nicht sofort. Beweise stattdessen die Kontraposition: Ist n ungerade, ist $n^2$ ungerade. Genau das zeigt das vorherige Ergebnis.') },
+  { prompt: t('Every odd integer is prime. True or false? Justify.', 'Jede ungerade ganze Zahl ist eine Primzahl. Richtig oder falsch? Begründe.'), method: 1,
+    reason: t('One exception is enough: 9 is odd, but $9 = 3 \\times 3$, so it is not prime. More confirming examples could never prove the universal claim.', 'Eine Ausnahme reicht: 9 ist ungerade, aber wegen $9 = 3 \\times 3$ keine Primzahl. Weitere bestätigende Beispiele würden die allgemeine Aussage nicht beweisen.') },
+];
+---
+<h3>{t('One topic, three ways to reason', 'Ein Thema, drei Denkwege')}</h3>
+<p>{t('Added example: reasoning about integers. A, B, and C label related task families and their useful methods. Here k and n are integers.', 'Ergänztes Beispiel: Argumentieren über ganze Zahlen. A, B und C kennzeichnen verwandte Aufgabenfamilien und passende Methoden. Dabei sind k und n ganze Zahlen.')}</p>
+<div class="practice-methods">
+  {methods.map(method => <section class={`practice-method type-${method.letter}`}>
+    <h4><span class="practice-letter">{method.letter}</span> {method.name}</h4>
+    <p><MathText text={method.cue} /></p><p><MathText text={method.example} /></p><Math tex={method.tex} display />
+  </section>)}
+</div>
+<section class="practice-schedule">
+  <h3>{t('Blocked: the order gives away the method', 'Geblockt: Die Reihenfolge verrät die Methode')}</h3>
+  <div class="practice-strip">{['A','A','A','B','B','B','C','C','C'].map(letter => <span class={`type-${letter}`} title={methods.find(m => m.letter === letter)?.name}>{letter}</span>)}</div>
+  <p>{t('Read → apply the named method. Useful when first learning how each method works.', 'Lesen → vorgegebene Methode anwenden. Hilfreich, um die einzelnen Methoden kennenzulernen.')}</p>
+</section>
+<section class="practice-schedule">
+  <h3>{t('Interleaved: the problem guides your choice', 'Verschachtelt: Die Aufgabe leitet deine Wahl')}</h3>
+  <div class="practice-strip">{['A','C','B','C','A','B','A','B','C'].map(letter => <span class={`type-${letter}`} title={methods.find(m => m.letter === letter)?.name}>{letter}</span>)}</div>
+  <p>{t('Read → identify the claim → choose a method → justify. Same mix of tasks; a different decision each time. The letters show the plan, but are removed from the learner’s problems.', 'Lesen → Aussage erkennen → Methode wählen → begründen. Dieselben Aufgabenanteile, aber jedes Mal neu entscheiden. Die Buchstaben zeigen den Plan; auf den Aufgaben für Lernende fehlen sie.')}</p>
+</section>
+<h3>{t('Try the choice before revealing a route', 'Wähle selbst, bevor du einen Lösungsweg aufdeckst')}</h3>
+<ol class="practice-tasks">
+  {tasks.map(task => <li><p><MathText text={task.prompt} /></p><details>
+    <summary>{t('Reveal a method and why it fits', 'Methode und Begründung aufdecken')}</summary>
+    <p><strong>{methods[task.method].letter} · {methods[task.method].name}.</strong> <MathText text={task.reason} /></p>
+  </details></li>)}
+</ol>
+<figcaption>{t('What changes: you practise recognizing when a method applies, as well as carrying it out. These are illustrative proof tasks, not the tasks used in the studies below. More than one valid approach may exist.', 'Was sich ändert: Du übst zu erkennen, wann eine Methode passt, und sie auszuführen. Diese Beweisaufgaben dienen der Veranschaulichung; sie stammen nicht aus den unten genannten Studien. Mehrere Lösungswege können gültig sein.')}</figcaption>
+
+<style>
+  .practice-methods {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-4,16px);margin:1.5rem 0}
+  .practice-method {border-left:3px solid var(--blue);padding:0 1rem;min-width:0}
+  .type-B {--method-color:var(--accent);border-color:var(--accent)}
+  .type-C {--method-color:var(--purple);border-color:var(--purple)}
+  h4 {margin:0;font-size:1rem;color:var(--method-color,var(--blue))}
+  .practice-letter {display:inline-block;margin-right:.5rem}
+  .practice-method p {margin:.4rem 0}
+  .practice-schedule {border-top:1px solid var(--line);padding-top:1rem;margin-top:1.5rem}
+  .practice-tasks {padding-left:1.5rem}
+  .practice-tasks li {padding-left:.25rem;margin:1.2rem 0}
+  .practice-tasks summary {cursor:pointer;min-height:44px;padding:.5rem 0;color:var(--accent);line-height:1.6}
+  .practice-tasks details p {border-left:2px solid var(--line);padding-left:1rem}
+  @media(max-width:650px) {.practice-methods {grid-template-columns:1fr}}
+</style>

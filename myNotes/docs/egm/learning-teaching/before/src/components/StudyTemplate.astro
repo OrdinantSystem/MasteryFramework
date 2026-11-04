@@ -1,0 +1,7 @@
+---
+import {studyTemplates} from '../lib/learning/templates';
+import {url} from '../lib/content';
+interface Props {kind:'session'|'concept'|'errors'}
+const {kind}=Astro.props,l=Astro.locals.locale||'en',entry=studyTemplates[l][kind];
+---
+<details class="study-template"><summary>{entry[0].replace(/^# /,'')}</summary><p><a href={url(`templates/${kind}.${l}.md`)} download>{{en:'Download Markdown template',de:'Markdown-Vorlage herunterladen'}[l]} ↓</a></p><pre><code>{entry.join('\n\n')}</code></pre></details>

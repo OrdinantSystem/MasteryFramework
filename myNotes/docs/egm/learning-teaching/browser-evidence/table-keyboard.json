@@ -1,0 +1,30 @@
+[
+  {
+    "lang": "en",
+    "before": {
+      "left": 0,
+      "sw": 626,
+      "w": 337
+    },
+    "after": {
+      "focused": true,
+      "left": 40,
+      "sw": 626,
+      "w": 337
+    }
+  },
+  {
+    "lang": "de",
+    "before": {
+      "left": 0,
+      "sw": 664,
+      "w": 337
+    },
+    "after": {
+      "focused": true,
+      "left": 40,
+      "sw": 664,
+      "w": 337
+    }
+  }
+]

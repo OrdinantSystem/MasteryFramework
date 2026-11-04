@@ -39,8 +39,34 @@ Die Quellen enthalten Beispiele für 75, 90 und 120 Minuten. Keine Dauer ist vor
 
 <LearningFigure kind="handoff" />
 
+Die allgemeinen Schritte oben lassen sich auf eine vertraute Frage aus deinem Fach anwenden. Die folgende Beweissitzung ist ein mathematisches Beispiel. Blooms alltagsnaher Aufgabenvergleich hilft beim Benennen der Anforderungen; das Konvergenzbeispiel musst du dafür nicht bearbeiten.
+
 ## Beispielsitzung
 
-Schreibe zuerst die Definitionen von geraden und ungeraden ganzen Zahlen auf. Fehlen sie, wiederhole sie vor dem Beweisen. Erarbeite dann, warum das Quadrat einer ungeraden Zahl ungerade ist. Verberge die Lösung und rekonstruiere sie. Versuche anschließend: „Ist das Quadrat einer ganzen Zahl gerade, so ist die Zahl gerade.“ Frage zunächst nicht nach dem Namen der Methode.
+{/* Vollständige Referenzbegründungen für die vorhandenen Paritätsaufgaben ergänzt. */}
 
-Erkläre zum Abschluss, warum 6 die Behauptung „jede gerade ganze Zahl ist durch 4 teilbar“ widerlegt. Halte rekonstruierten Beweis und neue Aufgabe getrennt fest, einschließlich der Hinweise. Eine spätere Sitzung kann mit einer veränderten Paritätsaufgabe beginnen. Das liefert mehr Nachweise als die Arbeit direkt nach dem Beispiel.
+Eine ganze Zahl heißt **gerade**, wenn sie für eine ganze Zahl $k$ die Form $2k$ hat, und **ungerade**, wenn sie die Form $2k+1$ hat. Jede ganze Zahl ist genau eines von beidem. Schreibe zuerst diese Definitionen auf; fehlen sie, erarbeite sie vor dem Beweisversuch.
+
+Hier ist der ausgearbeitete Beweis zum ungeraden Quadrat. Wähle eine beliebige ungerade ganze Zahl $n=2k+1$. Dann ist $n^2=4k^2+4k+1=2(2k^2+2k)+1$. Weil $2k^2+2k$ ganzzahlig ist, hat das Quadrat die Form zweimal eine ganze Zahl plus eins und ist daher ungerade. Verberge den Beweis und rekonstruiere ihn. Notiere dies als Rekonstruktion nach dem Lernen.
+
+Du hast nun einen eng verwandten Beweis gesehen. Halte das getrennt von Hinweisen beim folgenden veränderten unmittelbaren Anwendungsversuch fest; er belegt keine unbekannte Strategiewahl. Frage zunächst nicht nach dem Namen der Methode.
+
+<Exercise question="Ist das Quadrat einer ganzen Zahl gerade, so ist die Zahl gerade. Beweise die Aussage.">
+
+Angenommen, die Zahl wäre ungerade. Der ausgearbeitete Beweis zeigt, dass ihr Quadrat dann ungerade wäre. Das widerspricht der Voraussetzung, dass es gerade ist. Weil jede ganze Zahl genau eines von ungerade oder gerade ist, muss die Zahl gerade sein. Das ist Kontraposition: Wir nutzen „ungerade Zahl ergibt ungerades Quadrat“ für „gerades Quadrat ergibt gerade Zahl“.
+
+</Exercise>
+
+<Exercise question="Warum widerlegt 6 die Behauptung ‚jede gerade ganze Zahl ist durch 4 teilbar‘?">
+
+$6=2\cdot3$ ist gerade, aber $6/4=3/2$ ist keine ganze Zahl; also ist 6 nicht durch 4 teilbar. Ein erlaubter Wert erfüllt die Voraussetzung und verletzt die Folgerung. Das widerlegt die allgemeine Behauptung.
+
+</Exercise>
+
+Lege für eine spätere Sitzung diese veränderte Paritätsaufgabe bereit. Notiere Zeitpunkt und Hilfe. Öffnest du die Antwort vorher, wird späteres Wiederholen zur Rekonstruktion; wähle für eine selbstständige Prüfung dann eine andere ungesehene Aufgabe.
+
+<Exercise question="Kann das Quadrat einer geraden ganzen Zahl ungerade sein? Begründe für jede gerade ganze Zahl, nicht nur an einem Beispiel.">
+
+Nein. Schreibe eine beliebige gerade ganze Zahl als $n=2k$ mit ganzzahligem $k$. Dann ist $n^2=4k^2=2(2k^2)$. Weil $2k^2$ ganzzahlig ist, ist das Quadrat gerade und kann daher nicht ungerade sein.
+
+</Exercise>

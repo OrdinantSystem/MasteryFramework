@@ -1,0 +1,83 @@
+---
+import {validateMindMap,mapCopy as c,type MindMapData} from '../../lib/learning/mind-map';
+import {mindMapPresets,type MindMapPreset} from '../../lib/learning/mind-map-presets';
+interface Props {id:string;preset?:MindMapPreset;data?:MindMapData}
+const {id,preset='study-session',data:custom}=Astro.props;
+if(!/^[a-z][a-z0-9-]*$/.test(id))throw new Error('MindMap needs a unique slug id');
+const data=validateMindMap(custom??mindMapPresets[preset]),l=Astro.locals.locale||'en';
+const height=data.height??620;
+const node=(id:string)=>data.nodes.find(n=>n.id===id)!;
+---
+<figure class="mind-map" id={id} data-stage="2" style={`--map-height:${height};--node-height:${7600/height}%;`}>
+ <div class="figure-label">{data.title[l]}</div><p class="mind-map-question">{data.question[l]}</p>
+ <div class="mind-map-controls" hidden role="group" aria-label={c.stages[l]}>
+  {c.labels.map((label,i)=><button type="button" data-map-stage={i} aria-pressed={i===2?'true':'false'}>{label[l]}</button>)}
+  <button type="button" data-map-reset>{c.reset[l]}</button>
+ </div>
+ <p class="mind-map-stage" aria-live="polite">{c.notes[2][l]}</p>
+ <div class="mind-map-board">
+  <svg viewBox={`0 0 900 ${height}`} aria-hidden="true" class="mind-map-lines">
+   <defs><marker id={`${id}-arrow`} markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M1 1 L7 4 L1 7" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+   {data.edges.map((e,i)=><g data-map-edge={i} data-kind={e.kind} data-from={e.from} data-to={e.to}><path d={e.path} marker-end={`url(#${id}-arrow)`}/><foreignObject x={e.x-100} y={e.y-28} width="200" height="56"><div class="mind-map-edge-label">{e.label[l]}</div></foreignObject></g>)}
+  </svg>
+  {data.nodes.map(n=><div class="mind-map-node" style={`--x:${n.x/9}%;--y:${n.y/height*100}%;`} data-map-node={n.id}><button type="button" disabled aria-pressed="false" aria-controls={`${id}-detail-${n.id}`}>{n.label[l]}</button></div>)}
+ </div>
+ <p class="mind-map-instruction" hidden>{c.instruction[l]}</p>
+ <div class="mind-map-details">
+  {data.nodes.map(n=><section id={`${id}-detail-${n.id}`} data-map-detail={n.id}><h3>{n.label[l]}</h3><p>{n.detail[l]}</p></section>)}
+ </div>
+ <details class="mind-map-connections" open><summary>{c.relations[l]}</summary><ul>
+ {data.edges.map((e,i)=><li data-map-relation={i} data-kind={e.kind} data-from={e.from} data-to={e.to}><strong>{node(e.from).label[l]} → {e.label[l]} → {node(e.to).label[l]}</strong><small>{e.kind==='cross'?c.cross[l]:c.branch[l]}</small><p>{e.reason[l]}</p></li>)}
+ </ul></details>
+ <figcaption>{data.caption[l]}</figcaption>
+ <script type="application/json" data-map-copy set:html={JSON.stringify(c.notes.map(n=>n[l])).replace(/</g,'\\u003c')}/>
+</figure>
+<script>
+for(const root of document.querySelectorAll<HTMLElement>('.mind-map')) {
+ const notes=JSON.parse(root.querySelector('[data-map-copy]')!.textContent!);
+ const stages=[...root.querySelectorAll<HTMLButtonElement>('[data-map-stage]')];
+ const nodes=[...root.querySelectorAll<HTMLButtonElement>('[data-map-node] button')];
+ let stage=2,selected='';
+ const render=()=>{
+  root.dataset.stage=String(stage);
+  root.querySelector('.mind-map-stage')!.textContent=notes[stage];
+  stages.forEach((b,i)=>b.setAttribute('aria-pressed',String(i===stage)));
+  nodes.forEach(b=>b.setAttribute('aria-pressed',String(b.parentElement!.dataset.mapNode===selected)));
+  root.querySelectorAll<HTMLElement>('[data-map-detail]').forEach(p=>p.hidden=!!selected&&p.dataset.mapDetail!==selected);
+  root.querySelectorAll<HTMLElement>('[data-map-edge], [data-map-relation]').forEach(e=>{
+   const related=!selected||e.dataset.from===selected||e.dataset.to===selected;
+   e.classList.toggle('is-muted',!related);
+  });
+ };
+ stages.forEach((b,i)=>b.addEventListener('click',()=>{stage=i;render();}));
+ nodes.forEach(b=>{b.disabled=false;b.addEventListener('click',()=>{const id=b.parentElement!.dataset.mapNode!;selected=selected===id?'':id;render();});});
+ root.querySelector('[data-map-reset]')!.addEventListener('click',()=>{stage=2;selected='';render();});
+ root.querySelector<HTMLElement>('.mind-map-controls')!.hidden=false;
+ root.querySelector<HTMLElement>('.mind-map-instruction')!.hidden=false;
+ render();
+}
+</script>
+<style>
+.mind-map{container-type:inline-size;margin:var(--space-6) 0;padding:var(--space-5);border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.mind-map-question{font-weight:600}.mind-map-controls{display:flex;flex-wrap:wrap;gap:8px}.mind-map-controls[hidden]{display:none}
+.mind-map button{font:inherit;color:var(--text);background:var(--surface);border:1px solid var(--line);border-radius:4px;min-height:44px;padding:8px 12px;cursor:pointer}
+.mind-map button[aria-pressed=true]{border-color:var(--accent);background:var(--tint);color:var(--accent)}
+.mind-map button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}.mind-map button:disabled{cursor:default;opacity:1}
+.mind-map-stage,.mind-map-instruction{font-size:13px;color:var(--secondary)}
+.mind-map-board{position:relative;aspect-ratio:900/var(--map-height)}.mind-map-lines{position:absolute;width:100%;height:100%;overflow:visible}
+.mind-map-lines path{fill:none;stroke:var(--accent);stroke-width:1.6}.mind-map-lines [data-kind=cross] path{stroke:var(--purple);stroke-dasharray:5 4}
+.mind-map-lines marker path{stroke:context-stroke;stroke-dasharray:none}
+.mind-map-edge-label{display:flex;align-items:center;justify-content:center;min-height:56px;text-align:center;font-size:16px;line-height:1.25;color:var(--secondary);background:var(--panel);border-radius:4px}
+.mind-map-edge-label::first-line{background:var(--panel)}
+.mind-map-node{position:absolute;left:var(--x);top:var(--y);width:20%;height:var(--node-height);display:flex}
+.mind-map-node button{width:100%;padding:6px;font-size:14px;line-height:1.3;border-color:var(--accent);background:var(--panel)}
+.mind-map-node:first-of-type button{background:var(--tint)}
+.mind-map-details{border-top:1px solid var(--line);padding-top:12px}.mind-map-details section{margin-bottom:16px}.mind-map-details h3{font-size:16px;margin:0}.mind-map-details p{margin:4px 0;font-size:14px}
+.mind-map-connections summary{cursor:pointer;min-height:44px;padding:8px 0;font-weight:600}.mind-map-connections li{margin:16px 0}.mind-map-connections strong{font-size:14px}.mind-map-connections small{display:block;color:var(--secondary)}.mind-map-connections p{margin:4px 0;font-size:14px}
+.mind-map-lines .is-muted path{opacity:.3}.mind-map-lines .is-muted .mind-map-edge-label{color:var(--muted)}.mind-map-connections li:not(.is-muted){border-left:2px solid var(--accent);padding-left:12px}
+.mind-map[data-stage="0"] .mind-map-lines{visibility:hidden}.mind-map[data-stage="1"] [data-map-edge][data-kind=cross]{visibility:hidden}.mind-map[data-stage="1"] .mind-map-edge-label{visibility:hidden}
+@media(max-width:700px){.mind-map{padding:16px}.mind-map-board{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.mind-map-node{position:static;width:auto;height:auto;min-height:64px}.mind-map-node:first-of-type{grid-column:1/-1}.mind-map-lines{display:none}.mind-map-node button{font-size:14px}.mind-map-connections ul{padding-left:20px}}
+@container(max-width:650px){.mind-map{padding:16px}.mind-map-board{aspect-ratio:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}.mind-map-node{position:static;width:auto;height:auto;min-height:64px}.mind-map-node:first-of-type{grid-column:1/-1}.mind-map-lines{display:none}.mind-map-node button{font-size:14px}.mind-map-connections ul{padding-left:20px}}
+
+@media print{.mind-map-controls,.mind-map-instruction{display:none}.mind-map-details section[hidden]{display:block}.mind-map .is-muted{opacity:1}}
+</style>

@@ -1,0 +1,1170 @@
+[
+  {
+    "key": "learning-cycle",
+    "lang": "en",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "light",
+      "title": "Learning Methodology",
+      "w": 1429
+    },
+    "after": {
+      "open": [],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "en",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "dark",
+      "title": "Learning Methodology",
+      "w": 1429
+    },
+    "after": {
+      "open": [],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "en",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "light",
+      "title": "Bloom’s Taxonomy",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "en",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "dark",
+      "title": "Bloom’s Taxonomy",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "en",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "light",
+      "title": "Retrieval and Spaced Practice",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "en",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "dark",
+      "title": "Retrieval and Spaced Practice",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "en",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "light",
+      "title": "Study Sessions",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "en",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "dark",
+      "title": "Study Sessions",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "en",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "light",
+      "title": "Proof Practice",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "en",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "dark",
+      "title": "Proof Practice",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "de",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "light",
+      "title": "Lernmethodik",
+      "w": 1429
+    },
+    "after": {
+      "open": [],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "de",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "dark",
+      "title": "Lernmethodik",
+      "w": 1429
+    },
+    "after": {
+      "open": [],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "de",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "light",
+      "title": "Blooms Taxonomie",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "de",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "dark",
+      "title": "Blooms Taxonomie",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "de",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "light",
+      "title": "Abruf und verteiltes Lernen",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "de",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [
+        {
+          "sw": 900,
+          "tab": 0,
+          "w": 900
+        }
+      ],
+      "theme": "dark",
+      "title": "Abruf und verteiltes Lernen",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "de",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "light",
+      "title": "Lernsitzungen",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "de",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "dark",
+      "title": "Lernsitzungen",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "de",
+    "width": 1440,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "light",
+      "title": "Beweisübungen",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "de",
+    "width": 1440,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 1429,
+      "tables": [],
+      "theme": "dark",
+      "title": "Beweisübungen",
+      "w": 1429
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 1429,
+      "w": 1429
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "en",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "light",
+      "title": "Learning Methodology",
+      "w": 379
+    },
+    "after": {
+      "open": [],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "en",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "dark",
+      "title": "Learning Methodology",
+      "w": 379
+    },
+    "after": {
+      "open": [],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "en",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 626,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "light",
+      "title": "Bloom’s Taxonomy",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "en",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 626,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "dark",
+      "title": "Bloom’s Taxonomy",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "en",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 741,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "light",
+      "title": "Retrieval and Spaced Practice",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "en",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 741,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "dark",
+      "title": "Retrieval and Spaced Practice",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "en",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "light",
+      "title": "Study Sessions",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "en",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "dark",
+      "title": "Study Sessions",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "en",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "light",
+      "title": "Proof Practice",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "en",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "en",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "dark",
+      "title": "Proof Practice",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "de",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "light",
+      "title": "Lernmethodik",
+      "w": 379
+    },
+    "after": {
+      "open": [],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "de",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "dark",
+      "title": "Lernmethodik",
+      "w": 379
+    },
+    "after": {
+      "open": [],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "de",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 664,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "light",
+      "title": "Blooms Taxonomie",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "de",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 664,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "dark",
+      "title": "Blooms Taxonomie",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "de",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 911,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "light",
+      "title": "Abruf und verteiltes Lernen",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "de",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [
+        {
+          "sw": 911,
+          "tab": 0,
+          "w": 337
+        }
+      ],
+      "theme": "dark",
+      "title": "Abruf und verteiltes Lernen",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "de",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "light",
+      "title": "Lernsitzungen",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "topic-session",
+    "lang": "de",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "dark",
+      "title": "Lernsitzungen",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "de",
+    "width": 390,
+    "theme": "light",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "light",
+      "title": "Beweisübungen",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "de",
+    "width": 390,
+    "theme": "dark",
+    "before": {
+      "answers": [
+        false,
+        false,
+        false
+      ],
+      "h1": 1,
+      "lang": "de",
+      "mathErrors": 0,
+      "sw": 379,
+      "tables": [],
+      "theme": "dark",
+      "title": "Beweisübungen",
+      "w": 379
+    },
+    "after": {
+      "open": [
+        true,
+        true,
+        true
+      ],
+      "sw": 379,
+      "w": 379
+    }
+  }
+]

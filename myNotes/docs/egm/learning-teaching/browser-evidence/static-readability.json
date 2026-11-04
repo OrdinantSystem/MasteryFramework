@@ -1,0 +1,182 @@
+[
+  {
+    "key": "learning-cycle",
+    "lang": "en",
+    "answers": 0,
+    "centralParagraphs": 10,
+    "h1": "Learning Methodology",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "en",
+    "answers": 1,
+    "centralParagraphs": 8,
+    "h1": "Bloom’s Taxonomy",
+    "panels": [
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-remember"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-understand"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-apply"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-analyze"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-evaluate"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-create"
+      }
+    ],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "en",
+    "answers": 1,
+    "centralParagraphs": 11,
+    "h1": "Retrieval and Spaced Practice",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "topic-session",
+    "lang": "en",
+    "answers": 3,
+    "centralParagraphs": 8,
+    "h1": "Study Sessions",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "en",
+    "answers": 3,
+    "centralParagraphs": 7,
+    "h1": "Proof Practice",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "learning-cycle",
+    "lang": "de",
+    "answers": 0,
+    "centralParagraphs": 10,
+    "h1": "Lernmethodik",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379
+  },
+  {
+    "key": "bloom-and-purpose",
+    "lang": "de",
+    "answers": 1,
+    "centralParagraphs": 8,
+    "h1": "Blooms Taxonomie",
+    "panels": [
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-remember"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-understand"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-apply"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-analyze"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-evaluate"
+      },
+      {
+        "display": "block",
+        "hidden": false,
+        "id": "bloom-taxonomy-create"
+      }
+    ],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "retrieval-and-spacing",
+    "lang": "de",
+    "answers": 1,
+    "centralParagraphs": 11,
+    "h1": "Abruf und verteiltes Lernen",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "topic-session",
+    "lang": "de",
+    "answers": 3,
+    "centralParagraphs": 8,
+    "h1": "Lernsitzungen",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  },
+  {
+    "key": "proof-workshop",
+    "lang": "de",
+    "answers": 3,
+    "centralParagraphs": 7,
+    "h1": "Beweisübungen",
+    "panels": [],
+    "scripts": 0,
+    "sw": 379,
+    "w": 379,
+    "nativeAnswerOpened": true
+  }
+]

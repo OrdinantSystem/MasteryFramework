@@ -1,0 +1,176 @@
+{
+  "phase": "complete",
+  "oneTimeInventory": [
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/en/learning/learning-cycle.mdx",
+      "oldH2": 4,
+      "preservedCompleteOldExercises": 0,
+      "preservedGraphicInvocations": 2,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/en/learning/bloom-and-purpose.mdx",
+      "oldH2": 3,
+      "preservedCompleteOldExercises": 1,
+      "preservedGraphicInvocations": 2,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/en/learning/retrieval-and-spacing.mdx",
+      "oldH2": 4,
+      "preservedCompleteOldExercises": 0,
+      "preservedGraphicInvocations": 1,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/en/learning/topic-session.mdx",
+      "oldH2": 4,
+      "preservedCompleteOldExercises": 0,
+      "preservedGraphicInvocations": 1,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/en/learning/proof-workshop.mdx",
+      "oldH2": 3,
+      "preservedCompleteOldExercises": 1,
+      "preservedGraphicInvocations": 1,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/de/learning/learning-cycle.mdx",
+      "oldH2": 4,
+      "preservedCompleteOldExercises": 0,
+      "preservedGraphicInvocations": 2,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/de/learning/bloom-and-purpose.mdx",
+      "oldH2": 3,
+      "preservedCompleteOldExercises": 1,
+      "preservedGraphicInvocations": 2,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/de/learning/retrieval-and-spacing.mdx",
+      "oldH2": 4,
+      "preservedCompleteOldExercises": 0,
+      "preservedGraphicInvocations": 1,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/de/learning/topic-session.mdx",
+      "oldH2": 4,
+      "preservedCompleteOldExercises": 0,
+      "preservedGraphicInvocations": 1,
+      "metadataExact": true
+    },
+    {
+      "path": "myNotes/my_notes_web/src/content/lessons/de/learning/proof-workshop.mdx",
+      "oldH2": 3,
+      "preservedCompleteOldExercises": 1,
+      "preservedGraphicInvocations": 1,
+      "metadataExact": true
+    }
+  ],
+  "untouchedLearningLocaleFiles": 24,
+  "unexpectedTrackedDifferences": [],
+  "sourceRoleReview": "Complete EN/DE before/after and preservation source reviews accepted final versions; see acceptance.json.",
+  "verificationRuns": [
+    {
+      "kind": "production build",
+      "node": "24.22.1",
+      "scope": "initial root",
+      "status": "passed",
+      "log": "browser-evidence/build-root-initial.log"
+    },
+    {
+      "kind": "production build",
+      "node": "24.22.1",
+      "scope": "final /MyNotes prefix",
+      "status": "passed",
+      "log": "browser-evidence/build-prefix.log"
+    },
+    {
+      "kind": "production build",
+      "node": "24.22.1",
+      "scope": "restored final root",
+      "status": "passed",
+      "log": "browser-evidence/build-root-final.log"
+    }
+  ],
+  "finalContentSha256": {
+    "myNotes/my_notes_web/src/content/lessons/en/learning/learning-cycle.mdx": "7b772ff89c71028297dbb18fed4afed4ec5079bb88532d4966dc0c9293891e4e",
+    "myNotes/my_notes_web/src/content/lessons/en/learning/bloom-and-purpose.mdx": "e2696ee4b01081e4bf3eb442d395731759314ae3d52989c87a503a8b6643e7c6",
+    "myNotes/my_notes_web/src/content/lessons/en/learning/retrieval-and-spacing.mdx": "4342daa1f6f118cc1c56c2106ea22a4ff3c439a31ab3fe37538f34cd08a599e8",
+    "myNotes/my_notes_web/src/content/lessons/en/learning/topic-session.mdx": "0a12200743274ece8d5d86bd169f856a2dafdfc9743f0053b076503a0f5f455c",
+    "myNotes/my_notes_web/src/content/lessons/en/learning/proof-workshop.mdx": "4a661eb3924bc39589750740755981bd40fc2c9eb8393eb95498888dffc2c3c1",
+    "myNotes/my_notes_web/src/content/lessons/de/learning/learning-cycle.mdx": "c683db5baabaacd6a33e7435e778659913b5fd54a6e057ee53e8dea040aae19f",
+    "myNotes/my_notes_web/src/content/lessons/de/learning/bloom-and-purpose.mdx": "a5b4d9c3ce192ba04d0e89b8bdc74274b9a362bafc5731b00fe2ebb956f2c05b",
+    "myNotes/my_notes_web/src/content/lessons/de/learning/retrieval-and-spacing.mdx": "28cfd183e136585588bcbc686f12001a09e4611d346be31f843b5796c3955223",
+    "myNotes/my_notes_web/src/content/lessons/de/learning/topic-session.mdx": "a1cb3230bbba2752e3eaf1919a2380dc77441820bb49d1ce16e0ec68eecdecd7",
+    "myNotes/my_notes_web/src/content/lessons/de/learning/proof-workshop.mdx": "0d3375c7def46eb40231ffa36dcb5c7b3341ce6964530fe36085a4256279a5c9"
+  },
+  "output": {
+    "htmlDocuments": 195,
+    "searchEntries": 110,
+    "languages": [
+      "en",
+      "de"
+    ],
+    "checkedLinksAssets": 13954,
+    "texAnnotations": 4599,
+    "errors": 0,
+    "warnings": 0,
+    "existingHints": 2
+  },
+  "browser": {
+    "finalUniqueStates": 40,
+    "stateFile": "browser-evidence/root-states.json",
+    "initialPreRepairStatesFile": "browser-evidence/root-states-initial.json",
+    "scriptFreeCopies": 10,
+    "staticFile": "browser-evidence/static-readability.json",
+    "keyboard": [
+      "native exercise Space",
+      "lens Home/End/Up/Down EN",
+      "lens Home/Tab/End DE",
+      "compact EN/DE table ArrowRight 0 to 40px"
+    ],
+    "prefixFile": "browser-evidence/prefix-flow.json",
+    "viewportReset": true,
+    "taskServersStopped": true
+  },
+  "limitations": [
+    "No learner trials or learning-outcome claims",
+    "No human translation/mathematical certification",
+    "No physical touch/pen or screen-reader audit",
+    "Primary abstracts only for new research claims",
+    "Private learning originals unavailable; no new certification of transcript claims",
+    "Fresh conversation isolation does not prove host-instruction/filesystem isolation"
+  ],
+  "finalScopeCheck": {
+    "baselineTrackedFiles": 600,
+    "changedTrackedFiles": 14,
+    "allowedChangedPaths": [
+      "myNotes/README.md",
+      "myNotes/docs/context.md",
+      "myNotes/docs/learning-teaching.md",
+      "myNotes/my_notes_web/VERIFICATION.md",
+      "myNotes/my_notes_web/src/content/lessons/de/learning/bloom-and-purpose.mdx",
+      "myNotes/my_notes_web/src/content/lessons/de/learning/learning-cycle.mdx",
+      "myNotes/my_notes_web/src/content/lessons/de/learning/proof-workshop.mdx",
+      "myNotes/my_notes_web/src/content/lessons/de/learning/retrieval-and-spacing.mdx",
+      "myNotes/my_notes_web/src/content/lessons/de/learning/topic-session.mdx",
+      "myNotes/my_notes_web/src/content/lessons/en/learning/bloom-and-purpose.mdx",
+      "myNotes/my_notes_web/src/content/lessons/en/learning/learning-cycle.mdx",
+      "myNotes/my_notes_web/src/content/lessons/en/learning/proof-workshop.mdx",
+      "myNotes/my_notes_web/src/content/lessons/en/learning/retrieval-and-spacing.mdx",
+      "myNotes/my_notes_web/src/content/lessons/en/learning/topic-session.mdx"
+    ],
+    "unexpectedDifferences": [],
+    "unchangedHead": "48c2db0679d787eb66f67c18a2dbd5e9b59ee106",
+    "snapshotHashesExact": true,
+    "sharedSourceHashesExact": true,
+    "finalReviewHashesExact": true,
+    "normalRootOutputRestored": true
+  }
+}

@@ -16,6 +16,7 @@ myNotes is a static, multilingual university learning archive. Its approved desi
 | Review the Analysis visual teaching pass | [Lesson audit and interaction specifications](docs/analysis-visuals.md) |
 | Maintain first-semester Analysis refinements | [Active teaching and preservation contract](docs/analysis-teaching.md) |
 | Reuse the Analysis I improvement process | [Teaching improvement history and method](docs/history/analysis-i-teaching-retrospective.md) |
+| Maintain Learning & Teaching or reuse its EGM pass | [Active methodology guide](docs/learning-teaching.md), [audit, reviews and retrospective](docs/egm/learning-teaching/retrospective.md) |
 | Change navigation, themes, search, or deployment | [Development](docs/development.md) |
 | Resume in a future session | [Project context](docs/context.md) |
 | Understand prior decisions | [Decisions](docs/decisions.md), [Brilliant research](docs/interactive-learning-analysis.md) |

@@ -1,0 +1,50 @@
+---
+course: "learning"
+chapter: "learning-practice"
+sourceId: "learning-protocol"
+sourcePages: []
+sourceLocations: ["03-agent-prompts/01-Master-Tutor-Prompt.md", "03-agent-prompts/02-Task-Prompts.md"]
+locale: "de"
+title: "Lernbegleitung und KI"
+navTitle: "Lernbegleitung und KI"
+description: "Quellenkonventionen, Aufgaben des Tutors und wiederverwendbare Prompts."
+order: 11
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["proof-workshop", "diagnose-and-repair"]
+thumbnail: "tutor"
+---
+
+## Verantwortlichkeiten
+
+Bringe ein Ziel, verfügbare Quellen und eine ehrliche Beschreibung deiner offenen Fragen mit. Der Tutor hilft beim Ordnen der Aufgaben, Anpassen der Schwierigkeit und Prüfen der Argumentation. Du brauchst weiterhin Raum für eigene Entscheidungen und Versuche.
+
+Kursunterlagen bestimmen kursbezogene Definitionen und Konventionen. Bitte die KI, Quellenaussagen von eigenen Erläuterungen zu trennen und fehlende Quellen oder frühere Sitzungen offenzulegen. Sie darf keine Belege erfinden, unbekannte Fortschritte „erinnern“ oder unterstützte Arbeit als selbstständig beschreiben. Diese Website erklärt das externe Gespräch; sie verbindet sich weder mit einem Tutor noch sammelt sie Antworten.
+
+## Tutor-Prompt
+
+Kopiere dies in dein gewähltes Tutorgespräch und ergänze den Kontext:
+
+```text
+Thema: [Thema]
+Ziel: [was ich selbstständig können möchte]
+Niveau und Zeit: [Niveau; verfügbare Zeit]
+Quellen und bekannte Lücken: [Quellen; Lücken oder unbekannt]
+
+Beginne mit einer kurzen Diagnose ohne Hilfe. Stelle jeweils eine sinnvolle Frage und warte auf meine Antwort. Lass mich eine Aufgabe vor der Lösung versuchen, außer wenn eine Grundlage erklärt werden muss oder ich um eine Erklärung bitte.
+
+Nutze H0 für keinen Hinweis, H1 für eine strategische Frage, H2 für einen relevanten Begriff/Satz, H3 für einen lokalen Schritt, H4 für ein analoges ausgearbeitetes Beispiel und H5 für eine vollständige Lösung. Gib den kleinsten hilfreichen Hinweis, frage vor der nächsten Stufe und notiere die höchste genutzte Stufe.
+
+Benenne beim Prüfen, was stimmt, und den ersten ungültigen oder unbegründeten Schritt. Prüfe wichtige Aussagen an meinen Quellen und benenne Unsicherheit. Gib nach einer Korrektur eine andere Aufgabe ohne den früheren Hinweis.
+
+Schließe mit selbstständig Gezeigtem, unterstützter Arbeit, offenen Lücken und einer Wiederholungsempfehlung. Behaupte nur dann, etwas gespeichert oder terminiert zu haben, wenn ein tatsächliches Werkzeug es ausgeführt hat.
+```
+
+## Aufgabenbezogene Anfragen
+
+MAP fordert ein unvollständiges Begriffsnetz an, PROOF die Prüfung eines Arguments, HINT 1 eine strategische Frage, TRANSFER eine neue Aufgabe ohne Methodenhinweis, RECALL einen Test ohne Notizen und WRAP eine Übergabe. Das sind Kurzformen für das externe Gespräch, keine Bedienelemente dieser Seite. Eine normale Bitte reicht auch: „Zeige mir die erste unbelegte Folgerung, ohne den restlichen Beweis zu verraten.“
+
+## Eine abweichende Quelle
+
+Zählt der Tutor null zu $\mathbb{N}$ und der Kurs nicht, kläre zuerst die Kurskonvention. „Jede natürliche Zahl hat ein positives Quadrat“ ändert mit dieser Bereichswahl den Wahrheitswert. Lass die Konvention benennen und die Aussage darunter neu prüfen. Auch mehrere übereinstimmende KI-Antworten ersetzen den Blick in die angegebene Definition nicht.

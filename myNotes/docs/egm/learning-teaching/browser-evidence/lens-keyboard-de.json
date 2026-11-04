@@ -1,0 +1,14 @@
+{
+  "deHome": {
+    "focus": "create",
+    "selected": "create"
+  },
+  "deTab": {
+    "focus": "evaluate",
+    "selected": "evaluate"
+  },
+  "deEnd": {
+    "focus": "remember",
+    "selected": "remember"
+  }
+}

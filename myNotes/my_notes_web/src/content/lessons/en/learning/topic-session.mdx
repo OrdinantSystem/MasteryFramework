@@ -39,8 +39,34 @@ The sources include 75-, 90-, and 120-minute examples. None is a required durati
 
 <LearningFigure kind="handoff" />
 
+The general steps above can be used with a familiar question from your own subject. The proof session below is a mathematical illustration. Bloom's familiar task comparison can help name what you are practising; you need not complete its convergence example first.
+
 ## Example session
 
-Start by writing the definitions of even and odd integers. If you cannot state them, review them before attempting a proof. Next, study why the square of an odd integer is odd, hide the solution, and reconstruct it. Then attempt: “If an integer’s square is even, the integer is even.” Do not ask for a method name at the outset.
+{/* Complete reference reasoning added for the existing parity tasks. */}
 
-For a final boundary check, explain why 6 refutes “every even integer is divisible by 4”. Record the reconstructed proof separately from the new task and note any hints. A later session can begin with a changed parity problem, giving you evidence beyond what was available immediately after the example.
+An integer is **even** if it is $2k$ for some integer $k$, and **odd** if it is $2k+1$. Every integer is exactly one of even or odd. Start by writing those definitions; if they are unavailable, study them before attempting a proof.
+
+Here is the worked argument for an odd square. Take any odd integer $n=2k+1$. Then $n^2=4k^2+4k+1=2(2k^2+2k)+1$. Since $2k^2+2k$ is an integer, the square has the form twice an integer plus one, so it is odd. Hide the argument and reconstruct it. Record this as reconstruction after study.
+
+You have now seen a closely related proof. Keep that exposure separate from hints used during the following changed immediate application; it does not establish unfamiliar strategy selection. Do not ask for a method name at the outset.
+
+<Exercise question="If an integer’s square is even, the integer is even. Prove this claim.">
+
+Suppose the integer were odd. The worked argument shows that its square would be odd, contradicting the assumption that the square is even. Since every integer is exactly one of odd or even, the integer must be even. This is contraposition: we used “odd integer gives odd square” to establish “even square gives even integer”.
+
+</Exercise>
+
+<Exercise question="Why does 6 refute ‘every even integer is divisible by 4’ ?">
+
+$6=2\cdot3$ is even, but $6/4=3/2$ is not an integer, so 6 is not divisible by 4. One allowed input satisfies the hypothesis and fails the conclusion; that refutes the universal claim.
+
+</Exercise>
+
+For a later session, leave this changed parity task. Record when you attempt it and any help. Opening the answer beforehand makes a later repetition reconstruction; choose another unseen task if you want to check independent work.
+
+<Exercise question="Can the square of an even integer be odd? Justify your answer for every even integer, not just one example.">
+
+No. Write an arbitrary even integer as $n=2k$, with integer $k$. Then $n^2=4k^2=2(2k^2)$. Since $2k^2$ is integer, the square is even and therefore cannot be odd.
+
+</Exercise>

@@ -17,11 +17,25 @@ thumbnail: "retrieval"
 additionalSources: [{"sourceId": "learning-protocol", "locations": ["02-protocols/03-Review-and-Retention.md"]}]
 ---
 
+import {lessonUrl} from "../../../../lib/content";
+
 ## Retrieval before checking
 
 You may recognize every line of a proof while reading and still be unable to write its first step with the page closed. To find out what you can retrieve, hide the notes and attempt a definition, explanation, or problem before checking the answer.
 
 If the attempt fails, open the source and study the missing part. Reading has a useful job here: it supplies or corrects knowledge you could not produce. Then close it and try again. Keep track of whether an answer came from memory or from the page in front of you.
+
+{/* Added mechanism comparison; the procedure is our practical synthesis. */}
+
+| Practice | What changes | Example |
+| --- | --- | --- |
+| Retrieval | How you produce the answer | Explain with the notes closed before checking. |
+| Spacing | When you return to the material | Revisit the idea on a later study occasion. |
+| Interleaving | Which related task types you mix | Choose among methods on problems without strategy labels. |
+
+You can reread on several days without retrieving, or retrieve repeatedly in one sitting without spacing across days. Recalling one definition does not require mixing problem types.
+
+The <a href={lessonUrl("relational-mapping","en","learning")+"#worked-example-correcting-a-study-decision"}>worked example in Mind Maps</a> follows a learner who confuses retrieval with feedback. It separates the unaided attempt, source comparison, correction, reconstruction, and changed application. Repeating the corrected explanation is reconstruction; a different task provides a separate check.
 
 ## Review intervals
 
@@ -37,8 +51,21 @@ A card works best when it asks one clear question and gives you an answer you ca
 
 Practice testing and distributed practice received high utility ratings in [Dunlosky et al.’s 2013 review](https://pubmed.ncbi.nlm.nih.gov/26173288/). That supports the component practices, without validating our exact review intervals or complete workflow.
 
+Primary experiments also separate immediate from delayed outcomes: [Roediger & Karpicke (2006)](https://pubmed.ncbi.nlm.nih.gov/16507066/) found restudy favored five-minute prose recall, but prior testing favored recall after two days or one week. In fact learning, [Cepeda et al. (2008)](https://digitalcommons.usf.edu/psy_facpub/1766/) found the best study gap varied with the final-test delay. Neither fixes your next interval or validates this complete routine.
+
 ## Example: a card and a problem
 
 Replace “Do I understand contraposition?” with “State the contrapositive of $A \Rightarrow  B$.” You can check the answer $\neg B \Rightarrow  \neg A$. A different card can ask for a counterexample to “every even integer is divisible by 4”; 6 works because it is even but not divisible by 4.
 
 Neither card asks you to decide when contraposition would be useful. Leave a separate, unlabeled proof task for that decision. If you recall the card easily but cannot choose the method, add selection practice rather than simply increasing repetitions of the same card.
+
+
+## A study decision
+
+<Exercise question="A learner rereads cards repeatedly in one evening. Next day they recall the definitions but cannot choose which concept fits a new case. Propose the next attempt, feedback, and later check. Explain what each examines; you are planning practice, not solving a subject task here.">
+
+Recalling definitions does not yet show independent concept selection. Choose fresh, related cases without concept labels and ask for a choice with reasons. Obtain the cases and reference explanations from a reliable course source or a tutor who can check them. Compare the actual reasoning with that reference; if a definition or prerequisite is missing, study that part before trying again.
+
+On a later occasion, attempt a different case without the earlier hints and record the result and any help. If its answer was already seen, use another case or label the work as reconstruction. This checks later selection, rather than repetition of an exposed card. More than one plan can fit; the next interval depends on the task, performance, and deadline. Choosing and completing those subject tasks is a separate activity, not an outcome established by this planning answer.
+
+</Exercise>

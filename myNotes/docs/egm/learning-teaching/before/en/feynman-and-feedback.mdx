@@ -1,0 +1,44 @@
+---
+course: "learning"
+chapter: "learning-methods"
+sourceId: "learning-method"
+sourcePages: []
+sourceLocations: ["§2.2 AI-assisted Feynman"]
+locale: "en"
+title: "The Feynman Technique"
+navTitle: "The Feynman Technique"
+description: "Explanation from memory, feedback, correction, and a new application."
+order: 4
+kind: "concept"
+status: "published"
+reviewStatus: "unreviewed"
+prerequisites: ["relational-mapping"]
+thumbnail: "explanation"
+additionalSources: [{"sourceId": "transcript-techniques", "locations": ["9:04–10:57"]}]
+---
+
+## Explanation from memory
+
+Choose one idea you have already begun to study, close the notes, and explain it to someone new to the subject. You can speak or write. Include what the idea means, the conditions it needs, and a reason or example that makes it intelligible. When a word such as “linear” or “obvious” is carrying an unexplained step, pause there.
+
+If you cannot begin because the definition is still unfamiliar, return to an explanation or worked example first. Once you have something to reconstruct, try again without looking. Simplifying the language should make the reasoning easier to follow without discarding a condition that makes the claim true.
+
+<ProcessDiagram preset="feynman" id="feynman-loop" />
+
+## Feedback and revision
+
+Give your actual explanation to a teacher, peer, or AI and ask where the reasoning first becomes incomplete or incorrect. Check important corrections against the course source: an AI critique can be as confidently wrong as the explanation it critiques.
+
+Study the missing piece, then explain again with the feedback hidden. Follow with a changed example so you have to use the correction. Repeating the tutor’s wording immediately afterwards leaves open whether you could supply the argument yourself.
+
+## Example: revising an explanation
+
+Suppose your first attempt is: “A linear map has a straight-line graph, so $g(x) = 2x + 3$ is linear.” A useful response points you to the definition: a linear map preserves addition and scaling. In particular, it sends zero to zero. Here $g(0) = 3$, so the proposed map fails a necessary condition.
+
+You can revise the explanation: “The map $x\mapsto 2x$ is linear. Adding 3 translates the output and breaks additivity.” Check the last sentence by comparing $g(1 + 1)$ with $g(1) + g(1)$. This gives the explanation a calculation a reader can inspect.
+
+<Exercise question="A learner now says: ‘To prove a map is linear, I only need to check that it sends zero to zero.’ How would you respond?">
+
+Use $h(x) = x^2$ as a counterexample. It sends zero to zero, but $h(1 + 1) = 4$ while $h(1) + h(1) = 2$, so it does not preserve addition. Explain that the zero condition is necessary, not sufficient. A further independent check should ask the learner to use the defining conditions on a different map.
+
+</Exercise>

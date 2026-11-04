@@ -1,0 +1,41 @@
+---
+import {questionLenses} from '../lib/learning/questions';
+interface Props { id?: string }
+const {id='bloom-taxonomy'}=Astro.props;
+const l=Astro.locals.locale||'en';
+const layers=[...questionLenses].reverse();
+---
+<section class="question-lens" aria-label={{en:'Six ways to ask about one concept',de:'Sechs Fragen zu einem Begriff'}[l]}>
+  <div class="lens-layout">
+    <div class="lens-controls" hidden role="group" aria-label={{en:'Bloom’s taxonomy pyramid',de:'Pyramide der Bloom-Taxonomie'}[l]}>
+      {layers.map((q,i)=><button type="button" class="lens-layer" style={`--layer:${i};--lens-color:var(--${q.role});--lens-tint:var(--${q.tint})`} data-lens={q.id} aria-controls={`${id}-${q.id}`} aria-pressed={q.id==='remember'?'true':'false'}><strong>{q.name[l]}</strong><span>{q.action[l]}</span></button>)}
+    </div>
+    <div class="lens-details">
+      {questionLenses.map(q=><section id={`${id}-${q.id}`} data-lens-panel={q.id} aria-label={q.name[l]} style={`--lens-color:var(--${q.role})`}><p class="lens-example-label">{{en:'Example · sequence convergence',de:'Beispiel · Folgenkonvergenz'}[l]}</p><h3>{q.name[l]}</h3><p>{q.prompt[l]}</p><small>{{en:'Look for',de:'Darauf achten'}[l]}: {q.evidence[l]}</small></section>)}
+    </div>
+  </div>
+  <p class="lens-note">{{en:'These are task types, not a proven ranking of learning effectiveness. Real tasks often combine them.',de:'Das sind Aufgabentypen, keine bewiesene Rangfolge der Lernwirksamkeit. Reale Aufgaben verbinden oft mehrere davon.'}[l]}</p>
+</section>
+<script>
+for(const root of document.querySelectorAll<HTMLElement>('.question-lens')) {
+  const controls=root.querySelector<HTMLElement>('.lens-controls')!;
+  const buttons=[...controls.querySelectorAll<HTMLButtonElement>('[data-lens]')];
+  const select=(id:string)=>{
+    root.querySelectorAll<HTMLElement>('[data-lens-panel]').forEach(p=>p.hidden=p.dataset.lensPanel!==id);
+    buttons.forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lens===id)));
+  };
+  for(const button of buttons) {
+    button.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')select(button.dataset.lens!)});
+    button.addEventListener('focus',()=>select(button.dataset.lens!));
+    button.addEventListener('click',()=>select(button.dataset.lens!));
+    button.addEventListener('keydown',event=>{
+      const index=buttons.indexOf(button);
+      const next=event.key==='ArrowDown'?Math.min(index+1,buttons.length-1):event.key==='ArrowUp'?Math.max(index-1,0):event.key==='Home'?0:event.key==='End'?buttons.length-1:-1;
+      if(next>=0){event.preventDefault();buttons[next].focus();}
+    });
+  }
+  select('remember');
+  controls.hidden=false;
+  root.classList.add('is-interactive');
+}
+</script>
