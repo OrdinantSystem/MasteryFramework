@@ -1,0 +1,183 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-07
+sourcePages: []
+sourceLocations: ["Sections 1–8; Research references"]
+title: "Prüfst du eine Idee — oder schützt du sie?"
+navTitle: "Konkurrierende Erklärungen prüfen"
+description: "Vergleiche Hypothesen, entwirf aufschlussreiche Tests und unterscheide Vereinbarkeit mit Evidenz von der Unterscheidung konkurrierender Erklärungen."
+order: 7
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [counterexamples-and-claims]
+thumbnail: reasoning-inquiry
+---
+
+## 1. Drei Zahlen, ein Geheimnis
+
+Ich möchte mit einem kleinen Experiment beginnen. Ich gebe dir drei Zahlen, die einer geheimen Regel folgen, und deine Aufgabe ist es, diese Regel zu entdecken. Du kannst andere Zahlenfolgen vorschlagen, und ich sage dir, ob sie der Regel entsprechen. Welche Regel es ist, verrate ich aber erst, wenn wir mit unserer Untersuchung fertig sind.
+
+Hier sind deine ersten drei Zahlen.
+
+<ReasoningFigure kind="inquiry-opening" />
+
+Was könnte die Regel deiner Meinung nach sein?
+
+Vielleicht müssen alle Zahlen gerade sein. Vielleicht müssen sie um genau zwei zunehmen, oder sie müssen einfach von links nach rechts größer werden. Jede Erklärung passt perfekt zu dem Beispiel, aber es sind unterschiedliche Regeln.
+
+Wähle deine bevorzugte Erklärung, bevor du weiterliest. Du musst noch nicht sicher sein; du brauchst nur eine Hypothese, die wir untersuchen können.
+
+Stell dir nun vor, du darfst deine Idee prüfen, indem du der Maschine neue Zahlenfolgen gibst. Was würdest du zuerst ausprobieren?
+
+<Interactive kind="inquiry" preset="machine" id="hidden-rule-machine" />
+
+## 2. Wenn erfolgreiche Experimente uns wenig lehren
+
+Angenommen, deine Hypothese lautet, dass die Zahlen gerade sein und um genau zwei zunehmen müssen. Du prüfst 8, 10, 12, und die Maschine akzeptiert die Folge. Ermutigt probierst du 20, 22, 24, was ebenfalls funktioniert. Dann 100, 102, 104. Noch ein Erfolg.
+
+Drei Experimente, drei richtige Vorhersagen. Deine Erklärung muss doch immer stärker werden?
+
+Nun, überlege Folgendes. Die Maschine hätte jede dieser Folgen akzeptiert, wenn die geheime Regel lediglich verlangt hätte, dass die Zahlen zunehmen. Sie hätte sie auch akzeptiert, wenn die Regel einen konstanten Abstand von zwei verlangt hätte, ohne gerade Zahlen vorauszusetzen.
+
+Deine Experimente haben diese Möglichkeiten nicht unterschieden. Du hast wiederholt Beispiele geprüft, bei denen die Erklärungen übereinstimmen.
+
+<ReasoningFigure kind="inquiry-successes" />
+
+Beachte, dass die Anzahl der Experimente nicht das Hauptproblem ist. Du könntest hundert verschiedene Beispiele aufeinanderfolgender gerader Zahlen ausprobieren und hundert positive Antworten erhalten. Trotzdem könntest du nicht sagen, welche dieser Erklärungen die Maschine verwendet.
+
+Das bedeutet natürlich nicht, dass die Beobachtungen wertlos sind. Sie zeigen, dass die Maschine diese Folgen akzeptiert, und hätten jeder Regel widersprochen, die deren Ablehnung vorhergesagt hätte. Sie bieten aber keine Möglichkeit, zwischen Erklärungen zu wählen, die alle dasselbe Ergebnis vorhersagen.
+
+Daraus ergibt sich ein wichtiger Unterschied: Evidenz, die mit einer Erklärung vereinbar ist, ist nicht unbedingt Evidenz, die sie von ihren Konkurrenten unterscheidet.
+
+Um zu sehen, wie das funktioniert, verwandeln wir unsere drei möglichen Erklärungen in ein Bild.
+
+## 3. Drei Hypothesen, ein Bild
+
+Wir nennen unsere Erklärungen A, B und C. Hypothese A verlangt aufeinanderfolgende gerade ganze Zahlen. Hypothese B akzeptiert beliebige drei ganze Zahlen mit einer Schrittweite von genau zwei. Hypothese C ist umfassender: Sie akzeptiert beliebige drei streng aufsteigende ganze Zahlen.
+
+Stell dir nun vor, um jede von einer Regel akzeptierte Folge einen Bereich zu zeichnen. Interessant ist, dass diese Bereiche ineinanderliegen. Jede von A akzeptierte Folge wird auch von B akzeptiert, und jede von B akzeptierte Folge auch von C.
+
+Unsere ursprüngliche Folge 2, 4, 6 liegt also in allen drei Bereichen. Aber 3, 5, 7 liegt außerhalb von A, weil ihre Zahlen ungerade sind. Und 3, 7, 11 liegt außerhalb von A und B, weil ihre Abstände vier statt zwei betragen.
+
+<Interactive kind="inquiry" preset="regions" id="hypothesis-regions" />
+
+Beobachte, wie sich das Diagramm verändert, wenn du unterschiedliche Beispiele auswählst. Wir sammeln nicht mehr nur erfolgreiche Folgen. Wir suchen gezielt nach den Bereichen, in denen sich unsere Erklärungen widersprechen.
+
+Und das verändert, wie wir unser nächstes Experiment auswählen sollten.
+
+Betrachten wir 3, 5, 7. A sagt Ablehnung voraus, weil die Zahlen nicht gerade sind. B und C sagen Akzeptanz voraus. Die Antwort der Maschine wird uns also helfen, A von den anderen beiden Erklärungen zu unterscheiden.
+
+Überlege aber vor dem Aufdecken des Ergebnisses, was jede mögliche Antwort bedeuten würde. Sagt die Maschine ja, muss A falsch sein. Sagt sie nein, müssen B und C falsch sein — unter der Annahme, dass genau diese Regeln ihr Verhalten bestimmen.
+
+Das ist bereits eine bessere Untersuchung: Wir haben vor dem Experiment klargestellt, welche Folgen beide möglichen Ergebnisse hätten.
+
+Testen wir es jetzt.
+
+## 4. Eine positive Antwort kann deine Hypothese widerlegen
+
+Die Maschine akzeptiert 3, 5, 7. Das schließt A aus, denn A hatte Ablehnung vorhergesagt. Wir wissen nun, dass Geradzahligkeit keine notwendige Bedingung der verborgenen Regel ist.
+
+B und C sind aber weiterhin möglich. Probieren wir also 3, 7, 11. B verlangt Abstände von genau zwei und sagt deshalb Ablehnung voraus, während C nur aufsteigende Zahlen verlangt und Akzeptanz vorhersagt.
+
+Die Maschine sagt wieder ja. Und diese einzelne Beobachtung schließt auch B aus.
+
+Besonders interessant ist, dass beide Experimente positive Antworten lieferten. Dennoch bewirkten diese positiven Ergebnisse etwas, das unsere früheren positiven Ergebnisse nicht konnten: Sie unterschieden konkurrierende Hypothesen.
+
+Wir können nun die Regel unserer Maschine bestimmen. Sie akzeptiert beliebige drei streng aufsteigende ganze Zahlen, unabhängig davon, ob sie gerade, positiv oder gleichmäßig verteilt sind.
+
+<Interactive kind="inquiry" preset="evidence" id="prediction-board" />
+
+Zum Vergleich: Stell dir vor, wir hätten 9, 7, 5 geprüft. Die Maschine hätte die Folge abgelehnt, aber alle drei Hypothesen sagen Ablehnung voraus. Dieses negative Ergebnis würde sie nicht unterscheiden.
+
+Die Lehre lautet also nicht, dass wir immer nach einer negativen Antwort suchen sollten. Eine positive Beobachtung kann einer Hypothese widersprechen, und eine negative Beobachtung kann unsere Hypothesen unangetastet lassen.
+
+Entscheidend ist, wie sich das Ergebnis zu den Vorhersagen konkurrierender Erklärungen verhält.
+
+| Test | Beobachtet | Widerlegte Regeln |
+| --- | --- | --- |
+| 8, 10, 12 | Ja | Keine |
+| 3, 5, 7 | Ja | A |
+| 3, 7, 11 | Ja | A und B |
+| 9, 7, 5 | Nein | Keine |
+
+Eine Einschränkung ist wichtig. Der Test 3, 7, 11 schloss zwei Hypothesen aus, weil die Maschine die Folge akzeptierte. Hätte sie sie abgelehnt, wäre C ausgeschlossen worden. Wir können das Ergebnis vor dem Experiment nicht kennen und sollten einen Test deshalb nicht nur danach beurteilen, wie viele Erklärungen er im Nachhinein ausschließt.
+
+Ein besserer Ansatz ist, die möglichen Ergebnisse im Voraus zu betrachten und zu fragen, wie jedes davon unser Verständnis verändern würde.
+
+Ein wirklich nützliches Experiment gibt unseren Erklärungen die Möglichkeit, mit der Wirklichkeit in Konflikt zu geraten.
+
+Unsere Entdeckung ist begrenzt, aber echt: Unter A, B und C haben wir die richtige Regel identifiziert. Das beweist nicht, dass keine kompliziertere Regel zu allen unseren endlichen Beobachtungen passen könnte.
+
+## 5. Warum übersehen Menschen manchmal diesen Unterschied?
+
+Dieses Experiment beruht auf einer klassischen Studie, die der Psychologe Peter Cathcart Wason 1960 veröffentlichte. Wason bat Versuchspersonen, anhand der Folge 2, 4, 6 eine verborgene Regel zu entdecken. Von den 29 Teilnehmenden fanden nur sechs die richtige Regel, ohne vorher eine falsche vorgeschlagen zu haben. Andere prüften teilweise weiterhin Beispiele, die mit ihren anfänglichen Ideen vereinbar waren, statt diese Ideen wirksam von Alternativen zu unterscheiden.
+
+Die Studie wird oft im Zusammenhang mit dem Bestätigungsfehler diskutiert: unserer Neigung, Informationen zu bevorzugen, die unsere bisherigen Überzeugungen stützen. Wir sollten aber vorsichtig sein: Dieses konkrete Rätsel ist kein Test der allgemeinen Intelligenz oder Rationalität eines Menschen.
+
+Und es gibt eine weitere wichtige Nuance. Die Forscher Joshua Klayman und Young-Won Ha argumentierten 1987, dass das Prüfen von Beispielen, von denen wir eine Bestätigung unserer Hypothese erwarten — eine sogenannte positive Teststrategie — unter vielen Umständen durchaus nützlich sein kann. Ihr Wert hängt von der Struktur des Problems und den betrachteten Alternativen ab.
+
+Der Fehler besteht nicht darin, positive Evidenz zu suchen. Er besteht darin, ein erwartetes Ergebnis als starke Stütze einer Erklärung zu behandeln, ohne zu fragen, ob ihre Konkurrenten dasselbe Ergebnis vorhergesagt hätten.
+
+Dieser Unterschied ist weit über ein Rätsel mit drei Zahlen hinaus wichtig.
+
+## 6. Ein kaputtes Telefon, drei mögliche Erklärungen
+
+Stell dir vor, dein Telefon lädt plötzlich nicht mehr. Vielleicht vermutest du zuerst ein defektes Kabel, ziehst es heraus, steckst es wieder ein und schaust auf das Display. Nichts passiert. Du versuchst es noch einmal, doch das Telefon lädt weiterhin nicht.
+
+Überlege nun, was du tatsächlich gelernt hast. Ein kaputtes Kabel würde das Problem erklären, aber ebenso ein defektes Netzteil oder ein beschädigter Ladeanschluss. Da alle drei Erklärungen dieselbe Beobachtung vorhersagen, hilft das Wiederholen des ursprünglichen Experiments nicht, sie zu unterscheiden.
+
+Das ist beinahe genau das Problem unserer Zahlenmaschine. Drei Hypothesen stimmen darüber überein, was passieren wird, und wir müssen ein Experiment schaffen, in dem sich ihre Vorhersagen unterscheiden.
+
+Ersetzen wir zunächst das Kabel durch eines, von dem wir wissen, dass es funktioniert. Beginnt das Telefon zu laden, stützt das die Erklärung, dass das ursprüngliche Kabel defekt war. Lädt es weiterhin nicht, bleiben Netzteil und Ladeanschluss als mögliche Ursachen.
+
+Dann können wir das funktionierende Kabel behalten und das Netzteil ersetzen. Lädt das Telefon wieder, war vermutlich das ursprüngliche Netzteil verantwortlich. Lädt es weiterhin nicht, bleibt der Anschluss als unser Kandidat übrig.
+
+Wir haben aus einer vagen Vermutung eine Folge von Experimenten gemacht, die jeweils anhand der Informationen aus dem vorherigen Experiment ausgewählt werden.
+
+<Interactive kind="inquiry" preset="phone" id="phone-diagnosis" />
+
+Echte Fehlersuche verläuft natürlich nicht immer so geordnet. Der Akku könnte defekt sein, mehrere Bauteile könnten ausgefallen sein oder das Problem könnte nur gelegentlich auftreten. Diese Komplikationen machen den Ansatz aber nicht ungültig. Sie erinnern uns nur daran, dass unsere Liste von Erklärungen unvollständig sein kann und neue Beobachtungen neue Hypothesen erfordern können.
+
+Entscheidend ist die Strategie: Statt zu prüfen, ob unsere bevorzugte Erklärung richtig sein könnte, vergleichen wir sie mit plausiblen Alternativen und aktualisieren unser Verständnis Schritt für Schritt.
+
+## 7. Erkennst du einen besseren Test?
+
+Probieren wir zum Schluss noch ein Beispiel ohne die Zahlenmaschine.
+
+Du möchtest eine Website öffnen, aber die Seite lädt nicht. Du vermutest, dass deine Internetverbindung ausgefallen ist. Eine andere Möglichkeit ist jedoch, dass die Website selbst nicht verfügbar ist.
+
+Du könntest dieselbe Seite erneut laden oder versuchen, eine andere, normalerweise zuverlässige Website zu öffnen.
+
+Welcher Test würde die beiden Erklärungen besser unterscheiden?
+
+<Interactive kind="inquiry" preset="challenge" id="website-test" />
+
+Das zweite Experiment garantiert keine Diagnose, lässt die konkurrierenden Erklärungen aber unterschiedliche Ergebnisse vorhersagen. Und genau diese Argumentation haben wir verwendet, um die geheime Zahlenregel aufzudecken.
+
+## 8. Prüfst du eine Idee — oder schützt du sie?
+
+Wir begannen mit den drei Zahlen 2, 4, 6 und entdeckten, wie leicht sich Beispiele finden lassen, die eine Erklärung stützen, ohne wirklich zu prüfen, ob diese Erklärung die richtige ist.
+
+Der Wendepunkt kam, als wir nicht mehr nur fragten, ob unsere Idee funktionierte, sondern was ihre Alternativen vorhersagten. Plötzlich lehrten uns beinahe identisch wirkende Experimente sehr unterschiedliche Dinge.
+
+Das ist eine nützliche Gewohnheit bei jeder Untersuchung einer Idee, ob es sich um eine wissenschaftliche Hypothese, ein technisches Problem oder eine Überzeugung über die Welt handelt.
+
+<ReasoningFigure kind="inquiry-cycle" />
+
+Überlege vor dem Annehmen einer Schlussfolgerung, welche anderen Erklärungen dieselbe Evidenz hervorbringen könnten, wo diese Erklärungen unterschiedliche Vorhersagen machen würden und welches Ergebnis dich wirklich dazu bringen würde, deine Position zu überdenken.
+
+Diese Fragen garantieren nicht, dass du die Wahrheit entdeckst. Sie können aber verhindern, dass du wiederholte Übereinstimmung mit echtem Verständnis verwechselst.
+
+Denn eine Erklärung, die einen ernsthaften Versuch überstanden hat, sie von ihren Konkurrenten zu unterscheiden, hat etwas verdient, das eine nur durch bequeme Beispiele gestützte Erklärung nicht hat.
+
+Und vielleicht lautet die wichtigste Frage:
+
+Wenn deine Erklärung falsch wäre, würden dir deine Experimente eine realistische Chance geben, das herauszufinden?
+
+## Forschungsreferenzen
+
+- [Wason (1960) — On the Failure to Eliminate Hypotheses in a Conceptual Task](https://doi.org/10.1080/17470216008416717).
+- [Klayman & Ha (1987) — Confirmation, Disconfirmation, and Information in Hypothesis Testing](https://doi.org/10.1037/0033-295X.94.2.211).

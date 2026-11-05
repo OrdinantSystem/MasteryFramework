@@ -1,0 +1,19 @@
+---
+import ValidityRegions from './ValidityRegions.astro';
+import {validityCopy} from '../lib/reasoning/validity-copy';
+import {argumentGrid,shapeCase,type ValidityFigureKind} from '../lib/interactive/validity-model';
+import '../styles/validity.css';
+interface Props {kind:ValidityFigureKind}
+const {kind}=Astro.props,c=validityCopy[Astro.locals.locale||'en'];
+---
+<figure class:list={['validity-figure',kind]}>
+ {kind==='validity-shape'&&<><div class="validity-shape-square validity-opening"/><figcaption>{c.shape}</figcaption></>}
+ {kind==='validity-argument'&&<><div class="validity-columns"><div class="validity-box validity-teal"><strong>{c.premise1}</strong><p>{c.p1}</p></div><div class="validity-box validity-teal"><strong>{c.premise2}</strong><p>{c.p2}</p></div></div><div class="validity-converge" aria-hidden="true">↘　↙</div><div class="validity-box validity-purple validity-result"><strong>{c.conclusion}</strong><p>{c.c}</p></div><figcaption>{c.follows}</figcaption></>}
+ {kind==='validity-regions'&&<ValidityRegions staticView/>}
+ {(kind==='validity-forward'||kind==='validity-reverse')&&<><div class="validity-arrow"><span class={kind==='validity-forward'?'validity-teal':'validity-blue'}>{kind==='validity-forward'?c.square:c.rectangle}</span><b class={kind==='validity-forward'?'validity-true':'validity-false'} aria-hidden="true">→</b><span class={kind==='validity-forward'?'validity-blue':'validity-teal'}>{kind==='validity-forward'?c.rectangle:c.square}</span></div><figcaption>{kind==='validity-forward'?c.always:c.guaranteed}</figcaption></>}
+ {kind==='validity-test'&&<><h3>{c.test}</h3><p><strong>{c.testQuestion}</strong></p><div class="validity-columns"><div class="validity-box validity-teal"><strong>✓ {c.no}</strong><p>{c.valid}</p></div><div class="validity-box validity-coral"><strong>× {c.yes}</strong><p>{c.invalid}</p></div></div></>}
+ {kind==='validity-directions'&&<div class="validity-columns">{[true,false].map(forward=><div class="validity-box"><strong class={forward?'validity-true':'validity-false'}>{forward?c.validLabel:c.invalidLabel}</strong><div class="validity-arrow"><span class={forward?'validity-teal':'validity-blue'}>{forward?c.square:c.rectangle}</span><b class={forward?'validity-true':'validity-false'} aria-hidden="true">{forward?'→':'↛'}</b><span class={forward?'validity-blue':'validity-teal'}>{forward?c.rectangle:c.square}</span></div><p>{forward?c.forward:c.reverse}</p></div>)}</div>}
+ {kind==='validity-grid'&&<><h3>{c.grid}</h3><div class="validity-columns">{argumentGrid.map((row,i)=>{const state=shapeCase(row.shape,row.form,row.falsePremise);return <div class:list={['validity-box',['validity-teal','validity-purple','validity-blue','validity-coral'][i]]}><h4>{c.gridLabels[i]}</h4><div class="validity-case-shape" aria-hidden="true"><div class={state.square?'validity-shape-square':'validity-shape-rectangle'}/><b>{state.conclusion?'✓':'×'}</b></div><p>{c.gridArguments[i]}</p><small>{c.gridDetails[i]}</small></div>})}</div></>}
+ {kind==='validity-gates'&&<><div class="validity-columns"><div class="validity-box validity-teal"><strong>{c.gate1}</strong><p>{c.gateQuestion1}</p></div><div class="validity-box validity-purple"><strong>{c.gate2}</strong><p>{c.gateQuestion2}</p></div></div><div class="validity-converge" aria-hidden="true">↘　↙</div><div class="validity-box validity-blue validity-result"><strong>{c.sound}</strong><p>{c.must}</p></div></>}
+ {kind==='validity-distinction'&&<><div class="validity-columns"><div class="validity-box validity-teal"><strong>{c.reasoning}</strong><p>{c.reasoningQuestion}</p><small>{c.validity}</small></div><div class="validity-box validity-blue"><strong>{c.truth}</strong><p>{c.truthQuestion}</p><small>{c.reality}</small></div></div><figcaption>{c.distinction}</figcaption></>}
+</figure>

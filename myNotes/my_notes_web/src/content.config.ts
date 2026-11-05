@@ -16,7 +16,7 @@ const lessons = defineCollection({
     chapter: z.enum(chapterIds),
     sourceId: z.enum(sourceIds),
     additionalSources:z.array(reference).default([]),
-    thumbnail: z.enum(['reasoning-patterns','reasoning-proof','reasoning-equality','reasoning-algebra','reasoning','shear-inverse','area','diagonal','signs','words','equivalence','negative-identity','inverse-product','sheet-recap','logic','quantifiers','number-sets','implication','parity','proof','irrational','boolean-laws','identity-laws','complement','de-morgan','nand','learning-cycle','bloom','concept-map','explanation','practice','retrieval','workflow','hints','feedback','evidence','tutor','records','experiment','transcript']).optional(),
+    thumbnail: z.enum(['reasoning-arguments','reasoning-inquiry','reasoning-counterexample','reasoning-patterns','reasoning-proof','reasoning-equality','reasoning-algebra','reasoning','shear-inverse','area','diagonal','signs','words','equivalence','negative-identity','inverse-product','sheet-recap','logic','quantifiers','number-sets','implication','parity','proof','irrational','boolean-laws','identity-laws','complement','de-morgan','nand','learning-cycle','bloom','concept-map','explanation','practice','retrieval','workflow','hints','feedback','evidence','tutor','records','experiment','transcript']).optional(),
     locale: z.enum(locales).default('en'),
     title: z.string(),
     description: z.string(),

@@ -1,0 +1,22 @@
+---
+import Math from './Math.astro';
+import MathText from './MathText.astro';
+import {counterCopy} from '../lib/reasoning/counterexample-copy';
+import {isPrime,type CounterFigureKind} from '../lib/interactive/counterexample-model';
+import '../styles/counterexamples.css';
+interface Props {kind:CounterFigureKind}
+const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=counterCopy[locale];
+---
+<figure class:list={['counter-figure',kind]}>
+ <h3>{c.titles[kind]}</h3>
+ {kind==='counter-prime-start'&&<><ol class="counter-opening">{[3,5,7].map(n=><li class="counter-success"><strong>{n}</strong><span aria-hidden="true">✓</span><span>{c.prime}</span></li>)}<li><strong>?</strong><span>{c.next}</span></li></ol><figcaption>{locale==='en'?'The first three cases satisfy the conjecture. The next relevant case still needs checking.':'Die ersten drei Fälle erfüllen die Vermutung. Der nächste relevante Fall muss noch geprüft werden.'}</figcaption></>}
+ {kind==='counter-nine'&&<><div class="counter-columns counter-nine-layout"><div class="counter-nine-checks"><strong>9</strong><p>{c.odd}</p><p>{c.greater}</p></div><div><div class="counter-nine-grid" role="img" aria-label={locale==='en'?'Nine counters arranged in three rows of three.':'Neun Zählsteine in drei Reihen zu je drei.'}>{Array.from({length:9},()=> <i/>)}</div><Math tex={String.raw`9=3\times3`} display/></div></div><figcaption class="counter-failure">{c.nineCaption}</figcaption></>}
+ {kind==='counter-filter'&&<><div class="counter-filter-domain"><h4>{c.domain}</h4><p>…, −9, −2, 0, 1, 2, 3, 4, 5, 7, 9, …</p></div><p class="counter-down" aria-hidden="true">↓</p><div class="counter-filter-condition">{c.condition}</div><p class="counter-down" aria-hidden="true">↙　↘</p><div class="counter-columns"><div class="counter-case"><h4>{c.excludedCases}</h4><p>−9, 1, 2, 4, 6, …</p></div><div class="counter-case counter-selected"><h4>{c.selectedCases}</h4><p>3, 5, 7, 9, 11, …</p></div></div><figcaption>{c.filterCaption}</figcaption></>}
+ {kind==='counter-negation'&&<><div class="counter-columns">{[false,true].map(negation=><div class="counter-case"><h4>{negation?c.negation:c.original}</h4><p class="counter-quantifier">{negation?'∃':'∀'}</p><p>{negation?c.oneFails:c.allSucceed}</p><p class="counter-detail">{negation?c.oneException:c.noExceptions}</p></div>)}</div><figcaption>{c.negationCaption}</figcaption></>}
+ {kind==='counter-finite'&&<><ol class="counter-finite-list">{[3,5,7].map(n=><li class="counter-success"><strong>{n}</strong><span>{isPrime(n)?'✓':''}<span class="visually-hidden"> {c.prime}</span></span></li>)}</ol><figcaption>{c.allThree}</figcaption></>}
+ {kind==='counter-domains'&&<><div class="counter-columns"><div class="counter-case"><h4>{c.finite}</h4><p>3, 5, 7</p><p aria-hidden="true">✓　✓　✓</p><p>{c.finiteDone}</p></div><div class="counter-case"><h4>{c.infinite}</h4><p>3, 5, 7, <strong class="counter-false-text">9</strong>, 11, …</p><p>9 = 3 × 3</p><p>{c.infiniteRemain}</p></div></div><figcaption>{c.finiteCaption}</figcaption></>}
+ {kind==='counter-quantifiers'&&<><div class="counter-columns"><div class="counter-case"><p class="counter-quantifier">∀</p><h4>{c.everyCase}</h4><p aria-hidden="true">✓　✓　×</p><p>{c.failureRefutes}</p></div><div class="counter-case"><p class="counter-quantifier">∃</p><h4>{c.atLeastOne}</h4><p aria-hidden="true">✓　?　?</p><p>{c.successProves}</p></div></div><figcaption>{c.quantifierCaption}</figcaption></>}
+ {kind==='counter-repair'&&<><ol class="counter-repairs">{[{label:c.falseRule,text:c.falseText,tone:'failure'},{label:c.limitedRule,text:c.limitedText,tone:'neutral'},{label:c.structuralRule,text:c.structuralText,tone:'success'}].map(row=><li class={`counter-${row.tone}`}><h4>{row.label}</h4><p><MathText text={row.text}/></p></li>)}</ol><figcaption>{c.repairCaption}</figcaption></>}
+ {kind==='counter-factors'&&<><div class="counter-factor-product"><div><Math tex="a"/><p>{c.smaller}</p></div><span aria-hidden="true">×</span><div><Math tex="b"/><p>{c.larger}</p></div><span>= <Math tex="n"/></span></div><figcaption>{c.factorCaption}</figcaption></>}
+ {kind==='counter-synthesis'&&<><div class="counter-confirmations" aria-hidden="true">{Array.from({length:48},()=> <i>✓</i>)}</div><p class="counter-exception" aria-hidden="true">×</p><figcaption>{c.synthesisCaption}</figcaption></>}
+</figure>

@@ -1,0 +1,265 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-two
+sourceId: reasoning-episode-09
+sourcePages: []
+sourceLocations: ["Sections 1–9; Research foundation"]
+title: "Würdest du dieses Argument akzeptieren, wenn dir seine Konklusion missfiele?"
+navTitle: "Überzeugung und logische Struktur"
+description: "Vorlieben, Wahrheit und Gültigkeit durch Abstraktion, Mengenbeweise und Gegenmodelle unterscheiden."
+order: 9
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [truth-validity-and-soundness]
+thumbnail: reasoning-arguments
+---
+
+## 1. Das Argument, das du nicht akzeptieren möchtest
+
+Stell dir vor, du sitzt in einer Universitätskommission, die Einsprüche zu Stipendienentscheidungen prüft. Zwei Studierende haben Anträge eingereicht, und die Kommission muss entscheiden, wie mit ihnen verfahren wird.
+
+Die erste Studentin, Maya, hat ihren Einspruch eine Minute nach Ablauf der Frist eingereicht. Sie hat das ganze Jahr hart gearbeitet, und von ihrem Stipendium könnte abhängen, ob sie sich die Fortsetzung ihres Studiums leisten kann.
+
+Ein Kommissionsmitglied öffnet ihre Akte und sagt:
+
+„Nach unseren Regeln wird jeder verspätet eingereichte Einspruch automatisch abgelehnt. Maya hat ihren Einspruch verspätet eingereicht. Also muss ihr Einspruch abgelehnt werden.“
+
+Vielleicht hast du sofort das Gefühl, dass etwas nicht stimmt. Reicht eine einzige Minute wirklich aus, um einen Einspruch abzuweisen? Sollte die Kommission nicht zumindest ihre Umstände berücksichtigen?
+
+Stell dir nun einen anderen Studenten vor, Daniel, der seinen Einspruch vor Ablauf der Frist eingereicht hat.
+
+Ein anderes Kommissionsmitglied sagt:
+
+„Nach unseren Regeln wird jeder fristgerecht eingereichte Einspruch geprüft. Daniel hat seinen Einspruch fristgerecht eingereicht. Also wird sein Einspruch geprüft.“
+
+Das klingt viel vernünftiger. Der Student hat sich an die Regeln gehalten, und die Kommission wird seinen Antrag berücksichtigen.
+
+Aber hier ist die Frage: Ist die Schlussweise im ersten Argument schlechter als im zweiten?
+
+Ich frage nicht, ob du den Entscheidungen der Universität zustimmst. Ich frage, ob die Konklusionen tatsächlich aus den Prämissen folgen.
+
+<Interactive kind="arguments" preset="appeals" id="appeal-judgments" />
+
+Die beiden Argumente haben genau dieselbe logische Struktur. Das eine führt zufällig zu einer Konklusion, die uns missfallen könnte, während wir die andere bereitwillig akzeptieren.
+
+Wenn wir aber zugestehen, dass die Regel für verspätete Einsprüche gilt und Maya tatsächlich zu spät eingereicht hat, folgt die Ablehnung aus dieser Regel, so unfair wir sie auch finden mögen.
+
+Wir können die Regel infrage stellen, ohne den Schluss infrage zu stellen.
+
+Diese Unterscheidung fällt uns oft schwer, wenn ein Argument etwas berührt, das uns wichtig ist. Und sie wirft eine tiefere Frage auf: Was genau beurteilen wir, wenn wir entscheiden, dass ein Argument gut ist?
+
+## 2. Die Struktur hinter der Geschichte
+
+Entfernen wir alles, wodurch die beiden Argumente unterschiedlich wirken: das Stipendium, die Namen, die Frist und die emotionalen Folgen.
+
+Wir ersetzen die Bedingung in jedem Argument durch den Buchstaben P und das Ergebnis durch Q.
+
+Was übrig bleibt, ist außerordentlich einfach.
+
+<ReasoningFigure kind="argument-structure" />
+
+Die erste Prämisse besagt, dass Q folgt, wann immer P wahr ist. Die zweite besagt, dass P wahr ist. Also muss Q wahr sein.
+
+Versuche nun, diesen Schluss scheitern zu lassen. Die Bedingung „Wenn P, dann Q“ müsste wahr sein und P selbst ebenfalls, während Q falsch wäre.
+
+Doch das würde der Bedingung direkt widersprechen. Die Prämissen wären dann nicht mehr alle wahr.
+
+Damit erhalten wir die präzise Definition deduktiver Gültigkeit:
+
+Ein Argument ist gültig, wenn es keine mögliche Situation gibt, in der alle seine Prämissen wahr und seine Konklusion falsch sind.
+
+Beachte etwas Wichtiges: Wir mussten nicht feststellen, dass die Regeln der Universität wahr sind. Wir haben gefragt, was folgen würde, wenn sie wahr wären.
+
+So können wir die Schlussweise unabhängig von unseren Gefühlen gegenüber der Konklusion untersuchen.
+
+Aber wir können noch weitergehen. Wir können ein Argument betrachten, dessen Konklusion nicht nur unangenehm, sondern geradezu absurd ist, und herausfinden, warum es dennoch mathematisch gültig sein kann.
+
+## 3. Ein Beweis in einem Bild
+
+Betrachte diese drei Aussagen:
+
+Alle Katzen sind Säugetiere. Alle Säugetiere sind Tiere. Also sind alle Katzen Tiere.
+
+Mit der Konklusion bist du höchstwahrscheinlich einverstanden. Aber erinnere dich an unsere Frage: Folgt sie aus den Prämissen, oder erkennen wir lediglich etwas wieder, das wir bereits wissen?
+
+Zeichnen wir die Beziehungen.
+
+Wenn alle Katzen Säugetiere sind, muss die gesamte Menge der Katzen in der Menge der Säugetiere liegen. Und wenn alle Säugetiere Tiere sind, muss die Menge der Säugetiere in der Menge der Tiere liegen.
+
+<Interactive kind="arguments" preset="xray" id="argument-xray" />
+
+Betrachte den kleinsten Bereich. Könnte eine Katze irgendwie außerhalb der Menge der Tiere liegen, ohne eine unserer Annahmen zu verletzen?
+
+Das könnte sie nicht. Wer zur Menge der Katzen gehört, gehört damit bereits zu beiden größeren Mengen.
+
+Ändere nun das Beispiel. Jemand behauptet, alle Katzen seien Fahrräder, alle Fahrräder seien Fahrzeuge und folglich seien alle Katzen Fahrzeuge.
+
+So funktioniert die Welt offensichtlich nicht. Wären die ersten beiden Aussagen aber wahr, müsste auch die Konklusion wahr sein. Die Wörter ändern sich und die Wahrheit der Prämissen ändert sich, aber die Struktur des Schlusses bleibt gleich.
+
+Nun können wir einen noch wirkungsvolleren Schritt machen. Ersetzen wir die Namen der Mengen durch A, B und C.
+
+Statt über Tiere sprechen wir über Mengen: Zusammenfassungen von Objekten. Die Schreibweise $A\subseteq B$ bedeutet, dass jedes Element von A auch zu B gehört.
+
+Unser Argument wird damit zu:
+
+$$ A\subseteq B,\qquad B\subseteq C \quad\Longrightarrow\quad A\subseteq C $$
+
+Und nun können wir es beweisen, statt es nur zu veranschaulichen.
+
+Stell dir vor, du wählst ein beliebiges Objekt $x$ aus der Menge A. Weil A in B enthalten ist, muss dieses Objekt zu B gehören. Und weil B in C enthalten ist, muss genau dasselbe Objekt zu C gehören.
+
+$$ x\in A\ \Longrightarrow\ x\in B\ \Longrightarrow\ x\in C $$
+
+Da wir jedes beliebige Element von A hätten wählen können, gehört jedes Element von A zu C. Genau das wollten wir beweisen.
+
+Wir haben gerade die Transitivität der Mengeninklusion entdeckt.
+
+Bemerkenswert ist dabei, dass unser Beweis weder von Katzen noch von Fahrrädern oder sonst etwas im Universum abhängt. Er funktioniert für beliebige drei Mengen.
+
+Das kann Abstraktion leisten. Wir beginnen mit einer vertrauten Behauptung, entfernen ablenkende Einzelheiten und entdecken eine Beziehung, die in unendlich vielen Fällen gilt.
+
+Wenn die logische Struktur zeigen kann, dass ein Argument funktioniert, kann sie dann auch erklären, warum ein vollkommen richtig klingendes Argument scheitert?
+
+## 4. Eine wahre Konklusion mit einem fehlerhaften Argument
+
+Versuchen wir ein anderes Beispiel.
+
+Alle Pudel sind Hunde. Alle Pudel sind Säugetiere. Also sind alle Hunde Säugetiere.
+
+Alles in diesem Argument ist wahr. Aber sieh genauer hin, was uns die ersten beiden Prämissen tatsächlich sagen.
+
+Die erste Prämisse ordnet Pudel der Menge der Hunde zu. Die zweite ordnet Pudel der Menge der Säugetiere zu.
+
+Pudel müssen also zu beiden Mengen gehören.
+
+Aber was haben wir über alle anderen Hunde nachgewiesen?
+
+Aus diesen beiden Prämissen: nichts.
+
+<Interactive kind="arguments" preset="countermodel" id="shared-subset-countermodel" />
+
+Stell dir vor, die beiden größeren Kreise überlappen sich, ohne dass einer den anderen vollständig enthält. Wir können jeden Pudel in beiden Kreisen belassen, genau wie die Prämissen es verlangen, während ein Teil von B außerhalb von C liegt.
+
+Wären B und C beliebige Kategorien, könnte der Punkt links ein Objekt darstellen, das zu B, aber nicht zu C gehört. Beide Prämissen blieben wahr, doch die Konklusion, B sei vollständig in C enthalten, wäre falsch.
+
+Natürlich sind Hunde in der wirklichen Biologie Säugetiere. Wir behaupten nicht, dass es einen Hund gibt, der kein Säugetier ist. Wir zeigen, dass das logische Muster allein diese Tatsache nicht begründet, wenn wir die Kategorienamen als austauschbare Bezeichnungen behandeln.
+
+Unser erstes Mengenargument hatte die Struktur:
+
+$$ A\subseteq B,\quad B\subseteq C \quad\Rightarrow\quad A\subseteq C $$
+
+Das zweite Argument hat jedoch eine andere Struktur:
+
+$$ A\subseteq B,\quad A\subseteq C \quad\not\Rightarrow\quad B\subseteq C $$
+
+Die erste Struktur ist gültig. Die zweite ist ungültig.
+
+Und ein einziges Gegenbeispiel zur zweiten Struktur reicht aus, um das zu beweisen.
+
+Beachte nun, was diese Entdeckung so interessant macht: Die Konklusion, dass alle Hunde Säugetiere sind, ist wahr. Das wissen wir aus der Biologie. Aber das konkrete Argument, das uns gegeben wurde, weist es nicht nach.
+
+Eine wahre Konklusion macht eine Schlussweise nicht automatisch gültig, genauso wenig wie eine falsche Konklusion sie automatisch ungültig macht.
+
+Deshalb ist mathematische Struktur nützlich. Sie hilft uns zu unterscheiden, was wir bereits glauben und was die Prämissen tatsächlich begründen.
+
+## 5. Warum uns der Glaube an die Konklusion täuschen kann
+
+Denke an den Gegensatz, den wir entdeckt haben.
+
+Als die Konklusion lautete, dass Katzen Tiere sind, wirkte das Argument selbstverständlich. Als die Konklusion lautete, dass Katzen Fahrzeuge sind, erschien das Argument lächerlich, obwohl seine logische Struktur dieselbe war.
+
+Und als uns gesagt wurde, alle Hunde seien Säugetiere, erschien die Konklusion so offensichtlich richtig, dass wir die fehlerhafte Schlussweise dahinter möglicherweise übersehen hätten.
+
+Hier begegnen sich Mathematik und Psychologie.
+
+1983 untersuchten Jonathan Evans, Julie Barston und Paul Pollard ein Phänomen, das als Belief Bias bekannt ist: die Verzerrung durch die Glaubhaftigkeit einer Konklusion. In drei Experimenten zum syllogistischen Schließen stellten sie fest, dass die Urteile der Teilnehmenden sowohl von der logischen Struktur der Argumente als auch von der Glaubhaftigkeit ihrer Konklusionen beeinflusst wurden. Bei ungültigen Argumenten war der Einfluss des Glaubens besonders ausgeprägt.
+
+Mit anderen Worten: Die Konklusion, die wir für wahr halten, kann unser Urteil darüber beeinflussen, ob das Argument sie tatsächlich beweist.
+
+<ReasoningFigure kind="argument-dimensions" />
+
+Vorwissen zu haben ist kein Fehler. Zu wissen, dass Hunde Säugetiere sind, ist wertvoll, und wir sollten nicht so tun, als wäre es anders.
+
+Das Problem entsteht, wenn wir dieses Wissen benutzen, um eine andere Frage zu beantworten: ob ein bestimmtes Argument seine Konklusion begründet.
+
+Es gibt außerdem einen wichtigen Unterschied zwischen den gerade beschriebenen Experimenten und unserer Eingangsgeschichte. Eine Universitätsregel abzulehnen ist nicht dasselbe, wie eine Tatsachenbehauptung unglaubhaft zu finden. Beides kann uns davon ablenken, einen Schluss zu untersuchen, aber die Forschung zu Belief Bias betrifft ausdrücklich den Einfluss der Glaubhaftigkeit einer Konklusion. Unsere Beispiele sind Veranschaulichungen, kein kontrolliertes Experiment und keine Diagnose deiner persönlichen Schlussweise.
+
+Entscheidend ist, dass wir nun eine Möglichkeit haben, diese unterschiedlichen Fragen auseinanderzuhalten.
+
+## 6. Eine Methode, um gegen die eigenen Vorlieben anzudenken
+
+Kehren wir zu Mayas Einspruch zurück.
+
+Angenommen, du bist überzeugt, dass es unfair ist, einen Einspruch zu einer Stipendienentscheidung wegen einer Minute Verspätung abzulehnen. Du möchtest, dass die Kommission ihre Entscheidung überdenkt.
+
+Du hast zwei Möglichkeiten. Du könntest die Schlussweise angreifen, nur weil dir ihre Konklusion missfällt. Oder du könntest genau untersuchen, worin die Meinungsverschiedenheit liegt.
+
+Der zweite Weg ist viel wirkungsvoller.
+
+<ReasoningFigure kind="argument-two-pass" />
+
+Im ersten Durchgang erkennen wir, dass der Schluss gültig ist. Wenn die Universität wirklich jeden verspäteten Einspruch ablehnt und Mayas Einspruch tatsächlich verspätet war, folgt die genannte Entscheidung.
+
+Im zweiten Durchgang untersuchen wir, ob diese Prämissen Zustimmung verdienen.
+
+Vielleicht lässt die Universität tatsächlich Ausnahmen zu. Vielleicht hat das Einreichungssystem die Zeit falsch erfasst. Dann liegt das Problem bei den tatsächlichen Annahmen und nicht bei der logischen Form.
+
+Und selbst wenn die Prämissen korrekt sind, können wir weiterhin dafür argumentieren, dass die Universität ihre Regel ändern sollte. Das ist eine ethische und praktische Kritik, kein Nachweis logischer Ungültigkeit.
+
+Diese Unterscheidung gibt uns eine äußerst nützliche Fähigkeit. Wir können sagen: „Deine Konklusion folgt aus deinen Annahmen, aber ich lehne diese Annahmen ab.“ Oder: „Ich glaube deine Konklusion, aber das vorgebrachte Argument begründet sie nicht.“
+
+Wir müssen uns nicht länger zwischen vollständiger Annahme und vollständiger Ablehnung eines Arguments entscheiden. Wir können genau bestimmen, was gerechtfertigt ist und was weiterhin infrage gestellt werden kann.
+
+## 7. Ein kleines Wort kann alles verändern
+
+Bevor wir zum Schluss kommen, sollten wir eine Grenze unserer mathematischen Methode nicht übersehen.
+
+Wir haben Wörter entfernt, um Struktur sichtbar zu machen. Doch wenn wir unvorsichtig sind, kann das Entfernen oder Ersetzen von Wörtern das Argument selbst verändern.
+
+Vergleiche diese beiden Universitätsregeln:
+
+<Interactive kind="arguments" preset="only" id="all-versus-only" />
+
+Ein Wort hat die Richtung der Beziehung umgekehrt.
+
+Würden wir beide Aussagen gleich symbolisieren, hätten wir die Bedeutung verloren, durch die sie sich unterscheiden.
+
+Abstraktion bedeutet also nicht, Wörter zu ignorieren. Es bedeutet, genau die entscheidenden Beziehungen zu erhalten und die unwichtigen Einzelheiten zu entfernen.
+
+Deshalb ist mathematische Notation wertvoll: Sorgfältig verwendet macht sie die zugrunde liegenden Festlegungen eines Arguments sichtbar.
+
+## 8. Letzte Aufgabe — Kannst du Wahrheit und Gültigkeit trennen?
+
+Schließen wir mit zwei neuen Argumenten. Frage dich vor dem Aufdecken der Antworten, ob die jeweilige Konklusion durch ihre Prämissen garantiert ist und nicht bloß zufällig wahr ist.
+
+<Interactive kind="arguments" preset="practice" id="argument-transfer" />
+
+## 9. Die Frage, die verändert, wie du widersprichst
+
+Denke zurück an Maya und Daniel.
+
+Wir begannen mit zwei Argumenten, die sehr unterschiedliche Gefühle auslösten. Dann entfernten wir ihren Inhalt und entdeckten darunter dasselbe logische Muster.
+
+Wir verfolgten diese Struktur in die Mathematik, wo Zusammenfassungen zu Mengen wurden und aus einem vertrauten Diagramm ein Beweis entstand, der in unendlich vielen Fällen funktioniert.
+
+Und wir entdeckten die andere Seite des Problems: Ein Argument kann zu einer Konklusion führen, von der wir wissen, dass sie wahr ist, und sie dennoch nicht begründen.
+
+Die Lehre ist nicht, dass unsere Überzeugungen unzuverlässig sind oder Gefühle bei wichtigen Entscheidungen keinen Platz haben. Wahrheit, logische Gültigkeit und die Frage, ob etwas unsere Zustimmung verdient, sind vielmehr unterschiedliche Fragen.
+
+Diese Unterschiede zu verstehen gibt uns eine bessere Möglichkeit, mit Meinungsverschiedenheiten umzugehen.
+
+Wenn dir das nächste Mal jemand ein Argument vorlegt, das etwas stützt, woran du fest glaubst — oder das du unbedingt ablehnen möchtest —, frage dich:
+
+Würde ich diese Schlussweise genauso beurteilen, wenn ich anders über ihre Konklusion denken würde?
+
+Untersuche dann, was tatsächlich aus den Prämissen folgt und ob diese Prämissen Zustimmung verdienen.
+
+Denn das Ziel des Denkens ist nicht einfach, bei der Antwort anzukommen, die wir bevorzugen.
+
+Es geht darum zu verstehen, warum eine Antwort gerechtfertigt ist.
+
+## Forschungsgrundlage
+
+Evans, Barston & Pollard (1983), [On the Conflict Between Logic and Belief in Syllogistic Reasoning](https://doi.org/10.3758/BF03196976); sowie [forall x: Calgary](https://forallx.openlogicproject.org/html/) zu logischer Gültigkeit, Gegenbeispielen und formalem Schließen.

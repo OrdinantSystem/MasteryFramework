@@ -1,0 +1,241 @@
+{
+  "prefixMatrix": [
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "brokenAria": 0,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "finalMatrix": [
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "overflow": false,
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "overflow": false,
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "overflow": false,
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "overflow": false,
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "overflow": false,
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "overflow": false,
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "overflow": false,
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "overflow": false,
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "predictions": [
+    {
+      "kind": "region",
+      "choice": 0,
+      "text": "All triples of integers\n\nC · Strictly increasing\nB · Step of two\nA · Consecutive evens\n\n● Selected triple: 8, 10, 12\n\nOutside all three\n\nThe regions are schematic set inclusions, not a numerical coordinate scale. The marker shows which candidate rules accept the selected triple."
+    },
+    {
+      "kind": "before",
+      "choice": 0,
+      "resultCount": 0
+    },
+    {
+      "kind": "after",
+      "choice": 0,
+      "text": "✓ Accepted · Contradicted rules: None"
+    },
+    {
+      "kind": "region",
+      "choice": 1,
+      "text": "All triples of integers\n\nC · Strictly increasing\nB · Step of two\n\n● Selected triple: 3, 5, 7\n\nA · Consecutive evens\n\nOutside all three\n\nThe regions are schematic set inclusions, not a numerical coordinate scale. The marker shows which candidate rules accept the selected triple."
+    },
+    {
+      "kind": "before",
+      "choice": 1,
+      "resultCount": 0
+    },
+    {
+      "kind": "after",
+      "choice": 1,
+      "text": "✓ Accepted · Contradicted rules: A"
+    },
+    {
+      "kind": "region",
+      "choice": 2,
+      "text": "All triples of integers\n\nC · Strictly increasing\n\n● Selected triple: 3, 7, 11\n\nB · Step of two\nA · Consecutive evens\n\nOutside all three\n\nThe regions are schematic set inclusions, not a numerical coordinate scale. The marker shows which candidate rules accept the selected triple."
+    },
+    {
+      "kind": "before",
+      "choice": 2,
+      "resultCount": 0
+    },
+    {
+      "kind": "after",
+      "choice": 2,
+      "text": "✓ Accepted · Contradicted rules: A, B"
+    },
+    {
+      "kind": "region",
+      "choice": 3,
+      "text": "All triples of integers\n\nC · Strictly increasing\nB · Step of two\nA · Consecutive evens\n\nOutside all three\n\n● Selected triple: 9, 7, 5\n\nThe regions are schematic set inclusions, not a numerical coordinate scale. The marker shows which candidate rules accept the selected triple."
+    },
+    {
+      "kind": "before",
+      "choice": 3,
+      "resultCount": 0
+    },
+    {
+      "kind": "after",
+      "choice": 3,
+      "text": "× Rejected · Contradicted rules: None"
+    }
+  ],
+  "phone": [
+    "Cable faulty\n\n× Fails\n\nAdapter faulty\n\n× Fails\n\nPort faulty\n\n× Fails",
+    "Cable faulty\n\n✓ Charges\n\nAdapter faulty\n\n× Fails\n\nPort faulty\n\n× Fails",
+    "Cable faulty\n\n✓ Charges\n\nAdapter faulty\n\n✓ Charges\n\nPort faulty\n\n× Fails",
+    "Reloading can fail under either explanation. Repeating the shared prediction does not distinguish them.",
+    "A different reliable site can load if only the first site is unavailable, but should also fail under a complete connection failure. Other causes remain possible."
+  ],
+  "search": {
+    "en": "hypothesis",
+    "de": "Hypothese",
+    "bothFindLesson": true
+  },
+  "historyCap": 12
+}

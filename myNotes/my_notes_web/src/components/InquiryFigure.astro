@@ -1,0 +1,11 @@
+---
+import {inquiryText} from '../lib/reasoning/inquiry-copy';
+import '../styles/counterexamples.css';import '../styles/inquiry.css';
+interface Props {kind:'inquiry-opening'|'inquiry-successes'|'inquiry-cycle'}
+const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=inquiryText(locale);
+const cycle=locale==='en'?['Competing explanations','Different predictions','Revise your beliefs']:['Konkurrierende Erklärungen','Unterschiedliche Vorhersagen','Überzeugungen überarbeiten'];
+---
+<figure class="counter-figure"><h3>{kind==='inquiry-cycle'?(locale==='en'?'From alternatives to a better test':'Von Alternativen zu einem besseren Test'):kind==='inquiry-opening'?c.opening:c.successTitle}</h3>
+<div class="inquiry-predictions">{kind==='inquiry-cycle'?cycle.map((label,i)=><div class="counter-case"><strong>{i+1}. {label}</strong></div>):(kind==='inquiry-opening'?[[2,4,6]]:[[8,10,12],[20,22,24],[100,102,104]]).map(ns=><div class="counter-case"><strong>{ns.join(', ')}</strong><p>✓ {c.accepted}</p></div>)}</div>
+{kind==='inquiry-successes'&&<><p class="counter-down" aria-hidden="true">↓</p><div class="inquiry-predictions">{c.rules.map(r=><div class="counter-case"><h4>{r}</h4><p>✓</p></div>)}</div><figcaption>{c.successCaption}</figcaption></>}
+</figure>

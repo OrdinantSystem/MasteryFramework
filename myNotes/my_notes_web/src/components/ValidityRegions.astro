@@ -1,0 +1,12 @@
+---
+import {validityCopy} from '../lib/reasoning/validity-copy';
+interface Props {reveal?:boolean;staticView?:boolean}
+const {reveal=false,staticView=false}=Astro.props,c=validityCopy[Astro.locals.locale||'en'];
+---
+<div class="validity-regions" role="img" aria-label={c.regionDescription}>
+ <strong class="validity-region-label">{c.rectangles}</strong>
+ <div class="validity-region-items">
+  <div class="validity-square-region"><strong>{c.squares}</strong><div class="validity-shape-square"/><span>S</span></div>
+  <div class="validity-outside"><p data-v-other hidden={reveal}>{staticView?'?':c.other}</p><p data-v-not-square hidden={!reveal}>{c.notSquare}</p><div class="validity-shape-rectangle" data-v-rectangle hidden={!reveal}/><span data-v-r hidden={!reveal}>R</span></div>
+ </div>
+</div>

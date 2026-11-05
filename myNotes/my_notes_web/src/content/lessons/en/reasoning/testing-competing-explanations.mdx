@@ -1,0 +1,175 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-07
+sourcePages: []
+sourceLocations: ["Sections 1–8; Research references"]
+title: "Are you testing an idea—or protecting it?"
+navTitle: "Testing competing explanations"
+description: "Compare hypotheses, design informative tests and distinguish agreement with evidence from discrimination between explanations."
+order: 7
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [counterexamples-and-claims]
+thumbnail: reasoning-inquiry
+---
+
+## 1. Three numbers, one secret
+
+I want to begin with a small experiment. I'm going to give you three numbers that follow a secret rule, and your job is to discover what that rule is. You can propose other sequences, and I'll tell you whether they follow the rule, but I won't tell you what it is until we've finished investigating.
+
+Here are your first three numbers.
+<ReasoningFigure kind="inquiry-opening" />
+
+What do you think the rule might be?
+
+Perhaps all the numbers must be even. Perhaps they must increase by exactly two, or maybe they simply have to get larger from left to right. Each explanation fits the example perfectly, but they aren't the same rule.
+
+Before continuing, choose your favorite explanation. You don't need to be confident yet; you just need a hypothesis that we can investigate.
+
+Now imagine you're allowed to test your idea by giving the machine new sequences. What would you try first?
+
+<Interactive kind="inquiry" preset="machine" id="hidden-rule-machine" />
+
+## 2. When successful experiments teach us very little
+
+Suppose your hypothesis was that the numbers must be even and increase by exactly two. You decide to test 8, 10, 12, and the machine accepts it. Encouraged, you try 20, 22, 24, which also works. Then 100, 102, 104. Another success.
+
+Three experiments, three correct predictions. Surely your explanation must be getting stronger?
+
+Well, consider something. The machine would have accepted every one of those sequences if the secret rule had simply required the numbers to increase. It would also have accepted them if the rule required a constant gap of two, without requiring even numbers.
+
+Your experiments haven't distinguished those possibilities. You've repeatedly tested examples on which the explanations agree.
+<ReasoningFigure kind="inquiry-successes" />
+
+Notice that the number of experiments isn't the main problem. You could try a hundred different examples of consecutive even numbers and receive a hundred positive answers. Yet you would still be unable to tell which of these explanations the machine was using.
+
+Of course, that doesn't mean the observations are worthless. They establish that the machine accepts those sequences, and they would have contradicted any rule that predicted their rejection. But they provide no way to choose between explanations that all predict the same result.
+
+This gives us an important distinction: evidence that is consistent with an explanation isn't necessarily evidence that distinguishes it from its competitors.
+
+To see how that works, let's turn our three possible explanations into a picture.
+
+## 3. Three hypotheses, one picture
+
+We'll call our explanations A, B, and C. Hypothesis A requires consecutive even integers. Hypothesis B accepts any three integers separated by steps of exactly two. Hypothesis C is broader: it accepts any three strictly increasing integers.
+
+Now imagine drawing a region around every sequence accepted by each rule. The interesting part is that these regions fit inside one another. Every sequence accepted by A is also accepted by B, and every sequence accepted by B is also accepted by C.
+
+This means our original sequence, 2, 4, 6, lies inside all three regions. But 3, 5, 7 lies outside A, since its numbers are odd. And 3, 7, 11 lies outside both A and B, since its gaps are four rather than two.
+<Interactive kind="inquiry" preset="regions" id="hypothesis-regions" />
+
+Look at how the diagram changes when you choose different examples. We're no longer just collecting successful sequences. We're deliberately searching for the regions where our explanations disagree.
+
+And that changes how we should choose our next experiment.
+
+Let's consider 3, 5, 7. A predicts rejection, because the numbers aren't even. B and C predict acceptance. That means the machine's answer will help us distinguish A from the other two explanations.
+
+But before revealing the result, consider what each answer would mean. If the machine says yes, A must be wrong. If it says no, then B and C must be wrong, assuming these exact rules govern its behavior.
+
+This is already a better investigation: we've made the implications of both possible results clear before performing the experiment.
+
+Now let's test it.
+
+## 4. A positive answer can overturn your hypothesis
+
+The machine accepts 3, 5, 7. That result eliminates A, because A predicted rejection. We now know that being even is not a necessary condition of the hidden rule.
+
+But B and C are still possible, so let's try 3, 7, 11. B requires gaps of exactly two and therefore predicts rejection, while C only requires increasing numbers and predicts acceptance.
+
+The machine says yes again. And with that single observation, B is eliminated too.
+
+What makes this particularly interesting is that both experiments returned positive answers. Yet those positive results did something our earlier positive results couldn't: they distinguished competing hypotheses.
+
+We can now identify the rule used by our machine. It accepts any three strictly increasing integers, regardless of whether they're even, positive, or equally spaced.
+<Interactive kind="inquiry" preset="evidence" id="prediction-board" />
+
+For contrast, imagine we had tested 9, 7, 5. The machine would have rejected it, but all three hypotheses predict rejection. That negative result would not distinguish them.
+
+So the lesson isn't that we should always seek a negative answer. A positive observation can contradict a hypothesis, and a negative observation can leave our hypotheses untouched.
+
+What matters is how the result compares with what competing explanations predicted.
+| Test | Observed | Contradicted rules |
+| --- | --- | --- |
+| 8, 10, 12 | Yes | None |
+| 3, 5, 7 | Yes | A |
+| 3, 7, 11 | Yes | A and B |
+| 9, 7, 5 | No | None |
+
+There's a qualification worth making. The test 3, 7, 11 happened to eliminate two hypotheses because the machine accepted it. Had the machine rejected it, C would have been the one eliminated. We cannot know the result before conducting the experiment, so we shouldn't judge a test only by how many explanations it eliminates afterward.
+
+A better approach is to examine the possible outcomes in advance and ask how each would change our understanding.
+
+A genuinely useful experiment gives our explanations an opportunity to disagree with reality.
+
+And the discovery we've made is limited but real: among A, B, and C, we have identified the correct rule. That doesn't prove no more complicated rule could fit all our finite observations.
+
+## 5. Why do people sometimes miss this distinction?
+
+This experiment is based on a classic study published by psychologist Peter Cathcart Wason in 1960. Wason asked participants to discover a hidden rule using the sequence 2, 4, 6. Of the 29 participants, only six discovered the correct rule without first proposing an incorrect one. Others sometimes continued testing examples consistent with their initial ideas rather than effectively distinguishing those ideas from alternatives.
+
+The study is often discussed in connection with confirmation bias, our tendency to favor information that supports what we already believe. But we should be careful: this particular puzzle isn't a test of someone's general intelligence or rationality.
+
+And there's another important nuance. In 1987, researchers Joshua Klayman and Young-Won Ha argued that testing examples we expect to confirm our hypothesis—what they called a positive test strategy—can actually be useful in many circumstances. Its value depends on the structure of the problem and the alternatives we're considering.
+
+The mistake isn't seeking positive evidence. It's treating an expected result as strong support for one explanation without asking whether its rivals would have predicted the same thing.
+
+That's a distinction that matters far beyond a puzzle involving three numbers.
+
+## 6. A broken phone, three possible explanations
+
+Imagine your phone suddenly stops charging. Your first suspicion might be that the cable is broken, so you disconnect it, reconnect it, and check the screen. Nothing happens. You try again, but the phone still doesn't charge.
+
+Now consider what you've actually learned. A broken cable would explain the problem, but so would a defective power adapter or a damaged charging port. Since all three explanations predict the same observation, repeating the original experiment doesn't help us distinguish them.
+
+This is almost exactly the problem we encountered with the number machine. We have three hypotheses that agree about what will happen, and we need to create an experiment in which their predictions differ.
+
+Let's start by replacing the cable with one we know works. If the phone begins charging, that supports the explanation that the original cable was defective. If it still doesn't charge, the adapter and charging port remain possible causes.
+
+We can then keep the working cable and replace the adapter. If charging resumes, the original adapter was probably responsible. If charging still fails, the port becomes our remaining candidate.
+
+We've turned a vague suspicion into a sequence of experiments, each chosen using information obtained from the previous one.
+<Interactive kind="inquiry" preset="phone" id="phone-diagnosis" />
+
+Of course, real troubleshooting isn't always this tidy. The battery might be defective, multiple components could have failed, or the problem might be intermittent. But those complications don't invalidate the approach. They simply remind us that our list of explanations may be incomplete and that new observations can require new hypotheses.
+
+What matters is the strategy: instead of testing whether our favorite explanation could be correct, we're comparing it against plausible alternatives and updating our understanding as we go.
+
+## 7. Can you recognize a better test?
+
+Let's try one final example, without the number machine.
+
+Suppose you're trying to open a website, but the page won't load. You suspect that your internet connection has failed, although another possibility is that the website itself is unavailable.
+
+You could reload the same webpage, or you could try opening a different, normally reliable website.
+
+Which test would better distinguish the two explanations?
+<Interactive kind="inquiry" preset="challenge" id="website-test" />
+
+The second experiment doesn't guarantee a diagnosis, but it makes the competing explanations predict different outcomes. And that's exactly the reasoning we used to uncover the secret number rule.
+
+## 8. Are you testing an idea—or protecting it?
+
+We began with three numbers, 2, 4, 6, and discovered how easy it is to find examples that support an explanation without really testing whether that explanation is the right one.
+
+The turning point came when we stopped asking only whether our idea worked and started asking what its alternatives predicted. Suddenly, experiments that looked almost identical began teaching us very different things.
+
+That's a useful habit whenever you're investigating an idea, whether it's a scientific hypothesis, a technical problem, or something you believe about the world.
+<ReasoningFigure kind="inquiry-cycle" />
+
+Before accepting a conclusion, consider what other explanations could produce the same evidence, where those explanations would make different predictions, and what result would genuinely cause you to reconsider your position.
+
+These questions won't guarantee that you'll discover the truth. But they can prevent you from confusing repeated agreement with genuine understanding.
+
+Because an explanation that has survived a serious attempt to distinguish it from its rivals has earned something that an explanation supported only by convenient examples has not.
+
+And perhaps the most important question is this:
+
+If your explanation were wrong, would the experiments you're conducting give you a realistic chance of discovering that?
+
+## Research references
+
+- [Wason (1960) — On the Failure to Eliminate Hypotheses in a Conceptual Task](https://doi.org/10.1080/17470216008416717).
+- [Klayman & Ha (1987) — Confirmation, Disconfirmation, and Information in Hypothesis Testing](https://doi.org/10.1037/0033-295X.94.2.211).

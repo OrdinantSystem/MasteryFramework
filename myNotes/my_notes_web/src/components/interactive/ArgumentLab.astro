@@ -1,0 +1,50 @@
+---
+import ArgumentAnswer from '../ArgumentAnswer.astro';
+import {argumentText} from '../../lib/reasoning/argument-copy';
+import {argumentPresets,type ArgumentPreset} from '../../lib/interactive/argument-model';
+import {argumentMarkup} from '../../lib/interactive/argument-render';
+import '../../styles/counterexamples.css';import '../../styles/arguments.css';
+interface Props {preset:ArgumentPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',c=argumentText(locale),judgment=preset==='appeals'||preset==='practice';
+if(!(argumentPresets as readonly string[]).includes(preset))throw new Error('Unknown argument preset');
+---
+<figure class="counter-lab argument-lab" id={id} data-argument-lab={preset} data-locale={locale}>
+ <h3>{c.titles[preset]}</h3>
+ {judgment?<><div class="counter-columns">{c[preset].map((sentences,i)=><section class="argument-card"><h4>{c.argument} {i===0?'A':'B'}</h4>{sentences.map((s,j)=><p class:list={{'argument-conclusion':j===2}}>{s}</p>)}<p>{c.question}</p><div class="counter-controls" role="group" aria-label={`${c.argument} ${i===0?'A':'B'}`} >{[1,0].map(answer=><button type="button" data-argument-answer={`${i}:${answer}`} aria-pressed="false" aria-controls={`${id}-explanation`}>{preset==='appeals'?(answer?c.yes:c.no):(answer?c.valid:c.invalid)}</button>)}</div></section>)}</div>
+ <div class="counter-controls"><button type="button" data-argument-reveal aria-expanded="false" aria-controls={`${id}-explanation`}>{c.reveal}</button><button type="button" data-argument-reset>{c.reset}</button></div>
+ <div id={`${id}-explanation`} data-argument-explanation hidden><p data-argument-comparison></p><ArgumentAnswer preset={preset}/></div><noscript><details data-pagefind-ignore="all"><summary>{c.reveal}</summary><ArgumentAnswer preset={preset}/></details></noscript></>:<>
+ {preset==='xray'&&<div class="counter-controls" role="group" aria-label={c.argument}>{['A','B'].map((label,i)=><button type="button" data-argument-story={i} aria-pressed={i===0} aria-controls={`${id}-view`}>{c.argument} {label}</button>)}</div>}
+ <div class="counter-controls" role="group" aria-label={c.titles[preset]}>{(preset==='xray'?c.modes:preset==='only'?[c.all,c.only]:[c.counterAction]).map((label,i)=><button type="button" data-argument-choice={preset==='countermodel'?1:i} aria-pressed={preset!=='countermodel'&&i===0} aria-controls={`${id}-view`}>{label}</button>)}<button type="button" data-argument-reset>{c.reset}</button></div>
+ <div id={`${id}-view`} data-argument-view set:html={argumentMarkup(locale,preset,0)}/>
+ </>}
+ <p class="visually-hidden" data-argument-feedback role="status" aria-live="polite"></p>
+</figure>
+<script>
+import {argumentText} from '../../lib/reasoning/argument-copy';
+import {argumentMarkup} from '../../lib/interactive/argument-render';
+import {judgmentFeedback,type ArgumentPreset} from '../../lib/interactive/argument-model';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-argument-lab]')){
+ const preset=root.dataset.argumentLab as ArgumentPreset,locale=root.dataset.locale as Locale,c=argumentText(locale),feedback=root.querySelector<HTMLElement>('[data-argument-feedback]')!;
+ let story=0,mode=0,revealed=false;let answers:[number|null,number|null]=[null,null];
+ const judgment=preset==='appeals'||preset==='practice';
+ function draw(){
+  if(judgment){
+   root.querySelectorAll<HTMLElement>('[data-argument-answer]').forEach(b=>{const [i,v]=b.dataset.argumentAnswer!.split(':').map(Number);b.setAttribute('aria-pressed',String(answers[i]===v));});
+   root.querySelector<HTMLElement>('[data-argument-explanation]')!.hidden=!revealed;
+   const button=root.querySelector<HTMLButtonElement>('[data-argument-reveal]')!;button.textContent=revealed?c.hide:c.reveal;button.setAttribute('aria-expanded',String(revealed));
+   const status=judgmentFeedback(preset as 'appeals'|'practice',answers[0],answers[1]);root.querySelector('[data-argument-comparison]')!.textContent=c[status];feedback.textContent=revealed?(preset==='appeals'?c.appealTitle:c.practiceTitles.join(' ')):'';
+  }else{
+   const value=preset==='xray'?story*3+mode:mode;root.querySelector('[data-argument-view]')!.innerHTML=argumentMarkup(locale,preset,value);
+   root.querySelectorAll<HTMLElement>('[data-argument-story]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.argumentStory)===story)));
+   root.querySelectorAll<HTMLElement>('[data-argument-choice]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.argumentChoice)===mode)));
+   feedback.textContent=preset==='countermodel'?(mode?c.counterFound:c.counterInitial):preset==='only'?c.policies[mode]:`${c.argument} ${story?'B':'A'} · ${c.modes[mode]}`;
+  }
+ }
+ root.querySelectorAll<HTMLElement>('[data-argument-answer]').forEach(b=>b.addEventListener('click',()=>{const[i,v]=b.dataset.argumentAnswer!.split(':').map(Number);answers[i as 0|1]=v;revealed=false;draw();}));
+ root.querySelectorAll<HTMLElement>('[data-argument-story]').forEach(b=>b.addEventListener('click',()=>{story=Number(b.dataset.argumentStory);draw();}));
+ root.querySelectorAll<HTMLElement>('[data-argument-choice]').forEach(b=>b.addEventListener('click',()=>{mode=Number(b.dataset.argumentChoice);draw();}));
+ root.querySelector('[data-argument-reveal]')?.addEventListener('click',()=>{revealed=!revealed;draw();});
+ root.querySelector('[data-argument-reset]')!.addEventListener('click',()=>{story=mode=0;revealed=false;answers=[null,null];draw();});
+}
+</script>

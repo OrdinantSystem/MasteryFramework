@@ -1,4 +1,8 @@
 ---
+import {argumentPresets,argumentFigures} from '../lib/interactive/argument-model';
+import {inquiryPresets} from '../lib/interactive/inquiry-model';
+import {validityPresets,validityFigureKinds} from '../lib/interactive/validity-model';
+import {counterPresets,counterFigureKinds} from '../lib/interactive/counterexample-model';
 import {patternFigureKinds} from '../lib/interactive/patterns-model';
 import {proofFigureKinds} from '../lib/interactive/parity-model';
 import {equationPresetNames} from '../lib/interactive/equation-model';
@@ -28,6 +32,14 @@ Astro.locals.locale='en';
     <ul>{assets.map(asset=><li><a href={`#${asset.id}`}>{asset.name}</a> — {asset.purpose}</li>)}</ul>
     {assets.map(asset=><section id={asset.id}>
       <h2>{asset.name}</h2><p>{asset.purpose}</p><pre><code>{asset.example}</code></pre>
+      {asset.id==='argument-labs'&&argumentPresets.map(preset=><Interactive kind="arguments" preset={preset} id={`library-argument-${preset}`}/>)}
+      {asset.id==='argument-figures'&&argumentFigures.map(kind=><ReasoningFigure kind={kind}/>)}
+      {asset.id==='inquiry-labs'&&inquiryPresets.map(preset=><Interactive kind="inquiry" preset={preset} id={`library-inquiry-${preset}`}/>)}
+      {asset.id==='inquiry-figures'&&(['inquiry-opening','inquiry-successes','inquiry-cycle'] as const).map(kind=><ReasoningFigure kind={kind}/>)}
+      {asset.id==='validity-labs' &&validityPresets.map(preset=><Interactive kind="validity" preset={preset} id={`library-validity-${preset}`}/>)}
+      {asset.id==='validity-figures'&&validityFigureKinds.map(kind=><ReasoningFigure kind={kind}/>)}
+      {asset.id==='counterexample-labs' &&counterPresets.map(preset=><Interactive kind="counterexamples" preset={preset} id={`library-counter-${preset}`}/>)}
+      {asset.id==='counterexample-figures'&&counterFigureKinds.map(kind=><ReasoningFigure kind={kind}/>)}
       {asset.id==='pattern-explorers'&&(['continuations','next-test'] as const).map(preset=><Interactive kind="patterns" preset={preset} id={`library-pattern-${preset}`}/>)}
       {asset.id==='pattern-figures'&&patternFigureKinds.map(kind=><ReasoningFigure kind={kind}/>)}
       {asset.id==='proof-pairs'&&<Interactive kind="parity" preset="even-sum" id="library-complete-pairs"/>}

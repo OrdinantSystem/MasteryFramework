@@ -1,0 +1,421 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-08
+sourcePages: []
+sourceLocations: ["Sections 1–8; Learning checkpoint; Reference material"]
+title: "Kannst du aus dem falschen Grund recht haben?"
+navTitle: "Wahrheit, Gültigkeit und Schlüssigkeit"
+description: "Eine wahre Konklusion von einem gültigen Schluss unterscheiden, ein Gegenmodell konstruieren und deduktive Schlüssigkeit prüfen."
+order: 8
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [counterexamples-and-claims]
+thumbnail: implication
+---
+
+## 1. Das Rätsel zweier richtiger Antworten
+
+Stell dir vor, ich zeige dir eine einfache geometrische Form.
+
+<ReasoningFigure kind="validity-shape" />
+
+Nehmen wir nun an, zwei Personen betrachten diese Form und kommen zu genau derselben Konklusion:
+
+„Form S ist ein Quadrat.“
+
+Die erste Person erklärt:
+
+Person A
+
+„Form S hat vier gleich lange Seiten und vier rechte Winkel. Jedes Viereck mit diesen Eigenschaften ist ein Quadrat. Also ist Form S ein Quadrat.“
+
+Die zweite Person sagt:
+
+Person B
+
+„Jedes Quadrat ist ein Rechteck. Form S ist ein Rechteck. Also ist Form S ein Quadrat.“
+
+Beide Personen sind zu derselben Konklusion gekommen.
+
+Und diese Konklusion ist wahr.
+
+Aber es gibt ein Problem.
+
+Ein Argument begründet die Konklusion. Das andere nicht.
+
+Warum?
+
+Schließlich haben beide Personen etwas Richtiges gesagt. Jede Prämisse, die sie verwendet haben, ist wahr, und beide Konklusionen sind wahr.
+
+Was genau ist also anders?
+
+<Interactive kind="validity" preset="opening" id="validity-opening" />
+
+Das ist eine überraschend wichtige Unterscheidung.
+
+Denn wenn uns jemand etwas sagt, beurteilen wir seine Argumentation oft anhand einer einzigen Frage:
+
+Hatte die Person recht?
+
+Aber recht zu haben und einen guten Grund dafür zu haben, sind zwei verschiedene Dinge.
+
+Du kannst durch Verständnis zur Wahrheit gelangen. Du kannst durch Raten zu ihr gelangen. Und manchmal kannst du durch eine Argumentation zu ihr gelangen, die deine Konklusion tatsächlich nicht rechtfertigt.
+
+Um den Unterschied zu verstehen, werden wir diese beiden Argumente auseinandernehmen.
+
+Und wir werden entdecken, dass die wichtigste Frage in der deduktiven Logik nicht einfach lautet, ob etwas wahr ist.
+
+Sondern ob die Konklusion angesichts der Prämissen wahr sein musste.
+
+## 2. Ein Argument ist eine Brücke zwischen Aussagen
+
+Beginnen wir mit dem Argument von Person B.
+
+„Jedes Quadrat ist ein Rechteck. Form S ist ein Rechteck. Also ist Form S ein Quadrat.“
+
+Wir können es in drei Aussagen zerlegen.
+
+<ReasoningFigure kind="validity-argument" />
+
+In der Logik nennen wir die Aussagen, die als Gründe angeführt werden, Prämissen.
+
+Und die Aussage, die wir begründen wollen, ist die Konklusion.
+
+Ein Argument ist also eine Sammlung von Aussagen, in der die Prämissen als Stütze für die Konklusion angeführt werden.
+
+Beachte aber, dass das Diagramm zwei verschiedene Dinge enthält.
+
+Da sind die Aussagen selbst.
+
+Und dann sind da die Pfeile, die sie verbinden.
+
+Diese Pfeile stehen für den Anspruch, dass die Prämissen die Konklusion rechtfertigen.
+
+Und genau dort kann sich ein logischer Fehler verbergen.
+
+Denn selbst wenn jede einzelne Aussage wahr ist, ist die Verbindung zwischen ihnen möglicherweise nicht gerechtfertigt.
+
+Machen wir das sichtbar.
+
+## 3. Eine Zeichnung enthüllt den verborgenen Fehler
+
+Vergessen wir die Argumente für einen Moment und überlegen wir, was es bedeutet, dass etwas ein Quadrat ist.
+
+Ein Quadrat hat vier gleich lange Seiten und vier rechte Winkel.
+
+Ein Rechteck muss vier rechte Winkel haben, aber seine Seiten müssen nicht alle gleich lang sein.
+
+Also ist jedes Quadrat ein Rechteck.
+
+Aber bedeutet das, dass jedes Rechteck ein Quadrat ist?
+
+Wir können die Beziehung mithilfe zweier Bereiche veranschaulichen.
+
+Der große blaue Bereich enthält alle Rechtecke.
+
+Der kleinere goldene Bereich enthält alle Quadrate.
+
+<Note title="Farbkonvention im Diagramm — ergänzende Erklärung">
+Der Originaltext bezeichnet den Quadratbereich als golden. Die Diagramme verwenden für diesen Bereich Türkis und für die Rechtecke Blau, entsprechend der Farbpalette des Archivs. Die Verschachtelung und die logischen Beziehungen bleiben gleich.
+</Note>
+
+<ReasoningFigure kind="validity-regions" />
+
+Alles innerhalb des goldenen Bereichs muss auch zum blauen Bereich gehören.
+
+Konzentriere dich nun auf Form S.
+
+Sie gehört zum goldenen Bereich, also gehört sie notwendigerweise auch zum blauen Bereich.
+
+Wenn du weißt, dass etwas ein Quadrat ist, weißt du, dass es ein Rechteck sein muss.
+
+Die Implikation verläuft in diese Richtung:
+
+<ReasoningFigure kind="validity-forward" />
+
+Nehmen wir nun aber an, wir versuchen es mit dem Pfeil in der entgegengesetzten Richtung.
+
+<ReasoningFigure kind="validity-reverse" />
+
+Es gibt nur einen Weg, das herauszufinden.
+
+Wir müssen nach einem Rechteck suchen, das kein Quadrat ist.
+
+Und an dieser Stelle möchte ich dich bitten, eine Vorhersage zu machen.
+
+Was passiert mit der Argumentation von Person B, wenn wir Form S durch ein Rechteck ersetzen, dessen Seiten nicht alle gleich lang sind?
+
+<Interactive kind="validity" preset="countermodel" id="validity-countermodel" />
+
+Das ist der entscheidende Moment.
+
+Wir haben die Form geändert, aber nicht die logische Form des Arguments.
+
+Jedes Quadrat ist nach wie vor ein Rechteck.
+
+Unsere neue Form R ist nach wie vor ein Rechteck.
+
+Doch die Konklusion, dass R ein Quadrat ist, ist falsch.
+
+Wir haben eine Möglichkeit entdeckt, die die Argumentation nicht ausgeschlossen hat.
+
+Und das ist alles, was wir brauchen, um den logischen Fehler nachzuweisen.
+
+Diese Technik hat einen Namen: ein Gegenmodell konstruieren.
+
+Das ist eine Situation, in der die Prämissen wahr sind und die Konklusion falsch ist.
+
+Beachte aber etwas Subtiles.
+
+Wir haben nicht bewiesen, dass die ursprüngliche Form S kein Quadrat war.
+
+Sie war ein Quadrat. Sie ist es immer noch.
+
+Stattdessen haben wir bewiesen, dass die Argumentation von Person B als deduktives Argument unzuverlässig ist.
+
+Und nun können wir Gültigkeit endlich präzise definieren.
+
+## 4. Was bedeutet es wirklich, dass ein Argument gültig ist?
+
+Ein deduktives Argument ist gültig, wenn es keine mögliche Situation gibt, in der alle seine Prämissen wahr sind und seine Konklusion falsch ist.
+
+Das ist die ganze Idee.
+
+<ReasoningFigure kind="validity-test" />
+
+Betrachten wir die beiden Richtungen ein letztes Mal.
+
+<ReasoningFigure kind="validity-directions" />
+
+Mathematiker drücken diese Muster mithilfe der Implikation aus.
+
+Sei $Q(x)$ die Aussage, dass das Objekt $x$ ein Quadrat ist, und $R(x)$ die Aussage, dass es ein Rechteck ist.
+
+Wir wissen:
+
+$$ \forall x\,(Q(x)\Rightarrow R(x)). $$
+
+Das bedeutet, dass jedes Quadrat ein Rechteck ist.
+
+Wenn wir außerdem $Q(S)$ wissen, können wir $R(S)$ folgern.
+
+Aber $R(S)$ zu wissen erlaubt uns nicht, die Implikation umzukehren.
+
+$$ Q\Rightarrow R \quad\not\Rightarrow\quad R\Rightarrow Q. $$
+
+Der Fehler, von der Folge auf die Bedingung zu schließen, ist ein klassischer Fehlschluss, der als Bejahung des Konsequens bekannt ist.
+
+Und er tritt weit über die Geometrie hinaus auf.
+
+„Wenn es regnet, wird der Gehweg nass. Der Gehweg ist nass. Also hat es geregnet.“
+
+Vielleicht hat es das.
+
+Aber vielleicht hat jemand einen Rasensprenger benutzt.
+
+Wieder einmal garantiert eine wahre Beobachtung nicht die vorgeschlagene Erklärung.
+
+Bei Gültigkeit geht es nicht darum, ob die Konklusion zufällig wahr ist. Es geht darum, ob die Prämissen irgendeine Möglichkeit offenlassen, dass die Konklusion falsch ist.
+
+## 5. Vier Möglichkeiten, die du vermutlich nicht erwartet hast
+
+Wir wissen nun, warum die Argumentation von Person B scheitert.
+
+Aber es gibt eine noch seltsamere Konsequenz.
+
+Wir haben ein ungültiges Argument mit einer wahren Konklusion gesehen.
+
+Könnte auch das Gegenteil passieren? Könnte ein logisch gültiges Argument eine falsche Konklusion haben?
+
+Überraschenderweise ja.
+
+Um zu verstehen, warum, werden wir vier Argumente in einem Raster anordnen.
+
+Denk an unsere beiden Formen: S ist ein Quadrat, und R ist ein Rechteck, das kein Quadrat ist.
+
+<ReasoningFigure kind="validity-grid" />
+
+Betrachte das Beispiel oben rechts.
+
+„Alle Rechtecke sind Quadrate. R ist ein Rechteck. Also ist R ein Quadrat.“
+
+Die Konklusion ist falsch.
+
+Aber die Struktur ist gültig.
+
+Denn wenn wirklich jedes Rechteck ein Quadrat wäre, dann wäre alles, von dem man weiß, dass es ein Rechteck ist, notwendigerweise ein Quadrat.
+
+Die logische Verbindung funktioniert. Die Ausgangsinformation nicht.
+
+Betrachte nun das Beispiel unten links.
+
+Die Konklusion ist wahr, weil S wirklich ein Quadrat ist.
+
+Aber wir haben bereits gezeigt, dass die Argumentation nicht gültig ist.
+
+Das sind zwei unabhängige Fragen.
+
+Die eine betrifft die Wahrheit der Konklusion.
+
+Die andere betrifft die Frage, ob die Prämissen diese Konklusion garantieren.
+
+Und daraus ergibt sich ein vollständigeres Bild:
+
+Gültiges Schließen liefert uns nicht automatisch wahre Konklusionen. Wahre Konklusionen deuten nicht automatisch auf gültiges Schließen hin.
+
+Was passiert also, wenn wir die beiden Dinge verbinden, die wir tatsächlich brauchen?
+
+## 6. Schlüssigkeit: wenn die Argumentation und die Ausgangsinformation richtig sind
+
+Stell dir vor, jedes Argument muss zwei Tore passieren.
+
+Das erste Tor prüft die Argumentation.
+
+Das zweite Tor prüft die Prämissen.
+
+<ReasoningFigure kind="validity-gates" />
+
+Ein Argument, das beide Tore passiert, heißt schlüssig.
+
+Ein schlüssiges deduktives Argument ist gültig, und alle seine Prämissen sind tatsächlich wahr.
+
+$$ \boxed{\text{Schlüssig}=\text{Gültig}+\text{Wahre Prämissen}} $$
+
+Warum garantiert das die Konklusion?
+
+Weil Gültigkeit uns sagt, dass wahre Prämissen nicht zu einer falschen Konklusion führen können.
+
+Und Schlüssigkeit sagt uns, dass die Prämissen wirklich wahr sind.
+
+Betrachten wir nun eine etwas andere Situation.
+
+Stell dir vor, wir entdecken eine versiegelte Kiste mit geometrischen Formen.
+
+Eine Forscherin sagt uns:
+
+„Jedes Objekt in dieser Kiste ist ein Quadrat. Objekt K ist in der Kiste. Also ist K ein Quadrat.“
+
+Folgt die Konklusion aus den Prämissen?
+
+Ja. Vollkommen.
+
+Aber wir haben die Kiste nicht geöffnet, und die Forscherin hat keinen Beleg dafür vorgelegt, dass jedes Objekt ein Quadrat ist.
+
+Ist das Argument also schlüssig?
+
+Das können wir noch nicht feststellen.
+
+Die erste Prämisse könnte wahr sein. Sie könnte falsch sein. Wir wissen es einfach nicht.
+
+Diese Unterscheidung ist wichtig.
+
+Eine unbelegte Prämisse ist nicht automatisch eine falsche Prämisse.
+
+Manchmal ist unsere Argumentation richtig, aber uns fehlen ausreichende Informationen, um festzustellen, dass ihre Prämissen wahr sind.
+
+Und hier verbindet sich Logik mit Wissenschaft.
+
+Die Logik untersucht, was aus unseren Annahmen folgt.
+
+Empirische Untersuchungen helfen uns festzustellen, ob diese Annahmen die Welt zutreffend beschreiben.
+
+Keine ersetzt die andere.
+
+## 7. Zwei letzte Herausforderungen
+
+Sehen wir uns an, ob du die Idee über unsere ursprünglichen Formen hinaus anwenden kannst.
+
+Herausforderung A — Das Warnlicht
+
+Immer wenn der Feueralarm ausgelöst wird, geht ein rotes Warnlicht an.
+
+Das rote Warnlicht leuchtet.
+
+Also wurde der Feueralarm ausgelöst.
+
+<Interactive kind="validity" preset="warning" id="validity-warning" />
+
+Herausforderung B — Der fehlerhafte Beweis
+
+Ein Mathematiker veröffentlicht einen Beweis, der behauptet, dass ein bestimmter Satz wahr ist.
+
+Ein anderer Mathematiker entdeckt einen logischen Fehler im Beweis.
+
+Der zweite Mathematiker verkündet:
+
+„Der Beweis ist ungültig. Also ist der Satz falsch.“
+
+Frage: Was ist an dieser Konklusion falsch?
+
+<Exercise>
+
+<Note title="Ergänzende Referenzantwort">
+Ein ungültiger Beweis begründet den Satz nicht. Das allein zeigt nicht, dass der Satz falsch ist: Er könnte einen anderen gültigen Beweis haben, oder er könnte falsch sein. Das Auffinden eines Fehlers beseitigt diese Rechtfertigung; um über die Wahrheit des Satzes zu entscheiden, braucht man einen gültigen Beweis oder ein Gegenbeispiel.
+</Note>
+
+</Exercise>
+
+Und es gibt noch eine weitere Unterscheidung, die wir mitnehmen sollten.
+
+Heute haben wir deduktive Argumente analysiert, die darauf abzielen, ihre Konklusionen zu garantieren.
+
+Aber ein großer Teil des wissenschaftlichen und alltäglichen Denkens ist induktiv oder probabilistisch. Belege können eine Konklusion wahrscheinlicher machen, ohne sie logisch unausweichlich zu machen.
+
+Eine wissenschaftliche Erklärung wird nicht wertlos, nur weil die Belege sie nicht deduktiv garantieren.
+
+Das wird wichtig werden, wenn wir Wahrscheinlichkeit, Unsicherheit und Evidenz untersuchen.
+
+## 8. Die abschließende Lektion: Wahrheit ist nicht dasselbe wie Rechtfertigung
+
+Kehren wir zu unserem Ausgangspunkt zurück.
+
+Zwei Personen betrachteten dasselbe Quadrat.
+
+Zwei Personen sagten etwas Wahres.
+
+Aber nur eine lieferte ein Argument, das ihre Konklusion begründete.
+
+Und wir verstehen nun, warum.
+
+Weil ein Argument zwei Teile hat, die wir niemals verwechseln dürfen: die Aussagen selbst und die logische Beziehung zwischen ihnen.
+
+Eine Konklusion kann wahr sein, selbst wenn das Argument, das sie stützen soll, scheitert.
+
+Ein Argument kann gültig sein, selbst wenn die Information, von der es ausgeht, falsch ist.
+
+Und wenn gültiges Schließen von wahren Prämissen ausgeht, haben wir etwas Stärkeres: ein schlüssiges deduktives Argument.
+
+Recht zu haben und gerechtfertigt zu sein ist nicht dieselbe Leistung.
+
+<ReasoningFigure kind="validity-distinction" />
+
+Das verändert die Frage, die wir stellen sollten, wenn jemand ein Argument vorbringt.
+
+Anstatt sofort zu fragen, ob wir seiner Konklusion zustimmen, können wir etwas Grundlegenderes fragen:
+
+Selbst wenn alles, wovon du ausgegangen bist, wahr wäre, würde deine Konklusion notwendigerweise folgen?
+
+Und erst nachdem wir diese Frage beantwortet haben, untersuchen wir, ob die Ausgangsinformation tatsächlich wahr ist.
+
+Denn das Ziel rationalen Denkens besteht nicht bloß darin, zu richtigen Antworten zu gelangen.
+
+Es besteht darin zu verstehen, warum diese Antworten es verdienen, geglaubt zu werden.
+
+## Lernkontrolle
+
+Am Ende dieser Episode solltest du erklären können:
+
+- Prämissen und Konklusion: von welchen Informationen ein Argument ausgeht und was es zu begründen versucht.
+- Gültigkeit: warum wahre Prämissen in einem gültigen deduktiven Argument die Konklusion garantieren müssen.
+- Gegenmodelle: wie ein möglicher Fall mit wahren Prämissen und einer falschen Konklusion Ungültigkeit nachweist.
+- Schlüssigkeit: warum sowohl Gültigkeit als auch wahre Prämissen für ein schlüssiges deduktives Argument notwendig sind.
+- Die zentrale Unterscheidung: warum das Erkennen eines schlechten Arguments für sich genommen dessen Konklusion nicht widerlegt.
+
+## Referenzmaterial
+
+forall x: An Introduction to Formal Logic — Abschnitte über Argumente und andere logische Begriffe. Matthew Knachel, Fundamental Methods of Logic, Kapitel 1.
+
+Diese überarbeitete Lektion verwendet eine einzige visuelle Demonstration, die sich im Verlauf der Episode entwickelt: das Quadrat, das Rechteck, der umgekehrte Schluss, das Gegenmodell und schließlich die Unterscheidung zwischen Gültigkeit und Schlüssigkeit.

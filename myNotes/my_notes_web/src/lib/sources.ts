@@ -1,5 +1,9 @@
 /** Provenance identities only; private originals are never public links. */
 export const sourceCatalog = {
+ 'reasoning-episode-09':{title:'How do you know? · Episode 09 · belief and logical structure',kind:'markdown',pages:0,course:'reasoning'},
+ 'reasoning-episode-07':{title:'How do you know? · Episode 07 · testing competing explanations',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-08':{title:'How do you know? · Episode 08 · truth, validity and soundness',kind:'markdown',pages:0,course:'reasoning'},
+  'reasoning-episode-06':{title:'Rational Thinking · Episode 06 · counterexamples and claims',kind:'markdown',pages:0,course:'reasoning'},
   'reasoning-episode-05':{title:'Rational Thinking · Episode 05 · patterns and evidence',kind:'markdown',pages:0,course:'reasoning'},
   'reasoning-episode-04':{title:'Rational Thinking · Episode 04 · pictures and general proofs',kind:'markdown',pages:0,course:'reasoning'},
   'reasoning-episode-03':{title:'Rational Thinking · Episode 03 · equality and equation transformations',kind:'markdown',pages:0,course:'reasoning'},

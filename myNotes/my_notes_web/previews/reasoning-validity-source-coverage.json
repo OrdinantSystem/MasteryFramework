@@ -1,0 +1,6 @@
+{
+  "sourceId": "reasoning-episode-08",
+  "check": "English source prose of at least 35 characters, excluding production artifacts, headings, list blocks and TeX; every paragraph found verbatim after whitespace and typographic-quote normalization in the rendered article. Private integration ledger separately reconstructs complete English MDX from the original in order.",
+  "paragraphs": 138,
+  "missing": []
+}

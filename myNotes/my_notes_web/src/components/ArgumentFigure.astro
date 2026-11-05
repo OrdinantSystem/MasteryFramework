@@ -1,0 +1,12 @@
+---
+import {argumentText} from '../lib/reasoning/argument-copy';
+import type {ArgumentFigure} from '../lib/interactive/argument-model';
+import Math from './Math.astro';
+import '../styles/counterexamples.css';import '../styles/arguments.css';
+interface Props {kind:ArgumentFigure}
+const {kind}=Astro.props,c=argumentText(Astro.locals.locale||'en');
+---
+<figure class="counter-figure argument-figure">
+<h3>{kind==='argument-structure'?c.structureTitle:kind==='argument-dimensions'?c.dimensionsTitle:c.twoPass}</h3>
+{kind==='argument-structure'?<><div class="counter-columns">{c.stories.map(story=><div class="argument-card"><h4>{story[0]}</h4>{story.slice(1).map((s,i)=><><p>{s}</p>{i<2&&<span aria-hidden="true">↓</span>}</>)}</div>)}</div><p class="counter-down" aria-hidden="true">↓</p><Math tex={String.raw`\begin{array}{c}P\to Q\\P\\\hline\therefore Q\end{array}`} display/><figcaption>{c.modus}</figcaption></>:kind==='argument-dimensions'?<><p class="counter-help">{c.dimensionsNote}</p><div class="counter-columns">{c.dimensions.map((row,i)=><section class="argument-card"><h4>{i<2?'✓':'×'} {row[0]}</h4><p><strong>{row[1]}</strong></p><p>{row[2]}</p></section>)}</div></>:<>{c.passes.map((pass,i)=><section class="argument-pass"><h4>{pass}</h4><p>{c.passCopy[i]}</p>{i===0?<><Math tex={String.raw`P\to Q,\quad P\quad\therefore Q`} display/><p>{c.inferenceValid}</p></>:<><p><strong>{c.sound}</strong></p><p class="argument-chain">{c.soundFormula}</p><p>{c.soundCaption}</p></>}</section>)}</>}
+</figure>

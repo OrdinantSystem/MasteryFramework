@@ -1,0 +1,288 @@
+{
+  "states": [
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "en",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 1429,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "light",
+      "wideElements": [],
+      "width": 1440
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "en",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 1429,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "dark",
+      "wideElements": [],
+      "width": 1440
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "en",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 379,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "light",
+      "wideElements": [],
+      "width": 390
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "en",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 379,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "dark",
+      "wideElements": [],
+      "width": 390
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "de",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 1429,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "light",
+      "wideElements": [],
+      "width": 1440
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "de",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 1429,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "dark",
+      "wideElements": [],
+      "width": 1440
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "de",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 379,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "light",
+      "wideElements": [],
+      "width": 390
+    },
+    {
+      "boardCells": 35,
+      "boardCounterexamples": [
+        "9",
+        "15",
+        "21",
+        "25",
+        "27",
+        "33",
+        "35"
+      ],
+      "figures": 10,
+      "h1": 1,
+      "h2": 11,
+      "labs": 4,
+      "lang": "de",
+      "mathErrors": 0,
+      "minControlHeight": 44,
+      "missingTargets": 0,
+      "nineCounters": 9,
+      "pageWidth": 379,
+      "redCards": 3,
+      "referenceOpen": true,
+      "theme": "dark",
+      "wideElements": [],
+      "width": 390
+    }
+  ],
+  "interactions": {
+    "primeThree": "Relevanter Fall — kein Gegenbeispiel",
+    "four": "Bedingung nicht erfüllt — kein Gegenbeispiel",
+    "fifteen": "Untersuchte Zahl\n15\n\nPrüfstufe 1\n\nUngerade und größer als 1?\n\nJa — erfüllt die Bedingung\n\nPrüfstufe 2\n\nIst die Primzahl-Folgerung falsch?\n\nJa — die Folgerung ist falsch\n\n15 ist ungerade und größer als eins, aber \n15\n=\n3\n×\n5\n15=3×5 zeigt einen nichttrivialen Faktor. Beide Anforderungen an ein Gegenbeispiel sind erfüllt.",
+    "primeReset": {
+      "focus": true,
+      "selected": "9"
+    },
+    "selected": "17 Zahlen erfüllen die Bedingung; 18 liegen außerhalb. Die Auswahl sagt noch nicht, ob eine Zahl prim ist.",
+    "sieveReset": 35,
+    "twoRed": "2 rot; 8 von 10 blau. Die Behauptung stimmt weiterhin: 8 ≥ 8. Die Behauptung erlaubt bis zu 2 rote Karten.",
+    "threeRed": {
+      "feedback": "3 rot; 7 von 10 blau. Die Behauptung ist falsch: 7 < 8. Die Behauptung erlaubt bis zu 2 rote Karten.",
+      "focus": true,
+      "red": 3
+    },
+    "zeroRed": 10,
+    "tenRed": 10,
+    "invalid": {
+      "feedback": "Gib eine ganze Zahl von 0 bis 10 ein. Die letzte gültige Sammlung bleibt sichtbar.",
+      "red": 10,
+      "value": "10"
+    },
+    "cardReset": {
+      "focus": true,
+      "value": "1"
+    },
+    "transfer6": "Bedingung nicht erfüllt — kein Gegenbeispiel",
+    "transfer8": "Relevanter Fall — kein Gegenbeispiel",
+    "transfer12": "Gültiges Gegenbeispiel — die Behauptung ist falsch",
+    "transfer16": "Relevanter Fall — kein Gegenbeispiel",
+    "transferReset": 0,
+    "independent": "true",
+    "pointerCards": 5,
+    "gallery": {
+      "figures": 10,
+      "idsDuplicate": [],
+      "katexErrors": 0,
+      "labs": 4
+    },
+    "galleryIsolation": {
+      "redCards": 10,
+      "primeFeedback": "Qualifying case — no counterexample"
+    },
+    "logs": [],
+    "prefixNavigation": "http://127.0.0.1:4338/MyNotes/reasoning/lessons/counterexamples-and-claims/",
+    "prefixEnglishSearch": "http://127.0.0.1:4338/MyNotes/reasoning/lessons/counterexamples-and-claims/",
+    "equivalentGerman": "http://127.0.0.1:4338/MyNotes/de/reasoning/lessons/counterexamples-and-claims/",
+    "prefixGermanSearch": "http://127.0.0.1:4338/MyNotes/de/reasoning/lessons/counterexamples-and-claims/",
+    "prefixedLinks": [],
+    "prefixDetector": "Bedingung nicht erfüllt — kein Gegenbeispiel",
+    "isolatedEnglishLinks": {
+      "invalid": [],
+      "lang": "en",
+      "mathErrors": 0,
+      "url": "http://127.0.0.1:4338/MyNotes/reasoning/lessons/counterexamples-and-claims/"
+    },
+    "isolatedGermanLinks": {
+      "invalid": [],
+      "lang": "de",
+      "url": "http://127.0.0.1:4338/MyNotes/de/reasoning/lessons/counterexamples-and-claims/"
+    },
+    "previewIsolation": {
+      "sharedOutputChangedDuringFirstPrefixCheck": true,
+      "isolatedOutput": "/private/tmp/mynotes-counterexample-prefix-qa/MyNotes",
+      "finalEnglishAndGermanPrefixChecksPassed": true
+    }
+  }
+}

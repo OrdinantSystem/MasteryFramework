@@ -1,0 +1,6 @@
+---
+import {argumentText} from '../lib/reasoning/argument-copy';
+interface Props {preset:'appeals'|'practice'}
+const {preset}=Astro.props,c=argumentText(Astro.locals.locale||'en');
+---
+{preset==='appeals'?<><h4>{c.appealTitle}</h4><p>{c.appealExplanation}</p></>:c.practiceTitles.map((t,i)=><section><h4>{t}</h4><p>{c.practiceExplanations[i]}</p></section>)}

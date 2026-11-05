@@ -1,4 +1,11 @@
 ---
+import ArgumentFigure from './ArgumentFigure.astro';
+import {isArgumentFigure,type ArgumentFigure as ArgumentFigureKind} from '../lib/interactive/argument-model';
+import InquiryFigure from './InquiryFigure.astro';
+import ValidityFigure from './ValidityFigure.astro';
+import {isValidityFigureKind,type ValidityFigureKind} from '../lib/interactive/validity-model';
+import CounterexampleFigure from './CounterexampleFigure.astro';
+import {isCounterFigureKind,type CounterFigureKind} from '../lib/interactive/counterexample-model';
 import ProofFigure from './ProofFigure.astro';
 import {isProofFigureKind,type ProofFigureKind} from '../lib/interactive/parity-model';
 import PatternFigure from './PatternFigure.astro';
@@ -11,11 +18,11 @@ import ReasoningSetFigure from './ReasoningSetFigure.astro';
 import {structureNodes} from '../lib/reasoning/structure';
 import {reasoningCopy} from '../lib/reasoning/copy';
 import '../styles/reasoning.css';
-interface Props {kind:PatternFigureKind|ProofFigureKind|'squared-solutions'|'opening'|'collections'|'addition'|'symbols'|'process'|'objects'|'singleton'|'singletons'|'matching'|'overlap'|'pairs'|'function'|AlgebraFigureKind}
+interface Props {kind:ArgumentFigureKind|'inquiry-opening'|'inquiry-successes'|'inquiry-cycle'|ValidityFigureKind|CounterFigureKind|PatternFigureKind|ProofFigureKind|'squared-solutions'|'opening'|'collections'|'addition'|'symbols'|'process'|'objects'|'singleton'|'singletons'|'matching'|'overlap'|'pairs'|'function'|AlgebraFigureKind}
 const {kind}=Astro.props,locale=Astro.locals.locale||'en',c=reasoningCopy[locale];
 const setKind=kind==='addition'?'union':kind==='objects'||kind==='singleton'||kind==='singletons'||kind==='matching'||kind==='overlap'||kind==='pairs'||kind==='function'?kind:null;
 ---
-{isPatternFigureKind(kind)?<PatternFigure kind={kind}/>: isProofFigureKind(kind)?<ProofFigure kind={kind}/>:kind==='squared-solutions'?<EquationFigure/>:isAlgebraFigureKind(kind)?<AlgebraFigure kind={kind}/>:setKind?<ReasoningSetFigure kind={setKind}/>:kind==='process'?<div class="reasoning-process"><h3>{c.processTitle}</h3><Flow nodes={structureNodes[locale]} caption={c.processCaption}/></div>:
+{isArgumentFigure(kind)?<ArgumentFigure kind={kind}/>:kind==='inquiry-opening'||kind==='inquiry-successes'||kind==='inquiry-cycle'?<InquiryFigure kind={kind}/>:isValidityFigureKind(kind)?<ValidityFigure kind={kind}/>:isCounterFigureKind(kind)?<CounterexampleFigure kind={kind}/>:isPatternFigureKind(kind)?<PatternFigure kind={kind}/>: isProofFigureKind(kind)?<ProofFigure kind={kind}/>:kind==='squared-solutions'?<EquationFigure/>:isAlgebraFigureKind(kind)?<AlgebraFigure kind={kind}/>:setKind?<ReasoningSetFigure kind={setKind}/>:kind==='process'?<div class="reasoning-process"><h3>{c.processTitle}</h3><Flow nodes={structureNodes[locale]} caption={c.processCaption}/></div>:
 <figure class:list={['reasoning-figure',`reasoning-${kind}`]}>
  {kind==='opening'&&<>
   <svg viewBox="0 0 720 230" role="img" aria-label={c.openingDescription}>

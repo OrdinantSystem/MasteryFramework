@@ -1,0 +1,273 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-two
+sourceId: reasoning-episode-09
+sourcePages: []
+sourceLocations: ["Sections 1–9; Research foundation"]
+title: "Would you accept this argument if you disliked its conclusion?"
+navTitle: "Belief and logical structure"
+description: "Separate preference, truth and validity by abstracting arguments, proving inclusion and testing countermodels."
+order: 9
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [truth-validity-and-soundness]
+thumbnail: reasoning-arguments
+---
+
+## 1. The argument you don't want to accept
+
+Imagine you're sitting on a university committee reviewing scholarship appeals. Two students have submitted requests, and the committee must decide what happens to each of them.
+
+The first student, Maya, submitted her appeal one minute after the deadline. She's worked hard all year, and her scholarship could determine whether she can afford to continue studying.
+
+A committee member opens her file and says:
+
+"According to our rules, every appeal submitted late is automatically rejected. Maya submitted hers late. Therefore, her appeal must be rejected."
+
+You might immediately feel that something is wrong. Is a single minute really enough to dismiss someone's appeal? Shouldn't the committee at least consider her circumstances?
+
+Now imagine another student, Daniel, who submitted his appeal before the deadline.
+
+A different committee member says:
+
+"According to our rules, every appeal submitted on time is reviewed. Daniel submitted his on time. Therefore, his appeal will be reviewed."
+
+That sounds much more reasonable. The student followed the rules, and the committee will consider his request.
+
+But here's the question: Is the reasoning in the first argument any worse than in the second?
+
+I'm not asking whether you agree with the university's decisions. I'm asking whether the conclusions actually follow from the premises.
+
+<Interactive kind="arguments" preset="appeals" id="appeal-judgments" />
+
+The two arguments have exactly the same logical structure. One happens to reach a conclusion we might dislike, while the other reaches one we're comfortable accepting.
+
+But if we agree that the late-submission rule exists, and that Maya really submitted late, then rejection follows from the rule, however unfair we might consider it.
+
+We can challenge the rule without challenging the inference.
+
+That's a distinction we often fail to make when an argument touches something we care about. And it raises a deeper question: what exactly are we evaluating when we decide that an argument is good?
+
+## 2. The structure hiding beneath the story
+
+Let's remove everything that makes the two arguments feel different. The scholarship, the names, the deadline, and the emotional consequences.
+
+We replace the condition in each argument with the letter P, and the outcome with Q.
+
+What remains is extraordinarily simple.
+
+<ReasoningFigure kind="argument-structure" />
+
+The first premise says that whenever P is true, Q follows. The second says that P is true. Therefore Q must be true.
+
+Now imagine trying to make this inference fail. We would need the conditional "if P, then Q" to be true, and P itself to be true, but Q to be false.
+
+Yet that would directly contradict the conditional. The premises would no longer all be true.
+
+And that gives us the precise definition of deductive validity:
+
+An argument is valid if there is no possible situation in which all its premises are true and its conclusion is false.
+
+
+
+
+
+Notice something important. We didn't need to establish that the university's policies were true. We asked what would follow if they were.
+
+This allows us to examine reasoning independently of our feelings about its conclusion.
+
+But we can go further. We can take an argument whose conclusion isn't merely uncomfortable, but genuinely absurd, and discover why it can still be mathematically valid.
+
+## 3. A proof hiding inside a picture
+
+Consider these three statements:
+
+All cats are mammals. All mammals are animals. Therefore, all cats are animals.
+
+You almost certainly agree with the conclusion. But remember our question: does it follow from the premises, or are we simply recognizing something we already know?
+
+Let's draw the relationships.
+
+If all cats are mammals, the entire collection of cats must fit inside the collection of mammals. And if all mammals are animals, the collection of mammals must fit inside the collection of animals.
+
+<Interactive kind="arguments" preset="xray" id="argument-xray" />
+
+Look at the smallest region. Could a cat somehow lie outside the collection of animals without breaking one of our assumptions?
+
+It couldn't. Being inside the cats collection already places it inside both larger collections.
+
+Now try changing the example. Suppose someone claims that all cats are bicycles, all bicycles are vehicles, and therefore all cats are vehicles.
+
+That's obviously not how the world works. But if the first two claims were true, the conclusion would have to be true as well. The words change, and the truth of the premises changes, but the structure of the inference doesn't.
+
+Now we can make an even more powerful move. Replace the names of the collections with A, B, and C.
+
+Instead of talking about animals, we're talking about sets: collections of objects. The notation $A\subseteq B$ means that every element of A also belongs to B.
+
+So our argument becomes:
+
+$$ A\subseteq B,\qquad B\subseteq C \quad\Longrightarrow\quad A\subseteq C $$
+
+And now we can prove it, not just illustrate it.
+
+Imagine picking any object $x$ from the set A. Because A is contained in B, that object must belong to B. And because B is contained in C, the very same object must belong to C.
+
+$$ x\in A\ \Longrightarrow\ x\in B\ \Longrightarrow\ x\in C $$
+
+Since we could have chosen any element of A, every element of A belongs to C. That's exactly what we wanted to prove.
+
+We've just discovered the transitivity of set inclusion.
+
+And the remarkable thing is that our proof doesn't depend on cats, bicycles, or anything else in the universe. It works for any three sets.
+
+This is what abstraction can accomplish. We begin with a familiar claim, remove the distracting details, and uncover a relationship that holds in infinitely many cases.
+
+But if logical structure can reveal that an argument works, can it also reveal why an argument that sounds perfectly correct actually fails?
+
+## 4. A true conclusion with a broken argument
+
+Let's try another example.
+
+All poodles are dogs. All poodles are mammals. Therefore, all dogs are mammals.
+
+Everything in that argument is true. But take a closer look at what the first two premises actually tell us.
+
+The first premise places poodles inside the collection of dogs. The second places poodles inside the collection of mammals.
+
+So poodles must belong to both collections.
+
+But what have we established about all the other dogs?
+
+Nothing from these two premises.
+
+<Interactive kind="arguments" preset="countermodel" id="shared-subset-countermodel" />
+
+Imagine the two larger circles overlapping without either one containing the other. We can keep every poodle inside both circles, exactly as the premises require, while leaving some of B outside C.
+
+If B and C were arbitrary categories, the point on the left could represent an object belonging to B but not C. Both premises would remain true, yet the conclusion that B is entirely contained in C would be false.
+
+Of course, in actual biology, dogs are mammals. We're not proposing the existence of a non-mammal dog. We're showing that the logical pattern alone, with its category names treated as interchangeable labels, doesn't establish that fact.
+
+Our first set argument had the structure:
+
+$$ A\subseteq B,\quad B\subseteq C \quad\Rightarrow\quad A\subseteq C $$
+
+But this second argument has a different structure:
+
+$$ A\subseteq B,\quad A\subseteq C \quad\not\Rightarrow\quad B\subseteq C $$
+
+The first structure is valid. The second is invalid.
+
+And one counterexample to the second structure is enough to prove it.
+
+Now notice what makes this discovery so interesting: the conclusion that all dogs are mammals is true. We know that from biology. But the specific argument we were given doesn't establish it.
+
+A true conclusion doesn't automatically make the reasoning valid, just as a false conclusion doesn't automatically make the reasoning invalid.
+
+That's why mathematical structure is useful. It lets us distinguish what we already believe from what the premises actually establish.
+
+## 5. Why believing the conclusion can fool us
+
+Think about the contrast we've uncovered.
+
+When the conclusion was that cats are animals, the argument felt natural. When the conclusion was that cats are vehicles, the argument seemed ridiculous, even though the logical structure was identical.
+
+And when we were told that all dogs are mammals, the conclusion seemed so obviously right that we might have overlooked the invalid reasoning supporting it.
+
+This is where mathematics meets psychology.
+
+In 1983, researchers Jonathan Evans, Julie Barston, and Paul Pollard investigated a phenomenon known as belief bias. Across three experiments involving syllogistic reasoning, they found that people's judgments were influenced both by the logical structure of arguments and by whether their conclusions were believable. The influence of belief was particularly pronounced for invalid arguments.
+
+
+
+
+
+In other words, the conclusion we expect to be true can influence our judgment of whether the argument actually proves it.
+
+<ReasoningFigure kind="argument-dimensions" />
+
+Having prior beliefs isn't a mistake. Knowing that dogs are mammals is valuable knowledge, and we shouldn't pretend otherwise.
+
+The problem arises when we use that knowledge to answer a different question: whether a particular argument establishes its conclusion.
+
+There's also an important distinction between the experiments we've just discussed and our opening story. Disliking a university policy isn't the same as finding a factual conclusion unbelievable. Both can distract us from examining an inference, but the research on belief bias specifically concerns the influence of conclusion believability. Our examples are illustrations, not a controlled experiment or a diagnosis of how you personally reason.
+
+What matters is that we now have a way to prevent these different questions from becoming confused.
+
+## 6. A method for reasoning against your own preferences
+
+Let's return to Maya's appeal.
+
+Suppose you're convinced that rejecting a scholarship appeal over a one-minute delay is unfair. You want the committee to reconsider its decision.
+
+You have two options. You could challenge the reasoning simply because you dislike its conclusion. Or you could examine exactly where the disagreement lies.
+
+The second approach is much more powerful.
+
+<ReasoningFigure kind="argument-two-pass" />
+
+In the first pass, we discover that the inference is valid. If the university really rejects every late appeal, and Maya's appeal really was late, the stated decision follows.
+
+In the second pass, we investigate whether those premises deserve acceptance.
+
+Perhaps the university actually allows exceptions. Perhaps the submission system recorded the time incorrectly. If so, the problem lies with the factual assumptions, not with the logical form.
+
+And even if the premises are correct, we can still argue that the university ought to change its policy. That's an ethical and practical criticism, not a demonstration of invalidity.
+
+The distinction gives us a remarkably useful ability. We can say, "Your conclusion follows from your assumptions, but I reject those assumptions." Or, "I believe your conclusion, but the argument you offered doesn't establish it."
+
+We no longer have to choose between accepting an entire argument and rejecting it entirely. We can identify precisely what is justified and what remains open to challenge.
+
+## 7. One small word can change everything
+
+Before we finish, there's one limitation of our mathematical technique that we shouldn't overlook.
+
+We've been removing words to reveal structure. But if we're careless, removing or replacing words can actually change the argument.
+
+Compare these two university policies:
+
+<Interactive kind="arguments" preset="only" id="all-versus-only" />
+
+One word has reversed the direction of the relationship.
+
+If we symbolized both statements in the same way, we would have lost the meaning that makes them different.
+
+So abstraction isn't about ignoring words. It's about preserving exactly the relationships that matter while removing the details that don't.
+
+That's why mathematical notation is valuable: when used carefully, it makes the underlying commitments of an argument visible.
+
+## 8. Final challenge — Can you separate truth from validity?
+
+Let's finish with two new arguments. Before checking the answers, ask yourself whether each conclusion is guaranteed by its premises, not merely whether it happens to be true.
+
+<Interactive kind="arguments" preset="practice" id="argument-transfer" />
+
+## 9. The question that changes how you disagree
+
+Think back to Maya and Daniel.
+
+We began with two arguments that led to very different feelings. Then we stripped away their content and discovered that the same logical pattern lay underneath.
+
+We followed that structure into mathematics, where collections became sets and a familiar diagram became a proof that worked in infinitely many cases.
+
+And we discovered the other side of the problem: an argument can reach a conclusion we know is true, yet fail to establish it.
+
+The lesson isn't that our beliefs are unreliable or that emotions have no place in important decisions. It's that truth, logical validity, and whether something deserves our acceptance are different questions.
+
+Understanding those distinctions gives us a better way to approach disagreement.
+
+The next time someone presents an argument that supports something you strongly believe—or something you desperately want to reject—ask yourself:
+
+Would I judge this reasoning in the same way if I felt differently about its conclusion?
+
+Then examine what actually follows from the premises, and whether those premises deserve acceptance.
+
+Because the goal of reasoning isn't simply to arrive at the answer we prefer.
+
+It's to understand why an answer is justified.
+
+## Research foundation
+
+Evans, Barston & Pollard (1983), [On the Conflict Between Logic and Belief in Syllogistic Reasoning](https://doi.org/10.3758/BF03196976); and [forall x: Calgary](https://forallx.openlogicproject.org/html/) for logical validity, counterexamples, and formal reasoning.

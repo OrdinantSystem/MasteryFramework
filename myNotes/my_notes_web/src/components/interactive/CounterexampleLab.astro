@@ -1,0 +1,45 @@
+---
+import {counterCopy,counterFeedback} from '../../lib/reasoning/counterexample-copy';
+import {counterPresets,primeChoices,divisibilityChoices,sieveStages,cardBounds,initialCounterValue,validateCounterValue,type CounterPreset} from '../../lib/interactive/counterexample-model';
+import {caseMarkup,sieveMarkup,cardsMarkup} from '../../lib/interactive/counterexample-render';
+import '../../styles/counterexamples.css';
+interface Props {preset:CounterPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',c=counterCopy[locale],n=initialCounterValue(preset);
+if(!(counterPresets as readonly string[]).includes(preset))throw new Error('Unknown counterexample preset');
+const title=preset==='prime-detector'?c.detector:preset==='sieve'?c.sieve:preset==='cards'?c.cards:c.divisibility;
+const help=preset==='prime-detector'?c.detectorHelp:preset==='sieve'?c.sieveHelp:preset==='cards'?c.cardsHelp:c.divisibilityHelp;
+const choices=preset==='sieve'?sieveStages:preset==='prime-detector'?primeChoices:divisibilityChoices;
+const view=preset==='cards'?cardsMarkup(locale,n):preset==='sieve'?sieveMarkup(locale,n):caseMarkup(locale,preset,n);
+validateCounterValue(preset,n);
+---
+<figure class="counter-lab" id={id} data-counter-lab={preset} data-locale={locale}>
+ <h3>{title}</h3><p class="counter-help">{help}</p>
+ {preset!=='cards'&&<div class="counter-controls" role="group" aria-label={preset==='sieve'?title:c.choose}>{choices.map(value=><button type="button" data-counter-choice={value} aria-pressed={value===n?'true':'false'} aria-controls={`${id}-result`}>{preset==='sieve'?c.stages[value]:value}</button>)}<button type="button" data-counter-reset>{c.reset}</button></div>}
+ <div data-counter-view set:html={view}/>
+ {preset==='cards'&&<><div class="counter-inputs"><label for={`${id}-range`}>{c.redCount}: <output data-red-count>{n}</output><input id={`${id}-range`} type="range" min={cardBounds.min} max={cardBounds.max} step="1" value={n} data-counter-range aria-describedby={`${id}-help`} aria-controls={`${id}-result`}/></label><label for={`${id}-number`}>{c.numericRed}<input id={`${id}-number`} type="number" inputmode="numeric" min={cardBounds.min} max={cardBounds.max} step="1" value={n} data-counter-number aria-describedby={`${id}-help`} aria-controls={`${id}-result`}/></label><button type="button" data-counter-reset>{c.reset}</button></div><p class="counter-help" id={`${id}-help`}>{c.cardHelp}</p></>}
+ <figcaption id={`${id}-result`} data-counter-feedback role="status" aria-live="polite" aria-atomic="true">{counterFeedback(locale,preset,n)}</figcaption>
+</figure>
+<script>
+import {counterFeedback,counterCopy} from '../../lib/reasoning/counterexample-copy';
+import {initialCounterValue,validateCounterValue,cardInput,type CounterPreset} from '../../lib/interactive/counterexample-model';
+import {caseMarkup,sieveMarkup,cardsMarkup} from '../../lib/interactive/counterexample-render';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-counter-lab]')){
+ const preset=root.dataset.counterLab as CounterPreset,locale=root.dataset.locale as Locale;
+ let n=initialCounterValue(preset);
+ const range=root.querySelector<HTMLInputElement>('[data-counter-range]'),number=root.querySelector<HTMLInputElement>('[data-counter-number]'),feedback=root.querySelector<HTMLElement>('[data-counter-feedback]')!;
+ function draw(value:number){
+  validateCounterValue(preset,value);n=value;
+  root.querySelector('[data-counter-view]')!.innerHTML=preset==='cards'?cardsMarkup(locale,n):preset==='sieve'?sieveMarkup(locale,n):caseMarkup(locale,preset,n);
+  root.querySelectorAll<HTMLButtonElement>('[data-counter-choice]').forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.counterChoice)===n)));
+  if(range&&number){range.value=String(n);number.value=String(n);root.querySelector('[data-red-count]')!.textContent=String(n);}
+  feedback.textContent=counterFeedback(locale,preset,n);
+ }
+ function update(raw:string){const next=cardInput(raw);if(next===null){feedback.textContent=counterCopy[locale].invalid;return;}draw(next);}
+ range?.addEventListener('input',()=>update(range.value));number?.addEventListener('input',()=>update(number.value));
+ function commitNumber(){if(number&&cardInput(number.value)===null){number.value=String(n);feedback.textContent=counterCopy[locale].invalid;}}
+ number?.addEventListener('change',commitNumber);number?.addEventListener('blur',commitNumber);
+ root.querySelectorAll<HTMLButtonElement>('[data-counter-choice]').forEach(button=>button.addEventListener('click',()=>draw(Number(button.dataset.counterChoice))));
+ root.querySelector('[data-counter-reset]')!.addEventListener('click',()=>draw(initialCounterValue(preset)));
+}
+</script>

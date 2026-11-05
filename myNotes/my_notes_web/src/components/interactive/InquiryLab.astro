@@ -1,0 +1,37 @@
+---
+import {inquiryText} from '../../lib/reasoning/inquiry-copy';
+import {experiments,inquiryPresets,type InquiryPreset} from '../../lib/interactive/inquiry-model';
+import {inquiryMarkup} from '../../lib/interactive/inquiry-render';
+import '../../styles/counterexamples.css';
+import '../../styles/inquiry.css';
+interface Props {preset:InquiryPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',c=inquiryText(locale);
+if(!inquiryPresets.includes(preset))throw new Error('Unknown inquiry preset');
+const choices=preset==='phone'?c.stages:preset==='challenge'?c.choices:experiments.map(ns=>ns.join(', '));
+---
+<figure class="counter-lab inquiry-lab" id={id} data-inquiry={preset} data-locale={locale}>
+<h3>{c.titles[preset]}</h3>
+{preset==='machine'?<><form data-inquiry-form><label>{c.hypothesis}<input type="text" data-hypothesis maxlength="300" placeholder={c.hypothesisHint}/></label><label>{c.input}<input type="text" data-triple value="8, 10, 12" required autocomplete="off"/></label><button type="submit">{c.test}</button><button type="button" data-inquiry-reset>{c.reset}</button></form><p data-inquiry-feedback role="status" aria-live="polite">{c.initial}</p><h4>{c.history}</h4><ol data-inquiry-history><li>{c.historyEmpty}</li></ol></>:<>
+{preset==='phone'&&<><div class="inquiry-diagnosis"><p class="inquiry-node">{c.phoneStart}</p><p class="counter-down" aria-hidden="true">↓</p><p class="inquiry-node inquiry-action">{c.cable}</p><div class="inquiry-branches"><div><p>✓ {c.charges}</p><p class="inquiry-node inquiry-outcome">{c.faults[0]}</p></div><div><p>× {c.fails}</p><p class="inquiry-node inquiry-action">{c.adapter}</p><div class="inquiry-branches"><div><p>✓ {c.charges}</p><p class="inquiry-node inquiry-outcome">{c.faults[1]}</p></div><div><p>× {c.fails}</p><p class="inquiry-node">{c.port}</p></div></div></div></div></div><p class="counter-help">{c.phoneNote}</p></>}
+<div class="counter-controls" role="group" aria-label={c.titles[preset]}>{choices.map((label,i)=><button type="button" data-inquiry-choice={preset==='challenge'?i+1:i} aria-pressed={preset!=='challenge'&&i===0?'true':'false'} aria-controls={`${id}-result`}>{label}</button>)}<button type="button" data-inquiry-reset>{c.reset}</button></div>
+<div id={`${id}-result`} data-inquiry-view set:html={inquiryMarkup(locale,preset,0)}/>
+{preset==='evidence'&&<button type="button" data-inquiry-reveal>{c.reveal}</button>}
+<p class:list={{'visually-hidden':preset==='evidence'}} data-inquiry-feedback role="status" aria-live="polite"></p>
+</>}
+</figure>
+<script>
+import {triple,evidence,validateInquiry,type InquiryPreset} from '../../lib/interactive/inquiry-model';
+import {inquiryText} from '../../lib/reasoning/inquiry-copy';
+import {inquiryMarkup} from '../../lib/interactive/inquiry-render';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-inquiry]')){
+ const preset=root.dataset.inquiry as InquiryPreset,locale=root.dataset.locale as Locale,c=inquiryText(locale),feedback=root.querySelector<HTMLElement>('[data-inquiry-feedback]')!;
+ let n=0;const history:{ns:readonly number[];accepted:boolean}[]=[];
+ function draw(value:number,revealed=false){validateInquiry(preset,value);n=value;root.querySelector('[data-inquiry-view]')!.innerHTML=inquiryMarkup(locale,preset,n,revealed);root.querySelectorAll<HTMLElement>('[data-inquiry-choice]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.inquiryChoice)===n)));feedback.textContent=preset==='evidence'&&revealed?root.querySelector('[data-inquiry-view] .inquiry-result')!.textContent: '';
+ const reveal=root.querySelector<HTMLButtonElement>('[data-inquiry-reveal]');if(reveal)reveal.disabled=revealed;}
+ root.querySelectorAll<HTMLElement>('[data-inquiry-choice]').forEach(b=>b.addEventListener('click',()=>draw(Number(b.dataset.inquiryChoice))));
+ root.querySelector('[data-inquiry-reveal]')?.addEventListener('click',()=>draw(n,true));
+ root.querySelector('form')?.addEventListener('submit',event=>{event.preventDefault();const input=root.querySelector<HTMLInputElement>('[data-triple]')!,ns=triple(input.value);if(!ns){feedback.textContent=c.invalid;return;}const accepted=evidence(ns).accepted;history.push({ns,accepted});if(history.length>12)history.shift();feedback.textContent=`${ns.join(', ')}: ${accepted?c.accepted:c.rejected}`;const list=root.querySelector('[data-inquiry-history]')!;list.replaceChildren(...history.map(row=>{const li=document.createElement('li');li.textContent=`${row.ns.join(', ')}: ${row.accepted?c.accepted:c.rejected}`;return li;}));});
+ root.querySelector('[data-inquiry-reset]')!.addEventListener('click',()=>{if(preset==='machine'){root.querySelector<HTMLFormElement>('form')!.reset();history.length=0;root.querySelector('[data-inquiry-history]')!.replaceChildren(Object.assign(document.createElement('li'),{textContent:c.historyEmpty}));feedback.textContent=c.initial;}else draw(0);});
+}
+</script>

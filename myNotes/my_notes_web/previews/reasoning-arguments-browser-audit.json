@@ -1,0 +1,146 @@
+{
+  "matrix": [
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "en",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 390
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 1440
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 1440
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "light",
+      "width": 390
+    },
+    {
+      "brokenControls": 0,
+      "figureOverflow": false,
+      "figures": 3,
+      "labs": 5,
+      "lang": "de",
+      "mathErrors": 0,
+      "overflow": false,
+      "shortControls": 0,
+      "theme": "dark",
+      "width": 390
+    }
+  ],
+  "xrayStates": [
+    {
+      "story": 0,
+      "mode": 0,
+      "text": "Animals\nMammals\nCats\n\nCats ⟶ Mammals ⟶ Animals\n\nThe relationships shown are the ones required if the premises are true."
+    },
+    {
+      "story": 0,
+      "mode": 1,
+      "text": "C\nB\nA\n\nA ⟶ B ⟶ C\n\nEvery element of A belongs to B, and every element of B belongs to C. Therefore every element of A belongs to C."
+    },
+    {
+      "story": 0,
+      "mode": 2,
+      "text": "C\nB\nA\n\n● x ∈ A\n\nA ⟶ B ⟶ C\n\nx ∈ A ⟹ x ∈ B ⟹ x ∈ C\n\nChoose any element x in A. The same element must be in B and then C. This is an arbitrary element, not a sample of several cases."
+    },
+    {
+      "story": 1,
+      "mode": 0,
+      "text": "Vehicles\nBicycles\nCats\n\nCats ⟶ Bicycles ⟶ Vehicles\n\nThe relationships shown are the ones required if the premises are true."
+    },
+    {
+      "story": 1,
+      "mode": 1,
+      "text": "C\nB\nA\n\nA ⟶ B ⟶ C\n\nEvery element of A belongs to B, and every element of B belongs to C. Therefore every element of A belongs to C."
+    },
+    {
+      "story": 1,
+      "mode": 2,
+      "text": "C\nB\nA\n\n● x ∈ A\n\nA ⟶ B ⟶ C\n\nx ∈ A ⟹ x ∈ B ⟹ x ∈ C\n\nChoose any element x in A. The same element must be in B and then C. This is an arbitrary element, not a sample of several cases."
+    }
+  ],
+  "search": {
+    "en": "belief",
+    "de": "Glaubhaftigkeit",
+    "prefixedResults": true,
+    "keyboardActivation": true
+  },
+  "chapterCounts": [
+    8,
+    1
+  ],
+  "nativeChapterCollapse": true,
+  "crossPartNavigation": true,
+  "judgmentResetAndFocus": true,
+  "instanceIsolation": true
+}

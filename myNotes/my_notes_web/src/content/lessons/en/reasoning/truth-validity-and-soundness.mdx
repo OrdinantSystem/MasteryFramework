@@ -1,0 +1,421 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-08
+sourcePages: []
+sourceLocations: ["Sections 1–8; Learning checkpoint; Reference material"]
+title: "Can you be right for the wrong reason?"
+navTitle: "Truth, validity and soundness"
+description: "Distinguish a true conclusion from a valid inference, construct a countermodel, and test deductive soundness."
+order: 8
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [counterexamples-and-claims]
+thumbnail: implication
+---
+
+## 1. The mystery of two correct answers
+
+Imagine I show you a simple geometric shape.
+
+<ReasoningFigure kind="validity-shape" />
+
+Now suppose two people examine this shape and reach exactly the same conclusion:
+
+"Shape S is a square."
+
+The first person explains:
+
+Person A
+
+"Shape S has four equal sides and four right angles. Any quadrilateral with these properties is a square. Therefore, Shape S is a square."
+
+The second person says:
+
+Person B
+
+"Every square is a rectangle. Shape S is a rectangle. Therefore, Shape S is a square."
+
+Both people have reached the same conclusion.
+
+And that conclusion is true.
+
+But there's a problem.
+
+One argument establishes the conclusion. The other doesn't.
+
+Why?
+
+After all, both people have said something correct. Every premise they've used is true, and both conclusions are true.
+
+So what exactly is different?
+
+<Interactive kind="validity" preset="opening" id="validity-opening" />
+
+This is a surprisingly important distinction.
+
+Because when someone tells us something, we often evaluate their reasoning by asking one question:
+
+Were they right?
+
+But being right and having a good reason for being right are two different things.
+
+You can arrive at the truth through understanding. You can arrive at it by guessing. And sometimes you can arrive at it through reasoning that doesn't actually justify your conclusion.
+
+To understand the difference, we're going to take these two arguments apart.
+
+And we'll discover that the most important question in deductive logic isn't simply whether something is true.
+
+It's whether the conclusion had to be true, given the premises.
+
+## 2. An argument is a bridge between statements
+
+Let's start with Person B's argument.
+
+"Every square is a rectangle. Shape S is a rectangle. Therefore, Shape S is a square."
+
+We can separate it into three statements.
+
+<ReasoningFigure kind="validity-argument" />
+
+In logic, we call the statements offered as reasons premises.
+
+And the statement we're trying to establish is the conclusion.
+
+So an argument is a collection of statements in which the premises are presented as support for the conclusion.
+
+But notice that the diagram contains two different things.
+
+There are the statements themselves.
+
+And then there are the arrows connecting them.
+
+Those arrows represent the claim that the premises justify the conclusion.
+
+And that's where a logical mistake can hide.
+
+Because even if each individual statement is true, the connection between them might not be justified.
+
+Let's make that visible.
+
+## 3. One drawing reveals the hidden mistake
+
+Let's forget the arguments for a moment and think about what it means for something to be a square.
+
+A square has four equal sides and four right angles.
+
+A rectangle must have four right angles, but its sides don't all need to be equal.
+
+So every square is a rectangle.
+
+But does that mean every rectangle is a square?
+
+We can visualize the relationship using two regions.
+
+The large blue region contains all rectangles.
+
+The smaller golden region contains all squares.
+
+<Note title="Diagram color convention — added explanation">
+The original text calls the square region golden. The diagrams use teal for that region and blue for rectangles, following the archive’s palette. The nesting and logical relationships are unchanged.
+</Note>
+
+<ReasoningFigure kind="validity-regions" />
+
+Everything inside the gold region must also belong to the blue region.
+
+Now focus on Shape S.
+
+It belongs to the gold region, so it necessarily belongs to the blue region too.
+
+If you know something is a square, you know it must be a rectangle.
+
+The implication goes in this direction:
+
+<ReasoningFigure kind="validity-forward" />
+
+But now suppose we try the arrow in the opposite direction.
+
+<ReasoningFigure kind="validity-reverse" />
+
+There is only one way to find out.
+
+We must look for a rectangle that isn't a square.
+
+And here's where I'd like you to make a prediction.
+
+What happens to Person B's reasoning if we replace Shape S with a rectangle whose sides aren't all equal?
+
+<Interactive kind="validity" preset="countermodel" id="validity-countermodel" />
+
+This is the key moment.
+
+We've changed the shape, but we haven't changed the logical form of the argument.
+
+Every square is still a rectangle.
+
+Our new shape R is still a rectangle.
+
+Yet the conclusion, that R is a square, is false.
+
+We have discovered a possibility that the reasoning failed to exclude.
+
+And that is all we need to demonstrate the logical flaw.
+
+This technique has a name: constructing a countermodel.
+
+It's a situation in which the premises are true and the conclusion is false.
+
+But notice something subtle.
+
+We haven't proved that the original Shape S wasn't a square.
+
+It was a square. It still is.
+
+Instead, we've proved that Person B's reasoning is unreliable as a deductive argument.
+
+And now we can finally define validity precisely.
+
+## 4. What does it really mean for an argument to be valid?
+
+A deductive argument is valid when there is no possible situation in which all its premises are true and its conclusion is false.
+
+That is the entire idea.
+
+<ReasoningFigure kind="validity-test" />
+
+Let's look at the two directions one final time.
+
+<ReasoningFigure kind="validity-directions" />
+
+Mathematicians express these patterns using implication.
+
+Let $Q(x)$ mean that object $x$ is a square, and $R(x)$ mean that it is a rectangle.
+
+We know:
+
+$$ \forall x\,(Q(x)\Rightarrow R(x)). $$
+
+This means every square is a rectangle.
+
+If we also know $Q(S)$, we can conclude $R(S)$.
+
+But knowing $R(S)$ doesn't let us reverse the implication.
+
+$$ Q\Rightarrow R \quad\not\Rightarrow\quad R\Rightarrow Q. $$
+
+The mistake of inferring the condition from its consequence is a classic fallacy known as affirming the consequent.
+
+And it appears far beyond geometry.
+
+"If it rains, the pavement becomes wet. The pavement is wet. Therefore, it rained."
+
+Maybe it did.
+
+But perhaps someone used a sprinkler.
+
+Once again, a true observation doesn't guarantee the proposed explanation.
+
+Validity is not about whether the conclusion happens to be true. It is about whether the premises leave any possibility for the conclusion to be false.
+
+## 5. Four possibilities you probably didn't expect
+
+We now know why Person B's reasoning fails.
+
+But there's an even stranger consequence.
+
+We've seen an invalid argument with a true conclusion.
+
+Could the opposite also happen? Could a logically valid argument have a false conclusion?
+
+Surprisingly, yes.
+
+To understand why, we're going to arrange four arguments in a grid.
+
+Remember our two shapes: S is a square, and R is a rectangle that isn't a square.
+
+<ReasoningFigure kind="validity-grid" />
+
+Look at the top-right example.
+
+"All rectangles are squares. R is a rectangle. Therefore, R is a square."
+
+The conclusion is false.
+
+But the structure is valid.
+
+Because if every rectangle really were a square, then anything known to be a rectangle would necessarily be a square.
+
+The logical connection works. The starting information doesn't.
+
+Now look at the bottom-left example.
+
+The conclusion is true, because S really is a square.
+
+But we've already demonstrated that the reasoning isn't valid.
+
+These are two independent questions.
+
+One concerns the truth of the conclusion.
+
+The other concerns whether the premises guarantee that conclusion.
+
+And this gives us a more complete picture:
+
+Valid reasoning doesn't automatically give us true conclusions. True conclusions don't automatically indicate valid reasoning.
+
+So what happens when we combine the two things we actually need?
+
+## 6. Soundness: when the reasoning and the starting information are correct
+
+Imagine that every argument must pass through two gates.
+
+The first gate examines the reasoning.
+
+The second gate examines the premises.
+
+<ReasoningFigure kind="validity-gates" />
+
+An argument that passes both gates is called sound.
+
+A sound deductive argument is valid, and all its premises are actually true.
+
+$$ \boxed{\text{Sound}=\text{Valid}+\text{True premises}} $$
+
+Why does this guarantee the conclusion?
+
+Because validity tells us that true premises cannot lead to a false conclusion.
+
+And soundness tells us the premises really are true.
+
+Now consider a slightly different situation.
+
+Imagine we discover a sealed box of geometric shapes.
+
+A researcher tells us:
+
+"Every object inside this box is a square. Object K is inside the box. Therefore, K is a square."
+
+Does the conclusion follow from the premises?
+
+Yes. Perfectly.
+
+But we haven't opened the box, and the researcher hasn't provided evidence that every object is a square.
+
+So is the argument sound?
+
+We can't establish that yet.
+
+The first premise might be true. It might be false. We simply don't know.
+
+This distinction is important.
+
+An unsupported premise is not automatically a false premise.
+
+Sometimes our reasoning is correct, but we lack sufficient information to establish that its premises are true.
+
+And that is where logic connects to science.
+
+Logic examines what follows from our assumptions.
+
+Empirical investigation helps us determine whether those assumptions accurately describe the world.
+
+Neither replaces the other.
+
+## 7. Two final challenges
+
+Let's see whether you can apply the idea beyond our original shapes.
+
+Challenge A — The warning light
+
+Whenever the fire alarm activates, a red warning light turns on.
+
+The red warning light is on.
+
+Therefore, the fire alarm has activated.
+
+<Interactive kind="validity" preset="warning" id="validity-warning" />
+
+Challenge B — The faulty proof
+
+A mathematician publishes a proof claiming that a certain theorem is true.
+
+Another mathematician discovers a logical mistake in the proof.
+
+The second mathematician announces:
+
+"The proof is invalid. Therefore, the theorem is false."
+
+Question: What is wrong with that conclusion?
+
+<Exercise>
+
+<Note title="Added reference answer">
+An invalid proof fails to establish the theorem. That alone does not show the theorem is false: it might have another valid proof, or it might be false. Identifying a flaw removes this justification; deciding the theorem’s truth requires a valid proof or a counterexample.
+</Note>
+
+</Exercise>
+
+And there's one more distinction worth carrying forward.
+
+Today we've been analyzing deductive arguments, which aim to guarantee their conclusions.
+
+But much of scientific and everyday reasoning is inductive or probabilistic. Evidence can make a conclusion more likely without making it logically inevitable.
+
+A scientific explanation doesn't become worthless simply because the evidence fails to deductively guarantee it.
+
+That will become important when we study probability, uncertainty, and evidence.
+
+## 8. The final lesson: truth isn't the same as justification
+
+Let's return to where we began.
+
+Two people looked at the same square.
+
+Two people said something true.
+
+But only one gave an argument that established its conclusion.
+
+And we now understand why.
+
+Because an argument has two parts that we must never confuse: the statements themselves and the logical relationship between them.
+
+A conclusion can be true even when the argument supporting it fails.
+
+An argument can be valid even when the information it begins with is false.
+
+And when valid reasoning starts from true premises, we have something stronger: a sound deductive argument.
+
+Being correct and being justified are not the same achievement.
+
+<ReasoningFigure kind="validity-distinction" />
+
+This changes the question we should ask when someone presents an argument.
+
+Instead of immediately asking whether we agree with its conclusion, we can ask something more fundamental:
+
+Even if everything you started with were true, would your conclusion necessarily follow?
+
+And only after answering that question do we investigate whether the starting information is actually true.
+
+Because the aim of rational thinking is not merely to arrive at correct answers.
+
+It is to understand why those answers deserve to be believed.
+
+## Learning checkpoint
+
+By the end of this episode, you should be able to explain:
+
+- Premises and conclusion: what information an argument starts with and what it attempts to establish.
+- Validity: why true premises must guarantee the conclusion in a valid deductive argument.
+- Countermodels: how one possible case with true premises and a false conclusion demonstrates invalidity.
+- Soundness: why both validity and true premises are necessary for a sound deductive argument.
+- The central distinction: why identifying a bad argument does not, by itself, disprove its conclusion.
+
+## Reference material
+
+forall x: An Introduction to Formal Logic — sections on arguments and other logical notions. Matthew Knachel, Fundamental Methods of Logic, Chapter 1.
+
+This revised lesson uses a single visual demonstration that develops across the episode: the square, the rectangle, the reversed inference, the countermodel, and finally the distinction between validity and soundness.

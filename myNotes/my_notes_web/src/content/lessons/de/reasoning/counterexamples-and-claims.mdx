@@ -1,0 +1,508 @@
+---
+locale: de
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-06
+sourcePages: []
+sourceLocations: ["Sections 1–10; Further reading and preparation"]
+title: "Warum kann ein Beispiel tausend Bestätigungen widerlegen?"
+navTitle: "Gegenbeispiele und Aussagen"
+description: "Erkenne ein gültiges Gegenbeispiel, unterscheide Aussagearten und Grundbereiche und entdecke aus einer widerlegten Vermutung eine strukturelle Regel."
+order: 6
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [patterns-and-predictions]
+thumbnail: reasoning-counterexample
+---
+
+## 1. Die Regel, die unerschütterlich schien
+
+Stell dir vor, ich erzähle dir, ich hätte etwas Bemerkenswertes über Zahlen entdeckt.
+
+Nicht nur ein interessantes Muster, sondern eine Regel, die für jede Zahl einer bestimmten Art gilt.
+
+Hier ist sie:
+
+<Note title="Unsere Vermutung">
+
+Jede positive ungerade ganze Zahl größer als eins ist eine Primzahl.
+
+</Note>
+
+Schauen wir uns an, warum jemand das glauben könnte.
+
+Zur Erinnerung: Eine Primzahl ist eine positive ganze Zahl größer als eins, die genau zwei positive Teiler hat: eins und sich selbst.
+
+Wir beginnen mit der kleinsten positiven ungeraden ganzen Zahl größer als eins.
+
+<ReasoningFigure kind="counter-prime-start" />
+
+Drei ist prim. Ihre einzigen positiven Teiler sind 1 und 3.
+
+Fünf ist prim. Ihre einzigen positiven Teiler sind 1 und 5.
+
+Sieben ist prim. Wieder nur 1 und 7.
+
+Drei Beispiele, drei Bestätigungen. Alles sieht perfekt aus.
+
+Stell dir nun vor, wir machen weiter und finden tausend Beispiele, die irgendeine mathematische Behauptung stützen. Wir könnten sehr überzeugt davon sein, eine allgemeingültige Wahrheit entdeckt zu haben.
+
+Doch es gibt ein merkwürdiges Problem.
+
+Ganz gleich, wie viele erfolgreiche Beispiele wir gesammelt haben: Eine einzige echte Ausnahme genügt, um zu beweisen, dass eine Allaussage falsch ist.
+
+Und für unsere konkrete Regel müssen wir nicht einmal lange suchen.
+
+Die nächste ungerade ganze Zahl ist neun.
+
+<ReasoningFigure kind="counter-nine" />
+
+Da ist sie.
+
+Neun ist ungerade. Neun ist positiv. Neun ist größer als eins.
+
+Neun gehört also zu der Gruppe von Zahlen, über die unsere Regel gesprochen hat.
+
+Und trotzdem ist neun keine Primzahl.
+
+Unsere Regel ist gescheitert.
+
+Aber warum sollte dieser eine Misserfolg so schwer wiegen? Warum gleicht die Evidenz all der erfolgreichen Fälle ihn nicht aus?
+
+Um das zu verstehen, müssen wir untersuchen, was eine Allaussage eigentlich verspricht.
+
+## 2. Die unsichtbare Grenze einer Behauptung
+
+Betrachte unseren Satz noch einmal:
+
+„Jede positive ungerade ganze Zahl größer als eins ist eine Primzahl.“
+
+In diesen Worten stecken drei wichtige Bestandteile.
+
+Erstens sprechen wir über ganze Zahlen: Zahlen ohne Bruchteil, einschließlich positiver Zahlen, negativer Zahlen und null.
+
+Zweitens wählen wir bestimmte ganze Zahlen aus: Sie müssen positiv, ungerade und größer als eins sein.
+
+Drittens machen wir über diese ausgewählten Zahlen eine Zusage: Sie sollen alle Primzahlen sein.
+
+Stell es dir wie eine Filtermaschine vor.
+
+<ReasoningFigure kind="counter-filter" />
+
+Beachte etwas Wichtiges.
+
+Die Regel sagt nicht, dass jede ganze Zahl prim ist. Sie sagt, dass jede ganze Zahl prim ist, die eine bestimmte Bedingung erfüllt.
+
+Und das verändert, was wir als Evidenz gegen sie betrachten sollten.
+
+Nimm die Zahl vier.
+
+Vier ist nicht prim, denn $4=2\times2$.
+
+Widerlegt das unsere Aussage?
+
+Nein.
+
+Vier ist gerade. Unsere Aussage hat nie versprochen, dass vier prim wäre.
+
+Das ist so, als würdest du sagen: „Jedes Buch in diesem Regal ist auf Englisch geschrieben“, und dann in einem anderen Zimmer ein französisches Buch finden.
+
+Das französische Buch mag interessant sein, sagt uns aber nichts über die Zusage, die wir über das Regal gemacht haben.
+
+Bei neun ist es anders.
+
+Neun steht sozusagen im Regal. Sie erfüllt die Bedingung. Und sie bricht das Versprechen.
+
+Daraus gewinnen wir eine allgemeine Methode, um Gegenbeispiele zu erkennen.
+
+## 3. Der Test mit zwei Prüfstufen
+
+Ein echtes Gegenbeispiel zu einer Aussage der Form „Jedes Objekt, das Bedingung A erfüllt, hat Eigenschaft B“ muss zwei Prüfungen bestehen.
+
+Es muss Bedingung A erfüllen und darf Eigenschaft B nicht haben.
+
+Diese Anforderungen können wir in eine interaktive Maschine übersetzen.
+
+<Interactive kind="counterexamples" preset="prime-detector" id="prime-counterexample" />
+
+Probiere vier, dann neun, dann fünfzehn. Beachte, dass vier die zweite Prüfstufe nie als relevanter Fall erreicht, während neun und fünfzehn die Folgerung verletzen.
+
+Das ist der entscheidende Unterschied.
+
+Eine Zahl kann keine Primzahl sein, ohne ein Gegenbeispiel zu sein.
+
+Und eine Zahl kann die Bedingung erfüllen, ohne etwas zu widerlegen.
+
+Um die Behauptung zu widerlegen, müssen beide Bestandteile gleichzeitig vorliegen.
+
+$$
+\underbrace{A(x)}_{\text{Bedingung gilt}}\quad\land\quad\underbrace{\neg B(x)}_{\text{Folgerung falsch}}
+$$
+
+Die Struktur eines Gegenbeispiels
+
+Wenn du das verstanden hast, ist ein Gegenbeispiel kein geheimnisvoller mathematischer Trick mehr. Es ist der präzise Nachweis eines gebrochenen Versprechens.
+
+## 4. Warum ein Misserfolg logisch entscheidet
+
+Übersetzen wir unsere Entdeckung in mathematische Sprache.
+
+Die ursprüngliche Behauptung können wir so schreiben:
+
+$$
+\forall n\in\mathbb Z,\quad \big(n>1\land\operatorname{Odd}(n)\big) \Rightarrow\operatorname{Prime}(n).
+$$
+
+Das sieht vielleicht kompliziert aus, aber du hast jeden wichtigen Bestandteil bereits verstanden. Die Prädikate $\operatorname{Odd}(n)$ und $\operatorname{Prime}(n)$ bedeuten, dass $n$ ungerade beziehungsweise prim ist.
+
+Das Symbol $\forall$ bedeutet „für alle“.
+
+Der Pfeil $\Rightarrow$ bedeutet „impliziert“ oder in Alltagssprache „wenn …, dann …“.
+
+Die Aussage lautet:
+
+Für jede ganze Zahl gilt: Wenn sie ungerade und größer als eins ist, dann ist sie prim.
+
+Was müsste nun der Fall sein, damit diese Aussage falsch ist?
+
+Genau das, was wir gefunden haben: eine ganze Zahl, die die Bedingung erfüllt, aber nicht prim ist.
+
+Die Negation lautet also:
+
+$$
+\exists n\in\mathbb Z:\quad n>1\land\operatorname{Odd}(n) \land\neg\operatorname{Prime}(n).
+$$
+
+Das Symbol $\exists$ bedeutet „es gibt“.
+
+Betrachte diese Umformung.
+
+<ReasoningFigure kind="counter-negation" />
+
+Das erklärt die Asymmetrie.
+
+Tausend erfolgreiche Beispiele nachzuweisen bedeutet, tausend einzelne Tatsachen festzustellen.
+
+Ein Gegenbeispiel nachzuweisen bedeutet etwas viel Weitergehendes: Die Allaussage kann nicht wahr sein.
+
+Es findet kein Wettbewerb zwischen der Anzahl der Beispiele auf beiden Seiten statt.
+
+Eine Allaussage behauptet nicht, dass die meisten Fälle funktionieren. Sie behauptet, dass es keine Ausnahmen gibt.
+
+Und schon die Existenz einer einzigen Ausnahme widerspricht dieser Behauptung.
+
+Wir können die Logik an einer ganzen Sammlung von Zahlen sichtbar machen.
+
+## 5. Das gesamte Muster betrachten
+
+Stell dir eine Zahlentafel vor. Wir beginnen mit den positiven ganzen Zahlen von 1 bis 35.
+
+Zunächst ist jede Zahl einfach ein Kandidat.
+
+Dann wenden wir unsere Bedingung an: ungerade und größer als eins.
+
+Schließlich prüfen wir, ob die ausgewählten Zahlen prim sind.
+
+Erkunde diese drei Ansichten.
+
+<Interactive kind="counterexamples" preset="sieve" id="number-sieve" />
+
+Diese Darstellung zeigt noch etwas anderes.
+
+Unsere Aussage war nicht völlig von der Wirklichkeit losgelöst. Viele ungerade ganze Zahlen größer als eins sind tatsächlich Primzahlen.
+
+Drei, fünf, sieben, elf, dreizehn, siebzehn …
+
+Das Muster enthält echte Erfolge.
+
+Doch eine Aussage kann viele wahre Einzelfälle enthalten und als Allaussage trotzdem falsch sein.
+
+Die Frage ist nicht, ob die Regel manchmal stimmt.
+
+Die Frage ist, ob sie jedes Mal stimmt, wenn sie anwendbar sein soll.
+
+Und nun entsteht eine interessante Frage.
+
+Wenn das Prüfen von Beispielen nicht immer eine Allaussage beweisen kann, bedeutet das dann, dass das Prüfen von Beispielen niemals ein Beweis ist?
+
+Nicht ganz.
+
+## 6. Wann das Prüfen aller Beispiele wirklich ein Beweis ist
+
+Nehmen wir an, wir verändern unsere Behauptung.
+
+Statt zu sagen, jede positive ungerade ganze Zahl größer als eins sei prim, sagen wir:
+
+„Jede ungerade ganze Zahl größer als eins und kleiner als neun ist prim.“
+
+Über welche Zahlen sprechen wir jetzt?
+
+Nur über drei.
+
+<ReasoningFigure kind="counter-finite" />
+
+Drei ist prim. Fünf ist prim. Sieben ist prim.
+
+Und es gibt keine weiteren ungeraden ganzen Zahlen zwischen eins und neun.
+
+Das bedeutet, dass wir jeden einzelnen möglichen Fall geprüft haben.
+
+In diesem endlichen Grundbereich ist vollständiges Prüfen also ein vollkommen gültiger mathematischer Beweis.
+
+Vergleiche das mit der ursprünglichen Regel.
+
+<ReasoningFigure kind="counter-domains" />
+
+Dieser Unterschied ist äußerst wichtig.
+
+Wenn du jeden Eintrag einer tatsächlich vollständigen endlichen Tabelle prüfst, kannst du damit eine Aussage über diese Tabelle beweisen.
+
+Wenn die Tabelle aber nur eine Stichprobe aus einem größeren Grundbereich darstellt, hast du etwas über die Stichprobe nachgewiesen — nicht unbedingt über alles jenseits davon.
+
+Eine Million ganze Zahlen zu prüfen mag eine beeindruckende Berechnung sein. Betrifft die Behauptung aber unendlich viele ganze Zahlen, sind die übrigen Fälle dadurch nicht ausgeschöpft.
+
+Um etwas über sie alle zu beweisen, brauchen wir eine Argumentation, die beliebige Fälle erfasst, wie die algebraischen Argumente aus unserer früheren Lektion.
+
+Entscheidend ist nicht, wie viele Beispiele wir geprüft haben, sondern ob wir den gesamten Grundbereich abgedeckt haben.
+
+## 7. Nicht jede Aussageart verhält sich gleich
+
+Jetzt können wir den Gedanken weiterführen.
+
+Was passiert, wenn wir nur ein Wort unserer Aussage ändern?
+
+Statt zu sagen:
+
+„Jede ungerade ganze Zahl größer als eins ist prim.“
+
+Sagen wir:
+
+„Es gibt eine ungerade ganze Zahl größer als eins, die prim ist.“
+
+Unsere ursprüngliche Allaussage war falsch.
+
+Diese neue Existenzaussage ist aber wahr.
+
+Wie beweisen wir sie?
+
+Mit der Zahl drei.
+
+Drei ist ungerade, größer als eins und prim.
+
+Das genügt.
+
+<ReasoningFigure kind="counter-quantifiers" />
+
+Es ist beinahe ein Spiegelbild.
+
+Um nachzuweisen, dass jeder relevante Fall funktioniert, musst du alle möglichen Ausnahmen ausschließen.
+
+Um nachzuweisen, dass mindestens ein Fall funktioniert, musst du nur ein erfolgreiches Beispiel angeben.
+
+Und um zu widerlegen, dass etwas existiert, musst du jeden möglichen Kandidaten ausschließen.
+
+Außerhalb der Mathematik begegnet uns aber ständig noch eine dritte Aussageart: statistische Aussagen.
+
+Stell dir vor, ich habe zehn Karten, von denen jede entweder blau oder rot ist.
+
+Ich behaupte:
+
+„Mindestens acht dieser zehn Karten sind blau.“
+
+Nun findest du eine rote Karte.
+
+Widerlegt das meine Behauptung?
+
+Nein. Meine Aussage erlaubt bis zu zwei rote Karten.
+
+Ändere unten die Anzahl roter Karten.
+
+<Interactive kind="counterexamples" preset="cards" id="ten-card-claim" />
+
+Eine rote Karte widerlegt die Behauptung nicht.
+
+Zwei rote Karten widerlegen sie ebenfalls nicht.
+
+Drei rote Karten tun es aber, denn dann können höchstens noch sieben blau sein.
+
+Beachte, dass wir weiterhin logisch argumentieren. Wir haben nur die Art des Versprechens verändert.
+
+Eine Allaussage erlaubt keinen einzigen Misserfolg.
+
+Eine Aussage wie „mindestens acht von zehn“ erlaubt zwei Misserfolge.
+
+Und eine Aussage wie „Diese Behandlung wirkt meistens“ ist wieder etwas anderes: Wir müssten definieren, was meistens bedeutet, die betrachtete Population bestimmen und die relevante Evidenz untersuchen, bevor wir entscheiden könnten, ob die Behauptung gestützt wird.
+
+Ein einziger echter Misserfolg kann eine strikte Allaussage widerlegen. Eine Aussage über Häufigkeiten oder Wahrscheinlichkeiten widerlegt er nicht automatisch.
+
+Wenn uns also jemand Evidenz präsentiert, sollten wir vor dem Annehmen oder Verwerfen seiner Schlussfolgerung eine wichtige Frage stellen:
+
+Was genau wurde behauptet?
+
+## 8. Ein Gegenbeispiel kann uns zu einer besseren Regel führen
+
+Kehren wir zu neun zurück.
+
+Ursprünglich glaubten wir, jede positive ungerade ganze Zahl größer als eins sei prim.
+
+Neun hat gezeigt, dass wir uns geirrt haben.
+
+Wir könnten die Idee einfach aufgeben.
+
+Vielleicht können wir aber daraus lernen, auf welche Weise sie gescheitert ist.
+
+Neun ist nicht prim, weil sie sich in kleinere Faktoren zerlegen lässt:
+
+$$
+9=3\times3.
+$$
+
+Dasselbe gilt für fünfzehn:
+
+$$
+15=3\times5.
+$$
+
+Und für fünfundzwanzig:
+
+$$
+25=5\times5.
+$$
+
+Das sind keine zufälligen Misserfolge. Sie zeigen eine Struktur: Eine zusammengesetzte ungerade ganze Zahl lässt sich als Produkt kleinerer ungerader ganzer Zahlen größer als eins ausdrücken.
+
+Die bessere Frage ist also vielleicht nicht, ob eine ungerade ganze Zahl automatisch prim ist.
+
+Vielleicht sollten wir fragen, ob wir die Faktoren finden können, die verhindern, dass sie prim ist.
+
+<ReasoningFigure kind="counter-repair" />
+
+Die letzte Regel ist viel interessanter, als lediglich die erste Zahl auszuschließen, an der unsere ursprüngliche Behauptung gescheitert ist.
+
+Warum funktioniert sie?
+
+Stell dir eine zusammengesetzte ungerade ganze Zahl $n$ vor. Sie lässt sich so schreiben:
+
+$$
+n=a\times b
+$$
+
+Dabei sind $a$ und $b$ ungerade ganze Zahlen größer als eins.
+
+Wähle die Faktoren so, dass $a\leq b$ gilt.
+
+Weil $a$ der kleinere Faktor ist, kann er nicht größer als $\sqrt n$ sein. Sonst wären beide Faktoren größer als $\sqrt n$, und ihr Produkt wäre größer als $n$.
+
+Jede zusammengesetzte ungerade ganze Zahl muss also einen ungeraden Teiler zwischen 3 und ihrer Quadratwurzel haben.
+
+<ReasoningFigure kind="counter-factors" />
+
+$$
+a\leq b\quad\Longrightarrow\quad a^2\leq ab=n
+$$
+
+$$
+\therefore\quad a\leq\sqrt n
+$$
+
+Jede zusammengesetzte Zahl hat mindestens einen Faktor, der nicht größer als ihre Quadratwurzel ist.
+
+Wenn wir also eine ungerade ganze Zahl größer als eins untersuchen und keinen ungeraden Teiler von 3 bis zu ihrer Quadratwurzel finden, muss die Zahl prim sein.
+
+Wir haben ein echtes mathematisches Kriterium entdeckt.
+
+Und beachte den Unterschied zwischen unserem jetzigen Vorgehen und den ersten paar Bestätigungen.
+
+Wir prüfen nicht mehr eine Folge einzelner Zahlen und hoffen, dass sich das Muster fortsetzt.
+
+Wir haben etwas über die Struktur jeder beliebigen zusammengesetzten ungeraden ganzen Zahl nachgewiesen.
+
+Das ist der tiefere Wert von Gegenbeispielen.
+
+Sie zeigen nicht nur, dass wir uns irren. Manchmal zeigen sie genau, welche Annahme gefehlt hat, welche Grenze zu weit gezogen war oder welchen Zusammenhang wir übersehen haben.
+
+## 9. Findest du selbst ein Gegenbeispiel?
+
+Bevor wir zum Schluss kommen, prüfen wir, ob du diese Argumentation auf eine ganz andere Behauptung übertragen kannst.
+
+Betrachte:
+
+„Jede durch vier teilbare ganze Zahl ist auch durch acht teilbar.“
+
+Welche der folgenden Zahlen widerlegt diese Aussage?
+
+Suche nicht einfach eine Zahl, die nicht durch acht teilbar ist. Denk an unsere beiden Prüfstufen.
+
+Die Zahl muss durch vier teilbar sein und darf nicht durch acht teilbar sein.
+
+<Interactive kind="counterexamples" preset="divisibility" id="divisibility-counterexample" />
+
+Denke vor deiner Wahl über beide Bedingungen nach.
+
+<Exercise>
+
+Eine vollständige mathematische Antwort wäre:
+
+„Die Behauptung ist falsch. Betrachte die ganze Zahl 12. Da $12=4\times3$ gilt, ist sie durch vier teilbar. Es gibt aber keine ganze Zahl $k$ mit $12=8k$, also ist sie nicht durch acht teilbar. Daher ist 12 ein Gegenbeispiel.“
+
+</Exercise>
+
+Beachte, dass wir nicht bloß verkündet haben, die Regel sei falsch.
+
+Wir haben genau gezeigt, wie und warum sie scheitert.
+
+Und das unterscheidet eine mathematische Widerlegung von einem unbegründeten Einwand.
+
+## 10. Was tausend Bestätigungen nicht versprechen können
+
+Wir haben mit einem scheinbar überzeugenden Muster begonnen.
+
+Drei war prim. Fünf war prim. Sieben war prim.
+
+Jedes Beispiel schien dieselbe Regel zu stützen.
+
+Dann kam neun.
+
+Neun hat die Wahrheit der früheren Beobachtungen nicht ausgelöscht. Drei, fünf und sieben sind weiterhin Primzahlen.
+
+Doch neun zeigte, dass wir eine Schlussfolgerung gezogen hatten, die weiter reichte, als unsere Evidenz rechtfertigte.
+
+Und das ist die entscheidende Einsicht dieser Lektion.
+
+<ReasoningFigure kind="counter-synthesis" />
+
+Diese Einsicht reicht über die Mathematik hinaus.
+
+Wer immer, nie, jede oder keine sagt, stellt eine besonders starke Behauptung auf.
+
+Ein echtes Gegenbeispiel kann die Frage entscheiden.
+
+Doch wenn jemand manchmal, mindestens eine, gewöhnlich oder wahrscheinlich sagt, verändert sich die logische Aufgabe.
+
+Evidenz muss an der tatsächlich aufgestellten Behauptung gemessen werden, nicht an einer stärkeren oder schwächeren Version davon.
+
+Und vielleicht steckt hier noch eine letzte Lehre.
+
+Ein Gegenbeispiel zu finden bedeutet nicht bloß, zu entdecken, dass wir uns geirrt haben.
+
+Es bedeutet, etwas über die Grenzen unseres bisherigen Wissens zu erfahren.
+
+Ein gutes Gegenbeispiel zeigt, wo unser Verständnis nicht mehr zutraf — und weist manchmal den Weg zu einer besseren Erklärung.
+
+Wenn eine Idee also das nächste Mal durch jedes bisher beobachtete Beispiel gestützt scheint, frage dich:
+
+Wie würde eine echte Ausnahme aussehen?
+
+Würde sie alle Bedingungen erfüllen?
+
+Und wenn ich sie fände, was genau würde sie beweisen?
+
+Denn rationales Denken bedeutet nicht nur, Gründe zu sammeln, um etwas zu glauben.
+
+Es bedeutet auch, zu wissen, was uns einen Grund geben würde, es nicht mehr zu glauben.
+
+## Weiterführende Literatur
+
+- [Richard Hammack — Book of Proof](https://richardhammack.github.io/BookOfProof/), Kapitel 9, insbesondere §9.1 über Gegenbeispiele und §9.2 über die Widerlegung von Existenzaussagen. Eine Widerlegung muss zeigen, warum der gewählte Fall die Behauptung verletzt.
+- [forall x — Kapitel 24: Sentences with one quantifier](https://forallx.openlogicproject.org/html/Ch24.html) und [Kapitel 32: Semantic concepts](https://forallx.openlogicproject.org/html/Ch32.html). All- und Existenzaussagen, Konditionale und ihre Negationen.

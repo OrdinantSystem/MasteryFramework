@@ -1,0 +1,508 @@
+---
+locale: en
+course: reasoning
+chapter: reasoning-part-one
+sourceId: reasoning-episode-06
+sourcePages: []
+sourceLocations: ["Sections 1–10; Further reading and preparation"]
+title: "Why can one example overturn a thousand confirmations?"
+navTitle: "Counterexamples and claims"
+description: "Identify a genuine counterexample, distinguish claim types and domains, and use a failed conjecture to discover a structural rule."
+order: 6
+kind: concept
+status: published
+reviewStatus: unreviewed
+prerequisites: [patterns-and-predictions]
+thumbnail: reasoning-counterexample
+---
+
+## 1. The rule that looked impossible to break
+
+Imagine that I tell you I've discovered something remarkable about numbers.
+
+Not just an interesting pattern, but a rule that applies to every number of a certain kind.
+
+Here it is:
+
+<Note title="Our conjecture">
+
+Every positive odd integer greater than one is prime.
+
+</Note>
+
+Let's see why someone might believe this.
+
+Remember that a prime number is a positive integer greater than one that has exactly two positive divisors: one and itself.
+
+We begin with the smallest positive odd integer greater than one.
+
+<ReasoningFigure kind="counter-prime-start" />
+
+Three is prime. Its only positive divisors are 1 and 3.
+
+Five is prime. Its only positive divisors are 1 and 5.
+
+Seven is prime. Again, only 1 and 7.
+
+Three examples, three confirmations. Everything looks perfect.
+
+Now imagine that we continue, finding a thousand examples that support some mathematical claim. We might become extremely confident that we've discovered a universal truth.
+
+But there's a peculiar problem.
+
+No matter how many successful examples we've collected, a single genuine exception is enough to prove that a universal claim is false.
+
+And for our particular rule, we don't even need to search very far.
+
+The next odd integer is nine.
+
+<ReasoningFigure kind="counter-nine" />
+
+There it is.
+
+Nine is odd. Nine is positive. Nine is greater than one.
+
+So nine belongs to the group of numbers our rule was talking about.
+
+And yet nine is not prime.
+
+Our rule has failed.
+
+But why should this one failure carry so much weight? Why doesn't the evidence from all those successful cases balance it out?
+
+To understand that, we need to look at what a universal claim is actually promising.
+
+## 2. The invisible boundary around a claim
+
+Look again at our sentence:
+
+"Every positive odd integer greater than one is prime."
+
+There are actually three important parts hiding inside those words.
+
+First, we're talking about integers: whole numbers, including positive numbers, negative numbers, and zero.
+
+Second, we're selecting particular integers: they must be positive, odd, and greater than one.
+
+Third, we're making a promise about those selected numbers: they must all be prime.
+
+Think of it as a filtering machine.
+
+<ReasoningFigure kind="counter-filter" />
+
+Notice something important.
+
+The rule does not say that every integer is prime. It says that every integer satisfying a particular condition is prime.
+
+And that changes what we should consider evidence against it.
+
+Take the number four.
+
+Four is not prime, because $4=2\times2$.
+
+Does that disprove our statement?
+
+No.
+
+Four is even. Our statement never promised that four would be prime.
+
+It's like saying, "Every book on this shelf is written in English," and then discovering a French book in another room.
+
+The French book might be interesting, but it tells us nothing about the promise we made concerning the shelf.
+
+Nine is different.
+
+Nine is on the shelf, so to speak. It qualifies. And it breaks the promise.
+
+That gives us a general method for identifying counterexamples.
+
+## 3. The two-gate test
+
+A genuine counterexample to a statement of the form "Every object satisfying condition A has property B" must pass two tests.
+
+It must satisfy condition A, and it must fail to have property B.
+
+We can turn those requirements into an interactive machine.
+
+<Interactive kind="counterexamples" preset="prime-detector" id="prime-counterexample" />
+
+Try four, then nine, then fifteen. Notice that four never reaches the second gate as a relevant case, whereas nine and fifteen break the conclusion.
+
+This is the central distinction.
+
+A number can fail to be prime without being a counterexample.
+
+And a number can satisfy the condition without disproving anything.
+
+To overturn the claim, both ingredients must be present simultaneously.
+
+$$
+\underbrace{A(x)}_{\text{Condition holds}}\quad\land\quad\underbrace{\neg B(x)}_{\text{Conclusion fails}}
+$$
+
+The structure of a counterexample
+
+Once you understand this, a counterexample stops being a mysterious mathematical trick. It becomes a precise demonstration of a broken promise.
+
+## 4. Why one failure is logically decisive
+
+Let's translate our discovery into mathematical language.
+
+We can write the original claim as:
+
+$$
+\forall n\in\mathbb Z,\quad \big(n>1\land\operatorname{Odd}(n)\big) \Rightarrow\operatorname{Prime}(n).
+$$
+
+It might look complicated, but you've already understood every important part.
+
+The symbol $\forall$ means "for every."
+
+The arrow $\Rightarrow$ means "implies," or in ordinary language, "if ... then ..."
+
+The statement says:
+
+For every integer, if it is odd and greater than one, then it is prime.
+
+Now what would have to be true for this statement to be false?
+
+Exactly what we found: an integer that satisfies the condition but isn't prime.
+
+So the negation is:
+
+$$
+\exists n\in\mathbb Z:\quad n>1\land\operatorname{Odd}(n) \land\neg\operatorname{Prime}(n).
+$$
+
+The symbol $\exists$ means "there exists."
+
+Look at the transformation.
+
+<ReasoningFigure kind="counter-negation" />
+
+This explains the asymmetry.
+
+Finding a thousand successful examples establishes a thousand particular facts.
+
+Finding one counterexample establishes something much broader: that the universal statement cannot be true.
+
+There isn't a competition between the number of examples on each side.
+
+A universal statement doesn't claim that most cases work. It claims that no exceptions exist.
+
+And the existence of even one exception contradicts that claim.
+
+We can make the logic visible across a whole collection of integers.
+
+## 5. Looking at the whole pattern
+
+Imagine a number board. We begin with the positive integers from 1 to 35.
+
+First, every number is simply a candidate.
+
+Then we apply our condition: odd and greater than one.
+
+Finally, we inspect whether the qualifying numbers are prime.
+
+Explore those three views.
+
+<Interactive kind="counterexamples" preset="sieve" id="number-sieve" />
+
+This visual reveals another lesson.
+
+Our statement was not completely disconnected from reality. Many odd integers greater than one really are prime.
+
+Three, five, seven, eleven, thirteen, seventeen...
+
+The pattern contains genuine successes.
+
+But a statement can contain many true individual cases and still be false as a universal claim.
+
+The issue is not whether the rule is sometimes right.
+
+It's whether it is right every time it is supposed to apply.
+
+And now an interesting question emerges.
+
+If checking examples cannot always establish a universal claim, does that mean checking examples is never a proof?
+
+Not quite.
+
+## 6. When checking every example really is a proof
+
+Suppose we modify our claim.
+
+Instead of saying every positive odd integer greater than one is prime, we say:
+
+"Every odd integer greater than one and less than nine is prime."
+
+Which numbers are we talking about now?
+
+Only three.
+
+<ReasoningFigure kind="counter-finite" />
+
+Three is prime. Five is prime. Seven is prime.
+
+And there are no other odd integers between one and nine.
+
+That means we've checked every single possible case.
+
+So in this finite domain, exhaustive checking is a completely valid mathematical proof.
+
+Compare that with the original rule.
+
+<ReasoningFigure kind="counter-domains" />
+
+This distinction matters enormously.
+
+If you check every entry in a genuinely complete finite table, you can prove a statement about that table.
+
+But if the table represents only a sample from a larger domain, you've established something about the sample—not necessarily about everything beyond it.
+
+Checking a million integers might be an impressive computation. Yet if the claim concerns infinitely many integers, the remaining cases haven't been exhausted.
+
+To prove something about all of them, we need reasoning that encompasses arbitrary cases, like the algebraic arguments we explored in our earlier lesson.
+
+The decisive difference is not how many examples we've checked, but whether we've covered the entire domain.
+
+## 7. Not every kind of claim behaves the same way
+
+Now we can push the idea further.
+
+What happens if we change just one word in our statement?
+
+Instead of saying:
+
+"Every odd integer greater than one is prime."
+
+We say:
+
+"There exists an odd integer greater than one that is prime."
+
+Our original universal statement was false.
+
+But this new existential statement is true.
+
+How do we prove it?
+
+With the number three.
+
+Three is odd, greater than one, and prime.
+
+That's enough.
+
+<ReasoningFigure kind="counter-quantifiers" />
+
+It's almost a mirror image.
+
+To establish that every qualifying case works, you must rule out all possible exceptions.
+
+To establish that at least one works, you need only produce one successful example.
+
+And to disprove that something exists, you must rule out every possible candidate.
+
+But there's a third kind of claim that we encounter constantly outside mathematics: statistical claims.
+
+Imagine that I have ten cards, each either blue or red.
+
+I claim:
+
+"At least eight of these ten cards are blue."
+
+Now suppose you find a red card.
+
+Does that refute my claim?
+
+No. My statement allows up to two red cards.
+
+Try changing the number of red cards below.
+
+<Interactive kind="counterexamples" preset="cards" id="ten-card-claim" />
+
+One red card doesn't disprove the claim.
+
+Two red cards don't disprove it either.
+
+But three red cards do, because at most seven could then be blue.
+
+Notice that we're still using logic. We've simply changed the type of promise.
+
+A universal claim allows zero failures.
+
+An "at least eight out of ten" claim allows two failures.
+
+And a statement such as "This treatment usually works" is different again: we would need to define usually, identify the population, and examine the relevant evidence before deciding whether the claim is supported.
+
+A single genuine failure can overturn a strict universal statement. It doesn't automatically overturn a claim about frequency or probability.
+
+So whenever someone presents evidence, there is an important question we should ask before accepting or rejecting their conclusion:
+
+What exactly did they claim?
+
+## 8. A counterexample can help us discover a better rule
+
+Let's return to nine.
+
+We originally believed every positive odd integer greater than one was prime.
+
+Nine showed that we were wrong.
+
+We could simply abandon the idea.
+
+But perhaps we can learn something from the way it failed.
+
+Nine is not prime because it can be decomposed into smaller factors:
+
+$$
+9=3\times3.
+$$
+
+The same is true of fifteen:
+
+$$
+15=3\times5.
+$$
+
+And twenty-five:
+
+$$
+25=5\times5.
+$$
+
+These aren't random failures. They reveal a structure: a composite odd integer can be expressed as a product of smaller odd integers greater than one.
+
+So perhaps the better question is not whether an odd integer is prime automatically.
+
+Perhaps the question is whether we can identify the factors that prevent it from being prime.
+
+<ReasoningFigure kind="counter-repair" />
+
+That last rule is much more interesting than merely excluding the first number that broke our original claim.
+
+Why does it work?
+
+Imagine a composite odd integer $n$. It can be written as:
+
+$$
+n=a\times b
+$$
+
+where $a$ and $b$ are odd integers greater than one.
+
+Choose the factors so that $a\leq b$.
+
+Because $a$ is the smaller factor, it cannot be larger than $\sqrt n$. Otherwise both factors would be greater than $\sqrt n$, and their product would be greater than $n$.
+
+So every composite odd integer must have an odd divisor between 3 and its square root.
+
+<ReasoningFigure kind="counter-factors" />
+
+$$
+a\leq b\quad\Longrightarrow\quad a^2\leq ab=n
+$$
+
+$$
+\therefore\quad a\leq\sqrt n
+$$
+
+Every composite number has at least one factor no larger than its square root.
+
+Therefore, if we examine an odd integer greater than one and find no odd divisor from 3 up to its square root, the number must be prime.
+
+We've discovered a genuine mathematical criterion.
+
+And notice the difference between what we just did and our first few confirmations.
+
+We are no longer checking a sequence of particular numbers and hoping that the pattern continues.
+
+We've established something about the structure of any composite odd integer.
+
+That's the deeper value of counterexamples.
+
+They do more than show us we're wrong. Sometimes they reveal exactly which assumption was missing, which boundary was too broad, or which relationship we failed to notice.
+
+## 9. Can you find a counterexample yourself?
+
+Before finishing, let's test whether you can transfer this reasoning to a completely different claim.
+
+Consider:
+
+"Every integer divisible by four is also divisible by eight."
+
+Which of the following numbers disproves this statement?
+
+Don't just look for a number that isn't divisible by eight. Remember our two gates.
+
+The number must be divisible by four, and it must fail to be divisible by eight.
+
+<Interactive kind="counterexamples" preset="divisibility" id="divisibility-counterexample" />
+
+Think about both conditions before choosing.
+
+<Exercise>
+
+A complete mathematical response would be:
+
+"The claim is false. Consider the integer 12. Since $12=4\times3$, it is divisible by four. But there is no integer $k$ such that $12=8k$, so it is not divisible by eight. Therefore 12 is a counterexample."
+
+</Exercise>
+
+Notice that we didn't merely announce that the rule was wrong.
+
+We demonstrated exactly how and why it failed.
+
+And that's what separates a mathematical disproof from an unsupported objection.
+
+## 10. What a thousand confirmations cannot promise
+
+We began with an apparently convincing pattern.
+
+Three was prime. Five was prime. Seven was prime.
+
+Every example seemed to support the same rule.
+
+Then came nine.
+
+Nine did not erase the truth of those earlier observations. Three, five, and seven are still prime.
+
+But nine revealed that we had drawn a conclusion larger than our evidence justified.
+
+And this is the essential insight of the lesson.
+
+<ReasoningFigure kind="counter-synthesis" />
+
+And that insight extends beyond mathematics.
+
+Whenever someone says always, never, every, or none, they're making a particularly strong claim.
+
+A genuine counterexample can settle the question.
+
+But when someone says sometimes, at least one, usually, or probably, the logical task changes.
+
+Evidence must be evaluated against the claim that was actually made, not a stronger or weaker version of it.
+
+And perhaps there's one final lesson here.
+
+Finding a counterexample is not merely discovering that we were mistaken.
+
+It is discovering something about the limits of what we knew.
+
+A good counterexample tells us where our understanding stopped being accurate—and sometimes points us toward a better explanation.
+
+So the next time an idea seems supported by every example you've seen, ask yourself:
+
+What would a genuine exception look like?
+
+Would it satisfy all the conditions?
+
+And if I found it, what exactly would it prove?
+
+Because rational thinking isn't just about collecting reasons to believe something.
+
+It's also about knowing what would give us a reason to stop believing it.
+
+## Further reading
+
+- [Richard Hammack — Book of Proof](https://richardhammack.github.io/BookOfProof/), Chapter 9, especially §9.1 on counterexamples and §9.2 on disproving existential statements. A disproof must show why the chosen case violates the claim.
+- [forall x — Chapter 24: Sentences with one quantifier](https://forallx.openlogicproject.org/html/Ch24.html) and [Chapter 32: Semantic concepts](https://forallx.openlogicproject.org/html/Ch32.html). Universal and existential claims, conditionals, and their negations.

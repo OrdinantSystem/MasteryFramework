@@ -1,0 +1,41 @@
+---
+import ValidityRegions from '../ValidityRegions.astro';
+import {validityCopy} from '../../lib/reasoning/validity-copy';
+import {validityPresets,type ValidityPreset} from '../../lib/interactive/validity-model';
+import '../../styles/validity.css';
+interface Props {preset:ValidityPreset;id:string}
+const {preset,id}=Astro.props,locale=Astro.locals.locale||'en',c=validityCopy[locale];
+if(!(validityPresets as readonly string[]).includes(preset))throw new Error('Unknown validity preset');
+const experiment=preset==='countermodel',choices=experiment?[c.examine,c.reveal]:preset==='opening'?c.openingChoices:c.warningChoices;
+---
+<figure class="validity-lab" id={id} data-validity-lab={preset} data-locale={locale}>
+ <h3>{experiment?c.experiment:preset==='opening'?c.openingTitle:c.warningTitle}</h3>
+ <div class:list={['validity-controls',{'validity-answer-options':preset==='opening'}]} role="group" aria-label={experiment?c.experiment:preset==='opening'?c.openingTitle:c.warningTitle}>{choices.map((label,i)=><button type="button" data-v-choice={i} aria-pressed={experiment&&i===0?'true':'false'} aria-controls={`${id}-feedback`}>{label}</button>)}<button type="button" data-v-reset>{c.reset}</button></div>
+ {experiment&&<><ValidityRegions/><p class="validity-tested">{c.tested} <span data-v-shape>S</span></p><dl class="validity-truth-rows">{[c.row1,c.row2.replace('{shape}','S'),c.row3.replace('{shape}','S')].map((text,i)=><div><dt data-v-row={i}>{text}</dt><dd class="validity-true" data-v-truth={i}>{c.true}</dd></div>)}</dl></>}
+ <figcaption id={`${id}-feedback`} data-v-feedback aria-live="polite" aria-atomic="true">{experiment?c.initial:c.choose}</figcaption>
+ <p class="validity-added">{c.added}</p>
+</figure>
+<script>
+import {validityCopy} from '../../lib/reasoning/validity-copy';
+import {shapeCase,validateValidityChoice,type ValidityPreset} from '../../lib/interactive/validity-model';
+import type {Locale} from '../../lib/i18n';
+for(const root of document.querySelectorAll<HTMLElement>('[data-validity-lab]')){
+ const preset=root.dataset.validityLab as ValidityPreset,c=validityCopy[root.dataset.locale as Locale],feedback=root.querySelector<HTMLElement>('[data-v-feedback]')!;
+ const buttons=root.querySelectorAll<HTMLButtonElement>('[data-v-choice]');
+ function draw(value:number|null){
+  if(value!==null)validateValidityChoice(preset,value);
+  buttons.forEach(button=>button.setAttribute('aria-pressed',String(Number(button.dataset.vChoice)===value)));
+  if(preset==='countermodel'){
+   const reveal=value===1,state=shapeCase(reveal?'R':'S');
+   root.querySelectorAll<HTMLElement>('[data-v-other]').forEach(el=>el.hidden=reveal);
+   root.querySelectorAll<HTMLElement>('[data-v-not-square],[data-v-rectangle],[data-v-r]').forEach(el=>el.hidden=!reveal);
+   root.querySelector('[data-v-shape]')!.textContent=state.shape;
+   const texts=[c.row1,c.row2.replace('{shape}',state.shape),c.row3.replace('{shape}',state.shape)];
+   [...state.premises,state.conclusion].forEach((truth,i)=>{root.querySelector(`[data-v-row="${i}"]`)!.textContent=texts[i];const cell=root.querySelector(`[data-v-truth="${i}"]`)!;cell.textContent=truth?c.true:c.false;cell.className=truth?'validity-true':'validity-false';});
+   feedback.textContent=reveal?c.found:c.initial;
+  }else feedback.textContent=value===null?c.choose:preset==='opening'?c.openingFeedback[value]:c.warningFeedback[value];
+ }
+ buttons.forEach(button=>button.addEventListener('click',()=>draw(Number(button.dataset.vChoice))));
+ root.querySelector('[data-v-reset]')!.addEventListener('click',()=>draw(preset==='countermodel'?0:null));
+}
+</script>
